@@ -11,7 +11,7 @@
   let unit = "sentence";                           // 選択で見ている単位
   let study = { unit: "sentence", ids: [], i: 0 }; // 学習セット
   let prefs = { view: {}, gramOn: false, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, posOn: false, rate: 1 };
-  let tab = "reg", wReveal = false, wq = null;
+  let tab = "study", setBack = "reg", wReveal = false, wq = null;
   const UN = { sentence: { kind: "sentences", name: "英文" }, meaning: { kind: "chunks", name: "意味句" }, iu: { kind: "chunks", name: "IU" }, word: { kind: "words", name: "単語" } };
   const tbl = u => (u === "word" ? words : u === "sentence" ? rows : chunks.filter(c => c.type === u));
   const isCard = u => u !== "sentence"; // 単語・意味句・IU は、1枚のカードで学ぶ
@@ -108,7 +108,12 @@
   // ---------- タブ ----------
   function setTab(t) {
     tab = t;
+    const inSet = t === "reg" || t === "sync";
     document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === t)));
+    $("#btnSettings").setAttribute("aria-pressed", String(inSet));
+    $("#setNav").hidden = !inSet;
+    document.querySelectorAll("#setNav button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tab === t)));
+    if (inSet) setBack = t;
     document.querySelectorAll(".tab").forEach(s => { s.hidden = s.id !== "tab-" + t });
     if (t === "pick") renderPick();
     if (t === "study") renderStudy();
@@ -117,6 +122,9 @@
     window.scrollTo(0, 0);
   }
   $("#tabs").onclick = e => { const b = e.target.closest("button[data-tab]"); if (b) setTab(b.dataset.tab) };
+  $("#setNav").onclick = e => { const b = e.target.closest("button[data-tab]"); if (b) setTab(b.dataset.tab) };
+  $("#btnSettings").onclick = () => setTab(tab === "reg" || tab === "sync" ? "study" : setBack); // ⚙ をもう一度押すと学習に戻る
+  $("#syncStatus").onclick = () => setTab("sync");
 
   // ---------- 登録 ----------
   function renderReg() {
