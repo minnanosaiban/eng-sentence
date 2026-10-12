@@ -1,4 +1,4 @@
-// 画面の動き。登録 → 学習対象選択 → 学習。学習の単位は、英文・意味句・IU・単語
+// 画面の動き。登録 → 選択 → 学習(英文だけを学ぶ)
 (() => {
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -8,7 +8,7 @@
   let words = [];                                  // 単語の表
   let chunks = [];                                 // 意味句・IU の表(type で区別)
   let sel = { sentence: new Set(), meaning: new Set(), iu: new Set(), word: new Set() }; // 単位ごとの選択中の id
-  let unit = "sentence";                           // 学習対象選択で見ている単位
+  let unit = "sentence";                           // 選択で見ている単位
   let study = { unit: "sentence", ids: [], i: 0 }; // 学習セット
   let prefs = { view: {}, gramOn: false, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, posOn: false, rate: 1 };
   let tab = "reg", wReveal = false, wq = null;
@@ -160,7 +160,7 @@
     renderAll(); toast("削除しました");
   };
 
-  // ---------- 学習対象選択 ----------
+  // ---------- 選択 ----------
   const allGroups = () => [...new Set([...rows, ...words, ...chunks].flatMap(r => r.groups || []))].sort();
   function filtered() {
     const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, st = $("#fstatus").value, lv = $("#flevel").value, ln = $("#flen").value, ps = $("#fpos").value;
