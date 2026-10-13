@@ -59,12 +59,10 @@ JSON形式:
 ${SHAPE}
 ${RULES}`;
 
-  // 他の AI のチャットで、登録用の JSON をまとめて作ってもらうプロンプト。list が空なら、英文をあとで貼るひな形
-  const file = list => `あなたは日本の英語教師です。次の英文それぞれを分析して、英語学習アプリに登録するための JSON を作ってください。出力は JSON だけ(前後の説明は不要)。
-
-【出力の形】
+  // 他の AI のチャットで、登録用の JSON をまとめて作ってもらうプロンプトの、共通部分(出力の形・1文あたりの形・規則)
+  const FILE_BODY = textRule => `【出力の形】
 {"sentences":[
- {"text":"英文(原文のまま、1文字も変えない)","level":難易度(600 / 730 / 860 のいずれか),"part":"Part 1 / Part 2 / Part 3 / Part 4 / Part 5 / Part 6 / Part 7 のいずれか","groups":["グループ名(任意。なければ空の配列)"],
+ {"text":"${textRule}","level":難易度(600 / 730 / 860 のいずれか),"part":"Part 1 / Part 2 / Part 3 / Part 4 / Part 5 / Part 6 / Part 7 のいずれか","groups":["グループ名(任意。なければ空の配列)"],
   "analysis":{ 下の「1文あたりの形」の translation, slash, words, phrases, iu, vocab, pattern, clauses, elements, tense, grammar, toeic },
   "quiz":{ 下の「1文あたりの形」の quiz }}
 ]}
@@ -72,10 +70,39 @@ sentences には、英文と同じ数・同じ順番で入れます。
 
 【1文あたりの形】(difficulty は level に、quiz は quiz に入れ、それ以外は analysis に入れる)
 ${SHAPE}
-${RULES}
+${RULES}`;
+
+  // 自分の英文を投入する版。list が空なら、英文をあとで貼るひな形
+  const file = list => `あなたは日本の英語教師です。次の英文それぞれを分析して、英語学習アプリに登録するための JSON を作ってください。出力は JSON だけ(前後の説明は不要)。
+
+${FILE_BODY("英文(原文のまま、1文字も変えない)")}
 
 【英文】
 ${list && list.length ? list.map((s, i) => `${i + 1}. ${s}`).join("\n") : "(ここに英文を、1行に1文で貼り付けてください)"}`;
+
+  // AI が英文も作る版。o = { n: 個数, level: "混ぜる"|"600"|"730"|"860", part: "Part 5" など(空なら指定なし), scene: 場面(空なら幅広く), group: グループ名(空なら無し), memo: 自由な追加指定 }
+  const make = (o = {}) => {
+    const n = Math.max(1, Math.min(30, parseInt(o.n, 10) || 10));
+    const lv = ["600", "730", "860"].includes(String(o.level)) ? `${o.level} のみ` : "600 / 730 / 860 を混ぜる";
+    const scene = (o.scene || "").trim() || "人事・会議・出張・契約・広告・顧客対応・社内通知・施設/設備 などから幅広く";
+    const group = (o.group || "").trim();
+    return `あなたは日本の英語教師です。TOEIC 対策の英語学習アプリに登録するため、①下の「作成条件」に合う英文を作り、②その英文それぞれを分析して、JSON にしてください。出力は JSON だけ(前後の説明は不要)。
+
+【英文の作り方】
+- 1文ずつ独立して意味が通る、自然なビジネス英語にする(TOEIC の文章らしい文体)。
+- 同じ表現・同じ話題・同じ構文を繰り返さない。
+- 実在の企業名・個人名は使わない。
+- 文末まで含めて1文にする(複数文をつなげない)。
+
+【作成条件】
+- 個数: ${n}文
+- 難易度(level): ${lv}
+- パート(part): ${(o.part || "").trim() || "Part 5 / Part 6 / Part 7 のいずれか、英文に合うもの"}
+- 場面: ${scene}
+- groups: ${group ? `["${group}"]` : "空の配列"}${(o.memo || "").trim() ? `\n- その他: ${o.memo.trim()}` : ""}
+
+${FILE_BODY("あなたが作った英文(1文字も変えずに、slash・words・phrases・iu と一致させる)")}`;
+  };
 
   // ---------- 返事の読み取り ----------
   function parseLoose(t) {
@@ -120,7 +147,7 @@ ${list && list.length ? list.map((s, i) => `${i + 1}. ${s}`).join("\n") : "(こ�
 
   // ---------- 設定 ----------
   return {
-    CATS, prompt: { one, batch, file }, parseLoose, gemini, copyPaste,
+    CATS, prompt: { one, batch, file, make }, parseLoose, gemini, copyPaste,
     get cfg() { return cfg },
     async load() { try { const c = await Store.getMeta("ai", null); if (c && typeof c === "object") cfg = { ...DEFAULT, ...c } } catch {} return cfg },
     async save(c) {

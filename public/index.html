@@ -91,7 +91,26 @@
     <!-- ② 他の AI のチャットで JSON を作って登録 -->
     <div class="regp" data-r="chat" hidden>
       <p class="sub">API キーが無くても使えます。ChatGPT・Claude・Gemini などのチャットで、英文の解析を JSON にしてもらい、その JSON を登録します。</p>
-      <div class="card">
+      <div class="row wrap" id="chatKind">
+        <button data-k="own" aria-pressed="true">自分の英文を投入する</button>
+        <button data-k="make" aria-pressed="false">AI に英文も作ってもらう</button>
+      </div>
+      <div class="card" id="chatMake" hidden>
+        <h2>ステップ1: 条件を決めて、プロンプトをコピーして、チャットに貼る</h2>
+        <p class="sub">AI が英文を作り、そのまま解析した JSON を返します。</p>
+        <div class="row wrap">
+          <label>個数 <input id="mkN" type="number" min="1" max="30" value="10" style="width:5em"></label>
+          <label>難易度 <select id="mkLevel"><option value="">混ぜる</option><option>600</option><option>730</option><option>860</option></select></label>
+          <label>パート <select id="mkPart"><option value="">おまかせ</option><option>Part 5</option><option>Part 6</option><option>Part 7</option><option>Part 3</option><option>Part 4</option></select></label>
+        </div>
+        <div class="row wrap">
+          <label>場面 <input id="mkScene" type="text" placeholder="空なら幅広く(例: 出張)"></label>
+          <label>グループ名 <input id="mkGroup" type="text" placeholder="空なら無し(例: 出張)"></label>
+        </div>
+        <textarea id="mkMemo" rows="2" placeholder="その他の指定(任意。例: 受動態を多めに)"></textarea>
+        <div class="row wrap"><button id="btnMakePrompt" class="pri">プロンプトをコピー</button></div>
+      </div>
+      <div class="card" id="chatOwn">
         <h2>ステップ1: プロンプトをコピーして、チャットに貼る</h2>
         <p class="sub">英文を下に入れる(1行に1文)と、プロンプトに含まれます。空のままなら、チャットに英文を貼るひな形になります。チャットが返した JSON は、ファイル(.json)に保存するか、全文をコピーします。</p>
         <textarea id="chatSrc" rows="4" placeholder="Candidates are advised to bring copies of their certificates to the interview."></textarea>

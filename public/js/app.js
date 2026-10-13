@@ -118,6 +118,16 @@
     try { await navigator.clipboard.writeText(t) } catch { ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove() }
     toast(chatLines().length > 30 ? "プロンプトをコピーしました(英文は最初の30文だけ。残りは、別に分けて)" : "プロンプトをコピーしました。チャットに貼り付けてください");
   };
+  $("#chatKind").onclick = e => {
+    const b = e.target.closest("button[data-k]"); if (!b) return;
+    document.querySelectorAll("#chatKind button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    $("#chatMake").hidden = b.dataset.k !== "make"; $("#chatOwn").hidden = b.dataset.k !== "own";
+  };
+  $("#btnMakePrompt").onclick = async () => {
+    const t = AI.prompt.make({ n: $("#mkN").value, level: $("#mkLevel").value, part: $("#mkPart").value, scene: $("#mkScene").value, group: $("#mkGroup").value, memo: $("#mkMemo").value }), ta = document.createElement("textarea");
+    try { await navigator.clipboard.writeText(t) } catch { ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove() }
+    toast("プロンプトをコピーしました。チャットに貼り付けてください");
+  };
   $("#btnChatRegistered").onclick = () => {
     const l = rows.filter(needsAI).map(r => r.text);
     if (!l.length) return toast("解析が足りない英文は、ありません");
