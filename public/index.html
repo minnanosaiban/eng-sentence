@@ -123,9 +123,15 @@
         <h2>ステップ2: JSON を登録する</h2>
         <p class="sub">チャットの返事(JSON)を貼り付けるか、保存した .json ファイルを選びます。アプリのバックアップ(.json)も、ここで読み込めます。</p>
         <textarea id="jsonIn" rows="5" placeholder="チャットの返事(JSON)を、ここに貼り付け"></textarea>
+        <label class="inl"><input type="checkbox" id="jsonFix"> AI に確認してもらった返事なので、「修正」として取り込む(解析と4択を差し替え、確認済みにします。学習の状態は残します)</label>
         <div class="row wrap">
           <button id="btnJsonPaste" class="pri">貼り付けた JSON を登録</button>
           <input id="fileJson" type="file" accept=".json">
+        </div>
+        <div id="fixPrev" class="fixprev" hidden>
+          <p id="fixSum" class="sub"></p>
+          <div id="fixList" class="sub"></div>
+          <div class="row"><button id="btnFixApply" class="pri">この修正を取り込む</button><button id="btnFixCancel">やめる</button></div>
         </div>
       </div>
       <div class="card">
@@ -142,7 +148,7 @@
     <div class="regp" data-r="misc" hidden>
       <div class="card">
         <h2>すぐ試す</h2>
-        <p class="sub">TOEIC風のオリジナル英文 134文(Part 1〜7。和訳・区切り・品詞・単語の発音記号・4択つき)を入れます。API は要りません。</p>
+        <p class="sub">TOEIC風のオリジナル英文 154文(Part 1〜7。和訳・区切り・品詞・単語の発音記号・4択つき)を入れます。API は要りません。</p>
         <button id="btnSamples" class="pri">サンプル英文を入れる</button>
       </div>
       <div class="card">
@@ -231,6 +237,9 @@
         <select id="fpart" aria-label="TOEICのパート" class="sent-only">
           <option value="">パート: すべて</option><option value="Part 1">Part 1 写真描写</option><option value="Part 2">Part 2 応答問題</option><option value="Part 3">Part 3 会話</option><option value="Part 4">Part 4 説明文</option><option value="Part 5">Part 5 短文穴埋め</option><option value="Part 6">Part 6 長文穴埋め</option><option value="Part 7">Part 7 読解</option><option value="none">パート未設定</option>
         </select>
+        <select id="fver" aria-label="確認" class="sent-only">
+          <option value="">確認: すべて</option><option value="no">未確認だけ</option><option value="yes">確認済みだけ</option>
+        </select>
         <select id="flevel" aria-label="難易度">
           <option value="">難易度: すべて</option><option value="600">600</option><option value="730">730</option><option value="860">860</option>
         </select>
@@ -246,6 +255,11 @@
       <div class="row">
         <button id="btnStart" class="pri">この英文で学習を始める</button>
         <button id="btnDelSel" class="danger">選んだものを削除</button>
+      </div>
+      <div class="row wrap sent-only">
+        <button id="btnReviewCopy" title="選んだ英文の解析を、AI のチャットで確認してもらうためのプロンプト(JSON つき)をコピーします">AI に確認してもらう(コピー)</button>
+        <button id="btnReviewSave" title="同じ内容を、.json ファイルに保存します">確認用に保存(.json)</button>
+        <button id="btnVerifySel" title="選んだ英文を「確認済み」にします">確認済みにする</button>
       </div>
     </div>
     <div id="pickList" class="list"></div>

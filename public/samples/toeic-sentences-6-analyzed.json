@@ -1,0 +1,3900 @@
+{
+ "groups": [
+  {
+   "id": "g1",
+   "name": "Part 1 写真描写"
+  },
+  {
+   "id": "g2",
+   "name": "写真:人の動作"
+  },
+  {
+   "id": "g3",
+   "name": "写真:物の状態"
+  }
+ ],
+ "items": [
+  {
+   "id": "toeic-set6-01",
+   "text": "A man is typing on a laptop at his desk.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000000,
+   "analysis": {
+    "translation": "男性が机でノートパソコンに入力しています。",
+    "slash": [
+     {
+      "en": "A man",
+      "ja": "男性が"
+     },
+     {
+      "en": "is typing on a laptop",
+      "ja": "ノートパソコンに入力している"
+     },
+     {
+      "en": "at his desk.",
+      "ja": "自分の机で"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "A man (S) is typing (V)。on a laptop と at his desk は修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "A man is typing on a laptop at his desk.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A man",
+      "role": "S",
+      "note": "動作をする人"
+     },
+     {
+      "text": "is typing",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "on a laptop",
+      "role": "M",
+      "note": "入力する機器"
+     },
+     {
+      "text": "at his desk",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "写真の人物が今している動作を is + -ing で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "type on ~",
+      "explanation": "「~で(キーボードを)入力する」。type は目的語なしでも使えます。"
+     },
+     {
+      "point": "at + 机・場所",
+      "explanation": "at his desk は作業をしている地点を表します。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "type",
+      "pos": "動詞",
+      "meaning": "入力する、タイプする",
+      "note": "",
+      "level": 2,
+      "toeic": "type on a laptop / type a report"
+     },
+     {
+      "word": "laptop",
+      "pos": "名詞",
+      "meaning": "ノートパソコン",
+      "note": "",
+      "level": 2,
+      "toeic": "on a laptop"
+     },
+     {
+      "word": "desk",
+      "pos": "名詞",
+      "meaning": "机",
+      "note": "",
+      "level": 1,
+      "toeic": "at his desk"
+     }
+    ],
+    "toeic": {
+     "scene": "オフィス・作業",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "現在進行形の動作描写"
+      },
+      {
+       "type": "前置詞",
+       "detail": "on と at の使い分け"
+      }
+     ],
+     "paraphrase": [
+      "A man is working on a computer.",
+      "Someone is using a laptop at a desk."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "man",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "typing",
+      "p": "v"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "laptop",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "his",
+      "p": "det"
+     },
+     {
+      "w": "desk.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A man",
+      "f": "主語"
+     },
+     {
+      "t": "is typing",
+      "f": "動詞句"
+     },
+     {
+      "t": "on a laptop",
+      "f": "前置詞句"
+     },
+     {
+      "t": "at his desk.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A man"
+     },
+     {
+      "t": "is typing on a laptop"
+     },
+     {
+      "t": "at his desk."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A man ______ on a laptop at his desk.",
+    "choices": [
+     "is typing",
+     "is typed",
+     "types",
+     "typed"
+    ],
+    "answer": 0,
+    "type": "時制",
+    "explanation": "写真の人物が今している動作なので、現在進行形の is typing。is typed は受動態で人が「入力される」ことになり、types と typed は is の後に続けられません。"
+   }
+  },
+  {
+   "id": "toeic-set6-02",
+   "text": "Some people are walking across a bridge.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000001,
+   "analysis": {
+    "translation": "数人が橋を歩いて渡っています。",
+    "slash": [
+     {
+      "en": "Some people",
+      "ja": "数人が"
+     },
+     {
+      "en": "are walking",
+      "ja": "歩いている"
+     },
+     {
+      "en": "across a bridge.",
+      "ja": "橋を渡って"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Some people (S) are walking (V)。across a bridge が経路を表す修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "Some people are walking across a bridge.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Some people",
+      "role": "S",
+      "note": "複数の人"
+     },
+     {
+      "text": "are walking",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "across a bridge",
+      "role": "M",
+      "note": "横切る場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "people は複数扱いなので are walking です。"
+    },
+    "grammar": [
+     {
+      "point": "people は複数扱い",
+      "explanation": "people は常に複数扱いで、be 動詞は are を使います。"
+     },
+     {
+      "point": "across + 名詞",
+      "explanation": "「~を横切って、~を渡って」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "across",
+      "pos": "前置詞",
+      "meaning": "~を横切って、~を渡って",
+      "note": "",
+      "level": 2,
+      "toeic": "walk across a bridge / across the street"
+     },
+     {
+      "word": "bridge",
+      "pos": "名詞",
+      "meaning": "橋",
+      "note": "",
+      "level": 2,
+      "toeic": "across a bridge"
+     },
+     {
+      "word": "walk",
+      "pos": "動詞",
+      "meaning": "歩く",
+      "note": "",
+      "level": 1,
+      "toeic": "are walking"
+     }
+    ],
+    "toeic": {
+     "scene": "屋外・街中",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語法",
+       "detail": "people は複数扱い"
+      },
+      {
+       "type": "前置詞",
+       "detail": "across と along の違い"
+      }
+     ],
+     "paraphrase": [
+      "Pedestrians are crossing a bridge.",
+      "People are on a bridge."
+     ]
+    },
+    "words": [
+     {
+      "w": "Some",
+      "p": "det"
+     },
+     {
+      "w": "people",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "walking",
+      "p": "v"
+     },
+     {
+      "w": "across",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "bridge.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Some people",
+      "f": "主語"
+     },
+     {
+      "t": "are walking",
+      "f": "動詞句"
+     },
+     {
+      "t": "across a bridge.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Some people"
+     },
+     {
+      "t": "are walking"
+     },
+     {
+      "t": "across a bridge."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Some people are walking ______ a bridge.",
+    "choices": [
+     "across",
+     "among",
+     "between",
+     "beside"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「橋を渡って」と横切る動きを表すのは across。among と between は「~の間」、beside は「~のそば」で、移動の意味が合いません。"
+   }
+  },
+  {
+   "id": "toeic-set6-03",
+   "text": "A chef is chopping vegetables in a kitchen.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000002,
+   "analysis": {
+    "translation": "料理人が台所で野菜を刻んでいます。",
+    "slash": [
+     {
+      "en": "A chef",
+      "ja": "料理人が"
+     },
+     {
+      "en": "is chopping vegetables",
+      "ja": "野菜を刻んでいる"
+     },
+     {
+      "en": "in a kitchen.",
+      "ja": "台所で"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "A chef (S) is chopping (V) vegetables (O)。in a kitchen は場所を表します。"
+    },
+    "clauses": [
+     {
+      "text": "A chef is chopping vegetables in a kitchen.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A chef",
+      "role": "S",
+      "note": "動作をする人"
+     },
+     {
+      "text": "is chopping",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "vegetables",
+      "role": "O",
+      "note": "刻む対象"
+     },
+     {
+      "text": "in a kitchen",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "調理中の動作を is chopping で描写します。"
+    },
+    "grammar": [
+     {
+      "point": "chop",
+      "explanation": "「(包丁で)刻む」。cut より細かく切る動作です。"
+     },
+     {
+      "point": "vegetables",
+      "explanation": "複数形。種類を問わない野菜を表します。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "chop",
+      "pos": "動詞",
+      "meaning": "~を刻む",
+      "note": "",
+      "level": 3,
+      "toeic": "chop vegetables"
+     },
+     {
+      "word": "chef",
+      "pos": "名詞",
+      "meaning": "料理人、シェフ",
+      "note": "",
+      "level": 2,
+      "toeic": "a chef in a kitchen"
+     },
+     {
+      "word": "vegetable",
+      "pos": "名詞",
+      "meaning": "野菜",
+      "note": "",
+      "level": 1,
+      "toeic": "fresh vegetables"
+     }
+    ],
+    "toeic": {
+     "scene": "飲食・調理",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "chop / slice / peel など調理の動詞"
+      }
+     ],
+     "paraphrase": [
+      "Someone is preparing food.",
+      "A cook is cutting vegetables."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "chef",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "chopping",
+      "p": "v"
+     },
+     {
+      "w": "vegetables",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "kitchen.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A chef",
+      "f": "主語"
+     },
+     {
+      "t": "is chopping",
+      "f": "動詞句"
+     },
+     {
+      "t": "vegetables",
+      "f": "目的語"
+     },
+     {
+      "t": "in a kitchen.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A chef"
+     },
+     {
+      "t": "is chopping vegetables"
+     },
+     {
+      "t": "in a kitchen."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A chef is ______ vegetables in a kitchen.",
+    "choices": [
+     "chopping",
+     "chopped",
+     "chops",
+     "to chop"
+    ],
+    "answer": 0,
+    "type": "時制",
+    "explanation": "is の後に続くのは現在進行形の -ing 形。chopped は過去形/過去分詞、chops は三単現、to chop は不定詞で形が合いません。"
+   }
+  },
+  {
+   "id": "toeic-set6-04",
+   "text": "Several cars are parked in front of the building.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792170000003,
+   "analysis": {
+    "translation": "数台の車が建物の前に止められています。",
+    "slash": [
+     {
+      "en": "Several cars",
+      "ja": "数台の車が"
+     },
+     {
+      "en": "are parked",
+      "ja": "止められている"
+     },
+     {
+      "en": "in front of the building.",
+      "ja": "建物の前に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Several cars (S) are parked (V)。止められている状態を描写します。"
+    },
+    "clauses": [
+     {
+      "text": "Several cars are parked in front of the building.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Several cars",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "are parked",
+      "role": "V",
+      "note": "受動態(状態)"
+     },
+     {
+      "text": "in front of the building",
+      "role": "M",
+      "note": "位置"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "人が写っていない写真では、物の状態を受動態で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "in front of",
+      "explanation": "「~の前に」。熟語で、前置詞として働きます。"
+     },
+     {
+      "point": "in front of と in the front of",
+      "explanation": "in the front of は「~の前部に」で意味が違います。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "in front of",
+      "pos": "熟語",
+      "meaning": "~の前に",
+      "note": "",
+      "level": 3,
+      "toeic": "parked in front of the building"
+     },
+     {
+      "word": "building",
+      "pos": "名詞",
+      "meaning": "建物",
+      "note": "",
+      "level": 1,
+      "toeic": "in front of the building"
+     },
+     {
+      "word": "park",
+      "pos": "動詞",
+      "meaning": "~を止める",
+      "note": "",
+      "level": 2,
+      "toeic": "be parked"
+     }
+    ],
+    "toeic": {
+     "scene": "屋外・駐車場",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "in front of / behind / next to の位置表現"
+      }
+     ],
+     "paraphrase": [
+      "Vehicles are lined up outside the building.",
+      "Some cars are left in front of an office."
+     ]
+    },
+    "words": [
+     {
+      "w": "Several",
+      "p": "det"
+     },
+     {
+      "w": "cars",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "parked",
+      "p": "v"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "front",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "building.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Several cars",
+      "f": "主語"
+     },
+     {
+      "t": "are parked",
+      "f": "動詞句(受動態)"
+     },
+     {
+      "t": "in front of the building.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Several cars"
+     },
+     {
+      "t": "are parked"
+     },
+     {
+      "t": "in front of the building."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Several cars are parked ______ the building.",
+    "choices": [
+     "in front of",
+     "in the front",
+     "at front",
+     "on front"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「~の前に」は in front of ~(熟語)。in the front は後ろに of が続く別の意味、at front と on front は英語として成り立ちません。"
+   }
+  },
+  {
+   "id": "toeic-set6-05",
+   "text": "A woman is holding a stack of papers.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000004,
+   "analysis": {
+    "translation": "女性が紙の束を持っています。",
+    "slash": [
+     {
+      "en": "A woman",
+      "ja": "女性が"
+     },
+     {
+      "en": "is holding",
+      "ja": "持っている"
+     },
+     {
+      "en": "a stack of papers.",
+      "ja": "紙の束を"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "A woman (S) is holding (V) a stack of papers (O)。a stack of ~ が「~の山・束」です。"
+    },
+    "clauses": [
+     {
+      "text": "A woman is holding a stack of papers.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A woman",
+      "role": "S",
+      "note": "動作をする人"
+     },
+     {
+      "text": "is holding",
+      "role": "V",
+      "note": "現在進行形(持っている状態)"
+     },
+     {
+      "text": "a stack of papers",
+      "role": "O",
+      "note": "持っている物"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "hold は「持っている」状態を -ing で表します。"
+    },
+    "grammar": [
+     {
+      "point": "a stack of ~",
+      "explanation": "「~の積み重ね、束」。of の後は複数形や不可算名詞です。"
+     },
+     {
+      "point": "hold と carry",
+      "explanation": "hold は持っている状態、carry は運ぶ動作です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "stack",
+      "pos": "名詞",
+      "meaning": "積み重ね、山",
+      "note": "",
+      "level": 3,
+      "toeic": "a stack of papers"
+     },
+     {
+      "word": "hold",
+      "pos": "動詞",
+      "meaning": "~を持っている",
+      "note": "",
+      "level": 2,
+      "toeic": "is holding"
+     },
+     {
+      "word": "paper",
+      "pos": "名詞",
+      "meaning": "書類、紙",
+      "note": "",
+      "level": 1,
+      "toeic": "papers(書類)"
+     }
+    ],
+    "toeic": {
+     "scene": "オフィス",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "a stack of / a pile of / a row of"
+      }
+     ],
+     "paraphrase": [
+      "Someone is carrying some documents.",
+      "A woman has papers in her hands."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "woman",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "holding",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "stack",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "papers.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A woman",
+      "f": "主語"
+     },
+     {
+      "t": "is holding",
+      "f": "動詞句"
+     },
+     {
+      "t": "a stack of papers.",
+      "f": "目的語(名詞句)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A woman"
+     },
+     {
+      "t": "is holding"
+     },
+     {
+      "t": "a stack of papers."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A woman is holding a ______ of papers.",
+    "choices": [
+     "stack",
+     "piece",
+     "member",
+     "pair"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "紙の「束」は a stack of papers。a piece of は1枚/1つ、a pair of は2つで1組のもの、member は人の集まりの構成員で合いません。"
+   }
+  },
+  {
+   "id": "toeic-set6-06",
+   "text": "Cups have been placed on a tray.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792170000005,
+   "analysis": {
+    "translation": "カップがトレイの上に置かれています。",
+    "slash": [
+     {
+      "en": "Cups",
+      "ja": "カップが"
+     },
+     {
+      "en": "have been placed",
+      "ja": "置かれている"
+     },
+     {
+      "en": "on a tray.",
+      "ja": "トレイの上に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Cups (S) have been placed (V)。置かれた結果の状態を述べています。"
+    },
+    "clauses": [
+     {
+      "text": "Cups have been placed on a tray.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Cups",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "have been placed",
+      "role": "V",
+      "note": "現在完了の受動態"
+     },
+     {
+      "text": "on a tray",
+      "role": "M",
+      "note": "位置"
+     }
+    ],
+    "tense": {
+     "name": "現在完了・受動態",
+     "explanation": "have been placed は「置かれている」という状態の描写です。"
+    },
+    "grammar": [
+     {
+      "point": "have been placed",
+      "explanation": "誰が置いたかではなく、置かれた状態に注目する言い方です。"
+     },
+     {
+      "point": "on a tray",
+      "explanation": "接触している上の位置を表します。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "place",
+      "pos": "動詞",
+      "meaning": "~を置く",
+      "note": "",
+      "level": 3,
+      "toeic": "be placed on ~"
+     },
+     {
+      "word": "tray",
+      "pos": "名詞",
+      "meaning": "トレイ、盆",
+      "note": "",
+      "level": 3,
+      "toeic": "on a tray"
+     },
+     {
+      "word": "cup",
+      "pos": "名詞",
+      "meaning": "カップ",
+      "note": "",
+      "level": 1,
+      "toeic": "coffee cups"
+     }
+    ],
+    "toeic": {
+     "scene": "飲食・設備",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "受動態",
+       "detail": "have been placed の状態描写"
+      }
+     ],
+     "paraphrase": [
+      "Some cups are on a tray.",
+      "A tray holds several cups."
+     ]
+    },
+    "words": [
+     {
+      "w": "Cups",
+      "p": "n"
+     },
+     {
+      "w": "have",
+      "p": "aux"
+     },
+     {
+      "w": "been",
+      "p": "aux"
+     },
+     {
+      "w": "placed",
+      "p": "v"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "tray.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Cups",
+      "f": "主語"
+     },
+     {
+      "t": "have been placed",
+      "f": "動詞句(現在完了の受動態)"
+     },
+     {
+      "t": "on a tray.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Cups"
+     },
+     {
+      "t": "have been placed"
+     },
+     {
+      "t": "on a tray."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Cups have been ______ on a tray.",
+    "choices": [
+     "placed",
+     "placing",
+     "place",
+     "places"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "have been の後は過去分詞。カップは「置かれる」側なので受動態の placed が正解で、placing は能動の進行形、place は原形、places は三単現です。"
+   }
+  },
+  {
+   "id": "toeic-set6-07",
+   "text": "A truck is being loaded with boxes.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792170000006,
+   "analysis": {
+    "translation": "トラックに箱が積み込まれています。",
+    "slash": [
+     {
+      "en": "A truck",
+      "ja": "トラックが"
+     },
+     {
+      "en": "is being loaded",
+      "ja": "積み込まれている最中"
+     },
+     {
+      "en": "with boxes.",
+      "ja": "箱で"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "A truck (S) is being loaded (V)。誰かが積み込んでいる最中であることを表します。"
+    },
+    "clauses": [
+     {
+      "text": "A truck is being loaded with boxes.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A truck",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "is being loaded",
+      "role": "V",
+      "note": "進行形の受動態(作業の途中)"
+     },
+     {
+      "text": "with boxes",
+      "role": "M",
+      "note": "積む物"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・受動態",
+     "explanation": "is being + 過去分詞 は「(今)~されているところ」。人の動作が写真に写っているときに使います。"
+    },
+    "grammar": [
+     {
+      "point": "is being + 過去分詞",
+      "explanation": "進行形の受動態。作業中の写真で頻出です。"
+     },
+     {
+      "point": "load A with B",
+      "explanation": "「A に B を積む」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "load",
+      "pos": "動詞",
+      "meaning": "~を積む",
+      "note": "",
+      "level": 3,
+      "toeic": "be loaded with ~"
+     },
+     {
+      "word": "truck",
+      "pos": "名詞",
+      "meaning": "トラック",
+      "note": "",
+      "level": 1,
+      "toeic": "a delivery truck"
+     },
+     {
+      "word": "box",
+      "pos": "名詞",
+      "meaning": "箱",
+      "note": "",
+      "level": 1,
+      "toeic": "loaded with boxes"
+     }
+    ],
+    "toeic": {
+     "scene": "物流・運送",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "受動態",
+       "detail": "進行形の受動態 is being loaded"
+      },
+      {
+       "type": "語法",
+       "detail": "load A with B"
+      }
+     ],
+     "paraphrase": [
+      "Boxes are being put into a truck.",
+      "Workers are filling a truck."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "truck",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "being",
+      "p": "aux"
+     },
+     {
+      "w": "loaded",
+      "p": "v"
+     },
+     {
+      "w": "with",
+      "p": "prep"
+     },
+     {
+      "w": "boxes.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A truck",
+      "f": "主語"
+     },
+     {
+      "t": "is being loaded",
+      "f": "動詞句(進行形の受動態)"
+     },
+     {
+      "t": "with boxes.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A truck"
+     },
+     {
+      "t": "is being loaded"
+     },
+     {
+      "t": "with boxes."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A truck is being ______ with boxes.",
+    "choices": [
+     "loaded",
+     "loading",
+     "load",
+     "loads"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "is being の後は過去分詞。トラックは「積まれる」側なので loaded が正解です。loading は能動、load は原形、loads は三単現で be 動詞に続きません。"
+   }
+  },
+  {
+   "id": "toeic-set6-08",
+   "text": "Workers are installing a window on the second floor.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000007,
+   "analysis": {
+    "translation": "作業員が2階に窓を取り付けています。",
+    "slash": [
+     {
+      "en": "Workers",
+      "ja": "作業員が"
+     },
+     {
+      "en": "are installing a window",
+      "ja": "窓を取り付けている"
+     },
+     {
+      "en": "on the second floor.",
+      "ja": "2階で"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "Workers (S) are installing (V) a window (O)。on the second floor が場所を表します。"
+    },
+    "clauses": [
+     {
+      "text": "Workers are installing a window on the second floor.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Workers",
+      "role": "S",
+      "note": "動作をする人たち"
+     },
+     {
+      "text": "are installing",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "a window",
+      "role": "O",
+      "note": "取り付ける物"
+     },
+     {
+      "text": "on the second floor",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "取り付けの作業中を are installing で描写します。"
+    },
+    "grammar": [
+     {
+      "point": "install",
+      "explanation": "「~を設置する、取り付ける」。工事の写真で頻出。"
+     },
+     {
+      "point": "on the second floor",
+      "explanation": "階数には前置詞 on を使います。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "install",
+      "pos": "動詞",
+      "meaning": "~を取り付ける",
+      "note": "",
+      "level": 3,
+      "toeic": "install a window"
+     },
+     {
+      "word": "worker",
+      "pos": "名詞",
+      "meaning": "作業員",
+      "note": "",
+      "level": 2,
+      "toeic": "construction workers"
+     },
+     {
+      "word": "floor",
+      "pos": "名詞",
+      "meaning": "階",
+      "note": "",
+      "level": 2,
+      "toeic": "on the second floor"
+     }
+    ],
+    "toeic": {
+     "scene": "建設・工事",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "install / assemble / repair"
+      },
+      {
+       "type": "前置詞",
+       "detail": "階数の on"
+      }
+     ],
+     "paraphrase": [
+      "Some workers are putting in a window.",
+      "Construction workers are working on a building."
+     ]
+    },
+    "words": [
+     {
+      "w": "Workers",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "installing",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "window",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "second",
+      "p": "adj"
+     },
+     {
+      "w": "floor.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Workers",
+      "f": "主語"
+     },
+     {
+      "t": "are installing",
+      "f": "動詞句"
+     },
+     {
+      "t": "a window",
+      "f": "目的語"
+     },
+     {
+      "t": "on the second floor.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Workers"
+     },
+     {
+      "t": "are installing a window"
+     },
+     {
+      "t": "on the second floor."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Workers are installing a window ______ the second floor.",
+    "choices": [
+     "on",
+     "at the",
+     "in a",
+     "by"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "階数を言うときは on the second floor。at the、in a、by では不自然です。"
+   }
+  },
+  {
+   "id": "toeic-set6-09",
+   "text": "A man is pushing a cart down the aisle.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000008,
+   "analysis": {
+    "translation": "男性が通路でカートを押しています。",
+    "slash": [
+     {
+      "en": "A man",
+      "ja": "男性が"
+     },
+     {
+      "en": "is pushing a cart",
+      "ja": "カートを押している"
+     },
+     {
+      "en": "down the aisle.",
+      "ja": "通路を進んで"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "A man (S) is pushing (V) a cart (O)。down the aisle は進む経路を表します。"
+    },
+    "clauses": [
+     {
+      "text": "A man is pushing a cart down the aisle.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A man",
+      "role": "S",
+      "note": "動作をする人"
+     },
+     {
+      "text": "is pushing",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "a cart",
+      "role": "O",
+      "note": "押す物"
+     },
+     {
+      "text": "down the aisle",
+      "role": "M",
+      "note": "進む方向"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "push は「押している」動作。pull との区別が問われます。"
+    },
+    "grammar": [
+     {
+      "point": "down + 道・通路",
+      "explanation": "「~に沿って」。必ずしも下向きではなく、通路を進む方向を表します。"
+     },
+     {
+      "point": "push と pull",
+      "explanation": "push は押す、pull は引くの意味で、写真の動作で区別します。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "aisle",
+      "pos": "名詞",
+      "meaning": "通路",
+      "note": "",
+      "level": 3,
+      "toeic": "down the aisle"
+     },
+     {
+      "word": "cart",
+      "pos": "名詞",
+      "meaning": "カート",
+      "note": "",
+      "level": 2,
+      "toeic": "push a cart"
+     },
+     {
+      "word": "push",
+      "pos": "動詞",
+      "meaning": "~を押す",
+      "note": "",
+      "level": 2,
+      "toeic": "push a cart"
+     }
+    ],
+    "toeic": {
+     "scene": "店舗・スーパー",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "aisle(通路)の発音と意味"
+      },
+      {
+       "type": "前置詞",
+       "detail": "down の「~に沿って」"
+      }
+     ],
+     "paraphrase": [
+      "Someone is wheeling a cart in a store.",
+      "A shopper is moving along an aisle."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "man",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "pushing",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "cart",
+      "p": "n"
+     },
+     {
+      "w": "down",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "aisle.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A man",
+      "f": "主語"
+     },
+     {
+      "t": "is pushing",
+      "f": "動詞句"
+     },
+     {
+      "t": "a cart",
+      "f": "目的語"
+     },
+     {
+      "t": "down the aisle.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A man"
+     },
+     {
+      "t": "is pushing a cart"
+     },
+     {
+      "t": "down the aisle."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A man is pushing a cart ______ the aisle.",
+    "choices": [
+     "down",
+     "over",
+     "under",
+     "at"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "通路に沿って進むのは down the aisle。over と under は上下の位置、at は地点で、移動する経路を表せません。"
+   }
+  },
+  {
+   "id": "toeic-set6-10",
+   "text": "The shelves are filled with books.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792170000009,
+   "analysis": {
+    "translation": "棚は本でいっぱいです。",
+    "slash": [
+     {
+      "en": "The shelves",
+      "ja": "棚は"
+     },
+     {
+      "en": "are filled",
+      "ja": "満たされている"
+     },
+     {
+      "en": "with books.",
+      "ja": "本で"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "The shelves (S) are filled (V)。with books が中身を表します。"
+    },
+    "clauses": [
+     {
+      "text": "The shelves are filled with books.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The shelves",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "are filled",
+      "role": "V",
+      "note": "受動態(状態)"
+     },
+     {
+      "text": "with books",
+      "role": "M",
+      "note": "満たしている物"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "be filled with ~ は「~でいっぱいである」という状態です。"
+    },
+    "grammar": [
+     {
+      "point": "be filled with ~",
+      "explanation": "「~でいっぱいだ」。with を使う点が問われます。"
+     },
+     {
+      "point": "shelf の複数形",
+      "explanation": "shelf は shelves になります(f が v に変わる)。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "be filled with",
+      "pos": "熟語",
+      "meaning": "~でいっぱいである",
+      "note": "",
+      "level": 3,
+      "toeic": "filled with books"
+     },
+     {
+      "word": "shelf",
+      "pos": "名詞",
+      "meaning": "棚",
+      "note": "",
+      "level": 2,
+      "toeic": "shelves(複数形)"
+     },
+     {
+      "word": "fill",
+      "pos": "動詞",
+      "meaning": "~を満たす",
+      "note": "",
+      "level": 2,
+      "toeic": "fill A with B"
+     }
+    ],
+    "toeic": {
+     "scene": "図書館・オフィス",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "be filled with"
+      },
+      {
+       "type": "語彙",
+       "detail": "shelf の複数形 shelves"
+      }
+     ],
+     "paraphrase": [
+      "Books are lined up on the shelves.",
+      "The bookshelves are full."
+     ]
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "shelves",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "filled",
+      "p": "v"
+     },
+     {
+      "w": "with",
+      "p": "prep"
+     },
+     {
+      "w": "books.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The shelves",
+      "f": "主語"
+     },
+     {
+      "t": "are filled",
+      "f": "動詞句(受動態)"
+     },
+     {
+      "t": "with books.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "The shelves"
+     },
+     {
+      "t": "are filled"
+     },
+     {
+      "t": "with books."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The shelves are filled ______ books.",
+    "choices": [
+     "with",
+     "by",
+     "of",
+     "in"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「~でいっぱい」は be filled with ~。by は行為者、of と in は意味が合いません。"
+   }
+  },
+  {
+   "id": "toeic-set6-11",
+   "text": "A woman is reading a menu at a restaurant table.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000010,
+   "analysis": {
+    "translation": "女性がレストランのテーブルでメニューを読んでいます。",
+    "slash": [
+     {
+      "en": "A woman",
+      "ja": "女性が"
+     },
+     {
+      "en": "is reading a menu",
+      "ja": "メニューを読んでいる"
+     },
+     {
+      "en": "at a restaurant table.",
+      "ja": "レストランのテーブルで"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "A woman (S) is reading (V) a menu (O)。at a restaurant table は場所です。"
+    },
+    "clauses": [
+     {
+      "text": "A woman is reading a menu at a restaurant table.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A woman",
+      "role": "S",
+      "note": "動作をする人"
+     },
+     {
+      "text": "is reading",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "a menu",
+      "role": "O",
+      "note": "読む物"
+     },
+     {
+      "text": "at a restaurant table",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "読んでいる最中の動作を is reading で表します。"
+    },
+    "grammar": [
+     {
+      "point": "restaurant table",
+      "explanation": "名詞 restaurant が名詞 table を修飾する形です。"
+     },
+     {
+      "point": "at + テーブル",
+      "explanation": "席についている状態は at a table と言います。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "menu",
+      "pos": "名詞",
+      "meaning": "メニュー",
+      "note": "",
+      "level": 1,
+      "toeic": "read a menu"
+     },
+     {
+      "word": "restaurant",
+      "pos": "名詞",
+      "meaning": "レストラン",
+      "note": "",
+      "level": 1,
+      "toeic": "a restaurant table"
+     },
+     {
+      "word": "at a table",
+      "pos": "熟語",
+      "meaning": "テーブルについて",
+      "note": "",
+      "level": 2,
+      "toeic": "seated at a table"
+     }
+    ],
+    "toeic": {
+     "scene": "飲食・レストラン",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "at a table(テーブルについて)"
+      }
+     ],
+     "paraphrase": [
+      "Someone is looking at a menu.",
+      "A customer is seated at a table."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "woman",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "reading",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "menu",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "restaurant",
+      "p": "n"
+     },
+     {
+      "w": "table.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A woman",
+      "f": "主語"
+     },
+     {
+      "t": "is reading",
+      "f": "動詞句"
+     },
+     {
+      "t": "a menu",
+      "f": "目的語"
+     },
+     {
+      "t": "at a restaurant table.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A woman"
+     },
+     {
+      "t": "is reading a menu"
+     },
+     {
+      "t": "at a restaurant table."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A woman is reading a menu ______ a restaurant table.",
+    "choices": [
+     "at",
+     "on",
+     "in",
+     "to"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "テーブルについて座っているときは at a table。on は「テーブルの上に」、in と to は意味が合いません。"
+   }
+  },
+  {
+   "id": "toeic-set6-12",
+   "text": "Pedestrians are crossing the street at the intersection.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000011,
+   "analysis": {
+    "translation": "歩行者が交差点で道路を渡っています。",
+    "slash": [
+     {
+      "en": "Pedestrians",
+      "ja": "歩行者が"
+     },
+     {
+      "en": "are crossing the street",
+      "ja": "道路を渡っている"
+     },
+     {
+      "en": "at the intersection.",
+      "ja": "交差点で"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "Pedestrians (S) are crossing (V) the street (O)。cross は他動詞で、前置詞なしで目的語を取ります。"
+    },
+    "clauses": [
+     {
+      "text": "Pedestrians are crossing the street at the intersection.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Pedestrians",
+      "role": "S",
+      "note": "歩く人たち"
+     },
+     {
+      "text": "are crossing",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "the street",
+      "role": "O",
+      "note": "渡る対象(前置詞なし)"
+     },
+     {
+      "text": "at the intersection",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "渡っている動作を are crossing で描写します。"
+    },
+    "grammar": [
+     {
+      "point": "cross は他動詞",
+      "explanation": "cross the street。cross over や across を重ねる必要はありません。"
+     },
+     {
+      "point": "pedestrian",
+      "explanation": "「歩行者」。写真の人物を表す頻出語。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "pedestrian",
+      "pos": "名詞",
+      "meaning": "歩行者",
+      "note": "",
+      "level": 3,
+      "toeic": "pedestrians crossing"
+     },
+     {
+      "word": "intersection",
+      "pos": "名詞",
+      "meaning": "交差点",
+      "note": "",
+      "level": 3,
+      "toeic": "at the intersection"
+     },
+     {
+      "word": "cross",
+      "pos": "動詞",
+      "meaning": "~を渡る",
+      "note": "",
+      "level": 2,
+      "toeic": "cross the street"
+     }
+    ],
+    "toeic": {
+     "scene": "屋外・交通",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語法",
+       "detail": "cross は他動詞"
+      },
+      {
+       "type": "語彙",
+       "detail": "pedestrian / intersection"
+      }
+     ],
+     "paraphrase": [
+      "People are walking across the road.",
+      "Walkers are crossing at a junction."
+     ]
+    },
+    "words": [
+     {
+      "w": "Pedestrians",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "crossing",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "street",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "intersection.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Pedestrians",
+      "f": "主語"
+     },
+     {
+      "t": "are crossing",
+      "f": "動詞句"
+     },
+     {
+      "t": "the street",
+      "f": "目的語"
+     },
+     {
+      "t": "at the intersection.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Pedestrians"
+     },
+     {
+      "t": "are crossing the street"
+     },
+     {
+      "t": "at the intersection."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Pedestrians are crossing ______ street at the intersection.",
+    "choices": [
+     "the",
+     "across the",
+     "over to the",
+     "through"
+    ],
+    "answer": 0,
+    "type": "語法",
+    "explanation": "cross は他動詞なので、前置詞を付けずに the street を目的語にします。across を重ねると誤りです。"
+   }
+  },
+  {
+   "id": "toeic-set6-13",
+   "text": "Some trees are reflected in the water.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792170000012,
+   "analysis": {
+    "translation": "木々が水面に映っています。",
+    "slash": [
+     {
+      "en": "Some trees",
+      "ja": "いくつかの木が"
+     },
+     {
+      "en": "are reflected",
+      "ja": "映っている"
+     },
+     {
+      "en": "in the water.",
+      "ja": "水面に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Some trees (S) are reflected (V)。be reflected in ~ で「~に映っている」。"
+    },
+    "clauses": [
+     {
+      "text": "Some trees are reflected in the water.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Some trees",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "are reflected",
+      "role": "V",
+      "note": "受動態(状態)"
+     },
+     {
+      "text": "in the water",
+      "role": "M",
+      "note": "映っている場所"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "映っている状態は、受動態で表します。"
+    },
+    "grammar": [
+     {
+      "point": "be reflected in ~",
+      "explanation": "「~に映っている」。in を使う点が問われます。"
+     },
+     {
+      "point": "reflect",
+      "explanation": "「~を映す」。受動態では映る物が主語になります。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "reflect",
+      "pos": "動詞",
+      "meaning": "~を映す",
+      "note": "",
+      "level": 3,
+      "toeic": "be reflected in the water"
+     },
+     {
+      "word": "tree",
+      "pos": "名詞",
+      "meaning": "木",
+      "note": "",
+      "level": 1,
+      "toeic": "some trees"
+     },
+     {
+      "word": "water",
+      "pos": "名詞",
+      "meaning": "水、水面",
+      "note": "",
+      "level": 1,
+      "toeic": "in the water"
+     }
+    ],
+    "toeic": {
+     "scene": "屋外・自然",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "受動態",
+       "detail": "be reflected in ~"
+      }
+     ],
+     "paraphrase": [
+      "The trees can be seen in the water.",
+      "A lake mirrors some trees."
+     ]
+    },
+    "words": [
+     {
+      "w": "Some",
+      "p": "det"
+     },
+     {
+      "w": "trees",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "reflected",
+      "p": "v"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "water.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Some trees",
+      "f": "主語"
+     },
+     {
+      "t": "are reflected",
+      "f": "動詞句(受動態)"
+     },
+     {
+      "t": "in the water.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Some trees"
+     },
+     {
+      "t": "are reflected"
+     },
+     {
+      "t": "in the water."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Some trees are ______ in the water.",
+    "choices": [
+     "reflected",
+     "reflecting",
+     "reflect",
+     "reflection"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "木は「映される」側なので are の後は過去分詞 reflected。reflecting は能動の進行形、reflect は原形、reflection は名詞です。"
+   }
+  },
+  {
+   "id": "toeic-set6-14",
+   "text": "A man is pouring coffee into a cup.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000013,
+   "analysis": {
+    "translation": "男性がカップにコーヒーを注いでいます。",
+    "slash": [
+     {
+      "en": "A man",
+      "ja": "男性が"
+     },
+     {
+      "en": "is pouring coffee",
+      "ja": "コーヒーを注いでいる"
+     },
+     {
+      "en": "into a cup.",
+      "ja": "カップに"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "A man (S) is pouring (V) coffee (O)。into a cup は注ぎ先を表します。"
+    },
+    "clauses": [
+     {
+      "text": "A man is pouring coffee into a cup.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A man",
+      "role": "S",
+      "note": "動作をする人"
+     },
+     {
+      "text": "is pouring",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "coffee",
+      "role": "O",
+      "note": "注ぐ物"
+     },
+     {
+      "text": "into a cup",
+      "role": "M",
+      "note": "注ぎ先"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "注いでいる動作を is pouring で描写します。"
+    },
+    "grammar": [
+     {
+      "point": "pour A into B",
+      "explanation": "「A を B に注ぐ」。into は内部への移動を表します。"
+     },
+     {
+      "point": "coffee は不可算名詞",
+      "explanation": "a coffee ではなく coffee と言います。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "pour",
+      "pos": "動詞",
+      "meaning": "~を注ぐ",
+      "note": "",
+      "level": 3,
+      "toeic": "pour coffee into a cup"
+     },
+     {
+      "word": "into",
+      "pos": "前置詞",
+      "meaning": "~の中へ",
+      "note": "",
+      "level": 2,
+      "toeic": "into a cup"
+     },
+     {
+      "word": "coffee",
+      "pos": "名詞",
+      "meaning": "コーヒー",
+      "note": "",
+      "level": 1,
+      "toeic": "a cup of coffee"
+     }
+    ],
+    "toeic": {
+     "scene": "飲食",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "into(内部への移動)と in(位置)の違い"
+      }
+     ],
+     "paraphrase": [
+      "Someone is filling a cup.",
+      "A man is serving a drink."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "man",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "pouring",
+      "p": "v"
+     },
+     {
+      "w": "coffee",
+      "p": "n"
+     },
+     {
+      "w": "into",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "cup.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A man",
+      "f": "主語"
+     },
+     {
+      "t": "is pouring",
+      "f": "動詞句"
+     },
+     {
+      "t": "coffee",
+      "f": "目的語"
+     },
+     {
+      "t": "into a cup.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A man"
+     },
+     {
+      "t": "is pouring coffee"
+     },
+     {
+      "t": "into a cup."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A man is pouring coffee ______ a cup.",
+    "choices": [
+     "into",
+     "from",
+     "over",
+     "along"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "注ぎ先(中)への移動を表すのは into。from は起点、over は上方、along は沿う動きで意味が合いません。"
+   }
+  },
+  {
+   "id": "toeic-set6-15",
+   "text": "Documents are spread out on the conference table.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792170000014,
+   "analysis": {
+    "translation": "書類が会議用テーブルの上に広げられています。",
+    "slash": [
+     {
+      "en": "Documents",
+      "ja": "書類が"
+     },
+     {
+      "en": "are spread out",
+      "ja": "広げられている"
+     },
+     {
+      "en": "on the conference table.",
+      "ja": "会議用テーブルの上に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Documents (S) are spread out (V)。広げられた状態を述べています。"
+    },
+    "clauses": [
+     {
+      "text": "Documents are spread out on the conference table.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Documents",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "are spread out",
+      "role": "V",
+      "note": "受動態(状態)"
+     },
+     {
+      "text": "on the conference table",
+      "role": "M",
+      "note": "位置"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "spread は原形・過去形・過去分詞が同じ形(spread - spread - spread)です。"
+    },
+    "grammar": [
+     {
+      "point": "spread の活用",
+      "explanation": "spread - spread - spread。受動態の are spread の形です。"
+     },
+     {
+      "point": "spread out",
+      "explanation": "「広げる、散らばらせる」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "spread out",
+      "pos": "熟語",
+      "meaning": "~を広げる",
+      "note": "",
+      "level": 3,
+      "toeic": "documents spread out on a table"
+     },
+     {
+      "word": "document",
+      "pos": "名詞",
+      "meaning": "書類",
+      "note": "",
+      "level": 2,
+      "toeic": "documents"
+     },
+     {
+      "word": "conference table",
+      "pos": "名詞",
+      "meaning": "会議用テーブル",
+      "note": "",
+      "level": 2,
+      "toeic": "on the conference table"
+     }
+    ],
+    "toeic": {
+     "scene": "会議室",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "受動態",
+       "detail": "spread の過去分詞は同形"
+      },
+      {
+       "type": "語彙",
+       "detail": "spread out"
+      }
+     ],
+     "paraphrase": [
+      "Papers are laid out on a table.",
+      "Files are scattered across the meeting table."
+     ]
+    },
+    "words": [
+     {
+      "w": "Documents",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "spread",
+      "p": "v"
+     },
+     {
+      "w": "out",
+      "p": "adv"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "conference",
+      "p": "n"
+     },
+     {
+      "w": "table.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Documents",
+      "f": "主語"
+     },
+     {
+      "t": "are spread out",
+      "f": "動詞句(受動態)"
+     },
+     {
+      "t": "on the conference table.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Documents"
+     },
+     {
+      "t": "are spread out"
+     },
+     {
+      "t": "on the conference table."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Documents are ______ out on the conference table.",
+    "choices": [
+     "spread",
+     "spreading",
+     "spreads",
+     "spreaded"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "spread は過去分詞も spread(不規則動詞)。spreaded という形は存在せず、spreading は能動の進行形、spreads は三単現です。"
+   }
+  },
+  {
+   "id": "toeic-set6-16",
+   "text": "A woman is talking on the phone near a window.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000015,
+   "analysis": {
+    "translation": "女性が窓の近くで電話で話しています。",
+    "slash": [
+     {
+      "en": "A woman",
+      "ja": "女性が"
+     },
+     {
+      "en": "is talking on the phone",
+      "ja": "電話で話している"
+     },
+     {
+      "en": "near a window.",
+      "ja": "窓の近くで"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "A woman (S) is talking (V)。on the phone は手段、near a window は場所の修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "A woman is talking on the phone near a window.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A woman",
+      "role": "S",
+      "note": "動作をする人"
+     },
+     {
+      "text": "is talking",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "on the phone",
+      "role": "M",
+      "note": "手段(電話で)"
+     },
+     {
+      "text": "near a window",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "電話中の動作を is talking で描写します。"
+    },
+    "grammar": [
+     {
+      "point": "on the phone",
+      "explanation": "「電話で」。手段を表す on です。"
+     },
+     {
+      "point": "near + 名詞",
+      "explanation": "「~の近くに」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "talk on the phone",
+      "pos": "熟語",
+      "meaning": "電話で話す",
+      "note": "",
+      "level": 3,
+      "toeic": "is talking on the phone"
+     },
+     {
+      "word": "near",
+      "pos": "前置詞",
+      "meaning": "~の近くに",
+      "note": "",
+      "level": 1,
+      "toeic": "near a window"
+     },
+     {
+      "word": "window",
+      "pos": "名詞",
+      "meaning": "窓",
+      "note": "",
+      "level": 1,
+      "toeic": "near a window"
+     }
+    ],
+    "toeic": {
+     "scene": "オフィス",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "on the phone の on"
+      }
+     ],
+     "paraphrase": [
+      "A woman is making a phone call.",
+      "Someone is on the phone by a window."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "woman",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "talking",
+      "p": "v"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "phone",
+      "p": "n"
+     },
+     {
+      "w": "near",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "window.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A woman",
+      "f": "主語"
+     },
+     {
+      "t": "is talking",
+      "f": "動詞句"
+     },
+     {
+      "t": "on the phone",
+      "f": "前置詞句"
+     },
+     {
+      "t": "near a window.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A woman"
+     },
+     {
+      "t": "is talking on the phone"
+     },
+     {
+      "t": "near a window."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A woman is talking ______ the phone near a window.",
+    "choices": [
+     "on",
+     "by",
+     "with",
+     "in"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「電話で話す」は talk on the phone。by・with・in は決まった言い方になりません。"
+   }
+  },
+  {
+   "id": "toeic-set6-17",
+   "text": "A boat is docked beside the pier.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792170000016,
+   "analysis": {
+    "translation": "ボートが桟橋のそばに停泊しています。",
+    "slash": [
+     {
+      "en": "A boat",
+      "ja": "ボートが"
+     },
+     {
+      "en": "is docked",
+      "ja": "停泊している"
+     },
+     {
+      "en": "beside the pier.",
+      "ja": "桟橋のそばに"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "A boat (S) is docked (V)。dock は「(船が)停泊する」の意味で、状態を受動態で述べます。"
+    },
+    "clauses": [
+     {
+      "text": "A boat is docked beside the pier.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A boat",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "is docked",
+      "role": "V",
+      "note": "受動態(状態)"
+     },
+     {
+      "text": "beside the pier",
+      "role": "M",
+      "note": "位置"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "停泊している状態を is docked で表します。"
+    },
+    "grammar": [
+     {
+      "point": "be docked",
+      "explanation": "「停泊している」。船の状態を述べる定番表現。"
+     },
+     {
+      "point": "beside",
+      "explanation": "「~のそばに」。next to とほぼ同じ意味です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "dock",
+      "pos": "動詞",
+      "meaning": "(船が)停泊する、接岸する",
+      "note": "",
+      "level": 3,
+      "toeic": "be docked at ~"
+     },
+     {
+      "word": "pier",
+      "pos": "名詞",
+      "meaning": "桟橋",
+      "note": "",
+      "level": 3,
+      "toeic": "beside the pier"
+     },
+     {
+      "word": "beside",
+      "pos": "前置詞",
+      "meaning": "~のそばに",
+      "note": "",
+      "level": 2,
+      "toeic": "beside the pier"
+     }
+    ],
+    "toeic": {
+     "scene": "港・水辺",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "dock / pier / harbor"
+      }
+     ],
+     "paraphrase": [
+      "A boat is tied up next to a pier.",
+      "A vessel is moored at a dock."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "boat",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "docked",
+      "p": "v"
+     },
+     {
+      "w": "beside",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "pier.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A boat",
+      "f": "主語"
+     },
+     {
+      "t": "is docked",
+      "f": "動詞句(受動態)"
+     },
+     {
+      "t": "beside the pier.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A boat"
+     },
+     {
+      "t": "is docked"
+     },
+     {
+      "t": "beside the pier."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A boat is ______ beside the pier.",
+    "choices": [
+     "docked",
+     "docking",
+     "dock",
+     "docks"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "ボートは「接岸させられている」状態なので受動態の docked。docking は進行形になり、dock は原形、docks は三単現で is に続きません。"
+   }
+  },
+  {
+   "id": "toeic-set6-18",
+   "text": "People are seated around a circular table.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792170000017,
+   "analysis": {
+    "translation": "人々が円形のテーブルを囲んで座っています。",
+    "slash": [
+     {
+      "en": "People",
+      "ja": "人々が"
+     },
+     {
+      "en": "are seated",
+      "ja": "座っている"
+     },
+     {
+      "en": "around a circular table.",
+      "ja": "円形のテーブルの周りに"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "People (S) are seated (V)。be seated は「着席している」状態を表します。"
+    },
+    "clauses": [
+     {
+      "text": "People are seated around a circular table.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "People",
+      "role": "S",
+      "note": "複数の人"
+     },
+     {
+      "text": "are seated",
+      "role": "V",
+      "note": "受動態(座っている状態)"
+     },
+     {
+      "text": "around a circular table",
+      "role": "M",
+      "note": "位置"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "be seated は「座っている」状態、sit down は「座る」動作です。"
+    },
+    "grammar": [
+     {
+      "point": "be seated",
+      "explanation": "「着席している」。状態を表すので、動作の sit down と区別します。"
+     },
+     {
+      "point": "around + 名詞",
+      "explanation": "「~の周りに」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "be seated",
+      "pos": "熟語",
+      "meaning": "着席している",
+      "note": "",
+      "level": 3,
+      "toeic": "are seated around a table"
+     },
+     {
+      "word": "circular",
+      "pos": "形容詞",
+      "meaning": "円形の",
+      "note": "",
+      "level": 3,
+      "toeic": "a circular table"
+     },
+     {
+      "word": "around",
+      "pos": "前置詞",
+      "meaning": "~の周りに",
+      "note": "",
+      "level": 1,
+      "toeic": "around a table"
+     }
+    ],
+    "toeic": {
+     "scene": "会議・飲食",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "be seated と sit down の区別"
+      }
+     ],
+     "paraphrase": [
+      "Some people are sitting around a round table.",
+      "Attendees are gathered at a table."
+     ]
+    },
+    "words": [
+     {
+      "w": "People",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "seated",
+      "p": "v"
+     },
+     {
+      "w": "around",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "circular",
+      "p": "adj"
+     },
+     {
+      "w": "table.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "People",
+      "f": "主語"
+     },
+     {
+      "t": "are seated",
+      "f": "動詞句(受動態)"
+     },
+     {
+      "t": "around a circular table.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "People"
+     },
+     {
+      "t": "are seated"
+     },
+     {
+      "t": "around a circular table."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "People are ______ around a circular table.",
+    "choices": [
+     "seated",
+     "seating",
+     "seat",
+     "seats"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "「座っている」状態は be seated。seating は能動の進行形で意味が変わり、seat は原形、seats は三単現で、are に続けられません。"
+   }
+  },
+  {
+   "id": "toeic-set6-19",
+   "text": "A man is unloading luggage from the trunk of a car.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792170000018,
+   "analysis": {
+    "translation": "男性が車のトランクから荷物を降ろしています。",
+    "slash": [
+     {
+      "en": "A man",
+      "ja": "男性が"
+     },
+     {
+      "en": "is unloading luggage",
+      "ja": "荷物を降ろしている"
+     },
+     {
+      "en": "from the trunk of a car.",
+      "ja": "車のトランクから"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "A man (S) is unloading (V) luggage (O)。from ~ が荷物の出どころを表します。"
+    },
+    "clauses": [
+     {
+      "text": "A man is unloading luggage from the trunk of a car.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A man",
+      "role": "S",
+      "note": "動作をする人"
+     },
+     {
+      "text": "is unloading",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "luggage",
+      "role": "O",
+      "note": "降ろす物"
+     },
+     {
+      "text": "from the trunk of a car",
+      "role": "M",
+      "note": "降ろす元"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "積荷を降ろしている最中の動作を is unloading で描写します。"
+    },
+    "grammar": [
+     {
+      "point": "luggage は不可算名詞",
+      "explanation": "a luggage とは言わず、luggage(または pieces of luggage)です。"
+     },
+     {
+      "point": "unload A from B",
+      "explanation": "「B から A を降ろす」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "unload",
+      "pos": "動詞",
+      "meaning": "~を降ろす",
+      "note": "",
+      "level": 3,
+      "toeic": "unload luggage from ~"
+     },
+     {
+      "word": "luggage",
+      "pos": "名詞",
+      "meaning": "荷物(旅行用)",
+      "note": "",
+      "level": 3,
+      "toeic": "不可算名詞"
+     },
+     {
+      "word": "trunk",
+      "pos": "名詞",
+      "meaning": "(車の)トランク",
+      "note": "",
+      "level": 2,
+      "toeic": "the trunk of a car"
+     }
+    ],
+    "toeic": {
+     "scene": "交通・旅行",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "luggage は不可算名詞"
+      },
+      {
+       "type": "語彙",
+       "detail": "unload / load"
+      }
+     ],
+     "paraphrase": [
+      "Someone is taking bags out of a car.",
+      "A man is removing luggage from a vehicle."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "man",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "unloading",
+      "p": "v"
+     },
+     {
+      "w": "luggage",
+      "p": "n"
+     },
+     {
+      "w": "from",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "trunk",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "car.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A man",
+      "f": "主語"
+     },
+     {
+      "t": "is unloading",
+      "f": "動詞句"
+     },
+     {
+      "t": "luggage",
+      "f": "目的語"
+     },
+     {
+      "t": "from the trunk of a car.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A man"
+     },
+     {
+      "t": "is unloading luggage"
+     },
+     {
+      "t": "from the trunk of a car."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A man is ______ luggage from the trunk of a car.",
+    "choices": [
+     "unloading",
+     "loading up",
+     "packing",
+     "filling"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "トランクから荷物を「降ろす」のは unloading。loading up は積み込む、packing は詰める、filling は満たすで、動作の向きが合いません。"
+   }
+  },
+  {
+   "id": "toeic-set6-20",
+   "text": "Lights are hanging from the ceiling of the lobby.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792170000019,
+   "analysis": {
+    "translation": "ロビーの天井から照明が下がっています。",
+    "slash": [
+     {
+      "en": "Lights",
+      "ja": "照明が"
+     },
+     {
+      "en": "are hanging",
+      "ja": "下がっている"
+     },
+     {
+      "en": "from the ceiling of the lobby.",
+      "ja": "ロビーの天井から"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Lights (S) are hanging (V)。from the ceiling が吊られている起点を表します。"
+    },
+    "clauses": [
+     {
+      "text": "Lights are hanging from the ceiling of the lobby.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Lights",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "are hanging",
+      "role": "V",
+      "note": "現在進行形(状態)"
+     },
+     {
+      "text": "from the ceiling of the lobby",
+      "role": "M",
+      "note": "吊られている場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "hang は「ぶら下がっている」状態を -ing で表します。物が主語でも使えます。"
+    },
+    "grammar": [
+     {
+      "point": "hang from ~",
+      "explanation": "「~から下がっている」。from が起点を示します。"
+     },
+     {
+      "point": "hang の活用",
+      "explanation": "hang - hung - hung(物を吊る)。写真では hanging が頻出です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "hang",
+      "pos": "動詞",
+      "meaning": "ぶら下がっている",
+      "note": "",
+      "level": 3,
+      "toeic": "lights hanging from the ceiling"
+     },
+     {
+      "word": "ceiling",
+      "pos": "名詞",
+      "meaning": "天井",
+      "note": "",
+      "level": 3,
+      "toeic": "from the ceiling"
+     },
+     {
+      "word": "lobby",
+      "pos": "名詞",
+      "meaning": "ロビー",
+      "note": "",
+      "level": 2,
+      "toeic": "in the lobby"
+     }
+    ],
+    "toeic": {
+     "scene": "オフィス・ロビー",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "hang from と hang on の違い"
+      },
+      {
+       "type": "語彙",
+       "detail": "ceiling(天井)の綴り"
+      }
+     ],
+     "paraphrase": [
+      "Lamps are suspended from the ceiling.",
+      "Some lights are hung above the lobby."
+     ]
+    },
+    "words": [
+     {
+      "w": "Lights",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "hanging",
+      "p": "v"
+     },
+     {
+      "w": "from",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "ceiling",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "lobby.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Lights",
+      "f": "主語"
+     },
+     {
+      "t": "are hanging",
+      "f": "動詞句"
+     },
+     {
+      "t": "from the ceiling of the lobby.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Lights"
+     },
+     {
+      "t": "are hanging"
+     },
+     {
+      "t": "from the ceiling of the lobby."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Lights are hanging ______ the ceiling of the lobby.",
+    "choices": [
+     "from",
+     "on top",
+     "at",
+     "over to"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「~から下がっている」は hang from ~。on top は後ろに of が必要、at と over to は意味が合いません。"
+   }
+  }
+ ],
+ "words": []
+}

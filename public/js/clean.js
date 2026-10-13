@@ -122,6 +122,44 @@ const Clean = (() => {
   const partNo = v => { const m = /^\s*(?:part|パート)?\s*([1-7])(?!\d)/i.exec(String(v == null ? "" : v)); return m ? "Part " + m[1] : "" };
   const partOf = r => r.part || partNo(r.toeic && r.toeic.part); // 英文のパート。part が無い古いデータは、TOEIC解説のパートから
 
+  // ---------- AI による確認(書き出し → AI が確認・修正 → 修正として取り込み) ----------
+  // 確認の対象にする項目と、画面に出す名前
+  const REVIEW = { ja: "和訳", slash: "意味の区切り", phrases: "文法区切り", words: "品詞", iu: "IU", vocab: "単語", grammar: "文法の解説", toeic: "TOEIC解説", quiz: "4択", elements: "文構造", clauses: "節", pattern: "文型", tense: "時制", level: "難易度", part: "パート" };
+  // 確認用の書き出し。学習の状態・復習・イラスト・発音記号は入れない(発音記号は辞書から付くので、AI に見せない)
+  function slim(r) {
+    const o = {
+      text: r.text, level: r.level, part: partOf(r), groups: r.groups || [],
+      analysis: {
+        translation: r.ja, slash: (r.slash || []).map(x => ({ en: x.en, ja: x.ja })), words: r.words, phrases: r.phrases,
+        iu: (r.iu || []).map(x => ({ t: x.t })), vocab: (r.vocab || []).map(v => { const { ipa, ...rest } = v; return rest }),
+        pattern: r.pattern, clauses: r.clauses, elements: r.elements, tense: r.tense, grammar: r.grammar, toeic: r.toeic
+      },
+      quiz: r.quiz
+    };
+    return JSON.parse(JSON.stringify(o)); // null・undefined を落とす
+  }
+  const cmp = v => JSON.stringify(v, (k, x) => (k === "ipa" ? undefined : x));
+  const blank = v => v == null || v === "" || (Array.isArray(v) && !v.length);
+  // 検査を通した新しい英文 add と、いまの英文 ex を比べて、違う項目の名前(キー)を返す。add に無い・空の項目は、見ない
+  function diffReview(ex, add) {
+    return Object.keys(REVIEW).filter(k => !blank(add[k]) && cmp(ex[k]) !== cmp(add[k]));
+  }
+  // 違う項目を、add の内容に差し替える。発音記号が同じ語・区切りには引き継ぐ。「確認済み」にする(学習の状態・復習・間違いの記録・グループは残す)
+  function applyReview(ex, add) {
+    const keys = diffReview(ex, add);
+    for (const k of keys) {
+      const nv = add[k];
+      if (k === "slash" || k === "iu" || k === "vocab") {
+        const key = x => (k === "slash" ? x.en : k === "iu" ? x.t : x.word).toLowerCase();
+        const old = new Map((ex[k] || []).map(x => [key(x), x.ipa]));
+        nv.forEach(x => { if (!x.ipa && old.get(key(x))) x.ipa = old.get(key(x)) });
+      }
+      ex[k] = nv;
+    }
+    ex.verified = true;
+    return keys;
+  }
+
   function level(v) { const n = +v; return [600, 730, 860].includes(n) ? n : null; }
   function date(s) { return typeof s === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s) ? s : null; }
   // 作った順に並ぶ id(IndexedDB は id 順に返すので、同じ瞬間に作ったものも、作った順になる)
@@ -260,5 +298,5 @@ const Clean = (() => {
     return c;
   }
 
-  return { PARTS, partNo, partOf, CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
+  return { REVIEW, slim, diffReview, applyReview, PARTS, partNo, partOf, CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
 })();

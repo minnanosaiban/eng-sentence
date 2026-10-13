@@ -81,6 +81,32 @@ ${FILE_BODY("英文(原文のまま、1文字も変えない)")}
 ${list && list.length ? list.map((s, i) => `${i + 1}. ${s}`).join("\n") : "(ここに英文を、1行に1文で貼り付けてください)"}`;
 
   // AI が英文も作る版。o = { n: 個数, level: "混ぜる"|"600"|"730"|"860", part: "Part 5" など(空なら指定なし), scene: 場面(空なら幅広く), group: グループ名(空なら無し), memo: 自由な追加指定 }
+  // 登録済みの英文の解析を、他の AI のチャットで確認・修正してもらうプロンプト。items = Clean.slim の配列
+  const review = items => `あなたは日本の英語教師です。次の JSON は、TOEIC 対策の英語学習アプリに登録されている、英文とその解析(AI が作ったもの)です。間違いや不自然な点がないか確認し、直した JSON を返してください。
+
+【確認すること】
+- 和訳(translation): 英文の意味と合っているか。不自然な日本語や誤訳がないか。
+- 区切り(slash・phrases・iu): つなぐと原文と完全に一致するか。区切りの位置が自然か。
+- 品詞(words): 各語の品詞コードが正しいか。
+- 単語(vocab): この文脈での意味が正しいか。
+- 文構造・節・文型・時制・文法の解説(pattern・clauses・elements・tense・grammar): 説明が正しいか。
+- TOEIC 解説(toeic): パート(part)・場面・論点が、この英文に合っているか。
+- 4択(quiz): 正解が1つだけで、正解の選択肢を空所に入れると原文になるか。誤答が本当に誤りか。解説が正しいか。空所は1か所か。
+- 難易度(level): 600 / 730 / 860 のどれが近いか。
+
+【守ること】
+- 英文(text)は、1文字も変えない。
+- 間違いがない項目は、そのまま返す(直しすぎない)。直すときは、下の「規則」に従う。
+- 出力は JSON だけ(前後の説明は不要)。次の形で、sentences は元と同じ数・同じ順番、changes は直した箇所の一覧(直した箇所がなければ空の配列)。
+{"sentences":[ 元の JSON と同じ形(text, level, part, groups, analysis, quiz) ],
+ "changes":[{"n":英文の番号(1から),"field":"直した項目(例: translation / slash / quiz)","before":"直す前(短く)","after":"直した後(短く)","reason":"直した理由(日本語で短く)"}]}
+
+【規則】
+${RULES}
+
+【確認する JSON】
+${JSON.stringify({ sentences: items })}`;
+
   // パートごとの英文の作り方(Part 1〜4 は聞き取りの文なので、1文ではなく、まとまりで作る)
   const PART_GUIDE = {
     "Part 1": "写真描写(聞き取り)。1枚の写真を見て説明する、1文。人の動作は現在進行形(is/are + -ing)、人がいない写真は物の状態(受動態・現在完了の受動態・位置の前置詞)で述べる。",
@@ -159,7 +185,7 @@ ${FILE_BODY("あなたが作った英文(1文字も変えずに、slash・words�
 
   // ---------- 設定 ----------
   return {
-    CATS, prompt: { one, batch, file, make }, parseLoose, gemini, copyPaste,
+    CATS, prompt: { one, batch, review, file, make }, parseLoose, gemini, copyPaste,
     get cfg() { return cfg },
     async load() { try { const c = await Store.getMeta("ai", null); if (c && typeof c === "object") cfg = { ...DEFAULT, ...c } } catch {} return cfg },
     async save(c) {

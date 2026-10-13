@@ -218,3 +218,6 @@ table.v tr:first-child td{border-top:1px solid var(--line)}
 .chip .n{margin-left:6px;color:var(--sub)}
 .chip[aria-pressed="true"]{background:var(--pri);color:var(--pri-tx);border-color:var(--pri)}
 .chip[aria-pressed="true"] .n{color:inherit}
+
+.fixprev{margin-top:10px;padding:8px;border:1px solid var(--line,#ccc);border-radius:8px}
+.fixprev ul{margin:4px 0 8px;padding-left:1.2em}

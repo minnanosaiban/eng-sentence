@@ -105,6 +105,76 @@
     toast(`${label}: ${msg.join(" / ") || "追加するものはありませんでした"}`);
   }
 
+  // ---------- AI による確認(書き出し → 修正として取り込み) ----------
+  const MAX_REVIEW = 10;
+  const selRows = () => rows.filter(r => sel.sentence.has(r.id));
+  const reviewItems = () => {
+    const l = selRows();
+    if (!l.length) { toast("確認する英文を、選んでください"); return null }
+    if (l.length > MAX_REVIEW) { toast(`一度に確認できるのは ${MAX_REVIEW} 文までです(いま ${l.length} 文)。選びなおしてください`); return null }
+    return l.map(Clean.slim);
+  };
+  async function clip(text) { try { await navigator.clipboard.writeText(text) } catch { const t = document.createElement("textarea"); t.value = text; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove() } }
+  $("#btnReviewCopy").onclick = async () => { const it = reviewItems(); if (!it) return; await clip(AI.prompt.review(it)); toast(`${it.length} 文の確認用プロンプトをコピーしました。チャットに貼り付けてください`) };
+  $("#btnReviewSave").onclick = () => {
+    const it = reviewItems(); if (!it) return;
+    const blob = new Blob([JSON.stringify({ sentences: it }, null, 1)], { type: "application/json" }), a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = "eng-sentence-review.json"; a.click(); URL.revokeObjectURL(a.href);
+    toast(`${it.length} 文を保存しました。AI のチャットに渡すときは、「確認すること」を添えてください(「AI に確認してもらう(コピー)」は、それも含みます)`);
+  };
+  $("#btnVerifySel").onclick = async () => {
+    const l = selRows().filter(r => !r.verified); if (!l.length) return toast("選んだ英文は、すべて確認済みです");
+    l.forEach(r => { r.verified = true }); await Store.put(l, "sentences"); renderPick(); toast(`${l.length} 文を確認済みにしました`);
+  };
+
+  // 修正として取り込む: 英文の本文が同じものだけ。解析と4択を差し替え、確認済みにする(状態・復習・間違い・グループは残す)
+  let fixPending = null;
+  function previewFix(payload) {
+    const have = new Map(rows.map(r => [r.text.toLowerCase(), r]));
+    const items = [], missing = [];
+    for (const o of payload.sentences || []) {
+      const add = Clean.sentence(o); if (!add) continue;
+      const ex = have.get(add.text.toLowerCase());
+      if (!ex) { missing.push(add.text); continue }
+      items.push({ ex, add, keys: Clean.diffReview(ex, add) });
+    }
+    return { items, missing, changes: Array.isArray(payload.changes) ? payload.changes : [] };
+  }
+  function showFix(p) {
+    const ch = p.items.filter(i => i.keys.length), same = p.items.length - ch.length;
+    $("#fixSum").textContent = `修正あり ${ch.length} 文 / 変更なし ${same} 文${p.missing.length ? ` / 登録に無い英文 ${p.missing.length} 文(取り込みません)` : ""}`;
+    const li = ch.map(i => `<li>${esc(i.ex.text.slice(0, 60))}${i.ex.text.length > 60 ? "…" : ""}<br>差し替え: ${i.keys.map(k => Clean.REVIEW[k]).join("、")}</li>`).join("");
+    const notes = p.changes.slice(0, 60).map(c => `<li>${esc(`${c.n ?? ""}. ${c.field ?? ""}: ${String(c.before ?? "").slice(0, 80)} → ${String(c.after ?? "").slice(0, 80)}(${String(c.reason ?? "").slice(0, 80)})`)}</li>`).join("");
+    $("#fixList").innerHTML = (li ? `<b>差し替わる項目</b><ul>${li}</ul>` : "") + (notes ? `<b>AI が書いた、直した箇所</b><ul>${notes}</ul>` : "");
+    $("#btnFixApply").disabled = !ch.length && !same;
+    $("#fixPrev").hidden = false;
+  }
+  $("#btnFixCancel").onclick = () => { fixPending = null; $("#fixPrev").hidden = true };
+  $("#btnFixApply").onclick = async () => {
+    if (!fixPending) return;
+    const touched = [], newChunks = [];
+    let n = 0;
+    for (const { ex, add, keys } of fixPending.items) {
+      Clean.applyReview(ex, add); touched.push(ex); if (keys.length) n++;
+    }
+    await Store.put(touched, "sentences");
+    if (lackIpa().s) await fillIpa(); // 発音記号は辞書から(先に付けて、意味句・IU の表にも引き継ぐ)
+    for (const r of touched) newChunks.push(...Clean.chunksOf(r));
+    // 意味句・IU の表も、新しい区切りに合わせる(区切りが変わった古いものは外す)
+    const texts = new Set(touched.map(r => r.text.toLowerCase())), keep = new Set(newChunks.map(c => Clean.chunkKey({ ...c, ex: c.ex })));
+    const old = chunks.filter(c => texts.has(c.ex.toLowerCase()) && !keep.has(Clean.chunkKey(c)));
+    if (old.length) { await Store.del(old.map(c => c.id), "chunks"); chunks = chunks.filter(c => !old.includes(c)) }
+    await importChunks(newChunks); for (const r of touched) await importWords(Clean.wordsOf(r));
+    fixPending = null; $("#fixPrev").hidden = true; $("#jsonIn").value = ""; renderAll();
+    toast(`修正: ${n} 文を差し替え、${touched.length} 文を確認済みにしました`);
+  };
+
+  // JSON(貼り付け・ファイル)の受け口。「修正として取り込む」にチェックがあれば、確認画面を出す
+  async function takeJson(data, label, opts) {
+    if ($("#jsonFix").checked) { fixPending = previewFix(data); showFix(fixPending); return }
+    await addFrom(data, label, opts);
+  }
+
   // ---------- 登録の方法(① Gemini API / ② 他の AI のチャット / ③ サンプルなど) ----------
   function setReg(r) {
     document.querySelectorAll("#regNav button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === r)));
@@ -135,7 +205,7 @@
   };
   $("#btnJsonPaste").onclick = async () => {
     const t = $("#jsonIn").value.trim(); if (!t) return toast("JSON を貼り付けてください");
-    try { await addFrom(normPayload(AI.parseLoose(t)), "JSON"); $("#jsonIn").value = "" }
+    try { const d = AI.parseLoose(t); await takeJson({ ...normPayload(d), changes: d && d.changes }, "JSON"); if (!$("#jsonFix").checked) $("#jsonIn").value = "" }
     catch (err) { toast("JSON を読めませんでした: " + err.message) }
   };
 
@@ -171,7 +241,7 @@
     const b = e.currentTarget; b.disabled = true;
     try {
       const all = { sentences: [], words: [], chunks: [] };
-      for (const f of ["toeic-sentences-analyzed.json", "toeic-sentences-2-analyzed.json", "toeic-sentences-3-analyzed.json", "toeic-sentences-4-analyzed.json", "toeic-sentences-5-analyzed.json"]) {
+      for (const f of ["toeic-sentences-analyzed.json", "toeic-sentences-2-analyzed.json", "toeic-sentences-3-analyzed.json", "toeic-sentences-4-analyzed.json", "toeic-sentences-5-analyzed.json", "toeic-sentences-6-analyzed.json"]) {
         const r = await fetch("samples/" + f); if (!r.ok) throw new Error(f + " を読めません");
         const d = parseFile(f, await r.text()); all.sentences.push(...d.sentences); all.words.push(...d.words);
       }
@@ -186,7 +256,7 @@
   };
   $("#file").onchange = $("#fileJson").onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
-    try { await addFrom(parseFile(f.name, await f.text()), f.name, { keepState: /\.json$/i.test(f.name) }) }
+    try { const text = await f.text(), d = parseFile(f.name, text); await takeJson(/\.json$/i.test(f.name) ? { ...d, changes: JSON.parse(text).changes } : d, f.name, { keepState: /\.json$/i.test(f.name) }) }
     catch (err) { toast("読み込めませんでした: " + err.message) }
     e.target.value = "";
   };
@@ -213,6 +283,7 @@
       (!g || (r.groups || []).includes(g)) &&
       (!st || (st === "not-mastered" ? r.status !== "mastered" : r.status === st)) &&
       (!lv || String(r.level) === lv) &&
+      (unit !== "sentence" || !$("#fver").value || ($("#fver").value === "yes") === !!r.verified) &&
       (unit !== "sentence" || !pt || (pt === "none" ? !Clean.partOf(r) : Clean.partOf(r) === pt)) &&
       ((unit !== "sentence" && unit !== "word") || !$("#fmis").value || (r.mistakes || []).length > 0));
   }
@@ -224,7 +295,7 @@
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
     const part = unit === "sentence" ? Clean.partOf(r) : "";
-    const tags = `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}<span class="tag">${esc(Clean.STATUS[r.status])}</span>${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${(r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("")}`;
+    const tags = `${unit === "sentence" && !r.verified ? `<span class="tag">未確認</span>` : ""}${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}<span class="tag">${esc(Clean.STATUS[r.status])}</span>${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${(r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("")}`;
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}<span class="m"><br>${esc(r.ja)}</span>`
       : unit === "word"
@@ -251,7 +322,7 @@
   }
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
-  ["#fq", "#fgroup", "#fstatus", "#flevel", "#fpart", "#flen", "#fpos", "#fmis"].forEach(s => $(s).addEventListener("input", renderPick));
+  ["#fq", "#fgroup", "#fstatus", "#flevel", "#fpart", "#fver", "#flen", "#fpos", "#fmis"].forEach(s => $(s).addEventListener("input", renderPick));
   $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
   $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
   $("#btnRand").onclick = () => {
@@ -767,7 +838,7 @@
       const p = await Store.getMeta("prefs", null);
       if (p && typeof p === "object") prefs = { ...prefs, ...p, aux: { ...prefs.aux, ...(p.aux || {}) }, waux: { ...prefs.waux, ...(p.waux || {}) }, sh: { ...prefs.sh, ...(p.sh || {}) }, view: { ...prefs.view, ...(p.view || {}) } };
       // 古い設定(見方を1つだけ選ぶ形)から移す
-      if (p.disp === "pos") prefs.posOn = true; else if (p.disp && prefs.view[p.disp] === false) prefs.view[p.disp] = true;
+      if (p && p.disp === "pos") prefs.posOn = true; else if (p && p.disp && prefs.view[p.disp] === false) prefs.view[p.disp] = true;
       delete prefs.disp;
       if (p && p.gramOn === undefined && (p.posOn || (p.view && p.view.phrases) || (p.aux && p.aux.grammar))) prefs.gramOn = true; // 文法区切り・品詞・文法を、「文法」にまとめた
       delete prefs.view.phrases; delete prefs.aux.grammar;
