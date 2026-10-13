@@ -59,6 +59,24 @@ JSON形式:
 ${SHAPE}
 ${RULES}`;
 
+  // 他の AI のチャットで、登録用の JSON をまとめて作ってもらうプロンプト。list が空なら、英文をあとで貼るひな形
+  const file = list => `あなたは日本の英語教師です。次の英文それぞれを分析して、英語学習アプリに登録するための JSON を作ってください。出力は JSON だけ(前後の説明は不要)。
+
+【出力の形】
+{"sentences":[
+ {"text":"英文(原文のまま、1文字も変えない)","level":難易度(600 / 730 / 860 のいずれか),"part":"Part 1 / Part 2 / Part 3 / Part 4 / Part 5 / Part 6 / Part 7 のいずれか","groups":["グループ名(任意。なければ空の配列)"],
+  "analysis":{ 下の「1文あたりの形」の translation, slash, words, phrases, iu, vocab, pattern, clauses, elements, tense, grammar, toeic },
+  "quiz":{ 下の「1文あたりの形」の quiz }}
+]}
+sentences には、英文と同じ数・同じ順番で入れます。
+
+【1文あたりの形】(difficulty は level に、quiz は quiz に入れ、それ以外は analysis に入れる)
+${SHAPE}
+${RULES}
+
+【英文】
+${list && list.length ? list.map((s, i) => `${i + 1}. ${s}`).join("\n") : "(ここに英文を、1行に1文で貼り付けてください)"}`;
+
   // ---------- 返事の読み取り ----------
   function parseLoose(t) {
     t = String(t || "").trim();
@@ -102,7 +120,7 @@ ${RULES}`;
 
   // ---------- 設定 ----------
   return {
-    CATS, prompt: { one, batch }, parseLoose, gemini, copyPaste,
+    CATS, prompt: { one, batch, file }, parseLoose, gemini, copyPaste,
     get cfg() { return cfg },
     async load() { try { const c = await Store.getMeta("ai", null); if (c && typeof c === "object") cfg = { ...DEFAULT, ...c } } catch {} return cfg },
     async save(c) {

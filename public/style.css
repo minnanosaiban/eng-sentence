@@ -18,7 +18,8 @@ body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.7 system-ui,"Hira
 @media (max-width:540px){.top{grid-template-columns:1fr auto}#tabs{grid-row:2;grid-column:1/-1;justify-self:center}}
 .topr #syncStatus{border:0;background:none;padding:2px 4px}
 .gear{font-size:20px;line-height:1;padding:4px 8px}
-#setNav{margin-bottom:12px}
+#setNav,#regNav{margin-bottom:12px}
+#regNav button{text-align:left}
 #tabs button{border:0;background:none;color:var(--sub);padding:6px 12px;border-radius:8px;font:inherit;cursor:pointer}
 #tabs button[aria-selected=true]{background:var(--pri);color:var(--pri-tx)}
 main{max-width:744px;margin:0 auto;padding:16px} /* iPad mini(第7世代)の縦向きの幅(744px)に合わせる。PC でも同じ幅 */

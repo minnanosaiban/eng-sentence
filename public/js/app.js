@@ -105,6 +105,30 @@
     toast(`${label}: ${msg.join(" / ") || "追加するものはありませんでした"}`);
   }
 
+  // ---------- 登録の方法(① Gemini API / ② 他の AI のチャット / ③ サンプルなど) ----------
+  function setReg(r) {
+    document.querySelectorAll("#regNav button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === r)));
+    document.querySelectorAll(".regp").forEach(e => { e.hidden = e.dataset.r !== r });
+  }
+  $("#regNav").onclick = e => { const b = e.target.closest("button[data-r]"); if (b) setReg(b.dataset.r) };
+  setReg("gemini");
+  const chatLines = () => $("#chatSrc").value.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  $("#btnChatPrompt").onclick = async () => {
+    const t = AI.prompt.file(chatLines().slice(0, 30)), ta = document.createElement("textarea");
+    try { await navigator.clipboard.writeText(t) } catch { ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove() }
+    toast(chatLines().length > 30 ? "プロンプトをコピーしました(英文は最初の30文だけ。残りは、別に分けて)" : "プロンプトをコピーしました。チャットに貼り付けてください");
+  };
+  $("#btnChatRegistered").onclick = () => {
+    const l = rows.filter(needsAI).map(r => r.text);
+    if (!l.length) return toast("解析が足りない英文は、ありません");
+    $("#chatSrc").value = l.slice(0, 30).join("\n"); toast(`解析が足りない英文を ${Math.min(30, l.length)} 文、入れました`);
+  };
+  $("#btnJsonPaste").onclick = async () => {
+    const t = $("#jsonIn").value.trim(); if (!t) return toast("JSON を貼り付けてください");
+    try { await addFrom(normPayload(AI.parseLoose(t)), "JSON"); $("#jsonIn").value = "" }
+    catch (err) { toast("JSON を読めませんでした: " + err.message) }
+  };
+
   // ---------- タブ ----------
   function setTab(t) {
     tab = t;
@@ -150,7 +174,7 @@
     await addFrom({ sentences: lines.map(text => ({ text, groups: g ? [g] : [] })) }, "貼り付け");
     $("#paste").value = "";
   };
-  $("#file").onchange = async e => {
+  $("#file").onchange = $("#fileJson").onchange = async e => {
     const f = e.target.files[0]; if (!f) return;
     try { await addFrom(parseFile(f.name, await f.text()), f.name, { keepState: /\.json$/i.test(f.name) }) }
     catch (err) { toast("読み込めませんでした: " + err.message) }
@@ -658,18 +682,18 @@
   // ---------- AI で解析(Gemini API / コピペモード) ----------
   // 足りない解析がある英文
   const needsAI = r => !r.ja || !r.slash || !r.phrases || !r.words || !r.iu || !(r.vocab && r.vocab.length) || !r.quiz;
-  let aiBusy = false, aiStop = false;
+  let aiBusy = false, aiStop = false, aiMode = "api";
 
   function renderAI() {
     const n = rows.filter(needsAI).length, c = AI.cfg;
-    $("#aiInfo").textContent = n ? `解析が足りない英文: ${n} 文(方法: ${c.mode === "api" ? "Gemini API" : "コピペモード"})` : (rows.length ? "すべての英文に、解析があります。" : "英文を登録すると、ここから解析できます。");
-    $("#btnAI").disabled = aiBusy || !n; $("#btnAIStop").hidden = !(aiBusy && c.mode === "api");
-    document.querySelectorAll("[name=aiMode]").forEach(r => { r.checked = r.value === c.mode });
+    $("#aiInfo").textContent = n ? `解析が足りない英文: ${n} 文` : (rows.length ? "すべての英文に、解析があります。" : "英文を登録すると、ここから解析できます。");
+    $("#btnAI").disabled = aiBusy || !n; $("#btnAICopy").disabled = aiBusy || !n; $("#btnAIStop").hidden = !(aiBusy && aiMode === "api");
+    $("#aiInfo2").textContent = n ? `解析が足りない英文: ${n} 文` : (rows.length ? "すべての英文に、解析があります。" : "");
     if (document.activeElement !== $("#apiKey")) $("#apiKey").value = c.apiKey;
     if (document.activeElement !== $("#aiModel")) $("#aiModel").value = c.model;
   }
   $("#aiSave").onclick = async () => {
-    await AI.save({ mode: document.querySelector("[name=aiMode]:checked").value, apiKey: $("#apiKey").value, model: $("#aiModel").value });
+    await AI.save({ mode: "api", apiKey: $("#apiKey").value, model: $("#aiModel").value });
     renderAI(); toast("設定を保存しました");
   };
 
@@ -688,12 +712,11 @@
     return c;
   }
 
-  async function runAI() {
+  async function runAI(mode) {
     const targets = rows.filter(needsAI);
     if (!targets.length || aiBusy) return;
-    const mode = AI.cfg.mode;
-    if (mode === "api" && !AI.cfg.apiKey) { $("#aiSet").open = true; return toast("Gemini API キーを入力するか、コピペモードに切り替えてください") }
-    aiBusy = true; aiStop = false; let done = 0, skipped = 0, err = "";
+    if (mode === "api" && !AI.cfg.apiKey) { $("#aiSet").open = true; return toast("Gemini API キーを入力してください(API キーが無いときは、「② 他の AI のチャットで JSON を作って登録」へ)") }
+    aiBusy = true; aiMode = mode; aiStop = false; let done = 0, skipped = 0, err = "";
     renderAI();
     try {
       if (mode === "api") {
@@ -719,7 +742,8 @@
     aiBusy = false; $("#aiProg").textContent = ""; renderAll();
     toast(`解析: ${done} 文に追加${skipped ? `、${skipped} 文は、検査を通らず見送り` : ""}${aiStop ? "(止めました)" : ""}${err ? "。中断: " + err : ""}`);
   }
-  $("#btnAI").onclick = runAI;
+  $("#btnAI").onclick = () => runAI("api");
+  $("#btnAICopy").onclick = () => runAI("copy");
   $("#btnAIStop").onclick = () => { aiStop = true };
 
   function renderAll() { if (tab === "rec") renderRec(); renderReg(); renderAI(); renderIpa(); if (tab === "pick") renderPick(); if (tab === "study") renderStudy() }
