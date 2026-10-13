@@ -1,0 +1,2374 @@
+{
+ "groups": [
+  {
+   "id": "g1",
+   "name": "Part 6 長文穴埋め"
+  },
+  {
+   "id": "g2",
+   "name": "長文:メール"
+  },
+  {
+   "id": "g3",
+   "name": "長文:お知らせ"
+  },
+  {
+   "id": "g4",
+   "name": "長文:社内メモ"
+  },
+  {
+   "id": "g5",
+   "name": "長文:求人"
+  },
+  {
+   "id": "g6",
+   "name": "長文:人事発表"
+  },
+  {
+   "id": "g7",
+   "name": "長文:社内通知"
+  }
+ ],
+ "items": [
+  {
+   "id": "toeic-set5-01",
+   "text": "Thank you for your order. Unfortunately, the item you requested is out of stock. We will ship it as soon as it becomes available.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792080000000,
+   "analysis": {
+    "translation": "ご注文ありがとうございます。あいにく、ご希望の商品は在庫切れです。入荷しだい発送いたします。",
+    "slash": [
+     {
+      "en": "Thank you for your order.",
+      "ja": "ご注文ありがとうございます"
+     },
+     {
+      "en": "Unfortunately, the item you requested is out of stock.",
+      "ja": "あいにく、ご希望の商品は在庫切れです"
+     },
+     {
+      "en": "We will ship it as soon as it becomes available.",
+      "ja": "入荷しだい発送します"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "the item (S) is (V) out of stock (C)。you requested が the item を修飾しています。"
+    },
+    "clauses": [
+     {
+      "text": "Thank you for your order. Unfortunately, the item you requested is out of stock. We will ship it as soon as it becomes available.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "the item you requested",
+      "role": "S",
+      "note": "省略された関係代名詞を含む主語"
+     },
+     {
+      "text": "is",
+      "role": "V",
+      "note": "be動詞"
+     },
+     {
+      "text": "out of stock",
+      "role": "C",
+      "note": "在庫切れ"
+     }
+    ],
+    "tense": {
+     "name": "現在形・未来形",
+     "explanation": "状態は現在形、これからの対応は will ship で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "as soon as + 節",
+      "explanation": "「~しだい」。接続詞なので後ろに主語と動詞が続きます。"
+     },
+     {
+      "point": "目的格の関係代名詞の省略",
+      "explanation": "the item (that) you requested。"
+     },
+     {
+      "point": "out of stock",
+      "explanation": "「在庫切れ」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "out of stock",
+      "pos": "熟語",
+      "meaning": "在庫切れで",
+      "note": "",
+      "level": 3,
+      "toeic": "The item is out of stock."
+     },
+     {
+      "word": "ship",
+      "pos": "動詞",
+      "meaning": "~を発送する",
+      "note": "",
+      "level": 3,
+      "toeic": "ship an order"
+     },
+     {
+      "word": "available",
+      "pos": "形容詞",
+      "meaning": "入手できる",
+      "note": "",
+      "level": 3,
+      "toeic": "become available"
+     },
+     {
+      "word": "unfortunately",
+      "pos": "副詞",
+      "meaning": "あいにく、残念ながら",
+      "note": "",
+      "level": 2,
+      "toeic": "文頭で悪い知らせを導く"
+     }
+    ],
+    "toeic": {
+     "scene": "顧客対応・注文",
+     "part": "Part 6",
+     "points": [
+      {
+       "type": "接続詞・副詞",
+       "detail": "as soon as(接続詞)と as long as・even though などの区別"
+      }
+     ],
+     "paraphrase": [
+      "The product is currently unavailable.",
+      "We will send it right after it arrives."
+     ]
+    },
+    "words": [
+     {
+      "w": "Thank",
+      "p": "v"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "your",
+      "p": "det"
+     },
+     {
+      "w": "order.",
+      "p": "n"
+     },
+     {
+      "w": "Unfortunately,",
+      "p": "adv"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "item",
+      "p": "n"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "requested",
+      "p": "v"
+     },
+     {
+      "w": "is",
+      "p": "v"
+     },
+     {
+      "w": "out",
+      "p": "adv"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "stock.",
+      "p": "n"
+     },
+     {
+      "w": "We",
+      "p": "pron"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "ship",
+      "p": "v"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "as",
+      "p": "adv"
+     },
+     {
+      "w": "soon",
+      "p": "adv"
+     },
+     {
+      "w": "as",
+      "p": "conj"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "becomes",
+      "p": "v"
+     },
+     {
+      "w": "available.",
+      "p": "adj"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Thank you for your order.",
+      "f": "文"
+     },
+     {
+      "t": "Unfortunately,",
+      "f": "副詞"
+     },
+     {
+      "t": "the item you requested",
+      "f": "主語(関係詞節つき)"
+     },
+     {
+      "t": "is out of stock.",
+      "f": "動詞句"
+     },
+     {
+      "t": "We will ship it as soon as it becomes available.",
+      "f": "文(副詞節)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Thank you for your order."
+     },
+     {
+      "t": "Unfortunately, the item you requested is out of stock."
+     },
+     {
+      "t": "We will ship it as soon as it becomes available."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 6",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Thank you for your order. Unfortunately, the item you requested is out of stock. We will ship it ______ it becomes available.",
+    "choices": [
+     "as soon as",
+     "as long as",
+     "even though",
+     "in case"
+    ],
+    "answer": 0,
+    "type": "接続詞",
+    "explanation": "「入荷しだい」は as soon as。as long as は「~である限り」、even though は「~だけれども」、in case は「~に備えて」で文意に合いません。"
+   }
+  },
+  {
+   "id": "toeic-set5-02",
+   "text": "The parking lot will be closed for repairs next week. Employees are asked to use the public garage across the street. We apologize for any inconvenience.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792080000001,
+   "analysis": {
+    "translation": "駐車場は来週、補修のため閉鎖されます。従業員の皆様は、通りの向かいの公共駐車場をご利用ください。ご不便をおかけして申し訳ありません。",
+    "slash": [
+     {
+      "en": "The parking lot will be closed for repairs next week.",
+      "ja": "駐車場は来週補修のため閉鎖されます"
+     },
+     {
+      "en": "Employees are asked to use the public garage across the street.",
+      "ja": "従業員は通りの向かいの公共駐車場の利用を求められています"
+     },
+     {
+      "en": "We apologize for any inconvenience.",
+      "ja": "ご不便をおかけして申し訳ありません"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "The parking lot (S) will be closed (V)。for repairs が閉鎖の理由を表します。"
+    },
+    "clauses": [
+     {
+      "text": "The parking lot will be closed for repairs next week. Employees are asked to use the public garage across the street. We apologize for any inconvenience.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The parking lot",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "will be closed",
+      "role": "V",
+      "note": "未来の受動態"
+     },
+     {
+      "text": "for repairs",
+      "role": "M",
+      "note": "理由"
+     },
+     {
+      "text": "next week",
+      "role": "M",
+      "note": "時期"
+     }
+    ],
+    "tense": {
+     "name": "未来の受動態・現在形の受動態",
+     "explanation": "閉鎖は will be closed、依頼は are asked to ~ で、行為者を出さずに伝えます。"
+    },
+    "grammar": [
+     {
+      "point": "be asked to + 動詞",
+      "explanation": "「~するよう求められている」。お知らせ文で依頼を丁寧に伝える形。"
+     },
+     {
+      "point": "apologize for ~",
+      "explanation": "「~をお詫びする」。for の後ろは名詞。"
+     },
+     {
+      "point": "across + 名詞",
+      "explanation": "「~の向かいに」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "inconvenience",
+      "pos": "名詞",
+      "meaning": "不便、迷惑",
+      "note": "",
+      "level": 3,
+      "toeic": "We apologize for any inconvenience."
+     },
+     {
+      "word": "repair",
+      "pos": "名詞",
+      "meaning": "補修",
+      "note": "",
+      "level": 3,
+      "toeic": "closed for repairs"
+     },
+     {
+      "word": "parking lot",
+      "pos": "名詞",
+      "meaning": "駐車場",
+      "note": "",
+      "level": 2,
+      "toeic": "The parking lot is closed."
+     },
+     {
+      "word": "apologize",
+      "pos": "動詞",
+      "meaning": "お詫びする",
+      "note": "",
+      "level": 2,
+      "toeic": "apologize for ~"
+     }
+    ],
+    "toeic": {
+     "scene": "社内お知らせ",
+     "part": "Part 6",
+     "points": [
+      {
+       "type": "受動態",
+       "detail": "be asked to ~ の形"
+      },
+      {
+       "type": "前置詞",
+       "detail": "apologize for と across の用法"
+      }
+     ],
+     "paraphrase": [
+      "Staff members should park in the public garage.",
+      "We are sorry for the trouble."
+     ]
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "parking",
+      "p": "n"
+     },
+     {
+      "w": "lot",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "closed",
+      "p": "v"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "repairs",
+      "p": "n"
+     },
+     {
+      "w": "next",
+      "p": "adj"
+     },
+     {
+      "w": "week.",
+      "p": "n"
+     },
+     {
+      "w": "Employees",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "asked",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "use",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "public",
+      "p": "adj"
+     },
+     {
+      "w": "garage",
+      "p": "n"
+     },
+     {
+      "w": "across",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "street.",
+      "p": "n"
+     },
+     {
+      "w": "We",
+      "p": "pron"
+     },
+     {
+      "w": "apologize",
+      "p": "v"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "any",
+      "p": "det"
+     },
+     {
+      "w": "inconvenience.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The parking lot",
+      "f": "主語"
+     },
+     {
+      "t": "will be closed",
+      "f": "動詞句(未来の受動態)"
+     },
+     {
+      "t": "for repairs next week.",
+      "f": "前置詞句"
+     },
+     {
+      "t": "Employees are asked",
+      "f": "動詞句(受動態)"
+     },
+     {
+      "t": "to use the public garage across the street.",
+      "f": "to不定詞句"
+     },
+     {
+      "t": "We apologize for any inconvenience.",
+      "f": "文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "The parking lot will be closed for repairs next week."
+     },
+     {
+      "t": "Employees are asked to use the public garage across the street."
+     },
+     {
+      "t": "We apologize for any inconvenience."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 6",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The parking lot will be closed for repairs next week. Employees ______ to use the public garage across the street. We apologize for any inconvenience.",
+    "choices": [
+     "are asked",
+     "ask",
+     "asking",
+     "have asked"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "従業員は「求められる」側なので受動態 are asked が正解。ask や have asked は、従業員が主語だと意味が合いません。asking は are の後で能動の進行形になってしまいます。"
+   }
+  },
+  {
+   "id": "toeic-set5-03",
+   "text": "Our company is moving to a new office on June 1. All staff members must pack their belongings by May 30. Therefore, no meetings will be scheduled during that week.",
+   "gids": [
+    "g1",
+    "g4"
+   ],
+   "bm": false,
+   "added": 1792080000002,
+   "analysis": {
+    "translation": "当社は6月1日に新しいオフィスへ移転します。社員全員は5月30日までに私物を荷造りしてください。そのため、その週は会議を入れません。",
+    "slash": [
+     {
+      "en": "Our company is moving to a new office on June 1.",
+      "ja": "当社は6月1日に新オフィスへ移転します"
+     },
+     {
+      "en": "All staff members must pack their belongings by May 30.",
+      "ja": "社員全員が5月30日までに私物を荷造りしなければなりません"
+     },
+     {
+      "en": "Therefore, no meetings will be scheduled during that week.",
+      "ja": "そのため、その週は会議を予定しません"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Our company (S) is moving (V)。to ~ は移転先、on June 1 は日付です。"
+    },
+    "clauses": [
+     {
+      "text": "Our company is moving to a new office on June 1. All staff members must pack their belongings by May 30. Therefore, no meetings will be scheduled during that week.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Our company",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "is moving",
+      "role": "V",
+      "note": "近い予定を表す現在進行形"
+     },
+     {
+      "text": "to a new office",
+      "role": "M",
+      "note": "移転先"
+     },
+     {
+      "text": "on June 1",
+      "role": "M",
+      "note": "日付"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・助動詞・未来の受動態",
+     "explanation": "予定は現在進行形、義務は must、結果は will be scheduled で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "接続副詞 Therefore",
+      "explanation": "前の内容の結果を導く。前文との論理関係(原因→結果)で選ぶ。"
+     },
+     {
+      "point": "by と during",
+      "explanation": "by は期限、during は期間を表す。"
+     },
+     {
+      "point": "no + 名詞",
+      "explanation": "「1つも~ない」という強い否定。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "belongings",
+      "pos": "名詞",
+      "meaning": "所持品、私物",
+      "note": "",
+      "level": 3,
+      "toeic": "pack personal belongings"
+     },
+     {
+      "word": "therefore",
+      "pos": "副詞",
+      "meaning": "そのため、したがって",
+      "note": "",
+      "level": 3,
+      "toeic": "文頭の接続副詞"
+     },
+     {
+      "word": "move",
+      "pos": "動詞",
+      "meaning": "移転する",
+      "note": "",
+      "level": 2,
+      "toeic": "move to a new office"
+     },
+     {
+      "word": "schedule",
+      "pos": "動詞",
+      "meaning": "~を予定する",
+      "note": "",
+      "level": 3,
+      "toeic": "be scheduled"
+     }
+    ],
+    "toeic": {
+     "scene": "社内・総務",
+     "part": "Part 6",
+     "points": [
+      {
+       "type": "接続詞・副詞",
+       "detail": "Therefore / However / Otherwise の使い分け"
+      }
+     ],
+     "paraphrase": [
+      "As a result, there will be no meetings that week.",
+      "Staff must finish packing before May 30."
+     ]
+    },
+    "words": [
+     {
+      "w": "Our",
+      "p": "det"
+     },
+     {
+      "w": "company",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "moving",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "office",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "June",
+      "p": "n"
+     },
+     {
+      "w": "1.",
+      "p": "n"
+     },
+     {
+      "w": "All",
+      "p": "det"
+     },
+     {
+      "w": "staff",
+      "p": "n"
+     },
+     {
+      "w": "members",
+      "p": "n"
+     },
+     {
+      "w": "must",
+      "p": "aux"
+     },
+     {
+      "w": "pack",
+      "p": "v"
+     },
+     {
+      "w": "their",
+      "p": "det"
+     },
+     {
+      "w": "belongings",
+      "p": "n"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "May",
+      "p": "n"
+     },
+     {
+      "w": "30.",
+      "p": "n"
+     },
+     {
+      "w": "Therefore,",
+      "p": "adv"
+     },
+     {
+      "w": "no",
+      "p": "det"
+     },
+     {
+      "w": "meetings",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "scheduled",
+      "p": "v"
+     },
+     {
+      "w": "during",
+      "p": "prep"
+     },
+     {
+      "w": "that",
+      "p": "det"
+     },
+     {
+      "w": "week.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Our company",
+      "f": "主語"
+     },
+     {
+      "t": "is moving",
+      "f": "動詞句(現在進行形)"
+     },
+     {
+      "t": "to a new office on June 1.",
+      "f": "前置詞句"
+     },
+     {
+      "t": "All staff members must pack their belongings by May 30.",
+      "f": "文(助動詞 must)"
+     },
+     {
+      "t": "Therefore,",
+      "f": "接続副詞"
+     },
+     {
+      "t": "no meetings will be scheduled during that week.",
+      "f": "文(未来の受動態)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Our company is moving to a new office on June 1."
+     },
+     {
+      "t": "All staff members must pack their belongings by May 30."
+     },
+     {
+      "t": "Therefore, no meetings will be scheduled during that week."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 6",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Our company is moving to a new office on June 1. All staff members must pack their belongings by May 30. ______ no meetings will be scheduled during that week.",
+    "choices": [
+     "Therefore,",
+     "However,",
+     "Otherwise,",
+     "Meanwhile,"
+    ],
+    "answer": 0,
+    "type": "接続詞",
+    "explanation": "前の文(移転作業で忙しくなる)の結果として「会議を入れない」と述べているので Therefore が正解。However は逆接、Otherwise は「さもなければ」、Meanwhile は「その間に」で、論理がつながりません。"
+   }
+  },
+  {
+   "id": "toeic-set5-04",
+   "text": "I am writing to inform you about a change in our return policy. Customers can now return items within sixty days of purchase. This new policy takes effect on March 1.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1792080000003,
+   "analysis": {
+    "translation": "返品規定の変更についてお知らせします。お客様は購入後60日以内であれば商品を返品できるようになりました。この新しい規定は3月1日に発効します。",
+    "slash": [
+     {
+      "en": "I am writing to inform you about a change in our return policy.",
+      "ja": "返品規定の変更についてお知らせします"
+     },
+     {
+      "en": "Customers can now return items within sixty days of purchase.",
+      "ja": "お客様は購入から60日以内に商品を返品できます"
+     },
+     {
+      "en": "This new policy takes effect on March 1.",
+      "ja": "この新規定は3月1日に発効します"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "I (S) am writing (V)。to inform you about ~ が手紙を書く目的を表します。"
+    },
+    "clauses": [
+     {
+      "text": "I am writing to inform you about a change in our return policy. Customers can now return items within sixty days of purchase. This new policy takes effect on March 1.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "I",
+      "role": "S",
+      "note": "書き手"
+     },
+     {
+      "text": "am writing",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "to inform you",
+      "role": "M",
+      "note": "目的(to不定詞)"
+     },
+     {
+      "text": "about a change in our return policy",
+      "role": "M",
+      "note": "知らせる内容"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・助動詞 can・現在形",
+     "explanation": "目的は I am writing to ~、可能は can、発効は takes effect で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "I am writing to ~",
+      "explanation": "メールの冒頭の定型。目的を述べる。"
+     },
+     {
+      "point": "within + 期間",
+      "explanation": "「~以内に」。期間の上限を表す。"
+     },
+     {
+      "point": "take effect",
+      "explanation": "「(規則などが)発効する」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "policy",
+      "pos": "名詞",
+      "meaning": "規定、方針",
+      "note": "",
+      "level": 3,
+      "toeic": "return policy"
+     },
+     {
+      "word": "take effect",
+      "pos": "熟語",
+      "meaning": "発効する",
+      "note": "",
+      "level": 3,
+      "toeic": "takes effect on March 1"
+     },
+     {
+      "word": "inform",
+      "pos": "動詞",
+      "meaning": "~に知らせる",
+      "note": "",
+      "level": 3,
+      "toeic": "inform you about ~"
+     },
+     {
+      "word": "purchase",
+      "pos": "名詞",
+      "meaning": "購入",
+      "note": "",
+      "level": 2,
+      "toeic": "within sixty days of purchase"
+     }
+    ],
+    "toeic": {
+     "scene": "顧客対応・規定",
+     "part": "Part 6",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "within(以内)と during・while の区別"
+      }
+     ],
+     "paraphrase": [
+      "The new rule starts on March 1.",
+      "Items can be returned up to sixty days after buying."
+     ]
+    },
+    "words": [
+     {
+      "w": "I",
+      "p": "pron"
+     },
+     {
+      "w": "am",
+      "p": "aux"
+     },
+     {
+      "w": "writing",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "inform",
+      "p": "v"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "about",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "change",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "our",
+      "p": "det"
+     },
+     {
+      "w": "return",
+      "p": "n"
+     },
+     {
+      "w": "policy.",
+      "p": "n"
+     },
+     {
+      "w": "Customers",
+      "p": "n"
+     },
+     {
+      "w": "can",
+      "p": "aux"
+     },
+     {
+      "w": "now",
+      "p": "adv"
+     },
+     {
+      "w": "return",
+      "p": "v"
+     },
+     {
+      "w": "items",
+      "p": "n"
+     },
+     {
+      "w": "within",
+      "p": "prep"
+     },
+     {
+      "w": "sixty",
+      "p": "det"
+     },
+     {
+      "w": "days",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "purchase.",
+      "p": "n"
+     },
+     {
+      "w": "This",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "policy",
+      "p": "n"
+     },
+     {
+      "w": "takes",
+      "p": "v"
+     },
+     {
+      "w": "effect",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "March",
+      "p": "n"
+     },
+     {
+      "w": "1.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "I am writing to inform you",
+      "f": "動詞句(to不定詞で目的)"
+     },
+     {
+      "t": "about a change in our return policy.",
+      "f": "前置詞句"
+     },
+     {
+      "t": "Customers can now return items",
+      "f": "文(助動詞 can)"
+     },
+     {
+      "t": "within sixty days of purchase.",
+      "f": "前置詞句"
+     },
+     {
+      "t": "This new policy takes effect on March 1.",
+      "f": "文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "I am writing to inform you about a change in our return policy."
+     },
+     {
+      "t": "Customers can now return items within sixty days of purchase."
+     },
+     {
+      "t": "This new policy takes effect on March 1."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 6",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "I am writing to inform you about a change in our return policy. Customers can now return items ______ sixty days of purchase. This new policy takes effect on March 1.",
+    "choices": [
+     "within",
+     "during",
+     "while",
+     "among"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「購入から60日以内に」と期間の上限を表すのは within。during は特定の期間の「間」を表し、while は接続詞、among は「~の間で(3つ以上)」で、意味が合いません。"
+   }
+  },
+  {
+   "id": "toeic-set5-05",
+   "text": "Brighton Hotel is looking for a front desk clerk. Applicants should have at least two years of experience in customer service. Interested candidates should send their resumes to the personnel office.",
+   "gids": [
+    "g1",
+    "g5"
+   ],
+   "bm": false,
+   "added": 1792080000004,
+   "analysis": {
+    "translation": "ブライトン・ホテルは、フロント係を募集しています。応募者は、接客の経験が少なくとも2年必要です。ご関心のある方は、人事部に履歴書を送ってください。",
+    "slash": [
+     {
+      "en": "Brighton Hotel is looking for a front desk clerk.",
+      "ja": "ブライトン・ホテルはフロント係を募集しています"
+     },
+     {
+      "en": "Applicants should have at least two years of experience in customer service.",
+      "ja": "応募者は接客の経験が少なくとも2年必要です"
+     },
+     {
+      "en": "Interested candidates should send their resumes to the personnel office.",
+      "ja": "関心のある方は人事部に履歴書を送ってください"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "Brighton Hotel (S) is looking for (V) a front desk clerk (O)。look for は「探す」の意味の群動詞です。"
+    },
+    "clauses": [
+     {
+      "text": "Brighton Hotel is looking for a front desk clerk. Applicants should have at least two years of experience in customer service. Interested candidates should send their resumes to the personnel office.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Brighton Hotel",
+      "role": "S",
+      "note": "募集する会社"
+     },
+     {
+      "text": "is looking for",
+      "role": "V",
+      "note": "現在進行形の句動詞"
+     },
+     {
+      "text": "a front desk clerk",
+      "role": "O",
+      "note": "募集する職種"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・助動詞 should",
+     "explanation": "募集中は現在進行形、応募条件と手順は should で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "Interested candidates",
+      "explanation": "感情を表す分詞は、人が主語のとき過去分詞形。「興味を持っている応募者」。"
+     },
+     {
+      "point": "at least",
+      "explanation": "「少なくとも」"
+     },
+     {
+      "point": "look for",
+      "explanation": "「~を探す、募集する」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "applicant",
+      "pos": "名詞",
+      "meaning": "応募者",
+      "note": "",
+      "level": 3,
+      "toeic": "job applicant"
+     },
+     {
+      "word": "candidate",
+      "pos": "名詞",
+      "meaning": "候補者",
+      "note": "",
+      "level": 3,
+      "toeic": "interested candidates"
+     },
+     {
+      "word": "personnel",
+      "pos": "名詞",
+      "meaning": "人事部、職員",
+      "note": "",
+      "level": 3,
+      "toeic": "the personnel office"
+     },
+     {
+      "word": "experience",
+      "pos": "名詞",
+      "meaning": "経験",
+      "note": "",
+      "level": 2,
+      "toeic": "two years of experience"
+     }
+    ],
+    "toeic": {
+     "scene": "人事・求人",
+     "part": "Part 6",
+     "points": [
+      {
+       "type": "分詞",
+       "detail": "interested / interesting の使い分け"
+      },
+      {
+       "type": "語彙",
+       "detail": "applicant / candidate"
+      }
+     ],
+     "paraphrase": [
+      "Those who are interested should e-mail their resumes.",
+      "The hotel needs someone for its reception."
+     ]
+    },
+    "words": [
+     {
+      "w": "Brighton",
+      "p": "n"
+     },
+     {
+      "w": "Hotel",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "looking",
+      "p": "v"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "front",
+      "p": "n"
+     },
+     {
+      "w": "desk",
+      "p": "n"
+     },
+     {
+      "w": "clerk.",
+      "p": "n"
+     },
+     {
+      "w": "Applicants",
+      "p": "n"
+     },
+     {
+      "w": "should",
+      "p": "aux"
+     },
+     {
+      "w": "have",
+      "p": "v"
+     },
+     {
+      "w": "at",
+      "p": "adv"
+     },
+     {
+      "w": "least",
+      "p": "adv"
+     },
+     {
+      "w": "two",
+      "p": "det"
+     },
+     {
+      "w": "years",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "experience",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "customer",
+      "p": "n"
+     },
+     {
+      "w": "service.",
+      "p": "n"
+     },
+     {
+      "w": "Interested",
+      "p": "adj"
+     },
+     {
+      "w": "candidates",
+      "p": "n"
+     },
+     {
+      "w": "should",
+      "p": "aux"
+     },
+     {
+      "w": "send",
+      "p": "v"
+     },
+     {
+      "w": "their",
+      "p": "det"
+     },
+     {
+      "w": "resumes",
+      "p": "n"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "personnel",
+      "p": "n"
+     },
+     {
+      "w": "office.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Brighton Hotel",
+      "f": "主語"
+     },
+     {
+      "t": "is looking for",
+      "f": "動詞句"
+     },
+     {
+      "t": "a front desk clerk.",
+      "f": "目的語"
+     },
+     {
+      "t": "Applicants should have at least two years of experience in customer service.",
+      "f": "文(助動詞 should)"
+     },
+     {
+      "t": "Interested candidates",
+      "f": "主語(分詞形容詞つき)"
+     },
+     {
+      "t": "should send their resumes to the personnel office.",
+      "f": "動詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Brighton Hotel is looking for a front desk clerk."
+     },
+     {
+      "t": "Applicants should have at least two years of experience in customer service."
+     },
+     {
+      "t": "Interested candidates should send their resumes to the personnel office."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 6",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Brighton Hotel is looking for a front desk clerk. Applicants should have at least two years of experience in customer service. ______ candidates should send their resumes to the personnel office.",
+    "choices": [
+     "Interested",
+     "Interesting",
+     "Interest",
+     "Interestingly"
+    ],
+    "answer": 0,
+    "type": "分詞",
+    "explanation": "「関心を持っている応募者」は、人の気持ちを表す過去分詞の形容詞 Interested。Interesting は「(物事が)興味深い」、Interest は名詞/動詞、Interestingly は副詞で candidates を修飾できません。"
+   }
+  },
+  {
+   "id": "toeic-set5-06",
+   "text": "The annual company picnic will be held on Saturday, July 12. All employees must register online before June 30. Those who do not register will not be able to attend.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1792080000005,
+   "analysis": {
+    "translation": "毎年恒例の会社のピクニックは、7月12日の土曜日に開かれます。従業員は全員、6月30日までにオンラインで登録しなければなりません。登録しなかった人は、参加できません。",
+    "slash": [
+     {
+      "en": "The annual company picnic will be held on Saturday, July 12.",
+      "ja": "毎年恒例の会社のピクニックは7月12日(土)に開かれます"
+     },
+     {
+      "en": "All employees must register online before June 30.",
+      "ja": "従業員は全員6月30日までにオンライン登録が必要です"
+     },
+     {
+      "en": "Those who do not register will not be able to attend.",
+      "ja": "登録しない人は参加できません"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "The annual company picnic (S) will be held (V)。行事の開催を受動態で述べる定番の形です。"
+    },
+    "clauses": [
+     {
+      "text": "The annual company picnic will be held on Saturday, July 12. All employees must register online before June 30. Those who do not register will not be able to attend.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The annual company picnic",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "will be held",
+      "role": "V",
+      "note": "未来の受動態"
+     },
+     {
+      "text": "on Saturday, July 12",
+      "role": "M",
+      "note": "日時"
+     }
+    ],
+    "tense": {
+     "name": "未来の受動態・助動詞",
+     "explanation": "開催は will be held、義務は must、結果は will not be able to ~ で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "must",
+      "explanation": "「~しなければならない」。続く文(登録しないと参加できない)から、義務だと判断できる。"
+     },
+     {
+      "point": "Those who ~",
+      "explanation": "「~する人々」。関係代名詞 who を使った言い方。"
+     },
+     {
+      "point": "be able to",
+      "explanation": "can の未来形・否定形として使う。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "annual",
+      "pos": "形容詞",
+      "meaning": "毎年の",
+      "note": "",
+      "level": 3,
+      "toeic": "annual meeting / annual picnic"
+     },
+     {
+      "word": "register",
+      "pos": "動詞",
+      "meaning": "登録する",
+      "note": "",
+      "level": 3,
+      "toeic": "register online"
+     },
+     {
+      "word": "attend",
+      "pos": "動詞",
+      "meaning": "~に出席する",
+      "note": "",
+      "level": 3,
+      "toeic": "able to attend"
+     },
+     {
+      "word": "employee",
+      "pos": "名詞",
+      "meaning": "従業員",
+      "note": "",
+      "level": 1,
+      "toeic": "All employees ~"
+     }
+    ],
+    "toeic": {
+     "scene": "社内行事",
+     "part": "Part 6",
+     "points": [
+      {
+       "type": "助動詞",
+       "detail": "must / might / would の選び方(後続文との整合)"
+      }
+     ],
+     "paraphrase": [
+      "Everyone has to sign up on the Internet by June 30.",
+      "People who skip registration cannot join."
+     ]
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "annual",
+      "p": "adj"
+     },
+     {
+      "w": "company",
+      "p": "n"
+     },
+     {
+      "w": "picnic",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "held",
+      "p": "v"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "Saturday,",
+      "p": "n"
+     },
+     {
+      "w": "July",
+      "p": "n"
+     },
+     {
+      "w": "12.",
+      "p": "n"
+     },
+     {
+      "w": "All",
+      "p": "det"
+     },
+     {
+      "w": "employees",
+      "p": "n"
+     },
+     {
+      "w": "must",
+      "p": "aux"
+     },
+     {
+      "w": "register",
+      "p": "v"
+     },
+     {
+      "w": "online",
+      "p": "adv"
+     },
+     {
+      "w": "before",
+      "p": "prep"
+     },
+     {
+      "w": "June",
+      "p": "n"
+     },
+     {
+      "w": "30.",
+      "p": "n"
+     },
+     {
+      "w": "Those",
+      "p": "pron"
+     },
+     {
+      "w": "who",
+      "p": "conj"
+     },
+     {
+      "w": "do",
+      "p": "aux"
+     },
+     {
+      "w": "not",
+      "p": "adv"
+     },
+     {
+      "w": "register",
+      "p": "v"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "not",
+      "p": "adv"
+     },
+     {
+      "w": "be",
+      "p": "aux"
+     },
+     {
+      "w": "able",
+      "p": "adj"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "attend.",
+      "p": "v"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The annual company picnic",
+      "f": "主語"
+     },
+     {
+      "t": "will be held",
+      "f": "動詞句(未来の受動態)"
+     },
+     {
+      "t": "on Saturday, July 12.",
+      "f": "前置詞句"
+     },
+     {
+      "t": "All employees must register online before June 30.",
+      "f": "文(助動詞 must)"
+     },
+     {
+      "t": "Those who do not register",
+      "f": "主語(関係詞節つき)"
+     },
+     {
+      "t": "will not be able to attend.",
+      "f": "動詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "The annual company picnic will be held on Saturday, July 12."
+     },
+     {
+      "t": "All employees must register online before June 30."
+     },
+     {
+      "t": "Those who do not register will not be able to attend."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 6",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The annual company picnic will be held on Saturday, July 12. All employees ______ register online before June 30. Those who do not register will not be able to attend.",
+    "choices": [
+     "must",
+     "might",
+     "used to",
+     "would be"
+    ],
+    "answer": 0,
+    "type": "助動詞",
+    "explanation": "次の文で「登録しない人は参加できない」とあるので、登録は義務の must が正解。might は「かもしれない」で弱すぎ、used to は過去の習慣、would be は動詞の原形 register に続けられません。"
+   }
+  },
+  {
+   "id": "toeic-set5-07",
+   "text": "Ms. Alvarez joined our company in 2018. She is the manager who oversees the Chicago branch. Under her leadership, sales have increased by twenty percent.",
+   "gids": [
+    "g1",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1792080000006,
+   "analysis": {
+    "translation": "アルバレスさんは2018年に当社に入社しました。彼女はシカゴ支店を統括する部長です。彼女のリーダーシップのもと、売り上げは20%増加しました。",
+    "slash": [
+     {
+      "en": "Ms. Alvarez joined our company in 2018.",
+      "ja": "アルバレスさんは2018年に入社しました"
+     },
+     {
+      "en": "She is the manager who oversees the Chicago branch.",
+      "ja": "彼女はシカゴ支店を統括する部長です"
+     },
+     {
+      "en": "Under her leadership, sales have increased by twenty percent.",
+      "ja": "彼女の指導のもと、売り上げは20%増えました"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "She (S) is (V) the manager who oversees ... (C)。who 以下が the manager を修飾します。"
+    },
+    "clauses": [
+     {
+      "text": "Ms. Alvarez joined our company in 2018. She is the manager who oversees the Chicago branch. Under her leadership, sales have increased by twenty percent.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "She",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "is",
+      "role": "V",
+      "note": "be動詞"
+     },
+     {
+      "text": "the manager who oversees the Chicago branch",
+      "role": "C",
+      "note": "補語(関係詞節つき)"
+     }
+    ],
+    "tense": {
+     "name": "過去形・現在形・現在完了",
+     "explanation": "入社は過去形、現在の役割は現在形、成果は現在完了 have increased で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "主格の関係代名詞 who",
+      "explanation": "先行詞が人(the manager)で、関係詞節の主語になるとき who を使う。"
+     },
+     {
+      "point": "by + 数量",
+      "explanation": "増加の差を表す。by twenty percent = 20%分。"
+     },
+     {
+      "point": "under her leadership",
+      "explanation": "「彼女の指導のもとで」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "oversee",
+      "pos": "動詞",
+      "meaning": "~を監督する、統括する",
+      "note": "",
+      "level": 3,
+      "toeic": "oversee the branch"
+     },
+     {
+      "word": "leadership",
+      "pos": "名詞",
+      "meaning": "指導力、統率",
+      "note": "",
+      "level": 3,
+      "toeic": "under her leadership"
+     },
+     {
+      "word": "increase",
+      "pos": "動詞",
+      "meaning": "増える、~を増やす",
+      "note": "",
+      "level": 2,
+      "toeic": "sales have increased"
+     },
+     {
+      "word": "branch",
+      "pos": "名詞",
+      "meaning": "支店",
+      "note": "",
+      "level": 3,
+      "toeic": "the Chicago branch"
+     }
+    ],
+    "toeic": {
+     "scene": "社内・人事",
+     "part": "Part 6",
+     "points": [
+      {
+       "type": "関係詞",
+       "detail": "who / which / whose / whom の選び方"
+      },
+      {
+       "type": "時制",
+       "detail": "現在完了で成果を述べる"
+      }
+     ],
+     "paraphrase": [
+      "She is in charge of the Chicago branch.",
+      "Sales rose by twenty percent while she was leading it."
+     ]
+    },
+    "words": [
+     {
+      "w": "Ms.",
+      "p": "n"
+     },
+     {
+      "w": "Alvarez",
+      "p": "n"
+     },
+     {
+      "w": "joined",
+      "p": "v"
+     },
+     {
+      "w": "our",
+      "p": "det"
+     },
+     {
+      "w": "company",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "2018.",
+      "p": "n"
+     },
+     {
+      "w": "She",
+      "p": "pron"
+     },
+     {
+      "w": "is",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "manager",
+      "p": "n"
+     },
+     {
+      "w": "who",
+      "p": "conj"
+     },
+     {
+      "w": "oversees",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "Chicago",
+      "p": "n"
+     },
+     {
+      "w": "branch.",
+      "p": "n"
+     },
+     {
+      "w": "Under",
+      "p": "prep"
+     },
+     {
+      "w": "her",
+      "p": "det"
+     },
+     {
+      "w": "leadership,",
+      "p": "n"
+     },
+     {
+      "w": "sales",
+      "p": "n"
+     },
+     {
+      "w": "have",
+      "p": "aux"
+     },
+     {
+      "w": "increased",
+      "p": "v"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "twenty",
+      "p": "det"
+     },
+     {
+      "w": "percent.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Ms. Alvarez joined our company in 2018.",
+      "f": "文(過去形)"
+     },
+     {
+      "t": "She is the manager",
+      "f": "主節"
+     },
+     {
+      "t": "who oversees the Chicago branch.",
+      "f": "関係詞節"
+     },
+     {
+      "t": "Under her leadership,",
+      "f": "前置詞句"
+     },
+     {
+      "t": "sales have increased by twenty percent.",
+      "f": "文(現在完了)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Ms. Alvarez joined our company in 2018."
+     },
+     {
+      "t": "She is the manager who oversees the Chicago branch."
+     },
+     {
+      "t": "Under her leadership, sales have increased by twenty percent."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 6",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Ms. Alvarez joined our company in 2018. She is the manager ______ oversees the Chicago branch. Under her leadership, sales have increased by twenty percent.",
+    "choices": [
+     "who",
+     "which",
+     "whose",
+     "whom"
+    ],
+    "answer": 0,
+    "type": "関係詞",
+    "explanation": "先行詞 the manager は人で、関係詞節の中で主語(oversees の主語)になるので、主格の who が正解。which は物、whose は所有格、whom は目的格です。"
+   }
+  },
+  {
+   "id": "toeic-set5-08",
+   "text": "Our new software is much faster than the old version. It also uses less memory. As a result, employees can finish their work more quickly.",
+   "gids": [
+    "g1",
+    "g7"
+   ],
+   "bm": false,
+   "added": 1792080000007,
+   "analysis": {
+    "translation": "新しいソフトウェアは、旧バージョンよりずっと速くなっています。使用するメモリも少なくなりました。その結果、従業員はより早く仕事を終えられます。",
+    "slash": [
+     {
+      "en": "Our new software is much faster than the old version.",
+      "ja": "新しいソフトは旧バージョンよりずっと速いです"
+     },
+     {
+      "en": "It also uses less memory.",
+      "ja": "使うメモリも少なくなりました"
+     },
+     {
+      "en": "As a result, employees can finish their work more quickly.",
+      "ja": "その結果、従業員はより早く仕事を終えられます"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "Our new software (S) is (V) much faster than the old version (C)。比較級 faster に than が対応します。"
+    },
+    "clauses": [
+     {
+      "text": "Our new software is much faster than the old version. It also uses less memory. As a result, employees can finish their work more quickly.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Our new software",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "is",
+      "role": "V",
+      "note": "be動詞"
+     },
+     {
+      "text": "much faster than the old version",
+      "role": "C",
+      "note": "比較級の補語"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "性能の比較と現在の状態を現在形で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "比較級 + than",
+      "explanation": "faster than ~ のように、比較級の後ろには than が来る。"
+     },
+     {
+      "point": "much + 比較級",
+      "explanation": "比較級を強める言い方。very では強調できない。"
+     },
+     {
+      "point": "as a result",
+      "explanation": "「その結果」。前の内容の結果を表す。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "version",
+      "pos": "名詞",
+      "meaning": "版、バージョン",
+      "note": "",
+      "level": 2,
+      "toeic": "the old version"
+     },
+     {
+      "word": "memory",
+      "pos": "名詞",
+      "meaning": "メモリ、記憶",
+      "note": "",
+      "level": 2,
+      "toeic": "use less memory"
+     },
+     {
+      "word": "as a result",
+      "pos": "熟語",
+      "meaning": "その結果",
+      "note": "",
+      "level": 3,
+      "toeic": "文頭の接続副詞句"
+     },
+     {
+      "word": "software",
+      "pos": "名詞",
+      "meaning": "ソフトウェア",
+      "note": "",
+      "level": 3,
+      "toeic": "new software"
+     }
+    ],
+    "toeic": {
+     "scene": "IT・社内通知",
+     "part": "Part 6",
+     "points": [
+      {
+       "type": "比較",
+       "detail": "比較級と than の対応"
+      },
+      {
+       "type": "接続詞・副詞",
+       "detail": "As a result が結果を導く"
+      }
+     ],
+     "paraphrase": [
+      "The latest program runs a lot quicker than the previous one.",
+      "Workers can complete tasks faster."
+     ]
+    },
+    "words": [
+     {
+      "w": "Our",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "software",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "v"
+     },
+     {
+      "w": "much",
+      "p": "adv"
+     },
+     {
+      "w": "faster",
+      "p": "adj"
+     },
+     {
+      "w": "than",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "old",
+      "p": "adj"
+     },
+     {
+      "w": "version.",
+      "p": "n"
+     },
+     {
+      "w": "It",
+      "p": "pron"
+     },
+     {
+      "w": "also",
+      "p": "adv"
+     },
+     {
+      "w": "uses",
+      "p": "v"
+     },
+     {
+      "w": "less",
+      "p": "det"
+     },
+     {
+      "w": "memory.",
+      "p": "n"
+     },
+     {
+      "w": "As",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "result,",
+      "p": "n"
+     },
+     {
+      "w": "employees",
+      "p": "n"
+     },
+     {
+      "w": "can",
+      "p": "aux"
+     },
+     {
+      "w": "finish",
+      "p": "v"
+     },
+     {
+      "w": "their",
+      "p": "det"
+     },
+     {
+      "w": "work",
+      "p": "n"
+     },
+     {
+      "w": "more",
+      "p": "adv"
+     },
+     {
+      "w": "quickly.",
+      "p": "adv"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Our new software",
+      "f": "主語"
+     },
+     {
+      "t": "is much faster",
+      "f": "動詞句(比較級)"
+     },
+     {
+      "t": "than the old version.",
+      "f": "比較の対象"
+     },
+     {
+      "t": "It also uses less memory.",
+      "f": "文"
+     },
+     {
+      "t": "As a result,",
+      "f": "接続副詞句"
+     },
+     {
+      "t": "employees can finish their work more quickly.",
+      "f": "文(助動詞 can)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Our new software is much faster than the old version."
+     },
+     {
+      "t": "It also uses less memory."
+     },
+     {
+      "t": "As a result, employees can finish their work more quickly."
+     }
+    ]
+   },
+   "level": 860,
+   "part": "Part 6",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Our new software is much faster ______ the old version. It also uses less memory. As a result, employees can finish their work more quickly.",
+    "choices": [
+     "than",
+     "that",
+     "as",
+     "then"
+    ],
+    "answer": 0,
+    "type": "比較",
+    "explanation": "比較級 faster の後ろで比べる対象を導くのは than。that・as・then では比較の文になりません(as は as ~ as の形で使います)。"
+   }
+  }
+ ],
+ "words": []
+}

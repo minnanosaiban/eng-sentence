@@ -117,6 +117,11 @@ const Clean = (() => {
     return list.slice(0, 300).filter(m => m && typeof m === "object").map(m => ({ cat: catOf(m.cat), date: date(m.date) || "", src: ["quiz", "dict", "manual"].includes(m.src) ? m.src : "manual" }));
   }
 
+  // TOEIC のパート(Part 1〜7)。"Part 5" "part5" "パート5" "5" などを "Part 5" にそろえる。読み取れなければ ""
+  const PARTS = ["Part 1", "Part 2", "Part 3", "Part 4", "Part 5", "Part 6", "Part 7"];
+  const partNo = v => { const m = /^\s*(?:part|パート)?\s*([1-7])(?!\d)/i.exec(String(v == null ? "" : v)); return m ? "Part " + m[1] : "" };
+  const partOf = r => r.part || partNo(r.toeic && r.toeic.part); // 英文のパート。part が無い古いデータは、TOEIC解説のパートから
+
   function level(v) { const n = +v; return [600, 730, 860].includes(n) ? n : null; }
   function date(s) { return typeof s === "string" && /^\d{4}-\d{2}-\d{2}$/.test(s) ? s : null; }
   // 作った順に並ぶ id(IndexedDB は id 順に返すので、同じ瞬間に作ったものも、作った順になる)
@@ -132,7 +137,7 @@ const Clean = (() => {
     const groups = [...new Set((Array.isArray(o.groups) ? o.groups : []).map(g => clip(g, 40)).filter(Boolean))].slice(0, 20);
     const s = {
       id: uid(), type: "sentence", text,
-      ja: clip(a.translation ?? a.ja, 500), level: level(o.level), groups,
+      ja: clip(a.translation ?? a.ja, 500), level: level(o.level), groups, part: partNo(o.part ?? (a.toeic && a.toeic.part)),
       status: "new", review_count: 0, last_reviewed: null, mistakes: [], verified: !(a.translation || a.ja), added: Date.now(),
       words: words(a.words, text), phrases: phrases(a.phrases, text), slash: slash(a.slash, text), iu: iu(a.iu, text),
       vocab: vocab(a.vocab), grammar: grammar(a.grammar), toeic: toeic(a.toeic), quiz: quiz(o.quiz), ...structure(a)
@@ -155,7 +160,7 @@ const Clean = (() => {
     if (ex.slash && add.slash && ex.slash.length === add.slash.length) ex.slash.forEach((x, i) => { if (!x.ipa && add.slash[i].ipa && x.en === add.slash[i].en) { x.ipa = add.slash[i].ipa; c = true } });
     if (ex.iu && add.iu && ex.iu.length === add.iu.length) ex.iu.forEach((x, i) => { if (!x.ipa && add.iu[i].ipa && x.t === add.iu[i].t) { x.ipa = add.iu[i].ipa; c = true } });
     set("elements", add.elements); set("clauses", add.clauses); set("pattern", add.pattern); set("tense", add.tense);
-    set("grammar", add.grammar); set("toeic", add.toeic); set("quiz", add.quiz); set("level", add.level);
+    set("grammar", add.grammar); set("toeic", add.toeic); set("quiz", add.quiz); set("level", add.level); set("part", add.part);
     set("vocab", add.vocab && add.vocab.length ? add.vocab : null);
     if (ex.vocab && add.vocab) { // 発音記号が無い単語にだけ足す
       const m = new Map(add.vocab.map(v => [v.word.toLowerCase(), v.ipa]));
@@ -255,5 +260,5 @@ const Clean = (() => {
     return c;
   }
 
-  return { CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
+  return { PARTS, partNo, partOf, CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
 })();

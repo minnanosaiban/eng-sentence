@@ -137,7 +137,7 @@
     const b = e.currentTarget; b.disabled = true;
     try {
       const all = { sentences: [], words: [], chunks: [] };
-      for (const f of ["toeic-sentences-analyzed.json", "toeic-sentences-2-analyzed.json"]) {
+      for (const f of ["toeic-sentences-analyzed.json", "toeic-sentences-2-analyzed.json", "toeic-sentences-3-analyzed.json", "toeic-sentences-4-analyzed.json", "toeic-sentences-5-analyzed.json"]) {
         const r = await fetch("samples/" + f); if (!r.ok) throw new Error(f + " を読めません");
         const d = parseFile(f, await r.text()); all.sentences.push(...d.sentences); all.words.push(...d.words);
       }
@@ -171,7 +171,7 @@
   // ---------- 選択 ----------
   const allGroups = () => [...new Set([...rows, ...words, ...chunks].flatMap(r => r.groups || []))].sort();
   function filtered() {
-    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, st = $("#fstatus").value, lv = $("#flevel").value, ln = $("#flen").value, ps = $("#fpos").value;
+    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, st = $("#fstatus").value, lv = $("#flevel").value, ln = $("#flen").value, ps = $("#fpos").value, pt = $("#fpart").value;
     const wc = r => r.text.split(" ").length, where = r => (r.n === 1 || r.idx === 0 ? "first" : r.idx === r.n - 1 ? "last" : "mid");
     return tbl(unit).filter(r =>
       (!isCard(unit) || unit === "word" || ((!ln || (ln === "s" ? wc(r) <= 2 : ln === "m" ? wc(r) >= 3 && wc(r) <= 5 : wc(r) >= 6)) && (!ps || where(r) === ps))) &&
@@ -179,6 +179,7 @@
       (!g || (r.groups || []).includes(g)) &&
       (!st || (st === "not-mastered" ? r.status !== "mastered" : r.status === st)) &&
       (!lv || String(r.level) === lv) &&
+      (unit !== "sentence" || !pt || (pt === "none" ? !Clean.partOf(r) : Clean.partOf(r) === pt)) &&
       ((unit !== "sentence" && unit !== "word") || !$("#fmis").value || (r.mistakes || []).length > 0));
   }
   function renderGroupSelect() {
@@ -188,7 +189,8 @@
   }
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
-    const tags = `${r.level ? `<span class="tag">${r.level}</span>` : ""}<span class="tag">${esc(Clean.STATUS[r.status])}</span>${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${(r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("")}`;
+    const part = unit === "sentence" ? Clean.partOf(r) : "";
+    const tags = `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}<span class="tag">${esc(Clean.STATUS[r.status])}</span>${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${(r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("")}`;
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}<span class="m"><br>${esc(r.ja)}</span>`
       : unit === "word"
@@ -215,7 +217,7 @@
   }
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
-  ["#fq", "#fgroup", "#fstatus", "#flevel", "#flen", "#fpos", "#fmis"].forEach(s => $(s).addEventListener("input", renderPick));
+  ["#fq", "#fgroup", "#fstatus", "#flevel", "#fpart", "#flen", "#fpos", "#fmis"].forEach(s => $(s).addEventListener("input", renderPick));
   $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
   $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
   $("#btnRand").onclick = () => {

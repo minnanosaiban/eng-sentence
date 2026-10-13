@@ -70,7 +70,7 @@
     </div>
     <div class="card">
       <h2>すぐ試す</h2>
-      <p class="sub">TOEIC風のオリジナル英文 90文(和訳・区切り・品詞・単語の発音記号・4択つき)を入れます。API は要りません。</p>
+      <p class="sub">TOEIC風のオリジナル英文 134文(Part 1〜7。和訳・区切り・品詞・単語の発音記号・4択つき)を入れます。API は要りません。</p>
       <button id="btnSamples" class="pri">サンプル英文を入れる</button>
     </div>
     <div class="card">
@@ -169,6 +169,9 @@
         </select>
         <select id="fmis" aria-label="間違い" class="sent-only">
           <option value="">間違い: すべて</option><option value="yes">間違いあり</option>
+        </select>
+        <select id="fpart" aria-label="TOEICのパート" class="sent-only">
+          <option value="">パート: すべて</option><option value="Part 1">Part 1 写真描写</option><option value="Part 2">Part 2 応答問題</option><option value="Part 3">Part 3 会話</option><option value="Part 4">Part 4 説明文</option><option value="Part 5">Part 5 短文穴埋め</option><option value="Part 6">Part 6 長文穴埋め</option><option value="Part 7">Part 7 読解</option><option value="none">パート未設定</option>
         </select>
         <select id="flevel" aria-label="難易度">
           <option value="">難易度: すべて</option><option value="600">600</option><option value="730">730</option><option value="860">860</option>

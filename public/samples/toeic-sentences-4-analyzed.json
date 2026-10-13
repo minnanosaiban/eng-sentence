@@ -1,0 +1,4490 @@
+{
+ "groups": [
+  {
+   "id": "g1",
+   "name": "Part 3 会話"
+  },
+  {
+   "id": "g2",
+   "name": "会話:トラブル対応"
+  },
+  {
+   "id": "g3",
+   "name": "会話:交通・案内"
+  },
+  {
+   "id": "g4",
+   "name": "会話:買い物・返品"
+  },
+  {
+   "id": "g5",
+   "name": "会話:会議・出張"
+  },
+  {
+   "id": "g6",
+   "name": "会話:社内業務"
+  },
+  {
+   "id": "g7",
+   "name": "会話:銀行・窓口"
+  },
+  {
+   "id": "g8",
+   "name": "Part 4 説明文"
+  },
+  {
+   "id": "g9",
+   "name": "説明文:アナウンス"
+  },
+  {
+   "id": "g10",
+   "name": "説明文:留守電"
+  },
+  {
+   "id": "g11",
+   "name": "説明文:案内・ツアー"
+  },
+  {
+   "id": "g12",
+   "name": "説明文:広告"
+  },
+  {
+   "id": "g13",
+   "name": "説明文:社内発表"
+  },
+  {
+   "id": "g14",
+   "name": "説明文:ニュース・交通"
+  }
+ ],
+ "items": [
+  {
+   "id": "toeic-set4-01",
+   "text": "Hello, I'm calling about the projector in Room 204. It stopped working during this morning's presentation. I'll send a technician right away.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791990000000,
+   "analysis": {
+    "translation": "もしもし、204号室のプロジェクターの件でお電話しています。今朝のプレゼンの最中に動かなくなりました。すぐに技術者を送ります。",
+    "slash": [
+     {
+      "en": "Hello, I'm calling about the projector in Room 204.",
+      "ja": "もしもし、204号室のプロジェクターの件で電話しています"
+     },
+     {
+      "en": "It stopped working during this morning's presentation.",
+      "ja": "今朝のプレゼン中に動かなくなりました"
+     },
+     {
+      "en": "I'll send a technician right away.",
+      "ja": "すぐに技術者を送ります"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "1文目は I (S) 'm calling (V)。about ~ が用件を表します。会話の中心は「設備のトラブルと対応」です。"
+    },
+    "clauses": [
+     {
+      "text": "Hello, I'm calling about the projector in Room 204. It stopped working during this morning's presentation. I'll send a technician right away.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "I",
+      "role": "S",
+      "note": "電話をかけている人"
+     },
+     {
+      "text": "'m calling",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "about the projector in Room 204",
+      "role": "M",
+      "note": "用件"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・過去形・未来形",
+     "explanation": "電話の用件は現在進行形、故障は過去形、対応の申し出は I'll + 動詞で表します。"
+    },
+    "grammar": [
+     {
+      "point": "call about ~",
+      "explanation": "「~の件で電話する」。Part 3 では冒頭で用件が述べられます。"
+     },
+     {
+      "point": "I'll + 動詞",
+      "explanation": "その場で決めた対応の申し出。次にやることを聞き取る合図になります。"
+     },
+     {
+      "point": "stop working",
+      "explanation": "「動かなくなる」。機器の故障の定番表現です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "technician",
+      "pos": "名詞",
+      "meaning": "技術者",
+      "note": "",
+      "level": 3,
+      "toeic": "send a technician"
+     },
+     {
+      "word": "stop working",
+      "pos": "熟語",
+      "meaning": "動かなくなる",
+      "note": "",
+      "level": 3,
+      "toeic": "機器の故障の描写"
+     },
+     {
+      "word": "right away",
+      "pos": "熟語",
+      "meaning": "すぐに",
+      "note": "",
+      "level": 3,
+      "toeic": "I'll do it right away."
+     },
+     {
+      "word": "presentation",
+      "pos": "名詞",
+      "meaning": "プレゼン",
+      "note": "",
+      "level": 2,
+      "toeic": "give a presentation"
+     }
+    ],
+    "toeic": {
+     "scene": "社内・設備トラブル",
+     "part": "Part 3",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "故障・修理の表現"
+      },
+      {
+       "type": "その他",
+       "detail": "冒頭で用件、末尾で次の行動が述べられる"
+      }
+     ],
+     "paraphrase": [
+      "The projector broke down in the morning.",
+      "A repair person will be dispatched immediately."
+     ]
+    },
+    "words": [
+     {
+      "w": "Hello,",
+      "p": "other"
+     },
+     {
+      "w": "I'm",
+      "p": "pron"
+     },
+     {
+      "w": "calling",
+      "p": "v"
+     },
+     {
+      "w": "about",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "projector",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "Room",
+      "p": "n"
+     },
+     {
+      "w": "204.",
+      "p": "n"
+     },
+     {
+      "w": "It",
+      "p": "pron"
+     },
+     {
+      "w": "stopped",
+      "p": "v"
+     },
+     {
+      "w": "working",
+      "p": "v"
+     },
+     {
+      "w": "during",
+      "p": "prep"
+     },
+     {
+      "w": "this",
+      "p": "det"
+     },
+     {
+      "w": "morning's",
+      "p": "n"
+     },
+     {
+      "w": "presentation.",
+      "p": "n"
+     },
+     {
+      "w": "I'll",
+      "p": "pron"
+     },
+     {
+      "w": "send",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "technician",
+      "p": "n"
+     },
+     {
+      "w": "right",
+      "p": "adv"
+     },
+     {
+      "w": "away.",
+      "p": "adv"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Hello,",
+      "f": "間投詞"
+     },
+     {
+      "t": "I'm calling about the projector in Room 204.",
+      "f": "文(現在進行形)"
+     },
+     {
+      "t": "It stopped working during this morning's presentation.",
+      "f": "文(過去形)"
+     },
+     {
+      "t": "I'll send a technician right away.",
+      "f": "文(未来形)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Hello, I'm calling about the projector in Room 204."
+     },
+     {
+      "t": "It stopped working during this morning's presentation."
+     },
+     {
+      "t": "I'll send a technician right away."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 3",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The caller is reporting a problem with the ______ in Room 204.",
+    "choices": [
+     "projector",
+     "printer",
+     "elevator",
+     "microphone"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "冒頭の about the projector in Room 204 から、問題があるのはプロジェクターだと分かります。"
+   }
+  },
+  {
+   "id": "toeic-set4-02",
+   "text": "Excuse me, does this train stop at Central Station? No, you need to change at Oak Street. The next train to Central leaves from platform three.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1791990000001,
+   "analysis": {
+    "translation": "すみません、この電車はセントラル駅に止まりますか。いいえ、オーク・ストリートで乗り換える必要があります。セントラル行きの次の電車は3番ホームから出ます。",
+    "slash": [
+     {
+      "en": "Excuse me, does this train stop at Central Station?",
+      "ja": "すみません、この電車はセントラル駅に止まりますか"
+     },
+     {
+      "en": "No, you need to change at Oak Street.",
+      "ja": "いいえ、オーク・ストリートで乗り換える必要があります"
+     },
+     {
+      "en": "The next train to Central leaves from platform three.",
+      "ja": "セントラル行きの次の電車は3番ホームから出ます"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "does this train (S) stop (V) at Central Station。Yes/No で答えられる質問です。"
+    },
+    "clauses": [
+     {
+      "text": "Excuse me, does this train stop at Central Station? No, you need to change at Oak Street. The next train to Central leaves from platform three.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "this train",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "stop",
+      "role": "V",
+      "note": "自動詞"
+     },
+     {
+      "text": "at Central Station",
+      "role": "M",
+      "note": "停車する駅"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "電車の運行は現在形で述べます。need to + 動詞 で必要なことを伝えています。"
+    },
+    "grammar": [
+     {
+      "point": "change at ~",
+      "explanation": "「~で乗り換える」。交通案内の頻出表現。"
+     },
+     {
+      "point": "need to + 動詞",
+      "explanation": "「~する必要がある」。指示を聞き取る合図。"
+     },
+     {
+      "point": "next train",
+      "explanation": "次の列車。次の行動や時刻が問われる。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "change",
+      "pos": "動詞",
+      "meaning": "乗り換える",
+      "note": "",
+      "level": 3,
+      "toeic": "change trains / change at ~"
+     },
+     {
+      "word": "platform",
+      "pos": "名詞",
+      "meaning": "ホーム",
+      "note": "",
+      "level": 3,
+      "toeic": "from platform three"
+     },
+     {
+      "word": "stop at",
+      "pos": "熟語",
+      "meaning": "~に停車する",
+      "note": "",
+      "level": 2,
+      "toeic": "This train stops at ~."
+     }
+    ],
+    "toeic": {
+     "scene": "交通・駅",
+     "part": "Part 3",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "change / transfer(乗り換える)"
+      },
+      {
+       "type": "その他",
+       "detail": "Yes/No の後に具体的な指示が続く"
+      }
+     ],
+     "paraphrase": [
+      "You have to transfer at Oak Street.",
+      "The next one to Central departs from track three."
+     ]
+    },
+    "words": [
+     {
+      "w": "Excuse",
+      "p": "v"
+     },
+     {
+      "w": "me,",
+      "p": "pron"
+     },
+     {
+      "w": "does",
+      "p": "aux"
+     },
+     {
+      "w": "this",
+      "p": "det"
+     },
+     {
+      "w": "train",
+      "p": "n"
+     },
+     {
+      "w": "stop",
+      "p": "v"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "Central",
+      "p": "n"
+     },
+     {
+      "w": "Station?",
+      "p": "n"
+     },
+     {
+      "w": "No,",
+      "p": "other"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "need",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "change",
+      "p": "v"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "Oak",
+      "p": "n"
+     },
+     {
+      "w": "Street.",
+      "p": "n"
+     },
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "next",
+      "p": "adj"
+     },
+     {
+      "w": "train",
+      "p": "n"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "Central",
+      "p": "n"
+     },
+     {
+      "w": "leaves",
+      "p": "v"
+     },
+     {
+      "w": "from",
+      "p": "prep"
+     },
+     {
+      "w": "platform",
+      "p": "n"
+     },
+     {
+      "w": "three.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Excuse me,",
+      "f": "間投詞"
+     },
+     {
+      "t": "does this train stop at Central Station?",
+      "f": "疑問文"
+     },
+     {
+      "t": "No,",
+      "f": "応答"
+     },
+     {
+      "t": "you need to change at Oak Street.",
+      "f": "文"
+     },
+     {
+      "t": "The next train to Central leaves from platform three.",
+      "f": "文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Excuse me, does this train stop at Central Station?"
+     },
+     {
+      "t": "No, you need to change at Oak Street."
+     },
+     {
+      "t": "The next train to Central leaves from platform three."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 3",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The man tells the woman that she needs to ______ at Oak Street.",
+    "choices": [
+     "change",
+     "stop",
+     "pay",
+     "wait"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "No, you need to change at Oak Street. と言っています。stop は列車側の動作で、乗客に必要なのは乗り換えです。"
+   }
+  },
+  {
+   "id": "toeic-set4-03",
+   "text": "I'd like to return this jacket because it's too small. Do you have the receipt with you? Yes, here it is. I bought it last week.",
+   "gids": [
+    "g1",
+    "g4"
+   ],
+   "bm": false,
+   "added": 1791990000002,
+   "analysis": {
+    "translation": "このジャケットは小さすぎるので返品したいのですが。レシートはお持ちですか。はい、これです。先週買いました。",
+    "slash": [
+     {
+      "en": "I'd like to return this jacket because it's too small.",
+      "ja": "小さすぎるのでこのジャケットを返品したい"
+     },
+     {
+      "en": "Do you have the receipt with you?",
+      "ja": "レシートはお持ちですか"
+     },
+     {
+      "en": "Yes, here it is.",
+      "ja": "はい、これです"
+     },
+     {
+      "en": "I bought it last week.",
+      "ja": "先週買いました"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "I (S) would like to return (V) this jacket (O)。because 節で理由を添えています。"
+    },
+    "clauses": [
+     {
+      "text": "I'd like to return this jacket because it's too small. Do you have the receipt with you? Yes, here it is. I bought it last week.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "I",
+      "role": "S",
+      "note": "客"
+     },
+     {
+      "text": "'d like to return",
+      "role": "V",
+      "note": "丁寧な希望"
+     },
+     {
+      "text": "this jacket",
+      "role": "O",
+      "note": "返品する物"
+     },
+     {
+      "text": "because it's too small",
+      "role": "M",
+      "note": "理由"
+     }
+    ],
+    "tense": {
+     "name": "助動詞 would・過去形",
+     "explanation": "would like to ~ は丁寧な希望。買った時期は過去形 bought で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "would like to + 動詞",
+      "explanation": "「~したい」の丁寧な言い方。用件を述べる定番。"
+     },
+     {
+      "point": "too + 形容詞",
+      "explanation": "「~すぎる」。返品理由の定番(too small / too large)。"
+     },
+     {
+      "point": "Do you have ~?",
+      "explanation": "店員が必要な物(レシートなど)を確認する質問。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "return",
+      "pos": "動詞",
+      "meaning": "~を返品する",
+      "note": "",
+      "level": 3,
+      "toeic": "return an item"
+     },
+     {
+      "word": "receipt",
+      "pos": "名詞",
+      "meaning": "レシート、領収書",
+      "note": "",
+      "level": 3,
+      "toeic": "with the receipt"
+     },
+     {
+      "word": "too",
+      "pos": "副詞",
+      "meaning": "~すぎる",
+      "note": "",
+      "level": 2,
+      "toeic": "too small / too expensive"
+     }
+    ],
+    "toeic": {
+     "scene": "小売店・返品",
+     "part": "Part 3",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "return / refund / exchange"
+      },
+      {
+       "type": "その他",
+       "detail": "店員の質問が次の展開を示す"
+      }
+     ],
+     "paraphrase": [
+      "The customer wants to bring back a jacket.",
+      "She wants a refund for an item that doesn't fit."
+     ]
+    },
+    "words": [
+     {
+      "w": "I'd",
+      "p": "pron"
+     },
+     {
+      "w": "like",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "return",
+      "p": "v"
+     },
+     {
+      "w": "this",
+      "p": "det"
+     },
+     {
+      "w": "jacket",
+      "p": "n"
+     },
+     {
+      "w": "because",
+      "p": "conj"
+     },
+     {
+      "w": "it's",
+      "p": "pron"
+     },
+     {
+      "w": "too",
+      "p": "adv"
+     },
+     {
+      "w": "small.",
+      "p": "adj"
+     },
+     {
+      "w": "Do",
+      "p": "aux"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "have",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "receipt",
+      "p": "n"
+     },
+     {
+      "w": "with",
+      "p": "prep"
+     },
+     {
+      "w": "you?",
+      "p": "pron"
+     },
+     {
+      "w": "Yes,",
+      "p": "other"
+     },
+     {
+      "w": "here",
+      "p": "adv"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "is.",
+      "p": "v"
+     },
+     {
+      "w": "I",
+      "p": "pron"
+     },
+     {
+      "w": "bought",
+      "p": "v"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "last",
+      "p": "adj"
+     },
+     {
+      "w": "week.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "I'd like to return this jacket",
+      "f": "文(丁寧な希望)"
+     },
+     {
+      "t": "because it's too small.",
+      "f": "副詞節"
+     },
+     {
+      "t": "Do you have the receipt with you?",
+      "f": "疑問文"
+     },
+     {
+      "t": "Yes, here it is.",
+      "f": "応答"
+     },
+     {
+      "t": "I bought it last week.",
+      "f": "文(過去形)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "I'd like to return this jacket because it's too small."
+     },
+     {
+      "t": "Do you have the receipt with you?"
+     },
+     {
+      "t": "Yes, here it is."
+     },
+     {
+      "t": "I bought it last week."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 3",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The woman wants to return the jacket because it is too ______.",
+    "choices": [
+     "small",
+     "expensive",
+     "old",
+     "bright"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "because it's too small と理由を述べています。値段・古さ・色は言っていません。"
+   }
+  },
+  {
+   "id": "toeic-set4-04",
+   "text": "Are you attending the sales meeting on Friday? I'd like to, but I have to visit a client in Boston. Then I'll send you the meeting notes afterward.",
+   "gids": [
+    "g1",
+    "g5"
+   ],
+   "bm": false,
+   "added": 1791990000003,
+   "analysis": {
+    "translation": "金曜日の営業会議に出席しますか。出たいのですが、ボストンの顧客を訪問しなければなりません。それなら、会議のメモを後で送りますね。",
+    "slash": [
+     {
+      "en": "Are you attending the sales meeting on Friday?",
+      "ja": "金曜日の営業会議に出席しますか"
+     },
+     {
+      "en": "I'd like to, but I have to visit a client in Boston.",
+      "ja": "出たいのですが、ボストンの顧客を訪問しなければなりません"
+     },
+     {
+      "en": "Then I'll send you the meeting notes afterward.",
+      "ja": "では、会議のメモを後で送りますね"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "Are you (S) attending (V) the sales meeting (O)。近い予定を現在進行形でたずねています。"
+    },
+    "clauses": [
+     {
+      "text": "Are you attending the sales meeting on Friday? I'd like to, but I have to visit a client in Boston. Then I'll send you the meeting notes afterward.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "you",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "Are attending",
+      "role": "V",
+      "note": "予定を表す現在進行形"
+     },
+     {
+      "text": "the sales meeting",
+      "role": "O",
+      "note": "出席する会議"
+     },
+     {
+      "text": "on Friday",
+      "role": "M",
+      "note": "日時"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・未来形",
+     "explanation": "予定は現在進行形、申し出は I'll + 動詞。have to は義務を表します。"
+    },
+    "grammar": [
+     {
+      "point": "I'd like to,",
+      "explanation": "to の後ろの attend が省略されています。断る前置きとして頻出。"
+     },
+     {
+      "point": "have to + 動詞",
+      "explanation": "「~しなければならない」。出席できない理由を述べる。"
+     },
+     {
+      "point": "I'll send you ~",
+      "explanation": "次の行動の申し出。最後の発言で問われやすい。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "attend",
+      "pos": "動詞",
+      "meaning": "~に出席する",
+      "note": "",
+      "level": 3,
+      "toeic": "attend a meeting"
+     },
+     {
+      "word": "client",
+      "pos": "名詞",
+      "meaning": "顧客",
+      "note": "",
+      "level": 3,
+      "toeic": "visit a client"
+     },
+     {
+      "word": "afterward",
+      "pos": "副詞",
+      "meaning": "その後で",
+      "note": "",
+      "level": 2,
+      "toeic": "send notes afterward"
+     },
+     {
+      "word": "notes",
+      "pos": "名詞",
+      "meaning": "メモ、議事録",
+      "note": "",
+      "level": 2,
+      "toeic": "meeting notes"
+     }
+    ],
+    "toeic": {
+     "scene": "会議・出張",
+     "part": "Part 3",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "attend / join / participate in"
+      },
+      {
+       "type": "その他",
+       "detail": "出席できない理由と代案を聞き取る"
+      }
+     ],
+     "paraphrase": [
+      "He cannot come because of a client visit.",
+      "She will share the minutes after the meeting."
+     ]
+    },
+    "words": [
+     {
+      "w": "Are",
+      "p": "aux"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "attending",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "sales",
+      "p": "n"
+     },
+     {
+      "w": "meeting",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "Friday?",
+      "p": "n"
+     },
+     {
+      "w": "I'd",
+      "p": "pron"
+     },
+     {
+      "w": "like",
+      "p": "v"
+     },
+     {
+      "w": "to,",
+      "p": "other"
+     },
+     {
+      "w": "but",
+      "p": "conj"
+     },
+     {
+      "w": "I",
+      "p": "pron"
+     },
+     {
+      "w": "have",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "visit",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "client",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "Boston.",
+      "p": "n"
+     },
+     {
+      "w": "Then",
+      "p": "adv"
+     },
+     {
+      "w": "I'll",
+      "p": "pron"
+     },
+     {
+      "w": "send",
+      "p": "v"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "meeting",
+      "p": "n"
+     },
+     {
+      "w": "notes",
+      "p": "n"
+     },
+     {
+      "w": "afterward.",
+      "p": "adv"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Are you attending the sales meeting on Friday?",
+      "f": "疑問文(現在進行形)"
+     },
+     {
+      "t": "I'd like to,",
+      "f": "省略を含む文"
+     },
+     {
+      "t": "but I have to visit a client in Boston.",
+      "f": "接続詞+文"
+     },
+     {
+      "t": "Then I'll send you the meeting notes afterward.",
+      "f": "文(未来形)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Are you attending the sales meeting on Friday?"
+     },
+     {
+      "t": "I'd like to, but I have to visit a client in Boston."
+     },
+     {
+      "t": "Then I'll send you the meeting notes afterward."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 3",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The man cannot attend the meeting because he has to ______ a client.",
+    "choices": [
+     "visit",
+     "call",
+     "hire",
+     "train"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "I have to visit a client in Boston. が理由です。"
+   }
+  },
+  {
+   "id": "toeic-set4-05",
+   "text": "Our flight has been delayed by two hours. Then we should let the hotel know that we will arrive late. I'll call them from the airport.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791990000004,
+   "analysis": {
+    "translation": "私たちの便が2時間遅れています。それならホテルに遅れて到着することを知らせたほうがいいですね。空港から電話します。",
+    "slash": [
+     {
+      "en": "Our flight has been delayed by two hours.",
+      "ja": "便が2時間遅れています"
+     },
+     {
+      "en": "Then we should let the hotel know that we will arrive late.",
+      "ja": "ではホテルに遅れて着くと知らせるべきです"
+     },
+     {
+      "en": "I'll call them from the airport.",
+      "ja": "空港から電話します"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Our flight (S) has been delayed (V)。by two hours は差を表す修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "Our flight has been delayed by two hours. Then we should let the hotel know that we will arrive late. I'll call them from the airport.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Our flight",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "has been delayed",
+      "role": "V",
+      "note": "現在完了の受動態"
+     },
+     {
+      "text": "by two hours",
+      "role": "M",
+      "note": "遅れの長さ"
+     }
+    ],
+    "tense": {
+     "name": "現在完了・受動態",
+     "explanation": "遅延は have been delayed。次の行動は should と I'll で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "let + 人 + 動詞",
+      "explanation": "「人に~させる/知らせる」。let the hotel know = ホテルに知らせる。"
+     },
+     {
+      "point": "by + 数量",
+      "explanation": "差の大きさ。by two hours = 2時間分。"
+     },
+     {
+      "point": "should",
+      "explanation": "提案を表す。次の行動の合図。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "delay",
+      "pos": "動詞",
+      "meaning": "~を遅らせる",
+      "note": "",
+      "level": 3,
+      "toeic": "be delayed by ~"
+     },
+     {
+      "word": "let ~ know",
+      "pos": "熟語",
+      "meaning": "~に知らせる",
+      "note": "",
+      "level": 3,
+      "toeic": "Let me know."
+     },
+     {
+      "word": "arrive late",
+      "pos": "熟語",
+      "meaning": "遅れて到着する",
+      "note": "",
+      "level": 2,
+      "toeic": "遅延の連絡"
+     }
+    ],
+    "toeic": {
+     "scene": "出張・空港",
+     "part": "Part 3",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "delay / postpone の区別"
+      },
+      {
+       "type": "その他",
+       "detail": "遅延→連絡という流れ"
+      }
+     ],
+     "paraphrase": [
+      "The flight is running two hours behind.",
+      "They need to notify the hotel."
+     ]
+    },
+    "words": [
+     {
+      "w": "Our",
+      "p": "det"
+     },
+     {
+      "w": "flight",
+      "p": "n"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "been",
+      "p": "aux"
+     },
+     {
+      "w": "delayed",
+      "p": "v"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "two",
+      "p": "det"
+     },
+     {
+      "w": "hours.",
+      "p": "n"
+     },
+     {
+      "w": "Then",
+      "p": "adv"
+     },
+     {
+      "w": "we",
+      "p": "pron"
+     },
+     {
+      "w": "should",
+      "p": "aux"
+     },
+     {
+      "w": "let",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "hotel",
+      "p": "n"
+     },
+     {
+      "w": "know",
+      "p": "v"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "we",
+      "p": "pron"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "arrive",
+      "p": "v"
+     },
+     {
+      "w": "late.",
+      "p": "adv"
+     },
+     {
+      "w": "I'll",
+      "p": "pron"
+     },
+     {
+      "w": "call",
+      "p": "v"
+     },
+     {
+      "w": "them",
+      "p": "pron"
+     },
+     {
+      "w": "from",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "airport.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Our flight",
+      "f": "主語"
+     },
+     {
+      "t": "has been delayed",
+      "f": "動詞句(現在完了の受動態)"
+     },
+     {
+      "t": "by two hours.",
+      "f": "前置詞句"
+     },
+     {
+      "t": "Then we should let the hotel know that we will arrive late.",
+      "f": "文(助動詞 should)"
+     },
+     {
+      "t": "I'll call them from the airport.",
+      "f": "文(未来形)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Our flight has been delayed by two hours."
+     },
+     {
+      "t": "Then we should let the hotel know that we will arrive late."
+     },
+     {
+      "t": "I'll call them from the airport."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 3",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The speakers agree to ______ the hotel about their late arrival.",
+    "choices": [
+     "notify",
+     "call off",
+     "pay",
+     "visit"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "let the hotel know が notify にあたります。実際の連絡は I'll call them で行います。"
+   }
+  },
+  {
+   "id": "toeic-set4-06",
+   "text": "Have you reviewed the budget proposal yet? Not yet, I've been busy with the quarterly report. Could you finish it by Wednesday?",
+   "gids": [
+    "g1",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791990000005,
+   "analysis": {
+    "translation": "予算案はもう確認しましたか。まだです、四半期報告書で忙しくて。水曜日までに終えてもらえますか。",
+    "slash": [
+     {
+      "en": "Have you reviewed the budget proposal yet?",
+      "ja": "予算案はもう確認しましたか"
+     },
+     {
+      "en": "Not yet, I've been busy with the quarterly report.",
+      "ja": "まだです、四半期報告書で忙しくて"
+     },
+     {
+      "en": "Could you finish it by Wednesday?",
+      "ja": "水曜日までに終えてもらえますか"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "Have you (S) reviewed (V) the budget proposal (O) yet。完了したかをたずねています。"
+    },
+    "clauses": [
+     {
+      "text": "Have you reviewed the budget proposal yet? Not yet, I've been busy with the quarterly report. Could you finish it by Wednesday?",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "you",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "Have reviewed",
+      "role": "V",
+      "note": "現在完了"
+     },
+     {
+      "text": "the budget proposal",
+      "role": "O",
+      "note": "確認する書類"
+     },
+     {
+      "text": "yet",
+      "role": "M",
+      "note": "「もう」の副詞"
+     }
+    ],
+    "tense": {
+     "name": "現在完了形",
+     "explanation": "yet の質問と Not yet の応答。I've been busy は状態の継続を表す現在完了です。"
+    },
+    "grammar": [
+     {
+      "point": "by + 期限",
+      "explanation": "「~までに」。期限は設問で問われやすい。"
+     },
+     {
+      "point": "Could you ~?",
+      "explanation": "依頼。最後の依頼が会話の要点になることが多い。"
+     },
+     {
+      "point": "be busy with ~",
+      "explanation": "「~で忙しい」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "review",
+      "pos": "動詞",
+      "meaning": "~を見直す、確認する",
+      "note": "",
+      "level": 3,
+      "toeic": "review a proposal"
+     },
+     {
+      "word": "quarterly",
+      "pos": "形容詞",
+      "meaning": "四半期の",
+      "note": "",
+      "level": 3,
+      "toeic": "quarterly report"
+     },
+     {
+      "word": "by",
+      "pos": "前置詞",
+      "meaning": "~までに",
+      "note": "",
+      "level": 3,
+      "toeic": "by Wednesday"
+     },
+     {
+      "word": "proposal",
+      "pos": "名詞",
+      "meaning": "提案書",
+      "note": "",
+      "level": 3,
+      "toeic": "budget proposal"
+     }
+    ],
+    "toeic": {
+     "scene": "社内・経理",
+     "part": "Part 3",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "現在完了 + yet"
+      },
+      {
+       "type": "前置詞",
+       "detail": "by(期限)と until(継続)"
+      }
+     ],
+     "paraphrase": [
+      "She hasn't looked at the proposal yet.",
+      "She is asked to complete it before Wednesday."
+     ]
+    },
+    "words": [
+     {
+      "w": "Have",
+      "p": "aux"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "reviewed",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "budget",
+      "p": "n"
+     },
+     {
+      "w": "proposal",
+      "p": "n"
+     },
+     {
+      "w": "yet?",
+      "p": "adv"
+     },
+     {
+      "w": "Not",
+      "p": "adv"
+     },
+     {
+      "w": "yet,",
+      "p": "adv"
+     },
+     {
+      "w": "I've",
+      "p": "pron"
+     },
+     {
+      "w": "been",
+      "p": "v"
+     },
+     {
+      "w": "busy",
+      "p": "adj"
+     },
+     {
+      "w": "with",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "quarterly",
+      "p": "adj"
+     },
+     {
+      "w": "report.",
+      "p": "n"
+     },
+     {
+      "w": "Could",
+      "p": "aux"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "finish",
+      "p": "v"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "Wednesday?",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Have you reviewed",
+      "f": "動詞句(現在完了)"
+     },
+     {
+      "t": "the budget proposal",
+      "f": "目的語"
+     },
+     {
+      "t": "yet?",
+      "f": "副詞"
+     },
+     {
+      "t": "Not yet,",
+      "f": "応答"
+     },
+     {
+      "t": "I've been busy with the quarterly report.",
+      "f": "文(現在完了)"
+     },
+     {
+      "t": "Could you finish it by Wednesday?",
+      "f": "依頼"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Have you reviewed the budget proposal yet?"
+     },
+     {
+      "t": "Not yet, I've been busy with the quarterly report."
+     },
+     {
+      "t": "Could you finish it by Wednesday?"
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 3",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The man asks the woman to finish the work by ______.",
+    "choices": [
+     "Wednesday",
+     "Monday",
+     "Friday",
+     "next month"
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "最後の Could you finish it by Wednesday? が依頼の内容です。"
+   }
+  },
+  {
+   "id": "toeic-set4-07",
+   "text": "Welcome to Greenfield Bank. How can I help you today? I'd like to open a savings account.",
+   "gids": [
+    "g1",
+    "g7"
+   ],
+   "bm": false,
+   "added": 1791990000006,
+   "analysis": {
+    "translation": "グリーンフィールド銀行へようこそ。本日はどのようなご用件でしょうか。普通預金口座を開設したいのですが。",
+    "slash": [
+     {
+      "en": "Welcome to Greenfield Bank.",
+      "ja": "グリーンフィールド銀行へようこそ"
+     },
+     {
+      "en": "How can I help you today?",
+      "ja": "本日はどのようなご用件でしょうか"
+     },
+     {
+      "en": "I'd like to open a savings account.",
+      "ja": "普通預金口座を開設したいのですが"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "I (S) would like to open (V) a savings account (O)。窓口での用件の言い方です。"
+    },
+    "clauses": [
+     {
+      "text": "Welcome to Greenfield Bank. How can I help you today? I'd like to open a savings account.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "I",
+      "role": "S",
+      "note": "客"
+     },
+     {
+      "text": "'d like to open",
+      "role": "V",
+      "note": "丁寧な希望"
+     },
+     {
+      "text": "a savings account",
+      "role": "O",
+      "note": "開設したいもの"
+     }
+    ],
+    "tense": {
+     "name": "助動詞 would",
+     "explanation": "How can I help you? に対し、I'd like to ~ で用件を述べます。"
+    },
+    "grammar": [
+     {
+      "point": "How can I help you?",
+      "explanation": "窓口の定番の質問。直後の発言に用件が出る。"
+     },
+     {
+      "point": "I'd like to ~",
+      "explanation": "用件を述べる定番。何をしたいのかが設問で問われる。"
+     },
+     {
+      "point": "open an account",
+      "explanation": "「口座を開く」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "savings account",
+      "pos": "名詞",
+      "meaning": "普通預金口座",
+      "note": "",
+      "level": 3,
+      "toeic": "open a savings account"
+     },
+     {
+      "word": "open",
+      "pos": "動詞",
+      "meaning": "(口座を)開設する",
+      "note": "",
+      "level": 2,
+      "toeic": "open an account"
+     },
+     {
+      "word": "help",
+      "pos": "動詞",
+      "meaning": "~を手伝う",
+      "note": "",
+      "level": 1,
+      "toeic": "How can I help you?"
+     }
+    ],
+    "toeic": {
+     "scene": "銀行・窓口",
+     "part": "Part 3",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "bank に関する語(account / deposit / withdraw)"
+      }
+     ],
+     "paraphrase": [
+      "The customer wants to set up an account.",
+      "She would like to start a savings account."
+     ]
+    },
+    "words": [
+     {
+      "w": "Welcome",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "Greenfield",
+      "p": "n"
+     },
+     {
+      "w": "Bank.",
+      "p": "n"
+     },
+     {
+      "w": "How",
+      "p": "adv"
+     },
+     {
+      "w": "can",
+      "p": "aux"
+     },
+     {
+      "w": "I",
+      "p": "pron"
+     },
+     {
+      "w": "help",
+      "p": "v"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "today?",
+      "p": "adv"
+     },
+     {
+      "w": "I'd",
+      "p": "pron"
+     },
+     {
+      "w": "like",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "open",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "savings",
+      "p": "n"
+     },
+     {
+      "w": "account.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Welcome to Greenfield Bank.",
+      "f": "文"
+     },
+     {
+      "t": "How can I help you today?",
+      "f": "疑問文"
+     },
+     {
+      "t": "I'd like to open a savings account.",
+      "f": "文(丁寧な希望)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Welcome to Greenfield Bank."
+     },
+     {
+      "t": "How can I help you today?"
+     },
+     {
+      "t": "I'd like to open a savings account."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 3",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The customer would like to open a savings ______.",
+    "choices": [
+     "account",
+     "plan",
+     "card",
+     "fund"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "a savings account と言っています。"
+   }
+  },
+  {
+   "id": "toeic-set4-08",
+   "text": "The copy machine on this floor is out of order again. Let's use the one in the mailroom instead. Good idea, I'll put up a sign for everyone.",
+   "gids": [
+    "g1",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791990000007,
+   "analysis": {
+    "translation": "このフロアのコピー機がまた故障しています。代わりにメールルームのものを使いましょう。いい考えですね、みんなに知らせる貼り紙を出します。",
+    "slash": [
+     {
+      "en": "The copy machine on this floor is out of order again.",
+      "ja": "このフロアのコピー機がまた故障しています"
+     },
+     {
+      "en": "Let's use the one in the mailroom instead.",
+      "ja": "代わりにメールルームのものを使いましょう"
+     },
+     {
+      "en": "Good idea, I'll put up a sign for everyone.",
+      "ja": "いい考えですね、みんなに貼り紙を出します"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "The copy machine (S) is (V) out of order (C)。「故障中」という状態です。"
+    },
+    "clauses": [
+     {
+      "text": "The copy machine on this floor is out of order again. Let's use the one in the mailroom instead. Good idea, I'll put up a sign for everyone.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The copy machine on this floor",
+      "role": "S",
+      "note": "故障した物"
+     },
+     {
+      "text": "is",
+      "role": "V",
+      "note": "be動詞"
+     },
+     {
+      "text": "out of order",
+      "role": "C",
+      "note": "故障して"
+     }
+    ],
+    "tense": {
+     "name": "現在形・未来形",
+     "explanation": "故障は現在形、提案は Let's、申し出は I'll で表します。"
+    },
+    "grammar": [
+     {
+      "point": "out of order",
+      "explanation": "「故障中」。貼り紙の文言としても頻出。"
+     },
+     {
+      "point": "Let's + 動詞",
+      "explanation": "提案。次の行動を示す。"
+     },
+     {
+      "point": "put up a sign",
+      "explanation": "「貼り紙を出す」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "out of order",
+      "pos": "熟語",
+      "meaning": "故障中で",
+      "note": "",
+      "level": 3,
+      "toeic": "The machine is out of order."
+     },
+     {
+      "word": "instead",
+      "pos": "副詞",
+      "meaning": "代わりに",
+      "note": "",
+      "level": 2,
+      "toeic": "Use this one instead."
+     },
+     {
+      "word": "put up",
+      "pos": "熟語",
+      "meaning": "(貼り紙を)掲示する",
+      "note": "",
+      "level": 2,
+      "toeic": "put up a sign"
+     },
+     {
+      "word": "mailroom",
+      "pos": "名詞",
+      "meaning": "郵便物を扱う部屋",
+      "note": "",
+      "level": 2,
+      "toeic": "in the mailroom"
+     }
+    ],
+    "toeic": {
+     "scene": "社内・設備",
+     "part": "Part 3",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "out of order / broken / not working"
+      },
+      {
+       "type": "その他",
+       "detail": "提案への同意と申し出"
+      }
+     ],
+     "paraphrase": [
+      "The copier on this floor isn't working.",
+      "He will post a notice about it."
+     ]
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "copy",
+      "p": "n"
+     },
+     {
+      "w": "machine",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "this",
+      "p": "det"
+     },
+     {
+      "w": "floor",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "out",
+      "p": "adv"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "order",
+      "p": "n"
+     },
+     {
+      "w": "again.",
+      "p": "adv"
+     },
+     {
+      "w": "Let's",
+      "p": "v"
+     },
+     {
+      "w": "use",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "one",
+      "p": "pron"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "mailroom",
+      "p": "n"
+     },
+     {
+      "w": "instead.",
+      "p": "adv"
+     },
+     {
+      "w": "Good",
+      "p": "adj"
+     },
+     {
+      "w": "idea,",
+      "p": "n"
+     },
+     {
+      "w": "I'll",
+      "p": "pron"
+     },
+     {
+      "w": "put",
+      "p": "v"
+     },
+     {
+      "w": "up",
+      "p": "adv"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "sign",
+      "p": "n"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "everyone.",
+      "p": "pron"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The copy machine on this floor",
+      "f": "主語"
+     },
+     {
+      "t": "is out of order",
+      "f": "動詞句"
+     },
+     {
+      "t": "again.",
+      "f": "副詞"
+     },
+     {
+      "t": "Let's use the one in the mailroom instead.",
+      "f": "提案"
+     },
+     {
+      "t": "Good idea, I'll put up a sign for everyone.",
+      "f": "応答+申し出"
+     }
+    ],
+    "iu": [
+     {
+      "t": "The copy machine on this floor is out of order again."
+     },
+     {
+      "t": "Let's use the one in the mailroom instead."
+     },
+     {
+      "t": "Good idea, I'll put up a sign for everyone."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 3",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The woman offers to put up a ______ for everyone.",
+    "choices": [
+     "sign",
+     "schedule",
+     "report",
+     "check"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "I'll put up a sign for everyone. と言っています。"
+   }
+  },
+  {
+   "id": "toeic-set4-09",
+   "text": "Attention, passengers. Flight 208 to Seattle is now boarding at Gate 12. Please have your boarding pass ready.",
+   "gids": [
+    "g8",
+    "g9"
+   ],
+   "bm": false,
+   "added": 1791990000008,
+   "analysis": {
+    "translation": "乗客の皆様にお知らせします。シアトル行き208便は、12番ゲートで搭乗を開始しています。搭乗券をご用意ください。",
+    "slash": [
+     {
+      "en": "Attention, passengers.",
+      "ja": "乗客の皆様にお知らせします"
+     },
+     {
+      "en": "Flight 208 to Seattle is now boarding at Gate 12.",
+      "ja": "シアトル行き208便は12番ゲートで搭乗中です"
+     },
+     {
+      "en": "Please have your boarding pass ready.",
+      "ja": "搭乗券をご用意ください"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Flight 208 to Seattle (S) is boarding (V)。アナウンスの中心情報です。"
+    },
+    "clauses": [
+     {
+      "text": "Attention, passengers. Flight 208 to Seattle is now boarding at Gate 12. Please have your boarding pass ready.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Flight 208 to Seattle",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "is boarding",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "now",
+      "role": "M",
+      "note": "今"
+     },
+     {
+      "text": "at Gate 12",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・命令文",
+     "explanation": "今行われていることは現在進行形、依頼は Please + 動詞の原形で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "have + 目的語 + ready",
+      "explanation": "「~を用意しておく」。聞き手への指示。"
+     },
+     {
+      "point": "アナウンスの構造",
+      "explanation": "対象者への呼びかけ → 状況 → 依頼、の順。最後の依頼が問われやすい。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "board",
+      "pos": "動詞",
+      "meaning": "搭乗する",
+      "note": "",
+      "level": 3,
+      "toeic": "is now boarding"
+     },
+     {
+      "word": "boarding pass",
+      "pos": "名詞",
+      "meaning": "搭乗券",
+      "note": "",
+      "level": 3,
+      "toeic": "have your boarding pass ready"
+     },
+     {
+      "word": "gate",
+      "pos": "名詞",
+      "meaning": "搭乗口",
+      "note": "",
+      "level": 3,
+      "toeic": "at Gate 12"
+     },
+     {
+      "word": "attention",
+      "pos": "名詞",
+      "meaning": "注意、お知らせ",
+      "note": "",
+      "level": 2,
+      "toeic": "Attention, passengers."
+     }
+    ],
+    "toeic": {
+     "scene": "空港・アナウンス",
+     "part": "Part 4",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "boarding pass / gate"
+      },
+      {
+       "type": "その他",
+       "detail": "聞き手への依頼を聞き取る"
+      }
+     ],
+     "paraphrase": [
+      "Passengers can board Flight 208 now.",
+      "Passengers should get their tickets ready."
+     ]
+    },
+    "words": [
+     {
+      "w": "Attention,",
+      "p": "n"
+     },
+     {
+      "w": "passengers.",
+      "p": "n"
+     },
+     {
+      "w": "Flight",
+      "p": "n"
+     },
+     {
+      "w": "208",
+      "p": "n"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "Seattle",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "now",
+      "p": "adv"
+     },
+     {
+      "w": "boarding",
+      "p": "v"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "Gate",
+      "p": "n"
+     },
+     {
+      "w": "12.",
+      "p": "n"
+     },
+     {
+      "w": "Please",
+      "p": "adv"
+     },
+     {
+      "w": "have",
+      "p": "v"
+     },
+     {
+      "w": "your",
+      "p": "det"
+     },
+     {
+      "w": "boarding",
+      "p": "n"
+     },
+     {
+      "w": "pass",
+      "p": "n"
+     },
+     {
+      "w": "ready.",
+      "p": "adj"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Attention, passengers.",
+      "f": "呼びかけ"
+     },
+     {
+      "t": "Flight 208 to Seattle",
+      "f": "主語"
+     },
+     {
+      "t": "is now boarding",
+      "f": "動詞句(現在進行形)"
+     },
+     {
+      "t": "at Gate 12.",
+      "f": "前置詞句"
+     },
+     {
+      "t": "Please have your boarding pass ready.",
+      "f": "命令文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Attention, passengers."
+     },
+     {
+      "t": "Flight 208 to Seattle is now boarding at Gate 12."
+     },
+     {
+      "t": "Please have your boarding pass ready."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 4",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The announcement asks passengers to have their ______ ready.",
+    "choices": [
+     "boarding pass",
+     "passport photo",
+     "luggage tag",
+     "receipt"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "Please have your boarding pass ready. が依頼の内容です。"
+   }
+  },
+  {
+   "id": "toeic-set4-10",
+   "text": "Hello, this is Karen from Dr. Lee's office. I'm calling to confirm your appointment tomorrow at ten A.M. Please call us back if you need to reschedule.",
+   "gids": [
+    "g8",
+    "g10"
+   ],
+   "bm": false,
+   "added": 1791990000009,
+   "analysis": {
+    "translation": "こんにちは、リー医師の診療所のカレンです。明日の午前10時のご予約を確認するためにお電話しました。変更が必要でしたら、折り返しお電話ください。",
+    "slash": [
+     {
+      "en": "Hello, this is Karen from Dr. Lee's office.",
+      "ja": "リー医師の診療所のカレンです"
+     },
+     {
+      "en": "I'm calling to confirm your appointment tomorrow at ten A.M.",
+      "ja": "明日午前10時のご予約を確認するために電話しました"
+     },
+     {
+      "en": "Please call us back if you need to reschedule.",
+      "ja": "変更が必要なら折り返しお電話ください"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "I (S) 'm calling (V)。to confirm ~ が電話の目的を表します。"
+    },
+    "clauses": [
+     {
+      "text": "Hello, this is Karen from Dr. Lee's office. I'm calling to confirm your appointment tomorrow at ten A.M. Please call us back if you need to reschedule.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "I",
+      "role": "S",
+      "note": "電話をかけた人"
+     },
+     {
+      "text": "'m calling",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "to confirm your appointment",
+      "role": "M",
+      "note": "電話の目的(to不定詞)"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・命令文",
+     "explanation": "目的は I'm calling to ~、依頼は Please + 動詞。if 節は条件を表します。"
+    },
+    "grammar": [
+     {
+      "point": "I'm calling to ~",
+      "explanation": "留守電の定番。目的が最初の設問で問われる。"
+     },
+     {
+      "point": "call back",
+      "explanation": "「折り返し電話する」。依頼の内容として頻出。"
+     },
+     {
+      "point": "if 節",
+      "explanation": "条件。if you need to ~ は「~する必要があれば」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "confirm",
+      "pos": "動詞",
+      "meaning": "~を確認する",
+      "note": "",
+      "level": 3,
+      "toeic": "confirm an appointment"
+     },
+     {
+      "word": "appointment",
+      "pos": "名詞",
+      "meaning": "予約",
+      "note": "",
+      "level": 3,
+      "toeic": "make an appointment"
+     },
+     {
+      "word": "reschedule",
+      "pos": "動詞",
+      "meaning": "~の日程を変更する",
+      "note": "",
+      "level": 3,
+      "toeic": "reschedule a meeting"
+     },
+     {
+      "word": "call back",
+      "pos": "熟語",
+      "meaning": "折り返し電話する",
+      "note": "",
+      "level": 3,
+      "toeic": "Please call us back."
+     }
+    ],
+    "toeic": {
+     "scene": "医療・留守番電話",
+     "part": "Part 4",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "confirm / reschedule"
+      },
+      {
+       "type": "その他",
+       "detail": "電話の目的と依頼を聞き取る"
+      }
+     ],
+     "paraphrase": [
+      "The caller wants to verify an appointment.",
+      "Patients should phone to change the time."
+     ]
+    },
+    "words": [
+     {
+      "w": "Hello,",
+      "p": "other"
+     },
+     {
+      "w": "this",
+      "p": "pron"
+     },
+     {
+      "w": "is",
+      "p": "v"
+     },
+     {
+      "w": "Karen",
+      "p": "n"
+     },
+     {
+      "w": "from",
+      "p": "prep"
+     },
+     {
+      "w": "Dr.",
+      "p": "n"
+     },
+     {
+      "w": "Lee's",
+      "p": "n"
+     },
+     {
+      "w": "office.",
+      "p": "n"
+     },
+     {
+      "w": "I'm",
+      "p": "pron"
+     },
+     {
+      "w": "calling",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "confirm",
+      "p": "v"
+     },
+     {
+      "w": "your",
+      "p": "det"
+     },
+     {
+      "w": "appointment",
+      "p": "n"
+     },
+     {
+      "w": "tomorrow",
+      "p": "adv"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "ten",
+      "p": "det"
+     },
+     {
+      "w": "A.M.",
+      "p": "n"
+     },
+     {
+      "w": "Please",
+      "p": "adv"
+     },
+     {
+      "w": "call",
+      "p": "v"
+     },
+     {
+      "w": "us",
+      "p": "pron"
+     },
+     {
+      "w": "back",
+      "p": "adv"
+     },
+     {
+      "w": "if",
+      "p": "conj"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "need",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "reschedule.",
+      "p": "v"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Hello,",
+      "f": "間投詞"
+     },
+     {
+      "t": "this is Karen from Dr. Lee's office.",
+      "f": "名乗り"
+     },
+     {
+      "t": "I'm calling to confirm your appointment",
+      "f": "文(to不定詞で目的)"
+     },
+     {
+      "t": "tomorrow at ten A.M.",
+      "f": "時を表す語句"
+     },
+     {
+      "t": "Please call us back if you need to reschedule.",
+      "f": "命令文+条件節"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Hello, this is Karen from Dr. Lee's office."
+     },
+     {
+      "t": "I'm calling to confirm your appointment tomorrow at ten A.M."
+     },
+     {
+      "t": "Please call us back if you need to reschedule."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 4",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The caller is phoning to ______ an appointment.",
+    "choices": [
+     "confirm",
+     "cancel",
+     "request",
+     "pay for"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "I'm calling to confirm your appointment と目的を述べています。"
+   }
+  },
+  {
+   "id": "toeic-set4-11",
+   "text": "Thank you for visiting our factory today. Before we begin the tour, please put on a safety helmet. The tour will take about forty minutes.",
+   "gids": [
+    "g8",
+    "g11"
+   ],
+   "bm": false,
+   "added": 1791990000010,
+   "analysis": {
+    "translation": "本日は当工場にお越しいただき、ありがとうございます。見学を始める前に、安全ヘルメットをかぶってください。見学は約40分かかります。",
+    "slash": [
+     {
+      "en": "Thank you for visiting our factory today.",
+      "ja": "本日は当工場にお越しいただきありがとうございます"
+     },
+     {
+      "en": "Before we begin the tour, please put on a safety helmet.",
+      "ja": "見学を始める前に、安全ヘルメットをかぶってください"
+     },
+     {
+      "en": "The tour will take about forty minutes.",
+      "ja": "見学は約40分かかります"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "The tour (S) will take (V) about forty minutes (O)。take は「(時間が)かかる」の意味です。"
+    },
+    "clauses": [
+     {
+      "text": "Thank you for visiting our factory today. Before we begin the tour, please put on a safety helmet. The tour will take about forty minutes.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The tour",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "will take",
+      "role": "V",
+      "note": "未来を表す will + take"
+     },
+     {
+      "text": "about forty minutes",
+      "role": "O",
+      "note": "所要時間"
+     }
+    ],
+    "tense": {
+     "name": "未来形・命令文",
+     "explanation": "前置きの後、依頼は Please + 動詞、見通しは will で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "Before + 節",
+      "explanation": "「~する前に」。時間順の指示を示す。"
+     },
+     {
+      "point": "put on",
+      "explanation": "「身につける」(動作)"
+     },
+     {
+      "point": "take + 時間",
+      "explanation": "所要時間の言い方"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "put on",
+      "pos": "熟語",
+      "meaning": "~を身につける",
+      "note": "",
+      "level": 3,
+      "toeic": "put on a helmet"
+     },
+     {
+      "word": "tour",
+      "pos": "名詞",
+      "meaning": "見学、ツアー",
+      "note": "",
+      "level": 2,
+      "toeic": "factory tour"
+     },
+     {
+      "word": "safety",
+      "pos": "名詞",
+      "meaning": "安全",
+      "note": "",
+      "level": 3,
+      "toeic": "safety helmet"
+     },
+     {
+      "word": "begin",
+      "pos": "動詞",
+      "meaning": "~を始める",
+      "note": "",
+      "level": 1,
+      "toeic": "before we begin"
+     }
+    ],
+    "toeic": {
+     "scene": "製造・見学",
+     "part": "Part 4",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "put on と wear の違い"
+      },
+      {
+       "type": "その他",
+       "detail": "依頼が出てくる位置"
+      }
+     ],
+     "paraphrase": [
+      "Visitors must wear helmets first.",
+      "The visit lasts under an hour."
+     ]
+    },
+    "words": [
+     {
+      "w": "Thank",
+      "p": "v"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "visiting",
+      "p": "v"
+     },
+     {
+      "w": "our",
+      "p": "det"
+     },
+     {
+      "w": "factory",
+      "p": "n"
+     },
+     {
+      "w": "today.",
+      "p": "adv"
+     },
+     {
+      "w": "Before",
+      "p": "conj"
+     },
+     {
+      "w": "we",
+      "p": "pron"
+     },
+     {
+      "w": "begin",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "tour,",
+      "p": "n"
+     },
+     {
+      "w": "please",
+      "p": "adv"
+     },
+     {
+      "w": "put",
+      "p": "v"
+     },
+     {
+      "w": "on",
+      "p": "adv"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "safety",
+      "p": "n"
+     },
+     {
+      "w": "helmet.",
+      "p": "n"
+     },
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "tour",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "take",
+      "p": "v"
+     },
+     {
+      "w": "about",
+      "p": "adv"
+     },
+     {
+      "w": "forty",
+      "p": "det"
+     },
+     {
+      "w": "minutes.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Thank you for visiting our factory today.",
+      "f": "文"
+     },
+     {
+      "t": "Before we begin the tour,",
+      "f": "副詞節"
+     },
+     {
+      "t": "please put on a safety helmet.",
+      "f": "命令文"
+     },
+     {
+      "t": "The tour will take about forty minutes.",
+      "f": "文(未来形)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Thank you for visiting our factory today."
+     },
+     {
+      "t": "Before we begin the tour, please put on a safety helmet."
+     },
+     {
+      "t": "The tour will take about forty minutes."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 4",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Before the tour begins, visitors should put on a safety ______.",
+    "choices": [
+     "helmet",
+     "badge",
+     "vest",
+     "map"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "please put on a safety helmet と指示しています。"
+   }
+  },
+  {
+   "id": "toeic-set4-12",
+   "text": "This weekend only, all kitchen appliances are thirty percent off. Visit our store on Main Street or order online. The sale ends Sunday at midnight.",
+   "gids": [
+    "g8",
+    "g12"
+   ],
+   "bm": false,
+   "added": 1791990000011,
+   "analysis": {
+    "translation": "今週末限り、キッチン家電はすべて30パーセント引きです。メイン通りの当店にお越しいただくか、オンラインでご注文ください。セールは日曜日の深夜に終了します。",
+    "slash": [
+     {
+      "en": "This weekend only, all kitchen appliances are thirty percent off.",
+      "ja": "今週末限り、キッチン家電はすべて30%引き"
+     },
+     {
+      "en": "Visit our store on Main Street or order online.",
+      "ja": "メイン通りの店に来るかオンラインで注文"
+     },
+     {
+      "en": "The sale ends Sunday at midnight.",
+      "ja": "セールは日曜の深夜に終わります"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "all kitchen appliances (S) are (V) thirty percent off (C)。割引率を伝える広告の定型です。"
+    },
+    "clauses": [
+     {
+      "text": "This weekend only, all kitchen appliances are thirty percent off. Visit our store on Main Street or order online. The sale ends Sunday at midnight.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "all kitchen appliances",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "are",
+      "role": "V",
+      "note": "be動詞"
+     },
+     {
+      "text": "thirty percent off",
+      "role": "C",
+      "note": "30%割引"
+     }
+    ],
+    "tense": {
+     "name": "現在形・命令文",
+     "explanation": "割引は現在形、行動の呼びかけは命令文で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "~ percent off",
+      "explanation": "「~%引き」。広告で頻出。"
+     },
+     {
+      "point": "期限",
+      "explanation": "This weekend only / ends Sunday など、期間と期限が設問になる。"
+     },
+     {
+      "point": "A or B",
+      "explanation": "行動の選択肢(店に行く/オンライン)"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "appliance",
+      "pos": "名詞",
+      "meaning": "家電製品",
+      "note": "",
+      "level": 3,
+      "toeic": "kitchen appliances"
+     },
+     {
+      "word": "percent off",
+      "pos": "熟語",
+      "meaning": "~%引き",
+      "note": "",
+      "level": 3,
+      "toeic": "thirty percent off"
+     },
+     {
+      "word": "midnight",
+      "pos": "名詞",
+      "meaning": "深夜0時",
+      "note": "",
+      "level": 2,
+      "toeic": "ends at midnight"
+     },
+     {
+      "word": "order",
+      "pos": "動詞",
+      "meaning": "~を注文する",
+      "note": "",
+      "level": 1,
+      "toeic": "order online"
+     }
+    ],
+    "toeic": {
+     "scene": "広告・セール",
+     "part": "Part 4",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "discount / sale / percent off"
+      },
+      {
+       "type": "その他",
+       "detail": "期間と期限を聞き取る"
+      }
+     ],
+     "paraphrase": [
+      "Kitchen products are discounted by thirty percent.",
+      "The promotion finishes late Sunday night."
+     ]
+    },
+    "words": [
+     {
+      "w": "This",
+      "p": "det"
+     },
+     {
+      "w": "weekend",
+      "p": "n"
+     },
+     {
+      "w": "only,",
+      "p": "adv"
+     },
+     {
+      "w": "all",
+      "p": "det"
+     },
+     {
+      "w": "kitchen",
+      "p": "n"
+     },
+     {
+      "w": "appliances",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "v"
+     },
+     {
+      "w": "thirty",
+      "p": "det"
+     },
+     {
+      "w": "percent",
+      "p": "n"
+     },
+     {
+      "w": "off.",
+      "p": "adv"
+     },
+     {
+      "w": "Visit",
+      "p": "v"
+     },
+     {
+      "w": "our",
+      "p": "det"
+     },
+     {
+      "w": "store",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "Main",
+      "p": "n"
+     },
+     {
+      "w": "Street",
+      "p": "n"
+     },
+     {
+      "w": "or",
+      "p": "conj"
+     },
+     {
+      "w": "order",
+      "p": "v"
+     },
+     {
+      "w": "online.",
+      "p": "adv"
+     },
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "sale",
+      "p": "n"
+     },
+     {
+      "w": "ends",
+      "p": "v"
+     },
+     {
+      "w": "Sunday",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "midnight.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "This weekend only,",
+      "f": "副詞句"
+     },
+     {
+      "t": "all kitchen appliances",
+      "f": "主語"
+     },
+     {
+      "t": "are thirty percent off.",
+      "f": "動詞句"
+     },
+     {
+      "t": "Visit our store on Main Street or order online.",
+      "f": "命令文"
+     },
+     {
+      "t": "The sale ends Sunday at midnight.",
+      "f": "文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "This weekend only, all kitchen appliances are thirty percent off."
+     },
+     {
+      "t": "Visit our store on Main Street or order online."
+     },
+     {
+      "t": "The sale ends Sunday at midnight."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 4",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The sale on kitchen appliances ends on ______.",
+    "choices": [
+     "Sunday",
+     "Friday",
+     "Main Street",
+     "midnight Saturday"
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "The sale ends Sunday at midnight. とあるので、終了は日曜日の深夜です。"
+   }
+  },
+  {
+   "id": "toeic-set4-13",
+   "text": "Good morning, everyone. I'm pleased to announce that our new branch will open in Denver next month. Please welcome Mr. Evans, who will be the manager.",
+   "gids": [
+    "g8",
+    "g13"
+   ],
+   "bm": false,
+   "added": 1791990000012,
+   "analysis": {
+    "translation": "皆さん、おはようございます。来月デンバーに新しい支店が開設されることをお知らせできて嬉しく思います。支店長を務めるエバンスさんを歓迎してください。",
+    "slash": [
+     {
+      "en": "Good morning, everyone.",
+      "ja": "皆さん、おはようございます"
+     },
+     {
+      "en": "I'm pleased to announce that our new branch will open in Denver next month.",
+      "ja": "来月デンバーに新支店が開くことをお知らせできて嬉しいです"
+     },
+     {
+      "en": "Please welcome Mr. Evans, who will be the manager.",
+      "ja": "支店長になるエバンスさんを歓迎してください"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "I (S) 'm (V) pleased to announce ... (C)。発表の定型的な前置きで、that 以下が本題です。"
+    },
+    "clauses": [
+     {
+      "text": "Good morning, everyone. I'm pleased to announce that our new branch will open in Denver next month. Please welcome Mr. Evans, who will be the manager.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "I",
+      "role": "S",
+      "note": "話し手"
+     },
+     {
+      "text": "'m",
+      "role": "V",
+      "note": "be動詞"
+     },
+     {
+      "text": "pleased to announce that ~",
+      "role": "C",
+      "note": "発表の前置き"
+     }
+    ],
+    "tense": {
+     "name": "未来形・関係詞節",
+     "explanation": "新支店の開設は will open、支店長は who will be the manager と関係詞節で補足しています。"
+    },
+    "grammar": [
+     {
+      "point": "be pleased to announce that ~",
+      "explanation": "発表の定型。that 以下が話題の中心。"
+     },
+     {
+      "point": "非制限用法の who",
+      "explanation": "Mr. Evans を補足する関係詞節。"
+     },
+     {
+      "point": "next month",
+      "explanation": "時期。設問で問われやすい。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "announce",
+      "pos": "動詞",
+      "meaning": "~を発表する",
+      "note": "",
+      "level": 3,
+      "toeic": "I'm pleased to announce ~"
+     },
+     {
+      "word": "branch",
+      "pos": "名詞",
+      "meaning": "支店",
+      "note": "",
+      "level": 3,
+      "toeic": "a new branch"
+     },
+     {
+      "word": "manager",
+      "pos": "名詞",
+      "meaning": "支店長、管理者",
+      "note": "",
+      "level": 1,
+      "toeic": "branch manager"
+     },
+     {
+      "word": "welcome",
+      "pos": "動詞",
+      "meaning": "~を歓迎する",
+      "note": "",
+      "level": 2,
+      "toeic": "Please welcome ~"
+     }
+    ],
+    "toeic": {
+     "scene": "社内・人事発表",
+     "part": "Part 4",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "announce / branch"
+      },
+      {
+       "type": "接続詞・副詞",
+       "detail": "that 節と関係詞節"
+      }
+     ],
+     "paraphrase": [
+      "A new office will start operating in Denver.",
+      "Mr. Evans will lead the new location."
+     ]
+    },
+    "words": [
+     {
+      "w": "Good",
+      "p": "adj"
+     },
+     {
+      "w": "morning,",
+      "p": "n"
+     },
+     {
+      "w": "everyone.",
+      "p": "pron"
+     },
+     {
+      "w": "I'm",
+      "p": "pron"
+     },
+     {
+      "w": "pleased",
+      "p": "adj"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "announce",
+      "p": "v"
+     },
+     {
+      "w": "that",
+      "p": "conj"
+     },
+     {
+      "w": "our",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "branch",
+      "p": "n"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "open",
+      "p": "v"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "Denver",
+      "p": "n"
+     },
+     {
+      "w": "next",
+      "p": "adj"
+     },
+     {
+      "w": "month.",
+      "p": "n"
+     },
+     {
+      "w": "Please",
+      "p": "adv"
+     },
+     {
+      "w": "welcome",
+      "p": "v"
+     },
+     {
+      "w": "Mr.",
+      "p": "n"
+     },
+     {
+      "w": "Evans,",
+      "p": "n"
+     },
+     {
+      "w": "who",
+      "p": "conj"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "be",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "manager.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Good morning, everyone.",
+      "f": "呼びかけ"
+     },
+     {
+      "t": "I'm pleased to announce",
+      "f": "動詞句"
+     },
+     {
+      "t": "that our new branch will open in Denver next month.",
+      "f": "名詞節"
+     },
+     {
+      "t": "Please welcome Mr. Evans,",
+      "f": "命令文"
+     },
+     {
+      "t": "who will be the manager.",
+      "f": "関係詞節"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Good morning, everyone."
+     },
+     {
+      "t": "I'm pleased to announce that our new branch will open in Denver next month."
+     },
+     {
+      "t": "Please welcome Mr. Evans, who will be the manager."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 4",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The speaker announces that a new ______ will open in Denver.",
+    "choices": [
+     "branch",
+     "factory",
+     "school",
+     "warehouse"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "our new branch will open in Denver と言っています。"
+   }
+  },
+  {
+   "id": "toeic-set4-14",
+   "text": "Due to heavy traffic on Route 9, drivers should expect long delays this morning. Consider taking the train instead. We will bring you another update in thirty minutes.",
+   "gids": [
+    "g8",
+    "g14"
+   ],
+   "bm": false,
+   "added": 1791990000013,
+   "analysis": {
+    "translation": "9号線の渋滞のため、今朝は長い遅れが見込まれます。代わりに電車の利用をご検討ください。30分後に最新情報をお伝えします。",
+    "slash": [
+     {
+      "en": "Due to heavy traffic on Route 9, drivers should expect long delays this morning.",
+      "ja": "9号線の渋滞のため、今朝は長い遅れが見込まれます"
+     },
+     {
+      "en": "Consider taking the train instead.",
+      "ja": "代わりに電車の利用をご検討ください"
+     },
+     {
+      "en": "We will bring you another update in thirty minutes.",
+      "ja": "30分後に最新情報をお伝えします"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "drivers (S) should expect (V) long delays (O)。文頭の Due to ~ が理由を表します。"
+    },
+    "clauses": [
+     {
+      "text": "Due to heavy traffic on Route 9, drivers should expect long delays this morning. Consider taking the train instead. We will bring you another update in thirty minutes.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "drivers",
+      "role": "S",
+      "note": "運転手"
+     },
+     {
+      "text": "should expect",
+      "role": "V",
+      "note": "助動詞 should + 動詞"
+     },
+     {
+      "text": "long delays",
+      "role": "O",
+      "note": "予想されること"
+     },
+     {
+      "text": "Due to heavy traffic on Route 9",
+      "role": "M",
+      "note": "理由"
+     }
+    ],
+    "tense": {
+     "name": "助動詞 should・未来形",
+     "explanation": "忠告は should、次の放送は will、in thirty minutes は「30分後に」。"
+    },
+    "grammar": [
+     {
+      "point": "due to + 名詞",
+      "explanation": "「~のために」。理由を表す前置詞句。"
+     },
+     {
+      "point": "Consider + -ing",
+      "explanation": "「~を検討してください」。代案の提示。"
+     },
+     {
+      "point": "in + 時間",
+      "explanation": "「~後に」。次の更新のタイミング。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "due to",
+      "pos": "熟語",
+      "meaning": "~のために",
+      "note": "",
+      "level": 3,
+      "toeic": "due to heavy traffic"
+     },
+     {
+      "word": "delay",
+      "pos": "名詞",
+      "meaning": "遅れ",
+      "note": "",
+      "level": 3,
+      "toeic": "long delays"
+     },
+     {
+      "word": "expect",
+      "pos": "動詞",
+      "meaning": "~を予想する",
+      "note": "",
+      "level": 2,
+      "toeic": "expect delays"
+     },
+     {
+      "word": "update",
+      "pos": "名詞",
+      "meaning": "最新情報",
+      "note": "",
+      "level": 3,
+      "toeic": "another update"
+     }
+    ],
+    "toeic": {
+     "scene": "交通情報",
+     "part": "Part 4",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "due to と because of(名詞が続く)"
+      },
+      {
+       "type": "その他",
+       "detail": "代案と次の放送時刻"
+      }
+     ],
+     "paraphrase": [
+      "Heavy congestion is likely on Route 9.",
+      "Listeners are advised to use public transportation."
+     ]
+    },
+    "words": [
+     {
+      "w": "Due",
+      "p": "adj"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "heavy",
+      "p": "adj"
+     },
+     {
+      "w": "traffic",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "Route",
+      "p": "n"
+     },
+     {
+      "w": "9,",
+      "p": "n"
+     },
+     {
+      "w": "drivers",
+      "p": "n"
+     },
+     {
+      "w": "should",
+      "p": "aux"
+     },
+     {
+      "w": "expect",
+      "p": "v"
+     },
+     {
+      "w": "long",
+      "p": "adj"
+     },
+     {
+      "w": "delays",
+      "p": "n"
+     },
+     {
+      "w": "this",
+      "p": "det"
+     },
+     {
+      "w": "morning.",
+      "p": "n"
+     },
+     {
+      "w": "Consider",
+      "p": "v"
+     },
+     {
+      "w": "taking",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "train",
+      "p": "n"
+     },
+     {
+      "w": "instead.",
+      "p": "adv"
+     },
+     {
+      "w": "We",
+      "p": "pron"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "bring",
+      "p": "v"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "another",
+      "p": "det"
+     },
+     {
+      "w": "update",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "thirty",
+      "p": "det"
+     },
+     {
+      "w": "minutes.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Due to heavy traffic on Route 9,",
+      "f": "前置詞句(理由)"
+     },
+     {
+      "t": "drivers should expect long delays this morning.",
+      "f": "文(助動詞 should)"
+     },
+     {
+      "t": "Consider taking the train instead.",
+      "f": "命令文"
+     },
+     {
+      "t": "We will bring you another update in thirty minutes.",
+      "f": "文(未来形)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Due to heavy traffic on Route 9, drivers should expect long delays this morning."
+     },
+     {
+      "t": "Consider taking the train instead."
+     },
+     {
+      "t": "We will bring you another update in thirty minutes."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 4",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The speaker suggests that drivers take the ______.",
+    "choices": [
+     "train",
+     "bus",
+     "highway",
+     "bicycle"
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "Consider taking the train instead. と言っています。"
+   }
+  },
+  {
+   "id": "toeic-set4-15",
+   "text": "You have reached the customer service line of Brightway Electric. Our office is now closed. Please call back during business hours, or leave a message after the tone.",
+   "gids": [
+    "g8",
+    "g10"
+   ],
+   "bm": false,
+   "added": 1791990000014,
+   "analysis": {
+    "translation": "ブライトウェイ電力のカスタマーサービス窓口におかけいただきました。ただいま営業時間外です。営業時間内におかけ直しいただくか、発信音の後にメッセージをお残しください。",
+    "slash": [
+     {
+      "en": "You have reached the customer service line of Brightway Electric.",
+      "ja": "ブライトウェイ電力のカスタマーサービスにおかけいただきました"
+     },
+     {
+      "en": "Our office is now closed.",
+      "ja": "ただいま営業時間外です"
+     },
+     {
+      "en": "Please call back during business hours, or leave a message after the tone.",
+      "ja": "営業時間内におかけ直しいただくか、発信音の後にメッセージをお残しください"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "You (S) have reached (V) the customer service line (O)。自動応答の定型です。"
+    },
+    "clauses": [
+     {
+      "text": "You have reached the customer service line of Brightway Electric. Our office is now closed. Please call back during business hours, or leave a message after the tone.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "You",
+      "role": "S",
+      "note": "聞き手"
+     },
+     {
+      "text": "have reached",
+      "role": "V",
+      "note": "現在完了"
+     },
+     {
+      "text": "the customer service line",
+      "role": "O",
+      "note": "つながった窓口"
+     }
+    ],
+    "tense": {
+     "name": "現在完了・命令文",
+     "explanation": "つながった先は現在完了、指示は命令文で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "You have reached ~",
+      "explanation": "自動応答の定型。どの会社か、が最初の設問で問われる。"
+     },
+     {
+      "point": "business hours",
+      "explanation": "営業時間。設問で問われやすい。"
+     },
+     {
+      "point": "A, or B",
+      "explanation": "2つの選択肢(かけ直す/メッセージを残す)"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "business hours",
+      "pos": "名詞",
+      "meaning": "営業時間",
+      "note": "",
+      "level": 3,
+      "toeic": "during business hours"
+     },
+     {
+      "word": "leave a message",
+      "pos": "熟語",
+      "meaning": "伝言を残す",
+      "note": "",
+      "level": 3,
+      "toeic": "after the tone"
+     },
+     {
+      "word": "tone",
+      "pos": "名詞",
+      "meaning": "発信音",
+      "note": "",
+      "level": 2,
+      "toeic": "after the tone"
+     },
+     {
+      "word": "reach",
+      "pos": "動詞",
+      "meaning": "(電話で)つながる",
+      "note": "",
+      "level": 2,
+      "toeic": "You have reached ~."
+     }
+    ],
+    "toeic": {
+     "scene": "顧客対応・自動応答",
+     "part": "Part 4",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "business hours / leave a message"
+      },
+      {
+       "type": "その他",
+       "detail": "選択肢の2つの行動を聞き取る"
+      }
+     ],
+     "paraphrase": [
+      "The office is not open right now.",
+      "Callers can ring again later or record a message."
+     ]
+    },
+    "words": [
+     {
+      "w": "You",
+      "p": "pron"
+     },
+     {
+      "w": "have",
+      "p": "aux"
+     },
+     {
+      "w": "reached",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "customer",
+      "p": "n"
+     },
+     {
+      "w": "service",
+      "p": "n"
+     },
+     {
+      "w": "line",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "Brightway",
+      "p": "n"
+     },
+     {
+      "w": "Electric.",
+      "p": "n"
+     },
+     {
+      "w": "Our",
+      "p": "det"
+     },
+     {
+      "w": "office",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "v"
+     },
+     {
+      "w": "now",
+      "p": "adv"
+     },
+     {
+      "w": "closed.",
+      "p": "adj"
+     },
+     {
+      "w": "Please",
+      "p": "adv"
+     },
+     {
+      "w": "call",
+      "p": "v"
+     },
+     {
+      "w": "back",
+      "p": "adv"
+     },
+     {
+      "w": "during",
+      "p": "prep"
+     },
+     {
+      "w": "business",
+      "p": "n"
+     },
+     {
+      "w": "hours,",
+      "p": "n"
+     },
+     {
+      "w": "or",
+      "p": "conj"
+     },
+     {
+      "w": "leave",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "message",
+      "p": "n"
+     },
+     {
+      "w": "after",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "tone.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "You have reached",
+      "f": "動詞句(現在完了)"
+     },
+     {
+      "t": "the customer service line of Brightway Electric.",
+      "f": "目的語"
+     },
+     {
+      "t": "Our office is now closed.",
+      "f": "文"
+     },
+     {
+      "t": "Please call back during business hours,",
+      "f": "命令文"
+     },
+     {
+      "t": "or leave a message after the tone.",
+      "f": "命令文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "You have reached the customer service line of Brightway Electric."
+     },
+     {
+      "t": "Our office is now closed."
+     },
+     {
+      "t": "Please call back during business hours, or leave a message after the tone."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 4",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Callers are asked to leave a message after the ______.",
+    "choices": [
+     "tone",
+     "beep card",
+     "hour",
+     "menu"
+    ],
+    "answer": 0,
+    "type": "語彙",
+    "explanation": "leave a message after the tone と言っています。"
+   }
+  },
+  {
+   "id": "toeic-set4-16",
+   "text": "Welcome to the city museum's new exhibit on modern art. Photography is allowed, but the use of flash is not permitted. Audio guides are available at the front desk.",
+   "gids": [
+    "g8",
+    "g11"
+   ],
+   "bm": false,
+   "added": 1791990000015,
+   "analysis": {
+    "translation": "市立美術館の新しい現代美術展にようこそ。写真撮影は可能ですが、フラッシュの使用は認められていません。音声ガイドは受付でご利用いただけます。",
+    "slash": [
+     {
+      "en": "Welcome to the city museum's new exhibit on modern art.",
+      "ja": "市立美術館の新しい現代美術展へようこそ"
+     },
+     {
+      "en": "Photography is allowed, but the use of flash is not permitted.",
+      "ja": "写真撮影は可能ですが、フラッシュの使用は認められていません"
+     },
+     {
+      "en": "Audio guides are available at the front desk.",
+      "ja": "音声ガイドは受付で利用できます"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Photography (S) is allowed (V)。but 以降で例外(フラッシュ禁止)を述べています。"
+    },
+    "clauses": [
+     {
+      "text": "Welcome to the city museum's new exhibit on modern art. Photography is allowed, but the use of flash is not permitted. Audio guides are available at the front desk.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Photography",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "is allowed",
+      "role": "V",
+      "note": "受動態"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "許可・禁止は is allowed / is not permitted の受動態で述べます。"
+    },
+    "grammar": [
+     {
+      "point": "allowed, but ~ not permitted",
+      "explanation": "許可と禁止の対比。設問では「禁止されていること」が問われやすい。"
+     },
+     {
+      "point": "available at ~",
+      "explanation": "「~で利用できる」。場所が設問になる。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "exhibit",
+      "pos": "名詞",
+      "meaning": "展示",
+      "note": "",
+      "level": 3,
+      "toeic": "a new exhibit"
+     },
+     {
+      "word": "permit",
+      "pos": "動詞",
+      "meaning": "~を許可する",
+      "note": "",
+      "level": 3,
+      "toeic": "is not permitted"
+     },
+     {
+      "word": "available",
+      "pos": "形容詞",
+      "meaning": "利用できる",
+      "note": "",
+      "level": 3,
+      "toeic": "available at the front desk"
+     },
+     {
+      "word": "front desk",
+      "pos": "名詞",
+      "meaning": "受付",
+      "note": "",
+      "level": 3,
+      "toeic": "at the front desk"
+     }
+    ],
+    "toeic": {
+     "scene": "美術館・案内",
+     "part": "Part 4",
+     "points": [
+      {
+       "type": "受動態",
+       "detail": "allowed / permitted の形"
+      },
+      {
+       "type": "その他",
+       "detail": "許可と禁止の対比を聞き取る"
+      }
+     ],
+     "paraphrase": [
+      "Visitors may take pictures but must not use a flash.",
+      "Headsets for explanations can be borrowed at reception."
+     ]
+    },
+    "words": [
+     {
+      "w": "Welcome",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "city",
+      "p": "n"
+     },
+     {
+      "w": "museum's",
+      "p": "n"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "exhibit",
+      "p": "n"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "modern",
+      "p": "adj"
+     },
+     {
+      "w": "art.",
+      "p": "n"
+     },
+     {
+      "w": "Photography",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "allowed,",
+      "p": "v"
+     },
+     {
+      "w": "but",
+      "p": "conj"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "use",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "flash",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "not",
+      "p": "adv"
+     },
+     {
+      "w": "permitted.",
+      "p": "v"
+     },
+     {
+      "w": "Audio",
+      "p": "n"
+     },
+     {
+      "w": "guides",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "v"
+     },
+     {
+      "w": "available",
+      "p": "adj"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "front",
+      "p": "n"
+     },
+     {
+      "w": "desk.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Welcome to the city museum's new exhibit on modern art.",
+      "f": "文"
+     },
+     {
+      "t": "Photography is allowed,",
+      "f": "文(受動態)"
+     },
+     {
+      "t": "but the use of flash is not permitted.",
+      "f": "接続詞+文(受動態)"
+     },
+     {
+      "t": "Audio guides are available at the front desk.",
+      "f": "文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Welcome to the city museum's new exhibit on modern art."
+     },
+     {
+      "t": "Photography is allowed, but the use of flash is not permitted."
+     },
+     {
+      "t": "Audio guides are available at the front desk."
+     }
+    ]
+   },
+   "level": 860,
+   "part": "Part 4",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Visitors are not permitted to use a ______.",
+    "choices": [
+     "flash",
+     "camera",
+     "phone",
+     "guide"
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "the use of flash is not permitted と言っています。写真撮影そのものは許可されています。"
+   }
+  }
+ ],
+ "words": []
+}

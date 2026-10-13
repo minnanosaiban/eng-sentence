@@ -1,0 +1,4104 @@
+{
+ "groups": [
+  {
+   "id": "g1",
+   "name": "Part 1 写真描写"
+  },
+  {
+   "id": "g2",
+   "name": "写真:人の動作"
+  },
+  {
+   "id": "g3",
+   "name": "写真:物の状態"
+  },
+  {
+   "id": "g4",
+   "name": "Part 2 応答問題"
+  },
+  {
+   "id": "g5",
+   "name": "疑問詞:When/Where/Who"
+  },
+  {
+   "id": "g6",
+   "name": "Yes/No・依頼・提案"
+  },
+  {
+   "id": "g7",
+   "name": "疑問詞:Why/How/Which"
+  }
+ ],
+ "items": [
+  {
+   "id": "toeic-set3-01",
+   "text": "A woman is watering the plants in the garden.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791900000000,
+   "analysis": {
+    "translation": "女性が庭の植物に水をやっています。",
+    "slash": [
+     {
+      "en": "A woman",
+      "ja": "女性が"
+     },
+     {
+      "en": "is watering the plants",
+      "ja": "植物に水をやっている"
+     },
+     {
+      "en": "in the garden.",
+      "ja": "庭で"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "A woman (S) is watering (V) the plants (O)。in the garden は場所を表す修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "A woman is watering the plants in the garden.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A woman",
+      "role": "S",
+      "note": "動作をしている人"
+     },
+     {
+      "text": "is watering",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "the plants",
+      "role": "O",
+      "note": "水をやる対象"
+     },
+     {
+      "text": "in the garden",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "Part 1 では、写真の「今まさに行われている動作」を is/are + 動詞の -ing 形で表します。"
+    },
+    "grammar": [
+     {
+      "point": "現在進行形 is + -ing",
+      "explanation": "写真の人物の動作を描写する最頻出の型です。"
+     },
+     {
+      "point": "water が動詞",
+      "explanation": "water は名詞だけでなく「水をやる」という動詞でも使われます。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "water",
+      "pos": "動詞",
+      "meaning": "~に水をやる",
+      "note": "",
+      "level": 3,
+      "toeic": "water the plants / water the lawn"
+     },
+     {
+      "word": "plant",
+      "pos": "名詞",
+      "meaning": "植物",
+      "note": "",
+      "level": 2,
+      "toeic": "potted plant(鉢植え)"
+     },
+     {
+      "word": "garden",
+      "pos": "名詞",
+      "meaning": "庭",
+      "note": "",
+      "level": 1,
+      "toeic": "a community garden"
+     }
+    ],
+    "toeic": {
+     "scene": "屋外・園芸",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "現在進行形 is watering が動作の描写に使われる"
+      },
+      {
+       "type": "語彙",
+       "detail": "water の動詞用法"
+      }
+     ],
+     "paraphrase": [
+      "A woman is taking care of the plants.",
+      "Someone is watering some plants outdoors."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "woman",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "watering",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "plants",
+      "p": "n"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "garden.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A woman",
+      "f": "主語"
+     },
+     {
+      "t": "is watering",
+      "f": "動詞句"
+     },
+     {
+      "t": "the plants",
+      "f": "目的語"
+     },
+     {
+      "t": "in the garden.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A woman"
+     },
+     {
+      "t": "is watering the plants"
+     },
+     {
+      "t": "in the garden."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A woman is ______ the plants in the garden.",
+    "choices": [
+     "watering",
+     "watered",
+     "waters",
+     "to water"
+    ],
+    "answer": 0,
+    "type": "時制",
+    "explanation": "写真の人物が今している動作なので、is の後は現在進行形の watering。watered は過去分詞/過去形、waters は三単現で is の後に続けられず、to water は不定詞で形が合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-02",
+   "text": "Some boxes are stacked next to the loading dock.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1791900000001,
+   "analysis": {
+    "translation": "いくつかの箱が荷積み場の隣に積み重ねられています。",
+    "slash": [
+     {
+      "en": "Some boxes",
+      "ja": "いくつかの箱が"
+     },
+     {
+      "en": "are stacked",
+      "ja": "積み重ねられている"
+     },
+     {
+      "en": "next to the loading dock.",
+      "ja": "荷積み場の隣に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Some boxes (S) are stacked (V)。受動態で、物の「状態」を述べています。next to ~ は位置の修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "Some boxes are stacked next to the loading dock.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Some boxes",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "are stacked",
+      "role": "V",
+      "note": "受動態(状態)"
+     },
+     {
+      "text": "next to the loading dock",
+      "role": "M",
+      "note": "位置を表す"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "人がいない写真では、物の状態を are + 過去分詞 で描写します。"
+    },
+    "grammar": [
+     {
+      "point": "be stacked",
+      "explanation": "「積み重ねられている」という状態を表す受動態。"
+     },
+     {
+      "point": "next to + 名詞",
+      "explanation": "位置関係を表す前置詞句です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "stack",
+      "pos": "動詞",
+      "meaning": "~を積み重ねる",
+      "note": "",
+      "level": 2,
+      "toeic": "be stacked in rows"
+     },
+     {
+      "word": "loading dock",
+      "pos": "名詞",
+      "meaning": "荷積み場",
+      "note": "",
+      "level": 3,
+      "toeic": "at the loading dock"
+     },
+     {
+      "word": "next to",
+      "pos": "熟語",
+      "meaning": "~の隣に",
+      "note": "",
+      "level": 2,
+      "toeic": "位置関係の描写で頻出"
+     }
+    ],
+    "toeic": {
+     "scene": "物流・倉庫",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "受動態",
+       "detail": "are stacked は人の動作ではなく物の状態の描写"
+      },
+      {
+       "type": "前置詞",
+       "detail": "next to / beside / near の位置表現"
+      }
+     ],
+     "paraphrase": [
+      "Boxes are piled up beside the dock.",
+      "Some cartons have been placed near the loading area."
+     ]
+    },
+    "words": [
+     {
+      "w": "Some",
+      "p": "det"
+     },
+     {
+      "w": "boxes",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "stacked",
+      "p": "v"
+     },
+     {
+      "w": "next",
+      "p": "adv"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "loading",
+      "p": "adj"
+     },
+     {
+      "w": "dock.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Some boxes",
+      "f": "主語"
+     },
+     {
+      "t": "are stacked",
+      "f": "動詞句(受動態)"
+     },
+     {
+      "t": "next to the loading dock.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Some boxes"
+     },
+     {
+      "t": "are stacked"
+     },
+     {
+      "t": "next to the loading dock."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Some boxes are ______ next to the loading dock.",
+    "choices": [
+     "stacked",
+     "stacking",
+     "stack",
+     "stacks"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "箱は「積まれる」側なので are の後は過去分詞 stacked。stacking は能動の進行形で箱が自分で積むことになり不適切、stack は原形、stacks は三単現で are と合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-03",
+   "text": "Two men are shaking hands across a table.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791900000002,
+   "analysis": {
+    "translation": "2人の男性がテーブル越しに握手をしています。",
+    "slash": [
+     {
+      "en": "Two men",
+      "ja": "2人の男性が"
+     },
+     {
+      "en": "are shaking hands",
+      "ja": "握手をしている"
+     },
+     {
+      "en": "across a table.",
+      "ja": "テーブル越しに"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "Two men (S) are shaking (V) hands (O)。across a table は場所の修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "Two men are shaking hands across a table.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Two men",
+      "role": "S",
+      "note": "動作をする人たち"
+     },
+     {
+      "text": "are shaking",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "hands",
+      "role": "O",
+      "note": "握手の「手」(複数形)"
+     },
+     {
+      "text": "across a table",
+      "role": "M",
+      "note": "位置"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "握手は今行われている動作なので現在進行形で描写します。"
+    },
+    "grammar": [
+     {
+      "point": "shake hands",
+      "explanation": "hands は常に複数形。「握手する」という熟語です。"
+     },
+     {
+      "point": "across + 名詞",
+      "explanation": "「~を挟んで、~越しに」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "shake hands",
+      "pos": "熟語",
+      "meaning": "握手する",
+      "note": "",
+      "level": 3,
+      "toeic": "shake hands with ~"
+     },
+     {
+      "word": "across",
+      "pos": "前置詞",
+      "meaning": "~越しに、~の向こう側に",
+      "note": "",
+      "level": 2,
+      "toeic": "across the table / across the street"
+     },
+     {
+      "word": "table",
+      "pos": "名詞",
+      "meaning": "テーブル",
+      "note": "",
+      "level": 1,
+      "toeic": "a conference table"
+     }
+    ],
+    "toeic": {
+     "scene": "会議・商談",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "shake hands(hands は複数形)"
+      },
+      {
+       "type": "前置詞",
+       "detail": "across の位置の表し方"
+      }
+     ],
+     "paraphrase": [
+      "Two people are greeting each other.",
+      "Business partners are shaking hands over a table."
+     ]
+    },
+    "words": [
+     {
+      "w": "Two",
+      "p": "det"
+     },
+     {
+      "w": "men",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "shaking",
+      "p": "v"
+     },
+     {
+      "w": "hands",
+      "p": "n"
+     },
+     {
+      "w": "across",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "table.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Two men",
+      "f": "主語"
+     },
+     {
+      "t": "are shaking",
+      "f": "動詞句"
+     },
+     {
+      "t": "hands",
+      "f": "目的語"
+     },
+     {
+      "t": "across a table.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Two men"
+     },
+     {
+      "t": "are shaking hands"
+     },
+     {
+      "t": "across a table."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Two men are shaking ______ across a table.",
+    "choices": [
+     "hands",
+     "a hand",
+     "hand",
+     "handing"
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "「握手する」は shake hands と複数形で表す決まった形。a hand や hand は形が合わず、handing は意味が違います。"
+   }
+  },
+  {
+   "id": "toeic-set3-04",
+   "text": "Chairs have been arranged around a conference table.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1791900000003,
+   "analysis": {
+    "translation": "会議用テーブルの周りに椅子が並べられています。",
+    "slash": [
+     {
+      "en": "Chairs",
+      "ja": "椅子が"
+     },
+     {
+      "en": "have been arranged",
+      "ja": "並べられている"
+     },
+     {
+      "en": "around a conference table.",
+      "ja": "会議用テーブルの周りに"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Chairs (S) have been arranged (V)。誰が並べたかは述べず、結果の状態を表します。"
+    },
+    "clauses": [
+     {
+      "text": "Chairs have been arranged around a conference table.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Chairs",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "have been arranged",
+      "role": "V",
+      "note": "現在完了の受動態"
+     },
+     {
+      "text": "around a conference table",
+      "role": "M",
+      "note": "位置"
+     }
+    ],
+    "tense": {
+     "name": "現在完了・受動態",
+     "explanation": "have been + 過去分詞 は「(すでに)~されている」という結果の状態を表します。"
+    },
+    "grammar": [
+     {
+      "point": "have been + 過去分詞",
+      "explanation": "動作の結果として今そうなっている状態を描写します。"
+     },
+     {
+      "point": "around + 名詞",
+      "explanation": "「~の周りに」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "arrange",
+      "pos": "動詞",
+      "meaning": "~を配置する、整える",
+      "note": "",
+      "level": 3,
+      "toeic": "arrange the chairs / arrange a meeting"
+     },
+     {
+      "word": "conference table",
+      "pos": "名詞",
+      "meaning": "会議用テーブル",
+      "note": "",
+      "level": 2,
+      "toeic": "around the conference table"
+     },
+     {
+      "word": "around",
+      "pos": "前置詞",
+      "meaning": "~の周りに",
+      "note": "",
+      "level": 1,
+      "toeic": "位置の描写で頻出"
+     }
+    ],
+    "toeic": {
+     "scene": "会議室の準備",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "現在完了の受動態が状態の描写に使われる"
+      },
+      {
+       "type": "語彙",
+       "detail": "arrange の「配置する」の意味"
+      }
+     ],
+     "paraphrase": [
+      "The chairs are set up around the table.",
+      "A meeting room has been prepared."
+     ]
+    },
+    "words": [
+     {
+      "w": "Chairs",
+      "p": "n"
+     },
+     {
+      "w": "have",
+      "p": "aux"
+     },
+     {
+      "w": "been",
+      "p": "aux"
+     },
+     {
+      "w": "arranged",
+      "p": "v"
+     },
+     {
+      "w": "around",
+      "p": "prep"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "conference",
+      "p": "n"
+     },
+     {
+      "w": "table.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Chairs",
+      "f": "主語"
+     },
+     {
+      "t": "have been arranged",
+      "f": "動詞句(現在完了の受動態)"
+     },
+     {
+      "t": "around a conference table.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Chairs"
+     },
+     {
+      "t": "have been arranged"
+     },
+     {
+      "t": "around a conference table."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Chairs have been ______ around a conference table.",
+    "choices": [
+     "arranged",
+     "arranging",
+     "arrange",
+     "arranges"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "have been の後は過去分詞。椅子は「並べられる」側なので受動態 arranged が正解で、arranging は能動の進行形になってしまいます。"
+   }
+  },
+  {
+   "id": "toeic-set3-05",
+   "text": "Customers are waiting in line at the cash register.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791900000004,
+   "analysis": {
+    "translation": "客がレジの前で列に並んで待っています。",
+    "slash": [
+     {
+      "en": "Customers",
+      "ja": "客が"
+     },
+     {
+      "en": "are waiting in line",
+      "ja": "列に並んで待っている"
+     },
+     {
+      "en": "at the cash register.",
+      "ja": "レジで"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Customers (S) are waiting (V)。in line と at the cash register は修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "Customers are waiting in line at the cash register.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Customers",
+      "role": "S",
+      "note": "複数の人"
+     },
+     {
+      "text": "are waiting",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "in line",
+      "role": "M",
+      "note": "列になって"
+     },
+     {
+      "text": "at the cash register",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "人々が今していること(待つ)を are waiting で描写します。"
+    },
+    "grammar": [
+     {
+      "point": "wait in line",
+      "explanation": "「列に並んで待つ」。line に冠詞は付きません。"
+     },
+     {
+      "point": "at + 場所",
+      "explanation": "地点を表す at"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "wait in line",
+      "pos": "熟語",
+      "meaning": "列に並んで待つ",
+      "note": "",
+      "level": 3,
+      "toeic": "wait in line for ~(~を待って並ぶ)"
+     },
+     {
+      "word": "cash register",
+      "pos": "名詞",
+      "meaning": "レジ",
+      "note": "",
+      "level": 3,
+      "toeic": "at the cash register"
+     },
+     {
+      "word": "customer",
+      "pos": "名詞",
+      "meaning": "客",
+      "note": "",
+      "level": 1,
+      "toeic": "顧客対応の頻出語"
+     }
+    ],
+    "toeic": {
+     "scene": "小売店",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "wait in line / stand in line"
+      },
+      {
+       "type": "前置詞",
+       "detail": "in line と at the register の使い分け"
+      }
+     ],
+     "paraphrase": [
+      "People are standing in line to pay.",
+      "Shoppers are queuing at the checkout."
+     ]
+    },
+    "words": [
+     {
+      "w": "Customers",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "waiting",
+      "p": "v"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "line",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "cash",
+      "p": "n"
+     },
+     {
+      "w": "register.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Customers",
+      "f": "主語"
+     },
+     {
+      "t": "are waiting",
+      "f": "動詞句"
+     },
+     {
+      "t": "in line",
+      "f": "前置詞句"
+     },
+     {
+      "t": "at the cash register.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Customers"
+     },
+     {
+      "t": "are waiting in line"
+     },
+     {
+      "t": "at the cash register."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Customers are waiting ______ at the cash register.",
+    "choices": [
+     "in line",
+     "in a line up",
+     "on queue",
+     "at row"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「列に並んで」は in line(冠詞なし)が決まった形。ほかの選択肢は英語として不自然です。"
+   }
+  },
+  {
+   "id": "toeic-set3-06",
+   "text": "A ladder is leaning against the brick wall.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1791900000005,
+   "analysis": {
+    "translation": "はしごがれんが造りの壁に立てかけられています。",
+    "slash": [
+     {
+      "en": "A ladder",
+      "ja": "はしごが"
+     },
+     {
+      "en": "is leaning",
+      "ja": "もたれかかっている"
+     },
+     {
+      "en": "against the brick wall.",
+      "ja": "れんがの壁に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "A ladder (S) is leaning (V)。against ~ は寄りかかる対象を表す修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "A ladder is leaning against the brick wall.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A ladder",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "is leaning",
+      "role": "V",
+      "note": "現在進行形(状態)"
+     },
+     {
+      "text": "against the brick wall",
+      "role": "M",
+      "note": "寄りかかる先"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "lean は「傾いている/もたれている」状態を -ing で表します。物が主語でも進行形が使えます。"
+    },
+    "grammar": [
+     {
+      "point": "lean against",
+      "explanation": "「~にもたれる、立てかけてある」"
+     },
+     {
+      "point": "名詞が名詞を修飾",
+      "explanation": "brick wall の brick は名詞が形容詞的に wall を修飾しています。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "lean",
+      "pos": "動詞",
+      "meaning": "もたれる、立てかけてある",
+      "note": "",
+      "level": 3,
+      "toeic": "be leaning against ~"
+     },
+     {
+      "word": "ladder",
+      "pos": "名詞",
+      "meaning": "はしご",
+      "note": "",
+      "level": 2,
+      "toeic": "a ladder against the wall"
+     },
+     {
+      "word": "brick",
+      "pos": "名詞",
+      "meaning": "れんが",
+      "note": "",
+      "level": 2,
+      "toeic": "a brick building"
+     }
+    ],
+    "toeic": {
+     "scene": "建設・作業現場",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "lean against の意味"
+      },
+      {
+       "type": "前置詞",
+       "detail": "against(接触して寄りかかる)"
+      }
+     ],
+     "paraphrase": [
+      "A ladder is propped up against a wall.",
+      "A ladder has been placed against the wall."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "ladder",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "leaning",
+      "p": "v"
+     },
+     {
+      "w": "against",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "brick",
+      "p": "n"
+     },
+     {
+      "w": "wall.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A ladder",
+      "f": "主語"
+     },
+     {
+      "t": "is leaning",
+      "f": "動詞句"
+     },
+     {
+      "t": "against the brick wall.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A ladder"
+     },
+     {
+      "t": "is leaning"
+     },
+     {
+      "t": "against the brick wall."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A ladder is leaning ______ the brick wall.",
+    "choices": [
+     "against",
+     "from",
+     "among",
+     "beyond"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「立てかけてある」は lean against ~。from は起点、among は3つ以上の間、beyond は「~の向こうに」で意味が合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-07",
+   "text": "Several bicycles are parked along the street.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1791900000006,
+   "analysis": {
+    "translation": "数台の自転車が通り沿いに止められています。",
+    "slash": [
+     {
+      "en": "Several bicycles",
+      "ja": "数台の自転車が"
+     },
+     {
+      "en": "are parked",
+      "ja": "止められている"
+     },
+     {
+      "en": "along the street.",
+      "ja": "通り沿いに"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "Several bicycles (S) are parked (V)。止められている状態を描写しています。"
+    },
+    "clauses": [
+     {
+      "text": "Several bicycles are parked along the street.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Several bicycles",
+      "role": "S",
+      "note": "物が主語"
+     },
+     {
+      "text": "are parked",
+      "role": "V",
+      "note": "受動態(状態)"
+     },
+     {
+      "text": "along the street",
+      "role": "M",
+      "note": "通り沿いに"
+     }
+    ],
+    "tense": {
+     "name": "現在形・受動態",
+     "explanation": "are parked は「駐車(駐輪)されている」状態を表します。"
+    },
+    "grammar": [
+     {
+      "point": "several + 複数名詞",
+      "explanation": "several は3つ以上の「いくつかの」。可算名詞の複数形が続きます。"
+     },
+     {
+      "point": "along + 名詞",
+      "explanation": "「~に沿って」"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "park",
+      "pos": "動詞",
+      "meaning": "~を止める、駐車する",
+      "note": "",
+      "level": 2,
+      "toeic": "be parked along the street"
+     },
+     {
+      "word": "along",
+      "pos": "前置詞",
+      "meaning": "~に沿って",
+      "note": "",
+      "level": 2,
+      "toeic": "along the road / along the river"
+     },
+     {
+      "word": "several",
+      "pos": "形容詞",
+      "meaning": "いくつかの",
+      "note": "",
+      "level": 1,
+      "toeic": "several + 複数名詞"
+     }
+    ],
+    "toeic": {
+     "scene": "屋外・街中",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "受動態",
+       "detail": "are parked の状態描写"
+      },
+      {
+       "type": "前置詞",
+       "detail": "along と across の違い"
+      }
+     ],
+     "paraphrase": [
+      "Bikes are lined up on the side of the road.",
+      "Some bicycles have been left along the street."
+     ]
+    },
+    "words": [
+     {
+      "w": "Several",
+      "p": "det"
+     },
+     {
+      "w": "bicycles",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "parked",
+      "p": "v"
+     },
+     {
+      "w": "along",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "street.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Several bicycles",
+      "f": "主語"
+     },
+     {
+      "t": "are parked",
+      "f": "動詞句(受動態)"
+     },
+     {
+      "t": "along the street.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Several bicycles"
+     },
+     {
+      "t": "are parked"
+     },
+     {
+      "t": "along the street."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Several bicycles are ______ along the street.",
+    "choices": [
+     "parked",
+     "parking",
+     "park",
+     "parks"
+    ],
+    "answer": 0,
+    "type": "受動態",
+    "explanation": "自転車は「止められる」側なので are の後は過去分詞 parked。parking は能動、park は原形、parks は三単現で合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-08",
+   "text": "The man is wearing a helmet while he repairs the roof.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791900000007,
+   "analysis": {
+    "translation": "男性は屋根を修理している間、ヘルメットをかぶっています。",
+    "slash": [
+     {
+      "en": "The man is wearing a helmet",
+      "ja": "男性はヘルメットをかぶっている"
+     },
+     {
+      "en": "while he repairs the roof.",
+      "ja": "屋根を修理している間"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "The man (S) is wearing (V) a helmet (O)。while 以下は同時進行を表す副詞節です。"
+    },
+    "clauses": [
+     {
+      "text": "The man is wearing a helmet while he repairs the roof.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "The man",
+      "role": "S",
+      "note": "動作をする人"
+     },
+     {
+      "text": "is wearing",
+      "role": "V",
+      "note": "現在進行形(身につけている状態)"
+     },
+     {
+      "text": "a helmet",
+      "role": "O",
+      "note": "身につけているもの"
+     },
+     {
+      "text": "while he repairs the roof",
+      "role": "M",
+      "note": "同時に行っていること"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "wear の進行形は「身につけている状態」を表し、repairs は while 節の中の現在形です。"
+    },
+    "grammar": [
+     {
+      "point": "接続詞 while",
+      "explanation": "「~している間」。while 節の中は現在形で、同時進行を表します。"
+     },
+     {
+      "point": "wear と put on",
+      "explanation": "wear は「身につけている状態」、put on は「身につける動作」です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "wear",
+      "pos": "動詞",
+      "meaning": "~を身につけている",
+      "note": "",
+      "level": 3,
+      "toeic": "be wearing a helmet(状態)"
+     },
+     {
+      "word": "repair",
+      "pos": "動詞",
+      "meaning": "~を修理する",
+      "note": "",
+      "level": 3,
+      "toeic": "repair the roof"
+     },
+     {
+      "word": "roof",
+      "pos": "名詞",
+      "meaning": "屋根",
+      "note": "",
+      "level": 2,
+      "toeic": "on the roof"
+     },
+     {
+      "word": "helmet",
+      "pos": "名詞",
+      "meaning": "ヘルメット",
+      "note": "",
+      "level": 2,
+      "toeic": "safety helmet"
+     }
+    ],
+    "toeic": {
+     "scene": "建設・作業現場",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "wear(状態)と put on(動作)の区別"
+      },
+      {
+       "type": "接続詞・副詞",
+       "detail": "while の用法"
+      }
+     ],
+     "paraphrase": [
+      "A worker is fixing the roof with a helmet on.",
+      "The man is working on a roof."
+     ]
+    },
+    "words": [
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "man",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "wearing",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "helmet",
+      "p": "n"
+     },
+     {
+      "w": "while",
+      "p": "conj"
+     },
+     {
+      "w": "he",
+      "p": "pron"
+     },
+     {
+      "w": "repairs",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "roof.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "The man",
+      "f": "主語"
+     },
+     {
+      "t": "is wearing",
+      "f": "動詞句"
+     },
+     {
+      "t": "a helmet",
+      "f": "目的語"
+     },
+     {
+      "t": "while he repairs the roof.",
+      "f": "副詞節"
+     }
+    ],
+    "iu": [
+     {
+      "t": "The man is wearing a helmet"
+     },
+     {
+      "t": "while he repairs the roof."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "The man is wearing a helmet ______ he repairs the roof.",
+    "choices": [
+     "while",
+     "during",
+     "because of",
+     "despite"
+    ],
+    "answer": 0,
+    "type": "接続詞",
+    "explanation": "後ろに he repairs という節(主語+動詞)が続くので接続詞 while が正解。during・because of・despite は前置詞で、名詞(句)しか続けられません。"
+   }
+  },
+  {
+   "id": "toeic-set3-09",
+   "text": "A vase of flowers has been placed on the reception desk.",
+   "gids": [
+    "g1",
+    "g3"
+   ],
+   "bm": false,
+   "added": 1791900000008,
+   "analysis": {
+    "translation": "受付の机に花瓶が置かれています。",
+    "slash": [
+     {
+      "en": "A vase of flowers",
+      "ja": "花を生けた花瓶が"
+     },
+     {
+      "en": "has been placed",
+      "ja": "置かれている"
+     },
+     {
+      "en": "on the reception desk.",
+      "ja": "受付の机の上に"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "A vase of flowers (S) has been placed (V)。主語の中心は単数の vase なので has です。"
+    },
+    "clauses": [
+     {
+      "text": "A vase of flowers has been placed on the reception desk.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "A vase of flowers",
+      "role": "S",
+      "note": "単数の vase が主語"
+     },
+     {
+      "text": "has been placed",
+      "role": "V",
+      "note": "現在完了の受動態"
+     },
+     {
+      "text": "on the reception desk",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在完了・受動態",
+     "explanation": "has been placed は「置かれている」状態を表します。"
+    },
+    "grammar": [
+     {
+      "point": "主語の数の一致",
+      "explanation": "A vase of flowers の中心語は vase(単数)なので has been になります。"
+     },
+     {
+      "point": "place",
+      "explanation": "動詞では「~を置く」。be placed on ~ で「~の上に置かれている」。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "place",
+      "pos": "動詞",
+      "meaning": "~を置く",
+      "note": "",
+      "level": 3,
+      "toeic": "be placed on the table"
+     },
+     {
+      "word": "vase",
+      "pos": "名詞",
+      "meaning": "花瓶",
+      "note": "",
+      "level": 2,
+      "toeic": "a vase of flowers"
+     },
+     {
+      "word": "reception desk",
+      "pos": "名詞",
+      "meaning": "受付",
+      "note": "",
+      "level": 3,
+      "toeic": "at the reception desk"
+     }
+    ],
+    "toeic": {
+     "scene": "オフィス・ロビー",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "現在完了の受動態"
+      },
+      {
+       "type": "語法",
+       "detail": "a vase of flowers の主語の数の一致"
+      }
+     ],
+     "paraphrase": [
+      "Some flowers have been put on the desk.",
+      "A vase is sitting on a counter."
+     ]
+    },
+    "words": [
+     {
+      "w": "A",
+      "p": "det"
+     },
+     {
+      "w": "vase",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "flowers",
+      "p": "n"
+     },
+     {
+      "w": "has",
+      "p": "aux"
+     },
+     {
+      "w": "been",
+      "p": "aux"
+     },
+     {
+      "w": "placed",
+      "p": "v"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "reception",
+      "p": "n"
+     },
+     {
+      "w": "desk.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "A vase of flowers",
+      "f": "主語"
+     },
+     {
+      "t": "has been placed",
+      "f": "動詞句(現在完了の受動態)"
+     },
+     {
+      "t": "on the reception desk.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "A vase of flowers"
+     },
+     {
+      "t": "has been placed"
+     },
+     {
+      "t": "on the reception desk."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "A vase of flowers ______ been placed on the reception desk.",
+    "choices": [
+     "has",
+     "have",
+     "is",
+     "are"
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "主語の中心は単数の vase なので、been の前は has。have、is、are は been と形・数が合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-10",
+   "text": "Passengers are boarding a ferry at the dock.",
+   "gids": [
+    "g1",
+    "g2"
+   ],
+   "bm": false,
+   "added": 1791900000009,
+   "analysis": {
+    "translation": "乗客が埠頭でフェリーに乗り込んでいます。",
+    "slash": [
+     {
+      "en": "Passengers",
+      "ja": "乗客が"
+     },
+     {
+      "en": "are boarding a ferry",
+      "ja": "フェリーに乗り込んでいる"
+     },
+     {
+      "en": "at the dock.",
+      "ja": "埠頭で"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "Passengers (S) are boarding (V) a ferry (O)。board は他動詞なので前置詞なしで目的語を取ります。"
+    },
+    "clauses": [
+     {
+      "text": "Passengers are boarding a ferry at the dock.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Passengers",
+      "role": "S",
+      "note": "乗り込む人たち"
+     },
+     {
+      "text": "are boarding",
+      "role": "V",
+      "note": "現在進行形"
+     },
+     {
+      "text": "a ferry",
+      "role": "O",
+      "note": "乗る乗り物(前置詞不要)"
+     },
+     {
+      "text": "at the dock",
+      "role": "M",
+      "note": "場所"
+     }
+    ],
+    "tense": {
+     "name": "現在進行形・能動態",
+     "explanation": "搭乗という動作が今行われていることを are boarding で表します。"
+    },
+    "grammar": [
+     {
+      "point": "board は他動詞",
+      "explanation": "board a ferry / board a plane のように、前置詞を付けずに乗り物を目的語にします。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "board",
+      "pos": "動詞",
+      "meaning": "~に乗り込む、搭乗する",
+      "note": "",
+      "level": 3,
+      "toeic": "board a plane / boarding pass"
+     },
+     {
+      "word": "passenger",
+      "pos": "名詞",
+      "meaning": "乗客",
+      "note": "",
+      "level": 3,
+      "toeic": "train passengers"
+     },
+     {
+      "word": "dock",
+      "pos": "名詞",
+      "meaning": "埠頭、波止場",
+      "note": "",
+      "level": 2,
+      "toeic": "at the dock"
+     },
+     {
+      "word": "ferry",
+      "pos": "名詞",
+      "meaning": "フェリー",
+      "note": "",
+      "level": 2,
+      "toeic": "take a ferry"
+     }
+    ],
+    "toeic": {
+     "scene": "交通・旅行",
+     "part": "Part 1",
+     "points": [
+      {
+       "type": "語法",
+       "detail": "board は他動詞(前置詞不要)"
+      },
+      {
+       "type": "語彙",
+       "detail": "passenger / board の頻出表現"
+      }
+     ],
+     "paraphrase": [
+      "People are getting on a boat.",
+      "Travelers are embarking at the pier."
+     ]
+    },
+    "words": [
+     {
+      "w": "Passengers",
+      "p": "n"
+     },
+     {
+      "w": "are",
+      "p": "aux"
+     },
+     {
+      "w": "boarding",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "ferry",
+      "p": "n"
+     },
+     {
+      "w": "at",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "dock.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Passengers",
+      "f": "主語"
+     },
+     {
+      "t": "are boarding",
+      "f": "動詞句"
+     },
+     {
+      "t": "a ferry",
+      "f": "目的語"
+     },
+     {
+      "t": "at the dock.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Passengers"
+     },
+     {
+      "t": "are boarding a ferry"
+     },
+     {
+      "t": "at the dock."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 1",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Passengers are boarding ______ ferry at the dock.",
+    "choices": [
+     "a",
+     "to a",
+     "on a",
+     "at a"
+    ],
+    "answer": 0,
+    "type": "語法",
+    "explanation": "board は他動詞なので前置詞を付けず、そのまま目的語 a ferry を取ります。to・on・at を付けると誤りです。"
+   }
+  },
+  {
+   "id": "toeic-set3-11",
+   "text": "When does the new office open? It opens next Monday.",
+   "gids": [
+    "g4",
+    "g5"
+   ],
+   "bm": false,
+   "added": 1791900000010,
+   "analysis": {
+    "translation": "新しいオフィスはいつ開きますか。来週の月曜日に開きます。",
+    "slash": [
+     {
+      "en": "When does the new office open?",
+      "ja": "新しいオフィスはいつ開きますか"
+     },
+     {
+      "en": "It opens next Monday.",
+      "ja": "来週の月曜日です"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "質問は the new office (S) open (V)。When が時を問います。答えは It (S) opens (V)。"
+    },
+    "clauses": [
+     {
+      "text": "When does the new office open? It opens next Monday.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "the new office",
+      "role": "S",
+      "note": "疑問文の主語"
+     },
+     {
+      "text": "open",
+      "role": "V",
+      "note": "自動詞"
+     },
+     {
+      "text": "When",
+      "role": "M",
+      "note": "時を問う疑問副詞"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "予定されている事柄を現在形で言う用法です。open は自動詞として使えます。"
+    },
+    "grammar": [
+     {
+      "point": "When で始まる質問には、時で答える",
+      "explanation": "next Monday / at 9 A.M. など、時を表す語句が正解です。Where や Who に対する答えは誤りです。"
+     },
+     {
+      "point": "open は自動詞",
+      "explanation": "The office opens. のように目的語なしで使います。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "open",
+      "pos": "動詞",
+      "meaning": "開く、開店する",
+      "note": "",
+      "level": 1,
+      "toeic": "The store opens at 9."
+     },
+     {
+      "word": "next",
+      "pos": "形容詞",
+      "meaning": "次の、来~",
+      "note": "",
+      "level": 1,
+      "toeic": "next Monday / next week"
+     }
+    ],
+    "toeic": {
+     "scene": "オフィス・施設",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "その他",
+       "detail": "When の質問に時で答える"
+      }
+     ],
+     "paraphrase": [
+      "The grand opening is next Monday.",
+      "We'll open on the 5th."
+     ]
+    },
+    "words": [
+     {
+      "w": "When",
+      "p": "adv"
+     },
+     {
+      "w": "does",
+      "p": "aux"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "new",
+      "p": "adj"
+     },
+     {
+      "w": "office",
+      "p": "n"
+     },
+     {
+      "w": "open?",
+      "p": "v"
+     },
+     {
+      "w": "It",
+      "p": "pron"
+     },
+     {
+      "w": "opens",
+      "p": "v"
+     },
+     {
+      "w": "next",
+      "p": "adj"
+     },
+     {
+      "w": "Monday.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "When",
+      "f": "疑問副詞"
+     },
+     {
+      "t": "does the new office open?",
+      "f": "疑問文"
+     },
+     {
+      "t": "It opens",
+      "f": "動詞句"
+     },
+     {
+      "t": "next Monday.",
+      "f": "時を表す語句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "When does the new office open?"
+     },
+     {
+      "t": "It opens next Monday."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "When does the new office open? ______",
+    "choices": [
+     "It opens next Monday.",
+     "In the third floor.",
+     "Yes, it's very new.",
+     "Mr. Lee did."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "When の質問なので時を答える It opens next Monday. が正解。場所(In the third floor)、Yes/No(Yes, it's very new.)、人(Mr. Lee did.)は質問に合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-12",
+   "text": "Who is in charge of the marketing budget? Ms. Tanaka manages it.",
+   "gids": [
+    "g4",
+    "g5"
+   ],
+   "bm": false,
+   "added": 1791900000011,
+   "analysis": {
+    "translation": "マーケティングの予算は誰が担当していますか。田中さんが管理しています。",
+    "slash": [
+     {
+      "en": "Who is in charge of the marketing budget?",
+      "ja": "マーケティング予算は誰が担当していますか"
+     },
+     {
+      "en": "Ms. Tanaka manages it.",
+      "ja": "田中さんが管理しています"
+     }
+    ],
+    "pattern": {
+     "type": "第2文型(SVC)",
+     "explanation": "質問は Who (S) is (V) in charge of ~ (C)。答えは Ms. Tanaka (S) manages (V) it (O)。"
+    },
+    "clauses": [
+     {
+      "text": "Who is in charge of the marketing budget? Ms. Tanaka manages it.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Who",
+      "role": "S",
+      "note": "人を問う疑問代名詞(主語)"
+     },
+     {
+      "text": "is",
+      "role": "V",
+      "note": "be動詞"
+     },
+     {
+      "text": "in charge of the marketing budget",
+      "role": "C",
+      "note": "~を担当している"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "担当者を述べる現在形です。"
+    },
+    "grammar": [
+     {
+      "point": "be in charge of ~",
+      "explanation": "「~を担当している、管理している」。Who の質問には人名・役職で答えます。"
+     },
+     {
+      "point": "言い換え",
+      "explanation": "in charge of → manages / is responsible for"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "be in charge of",
+      "pos": "熟語",
+      "meaning": "~を担当している",
+      "note": "",
+      "level": 3,
+      "toeic": "Who is in charge of ~?"
+     },
+     {
+      "word": "budget",
+      "pos": "名詞",
+      "meaning": "予算",
+      "note": "",
+      "level": 3,
+      "toeic": "marketing budget / tight budget"
+     },
+     {
+      "word": "manage",
+      "pos": "動詞",
+      "meaning": "~を管理する、運営する",
+      "note": "",
+      "level": 3,
+      "toeic": "manage a project"
+     }
+    ],
+    "toeic": {
+     "scene": "社内・経理",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "語彙",
+       "detail": "in charge of / responsible for の言い換え"
+      }
+     ],
+     "paraphrase": [
+      "Ms. Tanaka is responsible for it.",
+      "You should ask Ms. Tanaka."
+     ]
+    },
+    "words": [
+     {
+      "w": "Who",
+      "p": "pron"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "charge",
+      "p": "n"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "marketing",
+      "p": "n"
+     },
+     {
+      "w": "budget?",
+      "p": "n"
+     },
+     {
+      "w": "Ms.",
+      "p": "n"
+     },
+     {
+      "w": "Tanaka",
+      "p": "n"
+     },
+     {
+      "w": "manages",
+      "p": "v"
+     },
+     {
+      "w": "it.",
+      "p": "pron"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Who",
+      "f": "疑問代名詞"
+     },
+     {
+      "t": "is in charge of",
+      "f": "熟語"
+     },
+     {
+      "t": "the marketing budget?",
+      "f": "名詞句"
+     },
+     {
+      "t": "Ms. Tanaka manages it.",
+      "f": "文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Who is in charge of the marketing budget?"
+     },
+     {
+      "t": "Ms. Tanaka manages it."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Who is in charge of the marketing budget? ______",
+    "choices": [
+     "Ms. Tanaka manages it.",
+     "Next quarter.",
+     "In the main office.",
+     "It was too expensive."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "Who の質問なので人名で答える Ms. Tanaka manages it. が正解。Next quarter. は時、In the main office. は場所、It was too expensive. は値段への感想で合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-13",
+   "text": "Where can I find the printer paper? It's in the supply closet.",
+   "gids": [
+    "g4",
+    "g5"
+   ],
+   "bm": false,
+   "added": 1791900000012,
+   "analysis": {
+    "translation": "コピー用紙はどこにありますか。備品庫にありますよ。",
+    "slash": [
+     {
+      "en": "Where can I find the printer paper?",
+      "ja": "コピー用紙はどこにありますか"
+     },
+     {
+      "en": "It's in the supply closet.",
+      "ja": "備品庫にあります"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "質問は I (S) can find (V) the printer paper (O)。答えは It (S) 's (V) in the supply closet (M)。"
+    },
+    "clauses": [
+     {
+      "text": "Where can I find the printer paper? It's in the supply closet.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "I",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "can find",
+      "role": "V",
+      "note": "助動詞 can + 動詞"
+     },
+     {
+      "text": "the printer paper",
+      "role": "O",
+      "note": "探しているもの"
+     },
+     {
+      "text": "Where",
+      "role": "M",
+      "note": "場所を問う疑問副詞"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "can find で「見つけられる」→ 場所の質問になります。"
+    },
+    "grammar": [
+     {
+      "point": "Where には場所で答える",
+      "explanation": "in the supply closet / on the second floor など、前置詞句が典型です。"
+     },
+     {
+      "point": "代名詞 it",
+      "explanation": "答えの It は the printer paper を受けます。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "supply closet",
+      "pos": "名詞",
+      "meaning": "備品庫",
+      "note": "",
+      "level": 3,
+      "toeic": "in the supply closet"
+     },
+     {
+      "word": "printer paper",
+      "pos": "名詞",
+      "meaning": "コピー用紙",
+      "note": "",
+      "level": 2,
+      "toeic": "load printer paper"
+     },
+     {
+      "word": "find",
+      "pos": "動詞",
+      "meaning": "~を見つける",
+      "note": "",
+      "level": 1,
+      "toeic": "Where can I find ~?"
+     }
+    ],
+    "toeic": {
+     "scene": "オフィス・備品",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "その他",
+       "detail": "Where には場所で答える"
+      }
+     ],
+     "paraphrase": [
+      "It's in the storage room.",
+      "Check the cabinet by the copier."
+     ]
+    },
+    "words": [
+     {
+      "w": "Where",
+      "p": "adv"
+     },
+     {
+      "w": "can",
+      "p": "aux"
+     },
+     {
+      "w": "I",
+      "p": "pron"
+     },
+     {
+      "w": "find",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "printer",
+      "p": "n"
+     },
+     {
+      "w": "paper?",
+      "p": "n"
+     },
+     {
+      "w": "It's",
+      "p": "pron"
+     },
+     {
+      "w": "in",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "supply",
+      "p": "n"
+     },
+     {
+      "w": "closet.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Where",
+      "f": "疑問副詞"
+     },
+     {
+      "t": "can I find",
+      "f": "動詞句"
+     },
+     {
+      "t": "the printer paper?",
+      "f": "目的語"
+     },
+     {
+      "t": "It's in the supply closet.",
+      "f": "文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Where can I find the printer paper?"
+     },
+     {
+      "t": "It's in the supply closet."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Where can I find the printer paper? ______",
+    "choices": [
+     "It's in the supply closet.",
+     "Yes, I printed it.",
+     "Around three o'clock.",
+     "A new printer."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "Where の質問なので場所を答える It's in the supply closet. が正解。Yes で答える形、時刻、物の名前は合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-14",
+   "text": "Would you like to join us for lunch? Sure, I'd love to.",
+   "gids": [
+    "g4",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791900000013,
+   "analysis": {
+    "translation": "私たちと一緒に昼食をいかがですか。ええ、ぜひ。",
+    "slash": [
+     {
+      "en": "Would you like to join us for lunch?",
+      "ja": "私たちと一緒に昼食をいかがですか"
+     },
+     {
+      "en": "Sure, I'd love to.",
+      "ja": "ええ、ぜひ"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "Would (助動詞) you like (V) to join us for lunch (O)。丁寧に誘う定型表現です。"
+    },
+    "clauses": [
+     {
+      "text": "Would you like to join us for lunch? Sure, I'd love to.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "you",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "Would like",
+      "role": "V",
+      "note": "丁寧な誘い"
+     },
+     {
+      "text": "to join us for lunch",
+      "role": "O",
+      "note": "to不定詞句"
+     }
+    ],
+    "tense": {
+     "name": "助動詞 would",
+     "explanation": "would like to ~ は相手の希望を丁寧にたずねる形です。"
+    },
+    "grammar": [
+     {
+      "point": "Would you like to ~?",
+      "explanation": "誘い・提案の定型。Sure. / I'd love to. / Thanks, but I have a meeting. などが典型的な応答です。"
+     },
+     {
+      "point": "I'd love to",
+      "explanation": "I would love to join you の後半を省略した形です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "join",
+      "pos": "動詞",
+      "meaning": "~に加わる、一緒に~する",
+      "note": "",
+      "level": 2,
+      "toeic": "join us for lunch"
+     },
+     {
+      "word": "Would you like to ~?",
+      "pos": "熟語",
+      "meaning": "~しませんか",
+      "note": "",
+      "level": 3,
+      "toeic": "丁寧な誘い"
+     },
+     {
+      "word": "I'd love to",
+      "pos": "熟語",
+      "meaning": "ぜひそうしたい",
+      "note": "",
+      "level": 2,
+      "toeic": "誘いへの肯定的な応答"
+     }
+    ],
+    "toeic": {
+     "scene": "社内・日常会話",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "その他",
+       "detail": "誘いへの応答パターン"
+      }
+     ],
+     "paraphrase": [
+      "That sounds great.",
+      "I'd be glad to."
+     ]
+    },
+    "words": [
+     {
+      "w": "Would",
+      "p": "aux"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "like",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "join",
+      "p": "v"
+     },
+     {
+      "w": "us",
+      "p": "pron"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "lunch?",
+      "p": "n"
+     },
+     {
+      "w": "Sure,",
+      "p": "adv"
+     },
+     {
+      "w": "I'd",
+      "p": "pron"
+     },
+     {
+      "w": "love",
+      "p": "v"
+     },
+     {
+      "w": "to.",
+      "p": "other"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Would you like",
+      "f": "動詞句(丁寧な誘い)"
+     },
+     {
+      "t": "to join us",
+      "f": "to不定詞"
+     },
+     {
+      "t": "for lunch?",
+      "f": "前置詞句"
+     },
+     {
+      "t": "Sure, I'd love to.",
+      "f": "応答"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Would you like to join us for lunch?"
+     },
+     {
+      "t": "Sure, I'd love to."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Would you like to join us for lunch? ______",
+    "choices": [
+     "Sure, I'd love to.",
+     "At noon, I think.",
+     "Yes, it was delicious.",
+     "He joined last year."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "誘いには受ける/断る応答が来ます。Sure, I'd love to. が正解。At noon は時、it was delicious は過去の感想、He joined last year. は話題がずれています。"
+   }
+  },
+  {
+   "id": "toeic-set3-15",
+   "text": "Why was the meeting postponed? The manager is out of town.",
+   "gids": [
+    "g4",
+    "g7"
+   ],
+   "bm": false,
+   "added": 1791900000014,
+   "analysis": {
+    "translation": "会議はなぜ延期されたのですか。部長が出張で不在なのです。",
+    "slash": [
+     {
+      "en": "Why was the meeting postponed?",
+      "ja": "会議はなぜ延期されたのですか"
+     },
+     {
+      "en": "The manager is out of town.",
+      "ja": "部長は町を離れています"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "質問は the meeting (S) was postponed (V)。答えは The manager (S) is (V) out of town (C)。"
+    },
+    "clauses": [
+     {
+      "text": "Why was the meeting postponed? The manager is out of town.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "the meeting",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "was postponed",
+      "role": "V",
+      "note": "受動態"
+     },
+     {
+      "text": "Why",
+      "role": "M",
+      "note": "理由を問う疑問副詞"
+     }
+    ],
+    "tense": {
+     "name": "過去形・受動態",
+     "explanation": "was postponed の受動態。答えは現在形で今の状況を述べています。"
+    },
+    "grammar": [
+     {
+      "point": "Why への答え",
+      "explanation": "Because ~ だけでなく、理由を直接述べる文でも答えになります。"
+     },
+     {
+      "point": "be out of town",
+      "explanation": "「出張中・不在」の定番表現"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "postpone",
+      "pos": "動詞",
+      "meaning": "~を延期する",
+      "note": "",
+      "level": 3,
+      "toeic": "The meeting was postponed."
+     },
+     {
+      "word": "out of town",
+      "pos": "熟語",
+      "meaning": "出張中で、町を離れて",
+      "note": "",
+      "level": 3,
+      "toeic": "be out of town"
+     },
+     {
+      "word": "manager",
+      "pos": "名詞",
+      "meaning": "部長、管理者",
+      "note": "",
+      "level": 1,
+      "toeic": "general manager"
+     }
+    ],
+    "toeic": {
+     "scene": "会議・スケジュール",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "受動態",
+       "detail": "be postponed の形"
+      },
+      {
+       "type": "語彙",
+       "detail": "postpone / reschedule / put off"
+      }
+     ],
+     "paraphrase": [
+      "Because the manager couldn't attend.",
+      "It's been rescheduled for next week."
+     ]
+    },
+    "words": [
+     {
+      "w": "Why",
+      "p": "adv"
+     },
+     {
+      "w": "was",
+      "p": "aux"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "meeting",
+      "p": "n"
+     },
+     {
+      "w": "postponed?",
+      "p": "v"
+     },
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "manager",
+      "p": "n"
+     },
+     {
+      "w": "is",
+      "p": "aux"
+     },
+     {
+      "w": "out",
+      "p": "adv"
+     },
+     {
+      "w": "of",
+      "p": "prep"
+     },
+     {
+      "w": "town.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Why",
+      "f": "疑問副詞"
+     },
+     {
+      "t": "was the meeting postponed?",
+      "f": "受動態の疑問文"
+     },
+     {
+      "t": "The manager",
+      "f": "主語"
+     },
+     {
+      "t": "is out of town.",
+      "f": "動詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Why was the meeting postponed?"
+     },
+     {
+      "t": "The manager is out of town."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Why was the meeting postponed? ______",
+    "choices": [
+     "The manager is out of town.",
+     "On Thursday afternoon.",
+     "In the conference room.",
+     "By e-mail."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "Why の質問には理由を答えます。The manager is out of town. が理由になっています。時(On Thursday afternoon)、場所(In the conference room)、手段(By e-mail)は合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-16",
+   "text": "How long will the repairs take? About two days.",
+   "gids": [
+    "g4",
+    "g7"
+   ],
+   "bm": false,
+   "added": 1791900000015,
+   "analysis": {
+    "translation": "修理にはどれくらいかかりますか。2日ほどです。",
+    "slash": [
+     {
+      "en": "How long will the repairs take?",
+      "ja": "修理にはどれくらいかかりますか"
+     },
+     {
+      "en": "About two days.",
+      "ja": "2日ほどです"
+     }
+    ],
+    "pattern": {
+     "type": "第1文型(SV)",
+     "explanation": "the repairs (S) will take (V)。take は「(時間が)かかる」の意味です。"
+    },
+    "clauses": [
+     {
+      "text": "How long will the repairs take? About two days.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "the repairs",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "will take",
+      "role": "V",
+      "note": "未来を表す will + take"
+     },
+     {
+      "text": "How long",
+      "role": "M",
+      "note": "期間を問う疑問副詞句"
+     }
+    ],
+    "tense": {
+     "name": "未来形(will)",
+     "explanation": "これから先の所要時間をたずねる未来形です。"
+    },
+    "grammar": [
+     {
+      "point": "How long は期間を問う",
+      "explanation": "two days / a week / until Friday など期間を答えます。How often は頻度、How much は値段・量です。"
+     },
+     {
+      "point": "省略応答",
+      "explanation": "About two days. のように、名詞句だけで答えるのが Part 2 では普通です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "repair",
+      "pos": "名詞",
+      "meaning": "修理",
+      "note": "",
+      "level": 3,
+      "toeic": "The repairs will take ~."
+     },
+     {
+      "word": "take",
+      "pos": "動詞",
+      "meaning": "(時間が)かかる",
+      "note": "",
+      "level": 2,
+      "toeic": "How long will it take?"
+     },
+     {
+      "word": "about",
+      "pos": "副詞",
+      "meaning": "約、およそ",
+      "note": "",
+      "level": 1,
+      "toeic": "about two days"
+     }
+    ],
+    "toeic": {
+     "scene": "施設・設備",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "その他",
+       "detail": "How long / How often / How much の使い分け"
+      }
+     ],
+     "paraphrase": [
+      "It should be done by Friday.",
+      "Probably a couple of days."
+     ]
+    },
+    "words": [
+     {
+      "w": "How",
+      "p": "adv"
+     },
+     {
+      "w": "long",
+      "p": "adv"
+     },
+     {
+      "w": "will",
+      "p": "aux"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "repairs",
+      "p": "n"
+     },
+     {
+      "w": "take?",
+      "p": "v"
+     },
+     {
+      "w": "About",
+      "p": "adv"
+     },
+     {
+      "w": "two",
+      "p": "det"
+     },
+     {
+      "w": "days.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "How long",
+      "f": "疑問副詞句"
+     },
+     {
+      "t": "will the repairs take?",
+      "f": "疑問文"
+     },
+     {
+      "t": "About two days.",
+      "f": "名詞句(期間)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "How long will the repairs take?"
+     },
+     {
+      "t": "About two days."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "How long will the repairs take? ______",
+    "choices": [
+     "About two days.",
+     "Every two days.",
+     "Two hundred dollars.",
+     "At the repair shop."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "How long は所要期間を問う。About two days. が正解。Every two days は頻度、Two hundred dollars は金額、At the repair shop は場所で、質問に合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-17",
+   "text": "Could you send me the revised schedule? I'll e-mail it this afternoon.",
+   "gids": [
+    "g4",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791900000016,
+   "analysis": {
+    "translation": "修正したスケジュールを送っていただけますか。今日の午後にメールします。",
+    "slash": [
+     {
+      "en": "Could you send me the revised schedule?",
+      "ja": "修正したスケジュールを送っていただけますか"
+     },
+     {
+      "en": "I'll e-mail it this afternoon.",
+      "ja": "今日の午後にメールします"
+     }
+    ],
+    "pattern": {
+     "type": "第4文型(SVOO)",
+     "explanation": "Could you (S) send (V) me (O) the revised schedule (O)。「人に物を送る」の形です。"
+    },
+    "clauses": [
+     {
+      "text": "Could you send me the revised schedule? I'll e-mail it this afternoon.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "you",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "Could send",
+      "role": "V",
+      "note": "丁寧な依頼"
+     },
+     {
+      "text": "me",
+      "role": "O",
+      "note": "間接目的語"
+     },
+     {
+      "text": "the revised schedule",
+      "role": "O",
+      "note": "直接目的語"
+     }
+    ],
+    "tense": {
+     "name": "助動詞 could",
+     "explanation": "could は can より丁寧な依頼。応答の I'll は will の短縮形で、その場で決めた申し出を表します。"
+    },
+    "grammar": [
+     {
+      "point": "Could you ~?",
+      "explanation": "依頼の定型。Sure. / Of course. / I'll do it right away. などで答えます。"
+     },
+     {
+      "point": "I'll + 動詞",
+      "explanation": "その場の決定・申し出を表す未来の言い方です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "revised",
+      "pos": "形容詞",
+      "meaning": "修正された、改訂された",
+      "note": "",
+      "level": 3,
+      "toeic": "revised schedule / revised edition"
+     },
+     {
+      "word": "send",
+      "pos": "動詞",
+      "meaning": "~に…を送る",
+      "note": "",
+      "level": 1,
+      "toeic": "send me the file"
+     },
+     {
+      "word": "e-mail",
+      "pos": "動詞",
+      "meaning": "~にメールを送る",
+      "note": "",
+      "level": 2,
+      "toeic": "I'll e-mail it."
+     }
+    ],
+    "toeic": {
+     "scene": "社内連絡",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "その他",
+       "detail": "依頼への応答パターン"
+      },
+      {
+       "type": "語彙",
+       "detail": "revise の過去分詞形容詞 revised"
+      }
+     ],
+     "paraphrase": [
+      "Sure, I'll send it later today.",
+      "I'll forward it to you right away."
+     ]
+    },
+    "words": [
+     {
+      "w": "Could",
+      "p": "aux"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "send",
+      "p": "v"
+     },
+     {
+      "w": "me",
+      "p": "pron"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "revised",
+      "p": "adj"
+     },
+     {
+      "w": "schedule?",
+      "p": "n"
+     },
+     {
+      "w": "I'll",
+      "p": "pron"
+     },
+     {
+      "w": "e-mail",
+      "p": "v"
+     },
+     {
+      "w": "it",
+      "p": "pron"
+     },
+     {
+      "w": "this",
+      "p": "det"
+     },
+     {
+      "w": "afternoon.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Could you",
+      "f": "助動詞(丁寧な依頼)"
+     },
+     {
+      "t": "send me",
+      "f": "動詞句"
+     },
+     {
+      "t": "the revised schedule?",
+      "f": "目的語"
+     },
+     {
+      "t": "I'll e-mail it",
+      "f": "動詞句"
+     },
+     {
+      "t": "this afternoon.",
+      "f": "時を表す語句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Could you send me the revised schedule?"
+     },
+     {
+      "t": "I'll e-mail it this afternoon."
+     }
+    ]
+   },
+   "level": 600,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Could you send me the revised schedule? ______",
+    "choices": [
+     "I'll e-mail it this afternoon.",
+     "Yes, I revised it twice.",
+     "It's on the second floor.",
+     "Last Friday, I think."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "依頼には承諾や実行する旨で答えます。I'll e-mail it this afternoon. が正解。Yes, I revised it twice. は質問の意図に合わず、場所と過去の時も合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-18",
+   "text": "Haven't you finished the report yet? Not quite, but I'm almost done.",
+   "gids": [
+    "g4",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791900000017,
+   "analysis": {
+    "translation": "まだ報告書を終えていないのですか。完全にはまだですが、もうほとんど終わりです。",
+    "slash": [
+     {
+      "en": "Haven't you finished the report yet?",
+      "ja": "まだ報告書を終えていないのですか"
+     },
+     {
+      "en": "Not quite,",
+      "ja": "まだ完全には"
+     },
+     {
+      "en": "but I'm almost done.",
+      "ja": "でももうほとんど終わりです"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "Haven't (助動詞) you finished (V) the report (O)。否定疑問文でも、実質は「終えましたか」の確認です。"
+    },
+    "clauses": [
+     {
+      "text": "Haven't you finished the report yet? Not quite, but I'm almost done.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "you",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "Haven't finished",
+      "role": "V",
+      "note": "現在完了の否定疑問"
+     },
+     {
+      "text": "the report",
+      "role": "O",
+      "note": "目的語"
+     },
+     {
+      "text": "yet",
+      "role": "M",
+      "note": "「もう」「まだ」の副詞"
+     }
+    ],
+    "tense": {
+     "name": "現在完了形",
+     "explanation": "have + 過去分詞 で「完了したか」をたずねます。yet は疑問文・否定文で使います。"
+    },
+    "grammar": [
+     {
+      "point": "否定疑問文",
+      "explanation": "Haven't you ~? は確認・驚きを表します。答え方は肯定・否定の事実どおりに答えます。"
+     },
+     {
+      "point": "Not quite",
+      "explanation": "「完全にはそうではない」という控えめな否定。almost done とつながります。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "yet",
+      "pos": "副詞",
+      "meaning": "もう、まだ",
+      "note": "",
+      "level": 3,
+      "toeic": "疑問文・否定文で使う"
+     },
+     {
+      "word": "almost",
+      "pos": "副詞",
+      "meaning": "ほとんど、もう少しで",
+      "note": "",
+      "level": 2,
+      "toeic": "almost done / almost finished"
+     },
+     {
+      "word": "Not quite",
+      "pos": "熟語",
+      "meaning": "ちょっと違う、まだ完全には",
+      "note": "",
+      "level": 2,
+      "toeic": "控えめな否定"
+     }
+    ],
+    "toeic": {
+     "scene": "社内・業務連絡",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "時制",
+       "detail": "現在完了と yet"
+      },
+      {
+       "type": "その他",
+       "detail": "否定疑問文への応答"
+      }
+     ],
+     "paraphrase": [
+      "Almost, I need another hour.",
+      "I'm just finishing it up now."
+     ]
+    },
+    "words": [
+     {
+      "w": "Haven't",
+      "p": "aux"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "finished",
+      "p": "v"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "report",
+      "p": "n"
+     },
+     {
+      "w": "yet?",
+      "p": "adv"
+     },
+     {
+      "w": "Not",
+      "p": "adv"
+     },
+     {
+      "w": "quite,",
+      "p": "adv"
+     },
+     {
+      "w": "but",
+      "p": "conj"
+     },
+     {
+      "w": "I'm",
+      "p": "pron"
+     },
+     {
+      "w": "almost",
+      "p": "adv"
+     },
+     {
+      "w": "done.",
+      "p": "adj"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Haven't you finished",
+      "f": "動詞句(現在完了の否定疑問)"
+     },
+     {
+      "t": "the report",
+      "f": "目的語"
+     },
+     {
+      "t": "yet?",
+      "f": "副詞"
+     },
+     {
+      "t": "Not quite,",
+      "f": "応答"
+     },
+     {
+      "t": "but I'm almost done.",
+      "f": "接続詞+文"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Haven't you finished the report yet?"
+     },
+     {
+      "t": "Not quite,"
+     },
+     {
+      "t": "but I'm almost done."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Haven't you finished the report yet? ______",
+    "choices": [
+     "Not quite, but I'm almost done.",
+     "Yes, it's on the report desk.",
+     "I will finish tomorrow morning.",
+     "The finish was great."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "終わったかを確認する質問に、まだ完全ではないがほぼ終わりと答える Not quite, but I'm almost done. が正解。ほかは質問の意図とずれています。"
+   }
+  },
+  {
+   "id": "toeic-set3-19",
+   "text": "Which printer should I use for color copies? The one on the second floor.",
+   "gids": [
+    "g4",
+    "g7"
+   ],
+   "bm": false,
+   "added": 1791900000018,
+   "analysis": {
+    "translation": "カラーコピーはどのプリンターを使えばいいですか。2階のものです。",
+    "slash": [
+     {
+      "en": "Which printer should I use for color copies?",
+      "ja": "カラーコピーにはどのプリンターを使えばいいですか"
+     },
+     {
+      "en": "The one on the second floor.",
+      "ja": "2階にあるものです"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "I (S) should use (V) which printer (O)。Which printer が文頭に出た疑問文です。"
+    },
+    "clauses": [
+     {
+      "text": "Which printer should I use for color copies? The one on the second floor.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "I",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "should use",
+      "role": "V",
+      "note": "助動詞 should + 動詞"
+     },
+     {
+      "text": "Which printer",
+      "role": "O",
+      "note": "選択肢から選ぶ対象"
+     },
+     {
+      "text": "for color copies",
+      "role": "M",
+      "note": "目的"
+     }
+    ],
+    "tense": {
+     "name": "現在形(助動詞 should)",
+     "explanation": "should で「~すべきか」と助言を求めています。"
+    },
+    "grammar": [
+     {
+      "point": "Which + 名詞",
+      "explanation": "限られた選択肢から選ばせる質問。The one on ~ / The red one などが典型の答えです。"
+     },
+     {
+      "point": "代名詞 one",
+      "explanation": "the one は the printer を指します。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "second floor",
+      "pos": "名詞",
+      "meaning": "2階",
+      "note": "",
+      "level": 1,
+      "toeic": "on the second floor(米国式)"
+     },
+     {
+      "word": "copy",
+      "pos": "名詞",
+      "meaning": "コピー",
+      "note": "",
+      "level": 2,
+      "toeic": "color copies"
+     },
+     {
+      "word": "which",
+      "pos": "形容詞",
+      "meaning": "どの",
+      "note": "",
+      "level": 2,
+      "toeic": "Which printer ~?"
+     }
+    ],
+    "toeic": {
+     "scene": "オフィス・備品",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "その他",
+       "detail": "Which の質問への答え方"
+      },
+      {
+       "type": "語彙",
+       "detail": "one が前の名詞を受ける用法"
+      }
+     ],
+     "paraphrase": [
+      "Use the one near the entrance.",
+      "The new one by the window."
+     ]
+    },
+    "words": [
+     {
+      "w": "Which",
+      "p": "det"
+     },
+     {
+      "w": "printer",
+      "p": "n"
+     },
+     {
+      "w": "should",
+      "p": "aux"
+     },
+     {
+      "w": "I",
+      "p": "pron"
+     },
+     {
+      "w": "use",
+      "p": "v"
+     },
+     {
+      "w": "for",
+      "p": "prep"
+     },
+     {
+      "w": "color",
+      "p": "n"
+     },
+     {
+      "w": "copies?",
+      "p": "n"
+     },
+     {
+      "w": "The",
+      "p": "det"
+     },
+     {
+      "w": "one",
+      "p": "pron"
+     },
+     {
+      "w": "on",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "second",
+      "p": "adj"
+     },
+     {
+      "w": "floor.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Which printer",
+      "f": "疑問詞+名詞"
+     },
+     {
+      "t": "should I use",
+      "f": "動詞句"
+     },
+     {
+      "t": "for color copies?",
+      "f": "前置詞句"
+     },
+     {
+      "t": "The one",
+      "f": "名詞句(代名詞 one)"
+     },
+     {
+      "t": "on the second floor.",
+      "f": "前置詞句"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Which printer should I use for color copies?"
+     },
+     {
+      "t": "The one on the second floor."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Which printer should I use for color copies? ______",
+    "choices": [
+     "The one on the second floor.",
+     "Twenty copies, please.",
+     "Yes, in color.",
+     "I bought it last week."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "Which の質問には、選択肢の中から指し示して答えます。The one on the second floor. が正解。枚数、Yes、購入時期は質問に合いません。"
+   }
+  },
+  {
+   "id": "toeic-set3-20",
+   "text": "Do you want to take a taxi or walk to the station? Let's walk, since it's a nice day.",
+   "gids": [
+    "g4",
+    "g6"
+   ],
+   "bm": false,
+   "added": 1791900000019,
+   "analysis": {
+    "translation": "駅までタクシーで行きますか、それとも歩きますか。いい天気なので歩きましょう。",
+    "slash": [
+     {
+      "en": "Do you want to take a taxi",
+      "ja": "タクシーに乗りたいですか"
+     },
+     {
+      "en": "or walk to the station?",
+      "ja": "それとも駅まで歩きますか"
+     },
+     {
+      "en": "Let's walk,",
+      "ja": "歩きましょう"
+     },
+     {
+      "en": "since it's a nice day.",
+      "ja": "天気がいいので"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "you (S) want (V) to take ... or walk ... (O)。or で2つの選択肢を示す選択疑問文です。"
+    },
+    "clauses": [
+     {
+      "text": "Do you want to take a taxi or walk to the station? Let's walk, since it's a nice day.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "you",
+      "role": "S",
+      "note": "主語"
+     },
+     {
+      "text": "Do want",
+      "role": "V",
+      "note": "疑問文の助動詞 do + want"
+     },
+     {
+      "text": "to take a taxi or walk to the station",
+      "role": "O",
+      "note": "2つの選択肢"
+     }
+    ],
+    "tense": {
+     "name": "現在形",
+     "explanation": "現在の希望をたずねています。応答の Let's は提案を表します。"
+    },
+    "grammar": [
+     {
+      "point": "選択疑問文",
+      "explanation": "A or B? には Yes/No で答えず、どちらかを選んで答えます。"
+     },
+     {
+      "point": "since + 節",
+      "explanation": "「~なので」と理由を述べる接続詞。ここでは理由を軽く付け足しています。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "walk",
+      "pos": "動詞",
+      "meaning": "歩く",
+      "note": "",
+      "level": 1,
+      "toeic": "walk to the station"
+     },
+     {
+      "word": "Let's ~",
+      "pos": "熟語",
+      "meaning": "~しましょう",
+      "note": "",
+      "level": 2,
+      "toeic": "提案の応答"
+     },
+     {
+      "word": "since",
+      "pos": "接続詞",
+      "meaning": "~なので",
+      "note": "",
+      "level": 2,
+      "toeic": "理由を表す"
+     }
+    ],
+    "toeic": {
+     "scene": "交通・日常会話",
+     "part": "Part 2",
+     "points": [
+      {
+       "type": "その他",
+       "detail": "選択疑問文の答え方(Yes/No では答えない)"
+      },
+      {
+       "type": "接続詞・副詞",
+       "detail": "since の理由用法"
+      }
+     ],
+     "paraphrase": [
+      "Walking is fine with me.",
+      "Let's take a taxi; it's raining."
+     ]
+    },
+    "words": [
+     {
+      "w": "Do",
+      "p": "aux"
+     },
+     {
+      "w": "you",
+      "p": "pron"
+     },
+     {
+      "w": "want",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "other"
+     },
+     {
+      "w": "take",
+      "p": "v"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "taxi",
+      "p": "n"
+     },
+     {
+      "w": "or",
+      "p": "conj"
+     },
+     {
+      "w": "walk",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "the",
+      "p": "det"
+     },
+     {
+      "w": "station?",
+      "p": "n"
+     },
+     {
+      "w": "Let's",
+      "p": "v"
+     },
+     {
+      "w": "walk,",
+      "p": "v"
+     },
+     {
+      "w": "since",
+      "p": "conj"
+     },
+     {
+      "w": "it's",
+      "p": "pron"
+     },
+     {
+      "w": "a",
+      "p": "det"
+     },
+     {
+      "w": "nice",
+      "p": "adj"
+     },
+     {
+      "w": "day.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Do you want",
+      "f": "動詞句"
+     },
+     {
+      "t": "to take a taxi",
+      "f": "to不定詞句"
+     },
+     {
+      "t": "or walk to the station?",
+      "f": "選択肢"
+     },
+     {
+      "t": "Let's walk,",
+      "f": "提案"
+     },
+     {
+      "t": "since it's a nice day.",
+      "f": "副詞節"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Do you want to take a taxi"
+     },
+     {
+      "t": "or walk to the station?"
+     },
+     {
+      "t": "Let's walk,"
+     },
+     {
+      "t": "since it's a nice day."
+     }
+    ]
+   },
+   "level": 730,
+   "part": "Part 2",
+   "verified": false,
+   "status": "new",
+   "mistakes": [],
+   "review_count": 0,
+   "last_reviewed": null,
+   "quiz": {
+    "question": "Do you want to take a taxi or walk to the station? ______",
+    "choices": [
+     "Let's walk, since it's a nice day.",
+     "Yes, I want to.",
+     "The station is closed.",
+     "At about five o'clock."
+    ],
+    "answer": 0,
+    "type": "その他",
+    "explanation": "A or B の選択疑問文なので、どちらかを選ぶ Let's walk, ... が正解。Yes, I want to. は選んでおらず、駅の状態と時刻の応答も合いません。"
+   }
+  }
+ ],
+ "words": []
+}
