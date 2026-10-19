@@ -43,6 +43,8 @@ textarea{width:100%;resize:vertical}
 .grow{flex:1}
 .num{width:70px}
 .inl{display:inline-flex;align-items:center;gap:6px;font-size:14px}
+#pickAudio .ib{min-width:44px}
+#pickList .row-i.now{outline:2px solid var(--pri);outline-offset:-2px;border-radius:8px}
 .pickgrid{--c:122px;display:grid;grid-template-columns:repeat(3,var(--c)) minmax(0,1fr);gap:8px;align-items:start;font-size:14px}
 .pickgrid>*{min-width:0}
 .pickgrid select,.pickgrid button,.pickgrid input{font-size:14px;padding:6px 8px}

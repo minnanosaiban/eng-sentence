@@ -220,6 +220,7 @@
 
   // ---------- タブ ----------
   function setTab(t) {
+    if (tab === "pick" && t !== "pick") stopAudio(); // 選択画面で聞いているときは、画面を離れたら止める
     tab = t;
     const inSet = t === "reg" || t === "sync";
     document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === t)));
@@ -317,7 +318,7 @@
     document.querySelectorAll("#segUnit button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.u === unit)));
     document.querySelectorAll(".chunk-only").forEach(e => { e.hidden = !(unit === "meaning" || unit === "iu") });
     document.querySelectorAll(".sent-only").forEach(e => { e.hidden = unit !== "sentence" && unit !== "word" });
-    renderGroupSelect();
+    renderGroupSelect(); syncPickAudio();
     document.querySelectorAll(".word-only").forEach(e => { e.hidden = unit !== "word" });
     const list = filtered(), n = tbl(unit).length;
     $("#pickList").innerHTML = list.length ? list.map(pickRow).join("")
@@ -332,7 +333,7 @@
   }
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
-  ["#fq", "#fgroup", "#flabel", "#flevel", "#fpart", "#flen", "#fpos"].forEach(s => $(s).addEventListener("input", renderPick));
+  ["#fq", "#fgroup", "#flabel", "#flevel", "#fpart", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
   $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
   $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
   const pickRandom = n => {
@@ -403,8 +404,12 @@
       }, { passive: true });
     });
   }
-  function setRate(v) { prefs.rate = +v; $("#rate").value = String(prefs.rate); savePrefs() }
+  // 選択画面の音声の設定(速さ・間・繰り返し)は、学習画面と同じ設定を使う。選択肢も、学習画面のものを写す
+  for (const [a, b] of [["#rate", "#pRate"], ["#shGap", "#pGap"], ["#shRep", "#pRep"]]) $(b).innerHTML = $(a).innerHTML;
+  function syncPickAudio() { $("#pRate").value = String(prefs.rate); $("#pGap").value = String(prefs.sh.gap); $("#pRep").value = String(prefs.sh.rep) }
+  function setRate(v) { prefs.rate = +v; $("#rate").value = String(prefs.rate); syncPickAudio(); savePrefs() }
   $("#rate").onchange = e => setRate(e.target.value);
+  $("#pRate").onchange = e => setRate(e.target.value);
 
   // ---------- 英文学習 ----------
   const LEG = [["n", "名詞"], ["pron", "代名詞"], ["v", "動詞"], ["aux", "助動詞"], ["adj", "形容詞"], ["adv", "副詞"], ["prep", "前置詞"], ["conj", "接続詞・関係詞"], ["det", "冠詞・限定詞"]];
@@ -535,8 +540,8 @@
     const b = e.target.closest("button"); if (!b) return;
     if (b.dataset.v) toggleView(b.dataset.v); else if (b.dataset.x) toggleAux(b.dataset.x); else if (b.dataset.g) toggleGram();
   };
-  $("#shGap").onchange = e => { prefs.sh.gap = +e.target.value; savePrefs() };
-  $("#shRep").onchange = e => { prefs.sh.rep = +e.target.value; savePrefs() };
+  $("#shGap").onchange = $("#pGap").onchange = e => { prefs.sh.gap = +e.target.value; $("#shGap").value = $("#pGap").value = String(prefs.sh.gap); savePrefs() };
+  $("#shRep").onchange = $("#pRep").onchange = e => { prefs.sh.rep = +e.target.value; $("#shRep").value = $("#pRep").value = String(prefs.sh.rep); savePrefs() };
   function toggleView(k) { prefs.view[k] = !prefs.view[k]; savePrefs(); renderStudy() }
   function toggleSlashMain() { prefs.slashMain = !prefs.slashMain; savePrefs(); renderStudy() }
   $("#btnSlashMain").onclick = toggleSlashMain;
@@ -572,7 +577,7 @@
   let playing = 0; // 世代番号。止める・次へ行くと増やして、前の読み上げを無効にする
   const sleep = (ms, me) => new Promise(res => { const t0 = Date.now(), iv = setInterval(() => { if (me !== playing || Date.now() - t0 >= ms) { clearInterval(iv); res() } }, 80) });
   const sayTimed = async (text, rate) => { const t0 = performance.now(); await say(text, rate); return performance.now() - t0 };
-  const pst = msg => { const e = $("#pstatus"); e.hidden = !msg; e.textContent = msg || "" };
+  const pst = msg => { const e = $("#pstatus"); e.hidden = !msg; e.textContent = msg || ""; if (!msg) { $("#pickPst").textContent = ""; document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now")) } };
   function stopAudio() { playing++; pst(null); try { speechSynthesis.cancel() } catch {} const r = cur(); if (r && tab === "study" && study.unit === "sentence") renderDisp(r) }
   function say(text, rate = prefs.rate) {
     return new Promise(res => {
@@ -648,6 +653,29 @@
       else if (k < rep) await sleep(400, me);
     }
     if (me === playing) pst(null);
+  };
+  // 選択画面: 表示中の英文を、上から順に聞く。繰り返し: 同じ英文を、設定の回数だけ続けて聞く(英文ごと)
+  $("#btnStopPick").onclick = stopAudio;
+  $("#btnPlayPick").onclick = async () => {
+    if (!("speechSynthesis" in window)) return toast("この端末では、読み上げが使えません");
+    const list = filtered(); if (!list.length) return toast("聞く英文がありません");
+    stopAudio(); const me = playing, rep = prefs.sh.rep, gap = +prefs.sh.gap || 0;
+    for (let n = 0; n < list.length; n++) {
+      const r = list[n];
+      document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now"));
+      const row = document.querySelector(`#pickList input[data-id="${r.id}"]`), li = row && row.closest(".row-i");
+      if (li) { li.classList.add("now"); li.scrollIntoView({ block: "center", behavior: "smooth" }) }
+      for (let k = 1; k <= rep; k++) {
+        if (me !== playing) return;
+        $("#pickPst").textContent = `${n + 1} / ${list.length}${rep > 1 ? ` ・ ${k}回目` : ""}`;
+        const ms = await sayTimed(r.text); if (me !== playing) return;
+        if (gap) { const wait = Practice.gap(ms, r.text, gap, prefs.rate); $("#pickPst").textContent = `${n + 1} / ${list.length} ・ まねする(${(wait / 1000).toFixed(1)}秒)`; await sleep(wait, me) }
+        else if (k < rep) await sleep(400, me);
+      }
+      if (me !== playing) return;
+      if (n < list.length - 1) await sleep(500, me);
+    }
+    if (me === playing) { pst(null); toast("最後まで聞きました") }
   };
   // 選んだ区切りを、繰り返しの回数だけ、続けて聞く
   function playSel(r, key, i, me) {

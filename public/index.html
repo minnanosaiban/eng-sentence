@@ -254,6 +254,14 @@
         </select>
       </div>
       <p id="pickInfo" class="sub"></p>
+      <div class="row wrap" id="pickAudio">
+        <button id="btnPlayPick" class="ib" aria-label="表示中の英文を、順に聞く" title="表示中の英文を、上から順に聞く">▶</button>
+        <button id="btnStopPick" class="ib" aria-label="止める" title="止める">■</button>
+        <label class="inl">速さ <select id="pRate"></select></label>
+        <label class="inl">間 <select id="pGap" title="読んだあとに置く、まねする時間(読み上げの長さの何倍か)。「なし」なら、続けて読む"></select></label>
+        <label class="inl">繰り返し <select id="pRep" title="同じ英文を、何回続けて繰り返すか"></select></label>
+        <span id="pickPst" class="sub"></span>
+      </div>
     </div>
     <div id="pickList" class="list"></div>
   </section>
