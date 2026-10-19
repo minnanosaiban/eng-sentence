@@ -94,7 +94,13 @@
     return { n: a.n, m: b.n, c: c.n, u: a.u + b.u + c.u };
   }
 
+  // 登録した英文・単語・意味句に、種類のグループ(AI作成/収集)を足す
+  function tagged(data, tag) {
+    const t = list => (list || []).map(i => (i && typeof i === "object" ? { ...i, groups: [...new Set([...(Array.isArray(i.groups) ? i.groups : []), tag])] } : i));
+    return { ...data, sentences: t(data.sentences), words: t(data.words), chunks: t(data.chunks) };
+  }
   async function addFrom(data, label, opts) {
+    data = tagged(data, (opts && opts.tag) || SRC_TAG[regSrc]);
     const a = await importSentences(data.sentences || [], opts), b = await importWords(data.words || [], opts), c = await importChunks(data.chunks || [], opts);
     renderAll();
     const msg = [];
@@ -176,22 +182,21 @@
   }
 
   // ---------- 登録の方法(① Gemini API / ② 他の AI のチャット / ③ サンプルなど) ----------
+  // ① AI作成英文(同梱のサンプルとして、同期しなくても表示される)/ ② 収集英文(公開しない。同期で表示される)。登録した英文には、この名前のグループを付ける
+  const SRC_TAG = { ai: "AI作成", mine: "収集" };
+  let regSrc = "ai";
   function setReg(r) {
+    regSrc = r;
     document.querySelectorAll("#regNav button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.r === r)));
-    document.querySelectorAll(".regp").forEach(e => { e.hidden = e.dataset.r !== r });
+    document.querySelectorAll("#tab-reg [data-src]").forEach(e => { e.hidden = e.dataset.src !== r });
   }
   $("#regNav").onclick = e => { const b = e.target.closest("button[data-r]"); if (b) setReg(b.dataset.r) };
-  setReg("gemini");
+  setReg("ai");
   const chatLines = () => $("#chatSrc").value.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
   $("#btnChatPrompt").onclick = async () => {
     const t = AI.prompt.file(chatLines().slice(0, 30)), ta = document.createElement("textarea");
     try { await navigator.clipboard.writeText(t) } catch { ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove() }
     toast(chatLines().length > 30 ? "プロンプトをコピーしました(英文は最初の30文だけ。残りは、別に分けて)" : "プロンプトをコピーしました。チャットに貼り付けてください");
-  };
-  $("#chatKind").onclick = e => {
-    const b = e.target.closest("button[data-k]"); if (!b) return;
-    document.querySelectorAll("#chatKind button").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
-    $("#chatMake").hidden = b.dataset.k !== "make"; $("#chatOwn").hidden = b.dataset.k !== "own";
   };
   $("#btnMakePrompt").onclick = async () => {
     const t = AI.prompt.make({ n: $("#mkN").value, level: $("#mkLevel").value, part: $("#mkPart").value, scene: $("#mkScene").value, group: $("#mkGroup").value, memo: $("#mkMemo").value }), ta = document.createElement("textarea");
@@ -243,7 +248,7 @@
       const r = await fetch("samples/" + f); if (!r.ok) throw new Error(f + " を読めません");
       const d = parseFile(f, await r.text()); all.sentences.push(...d.sentences); all.words.push(...d.words);
     }
-    await addFrom(all, "サンプル");
+    await addFrom(all, "サンプル", { tag: SRC_TAG.ai });
   }
   $("#btnSamples").onclick = async e => {
     const b = e.currentTarget; b.disabled = true;

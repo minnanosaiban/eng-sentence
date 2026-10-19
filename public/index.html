@@ -48,122 +48,114 @@
   </div>
   <!-- 登録 -->
   <section id="tab-reg" class="tab" hidden>
-    <div class="seg" id="regNav" role="group" aria-label="登録の方法">
-      <button data-r="gemini">① 英文を入れて Gemini API で解析</button>
-      <button data-r="chat">② 他の AI のチャットで JSON を作って登録</button>
-      <button data-r="misc">③ サンプル・発音記号・バックアップ</button>
+    <div class="seg" id="regNav" role="group" aria-label="英文の種類">
+      <button data-r="ai">① AI作成英文</button>
+      <button data-r="mine">② 収集英文</button>
+    </div>
+    <p class="sub" data-src="ai">AI に作らせたオリジナルの英文です。同梱のサンプルとして、同期しなくても最初から表示されます。登録した英文には「AI作成」のグループが付きます。</p>
+    <p class="sub" data-src="mine">自分で集めた英文です。公開はしません。同期（暗号化したクラウド同期）をしたときに表示されます。登録した英文には「収集」のグループが付きます。</p>
+
+    <!-- 英文を入れる -->
+    <div class="card" data-src="mine">
+      <h2>英文を入れる</h2>
+      <p class="sub">1行に1文で貼り付けます。解析(和訳・区切りなど)は、下の「Gemini API で解析する」か「他の AI のチャットで解析する」で付けます。</p>
+      <textarea id="paste" rows="5" placeholder="Candidates are advised to bring copies of their certificates to the interview."></textarea>
+      <div class="row">
+        <input id="pasteGroup" type="text" placeholder="グループ名(任意)">
+        <button id="btnPaste">追加</button>
+      </div>
+      <p class="sub">ファイルから入れるとき: .csv(1列目=英文、2列目=グループ名。「、」で複数)/ .txt(1行=1文)</p>
+      <input id="file" type="file" accept=".csv,.txt">
+    </div>
+    <div class="card" data-src="ai">
+      <h2>すぐ試す(サンプル英文)</h2>
+      <p class="sub">TOEIC風のオリジナル英文 154文(Part 1〜7。和訳・区切り・品詞・単語の発音記号・4択つき)を入れます。API は要りません。初めて開いたときは、自動で入ります。</p>
+      <button id="btnSamples" class="pri">サンプル英文を入れる</button>
     </div>
 
-    <!-- ① 英文を入れる → Gemini API で解析 -->
-    <div class="regp" data-r="gemini">
-      <p class="sub">英文を入れて、Gemini API が、和訳・区切り・品詞・単語・TOEIC・4択を付けます(API キーが必要)。</p>
-      <div class="card">
-        <h2>ステップ1: 英文を入れる</h2>
-        <p class="sub">1行に1文で貼り付けます。解析(和訳・区切りなど)は、ステップ2で付けます。</p>
-        <textarea id="paste" rows="5" placeholder="Candidates are advised to bring copies of their certificates to the interview."></textarea>
-        <div class="row">
-          <input id="pasteGroup" type="text" placeholder="グループ名(任意)">
-          <button id="btnPaste">追加</button>
-        </div>
-        <p class="sub">ファイルから入れるとき: .csv(1列目=英文、2列目=グループ名。「、」で複数)/ .txt(1行=1文)</p>
-        <input id="file" type="file" accept=".csv,.txt">
+    <!-- 他の AI のチャットで JSON を作って登録 -->
+    <div class="card" id="chatMake" data-src="ai">
+      <h2>AI に英文を作らせる: プロンプトをコピーして、チャットに貼る</h2>
+      <p class="sub">API キーが無くても使えます。ChatGPT・Claude・Gemini などのチャットが英文を作り、そのまま解析した JSON を返します。返事は、下の「JSON を登録する」で登録します。</p>
+      <div class="row wrap">
+        <label>個数 <input id="mkN" type="number" min="1" max="30" value="10" style="width:5em"></label>
+        <label>難易度 <select id="mkLevel"><option value="">混ぜる</option><option>600</option><option>730</option><option>860</option></select></label>
+        <label>パート <select id="mkPart"><option value="">おまかせ(Part 1〜7)</option><option>Part 1</option><option>Part 2</option><option>Part 3</option><option>Part 4</option><option>Part 5</option><option>Part 6</option><option>Part 7</option></select></label>
       </div>
-      <div class="card">
-        <h2>ステップ2: Gemini API で解析する</h2>
-        <p id="aiInfo" class="sub"></p>
-        <div class="row wrap">
-          <button id="btnAI" class="pri">解析する(Gemini API)</button>
-          <button id="btnAIStop" hidden>止める</button>
-          <span id="aiProg" class="sub"></span>
-        </div>
-        <details id="aiSet">
-          <summary>設定(API キー・モデル)</summary>
-          <div class="aiset">
-            <input id="apiKey" type="password" autocomplete="off" placeholder="Gemini API キー(Google AI Studio で取得)">
-            <input id="aiModel" type="text" placeholder="モデル名(既定: gemini-2.5-flash)">
-            <p class="sub">API キーは、この端末のブラウザの中だけに保存します(バックアップ・同期には入りません)。呼び出しは、「解析する」を押したときだけです。1文ずつ、自動で呼びます。</p>
-            <button id="aiSave">設定を保存</button>
-          </div>
-        </details>
+      <div class="row wrap">
+        <label>場面 <input id="mkScene" type="text" placeholder="空なら幅広く(例: 出張)"></label>
+        <label>グループ名 <input id="mkGroup" type="text" placeholder="空なら無し(例: 出張)"></label>
+      </div>
+      <textarea id="mkMemo" rows="2" placeholder="その他の指定(任意。例: 受動態を多めに)"></textarea>
+      <div class="row wrap"><button id="btnMakePrompt" class="pri">プロンプトをコピー</button></div>
+    </div>
+    <div class="card" id="chatOwn" data-src="mine">
+      <h2>他の AI のチャットで解析する: プロンプトをコピーして、チャットに貼る</h2>
+      <p class="sub">API キーが無くても使えます。英文を下に入れる(1行に1文)と、プロンプトに含まれます。空のままなら、チャットに英文を貼るひな形になります。チャットが返した JSON は、ファイル(.json)に保存するか、全文をコピーします。</p>
+      <textarea id="chatSrc" rows="4" placeholder="Candidates are advised to bring copies of their certificates to the interview."></textarea>
+      <div class="row wrap">
+        <button id="btnChatPrompt" class="pri">プロンプトをコピー</button>
+        <button id="btnChatRegistered">登録済みで解析が足りない英文を入れる</button>
       </div>
     </div>
-
-    <!-- ② 他の AI のチャットで JSON を作って登録 -->
-    <div class="regp" data-r="chat" hidden>
-      <p class="sub">API キーが無くても使えます。ChatGPT・Claude・Gemini などのチャットで、英文の解析を JSON にしてもらい、その JSON を登録します。</p>
-      <div class="row wrap" id="chatKind">
-        <button data-k="own" aria-pressed="true">自分の英文を投入する</button>
-        <button data-k="make" aria-pressed="false">AI に英文も作ってもらう</button>
+    <div class="card">
+      <h2>JSON を登録する</h2>
+      <p class="sub">チャットの返事(JSON)を貼り付けるか、保存した .json ファイルを選びます。アプリのバックアップ(.json)も、ここで読み込めます。</p>
+      <textarea id="jsonIn" rows="5" placeholder="チャットの返事(JSON)を、ここに貼り付け"></textarea>
+      <label class="inl"><input type="checkbox" id="jsonFix"> AI に確認してもらった返事なので、「修正」として取り込む(解析と4択を差し替え、確認済みにします。学習の状態は残します)</label>
+      <div class="row wrap">
+        <button id="btnJsonPaste" class="pri">貼り付けた JSON を登録</button>
+        <input id="fileJson" type="file" accept=".json">
       </div>
-      <div class="card" id="chatMake" hidden>
-        <h2>ステップ1: 条件を決めて、プロンプトをコピーして、チャットに貼る</h2>
-        <p class="sub">AI が英文を作り、そのまま解析した JSON を返します。</p>
-        <div class="row wrap">
-          <label>個数 <input id="mkN" type="number" min="1" max="30" value="10" style="width:5em"></label>
-          <label>難易度 <select id="mkLevel"><option value="">混ぜる</option><option>600</option><option>730</option><option>860</option></select></label>
-          <label>パート <select id="mkPart"><option value="">おまかせ(Part 1〜7)</option><option>Part 1</option><option>Part 2</option><option>Part 3</option><option>Part 4</option><option>Part 5</option><option>Part 6</option><option>Part 7</option></select></label>
-        </div>
-        <div class="row wrap">
-          <label>場面 <input id="mkScene" type="text" placeholder="空なら幅広く(例: 出張)"></label>
-          <label>グループ名 <input id="mkGroup" type="text" placeholder="空なら無し(例: 出張)"></label>
-        </div>
-        <textarea id="mkMemo" rows="2" placeholder="その他の指定(任意。例: 受動態を多めに)"></textarea>
-        <div class="row wrap"><button id="btnMakePrompt" class="pri">プロンプトをコピー</button></div>
+      <div id="fixPrev" class="fixprev" hidden>
+        <p id="fixSum" class="sub"></p>
+        <div id="fixList" class="sub"></div>
+        <div class="row"><button id="btnFixApply" class="pri">この修正を取り込む</button><button id="btnFixCancel">やめる</button></div>
       </div>
-      <div class="card" id="chatOwn">
-        <h2>ステップ1: プロンプトをコピーして、チャットに貼る</h2>
-        <p class="sub">英文を下に入れる(1行に1文)と、プロンプトに含まれます。空のままなら、チャットに英文を貼るひな形になります。チャットが返した JSON は、ファイル(.json)に保存するか、全文をコピーします。</p>
-        <textarea id="chatSrc" rows="4" placeholder="Candidates are advised to bring copies of their certificates to the interview."></textarea>
-        <div class="row wrap">
-          <button id="btnChatPrompt" class="pri">プロンプトをコピー</button>
-          <button id="btnChatRegistered">登録済みで解析が足りない英文を入れる</button>
-        </div>
-      </div>
-      <div class="card">
-        <h2>ステップ2: JSON を登録する</h2>
-        <p class="sub">チャットの返事(JSON)を貼り付けるか、保存した .json ファイルを選びます。アプリのバックアップ(.json)も、ここで読み込めます。</p>
-        <textarea id="jsonIn" rows="5" placeholder="チャットの返事(JSON)を、ここに貼り付け"></textarea>
-        <label class="inl"><input type="checkbox" id="jsonFix"> AI に確認してもらった返事なので、「修正」として取り込む(解析と4択を差し替え、確認済みにします。学習の状態は残します)</label>
-        <div class="row wrap">
-          <button id="btnJsonPaste" class="pri">貼り付けた JSON を登録</button>
-          <input id="fileJson" type="file" accept=".json">
-        </div>
-        <div id="fixPrev" class="fixprev" hidden>
-          <p id="fixSum" class="sub"></p>
-          <div id="fixList" class="sub"></div>
-          <div class="row"><button id="btnFixApply" class="pri">この修正を取り込む</button><button id="btnFixCancel">やめる</button></div>
-        </div>
-      </div>
-      <div class="card">
-        <h2>登録済みの英文を、5文ずつ解析する</h2>
-        <p class="sub">すでに登録してある英文(解析が足りないもの)を、5文ずつ、チャットで解析します。プロンプトをコピーして、返事を貼り戻す、を繰り返します。</p>
-        <div class="row wrap">
-          <button id="btnAICopy">5文ずつ解析する(コピペ)</button>
-          <span id="aiInfo2" class="sub"></span>
-        </div>
+    </div>
+    <div class="card">
+      <h2>登録済みの英文を、5文ずつ解析する</h2>
+      <p class="sub">すでに登録してある英文(解析が足りないもの)を、5文ずつ、チャットで解析します。プロンプトをコピーして、返事を貼り戻す、を繰り返します。</p>
+      <div class="row wrap">
+        <button id="btnAICopy">5文ずつ解析する(コピペ)</button>
+        <span id="aiInfo2" class="sub"></span>
       </div>
     </div>
 
-    <!-- ③ サンプル・発音記号・バックアップ -->
-    <div class="regp" data-r="misc" hidden>
-      <div class="card">
-        <h2>すぐ試す</h2>
-        <p class="sub">TOEIC風のオリジナル英文 154文(Part 1〜7。和訳・区切り・品詞・単語の発音記号・4択つき)を入れます。API は要りません。</p>
-        <button id="btnSamples" class="pri">サンプル英文を入れる</button>
+    <!-- Gemini API -->
+    <div class="card">
+      <h2>Gemini API で解析する</h2>
+      <p class="sub">登録した英文に、Gemini API が、和訳・区切り・品詞・単語・TOEIC・4択を付けます(API キーが必要)。</p>
+      <p id="aiInfo" class="sub"></p>
+      <div class="row wrap">
+        <button id="btnAI" class="pri">解析する(Gemini API)</button>
+        <button id="btnAIStop" hidden>止める</button>
+        <span id="aiProg" class="sub"></span>
       </div>
-      <div class="card">
-        <h2>発音記号を付ける</h2>
-        <p id="ipaInfo" class="sub"></p>
-        <p class="sub">発音辞書(CMU Pronouncing Dictionary、アメリカ英語)から、発音記号が無い英文の区切りや単語に付けます。AI を使わず、API キーも要りません。語ごとの発音をつないだもので、辞書に無い語(数字・固有名詞など)を含む区切りには付きません。辞書(約0.8MB)は、必要なときに1回だけ読み込みます。</p>
-        <button id="btnIpa" class="pri">発音記号を辞書から付ける</button>
-      </div>
-      <div class="card">
-        <h2>登録済み</h2>
-        <p id="regInfo" class="sub"></p>
-        <div class="row">
-          <button id="btnExport">バックアップ保存</button>
-          <button id="btnClear" class="danger">すべて削除</button>
+      <details id="aiSet">
+        <summary>設定(API キー・モデル)</summary>
+        <div class="aiset">
+          <input id="apiKey" type="password" autocomplete="off" placeholder="Gemini API キー(Google AI Studio で取得)">
+          <input id="aiModel" type="text" placeholder="モデル名(既定: gemini-2.5-flash)">
+          <p class="sub">API キーは、この端末のブラウザの中だけに保存します(バックアップ・同期には入りません)。呼び出しは、「解析する」を押したときだけです。1文ずつ、自動で呼びます。</p>
+          <button id="aiSave">設定を保存</button>
         </div>
+      </details>
+    </div>
+
+    <!-- 発音記号・バックアップ -->
+    <div class="card">
+      <h2>発音記号を付ける</h2>
+      <p id="ipaInfo" class="sub"></p>
+      <p class="sub">発音辞書(CMU Pronouncing Dictionary、アメリカ英語)から、発音記号が無い英文の区切りや単語に付けます。AI を使わず、API キーも要りません。語ごとの発音をつないだもので、辞書に無い語(数字・固有名詞など)を含む区切りには付きません。辞書(約0.8MB)は、必要なときに1回だけ読み込みます。</p>
+      <button id="btnIpa" class="pri">発音記号を辞書から付ける</button>
+    </div>
+    <div class="card">
+      <h2>登録済み・バックアップ</h2>
+      <p id="regInfo" class="sub"></p>
+      <div class="row">
+        <button id="btnExport">バックアップ保存</button>
+        <button id="btnClear" class="danger">すべて削除</button>
       </div>
     </div>
   </section>
