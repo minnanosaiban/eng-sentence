@@ -333,11 +333,12 @@
   ["#fq", "#fgroup", "#flabel", "#flevel", "#fpart", "#flen", "#fpos"].forEach(s => $(s).addEventListener("input", renderPick));
   $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
   $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
-  $("#btnRand").onclick = () => {
-    const n = Math.max(1, Math.min(200, +$("#randN").value || 10)), pool = filtered().map(r => r.id);
+  const pickRandom = n => {
+    const pool = filtered().map(r => r.id);
     for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]] }
     sel[unit] = new Set(pool.slice(0, n)); renderPick(); toast(`${sel[unit].size} 件を選びました`);
   };
+  $("#btnRand10").onclick = $("#btnRand20").onclick = e => pickRandom(+e.currentTarget.dataset.n);
   // ---------- 削除 ----------
   // 英文を消すと、その英文から作った意味句・IU も消す(単語は、ほかの英文でも使うので、残す)。同期している端末からも消える
   async function deleteItems(u, ids) {
