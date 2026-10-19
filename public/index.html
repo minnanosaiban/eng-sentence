@@ -98,6 +98,15 @@
       </div>
     </div>
     <div class="card">
+      <h2>AI に確認してもらう</h2>
+      <p class="sub">登録した解析(和訳・区切り・品詞・4択など)に誤りがないか、他の AI のチャットで点検してもらいます。「選択」で英文を選んでから(10文まで)、プロンプトをコピーして、チャットに貼ります。返事の JSON は、下の「JSON を登録する」で「修正として取り込む」にチェックを入れて登録します。</p>
+      <p id="reviewInfo" class="sub"></p>
+      <div class="row wrap">
+        <button id="btnReviewCopy" title="選んだ英文の解析を、AI のチャットで確認してもらうためのプロンプト(JSON つき)をコピーします">AI に確認してもらう(コピー)</button>
+        <button id="btnReviewSave" title="同じ内容を、.json ファイルに保存します(点検の指示は付きません)">確認用に保存(.json)</button>
+      </div>
+    </div>
+    <div class="card">
       <h2>JSON を登録する</h2>
       <p class="sub">チャットの返事(JSON)を貼り付けるか、保存した .json ファイルを選びます。アプリのバックアップ(.json)も、ここで読み込めます。</p>
       <textarea id="jsonIn" rows="5" placeholder="チャットの返事(JSON)を、ここに貼り付け"></textarea>
@@ -239,10 +248,6 @@
       <div class="row wrap sent-only" id="labelBtns">
         <span class="sub">選んだ英文にラベルを付ける(任意)</span>
         <button data-l="1">1</button><button data-l="2">2</button><button data-l="3">3</button><button data-l="4">4</button><button data-l="5">5</button><button data-l="0" title="ラベルを外します">外す</button>
-      </div>
-      <div class="row wrap sent-only">
-        <button id="btnReviewCopy" title="選んだ英文の解析を、AI のチャットで確認してもらうためのプロンプト(JSON つき)をコピーします">AI に確認してもらう(コピー)</button>
-        <button id="btnReviewSave" title="同じ内容を、.json ファイルに保存します">確認用に保存(.json)</button>
       </div>
     </div>
     <div id="pickList" class="list"></div>

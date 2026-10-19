@@ -228,6 +228,7 @@
     document.querySelectorAll("#setNav button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tab === t)));
     if (inSet) setBack = t;
     document.querySelectorAll(".tab").forEach(s => { s.hidden = s.id !== "tab-" + t });
+    if (t === "reg") renderReg();
     if (t === "pick") renderPick();
     if (t === "study") renderStudy();
     if (t === "sync") Sync.render();
@@ -245,6 +246,7 @@
     $("#regInfo").textContent = rows.length
       ? `英文 ${rows.length} 文(うち、和訳などの解析つき ${a} 文)`
       : "まだ英文がありません。";
+    $("#reviewInfo").textContent = `選択中の英文: ${sel.sentence.size} 文`;
   }
   async function loadSamples() {
     const all = { sentences: [], words: [], chunks: [] };
