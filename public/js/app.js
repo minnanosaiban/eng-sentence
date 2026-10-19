@@ -237,16 +237,17 @@
       ? `英文 ${rows.length} 文(うち、和訳などの解析つき ${a} 文)`
       : "まだ英文がありません。";
   }
+  async function loadSamples() {
+    const all = { sentences: [], words: [], chunks: [] };
+    for (const f of ["toeic-sentences-analyzed.json", "toeic-sentences-2-analyzed.json", "toeic-sentences-3-analyzed.json", "toeic-sentences-4-analyzed.json", "toeic-sentences-5-analyzed.json", "toeic-sentences-6-analyzed.json"]) {
+      const r = await fetch("samples/" + f); if (!r.ok) throw new Error(f + " を読めません");
+      const d = parseFile(f, await r.text()); all.sentences.push(...d.sentences); all.words.push(...d.words);
+    }
+    await addFrom(all, "サンプル");
+  }
   $("#btnSamples").onclick = async e => {
     const b = e.currentTarget; b.disabled = true;
-    try {
-      const all = { sentences: [], words: [], chunks: [] };
-      for (const f of ["toeic-sentences-analyzed.json", "toeic-sentences-2-analyzed.json", "toeic-sentences-3-analyzed.json", "toeic-sentences-4-analyzed.json", "toeic-sentences-5-analyzed.json", "toeic-sentences-6-analyzed.json"]) {
-        const r = await fetch("samples/" + f); if (!r.ok) throw new Error(f + " を読めません");
-        const d = parseFile(f, await r.text()); all.sentences.push(...d.sentences); all.words.push(...d.words);
-      }
-      await addFrom(all, "サンプル");
-    } catch (err) { toast("読み込みに失敗しました: " + err.message) } finally { b.disabled = false }
+    try { await loadSamples() } catch (err) { toast("読み込みに失敗しました: " + err.message) } finally { b.disabled = false }
   };
   $("#btnPaste").onclick = async () => {
     const g = $("#pasteGroup").value.trim(), lines = $("#paste").value.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
@@ -860,6 +861,13 @@
       }
     } catch (e) { toast("保存先(IndexedDB)を開けませんでした: " + e.message) }
     renderAll();
+    // はじめて開いたとき(英文が1つも無いとき)は、同期しなくても読めるよう、同梱のサンプル英文を自動で入れる。1回だけ(あとで全削除しても、入れ直さない)
+    try {
+      if (!rows.length && !await Store.getMeta("samplesAuto", false)) {
+        await Store.setMeta("samplesAuto", true);
+        await loadSamples();
+      }
+    } catch (e) { toast("サンプル英文を読み込めませんでした: " + e.message) }
     // クラウド同期(あれば、起動時に1回同期する)
     const byId = (a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0);
     await Sync.init({
