@@ -299,7 +299,7 @@
   }
   function renderGroupSelect() {
     const cur = $("#fgroup").value;
-    $("#fgroup").innerHTML = `<option value="">グループ: すべて</option>` + allGroups().map(g => `<option>${esc(g)}</option>`).join("");
+    $("#fgroup").innerHTML = `<option value="">グループ</option>` + allGroups().map(g => `<option>${esc(g)}</option>`).join("");
     $("#fgroup").value = allGroups().includes(cur) ? cur : "";
   }
   function pickRow(r) {
