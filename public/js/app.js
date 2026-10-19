@@ -128,9 +128,13 @@
     a.href = URL.createObjectURL(blob); a.download = "eng-sentence-review.json"; a.click(); URL.revokeObjectURL(a.href);
     toast(`${it.length} 文を保存しました。AI のチャットに渡すときは、「確認すること」を添えてください(「AI に確認してもらう(コピー)」は、それも含みます)`);
   };
-  $("#btnVerifySel").onclick = async () => {
-    const l = selRows().filter(r => !r.verified); if (!l.length) return toast("選んだ英文は、すべて確認済みです");
-    l.forEach(r => { r.verified = true }); await Store.put(l, "sentences"); renderPick(); toast(`${l.length} 文を確認済みにしました`);
+  // ラベル(1〜5。付けるかどうかは任意)。選んだ英文に付ける
+  $("#labelBtns").onclick = async e => {
+    const b = e.target.closest("button[data-l]"); if (!b) return;
+    const l = selRows(); if (!l.length) return toast("ラベルを付ける英文を、選んでください");
+    const n = +b.dataset.l;
+    l.forEach(r => { if (n) r.label = n; else delete r.label });
+    await Store.put(l, "sentences"); renderPick(); toast(n ? `${l.length} 文に、ラベル ${n} を付けました` : `${l.length} 文の、ラベルを外しました`);
   };
 
   // 修正として取り込む: 英文の本文が同じものだけ。解析と4択を差し替え、確認済みにする(状態・復習・間違い・グループは残す)
@@ -219,7 +223,7 @@
     tab = t;
     const inSet = t === "reg" || t === "sync";
     document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === t)));
-    $("#btnSettings").setAttribute("aria-pressed", String(inSet));
+    $("#btnSettings").setAttribute("aria-selected", String(inSet));
     $("#setNav").hidden = !inSet;
     document.querySelectorAll("#setNav button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tab === t)));
     if (inSet) setBack = t;
@@ -232,7 +236,7 @@
   }
   $("#tabs").onclick = e => { const b = e.target.closest("button[data-tab]"); if (b) setTab(b.dataset.tab) };
   $("#setNav").onclick = e => { const b = e.target.closest("button[data-tab]"); if (b) setTab(b.dataset.tab) };
-  $("#btnSettings").onclick = () => setTab(tab === "reg" || tab === "sync" ? "study" : setBack); // ⚙ をもう一度押すと学習に戻る
+  $("#btnSettings").onclick = () => setTab(setBack); // 設定(登録・同期)。最後に開いた方を開く
   $("#syncStatus").onclick = () => setTab("sync");
 
   // ---------- 登録 ----------
@@ -281,17 +285,15 @@
   // ---------- 選択 ----------
   const allGroups = () => [...new Set([...rows, ...words, ...chunks].flatMap(r => r.groups || []))].sort();
   function filtered() {
-    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, st = $("#fstatus").value, lv = $("#flevel").value, ln = $("#flen").value, ps = $("#fpos").value, pt = $("#fpart").value;
+    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, lb = $("#flabel").value, lv = $("#flevel").value, ln = $("#flen").value, ps = $("#fpos").value, pt = $("#fpart").value;
     const wc = r => r.text.split(" ").length, where = r => (r.n === 1 || r.idx === 0 ? "first" : r.idx === r.n - 1 ? "last" : "mid");
     return tbl(unit).filter(r =>
       (!isCard(unit) || unit === "word" || ((!ln || (ln === "s" ? wc(r) <= 2 : ln === "m" ? wc(r) >= 3 && wc(r) <= 5 : wc(r) >= 6)) && (!ps || where(r) === ps))) &&
       (!q || r.text.toLowerCase().includes(q) || (r.ja || "").includes(q)) &&
       (!g || (r.groups || []).includes(g)) &&
-      (!st || (st === "not-mastered" ? r.status !== "mastered" : r.status === st)) &&
       (!lv || String(r.level) === lv) &&
-      (unit !== "sentence" || !$("#fver").value || ($("#fver").value === "yes") === !!r.verified) &&
-      (unit !== "sentence" || !pt || (pt === "none" ? !Clean.partOf(r) : Clean.partOf(r) === pt)) &&
-      ((unit !== "sentence" && unit !== "word") || !$("#fmis").value || (r.mistakes || []).length > 0));
+      (unit !== "sentence" || !lb || (lb === "none" ? !r.label : String(r.label) === lb)) &&
+      (unit !== "sentence" || !pt || (pt === "none" ? !Clean.partOf(r) : Clean.partOf(r) === pt)));
   }
   function renderGroupSelect() {
     const cur = $("#fgroup").value;
@@ -301,7 +303,7 @@
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
     const part = unit === "sentence" ? Clean.partOf(r) : "";
-    const tags = `${unit === "sentence" && !r.verified ? `<span class="tag">未確認</span>` : ""}${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}<span class="tag">${esc(Clean.STATUS[r.status])}</span>${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${(r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("")}`;
+    const tags = `${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${(r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("")}`;
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}<span class="m"><br>${esc(r.ja)}</span>`
       : unit === "word"
@@ -328,7 +330,7 @@
   }
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
-  ["#fq", "#fgroup", "#fstatus", "#flevel", "#fpart", "#fver", "#flen", "#fpos", "#fmis"].forEach(s => $(s).addEventListener("input", renderPick));
+  ["#fq", "#fgroup", "#flabel", "#flevel", "#fpart", "#flen", "#fpos"].forEach(s => $(s).addEventListener("input", renderPick));
   $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
   $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
   $("#btnRand").onclick = () => {
