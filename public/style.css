@@ -30,6 +30,8 @@ button,select,input,textarea{font:inherit;color:inherit}
 button{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:6px 12px;cursor:pointer}
 button:hover{border-color:var(--pri)}
 button.pri{background:var(--pri);color:var(--pri-tx);border-color:var(--pri)}
+button.ib{display:inline-flex;align-items:center;justify-content:center;padding:6px 10px}
+button.ib:disabled{opacity:.4;cursor:default}
 button.danger{color:var(--danger)}
 button[aria-pressed=true]{background:var(--pri);color:var(--pri-tx);border-color:var(--pri)}
 button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--pri);outline-offset:1px}

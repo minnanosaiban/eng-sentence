@@ -326,7 +326,7 @@
     $("#pickInfo").textContent = `表示 ${shown ?? filtered().length} 件 / 全 ${tbl(unit).length} 件 ・ 選択中 ${sel[unit].size} 件`;
     $("#btnStart").disabled = sel[unit].size === 0;
     $("#btnDelSel").disabled = sel[unit].size === 0;
-    $("#btnDelSel").textContent = sel[unit].size ? `選んだ ${sel[unit].size} 件を削除` : "選んだものを削除";
+    { const t = sel[unit].size ? `選んだ ${sel[unit].size} 件を削除` : "選んだものを削除"; $("#btnDelSel").title = t; $("#btnDelSel").setAttribute("aria-label", t) }
   }
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
