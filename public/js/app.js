@@ -244,7 +244,7 @@
   }
   async function loadSamples() {
     const all = { sentences: [], words: [], chunks: [] };
-    for (const f of ["toeic-sentences-analyzed.json", "toeic-sentences-2-analyzed.json", "toeic-sentences-3-analyzed.json", "toeic-sentences-4-analyzed.json", "toeic-sentences-5-analyzed.json", "toeic-sentences-6-analyzed.json"]) {
+    for (const f of ["toeic-sentences-analyzed.json", "toeic-sentences-2-analyzed.json", "toeic-sentences-3-analyzed.json", "toeic-sentences-4-analyzed.json", "toeic-sentences-5-analyzed.json", "toeic-sentences-6-analyzed.json", "toeic-sentences-7-analyzed.json"]) {
       const r = await fetch("samples/" + f); if (!r.ok) throw new Error(f + " を読めません");
       const d = parseFile(f, await r.text()); all.sentences.push(...d.sentences); all.words.push(...d.words);
     }

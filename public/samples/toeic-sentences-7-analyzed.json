@@ -1,0 +1,182 @@
+{
+ "sentences": [
+  {
+   "text": "Please confirm your attendance by replying to this message.",
+   "groups": [
+    "Part 6 / 7 頻出"
+   ],
+   "level": 600,
+   "part": "Part 7",
+   "analysis": {
+    "translation": "このメッセージに返信して、出席をご確認ください。",
+    "slash": [
+     {
+      "en": "Please confirm your attendance",
+      "ja": "出席をご確認ください",
+      "ipa": "ˈpliz kənˈfɝm ˈjɔɹ əˈtɛndəns"
+     },
+     {
+      "en": "by replying to this message.",
+      "ja": "このメッセージに返信することで",
+      "ipa": "baɪ ɹɪˈplaɪɪŋ tə ˈðɪs ˈmɛsədʒ"
+     }
+    ],
+    "pattern": {
+     "type": "第3文型(SVO)",
+     "explanation": "命令文で、主語 You は省略されています。confirm (V) your attendance (O)。by replying to this message は手段を表す修飾語句です。"
+    },
+    "clauses": [
+     {
+      "text": "Please confirm your attendance by replying to this message.",
+      "kind": "主節",
+      "role": "文全体"
+     }
+    ],
+    "elements": [
+     {
+      "text": "Please confirm",
+      "role": "V",
+      "note": "Please を付けた丁寧な命令文"
+     },
+     {
+      "text": "your attendance",
+      "role": "O",
+      "note": "確認する対象"
+     },
+     {
+      "text": "by replying to this message",
+      "role": "M",
+      "note": "手段を表す前置詞句"
+     }
+    ],
+    "tense": {
+     "name": "現在形(命令文)",
+     "explanation": "動詞の原形で、相手への依頼・指示を表します。"
+    },
+    "grammar": [
+     {
+      "point": "by + 動名詞",
+      "explanation": "「~することによって」。手段・方法を表します。by replying で「返信することで」。"
+     },
+     {
+      "point": "Please + 動詞の原形",
+      "explanation": "丁寧な依頼の命令文。メールやお知らせで頻出です。"
+     }
+    ],
+    "vocab": [
+     {
+      "word": "confirm",
+      "pos": "動詞",
+      "meaning": "~を確認する",
+      "note": "",
+      "level": 2,
+      "toeic": "confirm a reservation",
+      "ipa": "kənˈfɝm"
+     },
+     {
+      "word": "attendance",
+      "pos": "名詞",
+      "meaning": "出席",
+      "note": "",
+      "level": 3,
+      "toeic": "confirm your attendance",
+      "ipa": "əˈtɛndəns"
+     },
+     {
+      "word": "reply to",
+      "pos": "熟語",
+      "meaning": "~に返信する",
+      "note": "reply は自動詞。to が必要",
+      "level": 2,
+      "toeic": "reply to an e-mail",
+      "ipa": "ɹɪˈplaɪ tə"
+     }
+    ],
+    "toeic": {
+     "scene": "社内業務・案内",
+     "part": "Part 7",
+     "points": [
+      {
+       "type": "前置詞",
+       "detail": "by + 動名詞(手段)と、with・for・on などの使い分け"
+      }
+     ],
+     "paraphrase": [
+      "Let us know whether you will attend by responding to this message.",
+      "Please tell us if you can come by answering this e-mail."
+     ]
+    },
+    "words": [
+     {
+      "w": "Please",
+      "p": "adv"
+     },
+     {
+      "w": "confirm",
+      "p": "v"
+     },
+     {
+      "w": "your",
+      "p": "det"
+     },
+     {
+      "w": "attendance",
+      "p": "n"
+     },
+     {
+      "w": "by",
+      "p": "prep"
+     },
+     {
+      "w": "replying",
+      "p": "v"
+     },
+     {
+      "w": "to",
+      "p": "prep"
+     },
+     {
+      "w": "this",
+      "p": "det"
+     },
+     {
+      "w": "message.",
+      "p": "n"
+     }
+    ],
+    "phrases": [
+     {
+      "t": "Please confirm your attendance",
+      "f": "命令文"
+     },
+     {
+      "t": "by replying to this message.",
+      "f": "前置詞句(手段)"
+     }
+    ],
+    "iu": [
+     {
+      "t": "Please confirm your attendance",
+      "ipa": "ˈpliz kənˈfɝm ˈjɔɹ əˈtɛndəns"
+     },
+     {
+      "t": "by replying to this message.",
+      "ipa": "baɪ ɹɪˈplaɪɪŋ tə ˈðɪs ˈmɛsədʒ"
+     }
+    ]
+   },
+   "quiz": {
+    "question": "Please confirm your attendance ______ replying to this message.",
+    "choices": [
+     "by",
+     "with",
+     "for",
+     "on"
+    ],
+    "answer": 0,
+    "type": "前置詞",
+    "explanation": "「~することによって」と手段を表すときは、by + 動名詞です。with は道具(with a pen)、for は目的・理由、on は日付や接触を表すため、ここでは合いません。"
+   }
+  }
+ ]
+}
