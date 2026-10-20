@@ -313,7 +313,7 @@
       : unit === "word"
       ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`
       : `${esc(r.text)}${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`;
-    return `<label class="row-i"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><span class="t">${body}<span class="m"><br>${tags}</span></span></label>`;
+    return `<label class="row-i"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><span class="t">${body}<span class="m"><br>${tags}</span></span><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く" aria-label="ここから順に聞く">▶</button></label>`;
   }
   function renderPick() {
     document.querySelectorAll("#segUnit button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.u === unit)));
@@ -666,11 +666,12 @@
   };
   // 選択画面: 表示中の英文を、上から順に聞く。繰り返し: 同じ英文を、設定の回数だけ続けて聞く(英文ごと)
   $("#btnStopPick").onclick = stopAudio;
-  $("#btnPlayPick").onclick = async () => {
+  // from: 聞き始める行の id(無ければ、いちばん上から)
+  const playPick = async from => {
     if (!("speechSynthesis" in window)) return toast("この端末では、読み上げが使えません");
     const list = filtered(); if (!list.length) return toast("聞く英文がありません");
     stopAudio(); const me = playing, rep = prefs.sh.rep, gap = +prefs.sh.gap || 0;
-    for (let n = 0; n < list.length; n++) {
+    for (let n = Math.max(0, list.findIndex(r => r.id === from)); n < list.length; n++) {
       const r = list[n];
       document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now"));
       const row = document.querySelector(`#pickList input[data-id="${r.id}"]`), li = row && row.closest(".row-i");
@@ -687,6 +688,9 @@
     }
     if (me === playing) { pst(null); toast("最後まで聞きました") }
   };
+  $("#btnPlayPick").onclick = () => playPick();
+  // 行の ▶ を押すと、その行から順に聞く(チェックは変わらない)
+  $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-from]"); if (b) { e.preventDefault(); playPick(b.dataset.from) } });
   // 選んだ区切りを、繰り返しの回数だけ、続けて聞く
   function playSel(r, key, i, me) {
     const list = key === "phrases" ? (r.phrases || []).map(x => x.t) : (r.slash || []).map(x => x.en);
