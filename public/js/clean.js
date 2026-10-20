@@ -83,8 +83,28 @@ const Clean = (() => {
     o.clauses = (Array.isArray(a.clauses) ? a.clauses : []).slice(0, 12).filter(x => x && typeof x.text === "string" && x.text.trim())
       .map(x => ({ text: clip(x.text, 500), kind: clip(x.kind, 40), role: clip(x.role, 200) }));
     o.pattern = a.pattern && typeof a.pattern === "object" && !Array.isArray(a.pattern) && a.pattern.type ? { type: clip(a.pattern.type, 60), explanation: clip(a.pattern.explanation, 800) } : null;
-    o.tense = a.tense && typeof a.tense === "object" && !Array.isArray(a.tense) && a.tense.name ? { name: clip(a.tense.name, 100), explanation: clip(a.tense.explanation, 800) } : null;
+    o.tense = a.tense && typeof a.tense === "object" && !Array.isArray(a.tense) && a.tense.name ? tenseOf(a.tense) : null;
     return o;
+  }
+
+  // 態(能・受)・時制(現・過・未)・相(単・進・完・完進)。主節の動詞について
+  const VOICES = ["能", "受"], TNS = ["現", "過", "未"], ASPS = ["単", "進", "完", "完進"];
+  function tenseOf(t) {
+    const o = { name: clip(t.name, 100), explanation: clip(t.explanation, 800) };
+    if (VOICES.includes(t.voice)) o.voice = t.voice;
+    if (TNS.includes(t.tns)) o.tns = t.tns;
+    if (ASPS.includes(t.asp)) o.asp = t.asp;
+    return o;
+  }
+  // 明示された値を優先し、無ければ name(「現在進行形・能動態」など)から読み取る。時制が読めなければ null
+  function tenseTags(t) {
+    if (!t) return null;
+    const name = String(t.name || ""), head = name.split(/[・(（/]/)[0];
+    const tns = t.tns || (/過去/.test(head) ? "過" : /未来|will/i.test(head) ? "未" : /現在/.test(head) ? "現" : null);
+    if (!tns) return null;
+    const asp = t.asp || (/完了進行/.test(head) ? "完進" : /完了/.test(head) ? "完" : /進行/.test(head) ? "進" : "単");
+    const voice = t.voice || (/受動|受け身/.test(name) ? "受" : "能");
+    return { voice, tns, asp };
   }
 
   function toeic(t) {
@@ -298,5 +318,5 @@ const Clean = (() => {
     return c;
   }
 
-  return { REVIEW, slim, diffReview, applyReview, PARTS, partNo, partOf, CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
+  return { tenseTags, REVIEW, slim, diffReview, applyReview, PARTS, partNo, partOf, CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
 })();

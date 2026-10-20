@@ -476,12 +476,18 @@
 
   const sl = (key, i) => { const r = cur(); return selC && r && selC.id === r.id && selC.key === key && selC.i === i ? " sel" : "" };
 
+  // 主節の動詞の 態・時制・相 を、漢字1字ずつのタグで(例: 能 現 進)
+  function tenseBadge(r) {
+    const t = Clean.tenseTags(r.tense);
+    return t ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)">${[t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("")}</div>` : "";
+  }
+
   function renderDisp(r, now = -1, nowView = null) {
     // 品詞の色(どの見方にも重ねる)。区切りをつなぐと原文に戻るので、語の並びの順に、品詞を当てる。文字の色だけで表す(区切りの下線と重ならないように)
     const pw = prefs.gramOn && prefs.posOn && r.words ? r.words : null;
     const mkP = () => { let ti = 0; return text => !pw ? esc(text) : text.split(" ").filter(Boolean).map(t => { const w = pw[ti++]; return w && w.w === t ? '<span class="pw pw-' + w.p + '">' + esc(t) + "</span>" : esc(t) }).join(" ") };
     const ftxt = prefs.slashMain && r.slash && r.slash.length ? (P => r.slash.map((s, i) => (i ? '<span class="slsep">/</span><wbr>' : "") + `<span class="seg-i${nowView === "slash" && i === now ? " now" : ""}${sl("slash", i)}" data-c="${i}">${P(s.en)}</span>`).join(""))(mkP()) : mkP()(r.text); // [/] を入れると、全文を / で区切った形にする
-    let html = '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + ' <button class="vstop" title="止める(S)">■</button></div>'; // いちばん上は、いつも全文
+    let html = '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + ' <button class="vstop" title="止める(S)">■</button></div>' + tenseBadge(r); // いちばん上は、いつも全文
     if (r.slash && r.slash.length && (prefs.aux.ipa || prefs.aux.ja)) { // 区切りごとの発音記号・訳(英文の下)
       html += '<div class="view" data-view="slash">'
         + (prefs.aux.ipa && r.slash.some(s => s.ipa) ? '<div class="sljas">' + r.slash.filter(s => s.ipa).map(s => `<div class="ja"><b>${esc(s.en)}</b> <span class="ipa">/${esc(s.ipa)}/</span></div>`).join("") + "</div>" : "")

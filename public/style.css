@@ -64,6 +64,8 @@ textarea{width:100%;resize:vertical}
 .row-i input{margin-top:6px;width:18px;height:18px;flex:none}
 .row-i .t{flex:1;min-width:0}
 .row-i .m{font-size:12.5px;color:var(--sub)}
+.tnsbadge{margin:4px 0 8px}
+.tnsbadge .tag{font-size:12.5px;font-weight:600;color:var(--tx)}
 .tag{display:inline-block;font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:0 8px;margin-right:4px;color:var(--sub)}
 .seg{display:inline-flex;flex-wrap:wrap;gap:4px}
 .bar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;position:sticky;top:52px;z-index:4}
