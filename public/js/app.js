@@ -324,13 +324,14 @@
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`
       : unit === "word"
       ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`
-      : `${esc(r.text)}${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`;
-    return `<label class="row-i"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><span class="t">${body}<span class="m"><br>${tags}</span></span><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く" aria-label="ここから順に聞く">▶</button></label>`;
+      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`;
+    return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く" aria-label="ここから順に聞く">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button></label>`;
   }
   function renderPick() {
     document.querySelectorAll("#segUnit button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.u === unit)));
     document.querySelectorAll(".chunk-only").forEach(e => { e.hidden = !(unit === "meaning" || unit === "iu") });
     document.querySelectorAll(".sent-only").forEach(e => { e.hidden = unit !== "sentence" && unit !== "word" });
+    $("#btnSlashPick").setAttribute("aria-pressed", String(!!prefs.slashMain));
     document.querySelectorAll("#pickShow button").forEach(b => b.setAttribute("aria-pressed", String(!!prefs.pick[b.dataset.p])));
     document.querySelector('#pickShow [data-p="tns"]').hidden = unit !== "sentence";
     renderGroupSelect(); syncPickAudio();
@@ -677,7 +678,7 @@
     if (me === playing) pst(null);
   };
   // 選択画面: 表示中の英文を、上から順に聞く。繰り返し: 同じ英文を、設定の回数だけ続けて聞く(英文ごと)
-  $("#btnStopPick").onclick = stopAudio;
+  $("#btnSlashPick").onclick = () => { prefs.slashMain = !prefs.slashMain; savePrefs(); renderPick() };
   // from: 聞き始める行の id(無ければ、いちばん上から)
   const playPick = async from => {
     if (!("speechSynthesis" in window)) return toast("この端末では、読み上げが使えません");
@@ -700,9 +701,15 @@
     }
     if (me === playing) { pst(null); toast("最後まで聞きました") }
   };
-  $("#btnPlayPick").onclick = () => playPick();
+  // 行の → を押すと、その英文から学習を始める(選んだ英文があれば、その続き。無ければ、この1文だけ)
+  $("#pickList").addEventListener("click", async e => {
+    const b = e.target.closest("button[data-go]"); if (!b) return; e.preventDefault();
+    const id = b.dataset.go, ids = tbl(unit).filter(r => sel[unit].has(r.id)).map(r => r.id), k = ids.indexOf(id);
+    study = k >= 0 ? { unit, ids, i: k } : { unit, ids: [id], i: 0 };
+    wReveal = false; await saveStudy(); setTab("study");
+  });
   // 行の ▶ を押すと、その行から順に聞く(チェックは変わらない)
-  $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-from]"); if (b) { e.preventDefault(); playPick(b.dataset.from) } });
+  $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-from]"); if (b) { e.preventDefault(); if (b.closest(".row-i.now")) { stopAudio(); document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now")); return } playPick(b.dataset.from) } });
   // 選んだ区切りを、繰り返しの回数だけ、続けて聞く
   function playSel(r, key, i, me) {
     const list = key === "phrases" ? (r.phrases || []).map(x => x.t) : (r.slash || []).map(x => x.en);
