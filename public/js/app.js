@@ -649,19 +649,21 @@
   }
   // 英文の中の語を、なぞって(長押しして)選ぶと、「▶ 聞く」が出る。選んだ部分だけを、繰り返し・間の設定で聞く
   function disSel() {
-    const sel = window.getSelection(), d = $("#disp");
+    const sel = window.getSelection(), d = tab === "pick" ? $("#pickList") : $("#disp");
     if (!sel || sel.isCollapsed || !sel.rangeCount || !d.contains(sel.anchorNode) || !d.contains(sel.focusNode)) return "";
     return sel.toString().replace(/\s+/g, " ").trim();
   }
   let selTimer = 0;
   function selBtnUpdate() {
-    const b = $("#selPlay"), t = tab === "study" && study.unit === "sentence" ? disSel() : "";
+    const b = $("#selPlay"), t = tab === "pick" || (tab === "study" && study.unit === "sentence") ? disSel() : "";
     if (!t) { b.hidden = true; return }
     const rc = window.getSelection().getRangeAt(0).getBoundingClientRect();
     b.hidden = false; b.style.top = Math.max(8, rc.bottom + 6) + "px"; b.style.left = Math.max(8, Math.min(rc.left, window.innerWidth - b.offsetWidth - 8)) + "px";
   }
   document.addEventListener("selectionchange", () => { clearTimeout(selTimer); selTimer = setTimeout(selBtnUpdate, 150) });
   window.addEventListener("scroll", () => { if (!$("#selPlay").hidden) selBtnUpdate() }, { passive: true });
+  // 選択画面で、英文をなぞって選んだとき、行のチェックが入れ替わらないようにする
+  $("#pickList").addEventListener("click", e => { if (!e.target.closest("button") && window.getSelection().toString().trim()) e.preventDefault() }, true);
   $("#selPlay").onpointerdown = e => e.preventDefault(); // 押しても、選択が消えないように
   $("#selPlay").onclick = async () => {
     const text = disSel(); if (!text) return;
