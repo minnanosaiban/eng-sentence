@@ -220,30 +220,20 @@
       <!-- 1列目〜3列目は同じ幅。4列目は残り -->
       <div class="pickgrid">
         <select id="fgroup" aria-label="グループ"></select>
-        <select id="fpart" aria-label="TOEICのパート">
-          <option value="">パート</option><option value="Part 1">Part 1 写真描写</option><option value="Part 2">Part 2 応答問題</option><option value="Part 3">Part 3 会話</option><option value="Part 4">Part 4 説明文</option><option value="Part 5">Part 5 短文穴埋め</option><option value="Part 6">Part 6 長文穴埋め</option><option value="Part 7">Part 7 読解</option><option value="none">パート未設定</option>
-        </select>
-        <select id="flevel" aria-label="難易度">
-          <option value="">難易度</option><option value="600">600</option><option value="730">730</option><option value="860">860</option>
-        </select>
+        <button id="btnRand10" data-n="10" title="表示中からランダムに10件を選ぶ">ランダム10件</button>
+        <button id="btnRand20" data-n="20" title="表示中からランダムに20件を選ぶ">ランダム20件</button>
         <button id="btnStart" class="pri" title="選んだ英文で学習を始める">START</button>
-
-        <select id="flabel" aria-label="ラベル">
-          <option value="">ラベル</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option value="none">ラベルなし</option>
-        </select>
-        <label class="srch"><span>検索</span><input id="fq" type="search" placeholder="英文・和訳で検索"></label>
 
         <div class="pair">
           <button id="btnAll" class="ib" aria-label="表示中を全選択" title="表示中を全選択"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="m8 12 3 3 5-6"/></svg></button>
           <button id="btnNone" class="ib" aria-label="選択を解除" title="選択を解除"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/></svg></button>
         </div>
-        <button id="btnRand10" data-n="10" title="表示中からランダムに10件を選ぶ">ランダム10件</button>
-        <button id="btnRand20" data-n="20" title="表示中からランダムに20件を選ぶ">ランダム20件</button>
         <div class="lbl" id="labelBtns">
-          <span>ラベルを付ける</span>
+          <span>ラベル付</span>
           <button data-l="1">1</button><button data-l="2">2</button><button data-l="3">3</button><button data-l="4">4</button><button data-l="5">5</button><button data-l="0" title="ラベルを外します" aria-label="ラベルを外す">×</button>
           <button id="btnDelSel" class="ib danger" aria-label="選んだものを削除" title="選んだものを削除"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></svg></button>
         </div>
+        <label class="srch"><span>検索</span><input id="fq" type="search" placeholder="英文・和訳で検索"></label>
       </div>
       <div hidden>
         <select id="flen" aria-label="語数" class="chunk-only">
@@ -256,10 +246,7 @@
       <div class="row wrap" id="pickShow" role="group" aria-label="一覧の表示">
         <button class="sm" data-p="tns" aria-pressed="true" title="態・時制・相(能 現 進 など)を出す">態・時制・相</button>
         <button class="sm" data-p="ja" aria-pressed="true" title="和訳を出す">和訳</button>
-        <button class="sm" data-p="label" aria-pressed="true" title="ラベルを出す">ラベル</button>
-        <button class="sm" data-p="part" aria-pressed="true" title="TOEIC のパート(Part 5 など)を出す">パート</button>
-        <button class="sm" data-p="level" aria-pressed="true" title="難易度(600 など)を出す">難易度</button>
-        <button class="sm" data-p="groups" aria-pressed="true" title="グループ(ビジネス:人事、AI作成 など)を出す">グループ</button>
+        <button class="sm" data-p="groups" aria-pressed="true" title="グループ(パート・難易度・ラベル・自分で付けたグループ)を出す">グループ</button>
       </div>
       <p id="pickInfo" class="sub"></p>
       <div class="row wrap" id="pickAudio">

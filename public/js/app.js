@@ -288,26 +288,38 @@
   // ---------- 選択 ----------
   const allGroups = () => [...new Set([...rows, ...words, ...chunks].flatMap(r => r.groups || []))].sort();
   function filtered() {
-    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, lb = $("#flabel").value, lv = $("#flevel").value, ln = $("#flen").value, ps = $("#fpos").value, pt = $("#fpart").value;
+    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value;
     const wc = r => r.text.split(" ").length, where = r => (r.n === 1 || r.idx === 0 ? "first" : r.idx === r.n - 1 ? "last" : "mid");
     return tbl(unit).filter(r =>
       (!isCard(unit) || unit === "word" || ((!ln || (ln === "s" ? wc(r) <= 2 : ln === "m" ? wc(r) >= 3 && wc(r) <= 5 : wc(r) >= 6)) && (!ps || where(r) === ps))) &&
       (!q || r.text.toLowerCase().includes(q) || (r.ja || "").includes(q)) &&
-      (!g || (r.groups || []).includes(g)) &&
-      (!lv || String(r.level) === lv) &&
-      (unit !== "sentence" || !lb || (lb === "none" ? !r.label : String(r.label) === lb)) &&
-      (unit !== "sentence" || !pt || (pt === "none" ? !Clean.partOf(r) : Clean.partOf(r) === pt)));
+      inGroup(r, g));
+  }
+  // 「グループ」の選択肢は、パート → 難易度 → ラベル → 自分で付けたグループ の順。値は、種類の印(p: パート / v: 難易度 / l: ラベル / g: グループ)+ 中身
+  const PART_NAMES = { "Part 1": "写真描写", "Part 2": "応答問題", "Part 3": "会話", "Part 4": "説明文", "Part 5": "短文穴埋め", "Part 6": "長文穴埋め", "Part 7": "読解" };
+  function inGroup(r, g) {
+    if (!g) return true;
+    const k = g[0], v = g.slice(2);
+    if (k === "p") return unit === "sentence" && (v === "none" ? !Clean.partOf(r) : Clean.partOf(r) === v);
+    if (k === "v") return String(r.level) === v;
+    if (k === "l") return unit === "sentence" && (v === "none" ? !r.label : String(r.label) === v);
+    return (r.groups || []).includes(v);
   }
   function renderGroupSelect() {
-    const cur = $("#fgroup").value;
-    $("#fgroup").innerHTML = `<option value="">グループ</option>` + allGroups().map(g => `<option>${esc(g)}</option>`).join("");
-    $("#fgroup").value = allGroups().includes(cur) ? cur : "";
+    const cur = $("#fgroup").value, o = (v, t) => `<option value="${esc(v)}">${esc(t)}</option>`, sent = unit === "sentence";
+    const opts = [`<option value="">グループ</option>`];
+    if (sent) opts.push(...Object.entries(PART_NAMES).map(([k, n]) => o("p:" + k, `${k} ${n}`)), o("p:none", "パート未設定"));
+    opts.push(...[600, 730, 860].map(n => o("v:" + n, "難易度 " + n)));
+    if (sent) opts.push(...[1, 2, 3, 4, 5].map(n => o("l:" + n, "ラベル " + n)), o("l:none", "ラベルなし"));
+    opts.push(...allGroups().map(g => o("g:" + g, g)));
+    $("#fgroup").innerHTML = opts.join("");
+    $("#fgroup").value = [...$("#fgroup").options].some(x => x.value === cur) ? cur : "";
   }
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
     const part = unit === "sentence" ? Clean.partOf(r) : "";
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
-    const tags = `${tt ? [tt.voice, tt.tns, tt.asp].map(x => `<span class="tag tns">${x}</span>`).join("") : ""}${unit === "sentence" && prefs.pick.label && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}${part && prefs.pick.part ? `<span class="tag">${part}</span>` : ""}${r.level && prefs.pick.level ? `<span class="tag">${r.level}</span>` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
+    const tags = `${tt ? [tt.voice, tt.tns, tt.asp].map(x => `<span class="tag tns">${x}</span>`).join("") : ""}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`
       : unit === "word"
@@ -337,7 +349,7 @@
   $("#pickShow").onclick = e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !prefs.pick[b.dataset.p]; savePrefs(); renderPick() } };
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
-  ["#fq", "#fgroup", "#flabel", "#flevel", "#fpart", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
+  ["#fq", "#fgroup", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
   $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
   $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
   const pickRandom = n => {
