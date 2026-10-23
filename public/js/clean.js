@@ -21,7 +21,7 @@ const Clean = (() => {
     const out = [];
     for (const x of ws) {
       if (!x || typeof x.w !== "string" || !x.w || !has(POS, x.p)) return null;
-      out.push({ w: x.w, p: x.p });
+      out.push(typeof x.m === "string" && x.m.trim() ? { w: x.w, p: x.p, m: clip(x.m, 24) } : { w: x.w, p: x.p });
     }
     return norm(out.map(x => x.w).join(" ")) === norm(text) ? out : null;
   }
@@ -272,7 +272,8 @@ const Clean = (() => {
   function fill(ex, add) {
     let c = false;
     const set = (k, v) => { if (v && (ex[k] == null || ex[k] === "" || (Array.isArray(ex[k]) && !ex[k].length))) { ex[k] = v; c = true } };
-    set("ja", add.ja); set("words", add.words); set("phrases", add.phrases); set("slash", add.slash); set("iu", add.iu);
+    set("ja", add.ja); set("words", add.words);
+    if (ex.words && add.words && ex.words.length === add.words.length) ex.words.forEach((x, i) => { if (!x.m && add.words[i].m && x.w === add.words[i].w) { x.m = add.words[i].m; c = true } }); // 語の意味(m)だけ足す set("phrases", add.phrases); set("slash", add.slash); set("iu", add.iu);
     if (ex.slash && add.slash && ex.slash.length === add.slash.length) ex.slash.forEach((x, i) => { if (!x.ipa && add.slash[i].ipa && x.en === add.slash[i].en) { x.ipa = add.slash[i].ipa; c = true } });
     if (ex.iu && add.iu && ex.iu.length === add.iu.length) ex.iu.forEach((x, i) => { if (!x.ipa && add.iu[i].ipa && x.t === add.iu[i].t) { x.ipa = add.iu[i].ipa; c = true } });
     set("elements", add.elements); set("clauses", add.clauses); set("pattern", add.pattern); set("tense", add.tense); set("gtags", add.gtags);
