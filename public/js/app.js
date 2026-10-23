@@ -325,7 +325,7 @@
       : unit === "word"
       ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`
       : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`;
-    return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く" aria-label="ここから順に聞く">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button></label>`;
+    return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button></label>`;
   }
   function renderPick() {
     document.querySelectorAll("#segUnit button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.u === unit)));
