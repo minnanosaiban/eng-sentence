@@ -32,6 +32,7 @@ f の例: 主語+動詞 / 主語+動詞+目的語 / 主語+動詞+補語 / to+�
  "clauses":[{"text":"節の英文","kind":"主節 / 名詞節 / 関係詞節 / 副詞節 など","role":"文中での働き"}],
  "elements":[{"text":"英語の語句","role":"S|V|O|C|M のいずれか","note":"補足(任意、空文字可)"}],
  "tense":{"name":"時制・態(例: 現在形・能動態)","voice":"態(主節の動詞): 能(能動態) / 受(受動態)","tns":"時制(主節の動詞): 現 / 過 / 未","asp":"相(主節の動詞): 単(単純) / 進(進行) / 完(完了) / 完進(完了進行)","explanation":"解説"},
+ "gtags":[{"k":"分類","t":"項目"}],
  "grammar":[{"point":"文法事項","explanation":"解説"}],
  "toeic":{"scene":"ビジネス場面(人事・会議・出張・契約・広告・顧客対応・社内通知・施設/設備 など1つ)","part":"この英文が出題されるパート。次のいずれか1つ: Part 1(写真描写) / Part 2(応答問題) / Part 3(会話) / Part 4(説明文) / Part 5(短文穴埋め) / Part 6(長文穴埋め) / Part 7(読解)","points":[{"type":"品詞 / 時制 / 前置詞 / 接続詞・副詞 / 関係詞 / 代名詞 / 語彙 / 語法 のいずれか","detail":"この文で問われうる論点"}],"paraphrase":["TOEICで使われそうな言い換え表現"]},
  "difficulty":600 / 730 / 860 のいずれかの数字1つ(TOEICのスコア帯の目安。600=基本的な語彙と単文中心 / 730=関係詞・分詞などで修飾が長い、ビジネス語彙を含む / 860=複数の節が入れ子になる、抽象度の高い語彙),
@@ -41,6 +42,16 @@ f の例: 主語+動詞 / 主語+動詞+目的語 / 主語+動詞+補語 / to+�
 【品詞コードの規則(words)】${POS_RULE}
 【区切りの形の規則(phrases)】${PHRASE_RULE}
 【イントネーション・ユニットの規則(iu)】${IU_RULE}
+他の文法(gtags)は、次の分類と項目だけを使い、この英文にある文法を漏れなく入れる(k=分類、t=項目。分類ごとに複数可。項目は下のとおり、一字一句同じに書く)。
+ 文型: SV / SVC / SVO / SVOO / SVOC(主節の文型。必ず1つ)
+ 助動詞: can / could / may / might / must / shall / should / will / would / ought to / have to / be able to / be going to / be supposed to / be required to / be allowed to / be encouraged to / be eligible for / be entitled to(文中のものすべて)
+ 準動詞: 不定詞 / 動名詞 / 分詞(文中のものすべて。分詞構文も含む)
+ 修飾: 形容詞 / 副詞 / 前置詞句 / 分詞 / 関係詞(名詞や動詞を修飾するもの。使われているものすべて)
+ 接続: 等位(and・but・or) / 従属(because・although・when・while・if・unless・once など)
+ 条件・仮定: 条件(if・unless などの条件節。現実にありうること) / 仮定法(現実とは違う・現実から距離を置く表現)。なければ入れない
+ 比較: 原級 / 比較級 / 最上級。なければ入れない
+ 文の種類: 肯定 / 否定 / 疑問 / 命令(主節について、必ず1つ)
+例: "All new employees must complete the safety training before they begin working." → [{"k":"文型","t":"SVO"},{"k":"助動詞","t":"must"},{"k":"準動詞","t":"動名詞"},{"k":"接続","t":"従属"},{"k":"文の種類","t":"肯定"}]
 文構造(elements)は、主節の要素を文の順に並べる(Mは修飾語句)。
 単語・熟語(vocab)は、この文で学ぶ価値のあるものを3〜6個。解説は日本語。`;
 
@@ -63,7 +74,7 @@ ${RULES}`;
   const FILE_BODY = textRule => `【出力の形】
 {"sentences":[
  {"text":"${textRule}","level":難易度(600 / 730 / 860 のいずれか),"part":"Part 1 / Part 2 / Part 3 / Part 4 / Part 5 / Part 6 / Part 7 のいずれか","groups":["グループ名(任意。なければ空の配列)"],
-  "analysis":{ 下の「1文あたりの形」の translation, slash, words, phrases, iu, vocab, pattern, clauses, elements, tense, grammar, toeic },
+  "analysis":{ 下の「1文あたりの形」の translation, slash, words, phrases, iu, vocab, pattern, clauses, elements, tense, gtags, grammar, toeic },
   "quiz":{ 下の「1文あたりの形」の quiz }}
 ]}
 sentences には、英文と同じ数・同じ順番で入れます。
@@ -90,6 +101,7 @@ ${list && list.length ? list.map((s, i) => `${i + 1}. ${s}`).join("\n") : "(こ�
 - 品詞(words): 各語の品詞コードが正しいか。
 - 単語(vocab): この文脈での意味が正しいか。
 - 文構造・節・文型・時制・文法の解説(pattern・clauses・elements・tense・grammar): 説明が正しいか。
+- 他の文法(gtags): 英文に実際にある文法だけが、漏れなく入っているか。
 - TOEIC 解説(toeic): パート(part)・場面・論点が、この英文に合っているか。
 - 4択(quiz): 正解が1つだけで、正解の選択肢を空所に入れると原文になるか。誤答が本当に誤りか。解説が正しいか。空所は1か所か。
 - 難易度(level): 600 / 730 / 860 のどれが近いか。

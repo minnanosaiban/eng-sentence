@@ -83,6 +83,7 @@ const Clean = (() => {
     o.clauses = (Array.isArray(a.clauses) ? a.clauses : []).slice(0, 12).filter(x => x && typeof x.text === "string" && x.text.trim())
       .map(x => ({ text: clip(x.text, 500), kind: clip(x.kind, 40), role: clip(x.role, 200) }));
     o.pattern = a.pattern && typeof a.pattern === "object" && !Array.isArray(a.pattern) && a.pattern.type ? { type: clip(a.pattern.type, 60), explanation: clip(a.pattern.explanation, 800) } : null;
+    o.gtags = gtags(a.gtags);
     o.tense = a.tense && typeof a.tense === "object" && !Array.isArray(a.tense) && a.tense.name ? tenseOf(a.tense) : null;
     return o;
   }
@@ -105,6 +106,63 @@ const Clean = (() => {
     const asp = t.asp || (/完了進行/.test(head) ? "完進" : /完了/.test(head) ? "完" : /進行/.test(head) ? "進" : "単");
     const voice = t.voice || (/受動|受け身/.test(name) ? "受" : "能");
     return { voice, tns, asp };
+  }
+
+  // 態・時制・相のほかの文法(英文法.txt の分類)。AI が付ける gtags [{k, t}] の検査。決まった分類・項目だけを残す
+  const GT = {
+    "文型": ["SV", "SVC", "SVO", "SVOO", "SVOC"],
+    "助動詞": ["can", "could", "may", "might", "must", "shall", "should", "will", "would", "ought to", "have to", "be able to", "be going to", "be supposed to", "be required to", "be allowed to", "be encouraged to", "be eligible for", "be entitled to"],
+    "準動詞": ["不定詞", "動名詞", "分詞"],
+    "修飾": ["形容詞", "副詞", "前置詞句", "分詞", "関係詞"],
+    "接続": ["等位", "従属"],
+    "条件・仮定": ["条件", "仮定法"],
+    "比較": ["原級", "比較級", "最上級"],
+    "文の種類": ["肯定", "否定", "疑問", "命令"]
+  };
+  function gtags(g) {
+    if (!Array.isArray(g)) return null;
+    const out = [];
+    for (const x of g) {
+      const [k, t] = typeof x === "string" ? x.split(/[:：]/).map(v => v.trim()) : [x && x.k, x && typeof x.t === "string" ? x.t.trim() : x && x.t];
+      if (GT[k] && GT[k].includes(t) && !out.some(y => y.k === k && y.t === t)) out.push({ k, t });
+    }
+    out.sort((a, b) => Object.keys(GT).indexOf(a.k) - Object.keys(GT).indexOf(b.k));
+    return out.length ? out : null;
+  }
+  // 態・時制・相のほかの文法(英文法.txt の分類)を、解析の文型・節・文法ポイントと、英文そのものから拾う。[{ k: 分類, t: 表示 }]
+  const AUX = ["can", "could", "may", "might", "must", "shall", "should", "will", "would", "ought to"];
+  const AUXLIKE = [["have to", /\b(have|has|had) to\b/i], ["be able to", /\b(am|is|are|was|were|be|been) able to\b/i], ["be going to", /\b(am|is|are|was|were) going to\b/i], ["be supposed to", /\b(am|is|are|was|were|be) supposed to\b/i], ["be required to", /\b(am|is|are|was|were|be|been) required to\b/i], ["be allowed to", /\b(am|is|are|was|were|be|been) allowed to\b/i], ["be encouraged to", /\b(am|is|are|was|were|be|been) encouraged to\b/i], ["be eligible for", /\beligible for\b/i], ["be entitled to", /\bentitled to\b/i]];
+  function gramTags(r) {
+    if (r.gtags && r.gtags.length) return r.gtags; // AI が付けた確かなもの。無いときだけ、下の推定
+    const out = [], add = (k, t) => { if (!out.some(x => x.k === k && x.t === t)) out.push({ k, t }) };
+    const text = String(r.text || ""), low = text.toLowerCase();
+    const pt = String(r.pattern && r.pattern.type || ""), m = pt.match(/\(([A-Z]+)\)/);
+    if (m) add("文型", m[1]);
+    const gram = (r.grammar || []).map(x => String(x.point || "")).join("\n"), kinds = (r.clauses || []).map(x => String(x.kind || "")).join("\n"), all = gram + "\n" + kinds;
+    for (const a of AUX) if (new RegExp("\\b" + a + "\\b", "i").test(text)) add("助動詞", a);
+    if (/'ll\b/.test(low)) add("助動詞", "will");
+    if (/\bcan't|\bcannot\b/.test(low)) add("助動詞", "can");
+    if (/\bwon't\b/.test(low)) add("助動詞", "will");
+    for (const [n, re] of AUXLIKE) if (re.test(text)) add("助動詞", n);
+    if (/不定詞/.test(all)) add("準動詞", "不定詞");
+    if (/動名詞/.test(all)) add("準動詞", "動名詞");
+    if (/分詞/.test(all)) add("準動詞", "分詞");
+    if (/関係/.test(all)) add("修飾", "関係詞");
+    if (/分詞/.test(all) && /修飾/.test(all)) add("修飾", "分詞");
+    if (/形容詞/.test(all)) add("修飾", "形容詞");
+    if (/副詞(?!節)/.test(all)) add("修飾", "副詞");
+    if (/前置詞/.test(all) || /\b(in|on|at|by|for|with|within|across|around|due to|of)\s*\+/i.test(all)) add("修飾", "前置詞句");
+    if (/等位/.test(all)) add("接続", "等位");
+    if (/副詞節|名詞節|従属|接続詞/.test(all)) add("接続", "従属");
+    if (/仮定法/.test(all)) add("条件・仮定", "仮定法");
+    else if (/\b(if|unless)\b/i.test(text) || /条件/.test(kinds)) add("条件・仮定", "条件");
+    if (/最上級/.test(all)) add("比較", "最上級");
+    else if (/比較級|\bthan\b/i.test(all + " " + text)) add("比較", "比較級");
+    else if (/\bas\s+\w+\s+as\b/i.test(text)) add("比較", "原級");
+    if (/\?\s*$/.test(text)) add("文の種類", "疑問");
+    else if (/\b(not|never|nobody|nothing|none|neither|nor)\b|n't\b/i.test(text)) add("文の種類", "否定");
+    else add("文の種類", /^\s*(please|do not|don't|let's)\b/i.test(text) ? "命令" : "肯定");
+    return out;
   }
 
   function toeic(t) {
@@ -144,7 +202,7 @@ const Clean = (() => {
 
   // ---------- AI による確認(書き出し → AI が確認・修正 → 修正として取り込み) ----------
   // 確認の対象にする項目と、画面に出す名前
-  const REVIEW = { ja: "和訳", slash: "意味の区切り", phrases: "文法区切り", words: "品詞", iu: "IU", vocab: "単語", grammar: "文法の解説", toeic: "TOEIC解説", quiz: "4択", elements: "文構造", clauses: "節", pattern: "文型", tense: "時制", level: "難易度", part: "パート" };
+  const REVIEW = { ja: "和訳", slash: "意味の区切り", phrases: "文法区切り", words: "品詞", iu: "IU", vocab: "単語", grammar: "文法の解説", toeic: "TOEIC解説", quiz: "4択", elements: "文構造", clauses: "節", pattern: "文型", tense: "時制", gtags: "他の文法", level: "難易度", part: "パート" };
   // 確認用の書き出し。学習の状態・復習・イラスト・発音記号は入れない(発音記号は辞書から付くので、AI に見せない)
   function slim(r) {
     const o = {
@@ -152,7 +210,7 @@ const Clean = (() => {
       analysis: {
         translation: r.ja, slash: (r.slash || []).map(x => ({ en: x.en, ja: x.ja })), words: r.words, phrases: r.phrases,
         iu: (r.iu || []).map(x => ({ t: x.t })), vocab: (r.vocab || []).map(v => { const { ipa, ...rest } = v; return rest }),
-        pattern: r.pattern, clauses: r.clauses, elements: r.elements, tense: r.tense, grammar: r.grammar, toeic: r.toeic
+        pattern: r.pattern, clauses: r.clauses, elements: r.elements, tense: r.tense, gtags: r.gtags, grammar: r.grammar, toeic: r.toeic
       },
       quiz: r.quiz
     };
@@ -217,7 +275,7 @@ const Clean = (() => {
     set("ja", add.ja); set("words", add.words); set("phrases", add.phrases); set("slash", add.slash); set("iu", add.iu);
     if (ex.slash && add.slash && ex.slash.length === add.slash.length) ex.slash.forEach((x, i) => { if (!x.ipa && add.slash[i].ipa && x.en === add.slash[i].en) { x.ipa = add.slash[i].ipa; c = true } });
     if (ex.iu && add.iu && ex.iu.length === add.iu.length) ex.iu.forEach((x, i) => { if (!x.ipa && add.iu[i].ipa && x.t === add.iu[i].t) { x.ipa = add.iu[i].ipa; c = true } });
-    set("elements", add.elements); set("clauses", add.clauses); set("pattern", add.pattern); set("tense", add.tense);
+    set("elements", add.elements); set("clauses", add.clauses); set("pattern", add.pattern); set("tense", add.tense); set("gtags", add.gtags);
     set("grammar", add.grammar); set("toeic", add.toeic); set("quiz", add.quiz); set("level", add.level); set("part", add.part);
     set("vocab", add.vocab && add.vocab.length ? add.vocab : null);
     if (ex.vocab && add.vocab) { // 発音記号が無い単語にだけ足す
@@ -318,5 +376,5 @@ const Clean = (() => {
     return c;
   }
 
-  return { tenseTags, REVIEW, slim, diffReview, applyReview, PARTS, partNo, partOf, CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
+  return { tenseTags, gramTags, gtags, GT, REVIEW, slim, diffReview, applyReview, PARTS, partNo, partOf, CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
 })();
