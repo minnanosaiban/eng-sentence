@@ -10,7 +10,7 @@
   let sel = { sentence: new Set(), meaning: new Set(), iu: new Set(), word: new Set() }; // 単位ごとの選択中の id
   let unit = "sentence";                           // 選択で見ている単位
   let study = { unit: "sentence", ids: [], i: 0 }; // 学習セット
-  let prefs = { view: {}, gramOn: false, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, posOn: false, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
+  let prefs = { view: {}, gramOn: false, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
   let tab = "study", setBack = "reg", wReveal = false, wq = null;
   const UN = { sentence: { kind: "sentences", name: "英文" }, meaning: { kind: "chunks", name: "意味句" }, iu: { kind: "chunks", name: "IU" }, word: { kind: "words", name: "単語" } };
   const tbl = u => (u === "word" ? words : u === "sentence" ? rows : chunks.filter(c => c.type === u));
@@ -431,7 +431,6 @@
   $("#pRate").onchange = e => setRate(e.target.value);
 
   // ---------- 英文学習 ----------
-  const LEG = [["n", "名詞"], ["pron", "代名詞"], ["v", "動詞"], ["aux", "助動詞"], ["adj", "形容詞"], ["adv", "副詞"], ["prep", "前置詞"], ["conj", "接続詞・関係詞"], ["det", "冠詞・限定詞"]];
   const NUM = "⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿";
   function phClass(f) {
     if (/節/.test(f)) return "c";
@@ -468,12 +467,10 @@
   function showView(k) { if (k === "iu") return; if (k === "slash") { if (!prefs.slashMain) { prefs.slashMain = true; savePrefs(); renderStudy() } } else if (k === "phrases") { if (!prefs.gramOn) { prefs.gramOn = true; savePrefs(); renderStudy() } } else if (k && !prefs.view[k]) { prefs.view[k] = true; savePrefs(); renderStudy() } }
 
   // 文法(ひとまとめ): 品詞ボタン + 文構造(S V O C M・節・文型・時制)+ 文法区切り + 文法の解説
-  function gramBlock(r, mkP, now, nowView, pw) {
+  function gramBlock(r, mkP, now, nowView) {
 
     const hl = i => (nowView === "phrases" && i === now ? " now" : "");
-    let h = '<div class="view gram" data-view="gram"><div class="gramhead"><span style="flex:1"></span>'
-      + `<button class="sm" id="posBtn" aria-pressed="${!!prefs.posOn}" title="語ごとの品詞を、文字の色で表す(3)">品詞</button></div>`;
-    if (prefs.posOn) h += '<div class="legend">' + (pw ? LEG.map(([k, n]) => `<span><i style="background:var(--pc-${k})"></i>${n}</span>`).join("") : "<span>この英文には、品詞の情報がないので、品詞の色は付きません</span>") + "</div>";
+    let h = '<div class="view gram" data-view="gram">';
     h += '<h4 class="gh">文構造</h4>';
     if (r.elements && r.elements.length) {
       h += '<div class="els">' + r.elements.map(e => `<span class="el"><span class="role ${e.role}">${e.role}</span><b>${esc(e.text)}</b>${e.note ? ` <span class="sub">${esc(e.note)}</span>` : ""}</span>`).join("") + "</div>";
@@ -506,16 +503,10 @@
   }
 
   // 前置詞・to・接続詞の、この文での意味(〜ために など)を、全文の下に1行で
-  function wordMeans(pw) {
-    const l = (pw || []).filter(w => w.m);
-    return l.length ? `<div class="wmeans">${l.map(w => `<span class="wm"><b class="pw pw-${w.p}">${esc(w.w.replace(/[.,;:!?]+$/, ""))}</b> ${esc(w.m)}</span>`).join("")}</div>` : "";
-  }
   function renderDisp(r, now = -1, nowView = null) {
-    // 品詞の色(どの見方にも重ねる)。区切りをつなぐと原文に戻るので、語の並びの順に、品詞を当てる。文字の色だけで表す(区切りの下線と重ならないように)
-    const pw = prefs.gramOn && prefs.posOn && r.words ? r.words : null;
-    const mkP = () => { let ti = 0; return text => !pw ? esc(text) : text.split(" ").filter(Boolean).map(t => { const w = pw[ti++]; return w && w.w === t ? '<span class="pw pw-' + w.p + '"' + (w.m ? ' title="' + esc(w.m) + '"' : "") + ">" + esc(t) + "</span>" : esc(t) }).join(" ") };
+    const mkP = () => text => esc(text);
     const ftxt = prefs.slashMain && r.slash && r.slash.length ? (P => r.slash.map((s, i) => (i ? '<span class="slsep">/</span><wbr>' : "") + `<span class="seg-i${nowView === "slash" && i === now ? " now" : ""}${sl("slash", i)}" data-c="${i}">${P(s.en)}</span>`).join(""))(mkP()) : mkP()(r.text); // [/] を入れると、全文を / で区切った形にする
-    let html = '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>' + tenseBadge(r) + wordMeans(pw); // いちばん上は、いつも全文
+    let html = '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>' + tenseBadge(r); // いちばん上は、いつも全文
     if (r.slash && r.slash.length && (prefs.aux.ipa || prefs.aux.ja)) { // 区切りごとの発音記号・訳(英文の下)
       html += '<div class="view" data-view="slash">'
         + (() => { // 発音記号と和訳が両方あるときは、区切りごとに1行(英語 /発音/ 和訳)にまとめる
@@ -536,7 +527,7 @@
       } else body = "";
       html += `<div class="view" data-view="${v.k}">${v.note ? `<div class="vnote">${esc(v.note)}</div>` : ""}${body}</div>`;
     }
-    if (prefs.gramOn) html += gramBlock(r, mkP, now, nowView, pw);
+    if (prefs.gramOn) html += gramBlock(r, mkP, now, nowView);
     $("#disp").innerHTML = html;
   }
 
@@ -583,10 +574,8 @@
   function toggleSlashMain() { prefs.slashMain = !prefs.slashMain; savePrefs(); renderStudy() }
   $("#btnSlashMain").onclick = toggleSlashMain;
   function toggleGram() { prefs.gramOn = !prefs.gramOn; savePrefs(); renderStudy() }
-  function togglePos() { if (!prefs.gramOn) { prefs.gramOn = true; prefs.posOn = true } else prefs.posOn = !prefs.posOn; savePrefs(); renderStudy() }
   // 区切りをクリック → その区切りだけを、設定の回数、続けて聞く(もう一度クリックで解除)
   $("#disp").onclick = e => {
-    if (e.target.closest("#posBtn")) return togglePos();
     if (e.target.closest(".vstop")) return stopAudio();
     if (disSel()) return; // 語をなぞって選んでいるときは、クリックの読み上げをしない
     const vp = e.target.closest(".vplay");
@@ -761,7 +750,7 @@
     if (k === "s") return stopAudio();
     const map = {}, ax = { i: "ipa", j: "ja", v: "vocab", q: "quiz", k: "rec" };
     if (k === " ") { e.preventDefault(); play("once") } else if (k === "c") play("chunks"); else if (k === "l") play("links");
-    else if (k === "1") toggleSlashMain(); else if (k === "2" || k === "g") toggleGram(); else if (k === "3") togglePos(); else if (k === "0") clearViews();
+    else if (k === "1") toggleSlashMain(); else if (k === "2" || k === "g") toggleGram(); else if (k === "0") clearViews();
     else if (map[k]) toggleView(map[k]); else if (ax[k]) toggleAux(ax[k]);
   });
 
@@ -927,9 +916,9 @@
       const p = await Store.getMeta("prefs", null);
       if (p && typeof p === "object") prefs = { ...prefs, ...p, aux: { ...prefs.aux, ...(p.aux || {}) }, waux: { ...prefs.waux, ...(p.waux || {}) }, sh: { ...prefs.sh, ...(p.sh || {}) }, pick: { ...prefs.pick, ...(p.pick || {}) }, view: { ...prefs.view, ...(p.view || {}) } };
       // 古い設定(見方を1つだけ選ぶ形)から移す
-      if (p && p.disp === "pos") prefs.posOn = true; else if (p && p.disp && prefs.view[p.disp] === false) prefs.view[p.disp] = true;
-      delete prefs.disp;
-      if (p && p.gramOn === undefined && (p.posOn || (p.view && p.view.phrases) || (p.aux && p.aux.grammar))) prefs.gramOn = true; // 文法区切り・品詞・文法を、「文法」にまとめた
+      if (p && p.disp && p.disp !== "pos" && prefs.view[p.disp] === false) prefs.view[p.disp] = true;
+      delete prefs.disp; delete prefs.posOn;
+      if (p && p.gramOn === undefined && ((p.view && p.view.phrases) || (p.aux && p.aux.grammar))) prefs.gramOn = true; // 文法区切り・品詞・文法を、「文法」にまとめた
       delete prefs.view.phrases; delete prefs.aux.grammar;
       if (!p || !p.aux || p.aux.vocab === undefined) prefs.aux.vocab = !!prefs.aux.ja; // 「和訳」から「単語」を分けた(それまで和訳を出していれば、単語も出す)
       if (p && p.aux && p.aux.toeic) prefs.gramOn = true; // TOEIC解説を、「文法」にまとめた
