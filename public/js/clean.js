@@ -133,7 +133,19 @@ const Clean = (() => {
   // 態・時制・相のほかの文法(英文法.txt の分類)を、解析の文型・節・文法ポイントと、英文そのものから拾う。[{ k: 分類, t: 表示 }]
   const AUX = ["can", "could", "may", "might", "must", "shall", "should", "will", "would", "ought to"];
   const AUXLIKE = [["have to", /\b(have|has|had) to\b/i], ["be able to", /\b(am|is|are|was|were|be|been) able to\b/i], ["be going to", /\b(am|is|are|was|were) going to\b/i], ["be supposed to", /\b(am|is|are|was|were|be) supposed to\b/i], ["be required to", /\b(am|is|are|was|were|be|been) required to\b/i], ["be allowed to", /\b(am|is|are|was|were|be|been) allowed to\b/i], ["be encouraged to", /\b(am|is|are|was|were|be|been) encouraged to\b/i], ["be eligible for", /\beligible for\b/i], ["be entitled to", /\bentitled to\b/i]];
-  function gramTags(r) {
+  // 不定詞のタグに語句(to submit)が無いときは、単語の品詞から、不定詞の to と次の語を拾って補う
+  const GORDER = ["文型", "文の種類"]; // 表示は、文型 → 文の種類 → ほかの順
+  const gsort = l => l.map((x, i) => [GORDER.includes(x.k) ? GORDER.indexOf(x.k) : GORDER.length, i, x]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(a => a[2]);
+  function gramTags(r) { return gsort(gramTags0(r)) }
+  function gramTags0(r) {
+    const base = gramBase(r);
+    if (!base.some(x => x.k === "準動詞" && x.t === "不定詞" && !x.w)) return base;
+    const ws = r.words || [], found = [], bare = w => String(w).replace(/^[^\w']+|[^\w']+$/g, "");
+    ws.forEach((x, i) => { if (x.p === "other" && String(x.w).toLowerCase() === "to" && ws[i + 1]) found.push("to " + bare(ws[i + 1].w)) });
+    if (!found.length) return base;
+    return base.flatMap(x => x.k === "準動詞" && x.t === "不定詞" && !x.w ? [...new Set(found)].map(w => ({ k: x.k, t: x.t, w })) : [x]);
+  }
+  function gramBase(r) {
     if (r.gtags && r.gtags.length) return r.gtags; // AI が付けた確かなもの。無いときだけ、下の推定
     const out = [], add = (k, t) => { if (!out.some(x => x.k === k && x.t === t)) out.push({ k, t }) };
     const text = String(r.text || ""), low = text.toLowerCase();
