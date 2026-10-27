@@ -518,8 +518,11 @@
     let html = '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>' + tenseBadge(r) + wordMeans(pw); // いちばん上は、いつも全文
     if (r.slash && r.slash.length && (prefs.aux.ipa || prefs.aux.ja)) { // 区切りごとの発音記号・訳(英文の下)
       html += '<div class="view" data-view="slash">'
-        + (prefs.aux.ipa && r.slash.some(s => s.ipa) ? '<div class="sljas">' + r.slash.filter(s => s.ipa).map(s => `<div class="ja"><b>${esc(s.en)}</b> <span class="ipa">/${esc(s.ipa)}/</span></div>`).join("") + "</div>" : "")
-        + (prefs.aux.ja ? '<div class="sljas">' + r.slash.map(s => `<div class="ja"><b>${esc(s.en)}</b> ${esc(s.ja)}</div>`).join("") + "</div>" : "") + "</div>";
+        + (() => { // 発音記号と和訳が両方あるときは、区切りごとに1行(英語 /発音/ 和訳)にまとめる
+          const ip = prefs.aux.ipa && r.slash.some(s => s.ipa), ja = prefs.aux.ja;
+          if (!ip && !ja) return "";
+          return '<div class="sljas">' + r.slash.filter(s => ja || s.ipa).map(s => `<div class="ja"><b>${esc(s.en)}</b>${ip && s.ipa ? ` <span class="ipa">/${esc(s.ipa)}/</span>` : ""}${ja ? " " + esc(s.ja) : ""}</div>`).join("") + "</div>";
+        })() + "</div>";
     }
     for (const v of VIEWS) {
       if (!prefs.aux.ipa) continue;
