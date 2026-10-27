@@ -48,11 +48,11 @@ textarea{width:100%;resize:vertical}
 .pickshow{display:contents}
 #pickList .slsep{color:var(--sub)}
 #pickList .row-i.now{outline:2px solid var(--pri);outline-offset:-2px;border-radius:8px}
-.pickgrid{--c:122px;display:grid;grid-template-columns:repeat(3,var(--c)) minmax(0,1fr);gap:8px;align-items:start;font-size:14px}
+.pickgrid{--c:122px;display:grid;grid-template-columns:repeat(4,var(--c)) minmax(0,1fr);gap:8px;align-items:start;font-size:14px}
 .pickgrid>*{min-width:0}
 .pickgrid select,.pickgrid button,.pickgrid input{font-size:14px;padding:6px 8px}
 .pickgrid select{width:100%}
-.pickgrid .lbl{grid-column:span 2}
+.pickgrid .lbl,.pickgrid .srch{grid-column:span 2}
 .pickgrid .srch{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding-left:10px}
 .pickgrid .srch span{color:var(--sub);border-right:1px solid var(--line);padding-right:8px}
 .pickgrid .srch input{flex:1;min-width:0;border:0;background:none;border-radius:0}
@@ -225,6 +225,8 @@ table.v tr:first-child td{border-top:1px solid var(--line)}
 .toprow .jabox:empty{display:block}
 .vstop{border:0;background:none;color:var(--sub);cursor:pointer;font-size:14px;padding:0 0 0 6px;vertical-align:baseline}
 .vstop:hover{color:var(--pri)}
+#disp.playing .vplay{font-size:0;color:var(--pri)}
+#disp.playing .vplay::after{content:"■";font-size:14px}
 .fulltext .vplay,.fulltext .vstop{font-size:14px}
 .fulltext .seg-i{cursor:pointer}
 #disp .view[data-view="slash"] .sljas:first-child{margin-top:0}

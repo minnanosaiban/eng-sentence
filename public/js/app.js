@@ -288,21 +288,21 @@
   // ---------- 選択 ----------
   const allGroups = () => [...new Set([...rows, ...words, ...chunks].flatMap(r => r.groups || []))].sort();
   function filtered() {
-    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value;
+    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" ? $("#flabel").value : "";
     const wc = r => r.text.split(" ").length, where = r => (r.n === 1 || r.idx === 0 ? "first" : r.idx === r.n - 1 ? "last" : "mid");
     return tbl(unit).filter(r =>
       (!isCard(unit) || unit === "word" || ((!ln || (ln === "s" ? wc(r) <= 2 : ln === "m" ? wc(r) >= 3 && wc(r) <= 5 : wc(r) >= 6)) && (!ps || where(r) === ps))) &&
       (!q || r.text.toLowerCase().includes(q) || (r.ja || "").includes(q)) &&
+      (!lb || (lb === "none" ? !r.label : String(r.label) === lb)) &&
       inGroup(r, g));
   }
-  // 「グループ」の選択肢は、パート → 難易度 → ラベル → 自分で付けたグループ の順。値は、種類の印(p: パート / v: 難易度 / l: ラベル / g: グループ)+ 中身
+  // 「グループ」の選択肢は、パート → 難易度 → 自分で付けたグループ の順(ラベルは、別の絞り込み)。値は、種類の印(p: パート / v: 難易度 / g: グループ)+ 中身
   const PART_NAMES = { "Part 1": "写真描写", "Part 2": "応答問題", "Part 3": "会話", "Part 4": "説明文", "Part 5": "短文穴埋め", "Part 6": "長文穴埋め", "Part 7": "読解" };
   function inGroup(r, g) {
     if (!g) return true;
     const k = g[0], v = g.slice(2);
     if (k === "p") return unit === "sentence" && (v === "none" ? !Clean.partOf(r) : Clean.partOf(r) === v);
     if (k === "v") return String(r.level) === v;
-    if (k === "l") return unit === "sentence" && (v === "none" ? !r.label : String(r.label) === v);
     return (r.groups || []).includes(v);
   }
   function renderGroupSelect() {
@@ -310,8 +310,8 @@
     const opts = [`<option value="">グループ</option>`];
     if (sent) opts.push(...Object.entries(PART_NAMES).map(([k, n]) => o("p:" + k, `${k} ${n}`)), o("p:none", "パート未設定"));
     opts.push(...[600, 730, 860].map(n => o("v:" + n, "難易度 " + n)));
-    if (sent) opts.push(...[1, 2, 3, 4, 5].map(n => o("l:" + n, "ラベル " + n)), o("l:none", "ラベルなし"));
     opts.push(...allGroups().map(g => o("g:" + g, g)));
+    $("#flabel").hidden = !sent;
     $("#fgroup").innerHTML = opts.join("");
     $("#fgroup").value = [...$("#fgroup").options].some(x => x.value === cur) ? cur : "";
   }
@@ -351,7 +351,7 @@
   $("#pickShow").onclick = e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !prefs.pick[b.dataset.p]; savePrefs(); renderPick() } };
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
-  ["#fq", "#fgroup", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
+  ["#fq", "#fgroup", "#flabel", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
   $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
   $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
   const pickRandom = n => {
@@ -511,7 +511,7 @@
     const pw = prefs.gramOn && prefs.posOn && r.words ? r.words : null;
     const mkP = () => { let ti = 0; return text => !pw ? esc(text) : text.split(" ").filter(Boolean).map(t => { const w = pw[ti++]; return w && w.w === t ? '<span class="pw pw-' + w.p + '"' + (w.m ? ' title="' + esc(w.m) + '"' : "") + ">" + esc(t) + "</span>" : esc(t) }).join(" ") };
     const ftxt = prefs.slashMain && r.slash && r.slash.length ? (P => r.slash.map((s, i) => (i ? '<span class="slsep">/</span><wbr>' : "") + `<span class="seg-i${nowView === "slash" && i === now ? " now" : ""}${sl("slash", i)}" data-c="${i}">${P(s.en)}</span>`).join(""))(mkP()) : mkP()(r.text); // [/] を入れると、全文を / で区切った形にする
-    let html = '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + ' <button class="vstop" title="止める(S)">■</button></div>' + tenseBadge(r) + wordMeans(pw); // いちばん上は、いつも全文
+    let html = '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>' + tenseBadge(r) + wordMeans(pw); // いちばん上は、いつも全文
     if (r.slash && r.slash.length && (prefs.aux.ipa || prefs.aux.ja)) { // 区切りごとの発音記号・訳(英文の下)
       html += '<div class="view" data-view="slash">'
         + (prefs.aux.ipa && r.slash.some(s => s.ipa) ? '<div class="sljas">' + r.slash.filter(s => s.ipa).map(s => `<div class="ja"><b>${esc(s.en)}</b> <span class="ipa">/${esc(s.ipa)}/</span></div>`).join("") + "</div>" : "")
@@ -583,6 +583,7 @@
     if (e.target.closest(".vstop")) return stopAudio();
     if (disSel()) return; // 語をなぞって選んでいるときは、クリックの読み上げをしない
     const vp = e.target.closest(".vplay");
+    if (vp && $("#disp").classList.contains("playing")) return stopAudio(); // 聞いている間は、▶ が ■ に変わっている
     if (vp) { // 区切りの ▶ → その区切りを、頭から順に聞く(選んだ区切りは解除)。音のつながりの ▶ → 聞き比べ
       const r = cur(); if (!r) return;
       if (!("speechSynthesis" in window)) return toast("この端末では、読み上げが使えません");
@@ -607,7 +608,7 @@
   let playing = 0; // 世代番号。止める・次へ行くと増やして、前の読み上げを無効にする
   const sleep = (ms, me) => new Promise(res => { const t0 = Date.now(), iv = setInterval(() => { if (me !== playing || Date.now() - t0 >= ms) { clearInterval(iv); res() } }, 80) });
   const sayTimed = async (text, rate) => { const t0 = performance.now(); await say(text, rate); return performance.now() - t0 };
-  const pst = msg => { const e = $("#pstatus"); e.hidden = !msg; e.textContent = msg || ""; if (!msg) { $("#pickPst").textContent = ""; document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now")) } };
+  const pst = msg => { $("#disp").classList.toggle("playing", !!msg); const e = $("#pstatus"); e.hidden = !msg; e.textContent = msg || ""; if (!msg) { $("#pickPst").textContent = ""; document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now")) } };
   function stopAudio() { playing++; pst(null); try { speechSynthesis.cancel() } catch {} const r = cur(); if (r && tab === "study" && study.unit === "sentence") renderDisp(r) }
   function say(text, rate = prefs.rate) {
     return new Promise(res => {
