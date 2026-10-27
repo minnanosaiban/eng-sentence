@@ -47,7 +47,7 @@ f の例: 主語+動詞 / 主語+動詞+目的語 / 主語+動詞+補語 / to+�
  文型: SV / SVC / SVO / SVOO / SVOC(主節の文型。必ず1つ)
  助動詞: can / could / may / might / must / shall / should / will / would / ought to / have to / be able to / be going to / be supposed to / be required to / be allowed to / be encouraged to / be eligible for / be entitled to(文中のものすべて)
  準動詞: 不定詞 / 動名詞 / 分詞(文中のものすべて。分詞構文も含む。1つごとに別の要素にして、"w" に英文中のその語句を原文のまま入れる。例: {"k":"準動詞","t":"不定詞","w":"to submit"})
- 修飾: 形容詞 / 副詞 / 前置詞句 / 分詞 / 関係詞(名詞や動詞を修飾するもの。使われているものすべて)
+ 修飾: 形容詞 / 副詞 / 前置詞句 / 分詞 / 関係詞(名詞や動詞を修飾するもの。使われているものすべて。形容詞・前置詞句は、1つごとに別の要素にして、"w" に英文中のその語句を原文のまま入れる。例: {"k":"修飾","t":"前置詞句","w":"to the interview"})
  接続: 等位(and・but・or) / 従属(because・although・when・while・if・unless・once など)
  条件・仮定: 条件(if・unless などの条件節。現実にありうること) / 仮定法(現実とは違う・現実から距離を置く表現)。なければ入れない
  比較: 原級 / 比較級 / 最上級。なければ入れない
