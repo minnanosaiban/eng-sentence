@@ -497,9 +497,12 @@
 
   // 主節の動詞の 態・時制・相 を、漢字1字ずつのタグで(例: 能 現 進)
   function tenseBadge(r) {
-    const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r);
-    const h = (t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.map(x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`).join("");
-    return h ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)、文型・助動詞・準動詞・修飾・接続・条件・比較・文の種類">${h}</div>` : "";
+    const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), top = ["文型", "文の種類"];
+    const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
+    const h1 = (t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.filter(x => top.includes(x.k)).map(tag).join("");
+    // 1行目: 態・時制・相 と 文型・文の種類。2行目から: ほかの文法を1つずつ、日本語の意味を添えて
+    const rest = g.filter(x => !top.includes(x.k)).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
+    return h1 || rest ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)、文型・文の種類、そのほかの文法">${h1 ? `<div>${h1}</div>` : ""}${rest}</div>` : "";
   }
 
   // 前置詞・to・接続詞の、この文での意味(〜ために など)を、全文の下に1行で

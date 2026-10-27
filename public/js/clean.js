@@ -124,8 +124,8 @@ const Clean = (() => {
     const out = [];
     for (const x of g) {
       const [k, t] = typeof x === "string" ? x.split(/[:：]/).map(v => v.trim()) : [x && x.k, x && typeof x.t === "string" ? x.t.trim() : x && x.t];
-      const w = (k === "準動詞" || k === "修飾") && x && typeof x.w === "string" ? x.w.trim().slice(0, 60) : ""; // 準動詞は、英文中の該当する語句(例: to submit)も持てる
-      if (GT[k] && GT[k].includes(t) && !out.some(y => y.k === k && y.t === t && (y.w || "") === w)) out.push(w ? { k, t, w } : { k, t });
+      const w = (k === "準動詞" || k === "修飾") && x && typeof x.w === "string" ? x.w.trim().slice(0, 60) : "", m = x && typeof x.m === "string" ? x.m.trim().slice(0, 24) : ""; // 準動詞・修飾は、英文中の該当する語句(例: to submit)と、その日本語の意味(例: 〜することを)も持てる
+      if (GT[k] && GT[k].includes(t) && !out.some(y => y.k === k && y.t === t && (y.w || "") === w)) out.push({ k, t, ...(w ? { w } : {}), ...(m ? { m } : {}) });
     }
     out.sort((a, b) => Object.keys(GT).indexOf(a.k) - Object.keys(GT).indexOf(b.k));
     return out.length ? out : null;
@@ -136,19 +136,21 @@ const Clean = (() => {
   // 語句の無いタグ(不定詞・動名詞・形容詞・前置詞句)は、単語の品詞から、英文中の該当する語句を拾って補う
   const bare = w => String(w).replace(/^[^\w']+|[^\w']+$/g, "");
   const BE = /^(am|is|are|was|were|be|been|being|do|does|did|have|has|had|will|would|can|could|may|might|must|shall|should)$/i;
+  const ow = (x, m) => (x.m && m !== false ? { w: bare(x.w), m: x.m } : { w: bare(x.w) });
   // 分詞: 形容詞の働きをする -ed / -ing の語と、助動詞・be のあとではない -ing の動詞(分詞構文)
-  const PTCP = ws => ws.filter((x, i) => { const w = bare(x.w); return (x.p === "adj" && /^[A-Za-z]{3,}(ed|ing)$/.test(w)) || (x.p === "v" && /^[A-Za-z]{3,}ing$/.test(w) && !(i && BE.test(bare(ws[i - 1].w)))) }).map(x => bare(x.w));
+  const PTCP = ws => ws.filter((x, i) => { const w = bare(x.w); return (x.p === "adj" && /^[A-Za-z]{3,}(ed|ing)$/.test(w)) || (x.p === "v" && /^[A-Za-z]{3,}ing$/.test(w) && !(i && BE.test(bare(ws[i - 1].w)))) }).map(x => ({ w: bare(x.w) }));
+  // 単語の品詞から拾う。w=英文中の語句、m=前置詞・不定詞の to に付いている意味
   const WFIND = {
-    "準動詞/不定詞": ws => ws.flatMap((x, i) => x.p === "other" && String(x.w).toLowerCase() === "to" && ws[i + 1] ? ["to " + bare(ws[i + 1].w)] : []),
-    "準動詞/動名詞": ws => ws.filter(x => x.p === "n" && /^[A-Za-z]{3,}ing$/.test(bare(x.w))).map(x => bare(x.w)),
+    "準動詞/不定詞": ws => ws.flatMap((x, i) => x.p === "other" && String(x.w).toLowerCase() === "to" && ws[i + 1] ? [{ w: "to " + bare(ws[i + 1].w), ...(x.m ? { m: x.m } : {}) }] : []),
+    "準動詞/動名詞": ws => ws.filter(x => x.p === "n" && /^[A-Za-z]{3,}ing$/.test(bare(x.w))).map(x => ({ w: bare(x.w) })),
     "準動詞/分詞": ws => PTCP(ws), "修飾/分詞": ws => PTCP(ws),
-    "修飾/形容詞": ws => ws.filter(x => x.p === "adj").map(x => bare(x.w)),
+    "修飾/形容詞": ws => ws.filter(x => x.p === "adj").map(x => ({ w: bare(x.w) })),
     "修飾/前置詞句": ws => ws.flatMap((x, i) => {
       if (x.p !== "prep") return [];
       let j = i + 1; while (j < ws.length && j <= i + 5 && ws[j].p !== "n" && ws[j].p !== "pron") j++;
       if (j >= ws.length || j > i + 5) return [];
       while (ws[j].p === "n" && ws[j + 1] && ws[j + 1].p === "n" && j < i + 7) j++; // 名詞が続くとき(Central Station)は、まとめて拾う
-      return [ws.slice(i, j + 1).map(y => bare(y.w)).join(" ")];
+      return [{ w: ws.slice(i, j + 1).map(y => bare(y.w)).join(" "), ...(x.m ? { m: x.m } : {}) }];
     })
   };
   const gramTags0 = r => {
@@ -156,10 +158,13 @@ const Clean = (() => {
     return base.flatMap(x => {
       const f = WFIND[x.k + "/" + x.t];
       if (x.w || !f) return [x];
-      const found = [...new Set(f(ws))];
-      return found.length ? found.map(w => ({ k: x.k, t: x.t, w })) : [x];
+      const seen = new Set(), found = f(ws).filter(o => !seen.has(o.w) && seen.add(o.w));
+      return found.length ? found.map(o => ({ k: x.k, t: x.t, ...o })) : [x];
     });
   };
+  // 助動詞の意味(学習タブで、助動詞のあとに添える)
+  const AUXJA = { can: "〜できる", could: "〜できた・〜できる(かもしれない)", may: "〜してよい・〜かもしれない", might: "〜かもしれない", must: "〜しなければならない", shall: "〜するものとする", should: "〜すべき", will: "〜するだろう・〜する", would: "〜するだろう・〜したいものだ", "ought to": "〜すべき", "have to": "〜しなければならない", "be able to": "〜できる", "be going to": "〜するつもり", "be supposed to": "〜することになっている", "be required to": "〜を求められる", "be allowed to": "〜を許されている", "be encouraged to": "〜を奨励されている", "be eligible for": "〜の資格がある", "be entitled to": "〜の権利がある" };
+  const gjaOf = x => x.m || (x.k === "助動詞" ? AUXJA[x.t] || "" : x.k === "準動詞" && x.t === "動名詞" ? "〜すること" : "");
   const GORDER = ["文型", "文の種類"]; // 表示は、文型 → 文の種類 → ほかの順
   const gsort = l => l.map((x, i) => [GORDER.includes(x.k) ? GORDER.indexOf(x.k) : GORDER.length, i, x]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(a => a[2]);
   function gramTags(r) { return gsort(gramTags0(r)) }
@@ -408,5 +413,5 @@ const Clean = (() => {
     return c;
   }
 
-  return { tenseTags, gramTags, gtags, GT, REVIEW, slim, diffReview, applyReview, PARTS, partNo, partOf, CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
+  return { tenseTags, gramTags, gjaOf, gtags, GT, REVIEW, slim, diffReview, applyReview, PARTS, partNo, partOf, CATS, catOf, mistakes, iu, chunk, chunkKey, chunksOf, fillChunk, CTYPE, word, wordsOf, fillWord, clip, norm, POS, STATUS, ipa, words, phrases, slash, vocab, grammar, toeic, quiz, level, date, uid, sentence, fill };
 })();
