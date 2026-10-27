@@ -124,7 +124,8 @@ const Clean = (() => {
     const out = [];
     for (const x of g) {
       const [k, t] = typeof x === "string" ? x.split(/[:：]/).map(v => v.trim()) : [x && x.k, x && typeof x.t === "string" ? x.t.trim() : x && x.t];
-      if (GT[k] && GT[k].includes(t) && !out.some(y => y.k === k && y.t === t)) out.push({ k, t });
+      const w = k === "準動詞" && x && typeof x.w === "string" ? x.w.trim().slice(0, 60) : ""; // 準動詞は、英文中の該当する語句(例: to submit)も持てる
+      if (GT[k] && GT[k].includes(t) && !out.some(y => y.k === k && y.t === t && (y.w || "") === w)) out.push(w ? { k, t, w } : { k, t });
     }
     out.sort((a, b) => Object.keys(GT).indexOf(a.k) - Object.keys(GT).indexOf(b.k));
     return out.length ? out : null;
