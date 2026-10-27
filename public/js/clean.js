@@ -135,9 +135,13 @@ const Clean = (() => {
   const AUXLIKE = [["have to", /\b(have|has|had) to\b/i], ["be able to", /\b(am|is|are|was|were|be|been) able to\b/i], ["be going to", /\b(am|is|are|was|were) going to\b/i], ["be supposed to", /\b(am|is|are|was|were|be) supposed to\b/i], ["be required to", /\b(am|is|are|was|were|be|been) required to\b/i], ["be allowed to", /\b(am|is|are|was|were|be|been) allowed to\b/i], ["be encouraged to", /\b(am|is|are|was|were|be|been) encouraged to\b/i], ["be eligible for", /\beligible for\b/i], ["be entitled to", /\bentitled to\b/i]];
   // 語句の無いタグ(不定詞・動名詞・形容詞・前置詞句)は、単語の品詞から、英文中の該当する語句を拾って補う
   const bare = w => String(w).replace(/^[^\w']+|[^\w']+$/g, "");
+  const BE = /^(am|is|are|was|were|be|been|being|do|does|did|have|has|had|will|would|can|could|may|might|must|shall|should)$/i;
+  // 分詞: 形容詞の働きをする -ed / -ing の語と、助動詞・be のあとではない -ing の動詞(分詞構文)
+  const PTCP = ws => ws.filter((x, i) => { const w = bare(x.w); return (x.p === "adj" && /^[A-Za-z]{3,}(ed|ing)$/.test(w)) || (x.p === "v" && /^[A-Za-z]{3,}ing$/.test(w) && !(i && BE.test(bare(ws[i - 1].w)))) }).map(x => bare(x.w));
   const WFIND = {
     "準動詞/不定詞": ws => ws.flatMap((x, i) => x.p === "other" && String(x.w).toLowerCase() === "to" && ws[i + 1] ? ["to " + bare(ws[i + 1].w)] : []),
     "準動詞/動名詞": ws => ws.filter(x => x.p === "n" && /^[A-Za-z]{3,}ing$/.test(bare(x.w))).map(x => bare(x.w)),
+    "準動詞/分詞": ws => PTCP(ws), "修飾/分詞": ws => PTCP(ws),
     "修飾/形容詞": ws => ws.filter(x => x.p === "adj").map(x => bare(x.w)),
     "修飾/前置詞句": ws => ws.flatMap((x, i) => {
       if (x.p !== "prep") return [];
