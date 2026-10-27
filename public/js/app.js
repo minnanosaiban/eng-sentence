@@ -286,6 +286,7 @@
   };
 
   // ---------- 選択 ----------
+  const pickOn = k => k === "g:" ? true : prefs.pick[k] !== false && (k.startsWith("g:") || !!prefs.pick[k]); // 文法の種類ごとの入り切りは、未設定なら「出す」
   const allGroups = () => [...new Set([...rows, ...words, ...chunks].flatMap(r => r.groups || []))].sort();
   function filtered() {
     const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" ? $("#flabel").value : "";
@@ -319,8 +320,8 @@
     const chunk = unit === "meaning" || unit === "iu";
     const part = unit === "sentence" ? Clean.partOf(r) : "";
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
-    const gt = unit === "sentence" && prefs.pick.gram ? Clean.gramTags(r) : [];
-    const tags = `${tt ? [tt.voice, tt.tns, tt.asp].map(x => `<span class="tag tns">${x}</span>`).join("") : ""}${gt.map(x => `<span class="tag gm" title="${x.k}">${esc(x.t)}</span>`).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
+    const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
+    const tags = `${tt ? [tt.voice, tt.tns, tt.asp].map(x => `<span class="tag tns">${x}</span>`).join("") : ""}${gt.map(x => `<span class="tag gm" title="${x.k}">${esc(x.k)} ${esc(x.t)}</span>`).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`
       : unit === "word"
@@ -333,8 +334,8 @@
     document.querySelectorAll(".chunk-only").forEach(e => { e.hidden = !(unit === "meaning" || unit === "iu") });
     document.querySelectorAll(".sent-only").forEach(e => { e.hidden = unit !== "sentence" && unit !== "word" });
     $("#btnSlashPick").setAttribute("aria-pressed", String(!!prefs.slashMain));
-    document.querySelectorAll("#pickShow button").forEach(b => b.setAttribute("aria-pressed", String(!!prefs.pick[b.dataset.p])));
-    document.querySelectorAll('#pickShow [data-p="tns"],#pickShow [data-p="gram"]').forEach(b => { b.hidden = unit !== "sentence" });
+    document.querySelectorAll("#pickShow button").forEach(b => b.setAttribute("aria-pressed", String(pickOn(b.dataset.p))));
+    document.querySelectorAll('#pickShow [data-p="tns"],#pickShow [data-g]').forEach(b => { b.hidden = unit !== "sentence" });
     renderGroupSelect(); syncPickAudio();
     document.querySelectorAll(".word-only").forEach(e => { e.hidden = unit !== "word" });
     const list = filtered(), n = tbl(unit).length;
@@ -348,7 +349,7 @@
     $("#btnDelSel").disabled = sel[unit].size === 0;
     { const t = sel[unit].size ? `選んだ ${sel[unit].size} 件を削除` : "選んだものを削除"; $("#btnDelSel").title = t; $("#btnDelSel").setAttribute("aria-label", t) }
   }
-  $("#pickShow").onclick = e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !prefs.pick[b.dataset.p]; savePrefs(); renderPick() } };
+  $("#pickShow").onclick = e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !pickOn(b.dataset.p); savePrefs(); renderPick() } };
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
   ["#fq", "#fgroup", "#flabel", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
@@ -497,7 +498,7 @@
   // 主節の動詞の 態・時制・相 を、漢字1字ずつのタグで(例: 能 現 進)
   function tenseBadge(r) {
     const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r);
-    const h = (t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.map(x => `<span class="tag gm" title="${x.k}">${esc(x.t)}</span>`).join("");
+    const h = (t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.map(x => `<span class="tag gm" title="${x.k}">${esc(x.k)} ${esc(x.t)}</span>`).join("");
     return h ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)、文型・助動詞・準動詞・修飾・接続・条件・比較・文の種類">${h}</div>` : "";
   }
 
