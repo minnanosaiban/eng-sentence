@@ -251,3 +251,17 @@ table.v tr:first-child td{border-top:1px solid var(--line)}
 .fixprev ul{margin:4px 0 8px;padding-left:1.2em}
 .wmeans{margin:2px 0 8px;font-size:13px;color:var(--sub)}
 .wmeans .wm{display:inline-block;margin-right:12px}
+/* 文法欄: 項目の間を広げ、行間をゆったりさせて、読みやすく */
+.gram .gh{margin:28px 0 10px;padding-top:14px;border-top:1px solid var(--line);font-size:13px}
+.gram .gh:first-child{margin-top:0;padding-top:0;border-top:0}
+.gram .els{line-height:2.4;margin-bottom:6px}
+.gram .el{margin-right:18px}
+.gram .gp{margin:10px 0;line-height:1.8}
+.gram .gp,.gram .cls,.gram .gpt,.gram .gpt .sub{font-size:13px}
+.gram .cls{margin-top:12px;border-spacing:0}
+.gram .cls td{padding:5px 14px 5px 0;line-height:1.6}
+#disp .gram .ph{margin-bottom:14px;line-height:1.6}
+#disp .gram .ph .lab{font-size:12.5px;margin-left:4px}
+.gram .gpt{margin:0 0 16px}
+.gram .gpt .sub{line-height:1.8;margin-top:3px}
+.gram .gpt b{font-size:13px}
