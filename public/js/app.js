@@ -10,7 +10,7 @@
   let sel = { sentence: new Set(), meaning: new Set(), iu: new Set(), word: new Set() }; // 単位ごとの選択中の id
   let unit = "sentence";                           // 選択で見ている単位
   let study = { unit: "sentence", ids: [], i: 0 }; // 学習セット
-  let prefs = { view: {}, gramOn: false, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
+  let prefs = { view: {}, gramOn: false, gs: { tags: true, els: false, expl: false, toeic: false }, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
   let tab = "study", setBack = "reg", wReveal = false, wq = null;
   const UN = { sentence: { kind: "sentences", name: "英文" }, meaning: { kind: "chunks", name: "意味句" }, iu: { kind: "chunks", name: "IU" }, word: { kind: "words", name: "単語" } };
   const tbl = u => (u === "word" ? words : u === "sentence" ? rows : chunks.filter(c => c.type === u));
@@ -444,7 +444,7 @@
   function renderSentence(r) {
     $("#pos").textContent = `${study.i + 1} / ${study.ids.length}`;
     $("#btnPrev").disabled = study.i === 0; $("#btnNext").disabled = study.i >= study.ids.length - 1;
-    document.querySelectorAll("#segShow button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v ? !!prefs.view[b.dataset.v] : b.dataset.x ? !!prefs.aux[b.dataset.x] : !!prefs.gramOn)));
+    document.querySelectorAll("#segShow button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v ? !!prefs.view[b.dataset.v] : b.dataset.x ? !!prefs.aux[b.dataset.x] : b.dataset.s ? !!prefs.gs[b.dataset.s] : !!prefs.gramOn)));
     $("#btnSlashMain").setAttribute("aria-pressed", String(!!prefs.slashMain));
     $("#rate").value = String(prefs.rate);
     $("#shGap").value = String(prefs.sh.gap); $("#shRep").value = String(prefs.sh.rep);
@@ -471,21 +471,28 @@
 
     const hl = i => (nowView === "phrases" && i === now ? " now" : "");
     let h = '<div class="view gram" data-view="gram">';
-    h += '<h4 class="gh">文構造</h4>';
-    if (r.elements && r.elements.length) {
-      h += '<div class="els">' + r.elements.map(e => `<span class="el"><span class="role ${e.role}">${e.role}</span><b>${esc(e.text)}</b>${e.note ? ` <span class="sub">${esc(e.note)}</span>` : ""}</span>`).join("") + "</div>";
-      if (r.pattern) h += `<div class="gp"><b>${esc(r.pattern.type)}</b> <span class="sub">${esc(r.pattern.explanation)}</span></div>`;
-      if (r.tense) h += `<div class="gp"><b>${esc(r.tense.name)}</b> <span class="sub">${esc(r.tense.explanation)}</span></div>`;
-      if (r.clauses && r.clauses.length) h += '<table class="cls">' + r.clauses.map(c => `<tr><td><b>${esc(c.kind)}</b></td><td>${esc(c.text)}</td><td class="sub">${esc(c.role)}</td></tr>`).join("") + "</table>";
-    } else h += '<div class="sub">この英文には、文構造のデータがありません(「サンプル英文を入れる」をもう一度押すか、AI で解析し直すと付きます)。</div>';
-    h += '<h4 class="gh">文法区切り <button class="vplay" data-k="phrases" title="文法区切りを、頭から順に聞く">▶</button></h4>';
-    const P2 = mkP();
-    h += r.phrases && r.phrases.length ? r.phrases.map((p, i) => `<span class="ph"><span class="no">${NUM[i] || i + 1}</span><span class="seg-i cl-${phClass(p.f)}${hl(i)}${sl("phrases", i)}" data-c="${i}">${P2(p.t)}</span> <span class="lab">${esc(p.f)}</span></span>`).join("") : '<div class="sub">この英文には、文法区切りのデータがありません。</div>';
-    h += '<h4 class="gh">文法の解説</h4>';
-    h += (r.grammar || []).length ? r.grammar.map(g => `<div class="gpt"><b>・${esc(g.point)}</b><div class="sub">${esc(g.explanation)}</div></div>`).join("") : '<div class="sub">なし</div>';
-    { const t = r.toeic;
-    h += '<h4 class="gh">TOEIC</h4>';
-    h += `<div>${t ? `<span class="tag">${esc(t.part)}</span><span class="tag">${esc(t.scene)}</span>${t.points.map(p => `<div class="gpt"><b>・${esc(p.type)}</b> <span class="sub">${esc(p.detail)}</span></div>`).join("")}${t.paraphrase.length ? `<div class="sub">言い換え: ${t.paraphrase.map(esc).join(" / ")}</div>` : ""}` : '<span class="sub">なし</span>'}</div>`;
+    if (prefs.gs.els) {
+      h += '<h4 class="gh">文構造</h4>';
+      if (r.elements && r.elements.length) {
+        h += '<div class="els">' + r.elements.map(e => `<span class="el"><span class="role ${e.role}">${e.role}</span><b>${esc(e.text)}</b>${e.note ? ` <span class="sub">${esc(e.note)}</span>` : ""}</span>`).join("") + "</div>";
+        if (r.pattern) h += `<div class="gp"><b>${esc(r.pattern.type)}</b> <span class="sub">${esc(r.pattern.explanation)}</span></div>`;
+        if (r.tense) h += `<div class="gp"><b>${esc(r.tense.name)}</b> <span class="sub">${esc(r.tense.explanation)}</span></div>`;
+        if (r.clauses && r.clauses.length) h += '<table class="cls">' + r.clauses.map(c => `<tr><td><b>${esc(c.kind)}</b></td><td>${esc(c.text)}</td><td class="sub">${esc(c.role)}</td></tr>`).join("") + "</table>";
+      } else h += '<div class="sub">この英文には、文構造のデータがありません(「サンプル英文を入れる」をもう一度押すか、AI で解析し直すと付きます)。</div>';
+    }
+    if (prefs.gramOn) {
+      h += '<h4 class="gh">文法区切り <button class="vplay" data-k="phrases" title="文法区切りを、頭から順に聞く">▶</button></h4>';
+      const P2 = mkP();
+      h += r.phrases && r.phrases.length ? r.phrases.map((p, i) => `<span class="ph"><span class="no">${NUM[i] || i + 1}</span><span class="seg-i cl-${phClass(p.f)}${hl(i)}${sl("phrases", i)}" data-c="${i}">${P2(p.t)}</span> <span class="lab">${esc(p.f)}</span></span>`).join("") : '<div class="sub">この英文には、文法区切りのデータがありません。</div>';
+    }
+    if (prefs.gs.expl) {
+      h += '<h4 class="gh">文法の解説</h4>';
+      h += (r.grammar || []).length ? r.grammar.map(g => `<div class="gpt"><b>・${esc(g.point)}</b><div class="sub">${esc(g.explanation)}</div></div>`).join("") : '<div class="sub">なし</div>';
+    }
+    if (prefs.gs.toeic) {
+      const t = r.toeic;
+      h += '<h4 class="gh">TOEIC</h4>';
+      h += `<div>${t ? `<span class="tag">${esc(t.part)}</span><span class="tag">${esc(t.scene)}</span>${t.points.map(p => `<div class="gpt"><b>・${esc(p.type)}</b> <span class="sub">${esc(p.detail)}</span></div>`).join("")}${t.paraphrase.length ? `<div class="sub">言い換え: ${t.paraphrase.map(esc).join(" / ")}</div>` : ""}` : '<span class="sub">なし</span>'}</div>`;
     }
     return h + "</div>";
   }
@@ -494,6 +501,7 @@
 
   // 主節の動詞の 態・時制・相 を、漢字1字ずつのタグで(例: 能 現 進)
   function tenseBadge(r) {
+    if (!prefs.gs.tags) return "";
     const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), top = ["文型", "文の種類"];
     const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
     const h1 = (t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.filter(x => top.includes(x.k)).map(tag).join("");
@@ -527,7 +535,7 @@
       } else body = "";
       html += `<div class="view" data-view="${v.k}">${v.note ? `<div class="vnote">${esc(v.note)}</div>` : ""}${body}</div>`;
     }
-    if (prefs.gramOn) html += gramBlock(r, mkP, now, nowView);
+    if (prefs.gramOn || prefs.gs.els || prefs.gs.expl || prefs.gs.toeic) html += gramBlock(r, mkP, now, nowView);
     $("#disp").innerHTML = html;
   }
 
@@ -566,7 +574,7 @@
   // 表示のボタン: 区切りの見方(data-v)・補助(data-x)・品詞の色(data-p)は、どれも独立した入り切り
   $("#segShow").onclick = e => {
     const b = e.target.closest("button"); if (!b) return;
-    if (b.dataset.v) toggleView(b.dataset.v); else if (b.dataset.x) toggleAux(b.dataset.x); else if (b.dataset.g) toggleGram();
+    if (b.dataset.v) toggleView(b.dataset.v); else if (b.dataset.x) toggleAux(b.dataset.x); else if (b.dataset.s) { prefs.gs[b.dataset.s] = !prefs.gs[b.dataset.s]; savePrefs(); renderStudy() } else if (b.dataset.g) toggleGram();
   };
   $("#shGap").onchange = $("#pGap").onchange = e => { prefs.sh.gap = +e.target.value; $("#shGap").value = $("#pGap").value = String(prefs.sh.gap); savePrefs() };
   $("#shRep").onchange = $("#pRep").onchange = e => { prefs.sh.rep = +e.target.value; $("#shRep").value = $("#pRep").value = String(prefs.sh.rep); savePrefs() };
@@ -595,7 +603,7 @@
     if (selC && selC.id === r.id && selC.key === key && selC.i === i) { selC = null; stopAudio(); return }
     selC = { id: r.id, key, i }; stopAudio(); playSel(r, key, i, playing);
   };
-  function clearViews() { for (const k of Object.keys(prefs.view)) prefs.view[k] = false; prefs.gramOn = false; prefs.slashMain = false; savePrefs(); renderStudy() }
+  function clearViews() { for (const k of Object.keys(prefs.view)) prefs.view[k] = false; prefs.gramOn = false; prefs.slashMain = false; prefs.gs.els = prefs.gs.expl = prefs.gs.toeic = false; savePrefs(); renderStudy() }
   function toggleAux(x) { prefs.aux[x] = !prefs.aux[x]; savePrefs(); renderStudy() }
   $("#stSel").onchange = async e => { const r = cur(); if (r) { r.status = e.target.value; await Store.put(r, "sentences") } };
 
@@ -914,14 +922,15 @@
       reviewLog = await Store.getMeta("log", {}) || {};
       rows = await Store.all("sentences"); words = await Store.all("words"); chunks = await Store.all("chunks");
       const p = await Store.getMeta("prefs", null);
-      if (p && typeof p === "object") prefs = { ...prefs, ...p, aux: { ...prefs.aux, ...(p.aux || {}) }, waux: { ...prefs.waux, ...(p.waux || {}) }, sh: { ...prefs.sh, ...(p.sh || {}) }, pick: { ...prefs.pick, ...(p.pick || {}) }, view: { ...prefs.view, ...(p.view || {}) } };
+      if (p && typeof p === "object") prefs = { ...prefs, ...p, aux: { ...prefs.aux, ...(p.aux || {}) }, waux: { ...prefs.waux, ...(p.waux || {}) }, sh: { ...prefs.sh, ...(p.sh || {}) }, gs: { ...prefs.gs, ...(p.gs || {}) }, pick: { ...prefs.pick, ...(p.pick || {}) }, view: { ...prefs.view, ...(p.view || {}) } };
       // 古い設定(見方を1つだけ選ぶ形)から移す
       if (p && p.disp && p.disp !== "pos" && prefs.view[p.disp] === false) prefs.view[p.disp] = true;
+      if (p && !p.gs && p.gramOn) prefs.gs.els = prefs.gs.expl = prefs.gs.toeic = true; // 「文法」を、文構造・文法区切り・文法の解説・TOEIC に分けた(前に「文法」をオンにしていた人は、すべてオンのまま)
       delete prefs.disp; delete prefs.posOn;
       if (p && p.gramOn === undefined && ((p.view && p.view.phrases) || (p.aux && p.aux.grammar))) prefs.gramOn = true; // 文法区切り・品詞・文法を、「文法」にまとめた
       delete prefs.view.phrases; delete prefs.aux.grammar;
       if (!p || !p.aux || p.aux.vocab === undefined) prefs.aux.vocab = !!prefs.aux.ja; // 「和訳」から「単語」を分けた(それまで和訳を出していれば、単語も出す)
-      if (p && p.aux && p.aux.toeic) prefs.gramOn = true; // TOEIC解説を、「文法」にまとめた
+      if (p && p.aux && p.aux.toeic) prefs.gs.toeic = true;
       delete prefs.aux.toeic;
       if (!p || !p.sh || p.sh.v !== 2) prefs.sh.gap = 0; // シャドーイングを、区切りの ▶ にまとめた(間の初期値は「なし」)
       prefs.sh.v = 2;
