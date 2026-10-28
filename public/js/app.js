@@ -220,7 +220,7 @@
 
   // ---------- タブ ----------
   function setTab(t) {
-    if (tab === "pick" && t !== "pick") stopAudio(); // 選択画面で聞いているときは、画面を離れたら止める
+    if ((tab === "pick" || /^part[1-7]$/.test(tab)) && t !== tab) stopAudio(); // 選択画面で聞いているときは、画面を離れたら止める
     tab = t;
     const inSet = t === "reg" || t === "sync";
     document.querySelectorAll("#tabs button").forEach(b => b.setAttribute("aria-selected", String(b.dataset.tab === t)));
@@ -440,8 +440,16 @@
   function renderPart() {
     const part = "Part " + tab.slice(4), list = rows.filter(r => r.quiz && Clean.partOf(r) === part);
     $("#partInfo").textContent = `${part}: ${list.length} 問`;
-    $("#partList").innerHTML = list.length ? list.map((r, n) => `<div class="card prob" data-id="${r.id}"><div class="sub">${n + 1}</div><div>${esc(r.quiz.question)}</div>${r.quiz.choices.map((c, i) => `<button class="choice" data-q="${i}">${"ABCD"[i]}. ${esc(c)}</button>`).join("")}<div class="sub pres"></div></div>`).join("") : '<p class="sub">この Part の問題は、まだありません。</p>';
+    $("#partList").innerHTML = list.length ? list.map((r, n) => `<div class="card prob" data-id="${r.id}"><div class="sub"><button type="button" class="sm from" data-say="${r.id}" title="英文を聞く(もう一度押すと止める)" aria-label="英文を聞く">▶</button> ${n + 1}</div><div>${esc(r.quiz.question)}</div>${r.quiz.choices.map((c, i) => `<button class="choice" data-q="${i}">${"ABCD"[i]}. ${esc(c)}</button>`).join("")}<div class="sub pres"></div></div>`).join("") : '<p class="sub">この Part の問題は、まだありません。</p>';
   }
+  // ▶ で、その問題の英文(空所をうめた全文)を聞く。英文をなぞって選んだときも、「▶ 聞く」が出る
+  $("#partList").addEventListener("click", async e => {
+    const sb = e.target.closest("button[data-say]"); if (!sb) return;
+    const box = sb.closest(".prob"), was = box.classList.contains("now"); stopAudio();
+    document.querySelectorAll("#partList .prob.now").forEach(x => x.classList.remove("now"));
+    const r = rows.find(x => x.id === sb.dataset.say); if (was || !r) return;
+    const me = playing; box.classList.add("now"); await say(r.text); if (me === playing) box.classList.remove("now");
+  });
   $("#partList").addEventListener("click", async e => {
     const b = e.target.closest("button[data-q]"), box = b && b.closest(".prob"); if (!box || box.dataset.done) return;
     const r = rows.find(x => x.id === box.dataset.id); if (!r || !r.quiz) return;
@@ -683,13 +691,13 @@
   }
   // 英文の中の語を、なぞって(長押しして)選ぶと、「▶ 聞く」が出る。選んだ部分だけを、繰り返し・間の設定で聞く
   function disSel() {
-    const sel = window.getSelection(), d = tab === "pick" ? $("#pickList") : $("#disp");
+    const sel = window.getSelection(), d = tab === "pick" ? $("#pickList") : /^part[1-7]$/.test(tab) ? $("#partList") : $("#disp");
     if (!sel || sel.isCollapsed || !sel.rangeCount || !d.contains(sel.anchorNode) || !d.contains(sel.focusNode)) return "";
     return sel.toString().replace(/\s+/g, " ").trim();
   }
   let selTimer = 0;
   function selBtnUpdate() {
-    const b = $("#selPlay"), t = tab === "pick" || (tab === "study" && study.unit === "sentence") ? disSel() : "";
+    const b = $("#selPlay"), t = tab === "pick" || /^part[1-7]$/.test(tab) || (tab === "study" && study.unit === "sentence") ? disSel() : "";
     if (!t) { b.hidden = true; return }
     const rc = window.getSelection().getRangeAt(0).getBoundingClientRect();
     b.hidden = false; b.style.top = Math.max(8, rc.bottom + 6) + "px"; b.style.left = Math.max(8, Math.min(rc.left, window.innerWidth - b.offsetWidth - 8)) + "px";

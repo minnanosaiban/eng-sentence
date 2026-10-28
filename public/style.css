@@ -273,3 +273,5 @@ table.v tr:first-child td{border-top:1px solid var(--line)}
 
 .prob{padding:12px 16px}
 .prob .choice{margin:6px 0}
+
+.prob.now{border-color:var(--pri)}
