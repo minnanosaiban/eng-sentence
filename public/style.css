@@ -13,7 +13,7 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.7 system-ui,"Hiragino Sans","Yu Gothic UI",Meiryo,sans-serif}
 .top{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:8px 16px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px 16px}
 .top h1{font-size:17px;margin:0}
-#tabs{display:flex;gap:4px}
+#tabs{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
 .topr{justify-self:end;display:flex;flex-direction:column;align-items:flex-end;gap:0}
 @media (max-width:540px){.top{grid-template-columns:1fr auto}#tabs{grid-row:2;grid-column:1/-1;justify-self:center}}
 .topr #syncStatus{border:0;background:none;padding:2px 4px}
@@ -270,3 +270,6 @@ table.v tr:first-child td{border-top:1px solid var(--line)}
 .gram .gpt{margin:0 0 16px}
 .gram .gpt .sub{line-height:1.8;margin-top:3px}
 .gram .gpt b{font-size:13px}
+
+.prob{padding:12px 16px}
+.prob .choice{margin:6px 0}

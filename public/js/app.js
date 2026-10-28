@@ -228,10 +228,11 @@
     $("#setNav").hidden = !inSet;
     document.querySelectorAll("#setNav button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tab === t)));
     if (inSet) setBack = t;
-    document.querySelectorAll(".tab").forEach(s => { s.hidden = s.id !== "tab-" + t });
+    document.querySelectorAll(".tab").forEach(s => { s.hidden = s.id !== "tab-" + (/^partd$/.test(t) ? "part" : t) });
     if (t === "reg") renderReg();
     if (t === "pick") renderPick();
     if (t === "study") renderStudy();
+    if (/^partd$/.test(t)) renderPart();
     if (t === "sync") Sync.render();
     if (t === "rec") renderRec();
     window.scrollTo(0, 0);
@@ -434,6 +435,22 @@
   function setRate(v) { prefs.rate = +v; $("#rate").value = String(prefs.rate); syncPickAudio(); savePrefs() }
   $("#rate").onchange = e => setRate(e.target.value);
   $("#pRate").onchange = e => setRate(e.target.value);
+
+  // ---------- Part 1〜7(4択問題を、縦に続ける) ----------
+  function renderPart() {
+    const part = "Part " + tab.slice(4), list = rows.filter(r => r.quiz && Clean.partOf(r) === part);
+    $("#partInfo").textContent = `${part}: ${list.length} 問`;
+    $("#partList").innerHTML = list.length ? list.map((r, n) => `<div class="card prob" data-id="${r.id}"><div class="sub">${n + 1}</div><div>${esc(r.quiz.question)}</div>${r.quiz.choices.map((c, i) => `<button class="choice" data-q="${i}">${"ABCD"[i]}. ${esc(c)}</button>`).join("")}<div class="sub pres"></div></div>`).join("") : '<p class="sub">この Part の問題は、まだありません。</p>';
+  }
+  $("#partList").addEventListener("click", async e => {
+    const b = e.target.closest("button[data-q]"), box = b && b.closest(".prob"); if (!box || box.dataset.done) return;
+    const r = rows.find(x => x.id === box.dataset.id); if (!r || !r.quiz) return;
+    const ok = +b.dataset.q === r.quiz.answer; box.dataset.done = "1";
+    box.querySelectorAll("button[data-q]").forEach(x => { if (+x.dataset.q === r.quiz.answer) x.classList.add("ok"); else if (x === b) x.classList.add("ng") });
+    box.querySelector(".pres").textContent = (ok ? "正解。" : "不正解。") + r.quiz.explanation;
+    await countReview(r, "sentences"); // 4択に答えると、復習1回(文法タブと同じ)
+    if (!ok) { await addMistake(r, r.quiz.type, "quiz"); toast("間違いを記録しました(分類: " + Clean.catOf(r.quiz.type) + ")") }
+  });
 
   // ---------- 英文学習 ----------
   const NUM = "⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿";
@@ -920,7 +937,7 @@
   $("#btnAICopy").onclick = () => runAI("copy");
   $("#btnAIStop").onclick = () => { aiStop = true };
 
-  function renderAll() { if (tab === "rec") renderRec(); renderReg(); renderAI(); renderIpa(); if (tab === "pick") renderPick(); if (tab === "study") renderStudy() }
+  function renderAll() { if (tab === "rec") renderRec(); renderReg(); renderAI(); renderIpa(); if (tab === "pick") renderPick(); if (tab === "study") renderStudy(); if (/^partd$/.test(tab)) renderPart() }
 
   // ---------- 起動 ----------
   (async () => {

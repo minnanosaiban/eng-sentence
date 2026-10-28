@@ -32,8 +32,15 @@
 <header class="top">
   <h1>英文学習</h1>
   <nav id="tabs" role="tablist">
-    <button role="tab" data-tab="pick" aria-selected="true">選択</button>
-    <button role="tab" data-tab="study" aria-selected="false">学習</button>
+    <button role="tab" data-tab="pick" aria-selected="true">聞く</button>
+    <button role="tab" data-tab="study" aria-selected="false">文法</button>
+    <button role="tab" data-tab="part1" aria-selected="false">Part1</button>
+    <button role="tab" data-tab="part2" aria-selected="false">Part2</button>
+    <button role="tab" data-tab="part3" aria-selected="false">Part3</button>
+    <button role="tab" data-tab="part4" aria-selected="false">Part4</button>
+    <button role="tab" data-tab="part5" aria-selected="false">Part5</button>
+    <button role="tab" data-tab="part6" aria-selected="false">Part6</button>
+    <button role="tab" data-tab="part7" aria-selected="false">Part7</button>
     <button role="tab" id="btnSettings" aria-selected="false" title="設定(登録・同期)">設定</button>
   </nav>
   <span class="topr">
@@ -270,10 +277,16 @@
     <div id="pickList" class="list"></div>
   </section>
 
+  <!-- Part 1〜7: 4択問題を、縦に続ける -->
+  <section id="tab-part" class="tab" hidden>
+    <p id="partInfo" class="sub"></p>
+    <div id="partList" class="list"></div>
+  </section>
+
   <!-- 英文学習 -->
   <section id="tab-study" class="tab" hidden>
     <div id="studyEmpty" class="card" hidden>
-      <p>学習する英文が選ばれていません。「選択」で選んでください。</p>
+      <p>文法で学ぶ英文が選ばれていません。「聞く」で選んでください。</p>
     </div>
     <div id="studyBox" hidden>
       <div class="menu">
