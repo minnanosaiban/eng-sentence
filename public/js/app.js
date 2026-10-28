@@ -228,11 +228,11 @@
     $("#setNav").hidden = !inSet;
     document.querySelectorAll("#setNav button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.tab === t)));
     if (inSet) setBack = t;
-    document.querySelectorAll(".tab").forEach(s => { s.hidden = s.id !== "tab-" + (/^partd$/.test(t) ? "part" : t) });
+    document.querySelectorAll(".tab").forEach(s => { s.hidden = s.id !== "tab-" + (/^part[1-7]$/.test(t) ? "part" : t) });
     if (t === "reg") renderReg();
     if (t === "pick") renderPick();
     if (t === "study") renderStudy();
-    if (/^partd$/.test(t)) renderPart();
+    if (/^part[1-7]$/.test(t)) renderPart();
     if (t === "sync") Sync.render();
     if (t === "rec") renderRec();
     window.scrollTo(0, 0);
@@ -937,7 +937,7 @@
   $("#btnAICopy").onclick = () => runAI("copy");
   $("#btnAIStop").onclick = () => { aiStop = true };
 
-  function renderAll() { if (tab === "rec") renderRec(); renderReg(); renderAI(); renderIpa(); if (tab === "pick") renderPick(); if (tab === "study") renderStudy(); if (/^partd$/.test(tab)) renderPart() }
+  function renderAll() { if (tab === "rec") renderRec(); renderReg(); renderAI(); renderIpa(); if (tab === "pick") renderPick(); if (tab === "study") renderStudy(); if (/^part[1-7]$/.test(tab)) renderPart() }
 
   // ---------- 起動 ----------
   (async () => {
