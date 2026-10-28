@@ -11,7 +11,7 @@
   let unit = "sentence";                           // 選択で見ている単位
   let study = { unit: "sentence", ids: [], i: 0 }; // 学習セット
   let prefs = { view: {}, gramOn: false, gs: { tags: true, els: false, expl: false, toeic: false }, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
-  let tab = "study", setBack = "reg", wReveal = false, wq = null;
+  let tab = new URLSearchParams(location.search).get("tab") === "study" ? "study" : "pick",setBack = "reg", wReveal = false, wq = null;
   const UN = { sentence: { kind: "sentences", name: "英文" }, meaning: { kind: "chunks", name: "意味句" }, iu: { kind: "chunks", name: "IU" }, word: { kind: "words", name: "単語" } };
   const tbl = u => (u === "word" ? words : u === "sentence" ? rows : chunks.filter(c => c.type === u));
   const isCard = u => u !== "sentence"; // 単語・意味句・IU は、1枚のカードで学ぶ
@@ -715,12 +715,14 @@
     }
     if (me === playing) { pst(null); toast("最後まで聞きました") }
   };
-  // 行の → を押すと、その英文から学習を始める(選んだ英文があれば、その続き。無ければ、この1文だけ)
+  // 行の → を押すと、別のタブで「学習」を開き、その英文から始める(選んだ英文があれば、その続き。無ければ、この1文だけ)。選択のタブは、そのまま残る
   $("#pickList").addEventListener("click", async e => {
     const b = e.target.closest("button[data-go]"); if (!b) return; e.preventDefault();
     const id = b.dataset.go, ids = tbl(unit).filter(r => sel[unit].has(r.id)).map(r => r.id), k = ids.indexOf(id);
     study = k >= 0 ? { unit, ids, i: k } : { unit, ids: [id], i: 0 };
-    wReveal = false; await saveStudy(); setTab("study");
+    wReveal = false; await saveStudy(); // 新しいタブは、保存した「学習」の内容を読んで始まる
+    stopAudio();
+    if (!window.open(location.pathname + "?tab=study", "_blank")) setTab("study"); // 開けないとき(ポップアップのブロック)は、このタブで学習を開く
   });
   // 行の ▶ を押すと、その行から順に聞く(チェックは変わらない)
   $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-from]"); if (b) { e.preventDefault(); if (b.closest(".row-i.now")) { stopAudio(); document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now")); return } playPick(b.dataset.from) } });
@@ -946,7 +948,7 @@
         study = { unit: u, ids: s.ids.filter(id => ok.has(id)), i: Math.max(0, +s.i || 0) }; if (study.i >= study.ids.length) study.i = 0;
       }
     } catch (e) { toast("保存先(IndexedDB)を開けませんでした: " + e.message) }
-    renderAll();
+    renderAll(); setTab(tab);
     // はじめて開いたとき(英文が1つも無いとき)は、同期しなくても読めるよう、同梱のサンプル英文を自動で入れる。1回だけ(あとで全削除しても、入れ直さない)
     try {
       if (!rows.length && !await Store.getMeta("samplesAuto", false)) {
