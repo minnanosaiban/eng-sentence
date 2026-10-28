@@ -52,6 +52,11 @@ textarea{width:100%;resize:vertical}
 .pickgrid>*{min-width:0}
 .pickgrid select,.pickgrid button,.pickgrid input{font-size:14px;padding:6px 8px}
 .pickgrid select{width:100%}
+.msel{position:relative}
+.msel summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:6px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.msel summary::-webkit-details-marker{display:none}
+.msel .menu{position:absolute;z-index:20;top:100%;left:0;margin-top:2px;min-width:100%;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding:4px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.msel .menu label{display:flex;align-items:center;gap:6px;padding:5px 8px;white-space:nowrap;cursor:pointer}
 .pickgrid .lbl,.pickgrid .srch{grid-column:span 2}
 .pickgrid .srch{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding-left:10px}
 .pickgrid .srch span{color:var(--sub);border-right:1px solid var(--line);padding-right:8px}

@@ -220,7 +220,7 @@
       <!-- 1列目〜3列目は同じ幅。4列目は残り -->
       <div class="pickgrid">
         <select id="fgroup" aria-label="グループ"></select>
-        <select id="flabel" aria-label="ラベル"><option value="">ラベル</option><option value="1">ラベル 1</option><option value="2">ラベル 2</option><option value="3">ラベル 3</option><option value="4">ラベル 4</option><option value="5">ラベル 5</option><option value="none">ラベルなし</option></select>
+        <details id="flabel" class="msel" aria-label="ラベル(複数選べます)"><summary>ラベル</summary><div class="menu"><label><input type="checkbox" value="1">ラベル 1</label><label><input type="checkbox" value="2">ラベル 2</label><label><input type="checkbox" value="3">ラベル 3</label><label><input type="checkbox" value="4">ラベル 4</label><label><input type="checkbox" value="5">ラベル 5</label><label><input type="checkbox" value="none">ラベルなし</label></div></details>
         <button id="btnRand10" data-n="10" title="表示中からランダムに10件を選ぶ">ランダム10件</button>
         <button id="btnRand20" data-n="20" title="表示中からランダムに20件を選ぶ">ランダム20件</button>
         <button id="btnStart" class="pri" title="選んだ英文で学習を始める">START</button>

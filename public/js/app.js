@@ -289,12 +289,12 @@
   const pickOn = k => k === "g:" ? true : prefs.pick[k] !== false && (k.startsWith("g:") || !!prefs.pick[k]); // 文法の種類ごとの入り切りは、未設定なら「出す」
   const allGroups = () => [...new Set([...rows, ...words, ...chunks].flatMap(r => r.groups || []))].sort();
   function filtered() {
-    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" ? $("#flabel").value : "";
+    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" ? [...$("#flabel").querySelectorAll("input:checked")].map(x => x.value) : [];
     const wc = r => r.text.split(" ").length, where = r => (r.n === 1 || r.idx === 0 ? "first" : r.idx === r.n - 1 ? "last" : "mid");
     return tbl(unit).filter(r =>
       (!isCard(unit) || unit === "word" || ((!ln || (ln === "s" ? wc(r) <= 2 : ln === "m" ? wc(r) >= 3 && wc(r) <= 5 : wc(r) >= 6)) && (!ps || where(r) === ps))) &&
       (!q || r.text.toLowerCase().includes(q) || (r.ja || "").includes(q)) &&
-      (!lb || (lb === "none" ? !r.label : String(r.label) === lb)) &&
+      (!lb.length || lb.some(l => (l === "none" ? !r.label : String(r.label) === l))) &&
       inGroup(r, g));
   }
   // 「グループ」の選択肢は、パート → 難易度 → 自分で付けたグループ の順(ラベルは、別の絞り込み)。値は、種類の印(p: パート / v: 難易度 / g: グループ)+ 中身
@@ -352,6 +352,11 @@
   $("#pickShow").onclick = e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !pickOn(b.dataset.p); savePrefs(); renderPick() } };
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
+  $("#flabel").addEventListener("change", () => { // 選んだラベルを、見出しに出す。外をクリックしたら閉じる
+    const v = [...$("#flabel").querySelectorAll("input:checked")].map(x => x.parentElement.textContent.replace("ラベル", "").trim());
+    $("#flabel summary").textContent = v.length ? "ラベル " + v.join("・") : "ラベル";
+  });
+  document.addEventListener("click", e => { const d = $("#flabel"); if (d.open && !d.contains(e.target)) d.open = false });
   ["#fq", "#fgroup", "#flabel", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
   $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
   $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
