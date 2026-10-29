@@ -127,7 +127,7 @@
       "word": "shipment",
       "pos": "名詞",
       "meaning": "発送品、出荷",
-      "note": "",
+      "note": "動詞 ship(発送する)の名詞形。可算名詞で、1回分の発送は a shipment。",
       "level": 3,
       "toeic": "a shipment of ~ / track a shipment など",
       "ipa": "ˈʃɪpmənt"
@@ -136,7 +136,7 @@
       "word": "originally",
       "pos": "副詞",
       "meaning": "当初は",
-      "note": "",
+      "note": "形容詞 original(当初の)の副詞形。過去の予定が変わったことを示す合図になる。",
       "level": 2,
       "toeic": "originally scheduled / planned の形で頻出",
       "ipa": "ɚˈɪdʒənəli"
@@ -145,7 +145,7 @@
       "word": "be scheduled for",
       "pos": "熟語",
       "meaning": "~に予定されている",
-      "note": "",
+      "note": "for の後は日時、to の後は動詞の原形(be scheduled to do)と使い分ける。",
       "level": 3,
       "toeic": "be scheduled for + 日時",
       "ipa": "ˈbi ˈskɛdʒʊld fɚ"
@@ -154,7 +154,7 @@
       "word": "severe",
       "pos": "形容詞",
       "meaning": "厳しい、深刻な",
-      "note": "",
+      "note": "名詞形は severity。weather 以外に severe damage / severe shortage も頻出。",
       "level": 2,
       "toeic": "severe weather / severe delay",
       "ipa": "səˈvɪɹ"
@@ -466,7 +466,7 @@
       "word": "make sure",
       "pos": "熟語",
       "meaning": "確実にする、確認する",
-      "note": "",
+      "note": "後ろに節が続くときは that が省略されやすい。make sure to do の形もある。",
       "level": 3,
       "toeic": "make sure that ~ の形で指示文に頻出",
       "ipa": "ˈmeɪk ˈʃʊɹ"
@@ -475,7 +475,7 @@
       "word": "carton",
       "pos": "名詞",
       "meaning": "段ボール箱",
-      "note": "",
+      "note": "可算名詞。段ボール箱のほか、牛乳や卵の紙パックも carton と言う。",
       "level": 1,
       "toeic": "a carton of ~",
       "ipa": "ˈkɑɹtən"
@@ -484,7 +484,7 @@
       "word": "properly",
       "pos": "副詞",
       "meaning": "適切に",
-      "note": "",
+      "note": "形容詞 proper(適切な)の副詞形。動詞の後ろや過去分詞の前に置かれる。",
       "level": 2,
       "toeic": "properly labeled / function properly",
       "ipa": "ˈpɹɑpɚli"
@@ -493,7 +493,7 @@
       "word": "load",
       "pos": "動詞",
       "meaning": "積み込む",
-      "note": "",
+      "note": "反対は unload(荷を降ろす)。loading dock(積み込み場)も TOEIC の定番語。",
       "level": 2,
       "toeic": "load A onto B",
       "ipa": "ˈloʊd"
@@ -743,7 +743,7 @@
      {
       "text": "the assembly line",
       "role": "S",
-      "note": ""
+      "note": "主語。帰結節の主語で、would not have been shut down の受け手。"
      },
      {
       "text": "would not have been shut down",
@@ -774,7 +774,7 @@
       "word": "supplier",
       "pos": "名詞",
       "meaning": "納入業者、供給元",
-      "note": "",
+      "note": "動詞 supply(供給する)から。反対の立場の語は buyer / client。",
       "level": 3,
       "toeic": "a supplier of ~ / contact the supplier",
       "ipa": "səˈplaɪɚ"
@@ -783,7 +783,7 @@
       "word": "on time",
       "pos": "熟語",
       "meaning": "時間どおりに",
-      "note": "",
+      "note": "「定刻に」。in time は「間に合って」で、意味が違うので区別する。",
       "level": 3,
       "toeic": "arrive on time / deliver on time",
       "ipa": "ɑn ˈtaɪm"
@@ -792,7 +792,7 @@
       "word": "assembly line",
       "pos": "名詞",
       "meaning": "組立ライン",
-      "note": "",
+      "note": "可算名詞。on the assembly line(ライン上で)のように前置詞 on と組む。",
       "level": 2,
       "toeic": "工場関連の文章で頻出",
       "ipa": "əˈsɛmbli ˈlaɪn"
@@ -801,7 +801,7 @@
       "word": "shut down",
       "pos": "熟語",
       "meaning": "停止する、閉鎖する",
-      "note": "",
+      "note": "他動詞・自動詞の両方で使う。名詞 shutdown(停止、閉鎖)は1語でつづる。",
       "level": 2,
       "toeic": "be shut down for maintenance",
       "ipa": "ˈʃʌt ˈdaʊn"
@@ -1055,7 +1055,7 @@
      {
       "text": "The factory",
       "role": "S",
-      "note": ""
+      "note": "主語。工場という単数名詞なので、動詞は has reduced になる。"
      },
      {
       "text": "has reduced",
@@ -1065,7 +1065,7 @@
      {
       "text": "its energy consumption",
       "role": "O",
-      "note": ""
+      "note": "目的語。its は The factory を指し、consumption が中心の名詞。"
      },
      {
       "text": "by installing more efficient machinery",
@@ -1096,7 +1096,7 @@
       "word": "reduce",
       "pos": "動詞",
       "meaning": "減らす",
-      "note": "",
+      "note": "名詞形は reduction。reduce A by 10% で「A を10%減らす」の形も出る。",
       "level": 3,
       "toeic": "reduce costs / reduce consumption",
       "ipa": "ɹəˈdus"
@@ -1105,7 +1105,7 @@
       "word": "consumption",
       "pos": "名詞",
       "meaning": "消費",
-      "note": "",
+      "note": "動詞 consume(消費する)の名詞形。不可算名詞として使うのが普通。",
       "level": 2,
       "toeic": "energy consumption",
       "ipa": "kənˈsʌmpʃən"
@@ -1114,7 +1114,7 @@
       "word": "install",
       "pos": "動詞",
       "meaning": "設置する、導入する",
-      "note": "",
+      "note": "名詞形 installation(設置)も頻出。by installing のように動名詞でも出る。",
       "level": 3,
       "toeic": "install equipment / software",
       "ipa": "ˌɪnˈstɔl"
@@ -1123,7 +1123,7 @@
       "word": "efficient",
       "pos": "形容詞",
       "meaning": "効率的な",
-      "note": "",
+      "note": "名詞形は efficiency、副詞は efficiently。effective(効果的な)と区別。",
       "level": 2,
       "toeic": "energy-efficient / cost-efficient",
       "ipa": "ɪˈfɪʃənt"
@@ -1351,12 +1351,12 @@
      {
       "text": "Quality inspectors",
       "role": "S",
-      "note": ""
+      "note": "主語。複数形 inspectors なので be 動詞は are になる。"
      },
      {
       "text": "are",
       "role": "V",
-      "note": ""
+      "note": "be 動詞で、are responsible for で「〜に責任がある」の意味を作る。"
      },
      {
       "text": "responsible",
@@ -1392,7 +1392,7 @@
       "word": "inspector",
       "pos": "名詞",
       "meaning": "検査員",
-      "note": "",
+      "note": "動詞 inspect(検査する)+ -or。名詞 inspection(検査)も頻出。",
       "level": 2,
       "toeic": "quality inspector / safety inspector",
       "ipa": "ˌɪnˈspɛktɚ"
@@ -1401,7 +1401,7 @@
       "word": "be responsible for",
       "pos": "熟語",
       "meaning": "~に責任がある",
-      "note": "",
+      "note": "for の後に動詞が来るときは動名詞(ensuring)にする点が問われる。",
       "level": 3,
       "toeic": "be responsible for + 名詞/動名詞",
       "ipa": "ˈbi ɹiˈspɑnsəbəl fɚ"
@@ -1410,7 +1410,7 @@
       "word": "ensure",
       "pos": "動詞",
       "meaning": "確実にする",
-      "note": "",
+      "note": "insure(保険をかける)と発音が近いので、つづりで区別する。",
       "level": 3,
       "toeic": "ensure that ~ / ensure safety",
       "ipa": "ɛnˈʃʊɹ"
@@ -1419,7 +1419,7 @@
       "word": "meet",
       "pos": "動詞",
       "meaning": "(基準などを)満たす",
-      "note": "",
+      "note": "「会う」以外に「要求・期限を満たす」の意味が多い。meet the deadline。",
       "level": 3,
       "toeic": "meet the standards / requirements",
       "ipa": "ˈmit"
@@ -1651,7 +1651,7 @@
      {
       "text": "customers",
       "role": "S",
-      "note": ""
+      "note": "主語。注文が多いことの影響を受ける側で、複数形。"
      },
      {
       "text": "may experience",
@@ -1661,7 +1661,7 @@
      {
       "text": "delays in processing",
       "role": "O",
-      "note": ""
+      "note": "目的語。in processing は「処理において」で delays を修飾する。"
      }
     ],
     "tense": {
@@ -1687,7 +1687,7 @@
       "word": "due to",
       "pos": "前置詞",
       "meaning": "~のため",
-      "note": "",
+      "note": "because of と同じく前置詞として働き、後ろには名詞が来る。節は続かない。",
       "level": 3,
       "toeic": "due to + 名詞 / 理由を示す",
       "ipa": "ˈdu tə"
@@ -1696,7 +1696,7 @@
       "word": "volume",
       "pos": "名詞",
       "meaning": "量、取引量",
-      "note": "",
+      "note": "数えにくい「量」を表し、a high/large volume of で使う。low volume も。",
       "level": 2,
       "toeic": "high volume of orders / calls",
       "ipa": "ˈvɑljum"
@@ -1705,7 +1705,7 @@
       "word": "experience",
       "pos": "動詞",
       "meaning": "経験する、被る",
-      "note": "",
+      "note": "名詞の「経験」でおなじみだが、動詞で「(問題などに)遭う」の意味が頻出。",
       "level": 2,
       "toeic": "experience delays / difficulties",
       "ipa": "ɪkˈspɪɹiəns"
@@ -1714,7 +1714,7 @@
       "word": "delay",
       "pos": "名詞",
       "meaning": "遅れ",
-      "note": "",
+      "note": "名詞のほか動詞でも使い、be delayed(遅れる)の受動態がよく出る。",
       "level": 3,
       "toeic": "experience a delay / without delay",
       "ipa": "dɪˈleɪ"
@@ -1953,7 +1953,7 @@
      {
       "text": "Employees",
       "role": "S",
-      "note": ""
+      "note": "主語。会社の規則を受ける側で、受動態 are required の主語。"
      },
      {
       "text": "are required",
@@ -1999,7 +1999,7 @@
       "word": "be required to",
       "pos": "熟語",
       "meaning": "~することを求められる",
-      "note": "",
+      "note": "能動態は require 人 to do。名詞 requirement(必要条件)も頻出。",
       "level": 3,
       "toeic": "be required to + 動詞の原形",
       "ipa": "ˈbi ɹiˈkwaɪɚd tə"
@@ -2008,7 +2008,7 @@
       "word": "password",
       "pos": "名詞",
       "meaning": "パスワード",
-      "note": "",
+      "note": "可算名詞。enter a password(入力する)、forget one's password も使う。",
       "level": 2,
       "toeic": "change a password / reset",
       "ipa": "ˈpæˌswɝd"
@@ -2017,7 +2017,7 @@
       "word": "protect",
       "pos": "動詞",
       "meaning": "保護する",
-      "note": "",
+      "note": "protect A from B で「A を B から守る」。名詞形は protection。",
       "level": 2,
       "toeic": "protect data / information",
       "ipa": "pɹəˈtɛkt"
@@ -2026,7 +2026,7 @@
       "word": "confidential",
       "pos": "形容詞",
       "meaning": "機密の",
-      "note": "",
+      "note": "名詞 confidentiality(機密性)。strictly confidential(極秘)の形も出る。",
       "level": 3,
       "toeic": "confidential information / document",
       "ipa": "ˌkɑnfəˈdɛnʃəl"
@@ -2278,7 +2278,7 @@
      {
       "text": "The IT department",
       "role": "S",
-      "note": ""
+      "note": "主語。部署名で、単数として扱う。"
      },
      {
       "text": "will be upgrading",
@@ -2288,7 +2288,7 @@
      {
       "text": "the server",
       "role": "O",
-      "note": ""
+      "note": "目的語。アップグレードの対象となるサーバー。"
      },
      {
       "text": "over the weekend",
@@ -2319,7 +2319,7 @@
       "word": "upgrade",
       "pos": "動詞",
       "meaning": "アップグレードする",
-      "note": "",
+      "note": "名詞としても使う(an upgrade)。座席などのグレードアップの意味もある。",
       "level": 2,
       "toeic": "upgrade software / equipment",
       "ipa": "əpˈɡɹeɪd"
@@ -2328,7 +2328,7 @@
       "word": "access",
       "pos": "名詞",
       "meaning": "アクセス、利用",
-      "note": "",
+      "note": "名詞は access to 〜。動詞の access は他動詞で to を付けない。",
       "level": 3,
       "toeic": "access to ~",
       "ipa": "ˈækˌsɛs"
@@ -2337,7 +2337,7 @@
       "word": "limited",
       "pos": "形容詞",
       "meaning": "制限された",
-      "note": "",
+      "note": "動詞 limit(制限する)から。a limited number of 〜 の形も頻出。",
       "level": 2,
       "toeic": "limited access / limited time",
       "ipa": "ˈlɪmətəd"
@@ -2346,7 +2346,7 @@
       "word": "over the weekend",
       "pos": "熟語",
       "meaning": "週末の間に",
-      "note": "",
+      "note": "over は「〜の間ずっと」。during the weekend とほぼ同じ意味になる。",
       "level": 2,
       "toeic": "scheduled maintenance over the weekend",
       "ipa": "ˈoʊvɚ ðə ˈwiˌkɛnd"
@@ -2617,7 +2617,7 @@
      {
       "text": "users",
       "role": "S",
-      "note": ""
+      "note": "主語。ソフトウェアを使う人たちで、受動態 will be prompted の主語。"
      },
      {
       "text": "will be prompted",
@@ -2653,7 +2653,7 @@
       "word": "install",
       "pos": "動詞",
       "meaning": "インストールする",
-      "note": "",
+      "note": "名詞 installation(インストール、設置)。反対は uninstall。",
       "level": 3,
       "toeic": "install software / equipment",
       "ipa": "ˌɪnˈstɔl"
@@ -2662,7 +2662,7 @@
       "word": "prompt",
       "pos": "動詞",
       "meaning": "促す",
-      "note": "",
+      "note": "形容詞で「迅速な」、副詞 promptly は「すぐに、時間どおりに」。",
       "level": 2,
       "toeic": "be prompted to + 動詞の原形",
       "ipa": "ˈpɹɑmpt"
@@ -2671,7 +2671,7 @@
       "word": "create an account",
       "pos": "熟語",
       "meaning": "アカウントを作成する",
-      "note": "",
+      "note": "account は「口座、取引先」の意味もある。log in to an account も頻出。",
       "level": 2,
       "toeic": "create / set up an account",
       "ipa": "kɹiˈeɪt ən əˈkaʊnt"
@@ -2680,7 +2680,7 @@
       "word": "once",
       "pos": "接続詞",
       "meaning": "いったん~すると",
-      "note": "",
+      "note": "副詞の「一度、かつて」と区別する。後ろに S + V があれば接続詞。",
       "level": 2,
       "toeic": "once + S + V",
       "ipa": "ˈwʌns"
@@ -2962,7 +2962,7 @@
       "word": "renovate",
       "pos": "動詞",
       "meaning": "改装する",
-      "note": "",
+      "note": "名詞形は renovation(改装)。under renovation で「改装中」。",
       "level": 3,
       "toeic": "newly renovated / be renovated",
       "ipa": "ˈɹɛnəˌveɪt"
@@ -2971,7 +2971,7 @@
       "word": "feature",
       "pos": "動詞",
       "meaning": "~を特徴とする、備える",
-      "note": "",
+      "note": "名詞(特徴、機能)としても頻出。新製品の広告で key features の形。",
       "level": 3,
       "toeic": "The hotel features ~ の広告表現",
       "ipa": "ˈfitʃɚ"
@@ -2980,7 +2980,7 @@
       "word": "seating",
       "pos": "名詞",
       "meaning": "座席",
-      "note": "",
+      "note": "不可算名詞として使う。seat(個々の座席)は可算名詞なので区別する。",
       "level": 2,
       "toeic": "seating area / seating capacity",
       "ipa": "ˈsitɪŋ"
@@ -2989,7 +2989,7 @@
       "word": "display",
       "pos": "名詞",
       "meaning": "表示、ディスプレイ",
-      "note": "",
+      "note": "動詞「展示する」もある。display + 名詞で「〜を展示する」。",
       "level": 2,
       "toeic": "on display / display screen",
       "ipa": "dɪˈspleɪ"
@@ -3285,7 +3285,7 @@
       "word": "reception desk",
       "pos": "名詞",
       "meaning": "受付",
-      "note": "",
+      "note": "receptionist(受付係)、reception(歓迎会)と派生語ごと覚える。",
       "level": 2,
       "toeic": "at the reception desk の形でよく出る",
       "ipa": "ɹɪˈsɛpʃən ˈdɛsk"
@@ -3294,7 +3294,7 @@
       "word": "visitor",
       "pos": "名詞",
       "meaning": "来訪者",
-      "note": "",
+      "note": "動詞 visit から。visitor's pass(来訪者用の通行証)のように使う。",
       "level": 2,
       "toeic": "visitor badge / visitors must sign in",
       "ipa": "ˈvɪzɪtɚ"
@@ -3560,12 +3560,12 @@
      {
       "text": "The air conditioning system",
       "role": "S",
-      "note": ""
+      "note": "主語。中心の名詞は system で単数なので、動詞は is になる。"
      },
      {
       "text": "is",
       "role": "V",
-      "note": ""
+      "note": "be 動詞で、主語と補語 so old を結ぶ第2文型の動詞。"
      },
      {
       "text": "so old",
@@ -3601,7 +3601,7 @@
       "word": "air conditioning",
       "pos": "名詞",
       "meaning": "空調、エアコン",
-      "note": "",
+      "note": "不可算名詞。air conditioner は機器そのもので可算名詞。",
       "level": 2,
       "toeic": "air conditioning unit / repair the air conditioning",
       "ipa": "ˈɛɹ kənˈdɪʃənɪŋ"
@@ -3610,7 +3610,7 @@
       "word": "cool",
       "pos": "動詞",
       "meaning": "冷やす",
-      "note": "",
+      "note": "形容詞「涼しい」でも使う。cool down(冷める、冷ます)も覚えたい。",
       "level": 1,
       "toeic": "",
       "ipa": "ˈkul"
@@ -3628,7 +3628,7 @@
       "word": "so ~ that ...",
       "pos": "熟語",
       "meaning": "とても~なので...",
-      "note": "",
+      "note": "so の後に「形容詞+a+名詞」も来る。such は such a 形容詞+名詞の語順。",
       "level": 2,
       "toeic": "so + 形容詞 + that 節の形で空所補充に出る",
       "ipa": "ˈsoʊ ˈðæt"
@@ -3885,7 +3885,7 @@
      {
       "text": "Ms. Alvarez",
       "role": "S",
-      "note": ""
+      "note": "主語。Ms. は略語のピリオドで、文の区切りではない。"
      },
      {
       "text": "whose department exceeded its annual target",
@@ -3935,7 +3935,7 @@
       "word": "annual",
       "pos": "形容詞",
       "meaning": "年間の、毎年の",
-      "note": "",
+      "note": "副詞形 annually(毎年)も頻出。semiannual は「年2回の」。",
       "level": 3,
       "toeic": "annual report / annual meeting / annual target",
       "ipa": "ˈænjuəl"
@@ -3944,7 +3944,7 @@
       "word": "target",
       "pos": "名詞",
       "meaning": "目標",
-      "note": "",
+      "note": "動詞で「(広告などの)対象にする」の意味もある。target customers など。",
       "level": 2,
       "toeic": "meet / reach a target",
       "ipa": "ˈtɑɹɡət"
@@ -3962,7 +3962,7 @@
       "word": "department",
       "pos": "名詞",
       "meaning": "部署",
-      "note": "",
+      "note": "部署名では Department と大文字で書くことが多い。dept. と略される。",
       "level": 3,
       "toeic": "sales department / department head",
       "ipa": "dɪˈpɑɹtmənt"
@@ -4222,7 +4222,7 @@
      {
       "text": "Candidates",
       "role": "S",
-      "note": ""
+      "note": "主語。応募者たちで、受動態 are advised の主語。"
      },
      {
       "text": "are advised",
@@ -4263,7 +4263,7 @@
       "word": "candidate",
       "pos": "名詞",
       "meaning": "応募者、候補者",
-      "note": "",
+      "note": "名詞 candidacy(立候補)。applicant(応募者)と言いかえられることが多い。",
       "level": 3,
       "toeic": "job candidate / qualified candidate",
       "ipa": "ˈkændədeɪt"
@@ -4281,7 +4281,7 @@
       "word": "certificate",
       "pos": "名詞",
       "meaning": "証明書、資格証",
-      "note": "",
+      "note": "動詞 certify(証明する)、形容詞 certified(資格のある)も派生語。",
       "level": 2,
       "toeic": "a certificate of completion / a gift certificate",
       "ipa": "sɚˈtɪfɪkət"
@@ -4290,7 +4290,7 @@
       "word": "interview",
       "pos": "名詞",
       "meaning": "面接",
-      "note": "",
+      "note": "動詞でも使い、interviewer(面接官)と interviewee(受ける人)を区別。",
       "level": 3,
       "toeic": "job interview / interview process",
       "ipa": "ˈɪntɚˌvju"
@@ -4520,7 +4520,7 @@
      {
       "text": "The training session",
       "role": "S",
-      "note": ""
+      "note": "主語。研修会で、受動態 is designed の主語(単数)。"
      },
      {
       "text": "is designed",
@@ -4556,7 +4556,7 @@
       "word": "be designed to do",
       "pos": "熟語",
       "meaning": "~するよう設計されている",
-      "note": "",
+      "note": "be designed for + 人(〜向けに作られている)と、for/to の後ろで区別。",
       "level": 3,
       "toeic": "be designed to improve efficiency など",
       "ipa": "ˈbi dɪˈzaɪnd tə ˈdu"
@@ -4565,7 +4565,7 @@
       "word": "training session",
       "pos": "名詞",
       "meaning": "研修会",
-      "note": "",
+      "note": "session は「1回分の集まり」。Q&A session / information session も出る。",
       "level": 3,
       "toeic": "attend a training session / hold a training session",
       "ipa": "ˈtɹeɪnɪŋ ˈsɛʃən"
@@ -4583,7 +4583,7 @@
       "word": "effectively",
       "pos": "副詞",
       "meaning": "効果的に",
-      "note": "",
+      "note": "形容詞 effective(効果的な)の副詞形。efficiently(効率的に)と区別する。",
       "level": 2,
       "toeic": "work effectively / use time effectively",
       "ipa": "ɪˈfɛktɪvli"
@@ -4841,12 +4841,12 @@
      {
       "text": "we",
       "role": "S",
-      "note": ""
+      "note": "主語。後半の節の主語で、前半と同じく we(私たち)を指す。"
      },
      {
       "text": "can save",
       "role": "V",
-      "note": ""
+      "note": "助動詞 can + 原形。前に出た the more money を目的語に取る。"
      }
     ],
     "tense": {
@@ -4872,7 +4872,7 @@
       "word": "monitor",
       "pos": "動詞",
       "meaning": "監視する、管理する",
-      "note": "",
+      "note": "名詞「モニター、画面」でも使う。monitor A closely の形も多い。",
       "level": 2,
       "toeic": "monitor progress / monitor expenses",
       "ipa": "ˈmɑnətɚ"
@@ -4890,7 +4890,7 @@
       "word": "closely",
       "pos": "副詞",
       "meaning": "綿密に、注意深く",
-      "note": "",
+      "note": "形容詞 close(近い、綿密な)の副詞形。closed(閉まった)と区別。",
       "level": 2,
       "toeic": "work closely with ~",
       "ipa": "ˈkloʊsli"
@@ -4899,7 +4899,7 @@
       "word": "save",
       "pos": "動詞",
       "meaning": "節約する、貯める",
-      "note": "",
+      "note": "save A for B(B のために取っておく)の形もある。名詞 savings(貯蓄)。",
       "level": 2,
       "toeic": "save money / save time",
       "ipa": "ˈseɪv"
@@ -5126,7 +5126,7 @@
      {
       "text": "The meeting",
       "role": "S",
-      "note": ""
+      "note": "主語。延期された会議で、受動態 was postponed の主語。"
      },
      {
       "text": "was postponed",
@@ -5171,7 +5171,7 @@
       "word": "department head",
       "pos": "名詞",
       "meaning": "部長、部門責任者",
-      "note": "",
+      "note": "head は「長」。head of the department と言いかえられる。",
       "level": 2,
       "toeic": "meeting of department heads",
       "ipa": "dɪˈpɑɹtmənt ˈhɛd"
@@ -5189,7 +5189,7 @@
       "word": "until",
       "pos": "接続詞",
       "meaning": "~するまで",
-      "note": "",
+      "note": "by(〜までに)は期限、until は「〜までずっと」の継続。空所補充で頻出。",
       "level": 2,
       "toeic": "until further notice",
       "ipa": "ənˈtɪl"
@@ -5404,7 +5404,7 @@
      {
       "text": "exceeded",
       "role": "V",
-      "note": ""
+      "note": "過去形の他動詞。expectations を目的語に取り、「〜を上回った」。"
      },
      {
       "text": "expectations",
@@ -5435,7 +5435,7 @@
       "word": "attendance",
       "pos": "名詞",
       "meaning": "出席者数、出席",
-      "note": "",
+      "note": "attend(出席する)の名詞形。attendee(出席者)と区別する。",
       "level": 3,
       "toeic": "attendance record / high attendance",
       "ipa": "əˈtɛndəns"
@@ -5444,7 +5444,7 @@
       "word": "exceed",
       "pos": "動詞",
       "meaning": "上回る",
-      "note": "",
+      "note": "名詞は excess(超過)、形容詞は excessive(過度の)。",
       "level": 3,
       "toeic": "exceed expectations / exceed the limit",
       "ipa": "ɪkˈsid"
@@ -5453,7 +5453,7 @@
       "word": "remote",
       "pos": "形容詞",
       "meaning": "辺鄙な、離れた",
-      "note": "",
+      "note": "remote control のように「遠隔の」の意味も。work remotely(在宅勤務する)。",
       "level": 2,
       "toeic": "remote location / remote work",
       "ipa": "ɹɪˈmoʊt"
@@ -5462,7 +5462,7 @@
       "word": "conference",
       "pos": "名詞",
       "meaning": "会議、学会",
-      "note": "",
+      "note": "動詞 confer(協議する)から。conference call(電話会議)も頻出。",
       "level": 3,
       "toeic": "hold a conference / conference room",
       "ipa": "ˈkɑnfɚəns"
@@ -5471,7 +5471,7 @@
       "word": "although",
       "pos": "接続詞",
       "meaning": "~だけれども",
-      "note": "",
+      "note": "though と同じ意味で、even though はより強い。despite は前置詞。",
       "level": 2,
       "toeic": "although + 節 / despite + 名詞 の区別",
       "ipa": "ˌɔlˈðoʊ"
@@ -5696,7 +5696,7 @@
      {
       "text": "your hotel",
       "role": "O",
-      "note": ""
+      "note": "目的語。book の目的語で、予約するもの。"
      },
      {
       "text": "at least a month in advance",
@@ -5732,7 +5732,7 @@
       "word": "book",
       "pos": "動詞",
       "meaning": "予約する",
-      "note": "",
+      "note": "名詞 booking(予約)も使う。be fully booked で「予約で満席」。",
       "level": 3,
       "toeic": "book a flight / book a room",
       "ipa": "ˈbʊk"
@@ -5741,7 +5741,7 @@
       "word": "in advance",
       "pos": "熟語",
       "meaning": "前もって",
-      "note": "",
+      "note": "advance は「前進」。advance notice(事前通知)、advance payment も出る。",
       "level": 3,
       "toeic": "reserve in advance / pay in advance",
       "ipa": "ɪn ədˈvæns"
@@ -5750,7 +5750,7 @@
       "word": "take advantage of",
       "pos": "熟語",
       "meaning": "~を利用する",
-      "note": "",
+      "note": "advantage は「有利な点」。have an advantage over 〜(〜より有利)。",
       "level": 3,
       "toeic": "take advantage of a discount / an offer",
       "ipa": "ˈteɪk ædˈvæntɪdʒ əv"
@@ -5759,7 +5759,7 @@
       "word": "corporate",
       "pos": "形容詞",
       "meaning": "法人の、企業の",
-      "note": "",
+      "note": "名詞は corporation(企業)。corporate headquarters(本社)も頻出。",
       "level": 2,
       "toeic": "corporate discount / corporate client",
       "ipa": "ˈkɔɹpɚət"
@@ -5768,7 +5768,7 @@
       "word": "discount",
       "pos": "名詞",
       "meaning": "割引",
-      "note": "",
+      "note": "動詞でも使う(discount the price)。at a discount で「割引価格で」。",
       "level": 2,
       "toeic": "receive a discount / a discount of 10 percent",
       "ipa": "dɪˈskaʊnt"
@@ -6023,7 +6023,7 @@
      {
       "text": "Mr. Nakamura",
       "role": "S",
-      "note": ""
+      "note": "主語。Mr. は略語のピリオドで、ここで文は終わらない。"
      },
      {
       "text": "is scheduled",
@@ -6064,7 +6064,7 @@
       "word": "be scheduled to do",
       "pos": "熟語",
       "meaning": "~する予定である",
-      "note": "",
+      "note": "be scheduled for は後ろが日時などの名詞、to do は動詞の原形。",
       "level": 3,
       "toeic": "be scheduled for ~ / be scheduled to begin",
       "ipa": "ˈbi ˈskɛdʒʊld tə ˈdu"
@@ -6082,7 +6082,7 @@
       "word": "quarterly",
       "pos": "形容詞",
       "meaning": "四半期の",
-      "note": "",
+      "note": "quarter(四半期)の形容詞形。副詞として「四半期ごとに」の意味もある。",
       "level": 2,
       "toeic": "quarterly results / quarterly report",
       "ipa": "ˈkwɔɹtɚli"
@@ -6341,7 +6341,7 @@
      {
       "text": "the deposit",
       "role": "S",
-      "note": ""
+      "note": "主語。預け入れた保証金で、受動態 will be returned の主語。"
      },
      {
       "text": "will be returned",
@@ -6395,7 +6395,7 @@
       "word": "in the event of",
       "pos": "前置詞句",
       "meaning": "〜の場合には",
-      "note": "",
+      "note": "後ろは名詞。節が続くときは in the event that S + V の形にする。",
       "level": 2,
       "toeic": "in the event of rain / in the event of an emergency",
       "ipa": "ɪn ðə ɪˈvɛnt əv"
@@ -6655,7 +6655,7 @@
      {
       "text": "The firm's profits",
       "role": "S",
-      "note": ""
+      "note": "主語。中心の名詞は profits で複数なので、have risen になる。"
      },
      {
       "text": "have risen",
@@ -6696,7 +6696,7 @@
       "word": "profit",
       "pos": "名詞",
       "meaning": "利益",
-      "note": "",
+      "note": "形容詞 profitable(利益になる)。名詞では可算・不可算の両方で使う。",
       "level": 3,
       "toeic": "increase profits / profit margin",
       "ipa": "ˈpɹɑfət"
@@ -6996,7 +6996,7 @@
       "word": "application",
       "pos": "名詞",
       "meaning": "申請書、応募",
-      "note": "",
+      "note": "動詞 apply から。apply for(〜に申し込む)と apply to(〜に当てはまる)。",
       "level": 3,
       "toeic": "submit an application / application form",
       "ipa": "ˌæpləˈkeɪʃən"
@@ -7014,7 +7014,7 @@
       "word": "receive",
       "pos": "動詞",
       "meaning": "受け取る",
-      "note": "",
+      "note": "名詞は receipt(受領、領収書)。reception(受付)と区別する。",
       "level": 3,
       "toeic": "be received by + 日付",
       "ipa": "ɹəˈsiv"
@@ -7023,7 +7023,7 @@
       "word": "no later than",
       "pos": "副詞句",
       "meaning": "遅くとも〜までに",
-      "note": "",
+      "note": "by とほぼ同じ「〜までに」で、締め切りの通知で使われる硬い表現。",
       "level": 3,
       "toeic": "no later than 5 P.M. on Friday",
       "ipa": "ˈnoʊ ˈleɪtɚ ðən"
@@ -7288,7 +7288,7 @@
      {
       "text": "the project team",
       "role": "S",
-      "note": ""
+      "note": "主語。チームを1つの集団として見て単数扱いし、its で受ける。"
      },
      {
       "text": "was forced",
@@ -7324,7 +7324,7 @@
       "word": "budget",
       "pos": "名詞",
       "meaning": "予算",
-      "note": "",
+      "note": "形容詞で「格安の」(budget hotel)の意味もある。on a budget も出る。",
       "level": 3,
       "toeic": "budget cut / within budget",
       "ipa": "ˈbʌdʒɪt"
@@ -7333,7 +7333,7 @@
       "word": "scale back",
       "pos": "句動詞",
       "meaning": "縮小する",
-      "note": "",
+      "note": "scale down とほぼ同じ意味。反対の「拡大する」は scale up。",
       "level": 2,
       "toeic": "scale back operations / plans",
       "ipa": "ˈskeɪl ˈbæk"
@@ -7342,7 +7342,7 @@
       "word": "be forced to do",
       "pos": "熟語",
       "meaning": "〜せざるを得ない",
-      "note": "",
+      "note": "能動態は force 人 to do。be compelled to do と言いかえられる。",
       "level": 2,
       "toeic": "be forced to cancel / postpone",
       "ipa": "ˈbi ˈfɔɹst tə ˈdu"
@@ -7351,7 +7351,7 @@
       "word": "original",
       "pos": "形容詞",
       "meaning": "当初の、元の",
-      "note": "",
+      "note": "originally(当初は)と同じ語源。original は「独創的な」の意味もある。",
       "level": 2,
       "toeic": "original plan / original receipt",
       "ipa": "ɚˈɪdʒənəl"
@@ -7605,7 +7605,7 @@
      {
       "text": "is",
       "role": "V",
-      "note": ""
+      "note": "be 動詞。主語の中心 line が単数なので、appliances ではなく line に合わせて is。"
      },
      {
       "text": "not only affordable but also environmentally friendly",
@@ -7636,7 +7636,7 @@
       "word": "line",
       "pos": "名詞",
       "meaning": "製品群、シリーズ",
-      "note": "",
+      "note": "product line(製品ライン)。line には「列」「路線」など意味が多い。",
       "level": 3,
       "toeic": "a new line of products",
       "ipa": "ˈlaɪn"
@@ -7645,7 +7645,7 @@
       "word": "appliance",
       "pos": "名詞",
       "meaning": "家電製品、器具",
-      "note": "",
+      "note": "可算名詞で、複数形 appliances で使うことが多い。apply とは別の意味。",
       "level": 3,
       "toeic": "kitchen appliances / home appliances",
       "ipa": "əˈplaɪəns"
@@ -7654,7 +7654,7 @@
       "word": "affordable",
       "pos": "形容詞",
       "meaning": "手頃な価格の",
-      "note": "",
+      "note": "動詞 afford(〜の余裕がある)から。can afford to do の形で出る。",
       "level": 3,
       "toeic": "affordable price",
       "ipa": "əˈfɔɹdəbəl"
@@ -7663,7 +7663,7 @@
       "word": "environmentally friendly",
       "pos": "形容詞句",
       "meaning": "環境に優しい",
-      "note": "",
+      "note": "eco-friendly とほぼ同じ意味。副詞 environmentally が形容詞を修飾。",
       "level": 2,
       "toeic": "environmentally friendly products",
       "ipa": "ɪnˌvaɪɹənˈmɛntəli ˈfɹɛndli"
@@ -7913,7 +7913,7 @@
      {
       "text": "you",
       "role": "S",
-      "note": ""
+      "note": "主語。客(you)で、条件節の主語と同じ人を指す。"
      },
      {
       "text": "may return",
@@ -7977,7 +7977,7 @@
       "word": "refund",
       "pos": "名詞",
       "meaning": "返金",
-      "note": "",
+      "note": "動詞 refund(返金する)は第2音節、名詞は第1音節を強く読む。",
       "level": 3,
       "toeic": "full refund / request a refund",
       "ipa": "ɹɪˈfʌnd"
@@ -7986,7 +7986,7 @@
       "word": "return",
       "pos": "動詞",
       "meaning": "返品する",
-      "note": "",
+      "note": "「戻る」の自動詞にもなる。名詞では return policy(返品規定)が頻出。",
       "level": 2,
       "toeic": "return an item",
       "ipa": "ɹɪˈtɝn"
@@ -8335,7 +8335,7 @@
       "word": "indicate",
       "pos": "動詞",
       "meaning": "示す",
-      "note": "",
+      "note": "名詞 indication(兆し)、indicator(指標)も派生語。",
       "level": 3,
       "toeic": "survey results indicate that",
       "ipa": "ˈɪndəˌkeɪt"
@@ -8344,7 +8344,7 @@
       "word": "prefer A to B",
       "pos": "熟語",
       "meaning": "BよりAを好む",
-      "note": "",
+      "note": "than ではなく to を使うのがポイント。prefer to do も使える。",
       "level": 2,
       "toeic": "prefer ... to ...",
       "ipa": "pɹəˈfɝ ə tə ˈbi"
@@ -8353,7 +8353,7 @@
       "word": "previous",
       "pos": "形容詞",
       "meaning": "以前の",
-      "note": "",
+      "note": "名詞の前に置く。previously(以前に)は副詞形。",
       "level": 3,
       "toeic": "previous version / previous experience",
       "ipa": "ˈpɹiviəs"
@@ -8603,12 +8603,12 @@
      {
       "text": "is",
       "role": "V",
-      "note": ""
+      "note": "be 動詞。主語 Free parking は不可算名詞なので単数の is。"
      },
      {
       "text": "available",
       "role": "C",
-      "note": ""
+      "note": "補語。駐車が「利用できる」状態を表す形容詞。"
      },
      {
       "text": "to customers who spend more than fifty dollars",
@@ -8639,7 +8639,7 @@
       "word": "available",
       "pos": "形容詞",
       "meaning": "利用できる",
-      "note": "",
+      "note": "人について「手が空いている」の意味もある。名詞形は availability。",
       "level": 3,
       "toeic": "be available to / available upon request",
       "ipa": "əˈveɪləbəl"
@@ -8648,7 +8648,7 @@
       "word": "free",
       "pos": "形容詞",
       "meaning": "無料の",
-      "note": "",
+      "note": "「自由な」の意味もある。free of charge は「無料で」。",
       "level": 2,
       "toeic": "free parking / free of charge",
       "ipa": "ˈfɹi"
@@ -8666,7 +8666,7 @@
       "word": "spend",
       "pos": "動詞",
       "meaning": "(お金を)使う",
-      "note": "",
+      "note": "spend 時間/お金 on 〜 / spend 時間 doing の形が頻出。",
       "level": 2,
       "toeic": "spend more than $50",
       "ipa": "ˈspɛnd"
@@ -8899,7 +8899,7 @@
      {
       "text": "the main entrance",
       "role": "S",
-      "note": ""
+      "note": "主語。正面入口で、remain closed の主語。"
      },
      {
       "text": "will remain",
@@ -8940,7 +8940,7 @@
       "word": "ongoing",
       "pos": "形容詞",
       "meaning": "進行中の",
-      "note": "",
+      "note": "名詞の前に置く限定用法。be under way(進行中である)とも表せる。",
       "level": 3,
       "toeic": "ongoing construction / ongoing project",
       "ipa": "ˈɑnˌɡoʊɪŋ"
@@ -8949,7 +8949,7 @@
       "word": "construction",
       "pos": "名詞",
       "meaning": "工事",
-      "note": "",
+      "note": "動詞 construct(建設する)の名詞形。不可算名詞として使うことが多い。",
       "level": 3,
       "toeic": "under construction / construction work",
       "ipa": "kənˈstɹʌkʃən"
@@ -8958,7 +8958,7 @@
       "word": "remain",
       "pos": "動詞",
       "meaning": "〜のままである",
-      "note": "",
+      "note": "第2文型を作る動詞。名詞 remainder(残り)、形容詞 remaining(残りの)。",
       "level": 3,
       "toeic": "remain closed / remain open",
       "ipa": "ɹɪˈmeɪn"
@@ -8967,7 +8967,7 @@
       "word": "until further notice",
       "pos": "熟語",
       "meaning": "追って通知があるまで",
-      "note": "",
+      "note": "further は「さらなる」。for further information(詳しくは)も頻出。",
       "level": 3,
       "toeic": "closed until further notice",
       "ipa": "ənˈtɪl ˈfɝðɚ ˈnoʊtəs"
@@ -9219,7 +9219,7 @@
      {
       "text": "is",
       "role": "V",
-      "note": ""
+      "note": "be 動詞。倒置で後ろの主語 the revised schedule に合わせて単数。"
      },
      {
       "text": "the revised schedule",
@@ -9250,7 +9250,7 @@
       "word": "attach",
       "pos": "動詞",
       "meaning": "添付する",
-      "note": "",
+      "note": "attach A to B(A を B に添付する)。名詞 attachment(添付ファイル)。",
       "level": 3,
       "toeic": "attached file / please find attached",
       "ipa": "əˈtætʃ"
@@ -9259,7 +9259,7 @@
       "word": "revised",
       "pos": "形容詞",
       "meaning": "改訂された",
-      "note": "",
+      "note": "動詞 revise(改訂する)の過去分詞。名詞形は revision。",
       "level": 3,
       "toeic": "revised schedule / revised edition",
       "ipa": "ɹɪˈvaɪzd"
@@ -9268,7 +9268,7 @@
       "word": "reflect",
       "pos": "動詞",
       "meaning": "反映する",
-      "note": "",
+      "note": "「〜を映す」の意味もある。名詞 reflection(反映、反射)。",
       "level": 2,
       "toeic": "reflect changes",
       "ipa": "ɹɪˈflɛkt"
@@ -9277,7 +9277,7 @@
       "word": "schedule",
       "pos": "名詞",
       "meaning": "予定表、日程",
-      "note": "",
+      "note": "動詞「予定する」でも使う。behind schedule(予定より遅れて)も頻出。",
       "level": 3,
       "toeic": "revised schedule / ahead of schedule",
       "ipa": "ˈskɛdʒʊl"

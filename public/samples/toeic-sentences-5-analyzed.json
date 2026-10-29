@@ -57,13 +57,33 @@
     ],
     "pattern": {
      "type": "第2文型(SVC)",
-     "explanation": "the item (S) is (V) out of stock (C)。you requested が the item を修飾しています。"
+     "explanation": "the item (S) is (V) out of stock (C)。you requested が the item を修飾しています。1文目は Thank (V) you (O) の第3文型で、主語 I を省いたお礼の決まり文句。3文目は We (S) will ship (V) it (O) の第3文型で、as soon as 以下は時の副詞節(it (S) becomes (V) available (C))。"
     },
     "clauses": [
      {
-      "text": "Thank you for your order. Unfortunately, the item you requested is out of stock. We will ship it as soon as it becomes available.",
+      "text": "Thank you for your order.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(お礼)"
+     },
+     {
+      "text": "Unfortunately, the item you requested is out of stock.",
+      "kind": "主節",
+      "role": "第2文(在庫切れの知らせ)"
+     },
+     {
+      "text": "you requested",
+      "kind": "関係詞節",
+      "role": "the item を修飾(関係代名詞 that の省略)"
+     },
+     {
+      "text": "We will ship it as soon as it becomes available.",
+      "kind": "主節",
+      "role": "第3文(今後の対応)"
+     },
+     {
+      "text": "as soon as it becomes available",
+      "kind": "副詞節(時)",
+      "role": "will ship の時を表す"
      }
     ],
     "elements": [
@@ -106,7 +126,7 @@
       "word": "out of stock",
       "pos": "熟語",
       "meaning": "在庫切れで",
-      "note": "",
+      "note": "反対は in stock(在庫あり)。sold out も「品切れ」の意味で使う",
       "level": 3,
       "toeic": "The item is out of stock."
      },
@@ -114,7 +134,7 @@
       "word": "ship",
       "pos": "動詞",
       "meaning": "~を発送する",
-      "note": "",
+      "note": "名詞 shipment(発送品)、shipping(発送・送料)も頻出",
       "level": 3,
       "toeic": "ship an order"
      },
@@ -122,7 +142,7 @@
       "word": "available",
       "pos": "形容詞",
       "meaning": "入手できる",
-      "note": "",
+      "note": "人について使うと「手が空いている、都合がつく」の意味",
       "level": 3,
       "toeic": "become available"
      },
@@ -130,7 +150,7 @@
       "word": "unfortunately",
       "pos": "副詞",
       "meaning": "あいにく、残念ながら",
-      "note": "",
+      "note": "形容詞は unfortunate。反対は fortunately(幸いにも)",
       "level": 2,
       "toeic": "文頭で悪い知らせを導く"
      }
@@ -365,13 +385,23 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "The parking lot (S) will be closed (V)。for repairs が閉鎖の理由を表します。"
+     "explanation": "The parking lot (S) will be closed (V)。for repairs が閉鎖の理由を表します。2文目は Employees (S) are asked (V) の受動態で、to use ~ が求められている内容。3文目は We (S) apologize (V) の第1文型で、for any inconvenience が理由を表します。"
     },
     "clauses": [
      {
-      "text": "The parking lot will be closed for repairs next week. Employees are asked to use the public garage across the street. We apologize for any inconvenience.",
+      "text": "The parking lot will be closed for repairs next week.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(閉鎖の告知)"
+     },
+     {
+      "text": "Employees are asked to use the public garage across the street.",
+      "kind": "主節",
+      "role": "第2文(代わりの依頼)"
+     },
+     {
+      "text": "We apologize for any inconvenience.",
+      "kind": "主節",
+      "role": "第3文(お詫び)"
      }
     ],
     "elements": [
@@ -419,7 +449,7 @@
       "word": "inconvenience",
       "pos": "名詞",
       "meaning": "不便、迷惑",
-      "note": "",
+      "note": "形容詞は inconvenient。any inconvenience の any は「何らかの」",
       "level": 3,
       "toeic": "We apologize for any inconvenience."
      },
@@ -427,7 +457,7 @@
       "word": "repair",
       "pos": "名詞",
       "meaning": "補修",
-      "note": "",
+      "note": "動詞としても使う(repair the roof)。under repair で「修理中」",
       "level": 3,
       "toeic": "closed for repairs"
      },
@@ -435,7 +465,7 @@
       "word": "parking lot",
       "pos": "名詞",
       "meaning": "駐車場",
-      "note": "",
+      "note": "主に米語。英国では car park。garage は屋内・立体の駐車場",
       "level": 2,
       "toeic": "The parking lot is closed."
      },
@@ -443,7 +473,7 @@
       "word": "apologize",
       "pos": "動詞",
       "meaning": "お詫びする",
-      "note": "",
+      "note": "自動詞なので相手は to、理由は for で表す。名詞は apology",
       "level": 2,
       "toeic": "apologize for ~"
      }
@@ -687,13 +717,23 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "Our company (S) is moving (V)。to ~ は移転先、on June 1 は日付です。"
+     "explanation": "Our company (S) is moving (V)。to ~ は移転先、on June 1 は日付です。2文目は All staff members (S) must pack (V) their belongings (O) の第3文型。3文目は no meetings (S) will be scheduled (V) の受動態で第1文型、during that week は期間を表します。"
     },
     "clauses": [
      {
-      "text": "Our company is moving to a new office on June 1. All staff members must pack their belongings by May 30. Therefore, no meetings will be scheduled during that week.",
+      "text": "Our company is moving to a new office on June 1.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(移転の告知)"
+     },
+     {
+      "text": "All staff members must pack their belongings by May 30.",
+      "kind": "主節",
+      "role": "第2文(社員への指示)"
+     },
+     {
+      "text": "Therefore, no meetings will be scheduled during that week.",
+      "kind": "主節",
+      "role": "第3文(結果としての予定)"
      }
     ],
     "elements": [
@@ -741,7 +781,7 @@
       "word": "belongings",
       "pos": "名詞",
       "meaning": "所持品、私物",
-      "note": "",
+      "note": "常に複数形で使う。personal belongings の形が多い",
       "level": 3,
       "toeic": "pack personal belongings"
      },
@@ -749,7 +789,7 @@
       "word": "therefore",
       "pos": "副詞",
       "meaning": "そのため、したがって",
-      "note": "",
+      "note": "接続詞ではないので、2文をつなぐときはピリオドやセミコロンが必要",
       "level": 3,
       "toeic": "文頭の接続副詞"
      },
@@ -757,7 +797,7 @@
       "word": "move",
       "pos": "動詞",
       "meaning": "移転する",
-      "note": "",
+      "note": "名詞 move も「引っ越し、移転」。relocate が言い換え語",
       "level": 2,
       "toeic": "move to a new office"
      },
@@ -765,7 +805,7 @@
       "word": "schedule",
       "pos": "動詞",
       "meaning": "~を予定する",
-      "note": "",
+      "note": "be scheduled to do で「~する予定だ」。名詞で「予定表」も",
       "level": 3,
       "toeic": "be scheduled"
      }
@@ -1021,13 +1061,23 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "I (S) am writing (V)。to inform you about ~ が手紙を書く目的を表します。"
+     "explanation": "I (S) am writing (V)。to inform you about ~ が手紙を書く目的を表します。2文目は Customers (S) can return (V) items (O) の第3文型。3文目は This new policy (S) takes effect (V)(take effect で「発効する」)の形で、on March 1 が日付です。"
     },
     "clauses": [
      {
-      "text": "I am writing to inform you about a change in our return policy. Customers can now return items within sixty days of purchase. This new policy takes effect on March 1.",
+      "text": "I am writing to inform you about a change in our return policy.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(用件の提示)"
+     },
+     {
+      "text": "Customers can now return items within sixty days of purchase.",
+      "kind": "主節",
+      "role": "第2文(変更の内容)"
+     },
+     {
+      "text": "This new policy takes effect on March 1.",
+      "kind": "主節",
+      "role": "第3文(発効日)"
      }
     ],
     "elements": [
@@ -1075,7 +1125,7 @@
       "word": "policy",
       "pos": "名詞",
       "meaning": "規定、方針",
-      "note": "",
+      "note": "可算名詞。privacy policy、company policy など複合語が多い",
       "level": 3,
       "toeic": "return policy"
      },
@@ -1083,7 +1133,7 @@
       "word": "take effect",
       "pos": "熟語",
       "meaning": "発効する",
-      "note": "",
+      "note": "go into effect / come into effect も同じ意味で使う",
       "level": 3,
       "toeic": "takes effect on March 1"
      },
@@ -1091,7 +1141,7 @@
       "word": "inform",
       "pos": "動詞",
       "meaning": "~に知らせる",
-      "note": "",
+      "note": "inform 人 of/about 事、inform 人 that 節 の形。名詞 information は不可算",
       "level": 3,
       "toeic": "inform you about ~"
      },
@@ -1099,7 +1149,7 @@
       "word": "purchase",
       "pos": "名詞",
       "meaning": "購入",
-      "note": "",
+      "note": "動詞「~を購入する」としても頻出。buy より改まった語",
       "level": 2,
       "toeic": "within sixty days of purchase"
      }
@@ -1361,13 +1411,23 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "Brighton Hotel (S) is looking for (V) a front desk clerk (O)。look for は「探す」の意味の群動詞です。"
+     "explanation": "Brighton Hotel (S) is looking for (V) a front desk clerk (O)。look for は「探す」の意味の群動詞です。2文目は Applicants (S) should have (V) at least two years of experience (O) の第3文型。3文目は Interested candidates (S) should send (V) their resumes (O) の第3文型で、to the personnel office が送り先です。"
     },
     "clauses": [
      {
-      "text": "Brighton Hotel is looking for a front desk clerk. Applicants should have at least two years of experience in customer service. Interested candidates should send their resumes to the personnel office.",
+      "text": "Brighton Hotel is looking for a front desk clerk.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(募集の告知)"
+     },
+     {
+      "text": "Applicants should have at least two years of experience in customer service.",
+      "kind": "主節",
+      "role": "第2文(応募条件)"
+     },
+     {
+      "text": "Interested candidates should send their resumes to the personnel office.",
+      "kind": "主節",
+      "role": "第3文(応募方法)"
      }
     ],
     "elements": [
@@ -1410,7 +1470,7 @@
       "word": "applicant",
       "pos": "名詞",
       "meaning": "応募者",
-      "note": "",
+      "note": "動詞 apply (for)、名詞 application(応募、申込書)とセットで覚える",
       "level": 3,
       "toeic": "job applicant"
      },
@@ -1418,7 +1478,7 @@
       "word": "candidate",
       "pos": "名詞",
       "meaning": "候補者",
-      "note": "",
+      "note": "選挙の「候補者」にも使う。job candidate は「採用候補者」",
       "level": 3,
       "toeic": "interested candidates"
      },
@@ -1426,7 +1486,7 @@
       "word": "personnel",
       "pos": "名詞",
       "meaning": "人事部、職員",
-      "note": "",
+      "note": "「職員」の意味では複数扱い。personal(個人的な)と綴りが紛らわしい",
       "level": 3,
       "toeic": "the personnel office"
      },
@@ -1434,7 +1494,7 @@
       "word": "experience",
       "pos": "名詞",
       "meaning": "経験",
-      "note": "",
+      "note": "「経験・知識」の意味では不可算。「個々の体験」は可算",
       "level": 2,
       "toeic": "two years of experience"
      }
@@ -1698,13 +1758,28 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "The annual company picnic (S) will be held (V)。行事の開催を受動態で述べる定番の形です。"
+     "explanation": "The annual company picnic (S) will be held (V)。行事の開催を受動態で述べる定番の形です。2文目は All employees (S) must register (V) の第1文型で、online と before June 30 が修飾語。3文目は Those (S) will not be able to attend (V) の第1文型で、who do not register が Those を修飾します。"
     },
     "clauses": [
      {
-      "text": "The annual company picnic will be held on Saturday, July 12. All employees must register online before June 30. Those who do not register will not be able to attend.",
+      "text": "The annual company picnic will be held on Saturday, July 12.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(開催の告知)"
+     },
+     {
+      "text": "All employees must register online before June 30.",
+      "kind": "主節",
+      "role": "第2文(登録の義務)"
+     },
+     {
+      "text": "Those who do not register will not be able to attend.",
+      "kind": "主節",
+      "role": "第3文(未登録の場合)"
+     },
+     {
+      "text": "who do not register",
+      "kind": "関係詞節",
+      "role": "Those を修飾"
      }
     ],
     "elements": [
@@ -1747,7 +1822,7 @@
       "word": "annual",
       "pos": "形容詞",
       "meaning": "毎年の",
-      "note": "",
+      "note": "副詞は annually(毎年)。annual report(年次報告書)も頻出",
       "level": 3,
       "toeic": "annual meeting / annual picnic"
      },
@@ -1755,7 +1830,7 @@
       "word": "register",
       "pos": "動詞",
       "meaning": "登録する",
-      "note": "",
+      "note": "register for ~ で「~に申し込む」。名詞は registration",
       "level": 3,
       "toeic": "register online"
      },
@@ -1763,7 +1838,7 @@
       "word": "attend",
       "pos": "動詞",
       "meaning": "~に出席する",
-      "note": "",
+      "note": "他動詞なので attend the meeting。attend to ~ は「~に対処する」",
       "level": 3,
       "toeic": "able to attend"
      },
@@ -1771,7 +1846,7 @@
       "word": "employee",
       "pos": "名詞",
       "meaning": "従業員",
-      "note": "",
+      "note": "-ee は「~される人」。employer(雇用主)と区別する",
       "level": 1,
       "toeic": "All employees ~"
      }
@@ -2042,13 +2117,28 @@
     ],
     "pattern": {
      "type": "第2文型(SVC)",
-     "explanation": "She (S) is (V) the manager who oversees ... (C)。who 以下が the manager を修飾します。"
+     "explanation": "She (S) is (V) the manager who oversees ... (C)。who 以下が the manager を修飾します。1文目は Ms. Alvarez (S) joined (V) our company (O) の第3文型(Ms. のピリオドは略語)。3文目は sales (S) have increased (V) の現在完了で第1文型、by twenty percent が増加の幅です。"
     },
     "clauses": [
      {
-      "text": "Ms. Alvarez joined our company in 2018. She is the manager who oversees the Chicago branch. Under her leadership, sales have increased by twenty percent.",
+      "text": "Ms. Alvarez joined our company in 2018.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(入社の紹介)"
+     },
+     {
+      "text": "She is the manager who oversees the Chicago branch.",
+      "kind": "主節",
+      "role": "第2文(現在の役職)"
+     },
+     {
+      "text": "who oversees the Chicago branch",
+      "kind": "関係詞節",
+      "role": "the manager を修飾"
+     },
+     {
+      "text": "Under her leadership, sales have increased by twenty percent.",
+      "kind": "主節",
+      "role": "第3文(実績)"
      }
     ],
     "elements": [
@@ -2091,7 +2181,7 @@
       "word": "oversee",
       "pos": "動詞",
       "meaning": "~を監督する、統括する",
-      "note": "",
+      "note": "活用は oversee - oversaw - overseen。supervise が言い換え語",
       "level": 3,
       "toeic": "oversee the branch"
      },
@@ -2099,7 +2189,7 @@
       "word": "leadership",
       "pos": "名詞",
       "meaning": "指導力、統率",
-      "note": "",
+      "note": "ふつう不可算名詞。leader(指導者)+ -ship(地位・能力)",
       "level": 3,
       "toeic": "under her leadership"
      },
@@ -2107,7 +2197,7 @@
       "word": "increase",
       "pos": "動詞",
       "meaning": "増える、~を増やす",
-      "note": "",
+      "note": "名詞も同じ形(an increase in sales)。反対は decrease",
       "level": 2,
       "toeic": "sales have increased"
      },
@@ -2115,7 +2205,7 @@
       "word": "branch",
       "pos": "名詞",
       "meaning": "支店",
-      "note": "",
+      "note": "branch office とも言う。本社は headquarters / head office",
       "level": 3,
       "toeic": "the Chicago branch"
      }
@@ -2342,13 +2432,23 @@
     ],
     "pattern": {
      "type": "第2文型(SVC)",
-     "explanation": "Our new software (S) is (V) much faster than the old version (C)。比較級 faster に than が対応します。"
+     "explanation": "Our new software (S) is (V) much faster than the old version (C)。比較級 faster に than が対応します。2文目は It (S) uses (V) less memory (O) の第3文型。3文目は employees (S) can finish (V) their work (O) の第3文型で、more quickly は比較級の副詞です。"
     },
     "clauses": [
      {
-      "text": "Our new software is much faster than the old version. It also uses less memory. As a result, employees can finish their work more quickly.",
+      "text": "Our new software is much faster than the old version.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(速さの比較)"
+     },
+     {
+      "text": "It also uses less memory.",
+      "kind": "主節",
+      "role": "第2文(追加の利点)"
+     },
+     {
+      "text": "As a result, employees can finish their work more quickly.",
+      "kind": "主節",
+      "role": "第3文(結果)"
      }
     ],
     "elements": [
@@ -2391,7 +2491,7 @@
       "word": "version",
       "pos": "名詞",
       "meaning": "版、バージョン",
-      "note": "",
+      "note": "「~の版」は version of ~。latest version(最新版)も頻出",
       "level": 2,
       "toeic": "the old version"
      },
@@ -2399,7 +2499,7 @@
       "word": "memory",
       "pos": "名詞",
       "meaning": "メモリ、記憶",
-      "note": "",
+      "note": "コンピュータの意味では不可算。不可算名詞なので few でなく less を使う",
       "level": 2,
       "toeic": "use less memory"
      },
@@ -2407,7 +2507,7 @@
       "word": "as a result",
       "pos": "熟語",
       "meaning": "その結果",
-      "note": "",
+      "note": "as a result of ~ で「~の結果として」(後ろは名詞)",
       "level": 3,
       "toeic": "文頭の接続副詞句"
      },
@@ -2415,7 +2515,7 @@
       "word": "software",
       "pos": "名詞",
       "meaning": "ソフトウェア",
-      "note": "",
+      "note": "不可算名詞なので a software や softwares とは言わない",
       "level": 3,
       "toeic": "new software"
      }

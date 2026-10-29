@@ -91,7 +91,7 @@
       "word": "type",
       "pos": "動詞",
       "meaning": "入力する、タイプする",
-      "note": "",
+      "note": "名詞では「型、種類」の意味もあり、this type of ~ の形で頻出です。",
       "level": 2,
       "toeic": "type on a laptop / type a report"
      },
@@ -99,7 +99,7 @@
       "word": "laptop",
       "pos": "名詞",
       "meaning": "ノートパソコン",
-      "note": "",
+      "note": "可算名詞。desktop(据え置き型)と対で覚えると便利です。",
       "level": 2,
       "toeic": "on a laptop"
      },
@@ -107,7 +107,7 @@
       "word": "desk",
       "pos": "名詞",
       "meaning": "机",
-      "note": "",
+      "note": "front desk(受付)、help desk(問い合わせ窓口)も TOEIC 頻出の言い方です。",
       "level": 1,
       "toeic": "at his desk"
      }
@@ -310,7 +310,7 @@
       "word": "across",
       "pos": "前置詞",
       "meaning": "~を横切って、~を渡って",
-      "note": "",
+      "note": "across は横切る動き、along は沿って進む動きと区別します。",
       "level": 2,
       "toeic": "walk across a bridge / across the street"
      },
@@ -318,7 +318,7 @@
       "word": "bridge",
       "pos": "名詞",
       "meaning": "橋",
-      "note": "",
+      "note": "cross a bridge でも同じ意味。他動詞 cross なら across は不要です。",
       "level": 2,
       "toeic": "across a bridge"
      },
@@ -326,7 +326,7 @@
       "word": "walk",
       "pos": "動詞",
       "meaning": "歩く",
-      "note": "",
+      "note": "walk along(~に沿って歩く)、walk up to(~に歩み寄る)も写真問題で出ます。",
       "level": 1,
       "toeic": "are walking"
      }
@@ -517,7 +517,7 @@
       "word": "chop",
       "pos": "動詞",
       "meaning": "~を刻む",
-      "note": "",
+      "note": "chop up とも言います。slice(薄く切る)、peel(皮をむく)も料理写真で頻出。",
       "level": 3,
       "toeic": "chop vegetables"
      },
@@ -525,7 +525,7 @@
       "word": "chef",
       "pos": "名詞",
       "meaning": "料理人、シェフ",
-      "note": "",
+      "note": "cook は「料理人」と「料理する」の両方。chef は主に料理長・プロの料理人です。",
       "level": 2,
       "toeic": "a chef in a kitchen"
      },
@@ -533,7 +533,7 @@
       "word": "vegetable",
       "pos": "名詞",
       "meaning": "野菜",
-      "note": "",
+      "note": "通常は可算名詞で、複数形 vegetables で使うのが基本です。",
       "level": 1,
       "toeic": "fresh vegetables"
      }
@@ -723,7 +723,7 @@
       "word": "in front of",
       "pos": "熟語",
       "meaning": "~の前に",
-      "note": "",
+      "note": "in front of は外側の前、in the front of は内部の前方。写真で位置を聞き分けます。",
       "level": 3,
       "toeic": "parked in front of the building"
      },
@@ -731,7 +731,7 @@
       "word": "building",
       "pos": "名詞",
       "meaning": "建物",
-      "note": "",
+      "note": "動詞 build の名詞形。building manager(ビル管理人)も頻出です。",
       "level": 1,
       "toeic": "in front of the building"
      },
@@ -739,7 +739,7 @@
       "word": "park",
       "pos": "動詞",
       "meaning": "~を止める",
-      "note": "",
+      "note": "名詞 park(公園)と区別。parking lot(駐車場)、parking space(駐車スペース)も重要。",
       "level": 2,
       "toeic": "be parked"
      }
@@ -930,7 +930,7 @@
       "word": "stack",
       "pos": "名詞",
       "meaning": "積み重ね、山",
-      "note": "",
+      "note": "動詞で「積み重ねる」。be stacked on the shelf の形で写真問題に頻出です。",
       "level": 3,
       "toeic": "a stack of papers"
      },
@@ -938,7 +938,7 @@
       "word": "hold",
       "pos": "動詞",
       "meaning": "~を持っている",
-      "note": "",
+      "note": "「(会議などを)開催する」の意味も重要。hold a meeting の形でよく出ます。",
       "level": 2,
       "toeic": "is holding"
      },
@@ -946,7 +946,7 @@
       "word": "paper",
       "pos": "名詞",
       "meaning": "書類、紙",
-      "note": "",
+      "note": "「紙」の意味では不可算、「書類・新聞」の意味では可算(papers)になります。",
       "level": 1,
       "toeic": "papers(書類)"
      }
@@ -1132,7 +1132,7 @@
       "word": "place",
       "pos": "動詞",
       "meaning": "~を置く",
-      "note": "",
+      "note": "名詞「場所」の動詞用法。place an order(注文する)も TOEIC 頻出です。",
       "level": 3,
       "toeic": "be placed on ~"
      },
@@ -1140,7 +1140,7 @@
       "word": "tray",
       "pos": "名詞",
       "meaning": "トレイ、盆",
-      "note": "",
+      "note": "可算名詞。a tray of food(料理を載せたトレイ)のように使います。",
       "level": 3,
       "toeic": "on a tray"
      },
@@ -1148,7 +1148,7 @@
       "word": "cup",
       "pos": "名詞",
       "meaning": "カップ",
-      "note": "",
+      "note": "可算名詞。cup と mug(取っ手付きの大きなカップ)の言い分けも出ます。",
       "level": 1,
       "toeic": "coffee cups"
      }
@@ -1330,7 +1330,7 @@
       "word": "load",
       "pos": "動詞",
       "meaning": "~を積む",
-      "note": "",
+      "note": "反対語は unload(降ろす)。load A onto B(A を B に積む)の形もあります。",
       "level": 3,
       "toeic": "be loaded with ~"
      },
@@ -1338,7 +1338,7 @@
       "word": "truck",
       "pos": "名詞",
       "meaning": "トラック",
-      "note": "",
+      "note": "可算名詞。delivery van(配達用のバン)も配送場面でよく出ます。",
       "level": 1,
       "toeic": "a delivery truck"
      },
@@ -1346,7 +1346,7 @@
       "word": "box",
       "pos": "名詞",
       "meaning": "箱",
-      "note": "",
+      "note": "可算名詞で複数形は boxes。carton(段ボール箱)も同じ場面で出ます。",
       "level": 1,
       "toeic": "loaded with boxes"
      }
@@ -1537,7 +1537,7 @@
       "word": "install",
       "pos": "動詞",
       "meaning": "~を取り付ける",
-      "note": "",
+      "note": "名詞 installation(設置)も頻出。ソフトウエアの「インストール」にも使います。",
       "level": 3,
       "toeic": "install a window"
      },
@@ -1545,7 +1545,7 @@
       "word": "worker",
       "pos": "名詞",
       "meaning": "作業員",
-      "note": "",
+      "note": "employee(従業員)、staff(職員全体)との使い分けに注意します。",
       "level": 2,
       "toeic": "construction workers"
      },
@@ -1553,7 +1553,7 @@
       "word": "floor",
       "pos": "名詞",
       "meaning": "階",
-      "note": "",
+      "note": "「床」の意味もあります。floor plan(間取り図)も TOEIC で出ます。",
       "level": 2,
       "toeic": "on the second floor"
      }
@@ -1756,7 +1756,7 @@
       "word": "aisle",
       "pos": "名詞",
       "meaning": "通路",
-      "note": "",
+      "note": "s は発音しない[アイル]。aisle seat(通路側の席)は飛行機の場面で頻出です。",
       "level": 3,
       "toeic": "down the aisle"
      },
@@ -1764,7 +1764,7 @@
       "word": "cart",
       "pos": "名詞",
       "meaning": "カート",
-      "note": "",
+      "note": "shopping cart のほか、food cart(屋台)の意味でも使われます。",
       "level": 2,
       "toeic": "push a cart"
      },
@@ -1772,7 +1772,7 @@
       "word": "push",
       "pos": "動詞",
       "meaning": "~を押す",
-      "note": "",
+      "note": "反対語は pull。ドアの表示 PUSH / PULL も同じ組み合わせです。",
       "level": 2,
       "toeic": "push a cart"
      }
@@ -1970,7 +1970,7 @@
       "word": "be filled with",
       "pos": "熟語",
       "meaning": "~でいっぱいである",
-      "note": "",
+      "note": "be full of とほぼ同じ意味。full のあとは of、filled のあとは with です。",
       "level": 3,
       "toeic": "filled with books"
      },
@@ -1978,7 +1978,7 @@
       "word": "shelf",
       "pos": "名詞",
       "meaning": "棚",
-      "note": "",
+      "note": "複数形は shelves。stock the shelves(棚に商品を補充する)も頻出です。",
       "level": 2,
       "toeic": "shelves(複数形)"
      },
@@ -1986,7 +1986,7 @@
       "word": "fill",
       "pos": "動詞",
       "meaning": "~を満たす",
-      "note": "",
+      "note": "fill out a form(用紙に記入する)、fill an order(注文に応じる)も重要です。",
       "level": 2,
       "toeic": "fill A with B"
      }
@@ -2173,7 +2173,7 @@
       "word": "menu",
       "pos": "名詞",
       "meaning": "メニュー",
-      "note": "",
+      "note": "可算名詞。on the menu(メニューに載っている)の形も覚えておきます。",
       "level": 1,
       "toeic": "read a menu"
      },
@@ -2181,7 +2181,7 @@
       "word": "restaurant",
       "pos": "名詞",
       "meaning": "レストラン",
-      "note": "",
+      "note": "可算名詞。cafeteria(社員食堂)、diner(簡易食堂)も同じ場面で出ます。",
       "level": 1,
       "toeic": "a restaurant table"
      },
@@ -2189,7 +2189,7 @@
       "word": "at a table",
       "pos": "熟語",
       "meaning": "テーブルについて",
-      "note": "",
+      "note": "be seated at a table、sit at a table のように動詞と組み合わせて使います。",
       "level": 2,
       "toeic": "seated at a table"
      }
@@ -2392,7 +2392,7 @@
       "word": "pedestrian",
       "pos": "名詞",
       "meaning": "歩行者",
-      "note": "",
+      "note": "形容詞でも使い、pedestrian crossing(横断歩道)の形で出ます。",
       "level": 3,
       "toeic": "pedestrians crossing"
      },
@@ -2400,7 +2400,7 @@
       "word": "intersection",
       "pos": "名詞",
       "meaning": "交差点",
-      "note": "",
+      "note": "動詞 intersect(交差する)の名詞形。corner(角)と合わせて道案内で頻出です。",
       "level": 3,
       "toeic": "at the intersection"
      },
@@ -2408,7 +2408,7 @@
       "word": "cross",
       "pos": "動詞",
       "meaning": "~を渡る",
-      "note": "",
+      "note": "名詞 crossing(横断歩道、交差点)も同じ場面で出ます。",
       "level": 2,
       "toeic": "cross the street"
      }
@@ -2602,7 +2602,7 @@
       "word": "reflect",
       "pos": "動詞",
       "meaning": "~を映す",
-      "note": "",
+      "note": "名詞 reflection(反射、映った像)も重要。「反映する」の意味でも使います。",
       "level": 3,
       "toeic": "be reflected in the water"
      },
@@ -2610,7 +2610,7 @@
       "word": "tree",
       "pos": "名詞",
       "meaning": "木",
-      "note": "",
+      "note": "可算名詞。plant(植物)、bush(低木)も屋外の写真で出ます。",
       "level": 1,
       "toeic": "some trees"
      },
@@ -2618,7 +2618,7 @@
       "word": "water",
       "pos": "名詞",
       "meaning": "水、水面",
-      "note": "",
+      "note": "通常は不可算名詞。動詞 water で「水をやる」の意味もあります(water the plants)。",
       "level": 1,
       "toeic": "in the water"
      }
@@ -2805,7 +2805,7 @@
       "word": "pour",
       "pos": "動詞",
       "meaning": "~を注ぐ",
-      "note": "",
+      "note": "「(雨が)激しく降る」の意味もあります。It's pouring.",
       "level": 3,
       "toeic": "pour coffee into a cup"
      },
@@ -2813,7 +2813,7 @@
       "word": "into",
       "pos": "前置詞",
       "meaning": "~の中へ",
-      "note": "",
+      "note": "in は中にある状態、into は中へ入る動きを表します。",
       "level": 2,
       "toeic": "into a cup"
      },
@@ -2821,7 +2821,7 @@
       "word": "coffee",
       "pos": "名詞",
       "meaning": "コーヒー",
-      "note": "",
+      "note": "不可算名詞ですが、注文では two coffees(コーヒー2杯)のように数えることもあります。",
       "level": 1,
       "toeic": "a cup of coffee"
      }
@@ -3011,7 +3011,7 @@
       "word": "spread out",
       "pos": "熟語",
       "meaning": "~を広げる",
-      "note": "",
+      "note": "自動詞では「(人が)散らばる」の意味。spread の過去形・過去分詞は spread のまま。",
       "level": 3,
       "toeic": "documents spread out on a table"
      },
@@ -3019,7 +3019,7 @@
       "word": "document",
       "pos": "名詞",
       "meaning": "書類",
-      "note": "",
+      "note": "動詞では「記録する」の意味。documentation(書類一式、記録)も頻出です。",
       "level": 2,
       "toeic": "documents"
      },
@@ -3027,7 +3027,7 @@
       "word": "conference table",
       "pos": "名詞",
       "meaning": "会議用テーブル",
-      "note": "",
+      "note": "conference room(会議室)とあわせて覚えます。meeting table とも言います。",
       "level": 2,
       "toeic": "on the conference table"
      }
@@ -3226,7 +3226,7 @@
       "word": "talk on the phone",
       "pos": "熟語",
       "meaning": "電話で話す",
-      "note": "",
+      "note": "be on the phone(電話中である)、make a phone call(電話をかける)も頻出です。",
       "level": 3,
       "toeic": "is talking on the phone"
      },
@@ -3234,7 +3234,7 @@
       "word": "near",
       "pos": "前置詞",
       "meaning": "~の近くに",
-      "note": "",
+      "note": "副詞としても使います(live near)。形容詞 nearby(近くの)と区別します。",
       "level": 1,
       "toeic": "near a window"
      },
@@ -3242,7 +3242,7 @@
       "word": "window",
       "pos": "名詞",
       "meaning": "窓",
-      "note": "",
+      "note": "可算名詞。window seat(窓側の席)、look out the window の形も出ます。",
       "level": 1,
       "toeic": "near a window"
      }
@@ -3441,7 +3441,7 @@
       "word": "dock",
       "pos": "動詞",
       "meaning": "(船が)停泊する、接岸する",
-      "note": "",
+      "note": "名詞では「波止場、(荷物の)搬入口」。loading dock の形で出ます。",
       "level": 3,
       "toeic": "be docked at ~"
      },
@@ -3449,7 +3449,7 @@
       "word": "pier",
       "pos": "名詞",
       "meaning": "桟橋",
-      "note": "",
+      "note": "可算名詞。dock や harbor(港)と同じ水辺の場面で使われます。",
       "level": 3,
       "toeic": "beside the pier"
      },
@@ -3457,7 +3457,7 @@
       "word": "beside",
       "pos": "前置詞",
       "meaning": "~のそばに",
-      "note": "",
+      "note": "besides(そのうえ、~に加えて)と混同しないよう注意します。",
       "level": 2,
       "toeic": "beside the pier"
      }
@@ -3639,7 +3639,7 @@
       "word": "be seated",
       "pos": "熟語",
       "meaning": "着席している",
-      "note": "",
+      "note": "Please be seated.(お掛けください)のように、丁寧な指示でも使います。",
       "level": 3,
       "toeic": "are seated around a table"
      },
@@ -3647,7 +3647,7 @@
       "word": "circular",
       "pos": "形容詞",
       "meaning": "円形の",
-      "note": "",
+      "note": "circle(円)の形容詞形。round とほぼ同じ意味で、round table とも言います。",
       "level": 3,
       "toeic": "a circular table"
      },
@@ -3655,7 +3655,7 @@
       "word": "around",
       "pos": "前置詞",
       "meaning": "~の周りに",
-      "note": "",
+      "note": "副詞として「あちこちに」の意味もあります(walk around)。",
       "level": 1,
       "toeic": "around a table"
      }
@@ -3846,7 +3846,7 @@
       "word": "unload",
       "pos": "動詞",
       "meaning": "~を降ろす",
-      "note": "",
+      "note": "反対語は load。unload a truck(トラックから荷を降ろす)の形も出ます。",
       "level": 3,
       "toeic": "unload luggage from ~"
      },
@@ -3854,7 +3854,7 @@
       "word": "luggage",
       "pos": "名詞",
       "meaning": "荷物(旅行用)",
-      "note": "",
+      "note": "数えるときは a piece of luggage。baggage もほぼ同じ意味で不可算です。",
       "level": 3,
       "toeic": "不可算名詞"
      },
@@ -3862,7 +3862,7 @@
       "word": "trunk",
       "pos": "名詞",
       "meaning": "(車の)トランク",
-      "note": "",
+      "note": "「(木の)幹、大型のかばん」の意味もあります。イギリス英語では boot。",
       "level": 2,
       "toeic": "the trunk of a car"
      }
@@ -4069,7 +4069,7 @@
       "word": "hang",
       "pos": "動詞",
       "meaning": "ぶら下がっている",
-      "note": "",
+      "note": "「(人を)絞首刑にする」の意味では hanged。hang up(電話を切る)も頻出です。",
       "level": 3,
       "toeic": "lights hanging from the ceiling"
      },
@@ -4077,7 +4077,7 @@
       "word": "ceiling",
       "pos": "名詞",
       "meaning": "天井",
-      "note": "",
+      "note": "ei の綴りに注意。ceiling light(天井の照明)の形でも使います。",
       "level": 3,
       "toeic": "from the ceiling"
      },
@@ -4085,7 +4085,7 @@
       "word": "lobby",
       "pos": "名詞",
       "meaning": "ロビー",
-      "note": "",
+      "note": "動詞 lobby は「ロビー活動をする」。hotel lobby の形が頻出です。",
       "level": 2,
       "toeic": "in the lobby"
      }

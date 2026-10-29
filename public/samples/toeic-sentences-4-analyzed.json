@@ -85,13 +85,23 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "1文目は I (S) 'm calling (V)。about ~ が用件を表します。会話の中心は「設備のトラブルと対応」です。"
+     "explanation": "1文目は I (S) 'm calling (V)。about ~ が用件を表します。会話の中心は「設備のトラブルと対応」です。2文目は It (S) stopped (V) working (O) の第3文型で、It は the projector を指します。3文目は I (S) 'll send (V) a technician (O) の第3文型です。"
     },
     "clauses": [
      {
-      "text": "Hello, I'm calling about the projector in Room 204. It stopped working during this morning's presentation. I'll send a technician right away.",
+      "text": "Hello, I'm calling about the projector in Room 204.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(電話の用件)"
+     },
+     {
+      "text": "It stopped working during this morning's presentation.",
+      "kind": "主節",
+      "role": "第2文(故障の説明)"
+     },
+     {
+      "text": "I'll send a technician right away.",
+      "kind": "主節",
+      "role": "第3文(対応の申し出)"
      }
     ],
     "elements": [
@@ -134,7 +144,7 @@
       "word": "technician",
       "pos": "名詞",
       "meaning": "技術者",
-      "note": "",
+      "note": "-ian は「~の専門家」を表す語尾。technical(技術的な)、technique(技術)と区別。",
       "level": 3,
       "toeic": "send a technician"
      },
@@ -142,7 +152,7 @@
       "word": "stop working",
       "pos": "熟語",
       "meaning": "動かなくなる",
-      "note": "",
+      "note": "stop -ing は「~するのをやめる」、stop to do は「~するために立ち止まる」で意味が違う。",
       "level": 3,
       "toeic": "機器の故障の描写"
      },
@@ -150,7 +160,7 @@
       "word": "right away",
       "pos": "熟語",
       "meaning": "すぐに",
-      "note": "",
+      "note": "immediately / at once に言い換えられることが多い。",
       "level": 3,
       "toeic": "I'll do it right away."
      },
@@ -158,7 +168,7 @@
       "word": "presentation",
       "pos": "名詞",
       "meaning": "プレゼン",
-      "note": "",
+      "note": "可算名詞。動詞は present(~を発表する、提示する)。",
       "level": 2,
       "toeic": "give a presentation"
      }
@@ -373,13 +383,23 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "does this train (S) stop (V) at Central Station。Yes/No で答えられる質問です。"
+     "explanation": "does this train (S) stop (V) at Central Station。Yes/No で答えられる質問です。2文目は you (S) need (V) to change (O) の第3文型。3文目は The next train (S) leaves (V) の第1文型で、from platform three は修飾語句です。"
     },
     "clauses": [
      {
-      "text": "Excuse me, does this train stop at Central Station? No, you need to change at Oak Street. The next train to Central leaves from platform three.",
+      "text": "Excuse me, does this train stop at Central Station?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(質問)"
+     },
+     {
+      "text": "No, you need to change at Oak Street.",
+      "kind": "主節",
+      "role": "第2文(返答・乗り換えの指示)"
+     },
+     {
+      "text": "The next train to Central leaves from platform three.",
+      "kind": "主節",
+      "role": "第3文(補足の情報)"
      }
     ],
     "elements": [
@@ -422,7 +442,7 @@
       "word": "change",
       "pos": "動詞",
       "meaning": "乗り換える",
-      "note": "",
+      "note": "「乗り換える」は transfer で言い換えられることも多い。",
       "level": 3,
       "toeic": "change trains / change at ~"
      },
@@ -430,7 +450,7 @@
       "word": "platform",
       "pos": "名詞",
       "meaning": "ホーム",
-      "note": "",
+      "note": "米国では番線を track で言うこともある(track 3)。",
       "level": 3,
       "toeic": "from platform three"
      },
@@ -438,7 +458,7 @@
       "word": "stop at",
       "pos": "熟語",
       "meaning": "~に停車する",
-      "note": "",
+      "note": "設問では make a stop at ~ と言い換えられることがある。",
       "level": 2,
       "toeic": "This train stops at ~."
      }
@@ -675,13 +695,33 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "I (S) would like to return (V) this jacket (O)。because 節で理由を添えています。"
+     "explanation": "I (S) would like to return (V) this jacket (O)。because 節で理由を添えています。2文目は you (S) have (V) the receipt (O) の第3文型の疑問文。3文目 here it is は it (S) is (V) に here が文頭に出た定型表現。4文目は I (S) bought (V) it (O) の第3文型です。"
     },
     "clauses": [
      {
-      "text": "I'd like to return this jacket because it's too small. Do you have the receipt with you? Yes, here it is. I bought it last week.",
+      "text": "I'd like to return this jacket because it's too small.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(用件)"
+     },
+     {
+      "text": "because it's too small",
+      "kind": "副詞節(理由)",
+      "role": "return を修飾(返品の理由)"
+     },
+     {
+      "text": "Do you have the receipt with you?",
+      "kind": "主節",
+      "role": "第2文(店員の確認)"
+     },
+     {
+      "text": "Yes, here it is.",
+      "kind": "主節",
+      "role": "第3文(返答)"
+     },
+     {
+      "text": "I bought it last week.",
+      "kind": "主節",
+      "role": "第4文(購入時期)"
      }
     ],
     "elements": [
@@ -729,7 +769,7 @@
       "word": "return",
       "pos": "動詞",
       "meaning": "~を返品する",
-      "note": "",
+      "note": "名詞もあり、return policy(返品規定)は TOEIC 頻出。",
       "level": 3,
       "toeic": "return an item"
      },
@@ -737,7 +777,7 @@
       "word": "receipt",
       "pos": "名詞",
       "meaning": "レシート、領収書",
-      "note": "",
+      "note": "p は発音しない [rɪˈsiːt]。動詞は receive。",
       "level": 3,
       "toeic": "with the receipt"
      },
@@ -745,7 +785,7 @@
       "word": "too",
       "pos": "副詞",
       "meaning": "~すぎる",
-      "note": "",
+      "note": "too + 形容詞 + to do で「~すぎて…できない」の形もある。",
       "level": 2,
       "toeic": "too small / too expensive"
      }
@@ -991,13 +1031,23 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "Are you (S) attending (V) the sales meeting (O)。近い予定を現在進行形でたずねています。"
+     "explanation": "Are you (S) attending (V) the sales meeting (O)。近い予定を現在進行形でたずねています。2文目は I'd like to の後に attend が省略され、but 以下は I (S) have to visit (V) a client (O) の第3文型。3文目は I (S) 'll send (V) you (O) the meeting notes (O) の第4文型です。"
     },
     "clauses": [
      {
-      "text": "Are you attending the sales meeting on Friday? I'd like to, but I have to visit a client in Boston. Then I'll send you the meeting notes afterward.",
+      "text": "Are you attending the sales meeting on Friday?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(質問)"
+     },
+     {
+      "text": "I'd like to, but I have to visit a client in Boston.",
+      "kind": "主節",
+      "role": "第2文(断りと理由)"
+     },
+     {
+      "text": "Then I'll send you the meeting notes afterward.",
+      "kind": "主節",
+      "role": "第3文(申し出)"
      }
     ],
     "elements": [
@@ -1045,7 +1095,7 @@
       "word": "attend",
       "pos": "動詞",
       "meaning": "~に出席する",
-      "note": "",
+      "note": "他動詞なので attend the meeting と前置詞なしで使う(attend to は「対処する」)。",
       "level": 3,
       "toeic": "attend a meeting"
      },
@@ -1053,7 +1103,7 @@
       "word": "client",
       "pos": "名詞",
       "meaning": "顧客",
-      "note": "",
+      "note": "customer は店の客、client は専門的なサービスの依頼主というニュアンス。",
       "level": 3,
       "toeic": "visit a client"
      },
@@ -1061,7 +1111,7 @@
       "word": "afterward",
       "pos": "副詞",
       "meaning": "その後で",
-      "note": "",
+      "note": "afterwards とも綴る。later とほぼ同じ意味。",
       "level": 2,
       "toeic": "send notes afterward"
      },
@@ -1069,7 +1119,7 @@
       "word": "notes",
       "pos": "名詞",
       "meaning": "メモ、議事録",
-      "note": "",
+      "note": "take notes で「メモを取る」。議事録は minutes とも言う。",
       "level": 2,
       "toeic": "meeting notes"
      }
@@ -1325,13 +1375,28 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "Our flight (S) has been delayed (V)。by two hours は差を表す修飾語句です。"
+     "explanation": "Our flight (S) has been delayed (V)。by two hours は差を表す修飾語句です。2文目は we (S) should let (V) the hotel (O) know (C) の第5文型で、that 節が know の目的語。3文目は I (S) 'll call (V) them (O) の第3文型で、them は the hotel を指します。"
     },
     "clauses": [
      {
-      "text": "Our flight has been delayed by two hours. Then we should let the hotel know that we will arrive late. I'll call them from the airport.",
+      "text": "Our flight has been delayed by two hours.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(状況)"
+     },
+     {
+      "text": "Then we should let the hotel know that we will arrive late.",
+      "kind": "主節",
+      "role": "第2文(提案)"
+     },
+     {
+      "text": "that we will arrive late",
+      "kind": "名詞節",
+      "role": "know の目的語"
+     },
+     {
+      "text": "I'll call them from the airport.",
+      "kind": "主節",
+      "role": "第3文(申し出)"
      }
     ],
     "elements": [
@@ -1374,7 +1439,7 @@
       "word": "delay",
       "pos": "動詞",
       "meaning": "~を遅らせる",
-      "note": "",
+      "note": "名詞も同じ形。without delay は「遅れずに、すぐに」。",
       "level": 3,
       "toeic": "be delayed by ~"
      },
@@ -1382,7 +1447,7 @@
       "word": "let ~ know",
       "pos": "熟語",
       "meaning": "~に知らせる",
-      "note": "",
+      "note": "let の後ろは動詞の原形。I'll let you know. は返事を約束する定番。",
       "level": 3,
       "toeic": "Let me know."
      },
@@ -1390,7 +1455,7 @@
       "word": "arrive late",
       "pos": "熟語",
       "meaning": "遅れて到着する",
-      "note": "",
+      "note": "arrive は自動詞なので、場所は arrive at / in ~ で表す。",
       "level": 2,
       "toeic": "遅延の連絡"
      }
@@ -1632,13 +1697,23 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "Have you (S) reviewed (V) the budget proposal (O) yet。完了したかをたずねています。"
+     "explanation": "Have you (S) reviewed (V) the budget proposal (O) yet。完了したかをたずねています。2文目は I (S) 've been (V) busy (C) の第2文型(現在完了)。3文目は you (S) finish (V) it (O) の第3文型の依頼文です。"
     },
     "clauses": [
      {
-      "text": "Have you reviewed the budget proposal yet? Not yet, I've been busy with the quarterly report. Could you finish it by Wednesday?",
+      "text": "Have you reviewed the budget proposal yet?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(質問)"
+     },
+     {
+      "text": "Not yet, I've been busy with the quarterly report.",
+      "kind": "主節",
+      "role": "第2文(返答と理由)"
+     },
+     {
+      "text": "Could you finish it by Wednesday?",
+      "kind": "主節",
+      "role": "第3文(依頼)"
      }
     ],
     "elements": [
@@ -1686,7 +1761,7 @@
       "word": "review",
       "pos": "動詞",
       "meaning": "~を見直す、確認する",
-      "note": "",
+      "note": "名詞では「見直し、批評」。performance review(人事評価)も頻出。",
       "level": 3,
       "toeic": "review a proposal"
      },
@@ -1694,7 +1769,7 @@
       "word": "quarterly",
       "pos": "形容詞",
       "meaning": "四半期の",
-      "note": "",
+      "note": "quarter(四半期)の形容詞。「年4回の」の意味でも使う。",
       "level": 3,
       "toeic": "quarterly report"
      },
@@ -1702,7 +1777,7 @@
       "word": "by",
       "pos": "前置詞",
       "meaning": "~までに",
-      "note": "",
+      "note": "by は期限(~までに)、until は継続(~までずっと)で区別する。",
       "level": 3,
       "toeic": "by Wednesday"
      },
@@ -1710,7 +1785,7 @@
       "word": "proposal",
       "pos": "名詞",
       "meaning": "提案書",
-      "note": "",
+      "note": "動詞は propose。submit a proposal(提案書を出す)も定番。",
       "level": 3,
       "toeic": "budget proposal"
      }
@@ -1936,13 +2011,23 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "I (S) would like to open (V) a savings account (O)。窓口での用件の言い方です。"
+     "explanation": "I (S) would like to open (V) a savings account (O)。窓口での用件の言い方です。1文目 Welcome to ~ は主語のない定型のあいさつ。2文目は I (S) help (V) you (O) の第3文型の疑問文で、How が文頭に出ています。"
     },
     "clauses": [
      {
-      "text": "Welcome to Greenfield Bank. How can I help you today? I'd like to open a savings account.",
+      "text": "Welcome to Greenfield Bank.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(あいさつ)"
+     },
+     {
+      "text": "How can I help you today?",
+      "kind": "主節",
+      "role": "第2文(用件の質問)"
+     },
+     {
+      "text": "I'd like to open a savings account.",
+      "kind": "主節",
+      "role": "第3文(用件)"
      }
     ],
     "elements": [
@@ -1985,7 +2070,7 @@
       "word": "savings account",
       "pos": "名詞",
       "meaning": "普通預金口座",
-      "note": "",
+      "note": "savings と s が付く形に注意。当座預金は checking account。",
       "level": 3,
       "toeic": "open a savings account"
      },
@@ -1993,7 +2078,7 @@
       "word": "open",
       "pos": "動詞",
       "meaning": "(口座を)開設する",
-      "note": "",
+      "note": "反対は close an account(口座を解約する)。",
       "level": 2,
       "toeic": "open an account"
      },
@@ -2001,7 +2086,7 @@
       "word": "help",
       "pos": "動詞",
       "meaning": "~を手伝う",
-      "note": "",
+      "note": "help + 人 + (to) 動詞 で「人が~するのを手伝う」。",
       "level": 1,
       "toeic": "How can I help you?"
      }
@@ -2191,13 +2276,23 @@
     ],
     "pattern": {
      "type": "第2文型(SVC)",
-     "explanation": "The copy machine (S) is (V) out of order (C)。「故障中」という状態です。"
+     "explanation": "The copy machine (S) is (V) out of order (C)。「故障中」という状態です。2文目は Let's use (V) the one (O) の第3文型で、one は copy machine の言い換え。3文目は I (S) 'll put up (V) a sign (O) の第3文型です。"
     },
     "clauses": [
      {
-      "text": "The copy machine on this floor is out of order again. Let's use the one in the mailroom instead. Good idea, I'll put up a sign for everyone.",
+      "text": "The copy machine on this floor is out of order again.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(問題の報告)"
+     },
+     {
+      "text": "Let's use the one in the mailroom instead.",
+      "kind": "主節",
+      "role": "第2文(提案)"
+     },
+     {
+      "text": "Good idea, I'll put up a sign for everyone.",
+      "kind": "主節",
+      "role": "第3文(同意と申し出)"
      }
     ],
     "elements": [
@@ -2240,7 +2335,7 @@
       "word": "out of order",
       "pos": "熟語",
       "meaning": "故障中で",
-      "note": "",
+      "note": "「順番が乱れて」の意味もあるが、機械について言うと「故障中」。",
       "level": 3,
       "toeic": "The machine is out of order."
      },
@@ -2248,7 +2343,7 @@
       "word": "instead",
       "pos": "副詞",
       "meaning": "代わりに",
-      "note": "",
+      "note": "instead of + 名詞 で「~の代わりに」。",
       "level": 2,
       "toeic": "Use this one instead."
      },
@@ -2256,7 +2351,7 @@
       "word": "put up",
       "pos": "熟語",
       "meaning": "(貼り紙を)掲示する",
-      "note": "",
+      "note": "put up with ~ は「~を我慢する」で別の意味。",
       "level": 2,
       "toeic": "put up a sign"
      },
@@ -2264,7 +2359,7 @@
       "word": "mailroom",
       "pos": "名詞",
       "meaning": "郵便物を扱う部屋",
-      "note": "",
+      "note": "break room(休憩室)、supply room(備品室)など社内の部屋の名前とセットで覚える。",
       "level": 2,
       "toeic": "in the mailroom"
      }
@@ -2508,13 +2603,23 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "Flight 208 to Seattle (S) is boarding (V)。アナウンスの中心情報です。"
+     "explanation": "Flight 208 to Seattle (S) is boarding (V)。アナウンスの中心情報です。1文目は動詞のない呼びかけ。3文目は命令文で、have (V) your boarding pass (O) ready (C) の第5文型です。"
     },
     "clauses": [
      {
-      "text": "Attention, passengers. Flight 208 to Seattle is now boarding at Gate 12. Please have your boarding pass ready.",
+      "text": "Attention, passengers.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(呼びかけ。動詞のない定型)"
+     },
+     {
+      "text": "Flight 208 to Seattle is now boarding at Gate 12.",
+      "kind": "主節",
+      "role": "第2文(状況)"
+     },
+     {
+      "text": "Please have your boarding pass ready.",
+      "kind": "主節",
+      "role": "第3文(依頼)"
      }
     ],
     "elements": [
@@ -2558,7 +2663,7 @@
       "word": "board",
       "pos": "動詞",
       "meaning": "搭乗する",
-      "note": "",
+      "note": "他動詞で board the plane とも言う。名詞 board は「板、役員会」。",
       "level": 3,
       "toeic": "is now boarding"
      },
@@ -2566,7 +2671,7 @@
       "word": "boarding pass",
       "pos": "名詞",
       "meaning": "搭乗券",
-      "note": "",
+      "note": "boarding time(搭乗時刻)、boarding gate(搭乗口)もセットで。",
       "level": 3,
       "toeic": "have your boarding pass ready"
      },
@@ -2574,7 +2679,7 @@
       "word": "gate",
       "pos": "名詞",
       "meaning": "搭乗口",
-      "note": "",
+      "note": "ゲート変更(gate change)は空港アナウンスの定番の話題。",
       "level": 3,
       "toeic": "at Gate 12"
      },
@@ -2582,7 +2687,7 @@
       "word": "attention",
       "pos": "名詞",
       "meaning": "注意、お知らせ",
-      "note": "",
+      "note": "pay attention to ~ で「~に注意を払う」。",
       "level": 2,
       "toeic": "Attention, passengers."
      }
@@ -2780,13 +2885,28 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "I (S) 'm calling (V)。to confirm ~ が電話の目的を表します。"
+     "explanation": "I (S) 'm calling (V)。to confirm ~ が電話の目的を表します。1文目は this (S) is (V) Karen (C) の第2文型(電話での名乗り)。3文目は命令文で call (V) us (O) back の形、if 節が条件を表します。"
     },
     "clauses": [
      {
-      "text": "Hello, this is Karen from Dr. Lee's office. I'm calling to confirm your appointment tomorrow at ten A.M. Please call us back if you need to reschedule.",
+      "text": "Hello, this is Karen from Dr. Lee's office.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(名乗り)"
+     },
+     {
+      "text": "I'm calling to confirm your appointment tomorrow at ten A.M.",
+      "kind": "主節",
+      "role": "第2文(電話の目的)"
+     },
+     {
+      "text": "Please call us back if you need to reschedule.",
+      "kind": "主節",
+      "role": "第3文(依頼)"
+     },
+     {
+      "text": "if you need to reschedule",
+      "kind": "副詞節(条件)",
+      "role": "call us back を修飾"
      }
     ],
     "elements": [
@@ -2829,7 +2949,7 @@
       "word": "confirm",
       "pos": "動詞",
       "meaning": "~を確認する",
-      "note": "",
+      "note": "名詞は confirmation。confirmation number(確認番号)も頻出。",
       "level": 3,
       "toeic": "confirm an appointment"
      },
@@ -2837,7 +2957,7 @@
       "word": "appointment",
       "pos": "名詞",
       "meaning": "予約",
-      "note": "",
+      "note": "医者などとの面会の予約。ホテルや店の予約は reservation。",
       "level": 3,
       "toeic": "make an appointment"
      },
@@ -2845,7 +2965,7 @@
       "word": "reschedule",
       "pos": "動詞",
       "meaning": "~の日程を変更する",
-      "note": "",
+      "note": "re-(再び)+ schedule。postpone(延期する)と言い換えられることもある。",
       "level": 3,
       "toeic": "reschedule a meeting"
      },
@@ -2853,7 +2973,7 @@
       "word": "call back",
       "pos": "熟語",
       "meaning": "折り返し電話する",
-      "note": "",
+      "note": "return a call / return one's call も同じ意味。",
       "level": 3,
       "toeic": "Please call us back."
      }
@@ -3102,13 +3222,28 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "The tour (S) will take (V) about forty minutes (O)。take は「(時間が)かかる」の意味です。"
+     "explanation": "The tour (S) will take (V) about forty minutes (O)。take は「(時間が)かかる」の意味です。1文目は Thank (V) you (O) の第3文型(主語 I を省いた定型)。2文目は命令文で put on (V) a safety helmet (O) の第3文型、Before 節が時を表します。"
     },
     "clauses": [
      {
-      "text": "Thank you for visiting our factory today. Before we begin the tour, please put on a safety helmet. The tour will take about forty minutes.",
+      "text": "Thank you for visiting our factory today.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(お礼)"
+     },
+     {
+      "text": "Before we begin the tour, please put on a safety helmet.",
+      "kind": "主節",
+      "role": "第2文(指示)"
+     },
+     {
+      "text": "Before we begin the tour",
+      "kind": "副詞節(時)",
+      "role": "put on を修飾"
+     },
+     {
+      "text": "The tour will take about forty minutes.",
+      "kind": "主節",
+      "role": "第3文(所要時間)"
      }
     ],
     "elements": [
@@ -3151,7 +3286,7 @@
       "word": "put on",
       "pos": "熟語",
       "meaning": "~を身につける",
-      "note": "",
+      "note": "put on は着る動作、wear は着ている状態。Part 1 で区別が問われる。",
       "level": 3,
       "toeic": "put on a helmet"
      },
@@ -3159,7 +3294,7 @@
       "word": "tour",
       "pos": "名詞",
       "meaning": "見学、ツアー",
-      "note": "",
+      "note": "動詞もあり、tour the facility(施設を見学する)の形で使う。",
       "level": 2,
       "toeic": "factory tour"
      },
@@ -3167,7 +3302,7 @@
       "word": "safety",
       "pos": "名詞",
       "meaning": "安全",
-      "note": "",
+      "note": "形容詞は safe。safety regulations(安全規則)も頻出。",
       "level": 3,
       "toeic": "safety helmet"
      },
@@ -3175,7 +3310,7 @@
       "word": "begin",
       "pos": "動詞",
       "meaning": "~を始める",
-      "note": "",
+      "note": "begin - began - begun と変化する不規則動詞。",
       "level": 1,
       "toeic": "before we begin"
      }
@@ -3409,13 +3544,23 @@
     ],
     "pattern": {
      "type": "第2文型(SVC)",
-     "explanation": "all kitchen appliances (S) are (V) thirty percent off (C)。割引率を伝える広告の定型です。"
+     "explanation": "all kitchen appliances (S) are (V) thirty percent off (C)。割引率を伝える広告の定型です。2文目は命令文で、Visit (V) our store (O) と order (V) online を or でつないでいます。3文目は The sale (S) ends (V) の第1文型で、Sunday at midnight は時の修飾語句です。"
     },
     "clauses": [
      {
-      "text": "This weekend only, all kitchen appliances are thirty percent off. Visit our store on Main Street or order online. The sale ends Sunday at midnight.",
+      "text": "This weekend only, all kitchen appliances are thirty percent off.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(セールの内容)"
+     },
+     {
+      "text": "Visit our store on Main Street or order online.",
+      "kind": "主節",
+      "role": "第2文(行動の呼びかけ)"
+     },
+     {
+      "text": "The sale ends Sunday at midnight.",
+      "kind": "主節",
+      "role": "第3文(期限)"
      }
     ],
     "elements": [
@@ -3458,7 +3603,7 @@
       "word": "appliance",
       "pos": "名詞",
       "meaning": "家電製品",
-      "note": "",
+      "note": "可算名詞で、ふつう複数形。home appliances(家庭用電化製品)とも言う。",
       "level": 3,
       "toeic": "kitchen appliances"
      },
@@ -3466,7 +3611,7 @@
       "word": "percent off",
       "pos": "熟語",
       "meaning": "~%引き",
-      "note": "",
+      "note": "a thirty percent discount と discount を使っても言える。",
       "level": 3,
       "toeic": "thirty percent off"
      },
@@ -3474,7 +3619,7 @@
       "word": "midnight",
       "pos": "名詞",
       "meaning": "深夜0時",
-      "note": "",
+      "note": "noon(正午)と対になる語。前置詞は at を使う。",
       "level": 2,
       "toeic": "ends at midnight"
      },
@@ -3482,7 +3627,7 @@
       "word": "order",
       "pos": "動詞",
       "meaning": "~を注文する",
-      "note": "",
+      "note": "名詞もあり、place an order(注文する)の形でよく出る。",
       "level": 1,
       "toeic": "order online"
      }
@@ -3712,13 +3857,33 @@
     ],
     "pattern": {
      "type": "第2文型(SVC)",
-     "explanation": "I (S) 'm (V) pleased to announce ... (C)。発表の定型的な前置きで、that 以下が本題です。"
+     "explanation": "I (S) 'm (V) pleased to announce ... (C)。発表の定型的な前置きで、that 以下が本題です。that 節の中は our new branch (S) will open (V) の第1文型。3文目は命令文で welcome (V) Mr. Evans (O) の第3文型、who 以下が補足です。"
     },
     "clauses": [
      {
-      "text": "Good morning, everyone. I'm pleased to announce that our new branch will open in Denver next month. Please welcome Mr. Evans, who will be the manager.",
+      "text": "Good morning, everyone.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(あいさつ)"
+     },
+     {
+      "text": "I'm pleased to announce that our new branch will open in Denver next month.",
+      "kind": "主節",
+      "role": "第2文(発表)"
+     },
+     {
+      "text": "that our new branch will open in Denver next month",
+      "kind": "名詞節",
+      "role": "announce の目的語"
+     },
+     {
+      "text": "Please welcome Mr. Evans, who will be the manager.",
+      "kind": "主節",
+      "role": "第3文(紹介)"
+     },
+     {
+      "text": "who will be the manager",
+      "kind": "関係詞節",
+      "role": "Mr. Evans を補足(非制限用法)"
      }
     ],
     "elements": [
@@ -3761,7 +3926,7 @@
       "word": "announce",
       "pos": "動詞",
       "meaning": "~を発表する",
-      "note": "",
+      "note": "名詞は announcement。make an announcement の形も頻出。",
       "level": 3,
       "toeic": "I'm pleased to announce ~"
      },
@@ -3769,7 +3934,7 @@
       "word": "branch",
       "pos": "名詞",
       "meaning": "支店",
-      "note": "",
+      "note": "本社・本店は headquarters / main office。",
       "level": 3,
       "toeic": "a new branch"
      },
@@ -3777,7 +3942,7 @@
       "word": "manager",
       "pos": "名詞",
       "meaning": "支店長、管理者",
-      "note": "",
+      "note": "動詞 manage、名詞 management(経営、経営陣)も合わせて。",
       "level": 1,
       "toeic": "branch manager"
      },
@@ -3785,7 +3950,7 @@
       "word": "welcome",
       "pos": "動詞",
       "meaning": "~を歓迎する",
-      "note": "",
+      "note": "形容詞では be welcome to do(自由に~してよい)の形もある。",
       "level": 2,
       "toeic": "Please welcome ~"
      }
@@ -4027,13 +4192,23 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "drivers (S) should expect (V) long delays (O)。文頭の Due to ~ が理由を表します。"
+     "explanation": "drivers (S) should expect (V) long delays (O)。文頭の Due to ~ が理由を表します。2文目は命令文で Consider (V) taking the train (O) の第3文型(動名詞が目的語)。3文目は We (S) will bring (V) you (O) another update (O) の第4文型です。"
     },
     "clauses": [
      {
-      "text": "Due to heavy traffic on Route 9, drivers should expect long delays this morning. Consider taking the train instead. We will bring you another update in thirty minutes.",
+      "text": "Due to heavy traffic on Route 9, drivers should expect long delays this morning.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(交通状況)"
+     },
+     {
+      "text": "Consider taking the train instead.",
+      "kind": "主節",
+      "role": "第2文(代案の提案)"
+     },
+     {
+      "text": "We will bring you another update in thirty minutes.",
+      "kind": "主節",
+      "role": "第3文(次回の予告)"
      }
     ],
     "elements": [
@@ -4081,7 +4256,7 @@
       "word": "due to",
       "pos": "熟語",
       "meaning": "~のために",
-      "note": "",
+      "note": "because of / owing to と同じ意味で、後ろは名詞(句)。",
       "level": 3,
       "toeic": "due to heavy traffic"
      },
@@ -4089,7 +4264,7 @@
       "word": "delay",
       "pos": "名詞",
       "meaning": "遅れ",
-      "note": "",
+      "note": "可算・不可算の両方で使う。long delays は可算の用法。",
       "level": 3,
       "toeic": "long delays"
      },
@@ -4097,7 +4272,7 @@
       "word": "expect",
       "pos": "動詞",
       "meaning": "~を予想する",
-      "note": "",
+      "note": "expect + 人 + to do で「人が~すると思う」。名詞は expectation。",
       "level": 2,
       "toeic": "expect delays"
      },
@@ -4105,7 +4280,7 @@
       "word": "update",
       "pos": "名詞",
       "meaning": "最新情報",
-      "note": "",
+      "note": "動詞もあり、update the schedule(予定を更新する)の形で使う。",
       "level": 3,
       "toeic": "another update"
      }
@@ -4356,13 +4531,23 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "You (S) have reached (V) the customer service line (O)。自動応答の定型です。"
+     "explanation": "You (S) have reached (V) the customer service line (O)。自動応答の定型です。2文目は Our office (S) is (V) closed (C) の第2文型。3文目は命令文で、call back (V) と leave (V) a message (O) を or でつないでいます。"
     },
     "clauses": [
      {
-      "text": "You have reached the customer service line of Brightway Electric. Our office is now closed. Please call back during business hours, or leave a message after the tone.",
+      "text": "You have reached the customer service line of Brightway Electric.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(窓口の案内)"
+     },
+     {
+      "text": "Our office is now closed.",
+      "kind": "主節",
+      "role": "第2文(状況)"
+     },
+     {
+      "text": "Please call back during business hours, or leave a message after the tone.",
+      "kind": "主節",
+      "role": "第3文(依頼)"
      }
     ],
     "elements": [
@@ -4405,7 +4590,7 @@
       "word": "business hours",
       "pos": "名詞",
       "meaning": "営業時間",
-      "note": "",
+      "note": "opening hours / office hours とも言う。",
       "level": 3,
       "toeic": "during business hours"
      },
@@ -4413,7 +4598,7 @@
       "word": "leave a message",
       "pos": "熟語",
       "meaning": "伝言を残す",
-      "note": "",
+      "note": "take a message は「伝言を受ける」で立場が逆になる。",
       "level": 3,
       "toeic": "after the tone"
      },
@@ -4421,7 +4606,7 @@
       "word": "tone",
       "pos": "名詞",
       "meaning": "発信音",
-      "note": "",
+      "note": "声の調子や文章の「トーン」の意味もある。",
       "level": 2,
       "toeic": "after the tone"
      },
@@ -4429,7 +4614,7 @@
       "word": "reach",
       "pos": "動詞",
       "meaning": "(電話で)つながる",
-      "note": "",
+      "note": "他動詞なので reach to ~ とは言わない。「(人に)連絡がつく」の意味でも使う。",
       "level": 2,
       "toeic": "You have reached ~."
      }
@@ -4668,13 +4853,23 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "Photography (S) is allowed (V)。but 以降で例外(フラッシュ禁止)を述べています。"
+     "explanation": "Photography (S) is allowed (V)。but 以降で例外(フラッシュ禁止)を述べています。but 以降は the use of flash (S) is not permitted (V) の受動態。3文目は Audio guides (S) are (V) available (C) の第2文型です。"
     },
     "clauses": [
      {
-      "text": "Welcome to the city museum's new exhibit on modern art. Photography is allowed, but the use of flash is not permitted. Audio guides are available at the front desk.",
+      "text": "Welcome to the city museum's new exhibit on modern art.",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(あいさつ)"
+     },
+     {
+      "text": "Photography is allowed, but the use of flash is not permitted.",
+      "kind": "主節",
+      "role": "第2文(許可と禁止)"
+     },
+     {
+      "text": "Audio guides are available at the front desk.",
+      "kind": "主節",
+      "role": "第3文(案内)"
      }
     ],
     "elements": [
@@ -4708,7 +4903,7 @@
       "word": "exhibit",
       "pos": "名詞",
       "meaning": "展示",
-      "note": "",
+      "note": "exhibition とほぼ同じ意味。on display(展示中)も合わせて覚える。",
       "level": 3,
       "toeic": "a new exhibit"
      },
@@ -4716,7 +4911,7 @@
       "word": "permit",
       "pos": "動詞",
       "meaning": "~を許可する",
-      "note": "",
+      "note": "名詞 permit は「許可証」(parking permit)。動詞と名詞で強勢の位置が違う。",
       "level": 3,
       "toeic": "is not permitted"
      },
@@ -4724,7 +4919,7 @@
       "word": "available",
       "pos": "形容詞",
       "meaning": "利用できる",
-      "note": "",
+      "note": "人について使うと「手が空いている、都合がつく」。",
       "level": 3,
       "toeic": "available at the front desk"
      },
@@ -4732,7 +4927,7 @@
       "word": "front desk",
       "pos": "名詞",
       "meaning": "受付",
-      "note": "",
+      "note": "ホテルでは reception とも言う。",
       "level": 3,
       "toeic": "at the front desk"
      }

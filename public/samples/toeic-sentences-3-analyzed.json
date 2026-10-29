@@ -107,7 +107,7 @@
       "word": "water",
       "pos": "動詞",
       "meaning": "~に水をやる",
-      "note": "",
+      "note": "名詞と同じ形の他動詞。過去形 watered、進行形 watering で写真描写に出る。",
       "level": 3,
       "toeic": "water the plants / water the lawn"
      },
@@ -115,7 +115,7 @@
       "word": "plant",
       "pos": "名詞",
       "meaning": "植物",
-      "note": "",
+      "note": "「工場」の意味もあり、manufacturing plant などで頻出。動詞では「植える」。",
       "level": 2,
       "toeic": "potted plant(鉢植え)"
      },
@@ -123,7 +123,7 @@
       "word": "garden",
       "pos": "名詞",
       "meaning": "庭",
-      "note": "",
+      "note": "可算名詞。gardening(園芸)、gardener(庭師)などの派生語も出る。",
       "level": 1,
       "toeic": "a community garden"
      }
@@ -321,7 +321,7 @@
       "word": "stack",
       "pos": "動詞",
       "meaning": "~を積み重ねる",
-      "note": "",
+      "note": "名詞でも「積み重ね」。a stack of papers(書類の山)の形でよく使う。",
       "level": 2,
       "toeic": "be stacked in rows"
      },
@@ -329,7 +329,7 @@
       "word": "loading dock",
       "pos": "名詞",
       "meaning": "荷積み場",
-      "note": "",
+      "note": "load(積む)の反対は unload(降ろす)。unloading area も同じ場面で出る。",
       "level": 3,
       "toeic": "at the loading dock"
      },
@@ -337,7 +337,7 @@
       "word": "next to",
       "pos": "熟語",
       "meaning": "~の隣に",
-      "note": "",
+      "note": "beside とほぼ同じ意味。near より「すぐ隣」で距離が近い。",
       "level": 2,
       "toeic": "位置関係の描写で頻出"
      }
@@ -536,7 +536,7 @@
       "word": "shake hands",
       "pos": "熟語",
       "meaning": "握手する",
-      "note": "",
+      "note": "過去形は shook hands。挨拶・合意の場面で greet each other と言い換えられる。",
       "level": 3,
       "toeic": "shake hands with ~"
      },
@@ -544,7 +544,7 @@
       "word": "across",
       "pos": "前置詞",
       "meaning": "~越しに、~の向こう側に",
-      "note": "",
+      "note": "「横切って」の意味もある。walk across the street(通りを渡る)。",
       "level": 2,
       "toeic": "across the table / across the street"
      },
@@ -552,7 +552,7 @@
       "word": "table",
       "pos": "名詞",
       "meaning": "テーブル",
-      "note": "",
+      "note": "set the table(食卓を整える)、clear the table(片付ける)も Part 1 で出る。",
       "level": 1,
       "toeic": "a conference table"
      }
@@ -746,7 +746,7 @@
       "word": "arrange",
       "pos": "動詞",
       "meaning": "~を配置する、整える",
-      "note": "",
+      "note": "名詞は arrangement。make arrangements for ~(~の手配をする)が頻出。",
       "level": 3,
       "toeic": "arrange the chairs / arrange a meeting"
      },
@@ -754,7 +754,7 @@
       "word": "conference table",
       "pos": "名詞",
       "meaning": "会議用テーブル",
-      "note": "",
+      "note": "conference は「会議」。conference room(会議室)、conference call(電話会議)も重要。",
       "level": 2,
       "toeic": "around the conference table"
      },
@@ -762,7 +762,7 @@
       "word": "around",
       "pos": "前置詞",
       "meaning": "~の周りに",
-      "note": "",
+      "note": "数字の前では「約」の意味(around 50 people)。about と同じ使い方。",
       "level": 1,
       "toeic": "位置の描写で頻出"
      }
@@ -957,7 +957,7 @@
       "word": "wait in line",
       "pos": "熟語",
       "meaning": "列に並んで待つ",
-      "note": "",
+      "note": "stand in line とも言う。イギリス英語では queue(列に並ぶ)を使う。",
       "level": 3,
       "toeic": "wait in line for ~(~を待って並ぶ)"
      },
@@ -965,7 +965,7 @@
       "word": "cash register",
       "pos": "名詞",
       "meaning": "レジ",
-      "note": "",
+      "note": "checkout counter、checkout とも言う。cashier は「レジ係」の人。",
       "level": 3,
       "toeic": "at the cash register"
      },
@@ -973,7 +973,7 @@
       "word": "customer",
       "pos": "名詞",
       "meaning": "客",
-      "note": "",
+      "note": "client は専門サービスの顧客、guest はホテルの客と使い分ける。",
       "level": 1,
       "toeic": "顧客対応の頻出語"
      }
@@ -1172,7 +1172,7 @@
       "word": "lean",
       "pos": "動詞",
       "meaning": "もたれる、立てかけてある",
-      "note": "",
+      "note": "lean over(身を乗り出す)、lean forward(前かがみになる)も人物描写で出る。",
       "level": 3,
       "toeic": "be leaning against ~"
      },
@@ -1180,7 +1180,7 @@
       "word": "ladder",
       "pos": "名詞",
       "meaning": "はしご",
-      "note": "",
+      "note": "climb a ladder(はしごを登る)の形で、人物の動作としても出る。",
       "level": 2,
       "toeic": "a ladder against the wall"
      },
@@ -1188,7 +1188,7 @@
       "word": "brick",
       "pos": "名詞",
       "meaning": "れんが",
-      "note": "",
+      "note": "可算・不可算どちらも使う。made of brick(れんが造り)のように材質も表す。",
       "level": 2,
       "toeic": "a brick building"
      }
@@ -1382,7 +1382,7 @@
       "word": "park",
       "pos": "動詞",
       "meaning": "~を止める、駐車する",
-      "note": "",
+      "note": "名詞の park(公園)と同形。parking lot(駐車場)、parking space も頻出。",
       "level": 2,
       "toeic": "be parked along the street"
      },
@@ -1390,7 +1390,7 @@
       "word": "along",
       "pos": "前置詞",
       "meaning": "~に沿って",
-      "note": "",
+      "note": "be lined up along ~(~に沿って並んでいる)の形でよく使う。",
       "level": 2,
       "toeic": "along the road / along the river"
      },
@@ -1398,7 +1398,7 @@
       "word": "several",
       "pos": "形容詞",
       "meaning": "いくつかの",
-      "note": "",
+      "note": "a few より多めの「いくつか」。several of the employees のように of とも使う。",
       "level": 1,
       "toeic": "several + 複数名詞"
      }
@@ -1585,7 +1585,7 @@
       "word": "wear",
       "pos": "動詞",
       "meaning": "~を身につけている",
-      "note": "",
+      "note": "活用は wear - wore - worn。wear glasses / wear a uniform などにも使う。",
       "level": 3,
       "toeic": "be wearing a helmet(状態)"
      },
@@ -1593,7 +1593,7 @@
       "word": "repair",
       "pos": "動詞",
       "meaning": "~を修理する",
-      "note": "",
+      "note": "名詞でも使い、under repair(修理中)が頻出。fix と言い換えられる。",
       "level": 3,
       "toeic": "repair the roof"
      },
@@ -1601,7 +1601,7 @@
       "word": "roof",
       "pos": "名詞",
       "meaning": "屋根",
-      "note": "",
+      "note": "複数形は roofs。rooftop(屋上)も関連語として出る。",
       "level": 2,
       "toeic": "on the roof"
      },
@@ -1609,7 +1609,7 @@
       "word": "helmet",
       "pos": "名詞",
       "meaning": "ヘルメット",
-      "note": "",
+      "note": "安全具として safety vest、gloves、goggles と一緒に Part 1 に出る。",
       "level": 2,
       "toeic": "safety helmet"
      }
@@ -1812,7 +1812,7 @@
       "word": "place",
       "pos": "動詞",
       "meaning": "~を置く",
-      "note": "",
+      "note": "place an order(注文する)の形も重要。put と言い換えられる。",
       "level": 3,
       "toeic": "be placed on the table"
      },
@@ -1820,7 +1820,7 @@
       "word": "vase",
       "pos": "名詞",
       "meaning": "花瓶",
-      "note": "",
+      "note": "a vase of flowers の of は「中身」。a cup of coffee と同じ形。",
       "level": 2,
       "toeic": "a vase of flowers"
      },
@@ -1828,7 +1828,7 @@
       "word": "reception desk",
       "pos": "名詞",
       "meaning": "受付",
-      "note": "",
+      "note": "reception は「受付」のほか「歓迎会」の意味も。receptionist は受付係。",
       "level": 3,
       "toeic": "at the reception desk"
      }
@@ -2025,6 +2025,14 @@
      {
       "point": "board は他動詞",
       "explanation": "board a ferry / board a plane のように、前置詞を付けずに乗り物を目的語にします。"
+     },
+     {
+      "point": "現在進行形 are + -ing",
+      "explanation": "乗り込む動作が写真の中で進行中であることを表します。主語が複数なので are。"
+     },
+     {
+      "point": "at + 地点",
+      "explanation": "at the dock のように、特定の地点を at で表します。"
      }
     ],
     "vocab": [
@@ -2032,7 +2040,7 @@
       "word": "board",
       "pos": "動詞",
       "meaning": "~に乗り込む、搭乗する",
-      "note": "",
+      "note": "名詞 board は「板/役員会」。board of directors(取締役会)も頻出。",
       "level": 3,
       "toeic": "board a plane / boarding pass"
      },
@@ -2040,7 +2048,7 @@
       "word": "passenger",
       "pos": "名詞",
       "meaning": "乗客",
-      "note": "",
+      "note": "乗り物の客は passenger、店の客は customer、ホテルの客は guest。",
       "level": 3,
       "toeic": "train passengers"
      },
@@ -2048,7 +2056,7 @@
       "word": "dock",
       "pos": "名詞",
       "meaning": "埠頭、波止場",
-      "note": "",
+      "note": "動詞では「(船が)入港する」。pier、wharf と言い換えられる。",
       "level": 2,
       "toeic": "at the dock"
      },
@@ -2056,7 +2064,7 @@
       "word": "ferry",
       "pos": "名詞",
       "meaning": "フェリー",
-      "note": "",
+      "note": "可算名詞。by ferry(フェリーで)は冠詞なしで手段を表す。",
       "level": 2,
       "toeic": "take a ferry"
      }
@@ -2205,9 +2213,14 @@
     },
     "clauses": [
      {
-      "text": "When does the new office open? It opens next Monday.",
+      "text": "When does the new office open?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(質問・時を問う)"
+     },
+     {
+      "text": "It opens next Monday.",
+      "kind": "主節",
+      "role": "第2文(応答・時を答える)"
      }
     ],
     "elements": [
@@ -2246,7 +2259,7 @@
       "word": "open",
       "pos": "動詞",
       "meaning": "開く、開店する",
-      "note": "",
+      "note": "形容詞でも「開いている」。opening(開店、職の空き)も重要語。",
       "level": 1,
       "toeic": "The store opens at 9."
      },
@@ -2254,9 +2267,17 @@
       "word": "next",
       "pos": "形容詞",
       "meaning": "次の、来~",
-      "note": "",
+      "note": "next Monday には前置詞 on を付けない。last、this も同じ。",
       "level": 1,
       "toeic": "next Monday / next week"
+     },
+     {
+      "word": "office",
+      "pos": "名詞",
+      "meaning": "事務所、オフィス",
+      "note": "branch office(支社)、head office(本社)の形でよく使う。",
+      "level": 1,
+      "toeic": "open a new office"
      }
     ],
     "toeic": {
@@ -2407,9 +2428,14 @@
     },
     "clauses": [
      {
-      "text": "Who is in charge of the marketing budget? Ms. Tanaka manages it.",
+      "text": "Who is in charge of the marketing budget?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(質問・人を問う)"
+     },
+     {
+      "text": "Ms. Tanaka manages it.",
+      "kind": "主節",
+      "role": "第2文(応答・担当者を答える)"
      }
     ],
     "elements": [
@@ -2448,7 +2474,7 @@
       "word": "be in charge of",
       "pos": "熟語",
       "meaning": "~を担当している",
-      "note": "",
+      "note": "名詞 charge には「料金」の意味もある。free of charge(無料で)。",
       "level": 3,
       "toeic": "Who is in charge of ~?"
      },
@@ -2456,7 +2482,7 @@
       "word": "budget",
       "pos": "名詞",
       "meaning": "予算",
-      "note": "",
+      "note": "可算名詞。over budget(予算超過)、within budget(予算内で)が頻出。",
       "level": 3,
       "toeic": "marketing budget / tight budget"
      },
@@ -2464,7 +2490,7 @@
       "word": "manage",
       "pos": "動詞",
       "meaning": "~を管理する、運営する",
-      "note": "",
+      "note": "manage to do で「何とか~する」。名詞 management は「経営(陣)」。",
       "level": 3,
       "toeic": "manage a project"
      }
@@ -2623,9 +2649,14 @@
     },
     "clauses": [
      {
-      "text": "Where can I find the printer paper? It's in the supply closet.",
+      "text": "Where can I find the printer paper?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(質問・場所を問う)"
+     },
+     {
+      "text": "It's in the supply closet.",
+      "kind": "主節",
+      "role": "第2文(応答・場所を答える)"
      }
     ],
     "elements": [
@@ -2669,7 +2700,7 @@
       "word": "supply closet",
       "pos": "名詞",
       "meaning": "備品庫",
-      "note": "",
+      "note": "supplies は「備品・消耗品」で複数形。office supplies が頻出。",
       "level": 3,
       "toeic": "in the supply closet"
      },
@@ -2677,7 +2708,7 @@
       "word": "printer paper",
       "pos": "名詞",
       "meaning": "コピー用紙",
-      "note": "",
+      "note": "不可算名詞。数えるときは a sheet of paper のように言う。",
       "level": 2,
       "toeic": "load printer paper"
      },
@@ -2685,7 +2716,7 @@
       "word": "find",
       "pos": "動詞",
       "meaning": "~を見つける",
-      "note": "",
+      "note": "活用は find - found - found。found(設立する)と混同しないこと。",
       "level": 1,
       "toeic": "Where can I find ~?"
      }
@@ -2847,13 +2878,18 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "Would (助動詞) you like (V) to join us for lunch (O)。丁寧に誘う定型表現です。"
+     "explanation": "Would (助動詞) you like (V) to join us for lunch (O)。丁寧に誘う定型表現です。2文目は Sure のあと、I (S) 'd love (V) to (O、to join you の省略) の第3文型。"
     },
     "clauses": [
      {
-      "text": "Would you like to join us for lunch? Sure, I'd love to.",
+      "text": "Would you like to join us for lunch?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(誘い)"
+     },
+     {
+      "text": "Sure, I'd love to.",
+      "kind": "主節",
+      "role": "第2文(応答・承諾)"
      }
     ],
     "elements": [
@@ -2892,7 +2928,7 @@
       "word": "join",
       "pos": "動詞",
       "meaning": "~に加わる、一緒に~する",
-      "note": "",
+      "note": "他動詞なので join us と前置詞なしで使う。join in(~に参加する)の形もある。",
       "level": 2,
       "toeic": "join us for lunch"
      },
@@ -2900,7 +2936,7 @@
       "word": "Would you like to ~?",
       "pos": "熟語",
       "meaning": "~しませんか",
-      "note": "",
+      "note": "Would you like ~?(名詞)は「~はいかがですか」と物を勧める形。",
       "level": 3,
       "toeic": "丁寧な誘い"
      },
@@ -2908,7 +2944,7 @@
       "word": "I'd love to",
       "pos": "熟語",
       "meaning": "ぜひそうしたい",
-      "note": "",
+      "note": "断るときは I'd love to, but ~ と言ってから理由を述べる。",
       "level": 2,
       "toeic": "誘いへの肯定的な応答"
      }
@@ -3076,9 +3112,14 @@
     },
     "clauses": [
      {
-      "text": "Why was the meeting postponed? The manager is out of town.",
+      "text": "Why was the meeting postponed?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(質問・理由を問う)"
+     },
+     {
+      "text": "The manager is out of town.",
+      "kind": "主節",
+      "role": "第2文(応答・理由を述べる)"
      }
     ],
     "elements": [
@@ -3117,7 +3158,7 @@
       "word": "postpone",
       "pos": "動詞",
       "meaning": "~を延期する",
-      "note": "",
+      "note": "put off と言い換えられる。postpone A until B(BまでAを延期する)の形。",
       "level": 3,
       "toeic": "The meeting was postponed."
      },
@@ -3125,7 +3166,7 @@
       "word": "out of town",
       "pos": "熟語",
       "meaning": "出張中で、町を離れて",
-      "note": "",
+      "note": "away on business、on a business trip と言い換えられる。",
       "level": 3,
       "toeic": "be out of town"
      },
@@ -3133,7 +3174,7 @@
       "word": "manager",
       "pos": "名詞",
       "meaning": "部長、管理者",
-      "note": "",
+      "note": "manage の派生語。management(経営陣)、managerial(管理の)も重要。",
       "level": 1,
       "toeic": "general manager"
      }
@@ -3291,13 +3332,18 @@
     ],
     "pattern": {
      "type": "第1文型(SV)",
-     "explanation": "the repairs (S) will take (V)。take は「(時間が)かかる」の意味です。"
+     "explanation": "the repairs (S) will take (V)。take は「(時間が)かかる」の意味です。2文目の About two days. は It will take about two days. を省略した、名詞句だけの応答です。"
     },
     "clauses": [
      {
-      "text": "How long will the repairs take? About two days.",
+      "text": "How long will the repairs take?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(質問・期間を問う)"
+     },
+     {
+      "text": "About two days.",
+      "kind": "主節",
+      "role": "第2文(応答・名詞句だけの省略形)"
      }
     ],
     "elements": [
@@ -3336,7 +3382,7 @@
       "word": "repair",
       "pos": "名詞",
       "meaning": "修理",
-      "note": "",
+      "note": "ここでは可算名詞の複数形 repairs。repair work も同じ意味で使う。",
       "level": 3,
       "toeic": "The repairs will take ~."
      },
@@ -3344,7 +3390,7 @@
       "word": "take",
       "pos": "動詞",
       "meaning": "(時間が)かかる",
-      "note": "",
+      "note": "It takes + 時間 + to do の形で「~するのに…かかる」。",
       "level": 2,
       "toeic": "How long will it take?"
      },
@@ -3352,7 +3398,7 @@
       "word": "about",
       "pos": "副詞",
       "meaning": "約、およそ",
-      "note": "",
+      "note": "around、approximately と言い換えられる。数字の前に付ける。",
       "level": 1,
       "toeic": "about two days"
      }
@@ -3497,13 +3543,18 @@
     ],
     "pattern": {
      "type": "第4文型(SVOO)",
-     "explanation": "Could you (S) send (V) me (O) the revised schedule (O)。「人に物を送る」の形です。"
+     "explanation": "Could you (S) send (V) me (O) the revised schedule (O)。「人に物を送る」の形です。2文目は I (S) 'll e-mail (V) it (O) の第3文型で、this afternoon は時の修飾語句です。"
     },
     "clauses": [
      {
-      "text": "Could you send me the revised schedule? I'll e-mail it this afternoon.",
+      "text": "Could you send me the revised schedule?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(依頼)"
+     },
+     {
+      "text": "I'll e-mail it this afternoon.",
+      "kind": "主節",
+      "role": "第2文(応答・申し出)"
      }
     ],
     "elements": [
@@ -3547,7 +3598,7 @@
       "word": "revised",
       "pos": "形容詞",
       "meaning": "修正された、改訂された",
-      "note": "",
+      "note": "動詞は revise、名詞は revision。updated schedule と言い換えられる。",
       "level": 3,
       "toeic": "revised schedule / revised edition"
      },
@@ -3555,7 +3606,7 @@
       "word": "send",
       "pos": "動詞",
       "meaning": "~に…を送る",
-      "note": "",
+      "note": "send A to B の形にも書き換えられる。過去形・過去分詞は sent。",
       "level": 1,
       "toeic": "send me the file"
      },
@@ -3563,7 +3614,7 @@
       "word": "e-mail",
       "pos": "動詞",
       "meaning": "~にメールを送る",
-      "note": "",
+      "note": "email ともつづる。名詞でも動詞でも使い、send an e-mail と同じ意味。",
       "level": 2,
       "toeic": "I'll e-mail it."
      }
@@ -3740,13 +3791,18 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "Haven't (助動詞) you finished (V) the report (O)。否定疑問文でも、実質は「終えましたか」の確認です。"
+     "explanation": "Haven't (助動詞) you finished (V) the report (O)。否定疑問文でも、実質は「終えましたか」の確認です。2文目は Not quite のあと、but 以下が I (S) 'm (V) almost done (C) の第2文型。"
     },
     "clauses": [
      {
-      "text": "Haven't you finished the report yet? Not quite, but I'm almost done.",
+      "text": "Haven't you finished the report yet?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(否定疑問・確認)"
+     },
+     {
+      "text": "Not quite, but I'm almost done.",
+      "kind": "主節",
+      "role": "第2文(応答・進み具合)"
      }
     ],
     "elements": [
@@ -3790,7 +3846,7 @@
       "word": "yet",
       "pos": "副詞",
       "meaning": "もう、まだ",
-      "note": "",
+      "note": "肯定文の already と対になる語。not ~ yet で「まだ~ない」。",
       "level": 3,
       "toeic": "疑問文・否定文で使う"
      },
@@ -3798,7 +3854,7 @@
       "word": "almost",
       "pos": "副詞",
       "meaning": "ほとんど、もう少しで",
-      "note": "",
+      "note": "almost all(ほとんどすべての)の形で使う。almost people は誤り。",
       "level": 2,
       "toeic": "almost done / almost finished"
      },
@@ -3806,7 +3862,7 @@
       "word": "Not quite",
       "pos": "熟語",
       "meaning": "ちょっと違う、まだ完全には",
-      "note": "",
+      "note": "quite だけなら「かなり、まったく」。not quite で部分否定になる。",
       "level": 2,
       "toeic": "控えめな否定"
      }
@@ -3974,13 +4030,18 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "I (S) should use (V) which printer (O)。Which printer が文頭に出た疑問文です。"
+     "explanation": "I (S) should use (V) which printer (O)。Which printer が文頭に出た疑問文です。2文目の The one on the second floor. は You should use the one on the second floor. を省略した、名詞句だけの応答です。"
     },
     "clauses": [
      {
-      "text": "Which printer should I use for color copies? The one on the second floor.",
+      "text": "Which printer should I use for color copies?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(質問・選択)"
+     },
+     {
+      "text": "The one on the second floor.",
+      "kind": "主節",
+      "role": "第2文(応答・名詞句だけの省略形)"
      }
     ],
     "elements": [
@@ -4024,7 +4085,7 @@
       "word": "second floor",
       "pos": "名詞",
       "meaning": "2階",
-      "note": "",
+      "note": "イギリス式では second floor は「3階」。米式の1階は first floor。",
       "level": 1,
       "toeic": "on the second floor(米国式)"
      },
@@ -4032,7 +4093,7 @@
       "word": "copy",
       "pos": "名詞",
       "meaning": "コピー",
-      "note": "",
+      "note": "可算名詞で「部、冊」の意味も。make copies(コピーを取る)が頻出。",
       "level": 2,
       "toeic": "color copies"
      },
@@ -4040,7 +4101,7 @@
       "word": "which",
       "pos": "形容詞",
       "meaning": "どの",
-      "note": "",
+      "note": "限られた選択肢から選ぶときに使う。what はより広い範囲を問う。",
       "level": 2,
       "toeic": "Which printer ~?"
      }
@@ -4223,13 +4284,23 @@
     ],
     "pattern": {
      "type": "第3文型(SVO)",
-     "explanation": "you (S) want (V) to take ... or walk ... (O)。or で2つの選択肢を示す選択疑問文です。"
+     "explanation": "you (S) want (V) to take ... or walk ... (O)。or で2つの選択肢を示す選択疑問文です。2文目の Let's walk は「Let's + 動詞の原形」の提案で、walk は自動詞。since 以下は理由の副詞節で、it (S) 's (V) a nice day (C) の第2文型。"
     },
     "clauses": [
      {
-      "text": "Do you want to take a taxi or walk to the station? Let's walk, since it's a nice day.",
+      "text": "Do you want to take a taxi or walk to the station?",
       "kind": "主節",
-      "role": "文全体"
+      "role": "第1文(選択疑問)"
+     },
+     {
+      "text": "Let's walk, since it's a nice day.",
+      "kind": "主節",
+      "role": "第2文(応答・提案)"
+     },
+     {
+      "text": "since it's a nice day",
+      "kind": "副詞節(理由)",
+      "role": "walk を選ぶ理由を表す"
      }
     ],
     "elements": [
@@ -4268,7 +4339,7 @@
       "word": "walk",
       "pos": "動詞",
       "meaning": "歩く",
-      "note": "",
+      "note": "他動詞で walk the dog(犬を散歩させる)。名詞の a short walk も頻出。",
       "level": 1,
       "toeic": "walk to the station"
      },
@@ -4276,7 +4347,7 @@
       "word": "Let's ~",
       "pos": "熟語",
       "meaning": "~しましょう",
-      "note": "",
+      "note": "Why don't we ~? / How about ~ing? と言い換えられる提案表現。",
       "level": 2,
       "toeic": "提案の応答"
      },
@@ -4284,7 +4355,7 @@
       "word": "since",
       "pos": "接続詞",
       "meaning": "~なので",
-      "note": "",
+      "note": "「~以来」の意味もある。since 2010 のように時の起点を表す。",
       "level": 2,
       "toeic": "理由を表す"
      }
