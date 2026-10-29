@@ -73,10 +73,14 @@ textarea{width:100%;resize:vertical}
 .row-i input{margin-top:6px;width:18px;height:18px;flex:none}
 .row-i .chk{flex:none;display:flex;flex-direction:column;align-items:center;gap:6px}
 .row-i .chk input{margin-top:6px}
-.row-i .chk .from{padding:2px 8px;font-size:12px}
+.row-i .chk .from,.card .sub .from{border:0;background:none;padding:2px 8px;font-size:14px;color:var(--sub)}
+.row-i .chk .from:hover,.card .sub .from:hover{color:var(--pri)}
 #pickList .row-i.now .chk .from{font-size:0;color:var(--pri)}
-#pickList .row-i.now .chk .from::after{content:"■";font-size:12px}
-.row-i .go{flex:none;align-self:center;border:0;background:none;font-size:20px;padding:2px 8px;cursor:pointer;color:var(--fg,inherit)}
+#pickList .row-i.now .chk .from::after{content:"■";font-size:14px}
+.row-i .side{flex:none;align-self:center;display:flex;flex-direction:column;align-items:center}
+.row-i .jt{border:0;background:none;color:var(--sub);font-size:13px;padding:2px 8px;cursor:pointer}
+.row-i .jt:hover{color:var(--pri)}
+.row-i .go{flex:none;border:0;background:none;font-size:20px;padding:2px 8px;cursor:pointer;color:var(--fg,inherit)}
 .row-i .t{flex:1;min-width:0}
 .row-i .m{font-size:12.5px;color:var(--sub)}
 .tnsbadge{margin:4px 0 8px}

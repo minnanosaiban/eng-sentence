@@ -317,18 +317,20 @@
     $("#fgroup").innerHTML = opts.join("");
     $("#fgroup").value = [...$("#fgroup").options].some(x => x.value === cur) ? cur : "";
   }
+  const jaFlip = new Set(); // 行ごとに、「和訳を出す」の全体設定を逆にしている英文
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
     const part = unit === "sentence" ? Clean.partOf(r) : "";
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
     const tags = `${tt ? [tt.voice, tt.tns, tt.asp].map(x => `<span class="tag tns">${x}</span>`).join("") : ""}${gt.map(x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
+    const ja = r.ja ? `<span class="m jx"${prefs.pick.ja !== jaFlip.has(r.id) ? "" : " hidden"}><br>${esc(r.ja)}</span>` : "";
     const body = chunk
-      ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`
+      ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
       : unit === "word"
-      ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`
-      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${prefs.pick.ja ? `<span class="m"><br>${esc(r.ja)}</span>` : ""}`;
-    return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button></label>`;
+      ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${ja}`
+      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${ja}`;
+    return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><span class="side"><button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button>${r.ja ? `<button type="button" class="jt" data-ja="${r.id}" title="和訳の表示・非表示" aria-label="和訳の表示・非表示">訳</button>` : ""}</span></label>`;
   }
   function renderPick() {
     document.querySelectorAll("#segUnit button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.u === unit)));
@@ -754,6 +756,8 @@
     stopAudio();
     if (!window.open(location.pathname + "?tab=study", "_blank")) setTab("study"); // 開けないとき(ポップアップのブロック)は、このタブで学習を開く
   });
+  // 行の「訳」を押すと、その行の和訳を出す・隠す
+  $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-ja]"); if (!b) return; e.preventDefault(); const id = b.dataset.ja, x = b.closest(".row-i").querySelector(".jx"); jaFlip.has(id) ? jaFlip.delete(id) : jaFlip.add(id); if (x) x.hidden = !x.hidden });
   // 行の ▶ を押すと、その行から順に聞く(チェックは変わらない)
   $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-from]"); if (b) { e.preventDefault(); if (b.closest(".row-i.now")) { stopAudio(); document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now")); return } playPick(b.dataset.from) } });
   // 選んだ区切りを、繰り返しの回数だけ、続けて聞く
