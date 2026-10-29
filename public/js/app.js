@@ -884,7 +884,8 @@
 
   // ---------- AI で解析(Gemini API / コピペモード) ----------
   // 足りない解析がある英文
-  const needsAI = r => !r.ja || !r.slash || !r.phrases || !r.words || !r.iu || !(r.vocab && r.vocab.length) || !r.quiz;
+  const needsAI = r => !r.ja || !r.slash || !r.phrases || !r.words || !r.iu || !(r.vocab && r.vocab.length) || !r.quiz
+    || !(r.elements && r.elements.length) || !r.pattern || !(r.grammar && r.grammar.length) || !r.toeic; // 解説(文構造・文法の解説・TOEIC)が無いものも
   let aiBusy = false, aiStop = false, aiMode = "api";
 
   function renderAI() {
