@@ -34,6 +34,7 @@
   <nav id="tabs" role="tablist">
     <button role="tab" data-tab="pick" aria-selected="true">聞く</button>
     <button role="tab" data-tab="study" aria-selected="false">解説</button>
+    <button role="tab" data-tab="vocab" aria-selected="false">単語帳</button>
     <button role="tab" data-tab="part1" aria-selected="false">Part1</button>
     <button role="tab" data-tab="part2" aria-selected="false">Part2</button>
     <button role="tab" data-tab="part3" aria-selected="false">Part3</button>
@@ -277,6 +278,19 @@
     <div id="pickList" class="list"></div>
   </section>
 
+  <!-- 単語帳: 英文の中でなぞって選んだ語・熟語を、あとでまとめて確認する -->
+  <section id="tab-vocab" class="tab" hidden>
+    <div class="card vmenu">
+      <div class="seg" id="vFilter" role="group" aria-label="表示する単語">
+        <button data-f="learning">確認中</button><button data-f="mastered">覚えた</button><button data-f="all">すべて</button>
+      </div>
+      <label class="inl"><input type="checkbox" id="vHide"> 意味・例文を隠して確認する</label>
+      <span id="vInfo" class="sub"></span>
+    </div>
+    <div id="vList" class="list"></div>
+    <p class="sub">英文の語や熟語をなぞって選び、「＋ 単語帳」を押すと、ここに入ります。意味・メモは、自分で書き込めます。</p>
+  </section>
+
   <!-- Part 1〜7: 4択問題を、縦に続ける -->
   <section id="tab-part" class="tab" hidden>
     <p id="partInfo" class="sub"></p>
@@ -346,7 +360,7 @@
   <div class="row"><span class="grow"></span><button id="cpCancel">やめる</button><button id="cpOk" class="pri">この返事を使う</button></div>
 </dialog>
 
-<button id="selPlay" class="pri" hidden>▶ 聞く</button>
+<button id="selPlay" class="pri" hidden>▶ 聞く</button><button id="selVocab" class="pri" hidden>＋ 単語帳</button>
 <div id="toast" role="status" aria-live="polite"></div>
 
 <script src="js/clean.js"></script>

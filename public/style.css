@@ -193,8 +193,8 @@ code{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding
 .fulltext{cursor:pointer}
 .vplay{border:0;background:none;color:var(--sub);cursor:pointer;font-size:14px;padding:0 6px 0 0;vertical-align:baseline}
 .vplay:hover{color:var(--pri)}
-#selPlay{position:fixed;z-index:30;box-shadow:0 2px 8px rgba(0,0,0,.25);border-radius:999px;padding:4px 14px}
-#selPlay[hidden]{display:none}
+#selPlay,#selVocab{position:fixed;z-index:30;box-shadow:0 2px 8px rgba(0,0,0,.25);border-radius:999px;padding:4px 14px}
+#selPlay[hidden],#selVocab[hidden]{display:none}
 .adj{font-size:12px;margin:2px 0 4px}
 .adj .lbl{font-size:11px}
 .adj .inl{font-size:12px;gap:4px}
@@ -207,7 +207,7 @@ code{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding
 .jabox:empty{display:none}
 .jabox:not(:empty) + #disp{margin-top:36px}
 /* 英文の画面のボタン・選択肢の文字は、すべて同じ大きさ */
-.sentence button,.sentence select,#selPlay{font-size:12px}
+.sentence button,.sentence select,#selPlay,#selVocab{font-size:12px}
 /* 日本語で書かれた文字は、すべて 12px(原文の英文だけを大きく) */
 .sentence .sub,.sentence .inl,.sentence h3,.sentence .tag,.jabox,#disp .sljas .ja,#disp .ph .lab,
 .gram .gh,.gram .gp,.gram .cls,.gram .gpt,#aux table.v td:nth-child(2),#aux table.v td:nth-child(3){font-size:12px}
@@ -284,3 +284,11 @@ table.v tr:first-child td{border-top:1px solid var(--line)}
 .prob .choice{margin:6px 0}
 
 .prob.now{border-color:var(--pri)}
+
+.vmenu{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;padding:8px 10px}
+.vrow{display:flex;flex-direction:column;gap:6px;padding:8px 10px}
+.vrow .vh{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vrow .vja{width:100%;font-size:14px;padding:6px 8px;box-sizing:border-box}
+.vrow .vex mark{background:var(--hl);color:inherit;border-radius:3px}
+.vrow .vbtn{display:flex;gap:6px;flex-wrap:wrap}
+.vrow.done .vh b{color:var(--sub)}

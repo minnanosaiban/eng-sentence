@@ -232,6 +232,7 @@
     if (t === "reg") renderReg();
     if (t === "pick") renderPick();
     if (t === "study") renderStudy();
+    if (t === "vocab") renderVocab();
     if (/^part[1-7]$/.test(t)) renderPart();
     if (t === "sync") Sync.render();
     if (t === "rec") renderRec();
@@ -702,16 +703,62 @@
   }
   let selTimer = 0;
   function selBtnUpdate() {
-    const b = $("#selPlay"), t = tab === "pick" || /^part[1-7]$/.test(tab) || (tab === "study" && study.unit === "sentence") ? disSel() : "";
-    if (!t) { b.hidden = true; return }
+    const b = $("#selPlay"), v = $("#selVocab"), t = tab === "pick" || /^part[1-7]$/.test(tab) || (tab === "study" && study.unit === "sentence") ? disSel() : "";
+    if (!t) { b.hidden = v.hidden = true; return }
     const rc = window.getSelection().getRangeAt(0).getBoundingClientRect();
-    b.hidden = false; b.style.top = Math.max(8, rc.bottom + 6) + "px"; b.style.left = Math.max(8, Math.min(rc.left, window.innerWidth - b.offsetWidth - 8)) + "px";
+    b.hidden = v.hidden = false; b.style.top = v.style.top = Math.max(8, rc.bottom + 6) + "px";
+    const left = Math.max(8, Math.min(rc.left, window.innerWidth - b.offsetWidth - v.offsetWidth - 14));
+    b.style.left = left + "px"; v.style.left = left + b.offsetWidth + 6 + "px";
   }
   document.addEventListener("selectionchange", () => { clearTimeout(selTimer); selTimer = setTimeout(selBtnUpdate, 150) });
   window.addEventListener("scroll", () => { if (!$("#selPlay").hidden) selBtnUpdate() }, { passive: true });
   // 選択画面で、英文をなぞって選んだとき、行のチェックが入れ替わらないようにする
   $("#pickList").addEventListener("click", e => { if (!e.target.closest("button") && window.getSelection().toString().trim()) e.preventDefault() }, true);
-  $("#selPlay").onpointerdown = e => e.preventDefault(); // 押しても、選択が消えないように
+  $("#selPlay").onpointerdown = $("#selVocab").onpointerdown = e => e.preventDefault(); // 押しても、選択が消えないように
+  // ---------- 単語帳(なぞって選んだ語・熟語を入れて、あとでまとめて確認する) ----------
+  let vFilter = "learning";
+  function selSource() { // 選んだ語が入っている英文
+    const n = window.getSelection().anchorNode, el = n && (n.nodeType === 1 ? n : n.parentElement), row = el && el.closest(".row-i, .prob");
+    const id = tab === "study" ? (cur() || {}).id : row ? (row.querySelector("input[data-id]") || row).dataset.id : "";
+    return rows.find(r => r.id === id) || null;
+  }
+  $("#selVocab").onclick = async () => {
+    const text = disSel().replace(/^[\s"'“”‘’(),.;:!?]+|[\s"'“”‘’(),.;:!?]+$/g, ""); if (!text) return;
+    const src = selSource(), ex = words.find(w => w.text.toLowerCase() === text.toLowerCase());
+    if (ex) { if (ex.status === "mastered") ex.status = "learning"; if (!ex.ex && src) ex.ex = Clean.clip(src.text, 500); await Store.put(ex, "words"); toast(`「${ex.text}」は、単語帳にあります(確認中にしました)`) }
+    else {
+      const w = Clean.word({ text, ex: src ? src.text : "" }); if (!w) return;
+      w.status = "learning"; words.push(w); await Store.put(w, "words"); toast(`「${w.text}」を、単語帳に入れました`);
+    }
+    window.getSelection().removeAllRanges(); $("#selPlay").hidden = $("#selVocab").hidden = true;
+  };
+  function vocabEx(w) {
+    if (!w.ex) return "";
+    const i = w.ex.toLowerCase().indexOf(w.text.toLowerCase());
+    return i < 0 ? esc(w.ex) : esc(w.ex.slice(0, i)) + "<mark>" + esc(w.ex.slice(i, i + w.text.length)) + "</mark>" + esc(w.ex.slice(i + w.text.length));
+  }
+  function renderVocab() {
+    document.querySelectorAll("#vFilter button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === vFilter)));
+    const hide = $("#vHide").checked, nm = words.filter(w => w.status !== "mastered").length;
+    const list = words.filter(w => vFilter === "all" || (vFilter === "mastered") === (w.status === "mastered")).sort((a, b) => (b.added || 0) - (a.added || 0));
+    $("#vInfo").textContent = `確認中 ${nm} 語 / 全 ${words.length} 語`;
+    $("#vList").innerHTML = list.length ? list.map(w => `<div class="card vrow${w.status === "mastered" ? " done" : ""}" data-id="${w.id}"><div class="vh"><button type="button" class="sm" data-a="say" title="聞く" aria-label="聞く">▶</button><b>${esc(w.text)}</b>${w.ipa ? `<span class="ipa">/${esc(w.ipa)}/</span>` : ""}<span class="sub">${w.review_count ? `確認 ${w.review_count} 回` : ""}</span></div><div class="vans"${hide ? " hidden" : ""}><input class="vja" type="text" value="${esc(w.ja)}" placeholder="意味・メモ(自分で書けます)" maxlength="300">${w.ex ? `<div class="sub vex">${vocabEx(w)}</div>` : ""}</div><div class="vbtn">${hide ? '<button type="button" class="sm" data-a="show">答えを見る</button>' : ""}<button type="button" class="sm" data-a="${w.status === "mastered" ? "again" : "done"}">${w.status === "mastered" ? "確認中にもどす" : "覚えた"}</button><button type="button" class="sm danger" data-a="del" title="単語帳から外す">外す</button></div></div>`).join("")
+      : `<p class="sub">${words.length ? "この条件の単語はありません。" : "まだ単語がありません。"}</p>`;
+  }
+  $("#vFilter").onclick = e => { const b = e.target.closest("button[data-f]"); if (b) { vFilter = b.dataset.f; renderVocab() } };
+  $("#vHide").onchange = renderVocab;
+  $("#vList").addEventListener("change", async e => {
+    const i = e.target.closest(".vja"), w = i && words.find(x => x.id === i.closest(".vrow").dataset.id); if (!w) return;
+    w.ja = Clean.clip(i.value, 300); await Store.put(w, "words");
+  });
+  $("#vList").addEventListener("click", async e => {
+    const b = e.target.closest("button[data-a]"), box = b && b.closest(".vrow"), w = box && words.find(x => x.id === box.dataset.id); if (!w) return;
+    const a = b.dataset.a;
+    if (a === "say") { stopAudio(); say(w.text) }
+    else if (a === "show") { box.querySelector(".vans").hidden = false; b.hidden = true; await countReview(w, "words"); box.querySelector(".vh .sub").textContent = `確認 ${w.review_count} 回` }
+    else if (a === "done" || a === "again") { w.status = a === "done" ? "mastered" : "learning"; await Store.put(w, "words"); renderVocab() }
+    else if (a === "del") { if (!confirm(`「${w.text}」を、単語帳から外します。よろしいですか?`)) return; words = words.filter(x => x !== w); await Store.del([w.id], "words"); renderVocab() }
+  });
   $("#selPlay").onclick = async () => {
     const text = disSel(); if (!text) return;
     if (!("speechSynthesis" in window)) return toast("この端末では、読み上げが使えません");
@@ -953,7 +1000,7 @@
   $("#btnAICopy").onclick = () => runAI("copy");
   $("#btnAIStop").onclick = () => { aiStop = true };
 
-  function renderAll() { if (tab === "rec") renderRec(); renderReg(); renderAI(); renderIpa(); if (tab === "pick") renderPick(); if (tab === "study") renderStudy(); if (/^part[1-7]$/.test(tab)) renderPart() }
+  function renderAll() { if (tab === "rec") renderRec(); renderReg(); renderAI(); renderIpa(); if (tab === "pick") renderPick(); if (tab === "study") renderStudy(); if (tab === "vocab") renderVocab(); if (/^part[1-7]$/.test(tab)) renderPart() }
 
   // ---------- 起動 ----------
   (async () => {
