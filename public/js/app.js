@@ -337,7 +337,7 @@
     document.querySelectorAll(".chunk-only").forEach(e => { e.hidden = !(unit === "meaning" || unit === "iu") });
     document.querySelectorAll(".sent-only").forEach(e => { e.hidden = unit !== "sentence" && unit !== "word" });
     $("#btnSlashPick").setAttribute("aria-pressed", String(!!prefs.slashMain));
-    document.querySelectorAll("#pickShow button").forEach(b => b.setAttribute("aria-pressed", String(pickOn(b.dataset.p))));
+    document.querySelectorAll("#pickMenu button[data-p]").forEach(b => b.setAttribute("aria-pressed", String(pickOn(b.dataset.p))));
     document.querySelectorAll('#pickShow [data-p="tns"],#pickShow [data-g]').forEach(b => { b.hidden = unit !== "sentence" });
     renderGroupSelect(); syncPickAudio();
     document.querySelectorAll(".word-only").forEach(e => { e.hidden = unit !== "word" });
@@ -352,7 +352,7 @@
     $("#btnDelSel").disabled = sel[unit].size === 0;
     { const t = sel[unit].size ? `選んだ ${sel[unit].size} 件を削除` : "選んだものを削除"; $("#btnDelSel").title = t; $("#btnDelSel").setAttribute("aria-label", t) }
   }
-  $("#pickShow").onclick = e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !pickOn(b.dataset.p); savePrefs(); renderPick() } };
+  $("#pickMenu").addEventListener("click", e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !pickOn(b.dataset.p); savePrefs(); renderPick() } });
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
   $("#flabel").addEventListener("change", e => { // 選んだラベルを、見出しに出す。外をクリックしたら閉じる
