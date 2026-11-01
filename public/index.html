@@ -227,7 +227,7 @@
       <!-- 1列目〜3列目は同じ幅。4列目は残り -->
       <div class="pickgrid">
         <select id="fgroup" aria-label="グループ"></select>
-        <details id="flabel" class="msel" aria-label="ラベル(複数選べます)"><summary>ラベル</summary><div class="menu"><label><input type="checkbox" value="1">ラベル 1</label><label><input type="checkbox" value="2">ラベル 2</label><label><input type="checkbox" value="3">ラベル 3</label><label><input type="checkbox" value="4">ラベル 4</label><label><input type="checkbox" value="5">ラベル 5</label><label><input type="checkbox" value="none">ラベルなし</label></div></details>
+        <details id="flabel" class="msel" aria-label="ラベル(複数選べます)"><summary>ラベル</summary><div class="menu"><label><input type="checkbox" id="flabelAll">全て選択</label><label><input type="checkbox" value="1">ラベル 1</label><label><input type="checkbox" value="2">ラベル 2</label><label><input type="checkbox" value="3">ラベル 3</label><label><input type="checkbox" value="4">ラベル 4</label><label><input type="checkbox" value="5">ラベル 5</label><label><input type="checkbox" value="none">ラベルなし</label></div></details>
         <button id="btnRand10" data-n="10" title="表示中からランダムに10件を選ぶ">ランダム10件</button>
         <button id="btnRand20" data-n="20" title="表示中からランダムに20件を選ぶ">ランダム20件</button>
         <button id="btnStart" class="pri" title="選んだ英文で学習を始める">START</button>
@@ -235,11 +235,6 @@
         <div class="pair">
           <button id="btnAll" class="ib" aria-label="表示中を全選択" title="表示中を全選択"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="m8 12 3 3 5-6"/></svg></button>
           <button id="btnNone" class="ib" aria-label="選択を解除" title="選択を解除"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/></svg></button>
-        </div>
-        <div class="lbl" id="labelBtns">
-          <span>ラベル付</span>
-          <button data-l="1">1</button><button data-l="2">2</button><button data-l="3">3</button><button data-l="4">4</button><button data-l="5">5</button><button data-l="0" title="ラベルを外します" aria-label="ラベルを外す">×</button>
-          <button id="btnDelSel" class="ib danger" aria-label="選んだものを削除" title="選んだものを削除"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></svg></button>
         </div>
         <label class="srch"><span>検索</span><input id="fq" type="search" placeholder="英文・和訳で検索"></label>
       </div>
@@ -259,6 +254,11 @@
       <label class="inl">速さ <select id="pRate"></select></label>
       <label class="inl">間 <select id="pGap" title="読んだあとに置く、まねする時間(読み上げの長さの何倍か)。「なし」なら、続けて読む"></select></label>
       <label class="inl">繰り返し <select id="pRep" title="同じ英文を、何回続けて繰り返すか"></select></label>
+      <div class="lbl" id="labelBtns">
+        <span>ラベル付</span>
+        <button data-l="1">1</button><button data-l="2">2</button><button data-l="3">3</button><button data-l="4">4</button><button data-l="5">5</button><button data-l="0" title="ラベルを外します" aria-label="ラベルを外す">×</button>
+        <button id="btnDelSel" class="ib danger" aria-label="選んだものを削除" title="選んだものを削除"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v5M14 11v5"/></svg></button>
+      </div>
       <span id="pickShow" role="group" aria-label="一覧の表示" class="pickshow">
         <button class="sm" data-p="tns" aria-pressed="true" title="態・時制・相(能 現 進 など)を出す">態・時制・相</button>
         <button class="sm" data-p="g:文型" data-g aria-pressed="true" title="文型(SV・SVO など)を出す">文型</button>

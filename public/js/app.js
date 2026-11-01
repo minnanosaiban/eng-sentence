@@ -290,7 +290,7 @@
   const pickOn = k => k === "g:" ? true : prefs.pick[k] !== false && (k.startsWith("g:") || !!prefs.pick[k]); // 文法の種類ごとの入り切りは、未設定なら「出す」
   const allGroups = () => [...new Set([...rows, ...words, ...chunks].flatMap(r => r.groups || []))].sort();
   function filtered() {
-    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" ? [...$("#flabel").querySelectorAll("input:checked")].map(x => x.value) : [];
+    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" ? [...$("#flabel").querySelectorAll("input[value]:checked")].map(x => x.value) : [];
     const wc = r => r.text.split(" ").length, where = r => (r.n === 1 || r.idx === 0 ? "first" : r.idx === r.n - 1 ? "last" : "mid");
     return tbl(unit).filter(r =>
       (!isCard(unit) || unit === "word" || ((!ln || (ln === "s" ? wc(r) <= 2 : ln === "m" ? wc(r) >= 3 && wc(r) <= 5 : wc(r) >= 6)) && (!ps || where(r) === ps))) &&
@@ -355,8 +355,11 @@
   $("#pickShow").onclick = e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !pickOn(b.dataset.p); savePrefs(); renderPick() } };
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
-  $("#flabel").addEventListener("change", () => { // 選んだラベルを、見出しに出す。外をクリックしたら閉じる
-    const v = [...$("#flabel").querySelectorAll("input:checked")].map(x => x.parentElement.textContent.replace("ラベル", "").trim());
+  $("#flabel").addEventListener("change", e => { // 選んだラベルを、見出しに出す。外をクリックしたら閉じる
+    const items = [...$("#flabel").querySelectorAll("input[value]")];
+    if (e.target.id === "flabelAll") items.forEach(x => x.checked = e.target.checked);
+    $("#flabelAll").checked = items.every(x => x.checked);
+    const v = items.filter(x => x.checked).map(x => x.parentElement.textContent.replace("ラベル", "").trim());
     $("#flabel summary").textContent = v.length ? "ラベル " + v.join("・") : "ラベル";
   });
   document.addEventListener("click", e => { const d = $("#flabel"); if (d.open && !d.contains(e.target)) d.open = false });
