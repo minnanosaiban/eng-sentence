@@ -61,7 +61,7 @@ textarea{width:100%;resize:vertical}
 .pickgrid .srch{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding-left:10px}
 .pickgrid .srch span{color:var(--sub);border-right:1px solid var(--line);padding-right:8px}
 .pickgrid .srch input{flex:1;min-width:0;border:0;background:none;border-radius:0}
-.pickgrid .pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pickgrid .pair{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
 .pickmenu .lbl{display:flex;align-items:center;gap:3px;min-width:0;padding-right:0;border-right:0}
 .pickmenu .lbl span{color:var(--sub);font-size:11px;white-space:nowrap;border-right:1px solid var(--line);padding-right:5px;margin-right:1px}
 .pickmenu .lbl button[data-l]{padding:6px 0;width:22px}
