@@ -280,6 +280,21 @@
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `eng-sentence-backup-${today()}.json`; a.click();
     setTimeout(() => URL.revokeObjectURL(a.href), 2000);
   };
+  function saveTxt(lines, name) {
+    const blob = new Blob([lines.join("\n") + "\n"], { type: "text/plain;charset=utf-8" });
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = `${name}-${today()}.txt`; a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+  $("#btnPickTxt").onclick = () => {
+    const lines = tbl(unit).filter(r => sel[unit].has(r.id)).map(r => String(r.text || "").replace(/\s*\n\s*/g, " ").trim()).filter(Boolean);
+    if (!lines.length) return toast("英文が選ばれていません");
+    saveTxt(lines, "eng-sentence-selected");
+  };
+  $("#vTxt").onclick = () => {
+    const lines = words.filter(w => vFilter === "all" || (vFilter === "mastered") === (w.status === "mastered")).sort((a, b) => (b.added || 0) - (a.added || 0)).map(w => w.text);
+    if (!lines.length) return toast("ダウンロードする単語がありません");
+    saveTxt(lines, "eng-sentence-words");
+  };
   $("#btnClear").onclick = async () => {
     if (!(rows.length || words.length || chunks.length) || !confirm(`英文 ${rows.length} 文・単語 ${words.length} 語・意味句とIU ${chunks.length} 個を、すべて削除します。よろしいですか?`)) return;
     await Store.del(rows.map(r => r.id), "sentences"); await Store.del(words.map(w => w.id), "words"); await Store.del(chunks.map(c => c.id), "chunks");
