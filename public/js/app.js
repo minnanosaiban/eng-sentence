@@ -305,14 +305,22 @@
   // ---------- 選択 ----------
   const pickOn = k => k === "g:" ? true : prefs.pick[k] !== false && (k.startsWith("g:") || !!prefs.pick[k]); // 文法の種類ごとの入り切りは、未設定なら「出す」
   const allGroups = () => [...new Set([...rows, ...words, ...chunks].flatMap(r => r.groups || []))].sort();
+  // シャッフル: 一覧の並び順を、ランダムにする(聞く順も、この並び順)。この画面だけのもので、保存はしない
+  let shuf = null; // null=元の順 / Map(id → 順位)
+  const shuffleOrder = () => {
+    const ids = [...rows, ...words, ...chunks].map(r => r.id);
+    for (let i = ids.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [ids[i], ids[j]] = [ids[j], ids[i]] }
+    shuf = new Map(ids.map((id, i) => [id, i]));
+  };
   function filtered() {
-    const q = $("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" ? [...$("#flabel").querySelectorAll("input[value]:checked")].map(x => x.value) : [];
+    const q =$("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" ? [...$("#flabel").querySelectorAll("input[value]:checked")].map(x => x.value) : [];
     const wc = r => r.text.split(" ").length, where = r => (r.n === 1 || r.idx === 0 ? "first" : r.idx === r.n - 1 ? "last" : "mid");
-    return tbl(unit).filter(r =>
+    const out = tbl(unit).filter(r =>
       (!isCard(unit) || unit === "word" || ((!ln || (ln === "s" ? wc(r) <= 2 : ln === "m" ? wc(r) >= 3 && wc(r) <= 5 : wc(r) >= 6)) && (!ps || where(r) === ps))) &&
       (!q || r.text.toLowerCase().includes(q) || (r.ja || "").includes(q)) &&
       (!lb.length || lb.some(l => (l === "none" ? !r.label : String(r.label) === l))) &&
       inGroup(r, g));
+    return shuf ? out.sort((a, b) => (shuf.get(a.id) ?? 1e9) - (shuf.get(b.id) ?? 1e9)) : out;
   }
   // 「グループ」の選択肢は、パート → 難易度 → 自分で付けたグループ の順(ラベルは、別の絞り込み)。値は、種類の印(p: パート / v: 難易度 / g: グループ)+ 中身
   const PART_NAMES = { "Part 1": "写真描写", "Part 2": "応答問題", "Part 3": "会話", "Part 4": "説明文", "Part 5": "短文穴埋め", "Part 6": "長文穴埋め", "Part 7": "読解" };
@@ -353,6 +361,7 @@
     document.querySelectorAll(".chunk-only").forEach(e => { e.hidden = !(unit === "meaning" || unit === "iu") });
     document.querySelectorAll(".sent-only").forEach(e => { e.hidden = unit !== "sentence" && unit !== "word" });
     $("#btnSlashPick").setAttribute("aria-pressed", String(!!prefs.slashMain));
+    $("#btnShuffle").setAttribute("aria-pressed", String(!!shuf)); $("#btnUnshuffle").hidden = !shuf;
     document.querySelectorAll("#pickMenu button[data-p]").forEach(b => b.setAttribute("aria-pressed", String(pickOn(b.dataset.p))));
     document.querySelectorAll('#pickShow [data-p="tns"],#pickShow [data-g]').forEach(b => { b.hidden = unit !== "sentence" });
     renderGroupSelect(); syncPickAudio();
@@ -790,6 +799,9 @@
   };
   // 選択画面: 表示中の英文を、上から順に聞く。繰り返し: 同じ英文を、設定の回数だけ続けて聞く(英文ごと)
   $("#btnSlashPick").onclick = () => { prefs.slashMain = !prefs.slashMain; savePrefs(); renderPick() };
+  // シャッフル: 押すたびに並べ直す。「元の順」で戻す。聞いている途中なら、止めてから並べ直す
+  $("#btnShuffle").onclick = () => { stopAudio(); shuffleOrder(); renderPick(); $("#pickList").scrollTop = 0; window.scrollTo({ top: 0 }) };
+  $("#btnUnshuffle").onclick = () => { stopAudio(); shuf = null; renderPick() };
   // from: 聞き始める行の id(無ければ、いちばん上から)
   const playPick = async from => {
     if (!("speechSynthesis" in window)) return toast("この端末では、読み上げが使えません");
