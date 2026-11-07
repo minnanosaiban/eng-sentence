@@ -342,7 +342,7 @@
     $("#fgroup").value = [...$("#fgroup").options].some(x => x.value === cur) ? cur : "";
   }
   // 文の要素(S V O C M)ごとに / で区切り、下に記号を付けた表示(解説の「文型」と、英文タブの一覧で共通)
-  const elsInner = els => els.map((e, i) => (i ? '<span class="slsep">/</span>' : "") + `<span class="el-i" title="${esc(e.note || "")}"><span class="el-t">${esc(e.text)}</span><span class="el-r role ${esc(e.role)}">${esc(e.role)}</span></span>`).join("");
+  const elsInner = els => els.map((e, i) => (i ? '<span class="slsep">/</span>' : "") + `<span class="el-i" title="${esc(e.note || "")}"><span class="el-t">${esc(e.text)}</span><span class="el-r">${esc(e.role)}</span></span>`).join("");
   const jaFlip = new Set(); // 行ごとに、「和訳を出す」の全体設定を逆にしている英文
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
