@@ -352,7 +352,7 @@
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
     const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : "") + (x.k === "助動詞" && Clean.gjaOf(x) ? " " + Clean.gjaOf(x) : ""))}</span>`, gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → 態・時制・相 → ほかの文法 の順
-    const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `<span class="tag tns">（${tt.voice}・${tt.tns}・${tt.asp}）</span>` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
+    const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `<span class="tag tns">${tt.voice}・${tt.tns}・${tt.asp}</span>` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
     const ja = r.ja ? `<span class="m jx"${jaShow.has(r.id) ? "" : " hidden"}><br>${esc(r.ja)}</span>` : "";
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
@@ -569,7 +569,7 @@
     const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), verb = (r.elements || []).find(e => e.role === "V"); // 態・時制・相のあとに、主節の動詞の原文(例: has been promoted)を添える
     const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
     // 1行目: 文型 / 文の種類 / 態・時制・相(それぞれ別のボタンで出し入れ)
-    const h1 = g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("") + (gs.tns && t ? `<span class="tag">（${t.voice}・${t.tns}・${t.asp}）</span>` + (verb ? `<span class="gja">${esc(verb.text)}</span> ` : "") : "");
+    const h1 = g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("") + (gs.tns && t ? `<span class="tag">${t.voice}・${t.tns}・${t.asp}</span>` + (verb ? `<span class="gja">${esc(verb.text)}</span> ` : "") : "");
     // 英文の下: 助動詞 → 自動詞・他動詞 → ほかの文法(文法タグ)を、1つずつ、日本語の意味を添えて
     const rest = g.filter(x => gs[GKEY_OF[x.k]]).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
     // [英文の上: 態・時制・相 / 文型 / 文の種類, 英文の下: 助動詞・自動詞他動詞・そのほかの文法]
