@@ -187,7 +187,7 @@ code{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding
 .role{display:inline-block;min-width:26px;text-align:center;color:#fff;border-radius:6px;font-weight:700;font-size:12px;padding:0 6px;margin-right:6px}
 .role.S{background:#1a73e8}.role.V{background:#d33}.role.O{background:#2e8a57}.role.C{background:#b7791f}.role.M{background:#7c3aed}
 @media (prefers-color-scheme:dark){.role{color:#1e2126}.role.S{background:#7aa7ff}.role.V{background:#ff7a70}.role.O{background:#5fcf8f}.role.C{background:#e5b04f}.role.M{background:#b190ff}}
-#disp .view[data-view="slash"] .seg-i,#disp .view[data-view="links"] .lk,#disp .view[data-view="links"] .lk-s,#disp .view[data-view="slash"] .slsep{font-size:16px}
+#disp .view[data-view="slash"] .seg-i,#disp .view[data-view="links"] .lk,#disp .view[data-view="links"] .lk-s,#disp .view[data-view="slash"] .slsep{font-size:14px}
 #disp .view[data-view="slash"] .seg-i,#disp .view[data-view="gram"] .seg-i{cursor:pointer}
 #disp .seg-i.sel{box-shadow:inset 0 -3px 0 var(--pri)}
 .fulltext{cursor:pointer}
@@ -214,15 +214,15 @@ code{background:var(--bg);border:1px solid var(--line);border-radius:4px;padding
 #aux h3{font-size:12px}
 #aux table.v td:first-child b{font-size:16px;font-weight:400}
 #disp .view[data-view="slash"]{font-size:16px;line-height:1.4}
-#disp .view[data-view="links"]{font-size:16px}
+#disp .view[data-view="links"]{font-size:14px}
 #disp .sljas{margin-top:16px}
 #disp .sljas + .sljas{margin-top:8px}
 table.v tr:first-child td{border-top:1px solid var(--line)}
 #disp .fulltext:last-child{margin-bottom:36px}
 #disp .fulltext + .view{margin-top:0}
 #disp .jafull{margin-top:72px;font-size:12px;line-height:1.5}
-#disp .jafull + .view{margin-top:16px}
-#disp .jafull + .view .sljas{margin-top:0}
+#disp .jafull + .view[data-view="slash"]{margin-top:16px}
+#disp .jafull + .view[data-view="slash"] .sljas{margin-top:0}
 /* 欄と欄の間の余白は、英文の上下と同じ 36px にそろえる */
 .view{margin-top:36px}
 #disp .sljas{margin-top:36px}
