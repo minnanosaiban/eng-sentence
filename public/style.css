@@ -229,13 +229,17 @@ div.elsrow{margin-top:6px}
 .elsrow .el-t{display:block;font-size:14px}
 .elsrow .el-r{display:block;margin:2px 0 0;font-size:11px;line-height:1.5;color:var(--sub)}
 .elsrow .slsep{font-size:14px;vertical-align:top}
-#disp .jafull{margin-top:36px;font-size:12px;line-height:1.5}
 #disp .fulltext{font-size:16px}
-#disp .fulltext + .jafull{margin-top:60px}
 #disp .elsrow + .view[data-view="links"]{margin-top:8px}
 #disp .view + .tnsbadge,#disp .elsrow + .tnsbadge{margin-top:28px}
-#disp .jafull + .view[data-view="slash"]{margin-top:4px}
-#disp .jafull + .view[data-view="slash"] .sljas{margin-top:0}
+/* 態・時制・相と英文を枠で囲み、解説では、その右に和訳 */
+.sbox{display:inline-block;border:1px solid var(--line);border-radius:8px;padding:2px 10px;margin-bottom:2px}
+.sbox .tag{margin-right:8px}
+#disp .mainrow{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-start;margin-bottom:36px}
+#disp .mainbox{display:flex;align-items:baseline;gap:8px;border:1px solid var(--line);border-radius:8px;padding:8px 12px;flex:1 1 360px;min-width:0}
+#disp .mainbox .fulltext{margin-bottom:0}
+#disp .mainbox .tag{flex:none;margin:0;font-size:11px;font-weight:600;color:var(--tx)}
+#disp .jaside{flex:1 1 200px;min-width:0;font-size:13px;line-height:1.6;color:var(--sub);padding-top:8px}
 /* 欄と欄の間の余白は、英文の上下と同じ 36px にそろえる */
 .view{margin-top:36px}
 #disp .sljas{margin-top:36px}

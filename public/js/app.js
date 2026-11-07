@@ -351,14 +351,15 @@
     const part = unit === "sentence" ? Clean.partOf(r) : "";
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
-    const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : "") + (x.k === "助動詞" && Clean.gjaOf(x) ? " " + Clean.gjaOf(x) : ""))}</span>`, gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → 態・時制・相 → ほかの文法 の順
-    const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `<span class="tag tns">${tt.voice}・${tt.tns}・${tt.asp}</span>` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
+    const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : "") + (x.k === "助動詞" && Clean.gjaOf(x) ? " " + Clean.gjaOf(x) : ""))}</span>`, gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → ほかの文法 の順(態・時制・相は、英文と一緒に枠の中)
+    const ttTag = tt ? `<span class="tag tns">${tt.voice}・${tt.tns}・${tt.asp}</span>` : ""; // 態・時制・相は、英文と一緒に枠で囲む
+    const tags = `${gt.filter(gHead).map(gtag).join("")}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
     const ja = r.ja ? `<span class="m jx"${jaShow.has(r.id) ? "" : " hidden"}><br>${esc(r.ja)}</span>` : "";
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
       : unit === "word"
       ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${ja}`
-      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${pickOn("g:文型") && r.elements && r.elements.length ? `<div class="elsrow">${elsInner(r.elements)}</div>` : ""}${ja}`; // 「文型」を出すとき、英文の下に S V O C M ごとの区切りも置く
+      : `<span class="sbox">${ttTag}${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}</span>${pickOn("g:文型") && r.elements && r.elements.length ? `<div class="elsrow">${elsInner(r.elements)}</div>` : ""}${ja}`; // 「文型」を出すとき、英文の下に S V O C M ごとの区切りも置く
     return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><span class="side"><button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button>${r.ja ? `<button type="button" class="jt" data-ja="${r.id}" title="和訳の表示・非表示" aria-label="和訳の表示・非表示">訳</button>` : ""}</span></label>`;
   }
   function renderPick() {
@@ -564,24 +565,25 @@
   // 主節の動詞の 態・時制・相 を、1つのタグで(例: 能・現・進)。文型・文の種類は英文の上、そのほかは英文の下
   function tenseBadge(r) {
     const gs = prefs.gs;
-    if (!(gs.tns || gs.pat || gs.kind || GKEY.some(k => gs[k]))) return ["", ""];
+    if (!(gs.tns || gs.pat || gs.kind || GKEY.some(k => gs[k]))) return ["", "", ""];
     const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), verb = (r.elements || []).find(e => e.role === "V");
     const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
     // 英文の上: 文型 / 文の種類(それぞれ別のボタンで出し入れ)
     const h1 = g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("");
-    // 英文の下: 態・時制・相 → 助動詞 → 自動詞・他動詞 → ほかの文法 を、1つずつ、「枠 + 灰色の説明」の同じ形で
-    const line = (tagHtml, ja) => `<div class="gl">${tagHtml}<span class="gja">${esc(ja)}</span></div>`;
-    const tnsLine = gs.tns && t ? line(`<span class="tag gm" title="態・時制・相">${t.voice}・${t.tns}・${t.asp}</span>`, verb ? verb.text : "") : ""; // 態・時制・相のあとに、主節の動詞の原文(例: has been promoted)を添える
-    const rest = tnsLine + g.filter(x => gs[GKEY_OF[x.k]]).map(x => line(tag(x), Clean.gjaOf(x))).join("");
-    return [h1 ? `<div class="tnsbadge" title="文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)とそのほかの文法">${rest}</div>` : ""];
+    // 英文の下: 助動詞 → 自動詞・他動詞 → ほかの文法 を、1つずつ、「枠 + 灰色の説明」の同じ形で
+    const rest = g.filter(x => gs[GKEY_OF[x.k]]).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
+    // 態・時制・相は、英文と一緒に枠で囲む(主節の動詞の原文は、ポインタを合わせると出る)
+    const tnsTag = gs.tns && t ? `<span class="tag gm" title="態・時制・相${verb ? ": " + esc(verb.text) : ""}">${t.voice}・${t.tns}・${t.asp}</span>` : "";
+    return [h1 ? `<div class="tnsbadge" title="文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="そのほかの文法">${rest}</div>` : "", tnsTag];
   }
 
   // 前置詞・to・接続詞の、この文での意味(〜ために など)を、全文の下に1行で
   function renderDisp(r, now = -1, nowView = null) {
     const mkP = () => text => esc(text);
     const ftxt = prefs.slashMain && r.slash && r.slash.length ? (P => r.slash.map((s, i) => (i ? '<span class="slsep">/</span><wbr>' : "") + `<span class="seg-i${nowView === "slash" && i === now ? " now" : ""}${sl("slash", i)}" data-c="${i}">${P(s.en)}</span>`).join(""))(mkP()) : mkP()(r.text); // [/] を入れると、全文を / で区切った形にする
-    const [badgeTop, badgeRest] = tenseBadge(r);
-    let html = badgeTop + '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>'; // 全文(態・時制・相 などは、その上)。そのほかの文法タグは、発音の行の下
+    const [badgeTop, badgeRest, tnsTag] = tenseBadge(r);
+    const jaSide = prefs.aux.ja ? '<div class="jaside">' + (r.ja ? esc(r.ja) : '<span class="sub">なし</span>') + '</div>' : ""; // 全文の和訳は、態・時制・相と英文を囲んだ枠の右
+    let html = badgeTop + '<div class="mainrow"><div class="mainbox">' + tnsTag + '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div></div>' + jaSide + '</div>'; // 全文(態・時制・相 などは、その上)。そのほかの文法タグは、発音の行の下
     let slashHtml = "";
     if (prefs.gs.pat) { // 「文型」ボタン: 文の要素(S V O C M)ごとに区切って、下に記号を付ける(発音の英文と同じ見た目)
       const els = r.elements || [];
@@ -610,7 +612,6 @@
       html += `<div class="view" data-view="${v.k}">${v.note ? `<div class="vnote">${esc(v.note)}</div>` : ""}${body}</div>`;
     }
     html += badgeRest;
-    if (prefs.aux.ja) html += '<div class="jafull">' + (r.ja ? esc(r.ja) : '<span class="sub">なし</span>') + '</div>'; // 全文の和訳は、英文(つながりの行)の下・区切りごとの訳の上
     html += slashHtml;
     if (prefs.gramOn || prefs.gs.expl || prefs.gs.toeic) html += gramBlock(r, mkP, now, nowView);
     $("#disp").innerHTML = html;
