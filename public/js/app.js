@@ -561,19 +561,19 @@
 
   const sl = (key, i) => { const r = cur(); return selC && r && selC.id === r.id && selC.key === key && selC.i === i ? " sel" : "" };
 
-  // 英文の下に並べる文法の分類と、それぞれの入り切り(prefs.gs のキー)。この順に並ぶ
-  // 主節の動詞の 態・時制・相 を、漢字1字ずつのタグで(例: 能 現 進)
+  // 主節の動詞の 態・時制・相 を、1つのタグで(例: 能・現・進)。文型・文の種類は英文の上、そのほかは英文の下
   function tenseBadge(r) {
     const gs = prefs.gs;
     if (!(gs.tns || gs.pat || gs.kind || GKEY.some(k => gs[k]))) return ["", ""];
-    const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), verb = (r.elements || []).find(e => e.role === "V"); // 態・時制・相のあとに、主節の動詞の原文(例: has been promoted)を添える
+    const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), verb = (r.elements || []).find(e => e.role === "V");
     const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
-    // 1行目: 文型 / 文の種類 / 態・時制・相(それぞれ別のボタンで出し入れ)
-    const h1 = g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("") + (gs.tns && t ? `<span class="tag">${t.voice}・${t.tns}・${t.asp}</span>` + (verb ? `<span class="gja">${esc(verb.text)}</span> ` : "") : "");
-    // 英文の下: 助動詞 → 自動詞・他動詞 → ほかの文法(文法タグ)を、1つずつ、日本語の意味を添えて
-    const rest = g.filter(x => gs[GKEY_OF[x.k]]).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
-    // [英文の上: 態・時制・相 / 文型 / 文の種類, 英文の下: 助動詞・自動詞他動詞・そのほかの文法]
-    return [h1 ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)、文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="そのほかの文法">${rest}</div>` : ""];
+    // 英文の上: 文型 / 文の種類(それぞれ別のボタンで出し入れ)
+    const h1 = g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("");
+    // 英文の下: 態・時制・相 → 助動詞 → 自動詞・他動詞 → ほかの文法 を、1つずつ、「枠 + 灰色の説明」の同じ形で
+    const line = (tagHtml, ja) => `<div class="gl">${tagHtml}<span class="gja">${esc(ja)}</span></div>`;
+    const tnsLine = gs.tns && t ? line(`<span class="tag gm" title="態・時制・相">${t.voice}・${t.tns}・${t.asp}</span>`, verb ? verb.text : "") : ""; // 態・時制・相のあとに、主節の動詞の原文(例: has been promoted)を添える
+    const rest = tnsLine + g.filter(x => gs[GKEY_OF[x.k]]).map(x => line(tag(x), Clean.gjaOf(x))).join("");
+    return [h1 ? `<div class="tnsbadge" title="文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)とそのほかの文法">${rest}</div>` : ""];
   }
 
   // 前置詞・to・接続詞の、この文での意味(〜ために など)を、全文の下に1行で
