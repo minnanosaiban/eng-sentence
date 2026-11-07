@@ -536,7 +536,7 @@
     if (prefs.gramOn) {
       h += '<h4 class="gh">文法区切り</h4>';
       const P2 = mkP();
-      h += r.phrases && r.phrases.length ? r.phrases.map((p, i) => `<span class="ph"><span class="no">${NUM[i] || i + 1}</span><span class="seg-i cl-${phClass(p.f)}${hl(i)}${sl("phrases", i)}" data-c="${i}">${P2(p.t)}</span> <span class="lab">${esc(p.f)}</span></span>`).join("") : '<div class="sub">この英文には、文法区切りのデータがありません。</div>';
+      h += r.phrases && r.phrases.length ? r.phrases.map((p, i) => `<span class="ph"><span class="seg-i cl-${phClass(p.f)}${hl(i)}${sl("phrases", i)}" data-c="${i}">${P2(p.t)}</span> <span class="lab">${esc(p.f)}</span></span>`).join("") : '<div class="sub">この英文には、文法区切りのデータがありません。</div>';
     }
     if (prefs.gs.expl) {
       h += '<h4 class="gh">文法の解説</h4>';
