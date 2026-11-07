@@ -345,14 +345,14 @@
   }
   // 文の要素(S V O C M)ごとに / で区切り、下に記号を付けた表示(解説の「文型」と、英文タブの一覧で共通)
   const elsInner = els => els.map((e, i) => (i ? '<span class="slsep">/</span>' : "") + `<span class="el-i" title="${esc(e.note || "")}"><span class="el-t">${esc(e.text)}</span><span class="el-r">${esc(e.role)}</span></span>`).join("");
-  const jaFlip = new Set(); // 行ごとに、「和訳を出す」の全体設定を逆にしている英文
+  const jaShow = new Set(); // 「訳」ボタンで和訳を出している英文(初期は、どれも和訳を隠す)
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
     const part = unit === "sentence" ? Clean.partOf(r) : "";
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
     const tags = `${tt ? [tt.voice, tt.tns, tt.asp].map(x => `<span class="tag tns">${x}</span>`).join("") : ""}${gt.map(x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : "") + (x.k === "助動詞" && Clean.gjaOf(x) ? " " + Clean.gjaOf(x) : ""))}</span>`).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
-    const ja = r.ja ? `<span class="m jx"${jaFlip.has(r.id) ? " hidden" : ""}><br>${esc(r.ja)}</span>` : "";
+    const ja = r.ja ? `<span class="m jx"${jaShow.has(r.id) ? "" : " hidden"}><br>${esc(r.ja)}</span>` : "";
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
       : unit === "word"
@@ -850,7 +850,7 @@
     if (!window.open(location.pathname + "?tab=study", "_blank")) setTab("study"); // 開けないとき(ポップアップのブロック)は、このタブで学習を開く
   });
   // 行の「訳」を押すと、その行の和訳を出す・隠す
-  $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-ja]"); if (!b) return; e.preventDefault(); const id = b.dataset.ja, x = b.closest(".row-i").querySelector(".jx"); jaFlip.has(id) ? jaFlip.delete(id) : jaFlip.add(id); if (x) x.hidden = !x.hidden });
+  $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-ja]"); if (!b) return; e.preventDefault(); const id = b.dataset.ja, x = b.closest(".row-i").querySelector(".jx"); jaShow.has(id) ? jaShow.delete(id) : jaShow.add(id); if (x) x.hidden = !x.hidden });
   // 行の ▶ を押すと、その行から順に聞く(チェックは変わらない)
   $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-from]"); if (b) { e.preventDefault(); if (b.closest(".row-i.now")) { stopAudio(); document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now")); return } playPick(b.dataset.from) } });
   // 選んだ区切りを、繰り返しの回数だけ、続けて聞く
