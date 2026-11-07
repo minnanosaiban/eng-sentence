@@ -567,8 +567,8 @@
     if (!(gs.tns || gs.pat || gs.kind || GKEY.some(k => gs[k]))) return ["", ""];
     const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), verb = (r.elements || []).find(e => e.role === "V"); // 態・時制・相のあとに、主節の動詞の原文(例: has been promoted)を添える
     const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
-    // 1行目: 態・時制・相 / 文型 / 文の種類(それぞれ別のボタンで出し入れ)
-    const h1 = (gs.tns && t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") + (verb ? `<span class="gja">${esc(verb.text)}</span> ` : "") : "") + g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("");
+    // 1行目: 文型 / 文の種類 / 態・時制・相(それぞれ別のボタンで出し入れ)
+    const h1 = g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("") + (gs.tns && t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") + (verb ? `<span class="gja">${esc(verb.text)}</span> ` : "") : "");
     // 英文の下: 助動詞 → 自動詞・他動詞 → ほかの文法(文法タグ)を、1つずつ、日本語の意味を添えて
     const rest = g.filter(x => gs[GKEY_OF[x.k]]).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
     // [英文の上: 態・時制・相 / 文型 / 文の種類, 英文の下: 助動詞・自動詞他動詞・そのほかの文法]
