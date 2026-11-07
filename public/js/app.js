@@ -351,14 +351,15 @@
     const part = unit === "sentence" ? Clean.partOf(r) : "";
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
-    const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : "") + (x.k === "助動詞" && Clean.gjaOf(x) ? " " + Clean.gjaOf(x) : ""))}</span>`, gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → 態・時制・相 → ほかの文法 の順
-    const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `<span class="tag tns tnsfull">${tt.voice}・${tt.tns}・${tt.asp}${r.ja ? ` <span class="gja jx"${jaShow.has(r.id) ? "" : " hidden"}>${esc(r.ja)}</span>` : ""}</span>` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
+    const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>${Clean.gjaOf(x) ? `<span class="gja">${esc(Clean.gjaOf(x))}</span>` : ""}`, // 学習タブと同じく、枠の右に、日本語の意味を灰色で
+       gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → 態・時制・相 → ほかの文法 の順
+    const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `<span class="tag tns">${tt.voice}・${tt.tns}・${tt.asp}</span>${r.ja ? `<span class="gja jx"${jaShow.has(r.id) ? "" : " hidden"}>${esc(r.ja)}</span>` : ""}` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
     const ja = r.ja ? `<span class="m jx"${jaShow.has(r.id) ? "" : " hidden"}><br>${esc(r.ja)}</span>` : "";
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
       : unit === "word"
       ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${ja}`
-      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${pickOn("g:文型") && r.elements && r.elements.length ? `<div class="elsrow">${elsInner(r.elements)}</div>` : ""}${tt ? "" : ja}`; // 態・時制・相の枠があるときは、和訳は、その枠の中(右)に出す // 「文型」を出すとき、英文の下に S V O C M ごとの区切りも置く
+      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${pickOn("g:文型") && r.elements && r.elements.length ? `<div class="elsrow">${elsInner(r.elements)}</div>` : ""}${tt ? "" : ja}`; // 態・時制・相の枠があるときは、和訳は、その枠の右に出す // 「文型」を出すとき、英文の下に S V O C M ごとの区切りも置く
     return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><span class="side"><button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button>${r.ja ? `<button type="button" class="jt" data-ja="${r.id}" title="和訳の表示・非表示" aria-label="和訳の表示・非表示">訳</button>` : ""}</span></label>`;
   }
   function renderPick() {
@@ -572,8 +573,8 @@
     // 英文の下: 態・時制・相 → 助動詞 → 自動詞・他動詞 → ほかの文法 を、1つずつ、「枠 + 灰色の説明」の同じ形で
     const line = (tagHtml, ja) => `<div class="gl">${tagHtml}<span class="gja">${esc(ja)}</span></div>`;
     const jaInline = !!(prefs.aux.ja && gs.tns && t); // 「能・現・単」の枠があるときは、全文の和訳を、その右に置く(主節の動詞の原文は、ポインタを合わせると出る)
-    // 「能・現・単」と和訳は、1つの枠でつなぐ(枠の線は途中で切らない)
-    const tnsLine = gs.tns && t ? `<div class="gl"><span class="tag gm tnsfull" title="態・時制・相${verb ? ": " + esc(verb.text) : ""}">${t.voice}・${t.tns}・${t.asp}${jaInline ? ` <span class="gja">${esc(r.ja || "なし")}</span>` : ""}</span></div>` : "";
+    // 「能・現・単」の枠の右に、和訳を灰色で(前置詞句などの行と同じ形)
+    const tnsLine = gs.tns && t ? line(`<span class="tag gm" title="態・時制・相${verb ? ": " + esc(verb.text) : ""}">${t.voice}・${t.tns}・${t.asp}</span>`, jaInline ? r.ja || "なし" : "") : "";
     const rest = tnsLine + g.filter(x => gs[GKEY_OF[x.k]]).map(x => line(tag(x), Clean.gjaOf(x))).join("");
     return [h1 ? `<div class="tnsbadge" title="文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)とそのほかの文法">${rest}</div>` : "", jaInline];
   }
