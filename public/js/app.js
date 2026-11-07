@@ -10,7 +10,7 @@
   let sel = { sentence: new Set(), meaning: new Set(), iu: new Set(), word: new Set() }; // 単位ごとの選択中の id
   let unit = "sentence";                           // 選択で見ている単位
   let study = { unit: "sentence", ids: [], i: 0 }; // 学習セット
-  let prefs = { view: {}, gramOn: false, gs: { tns: true, pat: true, kind: true, tags: true, els: false, expl: false, toeic: false }, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
+  let prefs = { view: {}, gramOn: false, gs: { tns: true, pat: true, kind: true, tags: true, expl: false, toeic: false }, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
   let tab = new URLSearchParams(location.search).get("tab") === "study" ? "study" : "pick",setBack = "reg", wReveal = false, wq = null;
   const UN = { sentence: { kind: "sentences", name: "英文" }, meaning: { kind: "chunks", name: "意味句" }, iu: { kind: "chunks", name: "IU" }, word: { kind: "words", name: "単語" } };
   const tbl = u => (u === "word" ? words : u === "sentence" ? rows : chunks.filter(c => c.type === u));
@@ -341,6 +341,8 @@
     $("#fgroup").innerHTML = opts.join("");
     $("#fgroup").value = [...$("#fgroup").options].some(x => x.value === cur) ? cur : "";
   }
+  // 文の要素(S V O C M)ごとに / で区切り、下に記号を付けた表示(解説の「文型」と、英文タブの一覧で共通)
+  const elsInner = els => els.map((e, i) => (i ? '<span class="slsep">/</span>' : "") + `<span class="el-i" title="${esc(e.note || "")}"><span class="el-t">${esc(e.text)}</span><span class="el-r role ${esc(e.role)}">${esc(e.role)}</span></span>`).join("");
   const jaFlip = new Set(); // 行ごとに、「和訳を出す」の全体設定を逆にしている英文
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
@@ -353,7 +355,7 @@
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
       : unit === "word"
       ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${ja}`
-      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${ja}`;
+      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${pickOn("g:文型") && r.elements && r.elements.length ? `<div class="elsrow">${elsInner(r.elements)}</div>` : ""}${ja}`; // 「文型」を出すとき、英文の下に S V O C M ごとの区切りも置く
     return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><span class="side"><button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button>${r.ja ? `<button type="button" class="jt" data-ja="${r.id}" title="和訳の表示・非表示" aria-label="和訳の表示・非表示">訳</button>` : ""}</span></label>`;
   }
   function renderPick() {
@@ -531,15 +533,6 @@
 
     const hl = i => (nowView === "phrases" && i === now ? " now" : "");
     let h = '<div class="view gram" data-view="gram">';
-    if (prefs.gs.els) {
-      h += '<h4 class="gh">文構造</h4>';
-      if (r.elements && r.elements.length) {
-        h += '<div class="els">' + r.elements.map(e => `<span class="el"><span class="role ${e.role}">${e.role}</span><b>${esc(e.text)}</b>${e.note ? ` <span class="sub">${esc(e.note)}</span>` : ""}</span>`).join("") + "</div>";
-        if (r.pattern) h += `<div class="gp"><b>${esc(r.pattern.type)}</b> <span class="sub">${esc(r.pattern.explanation)}</span></div>`;
-        if (r.tense) h += `<div class="gp"><b>${esc(r.tense.name)}</b> <span class="sub">${esc(r.tense.explanation)}</span></div>`;
-        if (r.clauses && r.clauses.length) h += '<table class="cls">' + r.clauses.map(c => `<tr><td><b>${esc(c.kind)}</b></td><td>${esc(c.text)}</td><td class="sub">${esc(c.role)}</td></tr>`).join("") + "</table>";
-      } else h += '<div class="sub">この英文には、文構造のデータがありません(「サンプル英文を入れる」をもう一度押すか、AI で解析し直すと付きます)。</div>';
-    }
     if (prefs.gramOn) {
       h += '<h4 class="gh">文法区切り <button class="vplay" data-k="phrases" title="文法区切りを、頭から順に聞く">▶</button></h4>';
       const P2 = mkP();
@@ -579,6 +572,12 @@
     const [badgeTop, badgeRest] = tenseBadge(r);
     let html = badgeTop + '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>' + badgeRest; // 全文(態・時制・相 などは、その上)
     let slashHtml = "";
+    if (prefs.gs.pat) { // 「文型」ボタン: 文の要素(S V O C M)ごとに区切って、下に記号を付ける(発音の英文と同じ見た目)
+      const els = r.elements || [];
+      html += '<div class="view elsrow" data-view="els">' + (els.length
+        ? elsInner(els)
+        : '<span class="sub">この英文には、文型のデータがありません。</span>') + "</div>";
+    }
     if (r.slash && r.slash.length && (prefs.aux.ipa || prefs.aux.ja)) { // 区切りごとの発音記号・訳(つながりの行の下)
       slashHtml = '<div class="view" data-view="slash">'
         + (() => { // 発音記号と和訳が両方あるときは、区切りごとに1行(英語 /発音/ 和訳)にまとめる
@@ -601,7 +600,7 @@
     }
     if (prefs.aux.ja) html += '<div class="jafull">' + (r.ja ? esc(r.ja) : '<span class="sub">なし</span>') + '</div>'; // 全文の和訳は、英文(つながりの行)の下・区切りごとの訳の上
     html += slashHtml;
-    if (prefs.gramOn || prefs.gs.els || prefs.gs.expl || prefs.gs.toeic) html += gramBlock(r, mkP, now, nowView);
+    if (prefs.gramOn || prefs.gs.expl || prefs.gs.toeic) html += gramBlock(r, mkP, now, nowView);
     $("#disp").innerHTML = html;
   }
 
@@ -669,7 +668,7 @@
     if (selC && selC.id === r.id && selC.key === key && selC.i === i) { selC = null; stopAudio(); return }
     selC = { id: r.id, key, i }; stopAudio(); playSel(r, key, i, playing);
   };
-  function clearViews() { for (const k of Object.keys(prefs.view)) prefs.view[k] = false; prefs.gramOn = false; prefs.slashMain = false; prefs.gs.els = prefs.gs.expl = prefs.gs.toeic = false; savePrefs(); renderStudy() }
+  function clearViews() { for (const k of Object.keys(prefs.view)) prefs.view[k] = false; prefs.gramOn = false; prefs.slashMain = false; prefs.gs.expl = prefs.gs.toeic = false; savePrefs(); renderStudy() }
   function toggleAux(x) { prefs.aux[x] = !prefs.aux[x]; savePrefs(); renderStudy() }
   $("#stSel").onchange = async e => { const r = cur(); if (r) { r.status = e.target.value; await Store.put(r, "sentences") } };
 
@@ -1045,7 +1044,7 @@
       if (p && typeof p === "object") prefs = { ...prefs, ...p, aux: { ...prefs.aux, ...(p.aux || {}) }, waux: { ...prefs.waux, ...(p.waux || {}) }, sh: { ...prefs.sh, ...(p.sh || {}) }, gs: { ...prefs.gs, ...(p.gs || {}) }, pick: { ...prefs.pick, ...(p.pick || {}) }, view: { ...prefs.view, ...(p.view || {}) } };
       // 古い設定(見方を1つだけ選ぶ形)から移す
       if (p && p.disp && p.disp !== "pos" && prefs.view[p.disp] === false) prefs.view[p.disp] = true;
-      if (p && !p.gs && p.gramOn) prefs.gs.els = prefs.gs.expl = prefs.gs.toeic = true; // 「文法」を、文構造・文法区切り・文法の解説・TOEIC に分けた(前に「文法」をオンにしていた人は、すべてオンのまま)
+      if (p && !p.gs && p.gramOn) prefs.gs.expl = prefs.gs.toeic = true; // 「文法」を、文構造・文法区切り・文法の解説・TOEIC に分けた(前に「文法」をオンにしていた人は、すべてオンのまま)
       delete prefs.disp; delete prefs.posOn;
       if (p && p.gramOn === undefined && ((p.view && p.view.phrases) || (p.aux && p.aux.grammar))) prefs.gramOn = true; // 文法区切り・品詞・文法を、「文法」にまとめた
       delete prefs.view.phrases; delete prefs.aux.grammar;
