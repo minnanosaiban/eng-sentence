@@ -44,15 +44,18 @@
     "slash": [
      {
       "en": "Thank you for your order.",
-      "ja": "ご注文ありがとうございます"
+      "ja": "ご注文ありがとうございます",
+      "ipa": "ˈθæŋk ˈju fɚ ˈjɔɹ ˈɔɹdɚ"
      },
      {
       "en": "Unfortunately, the item you requested is out of stock.",
-      "ja": "あいにく、ご希望の商品は在庫切れです"
+      "ja": "あいにく、ご希望の商品は在庫切れです",
+      "ipa": "ənˈfɔɹtʃənətli ðə ˈaɪtəm ˈju ɹɪˈkwɛstɪd ˈɪz ˈaʊt əv ˈstɑk"
      },
      {
       "en": "We will ship it as soon as it becomes available.",
-      "ja": "入荷しだい発送します"
+      "ja": "入荷しだい発送します",
+      "ipa": "ˈwi ˈwɪl ˈʃɪp ˈɪt əz ˈsun əz ˈɪt bɪˈkʌmz əˈveɪləbəl"
      }
     ],
     "pattern": {
@@ -128,7 +131,8 @@
       "meaning": "在庫切れで",
       "note": "反対は in stock(在庫あり)。sold out も「品切れ」の意味で使う",
       "level": 3,
-      "toeic": "The item is out of stock."
+      "toeic": "The item is out of stock.",
+      "ipa": "ˈaʊt əv ˈstɑk"
      },
      {
       "word": "ship",
@@ -136,7 +140,8 @@
       "meaning": "~を発送する",
       "note": "名詞 shipment(発送品)、shipping(発送・送料)も頻出",
       "level": 3,
-      "toeic": "ship an order"
+      "toeic": "ship an order",
+      "ipa": "ˈʃɪp"
      },
      {
       "word": "available",
@@ -144,7 +149,8 @@
       "meaning": "入手できる",
       "note": "人について使うと「手が空いている、都合がつく」の意味",
       "level": 3,
-      "toeic": "become available"
+      "toeic": "become available",
+      "ipa": "əˈveɪləbəl"
      },
      {
       "word": "unfortunately",
@@ -152,7 +158,8 @@
       "meaning": "あいにく、残念ながら",
       "note": "形容詞は unfortunate。反対は fortunately(幸いにも)",
       "level": 2,
-      "toeic": "文頭で悪い知らせを導く"
+      "toeic": "文頭で悪い知らせを導く",
+      "ipa": "ənˈfɔɹtʃənətli"
      }
     ],
     "toeic": {
@@ -294,13 +301,16 @@
     ],
     "iu": [
      {
-      "t": "Thank you for your order."
+      "t": "Thank you for your order.",
+      "ipa": "ˈθæŋk ˈju fɚ ˈjɔɹ ˈɔɹdɚ"
      },
      {
-      "t": "Unfortunately, the item you requested is out of stock."
+      "t": "Unfortunately, the item you requested is out of stock.",
+      "ipa": "ənˈfɔɹtʃənətli ðə ˈaɪtəm ˈju ɹɪˈkwɛstɪd ˈɪz ˈaʊt əv ˈstɑk"
      },
      {
-      "t": "We will ship it as soon as it becomes available."
+      "t": "We will ship it as soon as it becomes available.",
+      "ipa": "ˈwi ˈwɪl ˈʃɪp ˈɪt əz ˈsun əz ˈɪt bɪˈkʌmz əˈveɪləbəl"
      }
     ],
     "gtags": [
@@ -372,15 +382,18 @@
     "slash": [
      {
       "en": "The parking lot will be closed for repairs next week.",
-      "ja": "駐車場は来週補修のため閉鎖されます"
+      "ja": "駐車場は来週補修のため閉鎖されます",
+      "ipa": "ðə ˈpɑɹkɪŋ ˈlɑt ˈwɪl ˈbi ˈkloʊzd fɚ ɹɪˈpɛɹz ˈnɛkst ˈwik"
      },
      {
       "en": "Employees are asked to use the public garage across the street.",
-      "ja": "従業員は通りの向かいの公共駐車場の利用を求められています"
+      "ja": "従業員は通りの向かいの公共駐車場の利用を求められています",
+      "ipa": "ɛmˈplɔɪiz ˈɑɹ ˈæskt tə ˈjus ðə ˈpʌblɪk ɡɚˈɑʒ əˈkɹɔs ðə ˈstɹit"
      },
      {
       "en": "We apologize for any inconvenience.",
-      "ja": "ご不便をおかけして申し訳ありません"
+      "ja": "ご不便をおかけして申し訳ありません",
+      "ipa": "ˈwi əˈpɑləˌdʒaɪz fɚ ˈɛni ˌɪnkənˈvinjəns"
      }
     ],
     "pattern": {
@@ -451,7 +464,8 @@
       "meaning": "不便、迷惑",
       "note": "形容詞は inconvenient。any inconvenience の any は「何らかの」",
       "level": 3,
-      "toeic": "We apologize for any inconvenience."
+      "toeic": "We apologize for any inconvenience.",
+      "ipa": "ˌɪnkənˈvinjəns"
      },
      {
       "word": "repair",
@@ -459,7 +473,8 @@
       "meaning": "補修",
       "note": "動詞としても使う(repair the roof)。under repair で「修理中」",
       "level": 3,
-      "toeic": "closed for repairs"
+      "toeic": "closed for repairs",
+      "ipa": "ɹɪˈpɛɹ"
      },
      {
       "word": "parking lot",
@@ -467,7 +482,8 @@
       "meaning": "駐車場",
       "note": "主に米語。英国では car park。garage は屋内・立体の駐車場",
       "level": 2,
-      "toeic": "The parking lot is closed."
+      "toeic": "The parking lot is closed.",
+      "ipa": "ˈpɑɹkɪŋ ˈlɑt"
      },
      {
       "word": "apologize",
@@ -475,7 +491,8 @@
       "meaning": "お詫びする",
       "note": "自動詞なので相手は to、理由は for で表す。名詞は apology",
       "level": 2,
-      "toeic": "apologize for ~"
+      "toeic": "apologize for ~",
+      "ipa": "əˈpɑləˌdʒaɪz"
      }
     ],
     "toeic": {
@@ -634,13 +651,16 @@
     ],
     "iu": [
      {
-      "t": "The parking lot will be closed for repairs next week."
+      "t": "The parking lot will be closed for repairs next week.",
+      "ipa": "ðə ˈpɑɹkɪŋ ˈlɑt ˈwɪl ˈbi ˈkloʊzd fɚ ɹɪˈpɛɹz ˈnɛkst ˈwik"
      },
      {
-      "t": "Employees are asked to use the public garage across the street."
+      "t": "Employees are asked to use the public garage across the street.",
+      "ipa": "ɛmˈplɔɪiz ˈɑɹ ˈæskt tə ˈjus ðə ˈpʌblɪk ɡɚˈɑʒ əˈkɹɔs ðə ˈstɹit"
      },
      {
-      "t": "We apologize for any inconvenience."
+      "t": "We apologize for any inconvenience.",
+      "ipa": "ˈwi əˈpɑləˌdʒaɪz fɚ ˈɛni ˌɪnkənˈvinjəns"
      }
     ],
     "gtags": [
@@ -704,15 +724,18 @@
     "slash": [
      {
       "en": "Our company is moving to a new office on June 1.",
-      "ja": "当社は6月1日に新オフィスへ移転します"
+      "ja": "当社は6月1日に新オフィスへ移転します",
+      "ipa": "ˈaʊɚ ˈkʌmpəˌni ˈɪz ˈmuvɪŋ tə ə ˈnu ˈɔfɪs ɑn ˈdʒun ˈfɝst"
      },
      {
       "en": "All staff members must pack their belongings by May 30.",
-      "ja": "社員全員が5月30日までに私物を荷造りしなければなりません"
+      "ja": "社員全員が5月30日までに私物を荷造りしなければなりません",
+      "ipa": "ˈɔl ˈstæf ˈmɛmbɚz ˈmʌst ˈpæk ˈðɛɹ bɪˈlɔŋɪŋz baɪ ˈmeɪ ˈθɝtiəθ"
      },
      {
       "en": "Therefore, no meetings will be scheduled during that week.",
-      "ja": "そのため、その週は会議を予定しません"
+      "ja": "そのため、その週は会議を予定しません",
+      "ipa": "ˈðɛɹˌfɔɹ ˈnoʊ ˈmitɪŋz ˈwɪl ˈbi ˈskɛdʒʊld ˈdʊɹɪŋ ˈðæt ˈwik"
      }
     ],
     "pattern": {
@@ -783,7 +806,8 @@
       "meaning": "所持品、私物",
       "note": "常に複数形で使う。personal belongings の形が多い",
       "level": 3,
-      "toeic": "pack personal belongings"
+      "toeic": "pack personal belongings",
+      "ipa": "bɪˈlɔŋɪŋz"
      },
      {
       "word": "therefore",
@@ -791,7 +815,8 @@
       "meaning": "そのため、したがって",
       "note": "接続詞ではないので、2文をつなぐときはピリオドやセミコロンが必要",
       "level": 3,
-      "toeic": "文頭の接続副詞"
+      "toeic": "文頭の接続副詞",
+      "ipa": "ˈðɛɹˌfɔɹ"
      },
      {
       "word": "move",
@@ -799,7 +824,8 @@
       "meaning": "移転する",
       "note": "名詞 move も「引っ越し、移転」。relocate が言い換え語",
       "level": 2,
-      "toeic": "move to a new office"
+      "toeic": "move to a new office",
+      "ipa": "ˈmuv"
      },
      {
       "word": "schedule",
@@ -807,7 +833,8 @@
       "meaning": "~を予定する",
       "note": "be scheduled to do で「~する予定だ」。名詞で「予定表」も",
       "level": 3,
-      "toeic": "be scheduled"
+      "toeic": "be scheduled",
+      "ipa": "ˈskɛdʒʊl"
      }
     ],
     "toeic": {
@@ -984,7 +1011,8 @@
       "t": "All staff members must pack their belongings by May 30."
      },
      {
-      "t": "Therefore, no meetings will be scheduled during that week."
+      "t": "Therefore, no meetings will be scheduled during that week.",
+      "ipa": "ˈðɛɹˌfɔɹ ˈnoʊ ˈmitɪŋz ˈwɪl ˈbi ˈskɛdʒʊld ˈdʊɹɪŋ ˈðæt ˈwik"
      }
     ],
     "gtags": [
@@ -1048,15 +1076,18 @@
     "slash": [
      {
       "en": "I am writing to inform you about a change in our return policy.",
-      "ja": "返品規定の変更についてお知らせします"
+      "ja": "返品規定の変更についてお知らせします",
+      "ipa": "ˈaɪ ˈæm ˈɹaɪtɪŋ tə ˌɪnˈfɔɹm ˈju əˈbaʊt ə ˈtʃeɪndʒ ɪn ˈaʊɚ ɹɪˈtɝn ˈpɑləsi"
      },
      {
       "en": "Customers can now return items within sixty days of purchase.",
-      "ja": "お客様は購入から60日以内に商品を返品できます"
+      "ja": "お客様は購入から60日以内に商品を返品できます",
+      "ipa": "ˈkʌstəmɚz ˈkæn ˈnaʊ ɹɪˈtɝn ˈaɪtəmz wɪˈðɪn ˈsɪksti ˈdeɪz əv ˈpɝtʃəs"
      },
      {
       "en": "This new policy takes effect on March 1.",
-      "ja": "この新規定は3月1日に発効します"
+      "ja": "この新規定は3月1日に発効します",
+      "ipa": "ˈðɪs ˈnu ˈpɑləsi ˈteɪks ɪˈfɛkt ɑn ˈmɑɹtʃ ˈfɝst"
      }
     ],
     "pattern": {
@@ -1127,7 +1158,8 @@
       "meaning": "規定、方針",
       "note": "可算名詞。privacy policy、company policy など複合語が多い",
       "level": 3,
-      "toeic": "return policy"
+      "toeic": "return policy",
+      "ipa": "ˈpɑləsi"
      },
      {
       "word": "take effect",
@@ -1135,7 +1167,8 @@
       "meaning": "発効する",
       "note": "go into effect / come into effect も同じ意味で使う",
       "level": 3,
-      "toeic": "takes effect on March 1"
+      "toeic": "takes effect on March 1",
+      "ipa": "ˈteɪk ɪˈfɛkt"
      },
      {
       "word": "inform",
@@ -1143,7 +1176,8 @@
       "meaning": "~に知らせる",
       "note": "inform 人 of/about 事、inform 人 that 節 の形。名詞 information は不可算",
       "level": 3,
-      "toeic": "inform you about ~"
+      "toeic": "inform you about ~",
+      "ipa": "ˌɪnˈfɔɹm"
      },
      {
       "word": "purchase",
@@ -1151,7 +1185,8 @@
       "meaning": "購入",
       "note": "動詞「~を購入する」としても頻出。buy より改まった語",
       "level": 2,
-      "toeic": "within sixty days of purchase"
+      "toeic": "within sixty days of purchase",
+      "ipa": "ˈpɝtʃəs"
      }
     ],
     "toeic": {
@@ -1324,10 +1359,12 @@
     ],
     "iu": [
      {
-      "t": "I am writing to inform you about a change in our return policy."
+      "t": "I am writing to inform you about a change in our return policy.",
+      "ipa": "ˈaɪ ˈæm ˈɹaɪtɪŋ tə ˌɪnˈfɔɹm ˈju əˈbaʊt ə ˈtʃeɪndʒ ɪn ˈaʊɚ ɹɪˈtɝn ˈpɑləsi"
      },
      {
-      "t": "Customers can now return items within sixty days of purchase."
+      "t": "Customers can now return items within sixty days of purchase.",
+      "ipa": "ˈkʌstəmɚz ˈkæn ˈnaʊ ɹɪˈtɝn ˈaɪtəmz wɪˈðɪn ˈsɪksti ˈdeɪz əv ˈpɝtʃəs"
      },
      {
       "t": "This new policy takes effect on March 1."
@@ -1398,15 +1435,18 @@
     "slash": [
      {
       "en": "Brighton Hotel is looking for a front desk clerk.",
-      "ja": "ブライトン・ホテルはフロント係を募集しています"
+      "ja": "ブライトン・ホテルはフロント係を募集しています",
+      "ipa": "ˈbɹaɪtən hoʊˈtɛl ˈɪz ˈlʊkɪŋ fɚ ə ˈfɹʌnt ˈdɛsk ˈklɝk"
      },
      {
       "en": "Applicants should have at least two years of experience in customer service.",
-      "ja": "応募者は接客の経験が少なくとも2年必要です"
+      "ja": "応募者は接客の経験が少なくとも2年必要です",
+      "ipa": "ˈæplɪkənts ˈʃʊd ˈhæv ət ˈlist ˈtu ˈjɪɹz əv ɪkˈspɪɹiəns ɪn ˈkʌstəmɚ ˈsɝvəs"
      },
      {
       "en": "Interested candidates should send their resumes to the personnel office.",
-      "ja": "関心のある方は人事部に履歴書を送ってください"
+      "ja": "関心のある方は人事部に履歴書を送ってください",
+      "ipa": "ˈɪntɹəstɪd ˈkændədeɪts ˈʃʊd ˈsɛnd ˈðɛɹ ɹɪˈzumz tə ðə ˌpɝsəˈnɛl ˈɔfɪs"
      }
     ],
     "pattern": {
@@ -1472,7 +1512,8 @@
       "meaning": "応募者",
       "note": "動詞 apply (for)、名詞 application(応募、申込書)とセットで覚える",
       "level": 3,
-      "toeic": "job applicant"
+      "toeic": "job applicant",
+      "ipa": "ˈæplɪkənt"
      },
      {
       "word": "candidate",
@@ -1480,7 +1521,8 @@
       "meaning": "候補者",
       "note": "選挙の「候補者」にも使う。job candidate は「採用候補者」",
       "level": 3,
-      "toeic": "interested candidates"
+      "toeic": "interested candidates",
+      "ipa": "ˈkændədeɪt"
      },
      {
       "word": "personnel",
@@ -1488,7 +1530,8 @@
       "meaning": "人事部、職員",
       "note": "「職員」の意味では複数扱い。personal(個人的な)と綴りが紛らわしい",
       "level": 3,
-      "toeic": "the personnel office"
+      "toeic": "the personnel office",
+      "ipa": "ˌpɝsəˈnɛl"
      },
      {
       "word": "experience",
@@ -1496,7 +1539,8 @@
       "meaning": "経験",
       "note": "「経験・知識」の意味では不可算。「個々の体験」は可算",
       "level": 2,
-      "toeic": "two years of experience"
+      "toeic": "two years of experience",
+      "ipa": "ɪkˈspɪɹiəns"
      }
     ],
     "toeic": {
@@ -1675,13 +1719,16 @@
     ],
     "iu": [
      {
-      "t": "Brighton Hotel is looking for a front desk clerk."
+      "t": "Brighton Hotel is looking for a front desk clerk.",
+      "ipa": "ˈbɹaɪtən hoʊˈtɛl ˈɪz ˈlʊkɪŋ fɚ ə ˈfɹʌnt ˈdɛsk ˈklɝk"
      },
      {
-      "t": "Applicants should have at least two years of experience in customer service."
+      "t": "Applicants should have at least two years of experience in customer service.",
+      "ipa": "ˈæplɪkənts ˈʃʊd ˈhæv ət ˈlist ˈtu ˈjɪɹz əv ɪkˈspɪɹiəns ɪn ˈkʌstəmɚ ˈsɝvəs"
      },
      {
-      "t": "Interested candidates should send their resumes to the personnel office."
+      "t": "Interested candidates should send their resumes to the personnel office.",
+      "ipa": "ˈɪntɹəstɪd ˈkændədeɪts ˈʃʊd ˈsɛnd ˈðɛɹ ɹɪˈzumz tə ðə ˌpɝsəˈnɛl ˈɔfɪs"
      }
     ],
     "gtags": [
@@ -1745,15 +1792,18 @@
     "slash": [
      {
       "en": "The annual company picnic will be held on Saturday, July 12.",
-      "ja": "毎年恒例の会社のピクニックは7月12日(土)に開かれます"
+      "ja": "毎年恒例の会社のピクニックは7月12日(土)に開かれます",
+      "ipa": "ðə ˈænjuəl ˈkʌmpəˌni ˈpɪkˌnɪk ˈwɪl ˈbi ˈhɛld ɑn ˈsætɚdi ˌdʒuˈlaɪ ˈtwɛlfθ"
      },
      {
       "en": "All employees must register online before June 30.",
-      "ja": "従業員は全員6月30日までにオンライン登録が必要です"
+      "ja": "従業員は全員6月30日までにオンライン登録が必要です",
+      "ipa": "ˈɔl ɛmˈplɔɪiz ˈmʌst ˈɹɛdʒɪstɚ ˈɔnˌlaɪn bɪˈfɔɹ ˈdʒun ˈθɝtiəθ"
      },
      {
       "en": "Those who do not register will not be able to attend.",
-      "ja": "登録しない人は参加できません"
+      "ja": "登録しない人は参加できません",
+      "ipa": "ˈðoʊz ˈhu ˈdu ˈnɑt ˈɹɛdʒɪstɚ ˈwɪl ˈnɑt ˈbi ˈeɪbəl tə əˈtɛnd"
      }
     ],
     "pattern": {
@@ -1824,7 +1874,8 @@
       "meaning": "毎年の",
       "note": "副詞は annually(毎年)。annual report(年次報告書)も頻出",
       "level": 3,
-      "toeic": "annual meeting / annual picnic"
+      "toeic": "annual meeting / annual picnic",
+      "ipa": "ˈænjuəl"
      },
      {
       "word": "register",
@@ -1832,7 +1883,8 @@
       "meaning": "登録する",
       "note": "register for ~ で「~に申し込む」。名詞は registration",
       "level": 3,
-      "toeic": "register online"
+      "toeic": "register online",
+      "ipa": "ˈɹɛdʒɪstɚ"
      },
      {
       "word": "attend",
@@ -1840,7 +1892,8 @@
       "meaning": "~に出席する",
       "note": "他動詞なので attend the meeting。attend to ~ は「~に対処する」",
       "level": 3,
-      "toeic": "able to attend"
+      "toeic": "able to attend",
+      "ipa": "əˈtɛnd"
      },
      {
       "word": "employee",
@@ -1848,7 +1901,8 @@
       "meaning": "従業員",
       "note": "-ee は「~される人」。employer(雇用主)と区別する",
       "level": 1,
-      "toeic": "All employees ~"
+      "toeic": "All employees ~",
+      "ipa": "ɛmˈplɔɪi"
      }
     ],
     "toeic": {
@@ -2024,7 +2078,8 @@
       "t": "All employees must register online before June 30."
      },
      {
-      "t": "Those who do not register will not be able to attend."
+      "t": "Those who do not register will not be able to attend.",
+      "ipa": "ˈðoʊz ˈhu ˈdu ˈnɑt ˈɹɛdʒɪstɚ ˈwɪl ˈnɑt ˈbi ˈeɪbəl tə əˈtɛnd"
      }
     ],
     "gtags": [
@@ -2104,15 +2159,18 @@
     "slash": [
      {
       "en": "Ms. Alvarez joined our company in 2018.",
-      "ja": "アルバレスさんは2018年に入社しました"
+      "ja": "アルバレスさんは2018年に入社しました",
+      "ipa": "ˈmɪz ˈælvɚˌɛz ˈdʒɔɪnd ˈaʊɚ ˈkʌmpəˌni ɪn ˈtwɛnti eɪˈtin"
      },
      {
       "en": "She is the manager who oversees the Chicago branch.",
-      "ja": "彼女はシカゴ支店を統括する部長です"
+      "ja": "彼女はシカゴ支店を統括する部長です",
+      "ipa": "ˈʃi ˈɪz ðə ˈmænədʒɚ ˈhu ˈoʊvɚˌsiz ðə ʃəˈkɑˌɡoʊ ˈbɹæntʃ"
      },
      {
       "en": "Under her leadership, sales have increased by twenty percent.",
-      "ja": "彼女の指導のもと、売り上げは20%増えました"
+      "ja": "彼女の指導のもと、売り上げは20%増えました",
+      "ipa": "ˈʌndɚ ˈhɝ ˈlidɚˌʃɪp ˈseɪlz ˈhæv ˌɪnˈkɹist baɪ ˈtwɛnti pɚˈsɛnt"
      }
     ],
     "pattern": {
@@ -2183,7 +2241,8 @@
       "meaning": "~を監督する、統括する",
       "note": "活用は oversee - oversaw - overseen。supervise が言い換え語",
       "level": 3,
-      "toeic": "oversee the branch"
+      "toeic": "oversee the branch",
+      "ipa": "ˈoʊvɚˌsi"
      },
      {
       "word": "leadership",
@@ -2191,7 +2250,8 @@
       "meaning": "指導力、統率",
       "note": "ふつう不可算名詞。leader(指導者)+ -ship(地位・能力)",
       "level": 3,
-      "toeic": "under her leadership"
+      "toeic": "under her leadership",
+      "ipa": "ˈlidɚˌʃɪp"
      },
      {
       "word": "increase",
@@ -2199,7 +2259,8 @@
       "meaning": "増える、~を増やす",
       "note": "名詞も同じ形(an increase in sales)。反対は decrease",
       "level": 2,
-      "toeic": "sales have increased"
+      "toeic": "sales have increased",
+      "ipa": "ˌɪnˈkɹis"
      },
      {
       "word": "branch",
@@ -2207,7 +2268,8 @@
       "meaning": "支店",
       "note": "branch office とも言う。本社は headquarters / head office",
       "level": 3,
-      "toeic": "the Chicago branch"
+      "toeic": "the Chicago branch",
+      "ipa": "ˈbɹæntʃ"
      }
     ],
     "toeic": {
@@ -2360,10 +2422,12 @@
       "t": "Ms. Alvarez joined our company in 2018."
      },
      {
-      "t": "She is the manager who oversees the Chicago branch."
+      "t": "She is the manager who oversees the Chicago branch.",
+      "ipa": "ˈʃi ˈɪz ðə ˈmænədʒɚ ˈhu ˈoʊvɚˌsiz ðə ʃəˈkɑˌɡoʊ ˈbɹæntʃ"
      },
      {
-      "t": "Under her leadership, sales have increased by twenty percent."
+      "t": "Under her leadership, sales have increased by twenty percent.",
+      "ipa": "ˈʌndɚ ˈhɝ ˈlidɚˌʃɪp ˈseɪlz ˈhæv ˌɪnˈkɹist baɪ ˈtwɛnti pɚˈsɛnt"
      }
     ],
     "gtags": [
@@ -2419,15 +2483,18 @@
     "slash": [
      {
       "en": "Our new software is much faster than the old version.",
-      "ja": "新しいソフトは旧バージョンよりずっと速いです"
+      "ja": "新しいソフトは旧バージョンよりずっと速いです",
+      "ipa": "ˈaʊɚ ˈnu ˈsɔfˌtwɛɹ ˈɪz ˈmʌtʃ ˈfæstɚ ðən ðə ˈoʊld ˈvɝʒən"
      },
      {
       "en": "It also uses less memory.",
-      "ja": "使うメモリも少なくなりました"
+      "ja": "使うメモリも少なくなりました",
+      "ipa": "ˈɪt ˈɔlsoʊ ˈjusəz ˈlɛs ˈmɛmɚi"
      },
      {
       "en": "As a result, employees can finish their work more quickly.",
-      "ja": "その結果、従業員はより早く仕事を終えられます"
+      "ja": "その結果、従業員はより早く仕事を終えられます",
+      "ipa": "əz ə ɹɪˈzʌlt ɛmˈplɔɪiz ˈkæn ˈfɪnɪʃ ˈðɛɹ ˈwɝk ˈmɔɹ ˈkwɪkli"
      }
     ],
     "pattern": {
@@ -2493,7 +2560,8 @@
       "meaning": "版、バージョン",
       "note": "「~の版」は version of ~。latest version(最新版)も頻出",
       "level": 2,
-      "toeic": "the old version"
+      "toeic": "the old version",
+      "ipa": "ˈvɝʒən"
      },
      {
       "word": "memory",
@@ -2501,7 +2569,8 @@
       "meaning": "メモリ、記憶",
       "note": "コンピュータの意味では不可算。不可算名詞なので few でなく less を使う",
       "level": 2,
-      "toeic": "use less memory"
+      "toeic": "use less memory",
+      "ipa": "ˈmɛmɚi"
      },
      {
       "word": "as a result",
@@ -2509,7 +2578,8 @@
       "meaning": "その結果",
       "note": "as a result of ~ で「~の結果として」(後ろは名詞)",
       "level": 3,
-      "toeic": "文頭の接続副詞句"
+      "toeic": "文頭の接続副詞句",
+      "ipa": "əz ə ɹɪˈzʌlt"
      },
      {
       "word": "software",
@@ -2517,7 +2587,8 @@
       "meaning": "ソフトウェア",
       "note": "不可算名詞なので a software や softwares とは言わない",
       "level": 3,
-      "toeic": "new software"
+      "toeic": "new software",
+      "ipa": "ˈsɔfˌtwɛɹ"
      }
     ],
     "toeic": {
@@ -2670,13 +2741,16 @@
     ],
     "iu": [
      {
-      "t": "Our new software is much faster than the old version."
+      "t": "Our new software is much faster than the old version.",
+      "ipa": "ˈaʊɚ ˈnu ˈsɔfˌtwɛɹ ˈɪz ˈmʌtʃ ˈfæstɚ ðən ðə ˈoʊld ˈvɝʒən"
      },
      {
-      "t": "It also uses less memory."
+      "t": "It also uses less memory.",
+      "ipa": "ˈɪt ˈɔlsoʊ ˈjusəz ˈlɛs ˈmɛmɚi"
      },
      {
-      "t": "As a result, employees can finish their work more quickly."
+      "t": "As a result, employees can finish their work more quickly.",
+      "ipa": "əz ə ɹɪˈzʌlt ɛmˈplɔɪiz ˈkæn ˈfɪnɪʃ ˈðɛɹ ˈwɝk ˈmɔɹ ˈkwɪkli"
      }
     ],
     "gtags": [

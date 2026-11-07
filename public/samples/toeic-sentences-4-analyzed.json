@@ -72,15 +72,18 @@
     "slash": [
      {
       "en": "Hello, I'm calling about the projector in Room 204.",
-      "ja": "もしもし、204号室のプロジェクターの件で電話しています"
+      "ja": "もしもし、204号室のプロジェクターの件で電話しています",
+      "ipa": "həˈloʊ ˈaɪm ˈkɔlɪŋ əˈbaʊt ðə pɹəˈdʒɛktɚ ɪn ˈɹum ˈtu ˈoʊ ˈfɔɹ"
      },
      {
       "en": "It stopped working during this morning's presentation.",
-      "ja": "今朝のプレゼン中に動かなくなりました"
+      "ja": "今朝のプレゼン中に動かなくなりました",
+      "ipa": "ˈɪt ˈstɑpt ˈwɝkɪŋ ˈdʊɹɪŋ ˈðɪs ˈmɔɹnɪŋz ˌpɹɛzənˈteɪʃən"
      },
      {
       "en": "I'll send a technician right away.",
-      "ja": "すぐに技術者を送ります"
+      "ja": "すぐに技術者を送ります",
+      "ipa": "ˈaɪl ˈsɛnd ə tɛkˈnɪʃən ˈɹaɪt əˈweɪ"
      }
     ],
     "pattern": {
@@ -146,7 +149,8 @@
       "meaning": "技術者",
       "note": "-ian は「~の専門家」を表す語尾。technical(技術的な)、technique(技術)と区別。",
       "level": 3,
-      "toeic": "send a technician"
+      "toeic": "send a technician",
+      "ipa": "tɛkˈnɪʃən"
      },
      {
       "word": "stop working",
@@ -154,7 +158,8 @@
       "meaning": "動かなくなる",
       "note": "stop -ing は「~するのをやめる」、stop to do は「~するために立ち止まる」で意味が違う。",
       "level": 3,
-      "toeic": "機器の故障の描写"
+      "toeic": "機器の故障の描写",
+      "ipa": "ˈstɑp ˈwɝkɪŋ"
      },
      {
       "word": "right away",
@@ -162,7 +167,8 @@
       "meaning": "すぐに",
       "note": "immediately / at once に言い換えられることが多い。",
       "level": 3,
-      "toeic": "I'll do it right away."
+      "toeic": "I'll do it right away.",
+      "ipa": "ˈɹaɪt əˈweɪ"
      },
      {
       "word": "presentation",
@@ -170,7 +176,8 @@
       "meaning": "プレゼン",
       "note": "可算名詞。動詞は present(~を発表する、提示する)。",
       "level": 2,
-      "toeic": "give a presentation"
+      "toeic": "give a presentation",
+      "ipa": "ˌpɹɛzənˈteɪʃən"
      }
     ],
     "toeic": {
@@ -307,10 +314,12 @@
       "t": "Hello, I'm calling about the projector in Room 204."
      },
      {
-      "t": "It stopped working during this morning's presentation."
+      "t": "It stopped working during this morning's presentation.",
+      "ipa": "ˈɪt ˈstɑpt ˈwɝkɪŋ ˈdʊɹɪŋ ˈðɪs ˈmɔɹnɪŋz ˌpɹɛzənˈteɪʃən"
      },
      {
-      "t": "I'll send a technician right away."
+      "t": "I'll send a technician right away.",
+      "ipa": "ˈaɪl ˈsɛnd ə tɛkˈnɪʃən ˈɹaɪt əˈweɪ"
      }
     ],
     "gtags": [
@@ -370,15 +379,18 @@
     "slash": [
      {
       "en": "Excuse me, does this train stop at Central Station?",
-      "ja": "すみません、この電車はセントラル駅に止まりますか"
+      "ja": "すみません、この電車はセントラル駅に止まりますか",
+      "ipa": "ɪkˈskjus ˈmi ˈdʌz ˈðɪs ˈtɹeɪn ˈstɑp ət ˈsɛntɹəl ˈsteɪʃən"
      },
      {
       "en": "No, you need to change at Oak Street.",
-      "ja": "いいえ、オーク・ストリートで乗り換える必要があります"
+      "ja": "いいえ、オーク・ストリートで乗り換える必要があります",
+      "ipa": "ˈnoʊ ˈju ˈnid tə ˈtʃeɪndʒ ət ˈoʊk ˈstɹit"
      },
      {
       "en": "The next train to Central leaves from platform three.",
-      "ja": "セントラル行きの次の電車は3番ホームから出ます"
+      "ja": "セントラル行きの次の電車は3番ホームから出ます",
+      "ipa": "ðə ˈnɛkst ˈtɹeɪn tə ˈsɛntɹəl ˈlivz fɹəm ˈplætˌfɔɹm ˈθɹi"
      }
     ],
     "pattern": {
@@ -444,7 +456,8 @@
       "meaning": "乗り換える",
       "note": "「乗り換える」は transfer で言い換えられることも多い。",
       "level": 3,
-      "toeic": "change trains / change at ~"
+      "toeic": "change trains / change at ~",
+      "ipa": "ˈtʃeɪndʒ"
      },
      {
       "word": "platform",
@@ -452,7 +465,8 @@
       "meaning": "ホーム",
       "note": "米国では番線を track で言うこともある(track 3)。",
       "level": 3,
-      "toeic": "from platform three"
+      "toeic": "from platform three",
+      "ipa": "ˈplætˌfɔɹm"
      },
      {
       "word": "stop at",
@@ -460,7 +474,8 @@
       "meaning": "~に停車する",
       "note": "設問では make a stop at ~ と言い換えられることがある。",
       "level": 2,
-      "toeic": "This train stops at ~."
+      "toeic": "This train stops at ~.",
+      "ipa": "ˈstɑp ət"
      }
     ],
     "toeic": {
@@ -616,13 +631,16 @@
     ],
     "iu": [
      {
-      "t": "Excuse me, does this train stop at Central Station?"
+      "t": "Excuse me, does this train stop at Central Station?",
+      "ipa": "ɪkˈskjus ˈmi ˈdʌz ˈðɪs ˈtɹeɪn ˈstɑp ət ˈsɛntɹəl ˈsteɪʃən"
      },
      {
-      "t": "No, you need to change at Oak Street."
+      "t": "No, you need to change at Oak Street.",
+      "ipa": "ˈnoʊ ˈju ˈnid tə ˈtʃeɪndʒ ət ˈoʊk ˈstɹit"
      },
      {
-      "t": "The next train to Central leaves from platform three."
+      "t": "The next train to Central leaves from platform three.",
+      "ipa": "ðə ˈnɛkst ˈtɹeɪn tə ˈsɛntɹəl ˈlivz fɹəm ˈplætˌfɔɹm ˈθɹi"
      }
     ],
     "gtags": [
@@ -678,19 +696,23 @@
     "slash": [
      {
       "en": "I'd like to return this jacket because it's too small.",
-      "ja": "小さすぎるのでこのジャケットを返品したい"
+      "ja": "小さすぎるのでこのジャケットを返品したい",
+      "ipa": "ˈaɪd ˈlaɪk tə ɹɪˈtɝn ˈðɪs ˈdʒækət bɪˈkɔz ˈɪts ˈtu ˈsmɔl"
      },
      {
       "en": "Do you have the receipt with you?",
-      "ja": "レシートはお持ちですか"
+      "ja": "レシートはお持ちですか",
+      "ipa": "ˈdu ˈju ˈhæv ðə ɹɪˈsit wɪð ˈju"
      },
      {
       "en": "Yes, here it is.",
-      "ja": "はい、これです"
+      "ja": "はい、これです",
+      "ipa": "ˈjɛs ˈhiɹ ˈɪt ˈɪz"
      },
      {
       "en": "I bought it last week.",
-      "ja": "先週買いました"
+      "ja": "先週買いました",
+      "ipa": "ˈaɪ ˈbɑt ˈɪt ˈlæst ˈwik"
      }
     ],
     "pattern": {
@@ -771,7 +793,8 @@
       "meaning": "~を返品する",
       "note": "名詞もあり、return policy(返品規定)は TOEIC 頻出。",
       "level": 3,
-      "toeic": "return an item"
+      "toeic": "return an item",
+      "ipa": "ɹɪˈtɝn"
      },
      {
       "word": "receipt",
@@ -779,7 +802,8 @@
       "meaning": "レシート、領収書",
       "note": "p は発音しない [rɪˈsiːt]。動詞は receive。",
       "level": 3,
-      "toeic": "with the receipt"
+      "toeic": "with the receipt",
+      "ipa": "ɹɪˈsit"
      },
      {
       "word": "too",
@@ -787,7 +811,8 @@
       "meaning": "~すぎる",
       "note": "too + 形容詞 + to do で「~すぎて…できない」の形もある。",
       "level": 2,
-      "toeic": "too small / too expensive"
+      "toeic": "too small / too expensive",
+      "ipa": "ˈtu"
      }
     ],
     "toeic": {
@@ -941,16 +966,20 @@
     ],
     "iu": [
      {
-      "t": "I'd like to return this jacket because it's too small."
+      "t": "I'd like to return this jacket because it's too small.",
+      "ipa": "ˈaɪd ˈlaɪk tə ɹɪˈtɝn ˈðɪs ˈdʒækət bɪˈkɔz ˈɪts ˈtu ˈsmɔl"
      },
      {
-      "t": "Do you have the receipt with you?"
+      "t": "Do you have the receipt with you?",
+      "ipa": "ˈdu ˈju ˈhæv ðə ɹɪˈsit wɪð ˈju"
      },
      {
-      "t": "Yes, here it is."
+      "t": "Yes, here it is.",
+      "ipa": "ˈjɛs ˈhiɹ ˈɪt ˈɪz"
      },
      {
-      "t": "I bought it last week."
+      "t": "I bought it last week.",
+      "ipa": "ˈaɪ ˈbɑt ˈɪt ˈlæst ˈwik"
      }
     ],
     "gtags": [
@@ -1018,15 +1047,18 @@
     "slash": [
      {
       "en": "Are you attending the sales meeting on Friday?",
-      "ja": "金曜日の営業会議に出席しますか"
+      "ja": "金曜日の営業会議に出席しますか",
+      "ipa": "ˈɑɹ ˈju əˈtɛndɪŋ ðə ˈseɪlz ˈmitɪŋ ɑn ˈfɹaɪdi"
      },
      {
       "en": "I'd like to, but I have to visit a client in Boston.",
-      "ja": "出たいのですが、ボストンの顧客を訪問しなければなりません"
+      "ja": "出たいのですが、ボストンの顧客を訪問しなければなりません",
+      "ipa": "ˈaɪd ˈlaɪk tə ˈbʌt ˈaɪ ˈhæv tə ˈvɪzɪt ə ˈklaɪənt ɪn ˈbɑstən"
      },
      {
       "en": "Then I'll send you the meeting notes afterward.",
-      "ja": "では、会議のメモを後で送りますね"
+      "ja": "では、会議のメモを後で送りますね",
+      "ipa": "ˈðɛn ˈaɪl ˈsɛnd ˈju ðə ˈmitɪŋ ˈnoʊts ˈæftɚwɚd"
      }
     ],
     "pattern": {
@@ -1097,7 +1129,8 @@
       "meaning": "~に出席する",
       "note": "他動詞なので attend the meeting と前置詞なしで使う(attend to は「対処する」)。",
       "level": 3,
-      "toeic": "attend a meeting"
+      "toeic": "attend a meeting",
+      "ipa": "əˈtɛnd"
      },
      {
       "word": "client",
@@ -1105,7 +1138,8 @@
       "meaning": "顧客",
       "note": "customer は店の客、client は専門的なサービスの依頼主というニュアンス。",
       "level": 3,
-      "toeic": "visit a client"
+      "toeic": "visit a client",
+      "ipa": "ˈklaɪənt"
      },
      {
       "word": "afterward",
@@ -1113,7 +1147,8 @@
       "meaning": "その後で",
       "note": "afterwards とも綴る。later とほぼ同じ意味。",
       "level": 2,
-      "toeic": "send notes afterward"
+      "toeic": "send notes afterward",
+      "ipa": "ˈæftɚwɚd"
      },
      {
       "word": "notes",
@@ -1121,7 +1156,8 @@
       "meaning": "メモ、議事録",
       "note": "take notes で「メモを取る」。議事録は minutes とも言う。",
       "level": 2,
-      "toeic": "meeting notes"
+      "toeic": "meeting notes",
+      "ipa": "ˈnoʊts"
      }
     ],
     "toeic": {
@@ -1280,13 +1316,16 @@
     ],
     "iu": [
      {
-      "t": "Are you attending the sales meeting on Friday?"
+      "t": "Are you attending the sales meeting on Friday?",
+      "ipa": "ˈɑɹ ˈju əˈtɛndɪŋ ðə ˈseɪlz ˈmitɪŋ ɑn ˈfɹaɪdi"
      },
      {
-      "t": "I'd like to, but I have to visit a client in Boston."
+      "t": "I'd like to, but I have to visit a client in Boston.",
+      "ipa": "ˈaɪd ˈlaɪk tə ˈbʌt ˈaɪ ˈhæv tə ˈvɪzɪt ə ˈklaɪənt ɪn ˈbɑstən"
      },
      {
-      "t": "Then I'll send you the meeting notes afterward."
+      "t": "Then I'll send you the meeting notes afterward.",
+      "ipa": "ˈðɛn ˈaɪl ˈsɛnd ˈju ðə ˈmitɪŋ ˈnoʊts ˈæftɚwɚd"
      }
     ],
     "gtags": [
@@ -1362,15 +1401,18 @@
     "slash": [
      {
       "en": "Our flight has been delayed by two hours.",
-      "ja": "便が2時間遅れています"
+      "ja": "便が2時間遅れています",
+      "ipa": "ˈaʊɚ ˈflaɪt ˈhæz ˈbɪn dɪˈleɪd baɪ ˈtu ˈaʊɚz"
      },
      {
       "en": "Then we should let the hotel know that we will arrive late.",
-      "ja": "ではホテルに遅れて着くと知らせるべきです"
+      "ja": "ではホテルに遅れて着くと知らせるべきです",
+      "ipa": "ˈðɛn ˈwi ˈʃʊd ˈlɛt ðə hoʊˈtɛl ˈnoʊ ˈðæt ˈwi ˈwɪl ɚˈaɪv ˈleɪt"
      },
      {
       "en": "I'll call them from the airport.",
-      "ja": "空港から電話します"
+      "ja": "空港から電話します",
+      "ipa": "ˈaɪl ˈkɔl ˈðɛm fɹəm ðə ˈɛɹˌpɔɹt"
      }
     ],
     "pattern": {
@@ -1441,7 +1483,8 @@
       "meaning": "~を遅らせる",
       "note": "名詞も同じ形。without delay は「遅れずに、すぐに」。",
       "level": 3,
-      "toeic": "be delayed by ~"
+      "toeic": "be delayed by ~",
+      "ipa": "dɪˈleɪ"
      },
      {
       "word": "let ~ know",
@@ -1449,7 +1492,8 @@
       "meaning": "~に知らせる",
       "note": "let の後ろは動詞の原形。I'll let you know. は返事を約束する定番。",
       "level": 3,
-      "toeic": "Let me know."
+      "toeic": "Let me know.",
+      "ipa": "ˈlɛt ˈnoʊ"
      },
      {
       "word": "arrive late",
@@ -1457,7 +1501,8 @@
       "meaning": "遅れて到着する",
       "note": "arrive は自動詞なので、場所は arrive at / in ~ で表す。",
       "level": 2,
-      "toeic": "遅延の連絡"
+      "toeic": "遅延の連絡",
+      "ipa": "ɚˈaɪv ˈleɪt"
      }
     ],
     "toeic": {
@@ -1610,13 +1655,16 @@
     ],
     "iu": [
      {
-      "t": "Our flight has been delayed by two hours."
+      "t": "Our flight has been delayed by two hours.",
+      "ipa": "ˈaʊɚ ˈflaɪt ˈhæz ˈbɪn dɪˈleɪd baɪ ˈtu ˈaʊɚz"
      },
      {
-      "t": "Then we should let the hotel know that we will arrive late."
+      "t": "Then we should let the hotel know that we will arrive late.",
+      "ipa": "ˈðɛn ˈwi ˈʃʊd ˈlɛt ðə hoʊˈtɛl ˈnoʊ ˈðæt ˈwi ˈwɪl ɚˈaɪv ˈleɪt"
      },
      {
-      "t": "I'll call them from the airport."
+      "t": "I'll call them from the airport.",
+      "ipa": "ˈaɪl ˈkɔl ˈðɛm fɹəm ðə ˈɛɹˌpɔɹt"
      }
     ],
     "gtags": [
@@ -1684,15 +1732,18 @@
     "slash": [
      {
       "en": "Have you reviewed the budget proposal yet?",
-      "ja": "予算案はもう確認しましたか"
+      "ja": "予算案はもう確認しましたか",
+      "ipa": "ˈhæv ˈju ɹiˈvjud ðə ˈbʌdʒɪt pɹəˈpoʊzəl ˈjɛt"
      },
      {
       "en": "Not yet, I've been busy with the quarterly report.",
-      "ja": "まだです、四半期報告書で忙しくて"
+      "ja": "まだです、四半期報告書で忙しくて",
+      "ipa": "ˈnɑt ˈjɛt ˈaɪv ˈbɪn ˈbɪzi wɪð ðə ˈkwɔɹtɚli ɹiˈpɔɹt"
      },
      {
       "en": "Could you finish it by Wednesday?",
-      "ja": "水曜日までに終えてもらえますか"
+      "ja": "水曜日までに終えてもらえますか",
+      "ipa": "ˈkʊd ˈju ˈfɪnɪʃ ˈɪt baɪ ˈwɛnzdi"
      }
     ],
     "pattern": {
@@ -1763,7 +1814,8 @@
       "meaning": "~を見直す、確認する",
       "note": "名詞では「見直し、批評」。performance review(人事評価)も頻出。",
       "level": 3,
-      "toeic": "review a proposal"
+      "toeic": "review a proposal",
+      "ipa": "ˌɹiˈvju"
      },
      {
       "word": "quarterly",
@@ -1771,7 +1823,8 @@
       "meaning": "四半期の",
       "note": "quarter(四半期)の形容詞。「年4回の」の意味でも使う。",
       "level": 3,
-      "toeic": "quarterly report"
+      "toeic": "quarterly report",
+      "ipa": "ˈkwɔɹtɚli"
      },
      {
       "word": "by",
@@ -1779,7 +1832,8 @@
       "meaning": "~までに",
       "note": "by は期限(~までに)、until は継続(~までずっと)で区別する。",
       "level": 3,
-      "toeic": "by Wednesday"
+      "toeic": "by Wednesday",
+      "ipa": "ˈbaɪ"
      },
      {
       "word": "proposal",
@@ -1787,7 +1841,8 @@
       "meaning": "提案書",
       "note": "動詞は propose。submit a proposal(提案書を出す)も定番。",
       "level": 3,
-      "toeic": "budget proposal"
+      "toeic": "budget proposal",
+      "ipa": "pɹəˈpoʊzəl"
      }
     ],
     "toeic": {
@@ -1928,13 +1983,16 @@
     ],
     "iu": [
      {
-      "t": "Have you reviewed the budget proposal yet?"
+      "t": "Have you reviewed the budget proposal yet?",
+      "ipa": "ˈhæv ˈju ɹiˈvjud ðə ˈbʌdʒɪt pɹəˈpoʊzəl ˈjɛt"
      },
      {
-      "t": "Not yet, I've been busy with the quarterly report."
+      "t": "Not yet, I've been busy with the quarterly report.",
+      "ipa": "ˈnɑt ˈjɛt ˈaɪv ˈbɪn ˈbɪzi wɪð ðə ˈkwɔɹtɚli ɹiˈpɔɹt"
      },
      {
-      "t": "Could you finish it by Wednesday?"
+      "t": "Could you finish it by Wednesday?",
+      "ipa": "ˈkʊd ˈju ˈfɪnɪʃ ˈɪt baɪ ˈwɛnzdi"
      }
     ],
     "gtags": [
@@ -1998,15 +2056,18 @@
     "slash": [
      {
       "en": "Welcome to Greenfield Bank.",
-      "ja": "グリーンフィールド銀行へようこそ"
+      "ja": "グリーンフィールド銀行へようこそ",
+      "ipa": "ˈwɛlkəm tə ˈɡɹinˌfild ˈbæŋk"
      },
      {
       "en": "How can I help you today?",
-      "ja": "本日はどのようなご用件でしょうか"
+      "ja": "本日はどのようなご用件でしょうか",
+      "ipa": "ˈhaʊ ˈkæn ˈaɪ ˈhɛlp ˈju təˈdeɪ"
      },
      {
       "en": "I'd like to open a savings account.",
-      "ja": "普通預金口座を開設したいのですが"
+      "ja": "普通預金口座を開設したいのですが",
+      "ipa": "ˈaɪd ˈlaɪk tə ˈoʊpən ə ˈseɪvɪŋz əˈkaʊnt"
      }
     ],
     "pattern": {
@@ -2072,7 +2133,8 @@
       "meaning": "普通預金口座",
       "note": "savings と s が付く形に注意。当座預金は checking account。",
       "level": 3,
-      "toeic": "open a savings account"
+      "toeic": "open a savings account",
+      "ipa": "ˈseɪvɪŋz əˈkaʊnt"
      },
      {
       "word": "open",
@@ -2080,7 +2142,8 @@
       "meaning": "(口座を)開設する",
       "note": "反対は close an account(口座を解約する)。",
       "level": 2,
-      "toeic": "open an account"
+      "toeic": "open an account",
+      "ipa": "ˈoʊpən"
      },
      {
       "word": "help",
@@ -2088,7 +2151,8 @@
       "meaning": "~を手伝う",
       "note": "help + 人 + (to) 動詞 で「人が~するのを手伝う」。",
       "level": 1,
-      "toeic": "How can I help you?"
+      "toeic": "How can I help you?",
+      "ipa": "ˈhɛlp"
      }
     ],
     "toeic": {
@@ -2193,13 +2257,16 @@
     ],
     "iu": [
      {
-      "t": "Welcome to Greenfield Bank."
+      "t": "Welcome to Greenfield Bank.",
+      "ipa": "ˈwɛlkəm tə ˈɡɹinˌfild ˈbæŋk"
      },
      {
-      "t": "How can I help you today?"
+      "t": "How can I help you today?",
+      "ipa": "ˈhaʊ ˈkæn ˈaɪ ˈhɛlp ˈju təˈdeɪ"
      },
      {
-      "t": "I'd like to open a savings account."
+      "t": "I'd like to open a savings account.",
+      "ipa": "ˈaɪd ˈlaɪk tə ˈoʊpən ə ˈseɪvɪŋz əˈkaʊnt"
      }
     ],
     "gtags": [
@@ -2263,15 +2330,18 @@
     "slash": [
      {
       "en": "The copy machine on this floor is out of order again.",
-      "ja": "このフロアのコピー機がまた故障しています"
+      "ja": "このフロアのコピー機がまた故障しています",
+      "ipa": "ðə ˈkɑpi məˈʃin ɑn ˈðɪs ˈflɔɹ ˈɪz ˈaʊt əv ˈɔɹdɚ əˈɡɛn"
      },
      {
       "en": "Let's use the one in the mailroom instead.",
-      "ja": "代わりにメールルームのものを使いましょう"
+      "ja": "代わりにメールルームのものを使いましょう",
+      "ipa": "ˈlɛts ˈjus ðə ˈwʌn ɪn ðə ˈmeɪlˌɹum ˌɪnˈstɛd"
      },
      {
       "en": "Good idea, I'll put up a sign for everyone.",
-      "ja": "いい考えですね、みんなに貼り紙を出します"
+      "ja": "いい考えですね、みんなに貼り紙を出します",
+      "ipa": "ˈɡʊd aɪˈdiə ˈaɪl ˈpʊt ˈʌp ə ˈsaɪn fɚ ˈɛvɹiˌwʌn"
      }
     ],
     "pattern": {
@@ -2337,7 +2407,8 @@
       "meaning": "故障中で",
       "note": "「順番が乱れて」の意味もあるが、機械について言うと「故障中」。",
       "level": 3,
-      "toeic": "The machine is out of order."
+      "toeic": "The machine is out of order.",
+      "ipa": "ˈaʊt əv ˈɔɹdɚ"
      },
      {
       "word": "instead",
@@ -2345,7 +2416,8 @@
       "meaning": "代わりに",
       "note": "instead of + 名詞 で「~の代わりに」。",
       "level": 2,
-      "toeic": "Use this one instead."
+      "toeic": "Use this one instead.",
+      "ipa": "ˌɪnˈstɛd"
      },
      {
       "word": "put up",
@@ -2353,7 +2425,8 @@
       "meaning": "(貼り紙を)掲示する",
       "note": "put up with ~ は「~を我慢する」で別の意味。",
       "level": 2,
-      "toeic": "put up a sign"
+      "toeic": "put up a sign",
+      "ipa": "ˈpʊt ˈʌp"
      },
      {
       "word": "mailroom",
@@ -2361,7 +2434,8 @@
       "meaning": "郵便物を扱う部屋",
       "note": "break room(休憩室)、supply room(備品室)など社内の部屋の名前とセットで覚える。",
       "level": 2,
-      "toeic": "in the mailroom"
+      "toeic": "in the mailroom",
+      "ipa": "ˈmeɪlˌɹum"
      }
     ],
     "toeic": {
@@ -2524,13 +2598,16 @@
     ],
     "iu": [
      {
-      "t": "The copy machine on this floor is out of order again."
+      "t": "The copy machine on this floor is out of order again.",
+      "ipa": "ðə ˈkɑpi məˈʃin ɑn ˈðɪs ˈflɔɹ ˈɪz ˈaʊt əv ˈɔɹdɚ əˈɡɛn"
      },
      {
-      "t": "Let's use the one in the mailroom instead."
+      "t": "Let's use the one in the mailroom instead.",
+      "ipa": "ˈlɛts ˈjus ðə ˈwʌn ɪn ðə ˈmeɪlˌɹum ˌɪnˈstɛd"
      },
      {
-      "t": "Good idea, I'll put up a sign for everyone."
+      "t": "Good idea, I'll put up a sign for everyone.",
+      "ipa": "ˈɡʊd aɪˈdiə ˈaɪl ˈpʊt ˈʌp ə ˈsaɪn fɚ ˈɛvɹiˌwʌn"
      }
     ],
     "gtags": [
@@ -2590,15 +2667,18 @@
     "slash": [
      {
       "en": "Attention, passengers.",
-      "ja": "乗客の皆様にお知らせします"
+      "ja": "乗客の皆様にお知らせします",
+      "ipa": "əˈtɛnʃən ˈpæsəndʒɚz"
      },
      {
       "en": "Flight 208 to Seattle is now boarding at Gate 12.",
-      "ja": "シアトル行き208便は12番ゲートで搭乗中です"
+      "ja": "シアトル行き208便は12番ゲートで搭乗中です",
+      "ipa": "ˈflaɪt ˈtu ˈoʊ ˈeɪt tə siˈætəl ˈɪz ˈnaʊ ˈbɔɹdɪŋ ət ˈɡeɪt ˈtwɛlv"
      },
      {
       "en": "Please have your boarding pass ready.",
-      "ja": "搭乗券をご用意ください"
+      "ja": "搭乗券をご用意ください",
+      "ipa": "ˈpliz ˈhæv ˈjɔɹ ˈbɔɹdɪŋ ˈpæs ˈɹɛdi"
      }
     ],
     "pattern": {
@@ -2665,7 +2745,8 @@
       "meaning": "搭乗する",
       "note": "他動詞で board the plane とも言う。名詞 board は「板、役員会」。",
       "level": 3,
-      "toeic": "is now boarding"
+      "toeic": "is now boarding",
+      "ipa": "ˈbɔɹd"
      },
      {
       "word": "boarding pass",
@@ -2673,7 +2754,8 @@
       "meaning": "搭乗券",
       "note": "boarding time(搭乗時刻)、boarding gate(搭乗口)もセットで。",
       "level": 3,
-      "toeic": "have your boarding pass ready"
+      "toeic": "have your boarding pass ready",
+      "ipa": "ˈbɔɹdɪŋ ˈpæs"
      },
      {
       "word": "gate",
@@ -2681,7 +2763,8 @@
       "meaning": "搭乗口",
       "note": "ゲート変更(gate change)は空港アナウンスの定番の話題。",
       "level": 3,
-      "toeic": "at Gate 12"
+      "toeic": "at Gate 12",
+      "ipa": "ˈɡeɪt"
      },
      {
       "word": "attention",
@@ -2689,7 +2772,8 @@
       "meaning": "注意、お知らせ",
       "note": "pay attention to ~ で「~に注意を払う」。",
       "level": 2,
-      "toeic": "Attention, passengers."
+      "toeic": "Attention, passengers.",
+      "ipa": "əˈtɛnʃən"
      }
     ],
     "toeic": {
@@ -2810,13 +2894,15 @@
     ],
     "iu": [
      {
-      "t": "Attention, passengers."
+      "t": "Attention, passengers.",
+      "ipa": "əˈtɛnʃən ˈpæsəndʒɚz"
      },
      {
       "t": "Flight 208 to Seattle is now boarding at Gate 12."
      },
      {
-      "t": "Please have your boarding pass ready."
+      "t": "Please have your boarding pass ready.",
+      "ipa": "ˈpliz ˈhæv ˈjɔɹ ˈbɔɹdɪŋ ˈpæs ˈɹɛdi"
      }
     ],
     "gtags": [
@@ -2872,15 +2958,18 @@
     "slash": [
      {
       "en": "Hello, this is Karen from Dr. Lee's office.",
-      "ja": "リー医師の診療所のカレンです"
+      "ja": "リー医師の診療所のカレンです",
+      "ipa": "həˈloʊ ˈðɪs ˈɪz ˈkɛɹən fɹəm ˈdɹaɪv ˈliz ˈɔfɪs"
      },
      {
       "en": "I'm calling to confirm your appointment tomorrow at ten A.M.",
-      "ja": "明日午前10時のご予約を確認するために電話しました"
+      "ja": "明日午前10時のご予約を確認するために電話しました",
+      "ipa": "ˈaɪm ˈkɔlɪŋ tə kənˈfɝm ˈjɔɹ əˈpɔɪntmənt təˈmɑˌɹoʊ ət ˈtɛn ə ˈɛm"
      },
      {
       "en": "Please call us back if you need to reschedule.",
-      "ja": "変更が必要なら折り返しお電話ください"
+      "ja": "変更が必要なら折り返しお電話ください",
+      "ipa": "ˈpliz ˈkɔl ˈʌs ˈbæk ˈɪf ˈju ˈnid tə ɹiˈskɛdʒul"
      }
     ],
     "pattern": {
@@ -2951,7 +3040,8 @@
       "meaning": "~を確認する",
       "note": "名詞は confirmation。confirmation number(確認番号)も頻出。",
       "level": 3,
-      "toeic": "confirm an appointment"
+      "toeic": "confirm an appointment",
+      "ipa": "kənˈfɝm"
      },
      {
       "word": "appointment",
@@ -2959,7 +3049,8 @@
       "meaning": "予約",
       "note": "医者などとの面会の予約。ホテルや店の予約は reservation。",
       "level": 3,
-      "toeic": "make an appointment"
+      "toeic": "make an appointment",
+      "ipa": "əˈpɔɪntmənt"
      },
      {
       "word": "reschedule",
@@ -2967,7 +3058,8 @@
       "meaning": "~の日程を変更する",
       "note": "re-(再び)+ schedule。postpone(延期する)と言い換えられることもある。",
       "level": 3,
-      "toeic": "reschedule a meeting"
+      "toeic": "reschedule a meeting",
+      "ipa": "ɹiˈskɛdʒul"
      },
      {
       "word": "call back",
@@ -2975,7 +3067,8 @@
       "meaning": "折り返し電話する",
       "note": "return a call / return one's call も同じ意味。",
       "level": 3,
-      "toeic": "Please call us back."
+      "toeic": "Please call us back.",
+      "ipa": "ˈkɔl ˈbæk"
      }
     ],
     "toeic": {
@@ -3135,13 +3228,15 @@
     ],
     "iu": [
      {
-      "t": "Hello, this is Karen from Dr. Lee's office."
+      "t": "Hello, this is Karen from Dr. Lee's office.",
+      "ipa": "həˈloʊ ˈðɪs ˈɪz ˈkɛɹən fɹəm ˈdɹaɪv ˈliz ˈɔfɪs"
      },
      {
       "t": "I'm calling to confirm your appointment tomorrow at ten A.M."
      },
      {
-      "t": "Please call us back if you need to reschedule."
+      "t": "Please call us back if you need to reschedule.",
+      "ipa": "ˈpliz ˈkɔl ˈʌs ˈbæk ˈɪf ˈju ˈnid tə ɹiˈskɛdʒul"
      }
     ],
     "gtags": [
@@ -3209,15 +3304,18 @@
     "slash": [
      {
       "en": "Thank you for visiting our factory today.",
-      "ja": "本日は当工場にお越しいただきありがとうございます"
+      "ja": "本日は当工場にお越しいただきありがとうございます",
+      "ipa": "ˈθæŋk ˈju fɚ ˈvɪzɪtɪŋ ˈaʊɚ ˈfæktɚi təˈdeɪ"
      },
      {
       "en": "Before we begin the tour, please put on a safety helmet.",
-      "ja": "見学を始める前に、安全ヘルメットをかぶってください"
+      "ja": "見学を始める前に、安全ヘルメットをかぶってください",
+      "ipa": "bɪˈfɔɹ ˈwi bɪˈɡɪn ðə ˈtʊɹ ˈpliz ˈpʊt ɑn ə ˈseɪfti ˈhɛlmət"
      },
      {
       "en": "The tour will take about forty minutes.",
-      "ja": "見学は約40分かかります"
+      "ja": "見学は約40分かかります",
+      "ipa": "ðə ˈtʊɹ ˈwɪl ˈteɪk əˈbaʊt ˈfɔɹti ˈmɪnəts"
      }
     ],
     "pattern": {
@@ -3288,7 +3386,8 @@
       "meaning": "~を身につける",
       "note": "put on は着る動作、wear は着ている状態。Part 1 で区別が問われる。",
       "level": 3,
-      "toeic": "put on a helmet"
+      "toeic": "put on a helmet",
+      "ipa": "ˈpʊt ɑn"
      },
      {
       "word": "tour",
@@ -3296,7 +3395,8 @@
       "meaning": "見学、ツアー",
       "note": "動詞もあり、tour the facility(施設を見学する)の形で使う。",
       "level": 2,
-      "toeic": "factory tour"
+      "toeic": "factory tour",
+      "ipa": "ˈtʊɹ"
      },
      {
       "word": "safety",
@@ -3304,7 +3404,8 @@
       "meaning": "安全",
       "note": "形容詞は safe。safety regulations(安全規則)も頻出。",
       "level": 3,
-      "toeic": "safety helmet"
+      "toeic": "safety helmet",
+      "ipa": "ˈseɪfti"
      },
      {
       "word": "begin",
@@ -3312,7 +3413,8 @@
       "meaning": "~を始める",
       "note": "begin - began - begun と変化する不規則動詞。",
       "level": 1,
-      "toeic": "before we begin"
+      "toeic": "before we begin",
+      "ipa": "bɪˈɡɪn"
      }
     ],
     "toeic": {
@@ -3457,13 +3559,16 @@
     ],
     "iu": [
      {
-      "t": "Thank you for visiting our factory today."
+      "t": "Thank you for visiting our factory today.",
+      "ipa": "ˈθæŋk ˈju fɚ ˈvɪzɪtɪŋ ˈaʊɚ ˈfæktɚi təˈdeɪ"
      },
      {
-      "t": "Before we begin the tour, please put on a safety helmet."
+      "t": "Before we begin the tour, please put on a safety helmet.",
+      "ipa": "bɪˈfɔɹ ˈwi bɪˈɡɪn ðə ˈtʊɹ ˈpliz ˈpʊt ɑn ə ˈseɪfti ˈhɛlmət"
      },
      {
-      "t": "The tour will take about forty minutes."
+      "t": "The tour will take about forty minutes.",
+      "ipa": "ðə ˈtʊɹ ˈwɪl ˈteɪk əˈbaʊt ˈfɔɹti ˈmɪnəts"
      }
     ],
     "gtags": [
@@ -3531,15 +3636,18 @@
     "slash": [
      {
       "en": "This weekend only, all kitchen appliances are thirty percent off.",
-      "ja": "今週末限り、キッチン家電はすべて30%引き"
+      "ja": "今週末限り、キッチン家電はすべて30%引き",
+      "ipa": "ˈðɪs ˈwiˌkɛnd ˈoʊnli ˈɔl ˈkɪtʃən əˈplaɪənsəz ˈɑɹ ˈθɝˌdi pɚˈsɛnt ˈɔf"
      },
      {
       "en": "Visit our store on Main Street or order online.",
-      "ja": "メイン通りの店に来るかオンラインで注文"
+      "ja": "メイン通りの店に来るかオンラインで注文",
+      "ipa": "ˈvɪzɪt ˈaʊɚ ˈstɔɹ ɑn ˈmeɪn ˈstɹit ɚ ˈɔɹdɚ ˈɔnˌlaɪn"
      },
      {
       "en": "The sale ends Sunday at midnight.",
-      "ja": "セールは日曜の深夜に終わります"
+      "ja": "セールは日曜の深夜に終わります",
+      "ipa": "ðə ˈseɪl ˈɛndz ˈsʌnˌdeɪ ət ˈmɪdˌnaɪt"
      }
     ],
     "pattern": {
@@ -3605,7 +3713,8 @@
       "meaning": "家電製品",
       "note": "可算名詞で、ふつう複数形。home appliances(家庭用電化製品)とも言う。",
       "level": 3,
-      "toeic": "kitchen appliances"
+      "toeic": "kitchen appliances",
+      "ipa": "əˈplaɪəns"
      },
      {
       "word": "percent off",
@@ -3613,7 +3722,8 @@
       "meaning": "~%引き",
       "note": "a thirty percent discount と discount を使っても言える。",
       "level": 3,
-      "toeic": "thirty percent off"
+      "toeic": "thirty percent off",
+      "ipa": "pɚˈsɛnt ˈɔf"
      },
      {
       "word": "midnight",
@@ -3621,7 +3731,8 @@
       "meaning": "深夜0時",
       "note": "noon(正午)と対になる語。前置詞は at を使う。",
       "level": 2,
-      "toeic": "ends at midnight"
+      "toeic": "ends at midnight",
+      "ipa": "ˈmɪdˌnaɪt"
      },
      {
       "word": "order",
@@ -3629,7 +3740,8 @@
       "meaning": "~を注文する",
       "note": "名詞もあり、place an order(注文する)の形でよく出る。",
       "level": 1,
-      "toeic": "order online"
+      "toeic": "order online",
+      "ipa": "ˈɔɹdɚ"
      }
     ],
     "toeic": {
@@ -3778,13 +3890,16 @@
     ],
     "iu": [
      {
-      "t": "This weekend only, all kitchen appliances are thirty percent off."
+      "t": "This weekend only, all kitchen appliances are thirty percent off.",
+      "ipa": "ˈðɪs ˈwiˌkɛnd ˈoʊnli ˈɔl ˈkɪtʃən əˈplaɪənsəz ˈɑɹ ˈθɝˌdi pɚˈsɛnt ˈɔf"
      },
      {
-      "t": "Visit our store on Main Street or order online."
+      "t": "Visit our store on Main Street or order online.",
+      "ipa": "ˈvɪzɪt ˈaʊɚ ˈstɔɹ ɑn ˈmeɪn ˈstɹit ɚ ˈɔɹdɚ ˈɔnˌlaɪn"
      },
      {
-      "t": "The sale ends Sunday at midnight."
+      "t": "The sale ends Sunday at midnight.",
+      "ipa": "ðə ˈseɪl ˈɛndz ˈsʌnˌdeɪ ət ˈmɪdˌnaɪt"
      }
     ],
     "gtags": [
@@ -3844,15 +3959,18 @@
     "slash": [
      {
       "en": "Good morning, everyone.",
-      "ja": "皆さん、おはようございます"
+      "ja": "皆さん、おはようございます",
+      "ipa": "ˈɡʊd ˈmɔɹnɪŋ ˈɛvɹiˌwʌn"
      },
      {
       "en": "I'm pleased to announce that our new branch will open in Denver next month.",
-      "ja": "来月デンバーに新支店が開くことをお知らせできて嬉しいです"
+      "ja": "来月デンバーに新支店が開くことをお知らせできて嬉しいです",
+      "ipa": "ˈaɪm ˈplizd tə əˈnaʊns ˈðæt ˈaʊɚ ˈnu ˈbɹæntʃ ˈwɪl ˈoʊpən ɪn ˈdɛnvɚ ˈnɛkst ˈmʌnθ"
      },
      {
       "en": "Please welcome Mr. Evans, who will be the manager.",
-      "ja": "支店長になるエバンスさんを歓迎してください"
+      "ja": "支店長になるエバンスさんを歓迎してください",
+      "ipa": "ˈpliz ˈwɛlkəm ˈmɪstɚ ˈɛvənz ˈhu ˈwɪl ˈbi ðə ˈmænədʒɚ"
      }
     ],
     "pattern": {
@@ -3928,7 +4046,8 @@
       "meaning": "~を発表する",
       "note": "名詞は announcement。make an announcement の形も頻出。",
       "level": 3,
-      "toeic": "I'm pleased to announce ~"
+      "toeic": "I'm pleased to announce ~",
+      "ipa": "əˈnaʊns"
      },
      {
       "word": "branch",
@@ -3936,7 +4055,8 @@
       "meaning": "支店",
       "note": "本社・本店は headquarters / main office。",
       "level": 3,
-      "toeic": "a new branch"
+      "toeic": "a new branch",
+      "ipa": "ˈbɹæntʃ"
      },
      {
       "word": "manager",
@@ -3944,7 +4064,8 @@
       "meaning": "支店長、管理者",
       "note": "動詞 manage、名詞 management(経営、経営陣)も合わせて。",
       "level": 1,
-      "toeic": "branch manager"
+      "toeic": "branch manager",
+      "ipa": "ˈmænədʒɚ"
      },
      {
       "word": "welcome",
@@ -3952,7 +4073,8 @@
       "meaning": "~を歓迎する",
       "note": "形容詞では be welcome to do(自由に~してよい)の形もある。",
       "level": 2,
-      "toeic": "Please welcome ~"
+      "toeic": "Please welcome ~",
+      "ipa": "ˈwɛlkəm"
      }
     ],
     "toeic": {
@@ -4105,13 +4227,16 @@
     ],
     "iu": [
      {
-      "t": "Good morning, everyone."
+      "t": "Good morning, everyone.",
+      "ipa": "ˈɡʊd ˈmɔɹnɪŋ ˈɛvɹiˌwʌn"
      },
      {
-      "t": "I'm pleased to announce that our new branch will open in Denver next month."
+      "t": "I'm pleased to announce that our new branch will open in Denver next month.",
+      "ipa": "ˈaɪm ˈplizd tə əˈnaʊns ˈðæt ˈaʊɚ ˈnu ˈbɹæntʃ ˈwɪl ˈoʊpən ɪn ˈdɛnvɚ ˈnɛkst ˈmʌnθ"
      },
      {
-      "t": "Please welcome Mr. Evans, who will be the manager."
+      "t": "Please welcome Mr. Evans, who will be the manager.",
+      "ipa": "ˈpliz ˈwɛlkəm ˈmɪstɚ ˈɛvənz ˈhu ˈwɪl ˈbi ðə ˈmænədʒɚ"
      }
     ],
     "gtags": [
@@ -4179,15 +4304,18 @@
     "slash": [
      {
       "en": "Due to heavy traffic on Route 9, drivers should expect long delays this morning.",
-      "ja": "9号線の渋滞のため、今朝は長い遅れが見込まれます"
+      "ja": "9号線の渋滞のため、今朝は長い遅れが見込まれます",
+      "ipa": "ˈdu tə ˈhɛvi ˈtɹæfɪk ɑn ˈɹut ˈnaɪn ˈdɹaɪvɚz ˈʃʊd ɪkˈspɛkt ˈlɔŋ dɪˈleɪz ˈðɪs ˈmɔɹnɪŋ"
      },
      {
       "en": "Consider taking the train instead.",
-      "ja": "代わりに電車の利用をご検討ください"
+      "ja": "代わりに電車の利用をご検討ください",
+      "ipa": "kənˈsɪdɚ ˈteɪkɪŋ ðə ˈtɹeɪn ˌɪnˈstɛd"
      },
      {
       "en": "We will bring you another update in thirty minutes.",
-      "ja": "30分後に最新情報をお伝えします"
+      "ja": "30分後に最新情報をお伝えします",
+      "ipa": "ˈwi ˈwɪl ˈbɹɪŋ ˈju əˈnʌðɚ əpˈdeɪt ɪn ˈθɝˌdi ˈmɪnəts"
      }
     ],
     "pattern": {
@@ -4258,7 +4386,8 @@
       "meaning": "~のために",
       "note": "because of / owing to と同じ意味で、後ろは名詞(句)。",
       "level": 3,
-      "toeic": "due to heavy traffic"
+      "toeic": "due to heavy traffic",
+      "ipa": "ˈdu tə"
      },
      {
       "word": "delay",
@@ -4266,7 +4395,8 @@
       "meaning": "遅れ",
       "note": "可算・不可算の両方で使う。long delays は可算の用法。",
       "level": 3,
-      "toeic": "long delays"
+      "toeic": "long delays",
+      "ipa": "dɪˈleɪ"
      },
      {
       "word": "expect",
@@ -4274,7 +4404,8 @@
       "meaning": "~を予想する",
       "note": "expect + 人 + to do で「人が~すると思う」。名詞は expectation。",
       "level": 2,
-      "toeic": "expect delays"
+      "toeic": "expect delays",
+      "ipa": "ɪkˈspɛkt"
      },
      {
       "word": "update",
@@ -4282,7 +4413,8 @@
       "meaning": "最新情報",
       "note": "動詞もあり、update the schedule(予定を更新する)の形で使う。",
       "level": 3,
-      "toeic": "another update"
+      "toeic": "another update",
+      "ipa": "əpˈdeɪt"
      }
     ],
     "toeic": {
@@ -4443,10 +4575,12 @@
       "t": "Due to heavy traffic on Route 9, drivers should expect long delays this morning."
      },
      {
-      "t": "Consider taking the train instead."
+      "t": "Consider taking the train instead.",
+      "ipa": "kənˈsɪdɚ ˈteɪkɪŋ ðə ˈtɹeɪn ˌɪnˈstɛd"
      },
      {
-      "t": "We will bring you another update in thirty minutes."
+      "t": "We will bring you another update in thirty minutes.",
+      "ipa": "ˈwi ˈwɪl ˈbɹɪŋ ˈju əˈnʌðɚ əpˈdeɪt ɪn ˈθɝˌdi ˈmɪnəts"
      }
     ],
     "gtags": [
@@ -4518,15 +4652,18 @@
     "slash": [
      {
       "en": "You have reached the customer service line of Brightway Electric.",
-      "ja": "ブライトウェイ電力のカスタマーサービスにおかけいただきました"
+      "ja": "ブライトウェイ電力のカスタマーサービスにおかけいただきました",
+      "ipa": "ˈju ˈhæv ˈɹitʃt ðə ˈkʌstəmɚ ˈsɝvəs ˈlaɪn əv ˈbɹaɪtˈweɪ ɪˈlɛktɹɪk"
      },
      {
       "en": "Our office is now closed.",
-      "ja": "ただいま営業時間外です"
+      "ja": "ただいま営業時間外です",
+      "ipa": "ˈaʊɚ ˈɔfɪs ˈɪz ˈnaʊ ˈkloʊzd"
      },
      {
       "en": "Please call back during business hours, or leave a message after the tone.",
-      "ja": "営業時間内におかけ直しいただくか、発信音の後にメッセージをお残しください"
+      "ja": "営業時間内におかけ直しいただくか、発信音の後にメッセージをお残しください",
+      "ipa": "ˈpliz ˈkɔl ˈbæk ˈdʊɹɪŋ ˈbɪznəs ˈaʊɚz ɚ ˈliv ə ˈmɛsədʒ ˈæftɚ ðə ˈtoʊn"
      }
     ],
     "pattern": {
@@ -4592,7 +4729,8 @@
       "meaning": "営業時間",
       "note": "opening hours / office hours とも言う。",
       "level": 3,
-      "toeic": "during business hours"
+      "toeic": "during business hours",
+      "ipa": "ˈbɪznəs ˈaʊɚz"
      },
      {
       "word": "leave a message",
@@ -4600,7 +4738,8 @@
       "meaning": "伝言を残す",
       "note": "take a message は「伝言を受ける」で立場が逆になる。",
       "level": 3,
-      "toeic": "after the tone"
+      "toeic": "after the tone",
+      "ipa": "ˈliv ə ˈmɛsədʒ"
      },
      {
       "word": "tone",
@@ -4608,7 +4747,8 @@
       "meaning": "発信音",
       "note": "声の調子や文章の「トーン」の意味もある。",
       "level": 2,
-      "toeic": "after the tone"
+      "toeic": "after the tone",
+      "ipa": "ˈtoʊn"
      },
      {
       "word": "reach",
@@ -4616,7 +4756,8 @@
       "meaning": "(電話で)つながる",
       "note": "他動詞なので reach to ~ とは言わない。「(人に)連絡がつく」の意味でも使う。",
       "level": 2,
-      "toeic": "You have reached ~."
+      "toeic": "You have reached ~.",
+      "ipa": "ˈɹitʃ"
      }
     ],
     "toeic": {
@@ -4781,10 +4922,12 @@
       "t": "You have reached the customer service line of Brightway Electric."
      },
      {
-      "t": "Our office is now closed."
+      "t": "Our office is now closed.",
+      "ipa": "ˈaʊɚ ˈɔfɪs ˈɪz ˈnaʊ ˈkloʊzd"
      },
      {
-      "t": "Please call back during business hours, or leave a message after the tone."
+      "t": "Please call back during business hours, or leave a message after the tone.",
+      "ipa": "ˈpliz ˈkɔl ˈbæk ˈdʊɹɪŋ ˈbɪznəs ˈaʊɚz ɚ ˈliv ə ˈmɛsədʒ ˈæftɚ ðə ˈtoʊn"
      }
     ],
     "gtags": [
@@ -4840,15 +4983,18 @@
     "slash": [
      {
       "en": "Welcome to the city museum's new exhibit on modern art.",
-      "ja": "市立美術館の新しい現代美術展へようこそ"
+      "ja": "市立美術館の新しい現代美術展へようこそ",
+      "ipa": "ˈwɛlkəm tə ðə ˈsɪti mjuˈziəmz ˈnu ɪɡˈzɪbɪt ɑn ˈmɑdɚn ˈɑɹt"
      },
      {
       "en": "Photography is allowed, but the use of flash is not permitted.",
-      "ja": "写真撮影は可能ですが、フラッシュの使用は認められていません"
+      "ja": "写真撮影は可能ですが、フラッシュの使用は認められていません",
+      "ipa": "fəˈtɑɡɹəfi ˈɪz əˈlaʊd ˈbʌt ðə ˈjus əv ˈflæʃ ˈɪz ˈnɑt pɚˈmɪtɪd"
      },
      {
       "en": "Audio guides are available at the front desk.",
-      "ja": "音声ガイドは受付で利用できます"
+      "ja": "音声ガイドは受付で利用できます",
+      "ipa": "ˈɑdiˌoʊ ˈɡaɪdz ˈɑɹ əˈveɪləbəl ət ðə ˈfɹʌnt ˈdɛsk"
      }
     ],
     "pattern": {
@@ -4905,7 +5051,8 @@
       "meaning": "展示",
       "note": "exhibition とほぼ同じ意味。on display(展示中)も合わせて覚える。",
       "level": 3,
-      "toeic": "a new exhibit"
+      "toeic": "a new exhibit",
+      "ipa": "ɪɡˈzɪbɪt"
      },
      {
       "word": "permit",
@@ -4913,7 +5060,8 @@
       "meaning": "~を許可する",
       "note": "名詞 permit は「許可証」(parking permit)。動詞と名詞で強勢の位置が違う。",
       "level": 3,
-      "toeic": "is not permitted"
+      "toeic": "is not permitted",
+      "ipa": "pɚˈmɪt"
      },
      {
       "word": "available",
@@ -4921,7 +5069,8 @@
       "meaning": "利用できる",
       "note": "人について使うと「手が空いている、都合がつく」。",
       "level": 3,
-      "toeic": "available at the front desk"
+      "toeic": "available at the front desk",
+      "ipa": "əˈveɪləbəl"
      },
      {
       "word": "front desk",
@@ -4929,7 +5078,8 @@
       "meaning": "受付",
       "note": "ホテルでは reception とも言う。",
       "level": 3,
-      "toeic": "at the front desk"
+      "toeic": "at the front desk",
+      "ipa": "ˈfɹʌnt ˈdɛsk"
      }
     ],
     "toeic": {
@@ -5092,13 +5242,16 @@
     ],
     "iu": [
      {
-      "t": "Welcome to the city museum's new exhibit on modern art."
+      "t": "Welcome to the city museum's new exhibit on modern art.",
+      "ipa": "ˈwɛlkəm tə ðə ˈsɪti mjuˈziəmz ˈnu ɪɡˈzɪbɪt ɑn ˈmɑdɚn ˈɑɹt"
      },
      {
-      "t": "Photography is allowed, but the use of flash is not permitted."
+      "t": "Photography is allowed, but the use of flash is not permitted.",
+      "ipa": "fəˈtɑɡɹəfi ˈɪz əˈlaʊd ˈbʌt ðə ˈjus əv ˈflæʃ ˈɪz ˈnɑt pɚˈmɪtɪd"
      },
      {
-      "t": "Audio guides are available at the front desk."
+      "t": "Audio guides are available at the front desk.",
+      "ipa": "ˈɑdiˌoʊ ˈɡaɪdz ˈɑɹ əˈveɪləbəl ət ðə ˈfɹʌnt ˈdɛsk"
      }
     ],
     "gtags": [

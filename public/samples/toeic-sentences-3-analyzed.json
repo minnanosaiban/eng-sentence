@@ -44,15 +44,18 @@
     "slash": [
      {
       "en": "A woman",
-      "ja": "女性が"
+      "ja": "女性が",
+      "ipa": "ə ˈwʊmən"
      },
      {
       "en": "is watering the plants",
-      "ja": "植物に水をやっている"
+      "ja": "植物に水をやっている",
+      "ipa": "ˈɪz ˈwɔtɚɪŋ ðə ˈplænts"
      },
      {
       "en": "in the garden.",
-      "ja": "庭で"
+      "ja": "庭で",
+      "ipa": "ɪn ðə ˈɡɑɹdən"
      }
     ],
     "pattern": {
@@ -109,7 +112,8 @@
       "meaning": "~に水をやる",
       "note": "名詞と同じ形の他動詞。過去形 watered、進行形 watering で写真描写に出る。",
       "level": 3,
-      "toeic": "water the plants / water the lawn"
+      "toeic": "water the plants / water the lawn",
+      "ipa": "ˈwɔtɚ"
      },
      {
       "word": "plant",
@@ -117,7 +121,8 @@
       "meaning": "植物",
       "note": "「工場」の意味もあり、manufacturing plant などで頻出。動詞では「植える」。",
       "level": 2,
-      "toeic": "potted plant(鉢植え)"
+      "toeic": "potted plant(鉢植え)",
+      "ipa": "ˈplænt"
      },
      {
       "word": "garden",
@@ -125,7 +130,8 @@
       "meaning": "庭",
       "note": "可算名詞。gardening(園芸)、gardener(庭師)などの派生語も出る。",
       "level": 1,
-      "toeic": "a community garden"
+      "toeic": "a community garden",
+      "ipa": "ˈɡɑɹdən"
      }
     ],
     "toeic": {
@@ -205,13 +211,16 @@
     ],
     "iu": [
      {
-      "t": "A woman"
+      "t": "A woman",
+      "ipa": "ə ˈwʊmən"
      },
      {
-      "t": "is watering the plants"
+      "t": "is watering the plants",
+      "ipa": "ˈɪz ˈwɔtɚɪŋ ðə ˈplænts"
      },
      {
-      "t": "in the garden."
+      "t": "in the garden.",
+      "ipa": "ɪn ðə ˈɡɑɹdən"
      }
     ],
     "gtags": [
@@ -263,15 +272,18 @@
     "slash": [
      {
       "en": "Some boxes",
-      "ja": "いくつかの箱が"
+      "ja": "いくつかの箱が",
+      "ipa": "ˈsʌm ˈbɑksəz"
      },
      {
       "en": "are stacked",
-      "ja": "積み重ねられている"
+      "ja": "積み重ねられている",
+      "ipa": "ˈɑɹ ˈstækt"
      },
      {
       "en": "next to the loading dock.",
-      "ja": "荷積み場の隣に"
+      "ja": "荷積み場の隣に",
+      "ipa": "ˈnɛkst tə ðə ˈloʊdɪŋ ˈdɑk"
      }
     ],
     "pattern": {
@@ -323,7 +335,8 @@
       "meaning": "~を積み重ねる",
       "note": "名詞でも「積み重ね」。a stack of papers(書類の山)の形でよく使う。",
       "level": 2,
-      "toeic": "be stacked in rows"
+      "toeic": "be stacked in rows",
+      "ipa": "ˈstæk"
      },
      {
       "word": "loading dock",
@@ -331,7 +344,8 @@
       "meaning": "荷積み場",
       "note": "load(積む)の反対は unload(降ろす)。unloading area も同じ場面で出る。",
       "level": 3,
-      "toeic": "at the loading dock"
+      "toeic": "at the loading dock",
+      "ipa": "ˈloʊdɪŋ ˈdɑk"
      },
      {
       "word": "next to",
@@ -339,7 +353,8 @@
       "meaning": "~の隣に",
       "note": "beside とほぼ同じ意味。near より「すぐ隣」で距離が近い。",
       "level": 2,
-      "toeic": "位置関係の描写で頻出"
+      "toeic": "位置関係の描写で頻出",
+      "ipa": "ˈnɛkst tə"
      }
     ],
     "toeic": {
@@ -415,13 +430,16 @@
     ],
     "iu": [
      {
-      "t": "Some boxes"
+      "t": "Some boxes",
+      "ipa": "ˈsʌm ˈbɑksəz"
      },
      {
-      "t": "are stacked"
+      "t": "are stacked",
+      "ipa": "ˈɑɹ ˈstækt"
      },
      {
-      "t": "next to the loading dock."
+      "t": "next to the loading dock.",
+      "ipa": "ˈnɛkst tə ðə ˈloʊdɪŋ ˈdɑk"
      }
     ],
     "gtags": [
@@ -473,15 +491,18 @@
     "slash": [
      {
       "en": "Two men",
-      "ja": "2人の男性が"
+      "ja": "2人の男性が",
+      "ipa": "ˈtu ˈmɛn"
      },
      {
       "en": "are shaking hands",
-      "ja": "握手をしている"
+      "ja": "握手をしている",
+      "ipa": "ˈɑɹ ˈʃeɪkɪŋ ˈhændz"
      },
      {
       "en": "across a table.",
-      "ja": "テーブル越しに"
+      "ja": "テーブル越しに",
+      "ipa": "əˈkɹɔs ə ˈteɪbəl"
      }
     ],
     "pattern": {
@@ -538,7 +559,8 @@
       "meaning": "握手する",
       "note": "過去形は shook hands。挨拶・合意の場面で greet each other と言い換えられる。",
       "level": 3,
-      "toeic": "shake hands with ~"
+      "toeic": "shake hands with ~",
+      "ipa": "ˈʃeɪk ˈhændz"
      },
      {
       "word": "across",
@@ -546,7 +568,8 @@
       "meaning": "~越しに、~の向こう側に",
       "note": "「横切って」の意味もある。walk across the street(通りを渡る)。",
       "level": 2,
-      "toeic": "across the table / across the street"
+      "toeic": "across the table / across the street",
+      "ipa": "əˈkɹɔs"
      },
      {
       "word": "table",
@@ -554,7 +577,8 @@
       "meaning": "テーブル",
       "note": "set the table(食卓を整える)、clear the table(片付ける)も Part 1 で出る。",
       "level": 1,
-      "toeic": "a conference table"
+      "toeic": "a conference table",
+      "ipa": "ˈteɪbəl"
      }
     ],
     "toeic": {
@@ -630,13 +654,16 @@
     ],
     "iu": [
      {
-      "t": "Two men"
+      "t": "Two men",
+      "ipa": "ˈtu ˈmɛn"
      },
      {
-      "t": "are shaking hands"
+      "t": "are shaking hands",
+      "ipa": "ˈɑɹ ˈʃeɪkɪŋ ˈhændz"
      },
      {
-      "t": "across a table."
+      "t": "across a table.",
+      "ipa": "əˈkɹɔs ə ˈteɪbəl"
      }
     ],
     "gtags": [
@@ -688,15 +715,18 @@
     "slash": [
      {
       "en": "Chairs",
-      "ja": "椅子が"
+      "ja": "椅子が",
+      "ipa": "ˈtʃɛɹz"
      },
      {
       "en": "have been arranged",
-      "ja": "並べられている"
+      "ja": "並べられている",
+      "ipa": "ˈhæv ˈbɪn ɚˈeɪndʒd"
      },
      {
       "en": "around a conference table.",
-      "ja": "会議用テーブルの周りに"
+      "ja": "会議用テーブルの周りに",
+      "ipa": "ɚˈaʊnd ə ˈkɑnfɚəns ˈteɪbəl"
      }
     ],
     "pattern": {
@@ -748,7 +778,8 @@
       "meaning": "~を配置する、整える",
       "note": "名詞は arrangement。make arrangements for ~(~の手配をする)が頻出。",
       "level": 3,
-      "toeic": "arrange the chairs / arrange a meeting"
+      "toeic": "arrange the chairs / arrange a meeting",
+      "ipa": "ɚˈeɪndʒ"
      },
      {
       "word": "conference table",
@@ -756,7 +787,8 @@
       "meaning": "会議用テーブル",
       "note": "conference は「会議」。conference room(会議室)、conference call(電話会議)も重要。",
       "level": 2,
-      "toeic": "around the conference table"
+      "toeic": "around the conference table",
+      "ipa": "ˈkɑnfɚəns ˈteɪbəl"
      },
      {
       "word": "around",
@@ -764,7 +796,8 @@
       "meaning": "~の周りに",
       "note": "数字の前では「約」の意味(around 50 people)。about と同じ使い方。",
       "level": 1,
-      "toeic": "位置の描写で頻出"
+      "toeic": "位置の描写で頻出",
+      "ipa": "ɚˈaʊnd"
      }
     ],
     "toeic": {
@@ -836,13 +869,16 @@
     ],
     "iu": [
      {
-      "t": "Chairs"
+      "t": "Chairs",
+      "ipa": "ˈtʃɛɹz"
      },
      {
-      "t": "have been arranged"
+      "t": "have been arranged",
+      "ipa": "ˈhæv ˈbɪn ɚˈeɪndʒd"
      },
      {
-      "t": "around a conference table."
+      "t": "around a conference table.",
+      "ipa": "ɚˈaʊnd ə ˈkɑnfɚəns ˈteɪbəl"
      }
     ],
     "gtags": [
@@ -894,15 +930,18 @@
     "slash": [
      {
       "en": "Customers",
-      "ja": "客が"
+      "ja": "客が",
+      "ipa": "ˈkʌstəmɚz"
      },
      {
       "en": "are waiting in line",
-      "ja": "列に並んで待っている"
+      "ja": "列に並んで待っている",
+      "ipa": "ˈɑɹ ˈweɪtɪŋ ɪn ˈlaɪn"
      },
      {
       "en": "at the cash register.",
-      "ja": "レジで"
+      "ja": "レジで",
+      "ipa": "ət ðə ˈkæʃ ˈɹɛdʒɪstɚ"
      }
     ],
     "pattern": {
@@ -959,7 +998,8 @@
       "meaning": "列に並んで待つ",
       "note": "stand in line とも言う。イギリス英語では queue(列に並ぶ)を使う。",
       "level": 3,
-      "toeic": "wait in line for ~(~を待って並ぶ)"
+      "toeic": "wait in line for ~(~を待って並ぶ)",
+      "ipa": "ˈweɪt ɪn ˈlaɪn"
      },
      {
       "word": "cash register",
@@ -967,7 +1007,8 @@
       "meaning": "レジ",
       "note": "checkout counter、checkout とも言う。cashier は「レジ係」の人。",
       "level": 3,
-      "toeic": "at the cash register"
+      "toeic": "at the cash register",
+      "ipa": "ˈkæʃ ˈɹɛdʒɪstɚ"
      },
      {
       "word": "customer",
@@ -975,7 +1016,8 @@
       "meaning": "客",
       "note": "client は専門サービスの顧客、guest はホテルの客と使い分ける。",
       "level": 1,
-      "toeic": "顧客対応の頻出語"
+      "toeic": "顧客対応の頻出語",
+      "ipa": "ˈkʌstəmɚ"
      }
     ],
     "toeic": {
@@ -1056,13 +1098,16 @@
     ],
     "iu": [
      {
-      "t": "Customers"
+      "t": "Customers",
+      "ipa": "ˈkʌstəmɚz"
      },
      {
-      "t": "are waiting in line"
+      "t": "are waiting in line",
+      "ipa": "ˈɑɹ ˈweɪtɪŋ ɪn ˈlaɪn"
      },
      {
-      "t": "at the cash register."
+      "t": "at the cash register.",
+      "ipa": "ət ðə ˈkæʃ ˈɹɛdʒɪstɚ"
      }
     ],
     "gtags": [
@@ -1114,15 +1159,18 @@
     "slash": [
      {
       "en": "A ladder",
-      "ja": "はしごが"
+      "ja": "はしごが",
+      "ipa": "ə ˈlædɚ"
      },
      {
       "en": "is leaning",
-      "ja": "もたれかかっている"
+      "ja": "もたれかかっている",
+      "ipa": "ˈɪz ˈlinɪŋ"
      },
      {
       "en": "against the brick wall.",
-      "ja": "れんがの壁に"
+      "ja": "れんがの壁に",
+      "ipa": "əˈɡɛnst ðə ˈbɹɪk ˈwɔl"
      }
     ],
     "pattern": {
@@ -1174,7 +1222,8 @@
       "meaning": "もたれる、立てかけてある",
       "note": "lean over(身を乗り出す)、lean forward(前かがみになる)も人物描写で出る。",
       "level": 3,
-      "toeic": "be leaning against ~"
+      "toeic": "be leaning against ~",
+      "ipa": "ˈlin"
      },
      {
       "word": "ladder",
@@ -1182,7 +1231,8 @@
       "meaning": "はしご",
       "note": "climb a ladder(はしごを登る)の形で、人物の動作としても出る。",
       "level": 2,
-      "toeic": "a ladder against the wall"
+      "toeic": "a ladder against the wall",
+      "ipa": "ˈlædɚ"
      },
      {
       "word": "brick",
@@ -1190,7 +1240,8 @@
       "meaning": "れんが",
       "note": "可算・不可算どちらも使う。made of brick(れんが造り)のように材質も表す。",
       "level": 2,
-      "toeic": "a brick building"
+      "toeic": "a brick building",
+      "ipa": "ˈbɹɪk"
      }
     ],
     "toeic": {
@@ -1262,13 +1313,16 @@
     ],
     "iu": [
      {
-      "t": "A ladder"
+      "t": "A ladder",
+      "ipa": "ə ˈlædɚ"
      },
      {
-      "t": "is leaning"
+      "t": "is leaning",
+      "ipa": "ˈɪz ˈlinɪŋ"
      },
      {
-      "t": "against the brick wall."
+      "t": "against the brick wall.",
+      "ipa": "əˈɡɛnst ðə ˈbɹɪk ˈwɔl"
      }
     ],
     "gtags": [
@@ -1324,15 +1378,18 @@
     "slash": [
      {
       "en": "Several bicycles",
-      "ja": "数台の自転車が"
+      "ja": "数台の自転車が",
+      "ipa": "ˈsɛvɹəl ˈbaɪsɪkəlz"
      },
      {
       "en": "are parked",
-      "ja": "止められている"
+      "ja": "止められている",
+      "ipa": "ˈɑɹ ˈpɑɹkt"
      },
      {
       "en": "along the street.",
-      "ja": "通り沿いに"
+      "ja": "通り沿いに",
+      "ipa": "əˈlɔŋ ðə ˈstɹit"
      }
     ],
     "pattern": {
@@ -1384,7 +1441,8 @@
       "meaning": "~を止める、駐車する",
       "note": "名詞の park(公園)と同形。parking lot(駐車場)、parking space も頻出。",
       "level": 2,
-      "toeic": "be parked along the street"
+      "toeic": "be parked along the street",
+      "ipa": "ˈpɑɹk"
      },
      {
       "word": "along",
@@ -1392,7 +1450,8 @@
       "meaning": "~に沿って",
       "note": "be lined up along ~(~に沿って並んでいる)の形でよく使う。",
       "level": 2,
-      "toeic": "along the road / along the river"
+      "toeic": "along the road / along the river",
+      "ipa": "əˈlɔŋ"
      },
      {
       "word": "several",
@@ -1400,7 +1459,8 @@
       "meaning": "いくつかの",
       "note": "a few より多めの「いくつか」。several of the employees のように of とも使う。",
       "level": 1,
-      "toeic": "several + 複数名詞"
+      "toeic": "several + 複数名詞",
+      "ipa": "ˈsɛvɹəl"
      }
     ],
     "toeic": {
@@ -1468,13 +1528,16 @@
     ],
     "iu": [
      {
-      "t": "Several bicycles"
+      "t": "Several bicycles",
+      "ipa": "ˈsɛvɹəl ˈbaɪsɪkəlz"
      },
      {
-      "t": "are parked"
+      "t": "are parked",
+      "ipa": "ˈɑɹ ˈpɑɹkt"
      },
      {
-      "t": "along the street."
+      "t": "along the street.",
+      "ipa": "əˈlɔŋ ðə ˈstɹit"
      }
     ],
     "gtags": [
@@ -1526,11 +1589,13 @@
     "slash": [
      {
       "en": "The man is wearing a helmet",
-      "ja": "男性はヘルメットをかぶっている"
+      "ja": "男性はヘルメットをかぶっている",
+      "ipa": "ðə ˈmæn ˈɪz ˈwɛɹɪŋ ə ˈhɛlmət"
      },
      {
       "en": "while he repairs the roof.",
-      "ja": "屋根を修理している間"
+      "ja": "屋根を修理している間",
+      "ipa": "ˈwaɪl ˈhi ɹɪˈpɛɹz ðə ˈɹuf"
      }
     ],
     "pattern": {
@@ -1587,7 +1652,8 @@
       "meaning": "~を身につけている",
       "note": "活用は wear - wore - worn。wear glasses / wear a uniform などにも使う。",
       "level": 3,
-      "toeic": "be wearing a helmet(状態)"
+      "toeic": "be wearing a helmet(状態)",
+      "ipa": "ˈwɛɹ"
      },
      {
       "word": "repair",
@@ -1595,7 +1661,8 @@
       "meaning": "~を修理する",
       "note": "名詞でも使い、under repair(修理中)が頻出。fix と言い換えられる。",
       "level": 3,
-      "toeic": "repair the roof"
+      "toeic": "repair the roof",
+      "ipa": "ɹɪˈpɛɹ"
      },
      {
       "word": "roof",
@@ -1603,7 +1670,8 @@
       "meaning": "屋根",
       "note": "複数形は roofs。rooftop(屋上)も関連語として出る。",
       "level": 2,
-      "toeic": "on the roof"
+      "toeic": "on the roof",
+      "ipa": "ˈɹuf"
      },
      {
       "word": "helmet",
@@ -1611,7 +1679,8 @@
       "meaning": "ヘルメット",
       "note": "安全具として safety vest、gloves、goggles と一緒に Part 1 に出る。",
       "level": 2,
-      "toeic": "safety helmet"
+      "toeic": "safety helmet",
+      "ipa": "ˈhɛlmət"
      }
     ],
     "toeic": {
@@ -1699,10 +1768,12 @@
     ],
     "iu": [
      {
-      "t": "The man is wearing a helmet"
+      "t": "The man is wearing a helmet",
+      "ipa": "ðə ˈmæn ˈɪz ˈwɛɹɪŋ ə ˈhɛlmət"
      },
      {
-      "t": "while he repairs the roof."
+      "t": "while he repairs the roof.",
+      "ipa": "ˈwaɪl ˈhi ɹɪˈpɛɹz ðə ˈɹuf"
      }
     ],
     "gtags": [
@@ -1754,15 +1825,18 @@
     "slash": [
      {
       "en": "A vase of flowers",
-      "ja": "花を生けた花瓶が"
+      "ja": "花を生けた花瓶が",
+      "ipa": "ə ˈveɪs əv ˈflaʊɚz"
      },
      {
       "en": "has been placed",
-      "ja": "置かれている"
+      "ja": "置かれている",
+      "ipa": "ˈhæz ˈbɪn ˈpleɪst"
      },
      {
       "en": "on the reception desk.",
-      "ja": "受付の机の上に"
+      "ja": "受付の机の上に",
+      "ipa": "ɑn ðə ɹɪˈsɛpʃən ˈdɛsk"
      }
     ],
     "pattern": {
@@ -1814,7 +1888,8 @@
       "meaning": "~を置く",
       "note": "place an order(注文する)の形も重要。put と言い換えられる。",
       "level": 3,
-      "toeic": "be placed on the table"
+      "toeic": "be placed on the table",
+      "ipa": "ˈpleɪs"
      },
      {
       "word": "vase",
@@ -1822,7 +1897,8 @@
       "meaning": "花瓶",
       "note": "a vase of flowers の of は「中身」。a cup of coffee と同じ形。",
       "level": 2,
-      "toeic": "a vase of flowers"
+      "toeic": "a vase of flowers",
+      "ipa": "ˈveɪs"
      },
      {
       "word": "reception desk",
@@ -1830,7 +1906,8 @@
       "meaning": "受付",
       "note": "reception は「受付」のほか「歓迎会」の意味も。receptionist は受付係。",
       "level": 3,
-      "toeic": "at the reception desk"
+      "toeic": "at the reception desk",
+      "ipa": "ɹɪˈsɛpʃən ˈdɛsk"
      }
     ],
     "toeic": {
@@ -1915,13 +1992,16 @@
     ],
     "iu": [
      {
-      "t": "A vase of flowers"
+      "t": "A vase of flowers",
+      "ipa": "ə ˈveɪs əv ˈflaʊɚz"
      },
      {
-      "t": "has been placed"
+      "t": "has been placed",
+      "ipa": "ˈhæz ˈbɪn ˈpleɪst"
      },
      {
-      "t": "on the reception desk."
+      "t": "on the reception desk.",
+      "ipa": "ɑn ðə ɹɪˈsɛpʃən ˈdɛsk"
      }
     ],
     "gtags": [
@@ -1973,15 +2053,18 @@
     "slash": [
      {
       "en": "Passengers",
-      "ja": "乗客が"
+      "ja": "乗客が",
+      "ipa": "ˈpæsəndʒɚz"
      },
      {
       "en": "are boarding a ferry",
-      "ja": "フェリーに乗り込んでいる"
+      "ja": "フェリーに乗り込んでいる",
+      "ipa": "ˈɑɹ ˈbɔɹdɪŋ ə ˈfɛɹi"
      },
      {
       "en": "at the dock.",
-      "ja": "埠頭で"
+      "ja": "埠頭で",
+      "ipa": "ət ðə ˈdɑk"
      }
     ],
     "pattern": {
@@ -2042,7 +2125,8 @@
       "meaning": "~に乗り込む、搭乗する",
       "note": "名詞 board は「板/役員会」。board of directors(取締役会)も頻出。",
       "level": 3,
-      "toeic": "board a plane / boarding pass"
+      "toeic": "board a plane / boarding pass",
+      "ipa": "ˈbɔɹd"
      },
      {
       "word": "passenger",
@@ -2050,7 +2134,8 @@
       "meaning": "乗客",
       "note": "乗り物の客は passenger、店の客は customer、ホテルの客は guest。",
       "level": 3,
-      "toeic": "train passengers"
+      "toeic": "train passengers",
+      "ipa": "ˈpæsəndʒɚ"
      },
      {
       "word": "dock",
@@ -2058,7 +2143,8 @@
       "meaning": "埠頭、波止場",
       "note": "動詞では「(船が)入港する」。pier、wharf と言い換えられる。",
       "level": 2,
-      "toeic": "at the dock"
+      "toeic": "at the dock",
+      "ipa": "ˈdɑk"
      },
      {
       "word": "ferry",
@@ -2066,7 +2152,8 @@
       "meaning": "フェリー",
       "note": "可算名詞。by ferry(フェリーで)は冠詞なしで手段を表す。",
       "level": 2,
-      "toeic": "take a ferry"
+      "toeic": "take a ferry",
+      "ipa": "ˈfɛɹi"
      }
     ],
     "toeic": {
@@ -2142,13 +2229,16 @@
     ],
     "iu": [
      {
-      "t": "Passengers"
+      "t": "Passengers",
+      "ipa": "ˈpæsəndʒɚz"
      },
      {
-      "t": "are boarding a ferry"
+      "t": "are boarding a ferry",
+      "ipa": "ˈɑɹ ˈbɔɹdɪŋ ə ˈfɛɹi"
      },
      {
-      "t": "at the dock."
+      "t": "at the dock.",
+      "ipa": "ət ðə ˈdɑk"
      }
     ],
     "gtags": [
@@ -2200,11 +2290,13 @@
     "slash": [
      {
       "en": "When does the new office open?",
-      "ja": "新しいオフィスはいつ開きますか"
+      "ja": "新しいオフィスはいつ開きますか",
+      "ipa": "ˈwɛn ˈdʌz ðə ˈnu ˈɔfɪs ˈoʊpən"
      },
      {
       "en": "It opens next Monday.",
-      "ja": "来週の月曜日です"
+      "ja": "来週の月曜日です",
+      "ipa": "ˈɪt ˈoʊpənz ˈnɛkst ˈmʌndi"
      }
     ],
     "pattern": {
@@ -2261,7 +2353,8 @@
       "meaning": "開く、開店する",
       "note": "形容詞でも「開いている」。opening(開店、職の空き)も重要語。",
       "level": 1,
-      "toeic": "The store opens at 9."
+      "toeic": "The store opens at 9.",
+      "ipa": "ˈoʊpən"
      },
      {
       "word": "next",
@@ -2269,7 +2362,8 @@
       "meaning": "次の、来~",
       "note": "next Monday には前置詞 on を付けない。last、this も同じ。",
       "level": 1,
-      "toeic": "next Monday / next week"
+      "toeic": "next Monday / next week",
+      "ipa": "ˈnɛkst"
      },
      {
       "word": "office",
@@ -2277,7 +2371,8 @@
       "meaning": "事務所、オフィス",
       "note": "branch office(支社)、head office(本社)の形でよく使う。",
       "level": 1,
-      "toeic": "open a new office"
+      "toeic": "open a new office",
+      "ipa": "ˈɔfɪs"
      }
     ],
     "toeic": {
@@ -2356,10 +2451,12 @@
     ],
     "iu": [
      {
-      "t": "When does the new office open?"
+      "t": "When does the new office open?",
+      "ipa": "ˈwɛn ˈdʌz ðə ˈnu ˈɔfɪs ˈoʊpən"
      },
      {
-      "t": "It opens next Monday."
+      "t": "It opens next Monday.",
+      "ipa": "ˈɪt ˈoʊpənz ˈnɛkst ˈmʌndi"
      }
     ],
     "gtags": [
@@ -2415,11 +2512,13 @@
     "slash": [
      {
       "en": "Who is in charge of the marketing budget?",
-      "ja": "マーケティング予算は誰が担当していますか"
+      "ja": "マーケティング予算は誰が担当していますか",
+      "ipa": "ˈhu ˈɪz ɪn ˈtʃɑɹdʒ əv ðə ˈmɑɹkətɪŋ ˈbʌdʒɪt"
      },
      {
       "en": "Ms. Tanaka manages it.",
-      "ja": "田中さんが管理しています"
+      "ja": "田中さんが管理しています",
+      "ipa": "ˈmɪz tɑˈnɑkə ˈmænɪdʒɪz ˈɪt"
      }
     ],
     "pattern": {
@@ -2476,7 +2575,8 @@
       "meaning": "~を担当している",
       "note": "名詞 charge には「料金」の意味もある。free of charge(無料で)。",
       "level": 3,
-      "toeic": "Who is in charge of ~?"
+      "toeic": "Who is in charge of ~?",
+      "ipa": "ˈbi ɪn ˈtʃɑɹdʒ əv"
      },
      {
       "word": "budget",
@@ -2484,7 +2584,8 @@
       "meaning": "予算",
       "note": "可算名詞。over budget(予算超過)、within budget(予算内で)が頻出。",
       "level": 3,
-      "toeic": "marketing budget / tight budget"
+      "toeic": "marketing budget / tight budget",
+      "ipa": "ˈbʌdʒɪt"
      },
      {
       "word": "manage",
@@ -2492,7 +2593,8 @@
       "meaning": "~を管理する、運営する",
       "note": "manage to do で「何とか~する」。名詞 management は「経営(陣)」。",
       "level": 3,
-      "toeic": "manage a project"
+      "toeic": "manage a project",
+      "ipa": "ˈmænədʒ"
      }
     ],
     "toeic": {
@@ -2581,10 +2683,12 @@
     ],
     "iu": [
      {
-      "t": "Who is in charge of the marketing budget?"
+      "t": "Who is in charge of the marketing budget?",
+      "ipa": "ˈhu ˈɪz ɪn ˈtʃɑɹdʒ əv ðə ˈmɑɹkətɪŋ ˈbʌdʒɪt"
      },
      {
-      "t": "Ms. Tanaka manages it."
+      "t": "Ms. Tanaka manages it.",
+      "ipa": "ˈmɪz tɑˈnɑkə ˈmænɪdʒɪz ˈɪt"
      }
     ],
     "gtags": [
@@ -2636,11 +2740,13 @@
     "slash": [
      {
       "en": "Where can I find the printer paper?",
-      "ja": "コピー用紙はどこにありますか"
+      "ja": "コピー用紙はどこにありますか",
+      "ipa": "ˈwɛɹ ˈkæn ˈaɪ ˈfaɪnd ðə ˈpɹɪntɚ ˈpeɪpɚ"
      },
      {
       "en": "It's in the supply closet.",
-      "ja": "備品庫にあります"
+      "ja": "備品庫にあります",
+      "ipa": "ˈɪts ɪn ðə səˈplaɪ ˈklɑzət"
      }
     ],
     "pattern": {
@@ -2702,7 +2808,8 @@
       "meaning": "備品庫",
       "note": "supplies は「備品・消耗品」で複数形。office supplies が頻出。",
       "level": 3,
-      "toeic": "in the supply closet"
+      "toeic": "in the supply closet",
+      "ipa": "səˈplaɪ ˈklɑzət"
      },
      {
       "word": "printer paper",
@@ -2710,7 +2817,8 @@
       "meaning": "コピー用紙",
       "note": "不可算名詞。数えるときは a sheet of paper のように言う。",
       "level": 2,
-      "toeic": "load printer paper"
+      "toeic": "load printer paper",
+      "ipa": "ˈpɹɪntɚ ˈpeɪpɚ"
      },
      {
       "word": "find",
@@ -2718,7 +2826,8 @@
       "meaning": "~を見つける",
       "note": "活用は find - found - found。found(設立する)と混同しないこと。",
       "level": 1,
-      "toeic": "Where can I find ~?"
+      "toeic": "Where can I find ~?",
+      "ipa": "ˈfaɪnd"
      }
     ],
     "toeic": {
@@ -2806,10 +2915,12 @@
     ],
     "iu": [
      {
-      "t": "Where can I find the printer paper?"
+      "t": "Where can I find the printer paper?",
+      "ipa": "ˈwɛɹ ˈkæn ˈaɪ ˈfaɪnd ðə ˈpɹɪntɚ ˈpeɪpɚ"
      },
      {
-      "t": "It's in the supply closet."
+      "t": "It's in the supply closet.",
+      "ipa": "ˈɪts ɪn ðə səˈplaɪ ˈklɑzət"
      }
     ],
     "gtags": [
@@ -2869,11 +2980,13 @@
     "slash": [
      {
       "en": "Would you like to join us for lunch?",
-      "ja": "私たちと一緒に昼食をいかがですか"
+      "ja": "私たちと一緒に昼食をいかがですか",
+      "ipa": "ˈwʊd ˈju ˈlaɪk tə ˈdʒɔɪn ˈʌs fɚ ˈlʌntʃ"
      },
      {
       "en": "Sure, I'd love to.",
-      "ja": "ええ、ぜひ"
+      "ja": "ええ、ぜひ",
+      "ipa": "ˈʃʊɹ ˈaɪd ˈlʌv tə"
      }
     ],
     "pattern": {
@@ -2930,7 +3043,8 @@
       "meaning": "~に加わる、一緒に~する",
       "note": "他動詞なので join us と前置詞なしで使う。join in(~に参加する)の形もある。",
       "level": 2,
-      "toeic": "join us for lunch"
+      "toeic": "join us for lunch",
+      "ipa": "ˈdʒɔɪn"
      },
      {
       "word": "Would you like to ~?",
@@ -2938,7 +3052,8 @@
       "meaning": "~しませんか",
       "note": "Would you like ~?(名詞)は「~はいかがですか」と物を勧める形。",
       "level": 3,
-      "toeic": "丁寧な誘い"
+      "toeic": "丁寧な誘い",
+      "ipa": "ˈwʊd ˈju ˈlaɪk tə"
      },
      {
       "word": "I'd love to",
@@ -2946,7 +3061,8 @@
       "meaning": "ぜひそうしたい",
       "note": "断るときは I'd love to, but ~ と言ってから理由を述べる。",
       "level": 2,
-      "toeic": "誘いへの肯定的な応答"
+      "toeic": "誘いへの肯定的な応答",
+      "ipa": "ˈaɪd ˈlʌv tə"
      }
     ],
     "toeic": {
@@ -3036,10 +3152,12 @@
     ],
     "iu": [
      {
-      "t": "Would you like to join us for lunch?"
+      "t": "Would you like to join us for lunch?",
+      "ipa": "ˈwʊd ˈju ˈlaɪk tə ˈdʒɔɪn ˈʌs fɚ ˈlʌntʃ"
      },
      {
-      "t": "Sure, I'd love to."
+      "t": "Sure, I'd love to.",
+      "ipa": "ˈʃʊɹ ˈaɪd ˈlʌv tə"
      }
     ],
     "gtags": [
@@ -3099,11 +3217,13 @@
     "slash": [
      {
       "en": "Why was the meeting postponed?",
-      "ja": "会議はなぜ延期されたのですか"
+      "ja": "会議はなぜ延期されたのですか",
+      "ipa": "ˈwaɪ ˈwɑz ðə ˈmitɪŋ poʊstˈpoʊnd"
      },
      {
       "en": "The manager is out of town.",
-      "ja": "部長は町を離れています"
+      "ja": "部長は町を離れています",
+      "ipa": "ðə ˈmænədʒɚ ˈɪz ˈaʊt əv ˈtaʊn"
      }
     ],
     "pattern": {
@@ -3160,7 +3280,8 @@
       "meaning": "~を延期する",
       "note": "put off と言い換えられる。postpone A until B(BまでAを延期する)の形。",
       "level": 3,
-      "toeic": "The meeting was postponed."
+      "toeic": "The meeting was postponed.",
+      "ipa": "poʊstˈpoʊn"
      },
      {
       "word": "out of town",
@@ -3168,7 +3289,8 @@
       "meaning": "出張中で、町を離れて",
       "note": "away on business、on a business trip と言い換えられる。",
       "level": 3,
-      "toeic": "be out of town"
+      "toeic": "be out of town",
+      "ipa": "ˈaʊt əv ˈtaʊn"
      },
      {
       "word": "manager",
@@ -3176,7 +3298,8 @@
       "meaning": "部長、管理者",
       "note": "manage の派生語。management(経営陣)、managerial(管理の)も重要。",
       "level": 1,
-      "toeic": "general manager"
+      "toeic": "general manager",
+      "ipa": "ˈmænədʒɚ"
      }
     ],
     "toeic": {
@@ -3264,10 +3387,12 @@
     ],
     "iu": [
      {
-      "t": "Why was the meeting postponed?"
+      "t": "Why was the meeting postponed?",
+      "ipa": "ˈwaɪ ˈwɑz ðə ˈmitɪŋ poʊstˈpoʊnd"
      },
      {
-      "t": "The manager is out of town."
+      "t": "The manager is out of town.",
+      "ipa": "ðə ˈmænədʒɚ ˈɪz ˈaʊt əv ˈtaʊn"
      }
     ],
     "gtags": [
@@ -3323,11 +3448,13 @@
     "slash": [
      {
       "en": "How long will the repairs take?",
-      "ja": "修理にはどれくらいかかりますか"
+      "ja": "修理にはどれくらいかかりますか",
+      "ipa": "ˈhaʊ ˈlɔŋ ˈwɪl ðə ɹɪˈpɛɹz ˈteɪk"
      },
      {
       "en": "About two days.",
-      "ja": "2日ほどです"
+      "ja": "2日ほどです",
+      "ipa": "əˈbaʊt ˈtu ˈdeɪz"
      }
     ],
     "pattern": {
@@ -3384,7 +3511,8 @@
       "meaning": "修理",
       "note": "ここでは可算名詞の複数形 repairs。repair work も同じ意味で使う。",
       "level": 3,
-      "toeic": "The repairs will take ~."
+      "toeic": "The repairs will take ~.",
+      "ipa": "ɹɪˈpɛɹ"
      },
      {
       "word": "take",
@@ -3392,7 +3520,8 @@
       "meaning": "(時間が)かかる",
       "note": "It takes + 時間 + to do の形で「~するのに…かかる」。",
       "level": 2,
-      "toeic": "How long will it take?"
+      "toeic": "How long will it take?",
+      "ipa": "ˈteɪk"
      },
      {
       "word": "about",
@@ -3400,7 +3529,8 @@
       "meaning": "約、およそ",
       "note": "around、approximately と言い換えられる。数字の前に付ける。",
       "level": 1,
-      "toeic": "about two days"
+      "toeic": "about two days",
+      "ipa": "əˈbaʊt"
      }
     ],
     "toeic": {
@@ -3471,10 +3601,12 @@
     ],
     "iu": [
      {
-      "t": "How long will the repairs take?"
+      "t": "How long will the repairs take?",
+      "ipa": "ˈhaʊ ˈlɔŋ ˈwɪl ðə ɹɪˈpɛɹz ˈteɪk"
      },
      {
-      "t": "About two days."
+      "t": "About two days.",
+      "ipa": "əˈbaʊt ˈtu ˈdeɪz"
      }
     ],
     "gtags": [
@@ -3534,11 +3666,13 @@
     "slash": [
      {
       "en": "Could you send me the revised schedule?",
-      "ja": "修正したスケジュールを送っていただけますか"
+      "ja": "修正したスケジュールを送っていただけますか",
+      "ipa": "ˈkʊd ˈju ˈsɛnd ˈmi ðə ɹɪˈvaɪzd ˈskɛdʒʊl"
      },
      {
       "en": "I'll e-mail it this afternoon.",
-      "ja": "今日の午後にメールします"
+      "ja": "今日の午後にメールします",
+      "ipa": "ˈaɪl ˈiˌmeɪl ˈɪt ˈðɪs ˌæftɚˈnun"
      }
     ],
     "pattern": {
@@ -3600,7 +3734,8 @@
       "meaning": "修正された、改訂された",
       "note": "動詞は revise、名詞は revision。updated schedule と言い換えられる。",
       "level": 3,
-      "toeic": "revised schedule / revised edition"
+      "toeic": "revised schedule / revised edition",
+      "ipa": "ɹɪˈvaɪzd"
      },
      {
       "word": "send",
@@ -3608,7 +3743,8 @@
       "meaning": "~に…を送る",
       "note": "send A to B の形にも書き換えられる。過去形・過去分詞は sent。",
       "level": 1,
-      "toeic": "send me the file"
+      "toeic": "send me the file",
+      "ipa": "ˈsɛnd"
      },
      {
       "word": "e-mail",
@@ -3616,7 +3752,8 @@
       "meaning": "~にメールを送る",
       "note": "email ともつづる。名詞でも動詞でも使い、send an e-mail と同じ意味。",
       "level": 2,
-      "toeic": "I'll e-mail it."
+      "toeic": "I'll e-mail it.",
+      "ipa": "ˈiˌmeɪl"
      }
     ],
     "toeic": {
@@ -3711,10 +3848,12 @@
     ],
     "iu": [
      {
-      "t": "Could you send me the revised schedule?"
+      "t": "Could you send me the revised schedule?",
+      "ipa": "ˈkʊd ˈju ˈsɛnd ˈmi ðə ɹɪˈvaɪzd ˈskɛdʒʊl"
      },
      {
-      "t": "I'll e-mail it this afternoon."
+      "t": "I'll e-mail it this afternoon.",
+      "ipa": "ˈaɪl ˈiˌmeɪl ˈɪt ˈðɪs ˌæftɚˈnun"
      }
     ],
     "gtags": [
@@ -3778,15 +3917,18 @@
     "slash": [
      {
       "en": "Haven't you finished the report yet?",
-      "ja": "まだ報告書を終えていないのですか"
+      "ja": "まだ報告書を終えていないのですか",
+      "ipa": "ˈhævənt ˈju ˈfɪnɪʃt ðə ɹiˈpɔɹt ˈjɛt"
      },
      {
       "en": "Not quite,",
-      "ja": "まだ完全には"
+      "ja": "まだ完全には",
+      "ipa": "ˈnɑt ˈkwaɪt"
      },
      {
       "en": "but I'm almost done.",
-      "ja": "でももうほとんど終わりです"
+      "ja": "でももうほとんど終わりです",
+      "ipa": "ˈbʌt ˈaɪm ˈɔlˌmoʊst ˈdʌn"
      }
     ],
     "pattern": {
@@ -3848,7 +3990,8 @@
       "meaning": "もう、まだ",
       "note": "肯定文の already と対になる語。not ~ yet で「まだ~ない」。",
       "level": 3,
-      "toeic": "疑問文・否定文で使う"
+      "toeic": "疑問文・否定文で使う",
+      "ipa": "ˈjɛt"
      },
      {
       "word": "almost",
@@ -3856,7 +3999,8 @@
       "meaning": "ほとんど、もう少しで",
       "note": "almost all(ほとんどすべての)の形で使う。almost people は誤り。",
       "level": 2,
-      "toeic": "almost done / almost finished"
+      "toeic": "almost done / almost finished",
+      "ipa": "ˈɔlˌmoʊst"
      },
      {
       "word": "Not quite",
@@ -3864,7 +4008,8 @@
       "meaning": "ちょっと違う、まだ完全には",
       "note": "quite だけなら「かなり、まったく」。not quite で部分否定になる。",
       "level": 2,
-      "toeic": "控えめな否定"
+      "toeic": "控えめな否定",
+      "ipa": "ˈnɑt ˈkwaɪt"
      }
     ],
     "toeic": {
@@ -3959,13 +4104,16 @@
     ],
     "iu": [
      {
-      "t": "Haven't you finished the report yet?"
+      "t": "Haven't you finished the report yet?",
+      "ipa": "ˈhævənt ˈju ˈfɪnɪʃt ðə ɹiˈpɔɹt ˈjɛt"
      },
      {
-      "t": "Not quite,"
+      "t": "Not quite,",
+      "ipa": "ˈnɑt ˈkwaɪt"
      },
      {
-      "t": "but I'm almost done."
+      "t": "but I'm almost done.",
+      "ipa": "ˈbʌt ˈaɪm ˈɔlˌmoʊst ˈdʌn"
      }
     ],
     "gtags": [
@@ -4021,11 +4169,13 @@
     "slash": [
      {
       "en": "Which printer should I use for color copies?",
-      "ja": "カラーコピーにはどのプリンターを使えばいいですか"
+      "ja": "カラーコピーにはどのプリンターを使えばいいですか",
+      "ipa": "ˈwɪtʃ ˈpɹɪntɚ ˈʃʊd ˈaɪ ˈjus fɚ ˈkʌlɚ ˈkɑpiz"
      },
      {
       "en": "The one on the second floor.",
-      "ja": "2階にあるものです"
+      "ja": "2階にあるものです",
+      "ipa": "ðə ˈwʌn ɑn ðə ˈsɛkənd ˈflɔɹ"
      }
     ],
     "pattern": {
@@ -4087,7 +4237,8 @@
       "meaning": "2階",
       "note": "イギリス式では second floor は「3階」。米式の1階は first floor。",
       "level": 1,
-      "toeic": "on the second floor(米国式)"
+      "toeic": "on the second floor(米国式)",
+      "ipa": "ˈsɛkənd ˈflɔɹ"
      },
      {
       "word": "copy",
@@ -4095,7 +4246,8 @@
       "meaning": "コピー",
       "note": "可算名詞で「部、冊」の意味も。make copies(コピーを取る)が頻出。",
       "level": 2,
-      "toeic": "color copies"
+      "toeic": "color copies",
+      "ipa": "ˈkɑpi"
      },
      {
       "word": "which",
@@ -4103,7 +4255,8 @@
       "meaning": "どの",
       "note": "限られた選択肢から選ぶときに使う。what はより広い範囲を問う。",
       "level": 2,
-      "toeic": "Which printer ~?"
+      "toeic": "Which printer ~?",
+      "ipa": "ˈwɪtʃ"
      }
     ],
     "toeic": {
@@ -4208,10 +4361,12 @@
     ],
     "iu": [
      {
-      "t": "Which printer should I use for color copies?"
+      "t": "Which printer should I use for color copies?",
+      "ipa": "ˈwɪtʃ ˈpɹɪntɚ ˈʃʊd ˈaɪ ˈjus fɚ ˈkʌlɚ ˈkɑpiz"
      },
      {
-      "t": "The one on the second floor."
+      "t": "The one on the second floor.",
+      "ipa": "ðə ˈwʌn ɑn ðə ˈsɛkənd ˈflɔɹ"
      }
     ],
     "gtags": [
@@ -4267,19 +4422,23 @@
     "slash": [
      {
       "en": "Do you want to take a taxi",
-      "ja": "タクシーに乗りたいですか"
+      "ja": "タクシーに乗りたいですか",
+      "ipa": "ˈdu ˈju ˈwɑnt tə ˈteɪk ə ˈtæksi"
      },
      {
       "en": "or walk to the station?",
-      "ja": "それとも駅まで歩きますか"
+      "ja": "それとも駅まで歩きますか",
+      "ipa": "ɚ ˈwɔk tə ðə ˈsteɪʃən"
      },
      {
       "en": "Let's walk,",
-      "ja": "歩きましょう"
+      "ja": "歩きましょう",
+      "ipa": "ˈlɛts ˈwɔk"
      },
      {
       "en": "since it's a nice day.",
-      "ja": "天気がいいので"
+      "ja": "天気がいいので",
+      "ipa": "ˈsɪns ˈɪts ə ˈnaɪs ˈdeɪ"
      }
     ],
     "pattern": {
@@ -4341,7 +4500,8 @@
       "meaning": "歩く",
       "note": "他動詞で walk the dog(犬を散歩させる)。名詞の a short walk も頻出。",
       "level": 1,
-      "toeic": "walk to the station"
+      "toeic": "walk to the station",
+      "ipa": "ˈwɔk"
      },
      {
       "word": "Let's ~",
@@ -4349,7 +4509,8 @@
       "meaning": "~しましょう",
       "note": "Why don't we ~? / How about ~ing? と言い換えられる提案表現。",
       "level": 2,
-      "toeic": "提案の応答"
+      "toeic": "提案の応答",
+      "ipa": "ˈlɛts"
      },
      {
       "word": "since",
@@ -4357,7 +4518,8 @@
       "meaning": "~なので",
       "note": "「~以来」の意味もある。since 2010 のように時の起点を表す。",
       "level": 2,
-      "toeic": "理由を表す"
+      "toeic": "理由を表す",
+      "ipa": "ˈsɪns"
      }
     ],
     "toeic": {
@@ -4483,16 +4645,20 @@
     ],
     "iu": [
      {
-      "t": "Do you want to take a taxi"
+      "t": "Do you want to take a taxi",
+      "ipa": "ˈdu ˈju ˈwɑnt tə ˈteɪk ə ˈtæksi"
      },
      {
-      "t": "or walk to the station?"
+      "t": "or walk to the station?",
+      "ipa": "ɚ ˈwɔk tə ðə ˈsteɪʃən"
      },
      {
-      "t": "Let's walk,"
+      "t": "Let's walk,",
+      "ipa": "ˈlɛts ˈwɔk"
      },
      {
-      "t": "since it's a nice day."
+      "t": "since it's a nice day.",
+      "ipa": "ˈsɪns ˈɪts ə ˈnaɪs ˈdeɪ"
      }
     ],
     "gtags": [

@@ -28,15 +28,18 @@
     "slash": [
      {
       "en": "A man",
-      "ja": "男性が"
+      "ja": "男性が",
+      "ipa": "ə ˈmæn"
      },
      {
       "en": "is typing on a laptop",
-      "ja": "ノートパソコンに入力している"
+      "ja": "ノートパソコンに入力している",
+      "ipa": "ˈɪz ˈtaɪpɪŋ ɑn ə ˈlæpˌtɑp"
      },
      {
       "en": "at his desk.",
-      "ja": "自分の机で"
+      "ja": "自分の机で",
+      "ipa": "ət ˈhɪz ˈdɛsk"
      }
     ],
     "pattern": {
@@ -93,7 +96,8 @@
       "meaning": "入力する、タイプする",
       "note": "名詞では「型、種類」の意味もあり、this type of ~ の形で頻出です。",
       "level": 2,
-      "toeic": "type on a laptop / type a report"
+      "toeic": "type on a laptop / type a report",
+      "ipa": "ˈtaɪp"
      },
      {
       "word": "laptop",
@@ -101,7 +105,8 @@
       "meaning": "ノートパソコン",
       "note": "可算名詞。desktop(据え置き型)と対で覚えると便利です。",
       "level": 2,
-      "toeic": "on a laptop"
+      "toeic": "on a laptop",
+      "ipa": "ˈlæpˌtɑp"
      },
      {
       "word": "desk",
@@ -109,7 +114,8 @@
       "meaning": "机",
       "note": "front desk(受付)、help desk(問い合わせ窓口)も TOEIC 頻出の言い方です。",
       "level": 1,
-      "toeic": "at his desk"
+      "toeic": "at his desk",
+      "ipa": "ˈdɛsk"
      }
     ],
     "toeic": {
@@ -194,13 +200,16 @@
     ],
     "iu": [
      {
-      "t": "A man"
+      "t": "A man",
+      "ipa": "ə ˈmæn"
      },
      {
-      "t": "is typing on a laptop"
+      "t": "is typing on a laptop",
+      "ipa": "ˈɪz ˈtaɪpɪŋ ɑn ə ˈlæpˌtɑp"
      },
      {
-      "t": "at his desk."
+      "t": "at his desk.",
+      "ipa": "ət ˈhɪz ˈdɛsk"
      }
     ],
     "gtags": [
@@ -252,15 +261,18 @@
     "slash": [
      {
       "en": "Some people",
-      "ja": "数人が"
+      "ja": "数人が",
+      "ipa": "ˈsʌm ˈpipəl"
      },
      {
       "en": "are walking",
-      "ja": "歩いている"
+      "ja": "歩いている",
+      "ipa": "ˈɑɹ ˈwɔkɪŋ"
      },
      {
       "en": "across a bridge.",
-      "ja": "橋を渡って"
+      "ja": "橋を渡って",
+      "ipa": "əˈkɹɔs ə ˈbɹɪdʒ"
      }
     ],
     "pattern": {
@@ -312,7 +324,8 @@
       "meaning": "~を横切って、~を渡って",
       "note": "across は横切る動き、along は沿って進む動きと区別します。",
       "level": 2,
-      "toeic": "walk across a bridge / across the street"
+      "toeic": "walk across a bridge / across the street",
+      "ipa": "əˈkɹɔs"
      },
      {
       "word": "bridge",
@@ -320,7 +333,8 @@
       "meaning": "橋",
       "note": "cross a bridge でも同じ意味。他動詞 cross なら across は不要です。",
       "level": 2,
-      "toeic": "across a bridge"
+      "toeic": "across a bridge",
+      "ipa": "ˈbɹɪdʒ"
      },
      {
       "word": "walk",
@@ -328,7 +342,8 @@
       "meaning": "歩く",
       "note": "walk along(~に沿って歩く)、walk up to(~に歩み寄る)も写真問題で出ます。",
       "level": 1,
-      "toeic": "are walking"
+      "toeic": "are walking",
+      "ipa": "ˈwɔk"
      }
     ],
     "toeic": {
@@ -396,13 +411,16 @@
     ],
     "iu": [
      {
-      "t": "Some people"
+      "t": "Some people",
+      "ipa": "ˈsʌm ˈpipəl"
      },
      {
-      "t": "are walking"
+      "t": "are walking",
+      "ipa": "ˈɑɹ ˈwɔkɪŋ"
      },
      {
-      "t": "across a bridge."
+      "t": "across a bridge.",
+      "ipa": "əˈkɹɔs ə ˈbɹɪdʒ"
      }
     ],
     "gtags": [
@@ -454,15 +472,18 @@
     "slash": [
      {
       "en": "A chef",
-      "ja": "料理人が"
+      "ja": "料理人が",
+      "ipa": "ə ˈʃɛf"
      },
      {
       "en": "is chopping vegetables",
-      "ja": "野菜を刻んでいる"
+      "ja": "野菜を刻んでいる",
+      "ipa": "ˈɪz ˈtʃɑpɪŋ ˈvɛdʒtəbəlz"
      },
      {
       "en": "in a kitchen.",
-      "ja": "台所で"
+      "ja": "台所で",
+      "ipa": "ɪn ə ˈkɪtʃən"
      }
     ],
     "pattern": {
@@ -519,7 +540,8 @@
       "meaning": "~を刻む",
       "note": "chop up とも言います。slice(薄く切る)、peel(皮をむく)も料理写真で頻出。",
       "level": 3,
-      "toeic": "chop vegetables"
+      "toeic": "chop vegetables",
+      "ipa": "ˈtʃɑp"
      },
      {
       "word": "chef",
@@ -527,7 +549,8 @@
       "meaning": "料理人、シェフ",
       "note": "cook は「料理人」と「料理する」の両方。chef は主に料理長・プロの料理人です。",
       "level": 2,
-      "toeic": "a chef in a kitchen"
+      "toeic": "a chef in a kitchen",
+      "ipa": "ˈʃɛf"
      },
      {
       "word": "vegetable",
@@ -535,7 +558,8 @@
       "meaning": "野菜",
       "note": "通常は可算名詞で、複数形 vegetables で使うのが基本です。",
       "level": 1,
-      "toeic": "fresh vegetables"
+      "toeic": "fresh vegetables",
+      "ipa": "ˈvɛdʒtəbəl"
      }
     ],
     "toeic": {
@@ -607,13 +631,16 @@
     ],
     "iu": [
      {
-      "t": "A chef"
+      "t": "A chef",
+      "ipa": "ə ˈʃɛf"
      },
      {
-      "t": "is chopping vegetables"
+      "t": "is chopping vegetables",
+      "ipa": "ˈɪz ˈtʃɑpɪŋ ˈvɛdʒtəbəlz"
      },
      {
-      "t": "in a kitchen."
+      "t": "in a kitchen.",
+      "ipa": "ɪn ə ˈkɪtʃən"
      }
     ],
     "gtags": [
@@ -665,15 +692,18 @@
     "slash": [
      {
       "en": "Several cars",
-      "ja": "数台の車が"
+      "ja": "数台の車が",
+      "ipa": "ˈsɛvɹəl ˈkɑɹz"
      },
      {
       "en": "are parked",
-      "ja": "止められている"
+      "ja": "止められている",
+      "ipa": "ˈɑɹ ˈpɑɹkt"
      },
      {
       "en": "in front of the building.",
-      "ja": "建物の前に"
+      "ja": "建物の前に",
+      "ipa": "ɪn ˈfɹʌnt əv ðə ˈbɪldɪŋ"
      }
     ],
     "pattern": {
@@ -725,7 +755,8 @@
       "meaning": "~の前に",
       "note": "in front of は外側の前、in the front of は内部の前方。写真で位置を聞き分けます。",
       "level": 3,
-      "toeic": "parked in front of the building"
+      "toeic": "parked in front of the building",
+      "ipa": "ɪn ˈfɹʌnt əv"
      },
      {
       "word": "building",
@@ -733,7 +764,8 @@
       "meaning": "建物",
       "note": "動詞 build の名詞形。building manager(ビル管理人)も頻出です。",
       "level": 1,
-      "toeic": "in front of the building"
+      "toeic": "in front of the building",
+      "ipa": "ˈbɪldɪŋ"
      },
      {
       "word": "park",
@@ -741,7 +773,8 @@
       "meaning": "~を止める",
       "note": "名詞 park(公園)と区別。parking lot(駐車場)、parking space(駐車スペース)も重要。",
       "level": 2,
-      "toeic": "be parked"
+      "toeic": "be parked",
+      "ipa": "ˈpɑɹk"
      }
     ],
     "toeic": {
@@ -814,13 +847,16 @@
     ],
     "iu": [
      {
-      "t": "Several cars"
+      "t": "Several cars",
+      "ipa": "ˈsɛvɹəl ˈkɑɹz"
      },
      {
-      "t": "are parked"
+      "t": "are parked",
+      "ipa": "ˈɑɹ ˈpɑɹkt"
      },
      {
-      "t": "in front of the building."
+      "t": "in front of the building.",
+      "ipa": "ɪn ˈfɹʌnt əv ðə ˈbɪldɪŋ"
      }
     ],
     "gtags": [
@@ -872,15 +908,18 @@
     "slash": [
      {
       "en": "A woman",
-      "ja": "女性が"
+      "ja": "女性が",
+      "ipa": "ə ˈwʊmən"
      },
      {
       "en": "is holding",
-      "ja": "持っている"
+      "ja": "持っている",
+      "ipa": "ˈɪz ˈhoʊldɪŋ"
      },
      {
       "en": "a stack of papers.",
-      "ja": "紙の束を"
+      "ja": "紙の束を",
+      "ipa": "ə ˈstæk əv ˈpeɪpɚz"
      }
     ],
     "pattern": {
@@ -932,7 +971,8 @@
       "meaning": "積み重ね、山",
       "note": "動詞で「積み重ねる」。be stacked on the shelf の形で写真問題に頻出です。",
       "level": 3,
-      "toeic": "a stack of papers"
+      "toeic": "a stack of papers",
+      "ipa": "ˈstæk"
      },
      {
       "word": "hold",
@@ -940,7 +980,8 @@
       "meaning": "~を持っている",
       "note": "「(会議などを)開催する」の意味も重要。hold a meeting の形でよく出ます。",
       "level": 2,
-      "toeic": "is holding"
+      "toeic": "is holding",
+      "ipa": "ˈhoʊld"
      },
      {
       "word": "paper",
@@ -948,7 +989,8 @@
       "meaning": "書類、紙",
       "note": "「紙」の意味では不可算、「書類・新聞」の意味では可算(papers)になります。",
       "level": 1,
-      "toeic": "papers(書類)"
+      "toeic": "papers(書類)",
+      "ipa": "ˈpeɪpɚ"
      }
     ],
     "toeic": {
@@ -1016,13 +1058,16 @@
     ],
     "iu": [
      {
-      "t": "A woman"
+      "t": "A woman",
+      "ipa": "ə ˈwʊmən"
      },
      {
-      "t": "is holding"
+      "t": "is holding",
+      "ipa": "ˈɪz ˈhoʊldɪŋ"
      },
      {
-      "t": "a stack of papers."
+      "t": "a stack of papers.",
+      "ipa": "ə ˈstæk əv ˈpeɪpɚz"
      }
     ],
     "gtags": [
@@ -1074,15 +1119,18 @@
     "slash": [
      {
       "en": "Cups",
-      "ja": "カップが"
+      "ja": "カップが",
+      "ipa": "ˈkʌps"
      },
      {
       "en": "have been placed",
-      "ja": "置かれている"
+      "ja": "置かれている",
+      "ipa": "ˈhæv ˈbɪn ˈpleɪst"
      },
      {
       "en": "on a tray.",
-      "ja": "トレイの上に"
+      "ja": "トレイの上に",
+      "ipa": "ɑn ə ˈtɹeɪ"
      }
     ],
     "pattern": {
@@ -1134,7 +1182,8 @@
       "meaning": "~を置く",
       "note": "名詞「場所」の動詞用法。place an order(注文する)も TOEIC 頻出です。",
       "level": 3,
-      "toeic": "be placed on ~"
+      "toeic": "be placed on ~",
+      "ipa": "ˈpleɪs"
      },
      {
       "word": "tray",
@@ -1142,7 +1191,8 @@
       "meaning": "トレイ、盆",
       "note": "可算名詞。a tray of food(料理を載せたトレイ)のように使います。",
       "level": 3,
-      "toeic": "on a tray"
+      "toeic": "on a tray",
+      "ipa": "ˈtɹeɪ"
      },
      {
       "word": "cup",
@@ -1150,7 +1200,8 @@
       "meaning": "カップ",
       "note": "可算名詞。cup と mug(取っ手付きの大きなカップ)の言い分けも出ます。",
       "level": 1,
-      "toeic": "coffee cups"
+      "toeic": "coffee cups",
+      "ipa": "ˈkʌp"
      }
     ],
     "toeic": {
@@ -1214,13 +1265,16 @@
     ],
     "iu": [
      {
-      "t": "Cups"
+      "t": "Cups",
+      "ipa": "ˈkʌps"
      },
      {
-      "t": "have been placed"
+      "t": "have been placed",
+      "ipa": "ˈhæv ˈbɪn ˈpleɪst"
      },
      {
-      "t": "on a tray."
+      "t": "on a tray.",
+      "ipa": "ɑn ə ˈtɹeɪ"
      }
     ],
     "gtags": [
@@ -1272,15 +1326,18 @@
     "slash": [
      {
       "en": "A truck",
-      "ja": "トラックが"
+      "ja": "トラックが",
+      "ipa": "ə ˈtɹʌk"
      },
      {
       "en": "is being loaded",
-      "ja": "積み込まれている最中"
+      "ja": "積み込まれている最中",
+      "ipa": "ˈɪz ˈbiɪŋ ˈloʊdɪd"
      },
      {
       "en": "with boxes.",
-      "ja": "箱で"
+      "ja": "箱で",
+      "ipa": "wɪð ˈbɑksəz"
      }
     ],
     "pattern": {
@@ -1332,7 +1389,8 @@
       "meaning": "~を積む",
       "note": "反対語は unload(降ろす)。load A onto B(A を B に積む)の形もあります。",
       "level": 3,
-      "toeic": "be loaded with ~"
+      "toeic": "be loaded with ~",
+      "ipa": "ˈloʊd"
      },
      {
       "word": "truck",
@@ -1340,7 +1398,8 @@
       "meaning": "トラック",
       "note": "可算名詞。delivery van(配達用のバン)も配送場面でよく出ます。",
       "level": 1,
-      "toeic": "a delivery truck"
+      "toeic": "a delivery truck",
+      "ipa": "ˈtɹʌk"
      },
      {
       "word": "box",
@@ -1348,7 +1407,8 @@
       "meaning": "箱",
       "note": "可算名詞で複数形は boxes。carton(段ボール箱)も同じ場面で出ます。",
       "level": 1,
-      "toeic": "loaded with boxes"
+      "toeic": "loaded with boxes",
+      "ipa": "ˈbɑks"
      }
     ],
     "toeic": {
@@ -1416,13 +1476,16 @@
     ],
     "iu": [
      {
-      "t": "A truck"
+      "t": "A truck",
+      "ipa": "ə ˈtɹʌk"
      },
      {
-      "t": "is being loaded"
+      "t": "is being loaded",
+      "ipa": "ˈɪz ˈbiɪŋ ˈloʊdɪd"
      },
      {
-      "t": "with boxes."
+      "t": "with boxes.",
+      "ipa": "wɪð ˈbɑksəz"
      }
     ],
     "gtags": [
@@ -1474,15 +1537,18 @@
     "slash": [
      {
       "en": "Workers",
-      "ja": "作業員が"
+      "ja": "作業員が",
+      "ipa": "ˈwɝkɚz"
      },
      {
       "en": "are installing a window",
-      "ja": "窓を取り付けている"
+      "ja": "窓を取り付けている",
+      "ipa": "ˈɑɹ ˌɪnˈstɔlɪŋ ə ˈwɪndoʊ"
      },
      {
       "en": "on the second floor.",
-      "ja": "2階で"
+      "ja": "2階で",
+      "ipa": "ɑn ðə ˈsɛkənd ˈflɔɹ"
      }
     ],
     "pattern": {
@@ -1539,7 +1605,8 @@
       "meaning": "~を取り付ける",
       "note": "名詞 installation(設置)も頻出。ソフトウエアの「インストール」にも使います。",
       "level": 3,
-      "toeic": "install a window"
+      "toeic": "install a window",
+      "ipa": "ˌɪnˈstɔl"
      },
      {
       "word": "worker",
@@ -1547,7 +1614,8 @@
       "meaning": "作業員",
       "note": "employee(従業員)、staff(職員全体)との使い分けに注意します。",
       "level": 2,
-      "toeic": "construction workers"
+      "toeic": "construction workers",
+      "ipa": "ˈwɝkɚ"
      },
      {
       "word": "floor",
@@ -1555,7 +1623,8 @@
       "meaning": "階",
       "note": "「床」の意味もあります。floor plan(間取り図)も TOEIC で出ます。",
       "level": 2,
-      "toeic": "on the second floor"
+      "toeic": "on the second floor",
+      "ipa": "ˈflɔɹ"
      }
     ],
     "toeic": {
@@ -1635,13 +1704,16 @@
     ],
     "iu": [
      {
-      "t": "Workers"
+      "t": "Workers",
+      "ipa": "ˈwɝkɚz"
      },
      {
-      "t": "are installing a window"
+      "t": "are installing a window",
+      "ipa": "ˈɑɹ ˌɪnˈstɔlɪŋ ə ˈwɪndoʊ"
      },
      {
-      "t": "on the second floor."
+      "t": "on the second floor.",
+      "ipa": "ɑn ðə ˈsɛkənd ˈflɔɹ"
      }
     ],
     "gtags": [
@@ -1693,15 +1765,18 @@
     "slash": [
      {
       "en": "A man",
-      "ja": "男性が"
+      "ja": "男性が",
+      "ipa": "ə ˈmæn"
      },
      {
       "en": "is pushing a cart",
-      "ja": "カートを押している"
+      "ja": "カートを押している",
+      "ipa": "ˈɪz ˈpʊʃɪŋ ə ˈkɑɹt"
      },
      {
       "en": "down the aisle.",
-      "ja": "通路を進んで"
+      "ja": "通路を進んで",
+      "ipa": "ˈdaʊn ðə ˈaɪl"
      }
     ],
     "pattern": {
@@ -1758,7 +1833,8 @@
       "meaning": "通路",
       "note": "s は発音しない[アイル]。aisle seat(通路側の席)は飛行機の場面で頻出です。",
       "level": 3,
-      "toeic": "down the aisle"
+      "toeic": "down the aisle",
+      "ipa": "ˈaɪl"
      },
      {
       "word": "cart",
@@ -1766,7 +1842,8 @@
       "meaning": "カート",
       "note": "shopping cart のほか、food cart(屋台)の意味でも使われます。",
       "level": 2,
-      "toeic": "push a cart"
+      "toeic": "push a cart",
+      "ipa": "ˈkɑɹt"
      },
      {
       "word": "push",
@@ -1774,7 +1851,8 @@
       "meaning": "~を押す",
       "note": "反対語は pull。ドアの表示 PUSH / PULL も同じ組み合わせです。",
       "level": 2,
-      "toeic": "push a cart"
+      "toeic": "push a cart",
+      "ipa": "ˈpʊʃ"
      }
     ],
     "toeic": {
@@ -1854,13 +1932,16 @@
     ],
     "iu": [
      {
-      "t": "A man"
+      "t": "A man",
+      "ipa": "ə ˈmæn"
      },
      {
-      "t": "is pushing a cart"
+      "t": "is pushing a cart",
+      "ipa": "ˈɪz ˈpʊʃɪŋ ə ˈkɑɹt"
      },
      {
-      "t": "down the aisle."
+      "t": "down the aisle.",
+      "ipa": "ˈdaʊn ðə ˈaɪl"
      }
     ],
     "gtags": [
@@ -1912,15 +1993,18 @@
     "slash": [
      {
       "en": "The shelves",
-      "ja": "棚は"
+      "ja": "棚は",
+      "ipa": "ðə ˈʃɛlvz"
      },
      {
       "en": "are filled",
-      "ja": "満たされている"
+      "ja": "満たされている",
+      "ipa": "ˈɑɹ ˈfɪld"
      },
      {
       "en": "with books.",
-      "ja": "本で"
+      "ja": "本で",
+      "ipa": "wɪð ˈbʊks"
      }
     ],
     "pattern": {
@@ -1972,7 +2056,8 @@
       "meaning": "~でいっぱいである",
       "note": "be full of とほぼ同じ意味。full のあとは of、filled のあとは with です。",
       "level": 3,
-      "toeic": "filled with books"
+      "toeic": "filled with books",
+      "ipa": "ˈbi ˈfɪld wɪð"
      },
      {
       "word": "shelf",
@@ -1980,7 +2065,8 @@
       "meaning": "棚",
       "note": "複数形は shelves。stock the shelves(棚に商品を補充する)も頻出です。",
       "level": 2,
-      "toeic": "shelves(複数形)"
+      "toeic": "shelves(複数形)",
+      "ipa": "ˈʃɛlf"
      },
      {
       "word": "fill",
@@ -1988,7 +2074,8 @@
       "meaning": "~を満たす",
       "note": "fill out a form(用紙に記入する)、fill an order(注文に応じる)も重要です。",
       "level": 2,
-      "toeic": "fill A with B"
+      "toeic": "fill A with B",
+      "ipa": "ˈfɪl"
      }
     ],
     "toeic": {
@@ -2052,13 +2139,16 @@
     ],
     "iu": [
      {
-      "t": "The shelves"
+      "t": "The shelves",
+      "ipa": "ðə ˈʃɛlvz"
      },
      {
-      "t": "are filled"
+      "t": "are filled",
+      "ipa": "ˈɑɹ ˈfɪld"
      },
      {
-      "t": "with books."
+      "t": "with books.",
+      "ipa": "wɪð ˈbʊks"
      }
     ],
     "gtags": [
@@ -2110,15 +2200,18 @@
     "slash": [
      {
       "en": "A woman",
-      "ja": "女性が"
+      "ja": "女性が",
+      "ipa": "ə ˈwʊmən"
      },
      {
       "en": "is reading a menu",
-      "ja": "メニューを読んでいる"
+      "ja": "メニューを読んでいる",
+      "ipa": "ˈɪz ˈɹidɪŋ ə ˈmɛnju"
      },
      {
       "en": "at a restaurant table.",
-      "ja": "レストランのテーブルで"
+      "ja": "レストランのテーブルで",
+      "ipa": "ət ə ˈɹɛstɚˌɑnt ˈteɪbəl"
      }
     ],
     "pattern": {
@@ -2175,7 +2268,8 @@
       "meaning": "メニュー",
       "note": "可算名詞。on the menu(メニューに載っている)の形も覚えておきます。",
       "level": 1,
-      "toeic": "read a menu"
+      "toeic": "read a menu",
+      "ipa": "ˈmɛnju"
      },
      {
       "word": "restaurant",
@@ -2183,7 +2277,8 @@
       "meaning": "レストラン",
       "note": "可算名詞。cafeteria(社員食堂)、diner(簡易食堂)も同じ場面で出ます。",
       "level": 1,
-      "toeic": "a restaurant table"
+      "toeic": "a restaurant table",
+      "ipa": "ˈɹɛstɚˌɑnt"
      },
      {
       "word": "at a table",
@@ -2191,7 +2286,8 @@
       "meaning": "テーブルについて",
       "note": "be seated at a table、sit at a table のように動詞と組み合わせて使います。",
       "level": 2,
-      "toeic": "seated at a table"
+      "toeic": "seated at a table",
+      "ipa": "ət ə ˈteɪbəl"
      }
     ],
     "toeic": {
@@ -2271,13 +2367,16 @@
     ],
     "iu": [
      {
-      "t": "A woman"
+      "t": "A woman",
+      "ipa": "ə ˈwʊmən"
      },
      {
-      "t": "is reading a menu"
+      "t": "is reading a menu",
+      "ipa": "ˈɪz ˈɹidɪŋ ə ˈmɛnju"
      },
      {
-      "t": "at a restaurant table."
+      "t": "at a restaurant table.",
+      "ipa": "ət ə ˈɹɛstɚˌɑnt ˈteɪbəl"
      }
     ],
     "gtags": [
@@ -2329,15 +2428,18 @@
     "slash": [
      {
       "en": "Pedestrians",
-      "ja": "歩行者が"
+      "ja": "歩行者が",
+      "ipa": "pəˈdɛstɹiənz"
      },
      {
       "en": "are crossing the street",
-      "ja": "道路を渡っている"
+      "ja": "道路を渡っている",
+      "ipa": "ˈɑɹ ˈkɹɔsɪŋ ðə ˈstɹit"
      },
      {
       "en": "at the intersection.",
-      "ja": "交差点で"
+      "ja": "交差点で",
+      "ipa": "ət ðə ˌɪntɚˈsɛkʃən"
      }
     ],
     "pattern": {
@@ -2394,7 +2496,8 @@
       "meaning": "歩行者",
       "note": "形容詞でも使い、pedestrian crossing(横断歩道)の形で出ます。",
       "level": 3,
-      "toeic": "pedestrians crossing"
+      "toeic": "pedestrians crossing",
+      "ipa": "pəˈdɛstɹiən"
      },
      {
       "word": "intersection",
@@ -2402,7 +2505,8 @@
       "meaning": "交差点",
       "note": "動詞 intersect(交差する)の名詞形。corner(角)と合わせて道案内で頻出です。",
       "level": 3,
-      "toeic": "at the intersection"
+      "toeic": "at the intersection",
+      "ipa": "ˌɪntɚˈsɛkʃən"
      },
      {
       "word": "cross",
@@ -2410,7 +2514,8 @@
       "meaning": "~を渡る",
       "note": "名詞 crossing(横断歩道、交差点)も同じ場面で出ます。",
       "level": 2,
-      "toeic": "cross the street"
+      "toeic": "cross the street",
+      "ipa": "ˈkɹɔs"
      }
     ],
     "toeic": {
@@ -2486,13 +2591,16 @@
     ],
     "iu": [
      {
-      "t": "Pedestrians"
+      "t": "Pedestrians",
+      "ipa": "pəˈdɛstɹiənz"
      },
      {
-      "t": "are crossing the street"
+      "t": "are crossing the street",
+      "ipa": "ˈɑɹ ˈkɹɔsɪŋ ðə ˈstɹit"
      },
      {
-      "t": "at the intersection."
+      "t": "at the intersection.",
+      "ipa": "ət ðə ˌɪntɚˈsɛkʃən"
      }
     ],
     "gtags": [
@@ -2544,15 +2652,18 @@
     "slash": [
      {
       "en": "Some trees",
-      "ja": "いくつかの木が"
+      "ja": "いくつかの木が",
+      "ipa": "ˈsʌm ˈtɹiz"
      },
      {
       "en": "are reflected",
-      "ja": "映っている"
+      "ja": "映っている",
+      "ipa": "ˈɑɹ ɹɪˈflɛktɪd"
      },
      {
       "en": "in the water.",
-      "ja": "水面に"
+      "ja": "水面に",
+      "ipa": "ɪn ðə ˈwɔtɚ"
      }
     ],
     "pattern": {
@@ -2604,7 +2715,8 @@
       "meaning": "~を映す",
       "note": "名詞 reflection(反射、映った像)も重要。「反映する」の意味でも使います。",
       "level": 3,
-      "toeic": "be reflected in the water"
+      "toeic": "be reflected in the water",
+      "ipa": "ɹɪˈflɛkt"
      },
      {
       "word": "tree",
@@ -2612,7 +2724,8 @@
       "meaning": "木",
       "note": "可算名詞。plant(植物)、bush(低木)も屋外の写真で出ます。",
       "level": 1,
-      "toeic": "some trees"
+      "toeic": "some trees",
+      "ipa": "ˈtɹi"
      },
      {
       "word": "water",
@@ -2620,7 +2733,8 @@
       "meaning": "水、水面",
       "note": "通常は不可算名詞。動詞 water で「水をやる」の意味もあります(water the plants)。",
       "level": 1,
-      "toeic": "in the water"
+      "toeic": "in the water",
+      "ipa": "ˈwɔtɚ"
      }
     ],
     "toeic": {
@@ -2684,13 +2798,16 @@
     ],
     "iu": [
      {
-      "t": "Some trees"
+      "t": "Some trees",
+      "ipa": "ˈsʌm ˈtɹiz"
      },
      {
-      "t": "are reflected"
+      "t": "are reflected",
+      "ipa": "ˈɑɹ ɹɪˈflɛktɪd"
      },
      {
-      "t": "in the water."
+      "t": "in the water.",
+      "ipa": "ɪn ðə ˈwɔtɚ"
      }
     ],
     "gtags": [
@@ -2742,15 +2859,18 @@
     "slash": [
      {
       "en": "A man",
-      "ja": "男性が"
+      "ja": "男性が",
+      "ipa": "ə ˈmæn"
      },
      {
       "en": "is pouring coffee",
-      "ja": "コーヒーを注いでいる"
+      "ja": "コーヒーを注いでいる",
+      "ipa": "ˈɪz ˈpɔɹɪŋ ˈkɑfi"
      },
      {
       "en": "into a cup.",
-      "ja": "カップに"
+      "ja": "カップに",
+      "ipa": "ˈɪntu ə ˈkʌp"
      }
     ],
     "pattern": {
@@ -2807,7 +2927,8 @@
       "meaning": "~を注ぐ",
       "note": "「(雨が)激しく降る」の意味もあります。It's pouring.",
       "level": 3,
-      "toeic": "pour coffee into a cup"
+      "toeic": "pour coffee into a cup",
+      "ipa": "ˈpɔɹ"
      },
      {
       "word": "into",
@@ -2815,7 +2936,8 @@
       "meaning": "~の中へ",
       "note": "in は中にある状態、into は中へ入る動きを表します。",
       "level": 2,
-      "toeic": "into a cup"
+      "toeic": "into a cup",
+      "ipa": "ˈɪntu"
      },
      {
       "word": "coffee",
@@ -2823,7 +2945,8 @@
       "meaning": "コーヒー",
       "note": "不可算名詞ですが、注文では two coffees(コーヒー2杯)のように数えることもあります。",
       "level": 1,
-      "toeic": "a cup of coffee"
+      "toeic": "a cup of coffee",
+      "ipa": "ˈkɑfi"
      }
     ],
     "toeic": {
@@ -2895,13 +3018,16 @@
     ],
     "iu": [
      {
-      "t": "A man"
+      "t": "A man",
+      "ipa": "ə ˈmæn"
      },
      {
-      "t": "is pouring coffee"
+      "t": "is pouring coffee",
+      "ipa": "ˈɪz ˈpɔɹɪŋ ˈkɑfi"
      },
      {
-      "t": "into a cup."
+      "t": "into a cup.",
+      "ipa": "ˈɪntu ə ˈkʌp"
      }
     ],
     "gtags": [
@@ -2953,15 +3079,18 @@
     "slash": [
      {
       "en": "Documents",
-      "ja": "書類が"
+      "ja": "書類が",
+      "ipa": "ˈdɑkjəmənts"
      },
      {
       "en": "are spread out",
-      "ja": "広げられている"
+      "ja": "広げられている",
+      "ipa": "ˈɑɹ ˈspɹɛd ˈaʊt"
      },
      {
       "en": "on the conference table.",
-      "ja": "会議用テーブルの上に"
+      "ja": "会議用テーブルの上に",
+      "ipa": "ɑn ðə ˈkɑnfɚəns ˈteɪbəl"
      }
     ],
     "pattern": {
@@ -3013,7 +3142,8 @@
       "meaning": "~を広げる",
       "note": "自動詞では「(人が)散らばる」の意味。spread の過去形・過去分詞は spread のまま。",
       "level": 3,
-      "toeic": "documents spread out on a table"
+      "toeic": "documents spread out on a table",
+      "ipa": "ˈspɹɛd ˈaʊt"
      },
      {
       "word": "document",
@@ -3021,7 +3151,8 @@
       "meaning": "書類",
       "note": "動詞では「記録する」の意味。documentation(書類一式、記録)も頻出です。",
       "level": 2,
-      "toeic": "documents"
+      "toeic": "documents",
+      "ipa": "ˈdɑkjəmɛnt"
      },
      {
       "word": "conference table",
@@ -3029,7 +3160,8 @@
       "meaning": "会議用テーブル",
       "note": "conference room(会議室)とあわせて覚えます。meeting table とも言います。",
       "level": 2,
-      "toeic": "on the conference table"
+      "toeic": "on the conference table",
+      "ipa": "ˈkɑnfɚəns ˈteɪbəl"
      }
     ],
     "toeic": {
@@ -3101,13 +3233,16 @@
     ],
     "iu": [
      {
-      "t": "Documents"
+      "t": "Documents",
+      "ipa": "ˈdɑkjəmənts"
      },
      {
-      "t": "are spread out"
+      "t": "are spread out",
+      "ipa": "ˈɑɹ ˈspɹɛd ˈaʊt"
      },
      {
-      "t": "on the conference table."
+      "t": "on the conference table.",
+      "ipa": "ɑn ðə ˈkɑnfɚəns ˈteɪbəl"
      }
     ],
     "gtags": [
@@ -3163,15 +3298,18 @@
     "slash": [
      {
       "en": "A woman",
-      "ja": "女性が"
+      "ja": "女性が",
+      "ipa": "ə ˈwʊmən"
      },
      {
       "en": "is talking on the phone",
-      "ja": "電話で話している"
+      "ja": "電話で話している",
+      "ipa": "ˈɪz ˈtɔkɪŋ ɑn ðə ˈfoʊn"
      },
      {
       "en": "near a window.",
-      "ja": "窓の近くで"
+      "ja": "窓の近くで",
+      "ipa": "ˈnɪɹ ə ˈwɪndoʊ"
      }
     ],
     "pattern": {
@@ -3228,7 +3366,8 @@
       "meaning": "電話で話す",
       "note": "be on the phone(電話中である)、make a phone call(電話をかける)も頻出です。",
       "level": 3,
-      "toeic": "is talking on the phone"
+      "toeic": "is talking on the phone",
+      "ipa": "ˈtɔk ɑn ðə ˈfoʊn"
      },
      {
       "word": "near",
@@ -3236,7 +3375,8 @@
       "meaning": "~の近くに",
       "note": "副詞としても使います(live near)。形容詞 nearby(近くの)と区別します。",
       "level": 1,
-      "toeic": "near a window"
+      "toeic": "near a window",
+      "ipa": "ˈnɪɹ"
      },
      {
       "word": "window",
@@ -3244,7 +3384,8 @@
       "meaning": "窓",
       "note": "可算名詞。window seat(窓側の席)、look out the window の形も出ます。",
       "level": 1,
-      "toeic": "near a window"
+      "toeic": "near a window",
+      "ipa": "ˈwɪndoʊ"
      }
     ],
     "toeic": {
@@ -3325,13 +3466,16 @@
     ],
     "iu": [
      {
-      "t": "A woman"
+      "t": "A woman",
+      "ipa": "ə ˈwʊmən"
      },
      {
-      "t": "is talking on the phone"
+      "t": "is talking on the phone",
+      "ipa": "ˈɪz ˈtɔkɪŋ ɑn ðə ˈfoʊn"
      },
      {
-      "t": "near a window."
+      "t": "near a window.",
+      "ipa": "ˈnɪɹ ə ˈwɪndoʊ"
      }
     ],
     "gtags": [
@@ -3383,15 +3527,18 @@
     "slash": [
      {
       "en": "A boat",
-      "ja": "ボートが"
+      "ja": "ボートが",
+      "ipa": "ə ˈboʊt"
      },
      {
       "en": "is docked",
-      "ja": "停泊している"
+      "ja": "停泊している",
+      "ipa": "ˈɪz ˈdɑkt"
      },
      {
       "en": "beside the pier.",
-      "ja": "桟橋のそばに"
+      "ja": "桟橋のそばに",
+      "ipa": "bɪˈsaɪd ðə ˈpɪɹ"
      }
     ],
     "pattern": {
@@ -3443,7 +3590,8 @@
       "meaning": "(船が)停泊する、接岸する",
       "note": "名詞では「波止場、(荷物の)搬入口」。loading dock の形で出ます。",
       "level": 3,
-      "toeic": "be docked at ~"
+      "toeic": "be docked at ~",
+      "ipa": "ˈdɑk"
      },
      {
       "word": "pier",
@@ -3451,7 +3599,8 @@
       "meaning": "桟橋",
       "note": "可算名詞。dock や harbor(港)と同じ水辺の場面で使われます。",
       "level": 3,
-      "toeic": "beside the pier"
+      "toeic": "beside the pier",
+      "ipa": "ˈpɪɹ"
      },
      {
       "word": "beside",
@@ -3459,7 +3608,8 @@
       "meaning": "~のそばに",
       "note": "besides(そのうえ、~に加えて)と混同しないよう注意します。",
       "level": 2,
-      "toeic": "beside the pier"
+      "toeic": "beside the pier",
+      "ipa": "bɪˈsaɪd"
      }
     ],
     "toeic": {
@@ -3523,13 +3673,16 @@
     ],
     "iu": [
      {
-      "t": "A boat"
+      "t": "A boat",
+      "ipa": "ə ˈboʊt"
      },
      {
-      "t": "is docked"
+      "t": "is docked",
+      "ipa": "ˈɪz ˈdɑkt"
      },
      {
-      "t": "beside the pier."
+      "t": "beside the pier.",
+      "ipa": "bɪˈsaɪd ðə ˈpɪɹ"
      }
     ],
     "gtags": [
@@ -3581,15 +3734,18 @@
     "slash": [
      {
       "en": "People",
-      "ja": "人々が"
+      "ja": "人々が",
+      "ipa": "ˈpipəl"
      },
      {
       "en": "are seated",
-      "ja": "座っている"
+      "ja": "座っている",
+      "ipa": "ˈɑɹ ˈsitɪd"
      },
      {
       "en": "around a circular table.",
-      "ja": "円形のテーブルの周りに"
+      "ja": "円形のテーブルの周りに",
+      "ipa": "ɚˈaʊnd ə ˈsɝkjəlɚ ˈteɪbəl"
      }
     ],
     "pattern": {
@@ -3641,7 +3797,8 @@
       "meaning": "着席している",
       "note": "Please be seated.(お掛けください)のように、丁寧な指示でも使います。",
       "level": 3,
-      "toeic": "are seated around a table"
+      "toeic": "are seated around a table",
+      "ipa": "ˈbi ˈsitɪd"
      },
      {
       "word": "circular",
@@ -3649,7 +3806,8 @@
       "meaning": "円形の",
       "note": "circle(円)の形容詞形。round とほぼ同じ意味で、round table とも言います。",
       "level": 3,
-      "toeic": "a circular table"
+      "toeic": "a circular table",
+      "ipa": "ˈsɝkjəlɚ"
      },
      {
       "word": "around",
@@ -3657,7 +3815,8 @@
       "meaning": "~の周りに",
       "note": "副詞として「あちこちに」の意味もあります(walk around)。",
       "level": 1,
-      "toeic": "around a table"
+      "toeic": "around a table",
+      "ipa": "ɚˈaʊnd"
      }
     ],
     "toeic": {
@@ -3721,13 +3880,16 @@
     ],
     "iu": [
      {
-      "t": "People"
+      "t": "People",
+      "ipa": "ˈpipəl"
      },
      {
-      "t": "are seated"
+      "t": "are seated",
+      "ipa": "ˈɑɹ ˈsitɪd"
      },
      {
-      "t": "around a circular table."
+      "t": "around a circular table.",
+      "ipa": "ɚˈaʊnd ə ˈsɝkjəlɚ ˈteɪbəl"
      }
     ],
     "gtags": [
@@ -3783,15 +3945,18 @@
     "slash": [
      {
       "en": "A man",
-      "ja": "男性が"
+      "ja": "男性が",
+      "ipa": "ə ˈmæn"
      },
      {
       "en": "is unloading luggage",
-      "ja": "荷物を降ろしている"
+      "ja": "荷物を降ろしている",
+      "ipa": "ˈɪz ənˈloʊdɪŋ ˈlʌɡədʒ"
      },
      {
       "en": "from the trunk of a car.",
-      "ja": "車のトランクから"
+      "ja": "車のトランクから",
+      "ipa": "fɹəm ðə ˈtɹʌŋk əv ə ˈkɑɹ"
      }
     ],
     "pattern": {
@@ -3848,7 +4013,8 @@
       "meaning": "~を降ろす",
       "note": "反対語は load。unload a truck(トラックから荷を降ろす)の形も出ます。",
       "level": 3,
-      "toeic": "unload luggage from ~"
+      "toeic": "unload luggage from ~",
+      "ipa": "ənˈloʊd"
      },
      {
       "word": "luggage",
@@ -3856,7 +4022,8 @@
       "meaning": "荷物(旅行用)",
       "note": "数えるときは a piece of luggage。baggage もほぼ同じ意味で不可算です。",
       "level": 3,
-      "toeic": "不可算名詞"
+      "toeic": "不可算名詞",
+      "ipa": "ˈlʌɡədʒ"
      },
      {
       "word": "trunk",
@@ -3864,7 +4031,8 @@
       "meaning": "(車の)トランク",
       "note": "「(木の)幹、大型のかばん」の意味もあります。イギリス英語では boot。",
       "level": 2,
-      "toeic": "the trunk of a car"
+      "toeic": "the trunk of a car",
+      "ipa": "ˈtɹʌŋk"
      }
     ],
     "toeic": {
@@ -3953,13 +4121,16 @@
     ],
     "iu": [
      {
-      "t": "A man"
+      "t": "A man",
+      "ipa": "ə ˈmæn"
      },
      {
-      "t": "is unloading luggage"
+      "t": "is unloading luggage",
+      "ipa": "ˈɪz ənˈloʊdɪŋ ˈlʌɡədʒ"
      },
      {
-      "t": "from the trunk of a car."
+      "t": "from the trunk of a car.",
+      "ipa": "fɹəm ðə ˈtɹʌŋk əv ə ˈkɑɹ"
      }
     ],
     "gtags": [
@@ -4011,15 +4182,18 @@
     "slash": [
      {
       "en": "Lights",
-      "ja": "照明が"
+      "ja": "照明が",
+      "ipa": "ˈlaɪts"
      },
      {
       "en": "are hanging",
-      "ja": "下がっている"
+      "ja": "下がっている",
+      "ipa": "ˈɑɹ ˈhæŋɪŋ"
      },
      {
       "en": "from the ceiling of the lobby.",
-      "ja": "ロビーの天井から"
+      "ja": "ロビーの天井から",
+      "ipa": "fɹəm ðə ˈsilɪŋ əv ðə ˈlɑbi"
      }
     ],
     "pattern": {
@@ -4071,7 +4245,8 @@
       "meaning": "ぶら下がっている",
       "note": "「(人を)絞首刑にする」の意味では hanged。hang up(電話を切る)も頻出です。",
       "level": 3,
-      "toeic": "lights hanging from the ceiling"
+      "toeic": "lights hanging from the ceiling",
+      "ipa": "ˈhæŋ"
      },
      {
       "word": "ceiling",
@@ -4079,7 +4254,8 @@
       "meaning": "天井",
       "note": "ei の綴りに注意。ceiling light(天井の照明)の形でも使います。",
       "level": 3,
-      "toeic": "from the ceiling"
+      "toeic": "from the ceiling",
+      "ipa": "ˈsilɪŋ"
      },
      {
       "word": "lobby",
@@ -4087,7 +4263,8 @@
       "meaning": "ロビー",
       "note": "動詞 lobby は「ロビー活動をする」。hotel lobby の形が頻出です。",
       "level": 2,
-      "toeic": "in the lobby"
+      "toeic": "in the lobby",
+      "ipa": "ˈlɑbi"
      }
     ],
     "toeic": {
@@ -4164,13 +4341,16 @@
     ],
     "iu": [
      {
-      "t": "Lights"
+      "t": "Lights",
+      "ipa": "ˈlaɪts"
      },
      {
-      "t": "are hanging"
+      "t": "are hanging",
+      "ipa": "ˈɑɹ ˈhæŋɪŋ"
      },
      {
-      "t": "from the ceiling of the lobby."
+      "t": "from the ceiling of the lobby.",
+      "ipa": "fɹəm ðə ˈsilɪŋ əv ðə ˈlɑbi"
      }
     ],
     "gtags": [
