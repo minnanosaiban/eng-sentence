@@ -97,7 +97,7 @@ textarea{width:100%;resize:vertical}
 .bar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;position:sticky;top:52px;z-index:4}
 .sentence{padding:16px 18px}
 .nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-#disp{font-size:21px;line-height:1.9;margin:36px 0 16px;overflow-wrap:anywhere}
+#disp{font-size:16px;line-height:1.9;margin:36px 0 16px;overflow-wrap:anywhere}
 #disp .seg-i{display:inline-block;margin-right:.35em;padding:0 2px;border-radius:4px}
 #disp .seg-i.now{background:var(--hl)}
 #disp .slsep{color:var(--sub);margin:0 .15em 0 -.15em}
@@ -123,7 +123,7 @@ table.v td{padding:4px 8px 4px 0;vertical-align:top;border-bottom:1px solid var(
 #toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#222;color:#fff;padding:8px 16px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90vw}
 #toast.show{opacity:1}
 [hidden]{display:none!important}
-@media (max-width:560px){main{padding:12px}#disp{font-size:19px}.bar{top:96px}}
+@media (max-width:560px){main{padding:12px}#disp{font-size:16px}.bar{top:96px}}
 .unit{margin-bottom:10px}
 #wDisp{margin:6px 0 10px}
 #wDisp .word{font-size:30px;font-weight:600;line-height:1.3;overflow-wrap:anywhere}
