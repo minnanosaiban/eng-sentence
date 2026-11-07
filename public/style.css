@@ -284,7 +284,7 @@ div.elsrow{margin-top:6px}
 .wmeans .wm{display:inline-block;margin-right:12px}
 /* 文法欄: 項目の間を広げ、行間をゆったりさせて、読みやすく */
 .gram .gh{margin:28px 0 10px;padding-top:14px;border-top:1px solid var(--line);font-size:13px}
-.gram .gh:first-child{margin-top:0;padding-top:0;border-top:0}
+.gram .gh:first-child{margin-top:0}
 .gram .els{line-height:2.4;margin-bottom:6px}
 .gram .el{margin-right:18px}
 .gram .gp{margin:10px 0;line-height:1.8}
