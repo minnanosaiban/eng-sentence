@@ -125,7 +125,7 @@ const Clean = (() => {
     const out = [];
     for (const x of g) {
       const [k, t] = typeof x === "string" ? x.split(/[:：]/).map(v => v.trim()) : [x && x.k, x && typeof x.t === "string" ? x.t.trim() : x && x.t];
-      const w = (k === "準動詞" || k === "修飾" || k === "自他") && x && typeof x.w === "string" ? x.w.trim().slice(0, 60) : "", m =x && typeof x.m === "string" ? x.m.trim().slice(0, 24) : ""; // 準動詞・修飾は、英文中の該当する語句(例: to submit)と、その日本語の意味(例: 〜することを)も持てる
+      const w = (k === "準動詞" || k === "修飾" || k === "自他") && x && typeof x.w === "string" ? x.w.trim().slice(0, 60) : "", m = x && typeof x.m === "string" ? x.m.trim().slice(0, 24) : ""; // 準動詞・修飾・自他は、英文中の該当する語句(例: to submit)も持てる。意味 m(例: 〜することを)は、どの分類でも持てる
       if (GT[k] && GT[k].includes(t) && !out.some(y => y.k === k && y.t === t && (y.w || "") === w)) out.push({ k, t, ...(w ? { w } : {}), ...(m ? { m } : {}) });
     }
     out.sort((a, b) => Object.keys(GT).indexOf(a.k) - Object.keys(GT).indexOf(b.k));
@@ -165,8 +165,7 @@ const Clean = (() => {
   };
   // 助動詞の意味(学習タブで、助動詞のあとに添える)
   const AUXJA = { can: "〜できる", could: "〜できた・〜できる(かもしれない)", may: "〜してよい・〜かもしれない", might: "〜かもしれない", must: "〜しなければならない", shall: "〜するものとする", should: "〜すべき", will: "〜するだろう・〜する", would: "〜するだろう・〜したいものだ", "ought to": "〜すべき", "have to": "〜しなければならない", "be able to": "〜できる", "be going to": "〜するつもり", "be supposed to": "〜することになっている", "be required to": "〜を求められる", "be allowed to": "〜を許されている", "be encouraged to": "〜を奨励されている", "be eligible for": "〜の資格がある", "be entitled to": "〜の権利がある" };
-  const TRANSJA = { 自動詞: "〜する(目的語をとらない)", 他動詞: "〜を〜する(目的語をとる)" }; // 自動詞・他動詞の意味(AI が動詞ごとの意味 m を付けていれば、そちらを優先)
-  const gjaOf = x => x.m || (x.k === "助動詞" ? AUXJA[x.t] || "" : x.k === "自他" ? TRANSJA[x.t] || "" : x.k === "準動詞" && x.t === "動名詞" ? "〜すること" : "");
+  const gjaOf = x => x.m || (x.k === "助動詞" ? AUXJA[x.t] || "" : x.k === "準動詞" && x.t === "動名詞" ? "〜すること" : "");
   const GORDER = ["文型", "文の種類", "助動詞", "自他"]; // 表示は、文型 → 文の種類 → 助動詞 → 自・他 → ほかの順
   const gsort = l => l.map((x, i) => [GORDER.includes(x.k) ? GORDER.indexOf(x.k) : GORDER.length, i, x]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(a => a[2]);
   function gramTags(r) { return gsort(gramTags0(r)) }
