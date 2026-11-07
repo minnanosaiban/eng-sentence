@@ -230,7 +230,10 @@ div.elsrow{margin-top:6px}
 .elsrow .el-r{display:block;margin:2px 0 0;font-size:11px;line-height:1.5;color:var(--sub)}
 .elsrow .slsep{font-size:14px;vertical-align:top}
 #disp .jafull{margin-top:36px;font-size:12px;line-height:1.5}
-#disp .fulltext + .jafull,#disp .tnsbadge + .jafull{margin-top:60px}
+#disp .fulltext{font-size:16px}
+#disp .fulltext + .jafull{margin-top:60px}
+#disp .elsrow + .view[data-view="links"]{margin-top:8px}
+#disp .view + .tnsbadge,#disp .elsrow + .tnsbadge{margin-top:28px}
 #disp .jafull + .view[data-view="slash"]{margin-top:4px}
 #disp .jafull + .view[data-view="slash"] .sljas{margin-top:0}
 /* 欄と欄の間の余白は、英文の上下と同じ 36px にそろえる */

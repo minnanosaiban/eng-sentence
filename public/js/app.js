@@ -571,7 +571,7 @@
     const mkP = () => text => esc(text);
     const ftxt = prefs.slashMain && r.slash && r.slash.length ? (P => r.slash.map((s, i) => (i ? '<span class="slsep">/</span><wbr>' : "") + `<span class="seg-i${nowView === "slash" && i === now ? " now" : ""}${sl("slash", i)}" data-c="${i}">${P(s.en)}</span>`).join(""))(mkP()) : mkP()(r.text); // [/] を入れると、全文を / で区切った形にする
     const [badgeTop, badgeRest] = tenseBadge(r);
-    let html = badgeTop + '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>' + badgeRest; // 全文(態・時制・相 などは、その上)
+    let html = badgeTop + '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>'; // 全文(態・時制・相 などは、その上)。そのほかの文法タグは、発音の行の下
     let slashHtml = "";
     if (prefs.gs.pat) { // 「文型」ボタン: 文の要素(S V O C M)ごとに区切って、下に記号を付ける(発音の英文と同じ見た目)
       const els = r.elements || [];
@@ -599,6 +599,7 @@
       } else body = "";
       html += `<div class="view" data-view="${v.k}">${v.note ? `<div class="vnote">${esc(v.note)}</div>` : ""}${body}</div>`;
     }
+    html += badgeRest;
     if (prefs.aux.ja) html += '<div class="jafull">' + (r.ja ? esc(r.ja) : '<span class="sub">なし</span>') + '</div>'; // 全文の和訳は、英文(つながりの行)の下・区切りごとの訳の上
     html += slashHtml;
     if (prefs.gramOn || prefs.gs.expl || prefs.gs.toeic) html += gramBlock(r, mkP, now, nowView);
