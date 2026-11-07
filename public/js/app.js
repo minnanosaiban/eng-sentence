@@ -10,7 +10,7 @@
   let sel = { sentence: new Set(), meaning: new Set(), iu: new Set(), word: new Set() }; // 単位ごとの選択中の id
   let unit = "sentence";                           // 選択で見ている単位
   let study = { unit: "sentence", ids: [], i: 0 }; // 学習セット
-  let prefs = { view: {}, gramOn: false, gs: { tags: true, els: false, expl: false, toeic: false }, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
+  let prefs = { view: {}, gramOn: false, gs: { tns: true, pat: true, kind: true, tags: true, els: false, expl: false, toeic: false }, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
   let tab = new URLSearchParams(location.search).get("tab") === "study" ? "study" : "pick",setBack = "reg", wReveal = false, wq = null;
   const UN = { sentence: { kind: "sentences", name: "英文" }, meaning: { kind: "chunks", name: "意味句" }, iu: { kind: "chunks", name: "IU" }, word: { kind: "words", name: "単語" } };
   const tbl = u => (u === "word" ? words : u === "sentence" ? rows : chunks.filter(c => c.type === u));
@@ -561,12 +561,13 @@
 
   // 主節の動詞の 態・時制・相 を、漢字1字ずつのタグで(例: 能 現 進)
   function tenseBadge(r) {
-    if (!prefs.gs.tags) return "";
+    const gs = prefs.gs;
+    if (!(gs.tns || gs.pat || gs.kind || gs.tags)) return "";
     const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), top = ["文型", "文の種類"];
     const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
-    const h1 = (t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.filter(x => top.includes(x.k)).map(tag).join("");
-    // 1行目: 態・時制・相 と 文型・文の種類。2行目から: ほかの文法を1つずつ、日本語の意味を添えて
-    const rest = g.filter(x => !top.includes(x.k)).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
+    // 1行目: 態・時制・相 / 文型 / 文の種類(それぞれ別のボタンで出し入れ)。2行目から: ほかの文法(文法タグ)を1つずつ、日本語の意味を添えて
+    const h1 = (gs.tns && t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("");
+    const rest = !gs.tags ? "" : g.filter(x => !top.includes(x.k)).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
     return h1 || rest ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)、文型・文の種類、そのほかの文法">${h1 ? `<div>${h1}</div>` : ""}${rest}</div>` : "";
   }
 
@@ -1048,6 +1049,7 @@
       delete prefs.view.phrases; delete prefs.aux.grammar;
       if (!p || !p.aux || p.aux.vocab === undefined) prefs.aux.vocab = !!prefs.aux.ja; // 「和訳」から「単語」を分けた(それまで和訳を出していれば、単語も出す)
       if (p && p.aux && p.aux.toeic) prefs.gs.toeic = true;
+      if (p && p.gs && p.gs.tns === undefined) prefs.gs.tns = prefs.gs.pat = prefs.gs.kind = p.gs.tags !== false; // 「文法タグ」から、態・時制・相 / 文型 / 文の種類 を分けた(前の「文法タグ」の状態を引き継ぐ)
       delete prefs.aux.toeic;
       if (!p || !p.sh || p.sh.v !== 2) prefs.sh.gap = 0; // シャドーイングを、区切りの ▶ にまとめた(間の初期値は「なし」)
       prefs.sh.v = 2;
