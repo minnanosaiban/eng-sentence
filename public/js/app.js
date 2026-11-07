@@ -10,7 +10,7 @@
   let sel = { sentence: new Set(), meaning: new Set(), iu: new Set(), word: new Set() }; // 単位ごとの選択中の id
   let unit = "sentence";                           // 選択で見ている単位
   let study = { unit: "sentence", ids: [], i: 0 }; // 学習セット
-  let prefs = { view: {}, gramOn: false, gs: { tns: true, pat: true, kind: true, aux: true, tags: true, expl: false, toeic: false }, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
+  let prefs = { view: {}, gramOn: false, gs: { tns: true, pat: true, kind: true, aux: true, trans: true, verbal: true, mod: true, conj: true, cond: true, cmp: true, expl: false, toeic: false }, slashMain: false, aux: { ipa: false, ja: true, vocab: true, quiz: false, rec: false }, waux: { ipa: true, ex: true, toeic: false, tr: false, quiz: false, parts: false, rel: false }, sh: { gap: 0, rep: 1 }, rate: 1, pick: { tns: true, gram: true, ja: true, label: true, part: true, level: true, groups: true } };
   let tab = new URLSearchParams(location.search).get("tab") === "study" ? "study" : "pick",setBack = "reg", wReveal = false, wq = null;
   const UN = { sentence: { kind: "sentences", name: "英文" }, meaning: { kind: "chunks", name: "意味句" }, iu: { kind: "chunks", name: "IU" }, word: { kind: "words", name: "単語" } };
   const tbl = u => (u === "word" ? words : u === "sentence" ? rows : chunks.filter(c => c.type === u));
@@ -349,7 +349,7 @@
     const part = unit === "sentence" ? Clean.partOf(r) : "";
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
-    const tags = `${tt ? [tt.voice, tt.tns, tt.asp].map(x => `<span class="tag tns">${x}</span>`).join("") : ""}${gt.map(x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : "") + (x.k === "助動詞" && Clean.gjaOf(x) ? " " + Clean.gjaOf(x) : ""))}</span>`).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
+    const tags = `${tt ? [tt.voice, tt.tns, tt.asp].map(x => `<span class="tag tns">${x}</span>`).join("") : ""}${gt.map(x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : "") + ((x.k === "助動詞" || x.k === "自他") && Clean.gjaOf(x) ? " " + Clean.gjaOf(x) : ""))}</span>`).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
     const ja = r.ja ? `<span class="m jx"${jaFlip.has(r.id) ? " hidden" : ""}><br>${esc(r.ja)}</span>` : "";
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
@@ -558,17 +558,20 @@
 
   const sl = (key, i) => { const r = cur(); return selC && r && selC.id === r.id && selC.key === key && selC.i === i ? " sel" : "" };
 
+  // 英文の下に並べる文法の分類と、それぞれの入り切り(prefs.gs のキー)。この順に並ぶ
+  const GKEY_OF = { "助動詞": "aux", "自他": "trans", "準動詞": "verbal", "修飾": "mod", "接続": "conj", "条件・仮定": "cond", "比較": "cmp" }, GKEY = Object.values(GKEY_OF);
   // 主節の動詞の 態・時制・相 を、漢字1字ずつのタグで(例: 能 現 進)
   function tenseBadge(r) {
     const gs = prefs.gs;
-    if (!(gs.tns || gs.pat || gs.kind || gs.aux || gs.tags)) return ["", ""];
-    const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), top = ["文型", "文の種類", "助動詞"];
+    if (!(gs.tns || gs.pat || gs.kind || GKEY.some(k => gs[k]))) return ["", ""];
+    const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), top = ["文型", "文の種類"];
     const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
-    const auxTag = x => tag(x) + (Clean.gjaOf(x) ? `<span class="gja">${esc(Clean.gjaOf(x))}</span> ` : ""); // 助動詞は、意味(〜しなければならない など)を添える
-    // 1行目: 態・時制・相 / 文型 / 文の種類(それぞれ別のボタンで出し入れ)。2行目から: ほかの文法(文法タグ)を1つずつ、日本語の意味を添えて
-    const h1 = (gs.tns && t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind) || (x.k === "助動詞" && gs.aux)).map(x => x.k === "助動詞" ? auxTag(x) : tag(x)).join("");
-    const rest = !gs.tags ? "" : g.filter(x => !top.includes(x.k)).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
-    // [英文の上: 態・時制・相 / 文型 / 文の種類, 英文の下: そのほかの文法]
+    // 1行目: 態・時制・相 / 文型 / 文の種類(それぞれ別のボタンで出し入れ)
+    const h1 = (gs.tns && t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("");
+    // 英文の下: 助動詞 → 自動詞・他動詞 → ほかの文法(文法タグ)を、1つずつ、日本語の意味を添えて
+    const showRest = x => !top.includes(x.k) && !!gs[GKEY_OF[x.k]];
+    const rest = g.filter(showRest).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
+    // [英文の上: 態・時制・相 / 文型 / 文の種類, 英文の下: 助動詞・自動詞他動詞・そのほかの文法]
     return [h1 ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)、文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="そのほかの文法">${rest}</div>` : ""];
   }
 
@@ -1058,6 +1061,8 @@
       delete prefs.view.phrases; delete prefs.aux.grammar;
       if (!p || !p.aux || p.aux.vocab === undefined) prefs.aux.vocab = !!prefs.aux.ja; // 「和訳」から「単語」を分けた(それまで和訳を出していれば、単語も出す)
       if (p && p.aux && p.aux.toeic) prefs.gs.toeic = true;
+      if (p && p.gs && p.gs.verbal === undefined) prefs.gs.verbal = prefs.gs.mod = prefs.gs.conj = prefs.gs.cond = prefs.gs.cmp = p.gs.tags !== false; // 「文法タグ」を、準動詞・修飾・接続・条件・仮定・比較に分けた(前の状態を引き継ぐ)
+      if (p && p.gs && p.gs.trans === undefined) prefs.gs.trans = p.gs.tags !== false; // 「自・他」も、前の「文法タグ」の状態を引き継ぐ
       if (p && p.gs && p.gs.aux === undefined) prefs.gs.aux = p.gs.tags !== false; // 「助動詞」を「文法タグ」から分けた(前の状態を引き継ぐ)
       if (p && p.gs && p.gs.tns === undefined) prefs.gs.tns = prefs.gs.pat = prefs.gs.kind = p.gs.tags !== false; // 「文法タグ」から、態・時制・相 / 文型 / 文の種類 を分けた(前の「文法タグ」の状態を引き継ぐ)
       delete prefs.aux.toeic;
