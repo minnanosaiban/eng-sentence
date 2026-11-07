@@ -291,7 +291,7 @@ div.elsrow{margin-top:6px}
 .gram .gp,.gram .cls,.gram .gpt,.gram .gpt .sub{font-size:13px}
 .gram .cls{margin-top:12px;border-spacing:0}
 .gram .cls td{padding:5px 14px 5px 0;line-height:1.6}
-#disp .gram .ph{margin-bottom:14px;line-height:1.6}
+#disp .gram .ph{margin-bottom:6px;line-height:1.4}
 #disp .gram .ph .lab{font-size:12.5px;margin-left:4px}
 #disp .gram .ph .seg-i{font-size:14px}
 .gram .gpt{margin:0 0 16px}
