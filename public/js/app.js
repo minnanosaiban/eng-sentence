@@ -575,7 +575,6 @@
     const mkP = () => text => esc(text);
     const ftxt = prefs.slashMain && r.slash && r.slash.length ? (P => r.slash.map((s, i) => (i ? '<span class="slsep">/</span><wbr>' : "") + `<span class="seg-i${nowView === "slash" && i === now ? " now" : ""}${sl("slash", i)}" data-c="${i}">${P(s.en)}</span>`).join(""))(mkP()) : mkP()(r.text); // [/] を入れると、全文を / で区切った形にする
     let html = '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>' + tenseBadge(r); // いちばん上は、いつも全文
-    if (prefs.aux.ja) html += '<div class="jafull">' + (r.ja ? esc(r.ja) : '<span class="sub">なし</span>') + '</div>'; // 全文の和訳は、英文の下・区切りごとの訳の上
     let slashHtml = "";
     if (r.slash && r.slash.length && (prefs.aux.ipa || prefs.aux.ja)) { // 区切りごとの発音記号・訳(つながりの行の下)
       slashHtml = '<div class="view" data-view="slash">'
@@ -597,6 +596,7 @@
       } else body = "";
       html += `<div class="view" data-view="${v.k}">${v.note ? `<div class="vnote">${esc(v.note)}</div>` : ""}${body}</div>`;
     }
+    if (prefs.aux.ja) html += '<div class="jafull">' + (r.ja ? esc(r.ja) : '<span class="sub">なし</span>') + '</div>'; // 全文の和訳は、英文(つながりの行)の下・区切りごとの訳の上
     html += slashHtml;
     if (prefs.gramOn || prefs.gs.els || prefs.gs.expl || prefs.gs.toeic) html += gramBlock(r, mkP, now, nowView);
     $("#disp").innerHTML = html;
