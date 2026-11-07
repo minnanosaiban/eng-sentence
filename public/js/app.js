@@ -534,7 +534,7 @@
     const hl = i => (nowView === "phrases" && i === now ? " now" : "");
     let h = '<div class="view gram" data-view="gram">';
     if (prefs.gramOn) {
-      h += '<h4 class="gh">文法区切り <button class="vplay" data-k="phrases" title="文法区切りを、頭から順に聞く">▶</button></h4>';
+      h += '<h4 class="gh">文法区切り</h4>';
       const P2 = mkP();
       h += r.phrases && r.phrases.length ? r.phrases.map((p, i) => `<span class="ph"><span class="no">${NUM[i] || i + 1}</span><span class="seg-i cl-${phClass(p.f)}${hl(i)}${sl("phrases", i)}" data-c="${i}">${P2(p.t)}</span> <span class="lab">${esc(p.f)}</span></span>`).join("") : '<div class="sub">この英文には、文法区切りのデータがありません。</div>';
     }
@@ -593,7 +593,7 @@
       let body;
       if (v.k === "links") {
         if (!Pron.ready) { body = '<div class="sub">発音辞書を読み込み中…</div>'; Pron.load().then(ok => { if (ok && prefs.aux.ipa && cur() === r) renderStudy() }) }
-        else body = '<button class="vplay" data-k="links" title="つながって聞こえる所を、ゆっくり → ふつうの速さで聞き比べる(L)">▶</button>' + Pron.links(r.text).map((g, i) => g.linked
+        else body = Pron.links(r.text).map((g, i) => g.linked
           ? `<span class="lk${hl(i)}" data-c="${i}">${P(g.t)}${g.ipa ? `<span class="lk-ipa ipa">/${esc(g.ipa)}/</span>` : ""}</span>`
           : `<span class="lk-s${hl(i)}">${P(g.t)}</span>`).join("");
       } else body = "";
