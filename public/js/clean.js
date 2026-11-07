@@ -165,7 +165,7 @@ const Clean = (() => {
   // 助動詞の意味(学習タブで、助動詞のあとに添える)
   const AUXJA = { can: "〜できる", could: "〜できた・〜できる(かもしれない)", may: "〜してよい・〜かもしれない", might: "〜かもしれない", must: "〜しなければならない", shall: "〜するものとする", should: "〜すべき", will: "〜するだろう・〜する", would: "〜するだろう・〜したいものだ", "ought to": "〜すべき", "have to": "〜しなければならない", "be able to": "〜できる", "be going to": "〜するつもり", "be supposed to": "〜することになっている", "be required to": "〜を求められる", "be allowed to": "〜を許されている", "be encouraged to": "〜を奨励されている", "be eligible for": "〜の資格がある", "be entitled to": "〜の権利がある" };
   const gjaOf = x => x.m || (x.k === "助動詞" ? AUXJA[x.t] || "" : x.k === "準動詞" && x.t === "動名詞" ? "〜すること" : "");
-  const GORDER = ["文型", "文の種類"]; // 表示は、文型 → 文の種類 → ほかの順
+  const GORDER = ["文型", "文の種類", "助動詞"]; // 表示は、文型 → 文の種類 → 助動詞 → ほかの順
   const gsort = l => l.map((x, i) => [GORDER.includes(x.k) ? GORDER.indexOf(x.k) : GORDER.length, i, x]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(a => a[2]);
   function gramTags(r) { return gsort(gramTags0(r)) }
   function gramBase(r) {
