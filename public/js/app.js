@@ -562,20 +562,22 @@
   // 主節の動詞の 態・時制・相 を、漢字1字ずつのタグで(例: 能 現 進)
   function tenseBadge(r) {
     const gs = prefs.gs;
-    if (!(gs.tns || gs.pat || gs.kind || gs.tags)) return "";
+    if (!(gs.tns || gs.pat || gs.kind || gs.tags)) return ["", ""];
     const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), top = ["文型", "文の種類"];
     const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
     // 1行目: 態・時制・相 / 文型 / 文の種類(それぞれ別のボタンで出し入れ)。2行目から: ほかの文法(文法タグ)を1つずつ、日本語の意味を添えて
     const h1 = (gs.tns && t ? [t.voice, t.tns, t.asp].map(x => `<span class="tag">${x}</span>`).join("") : "") + g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("");
     const rest = !gs.tags ? "" : g.filter(x => !top.includes(x.k)).map(x => `<div class="gl">${tag(x)}<span class="gja">${esc(Clean.gjaOf(x))}</span></div>`).join("");
-    return h1 || rest ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)、文型・文の種類、そのほかの文法">${h1 ? `<div>${h1}</div>` : ""}${rest}</div>` : "";
+    // [英文の上: 態・時制・相 / 文型 / 文の種類, 英文の下: そのほかの文法]
+    return [h1 ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)、文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="そのほかの文法">${rest}</div>` : ""];
   }
 
   // 前置詞・to・接続詞の、この文での意味(〜ために など)を、全文の下に1行で
   function renderDisp(r, now = -1, nowView = null) {
     const mkP = () => text => esc(text);
     const ftxt = prefs.slashMain && r.slash && r.slash.length ? (P => r.slash.map((s, i) => (i ? '<span class="slsep">/</span><wbr>' : "") + `<span class="seg-i${nowView === "slash" && i === now ? " now" : ""}${sl("slash", i)}" data-c="${i}">${P(s.en)}</span>`).join(""))(mkP()) : mkP()(r.text); // [/] を入れると、全文を / で区切った形にする
-    let html = '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>' + tenseBadge(r); // いちばん上は、いつも全文
+    const [badgeTop, badgeRest] = tenseBadge(r);
+    let html = badgeTop + '<div class="fulltext" title="クリックで全文を聞く(スペース)。語をなぞって選ぶと、その部分だけ聞ける"><button class="vplay" data-k="main" title="聞く(スペース)">▶</button>' + ftxt + '</div>' + badgeRest; // 全文(態・時制・相 などは、その上)
     let slashHtml = "";
     if (r.slash && r.slash.length && (prefs.aux.ipa || prefs.aux.ja)) { // 区切りごとの発音記号・訳(つながりの行の下)
       slashHtml = '<div class="view" data-view="slash">'
