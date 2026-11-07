@@ -350,7 +350,7 @@
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
     const tags = `${tt ? [tt.voice, tt.tns, tt.asp].map(x => `<span class="tag tns">${x}</span>`).join("") : ""}${gt.map(x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : "") + (x.k === "助動詞" && Clean.gjaOf(x) ? " " + Clean.gjaOf(x) : ""))}</span>`).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
-    const ja = r.ja ? `<span class="m jx"${prefs.pick.ja !== jaFlip.has(r.id) ? "" : " hidden"}><br>${esc(r.ja)}</span>` : "";
+    const ja = r.ja ? `<span class="m jx"${jaFlip.has(r.id) ? " hidden" : ""}><br>${esc(r.ja)}</span>` : "";
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
       : unit === "word"
@@ -469,11 +469,17 @@
   $("#pRate").onchange = e => setRate(e.target.value);
 
   // ---------- Part 1〜7(4択問題を、縦に続ける) ----------
+  let partRank = null; // シャッフル中は Map(id → 乱数)。この画面だけのもので、保存はしない
   function renderPart() {
     const part = "Part " + tab.slice(4), list = rows.filter(r => r.quiz && Clean.partOf(r) === part);
-    $("#partInfo").textContent = `${part}: ${list.length} 問`;
+    if (partRank) list.sort((a, b) => (partRank.get(a.id) ?? 2) - (partRank.get(b.id) ?? 2));
+    $("#btnPartShuffle").setAttribute("aria-pressed", String(!!partRank)); $("#btnPartUnshuffle").hidden = !partRank;
+    $("#partInfo").textContent = `${part}: ${list.length} 問${partRank ? "(シャッフル中)" : ""}`;
     $("#partList").innerHTML = list.length ? list.map((r, n) => `<div class="card prob" data-id="${r.id}"><div class="sub"><button type="button" class="sm from" data-say="${r.id}" title="英文を聞く(もう一度押すと止める)" aria-label="英文を聞く">▶</button> ${n + 1}</div><div>${esc(r.quiz.question)}</div>${r.quiz.choices.map((c, i) => `<button class="choice" data-q="${i}">${"ABCD"[i]}. ${esc(c)}</button>`).join("")}<div class="sub pres"></div></div>`).join("") : '<p class="sub">この Part の問題は、まだありません。</p>';
   }
+  // シャッフル: 押すたびに並べ直す(Part 1〜7 で共通)。「元の順」で戻す。聞いている途中なら、止めてから並べ直す
+  $("#btnPartShuffle").onclick = () => { stopAudio(); partRank = new Map(rows.map(r => [r.id, Math.random()])); renderPart(); window.scrollTo({ top: 0 }) };
+  $("#btnPartUnshuffle").onclick = () => { stopAudio(); partRank = null; renderPart() };
   // ▶ で、その問題の英文(空所をうめた全文)を聞く。英文をなぞって選んだときも、「▶ 聞く」が出る
   $("#partList").addEventListener("click", async e => {
     const sb = e.target.closest("button[data-say]"); if (!sb) return;

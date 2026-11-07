@@ -46,13 +46,14 @@ f の例: 主語+動詞 / 主語+動詞+目的語 / 主語+動詞+補語 / to+�
 他の文法(gtags)は、次の分類と項目だけを使い、この英文にある文法を漏れなく入れる(k=分類、t=項目。分類ごとに複数可。項目は下のとおり、一字一句同じに書く)。
  文型: SV / SVC / SVO / SVOO / SVOC(主節の文型。必ず1つ)
  助動詞: can / could / may / might / must / shall / should / will / would / ought to / have to / be able to / be going to / be supposed to / be required to / be allowed to / be encouraged to / be eligible for / be entitled to(文中のものすべて)
+ 自他: 自動詞 / 他動詞(主節の動詞。必ず1つ。"w" に主節の動詞の原文の語を入れる。例: {"k":"自他","t":"他動詞","w":"complete"}。受動態の動詞は他動詞。SVC の be 動詞などの連結動詞は自動詞)
  準動詞: 不定詞 / 動名詞 / 分詞(文中のものすべて。分詞構文も含む。1つごとに別の要素にして、"w" に英文中のその語句を原文のまま入れる。例: {"k":"準動詞","t":"不定詞","w":"to submit","m":"〜することを"}。"m" は、その語句のこの文での日本語の意味を短く(12字以内)。助動詞・準動詞・修飾には "m" を付ける)
  修飾: 形容詞 / 副詞 / 前置詞句 / 分詞 / 関係詞(名詞や動詞を修飾するもの。使われているものすべて。形容詞・前置詞句は、1つごとに別の要素にして、"w" に英文中のその語句を原文のまま入れる。例: {"k":"修飾","t":"前置詞句","w":"to the interview","m":"〜へ"})
  接続: 等位(and・but・or) / 従属(because・although・when・while・if・unless・once など)
  条件・仮定: 条件(if・unless などの条件節。現実にありうること) / 仮定法(現実とは違う・現実から距離を置く表現)。なければ入れない
  比較: 原級 / 比較級 / 最上級。なければ入れない
  文の種類: 肯定 / 否定 / 疑問 / 命令(主節について、必ず1つ)
-例: "All new employees must complete the safety training before they begin working." → [{"k":"文型","t":"SVO"},{"k":"助動詞","t":"must"},{"k":"準動詞","t":"動名詞","w":"working"},{"k":"接続","t":"従属"},{"k":"文の種類","t":"肯定"}]
+例: "All new employees must complete the safety training before they begin working." → [{"k":"文型","t":"SVO"},{"k":"助動詞","t":"must"},{"k":"自他","t":"他動詞","w":"complete"},{"k":"準動詞","t":"動名詞","w":"working"},{"k":"接続","t":"従属"},{"k":"文の種類","t":"肯定"}]
 文構造(elements)は、主節の要素を文の順に並べる(Mは修飾語句)。
 単語・熟語(vocab)は、この文で学ぶ価値のあるものを3〜6個。解説は日本語。`;
 

@@ -112,6 +112,7 @@ const Clean = (() => {
   const GT = {
     "文型": ["SV", "SVC", "SVO", "SVOO", "SVOC"],
     "助動詞": ["can", "could", "may", "might", "must", "shall", "should", "will", "would", "ought to", "have to", "be able to", "be going to", "be supposed to", "be required to", "be allowed to", "be encouraged to", "be eligible for", "be entitled to"],
+    "自他": ["自動詞", "他動詞"],
     "準動詞": ["不定詞", "動名詞", "分詞"],
     "修飾": ["形容詞", "副詞", "前置詞句", "分詞", "関係詞"],
     "接続": ["等位", "従属"],
@@ -124,7 +125,7 @@ const Clean = (() => {
     const out = [];
     for (const x of g) {
       const [k, t] = typeof x === "string" ? x.split(/[:：]/).map(v => v.trim()) : [x && x.k, x && typeof x.t === "string" ? x.t.trim() : x && x.t];
-      const w = (k === "準動詞" || k === "修飾") && x && typeof x.w === "string" ? x.w.trim().slice(0, 60) : "", m = x && typeof x.m === "string" ? x.m.trim().slice(0, 24) : ""; // 準動詞・修飾は、英文中の該当する語句(例: to submit)と、その日本語の意味(例: 〜することを)も持てる
+      const w = (k === "準動詞" || k === "修飾" || k === "自他") && x && typeof x.w === "string" ? x.w.trim().slice(0, 60) : "", m = x && typeof x.m === "string" ? x.m.trim().slice(0, 24) : ""; // 準動詞・修飾は、英文中の該当する語句(例: to submit)と、その日本語の意味(例: 〜することを)も持てる
       if (GT[k] && GT[k].includes(t) && !out.some(y => y.k === k && y.t === t && (y.w || "") === w)) out.push({ k, t, ...(w ? { w } : {}), ...(m ? { m } : {}) });
     }
     out.sort((a, b) => Object.keys(GT).indexOf(a.k) - Object.keys(GT).indexOf(b.k));
@@ -165,10 +166,24 @@ const Clean = (() => {
   // 助動詞の意味(学習タブで、助動詞のあとに添える)
   const AUXJA = { can: "〜できる", could: "〜できた・〜できる(かもしれない)", may: "〜してよい・〜かもしれない", might: "〜かもしれない", must: "〜しなければならない", shall: "〜するものとする", should: "〜すべき", will: "〜するだろう・〜する", would: "〜するだろう・〜したいものだ", "ought to": "〜すべき", "have to": "〜しなければならない", "be able to": "〜できる", "be going to": "〜するつもり", "be supposed to": "〜することになっている", "be required to": "〜を求められる", "be allowed to": "〜を許されている", "be encouraged to": "〜を奨励されている", "be eligible for": "〜の資格がある", "be entitled to": "〜の権利がある" };
   const gjaOf = x => x.m || (x.k === "助動詞" ? AUXJA[x.t] || "" : x.k === "準動詞" && x.t === "動名詞" ? "〜すること" : "");
-  const GORDER = ["文型", "文の種類", "助動詞"]; // 表示は、文型 → 文の種類 → 助動詞 → ほかの順
+  const GORDER = ["文型", "文の種類", "助動詞", "自他"]; // 表示は、文型 → 文の種類 → 助動詞 → 自・他 → ほかの順
   const gsort = l => l.map((x, i) => [GORDER.includes(x.k) ? GORDER.indexOf(x.k) : GORDER.length, i, x]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(a => a[2]);
   function gramTags(r) { return gsort(gramTags0(r)) }
+  // 主節の動詞が、自動詞か他動詞か(AI の gtags に無いときの推定)。文型 SV・SVC → 自動詞、SVO・SVOO・SVOC → 他動詞。受動態は、他動詞から作られるので他動詞
+  function transOf(r, list) {
+    const pat = (list.find(x => x.k === "文型") || {}).t, tt = tenseTags(r.tense);
+    const t = tt && tt.voice === "受" ? "他動詞" : pat === "SV" || pat === "SVC" ? "自動詞" : /^SVO/.test(pat || "") ? "他動詞" : "";
+    if (!t) return null;
+    const v = ((r.elements || []).find(e => e.role === "V") || {}).text, w = v ? bare(String(v).trim().split(/\s+/).pop()) : "";
+    return { k: "自他", t, ...(w ? { w } : {}) };
+  }
   function gramBase(r) {
+    const list = gramBase0(r);
+    if (list.some(x => x.k === "自他")) return list;
+    const tr = transOf(r, list);
+    return tr ? [...list, tr] : list;
+  }
+  function gramBase0(r) {
     if (r.gtags && r.gtags.length) return r.gtags; // AI が付けた確かなもの。無いときだけ、下の推定
     const out = [], add = (k, t) => { if (!out.some(x => x.k === k && x.t === t)) out.push({ k, t }) };
     const text = String(r.text || ""), low = text.toLowerCase();
