@@ -133,7 +133,8 @@
   // ラベル(1〜5。付けるかどうかは任意)。選んだ英文に付ける
   $("#labelBtns").onclick = async e => {
     const b = e.target.closest("button[data-l]"); if (!b) return;
-    const l = selRows(); if (!l.length) return toast("ラベルを付ける英文を、選んでください");
+    const l = selRows(); if (!l.length) return toast("ラベルを付ける英文がありません");
+    if (!confirm(`表示中の ${l.length} 文に、${+b.dataset.l ? "ラベル " + b.dataset.l + " を付け" : "ついているラベルを外し"}ます。よろしいですか?`)) return;
     const n = +b.dataset.l;
     l.forEach(r => { if (n) r.label = n; else delete r.label });
     await Store.put(l, "sentences"); renderPick(); toast(n ? `${l.length} 文に、ラベル ${n} を付けました` : `${l.length} 文の、ラベルを外しました`);
@@ -315,7 +316,7 @@
     shuf = new Map(ids.map((id, i) => [id, i]));
   };
   function filtered() {
-    const q =$("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" ? [...$("#flabel").querySelectorAll("input[value]:checked")].map(x => x.value) : [];
+    const q =$("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" && $("#flabel").value ? [$("#flabel").value] : [];
     const wc = r => r.text.split(" ").length, where = r => (r.n === 1 || r.idx === 0 ? "first" : r.idx === r.n - 1 ? "last" : "mid");
     const out = tbl(unit).filter(r =>
       (!isCard(unit) || unit === "word" || ((!ln || (ln === "s" ? wc(r) <= 2 : ln === "m" ? wc(r) >= 3 && wc(r) <= 5 : wc(r) >= 6)) && (!ps || where(r) === ps))) &&
@@ -361,7 +362,7 @@
       : unit === "word"
       ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${ja}`
       : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${pickOn("g:文型") && r.elements && r.elements.length ? `<div class="elsrow">${elsInner(r.elements, vOn ? tnsChip : "")}</div>` : ""}${r.ja ? `<div class="m jx"${jaShow.has(r.id) ? "" : " hidden"}>${esc(r.ja)}</div>` : ""}`; // 和訳は、S V M の区切りの下、文法の枠の上に出す // 「文型」を出すとき、英文の下に S V O C M ごとの区切りも置く
-    return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" ${sel[unit].has(r.id) ? "checked" : ""}><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><span class="side">${r.ja ? `<button type="button" class="jt" data-ja="${r.id}" title="和訳の表示・非表示" aria-label="和訳の表示・非表示">訳</button>` : ""}<button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button></span></label>`;
+    return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" hidden><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><span class="side">${r.ja ? `<button type="button" class="jt" data-ja="${r.id}" title="和訳の表示・非表示" aria-label="和訳の表示・非表示">訳</button>` : ""}<button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button></span></label>`;
   }
   function renderPick() {
     document.querySelectorAll("#segUnit button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.u === unit)));
@@ -376,28 +377,19 @@
     const list = filtered(), n = tbl(unit).length;
     $("#pickList").innerHTML = list.length ? list.map(pickRow).join("")
       : `<p class="sub">${n ? "条件に合うものがありません。" : `${UN[unit].name}がありません。「登録」で入れてください。`}</p>`;
+    sel[unit] = new Set(list.map(r => r.id)); // 一覧の英文すべてが対象(.txt保存・ラベル付け・削除・→での順送り)
     pickInfo(list.length);
   }
   function pickInfo(shown) {
-    $("#pickInfo").textContent = `表示 ${shown ?? filtered().length} 件 / 全 ${tbl(unit).length} 件 ・ 選択中 ${sel[unit].size} 件`;
+    $("#pickInfo").textContent = `表示 ${shown ?? filtered().length} 件 / 全 ${tbl(unit).length} 件`;
     $("#btnDelSel").disabled = sel[unit].size === 0;
-    { const t = sel[unit].size ? `選んだ ${sel[unit].size} 件を削除` : "選んだものを削除"; $("#btnDelSel").title = t; $("#btnDelSel").setAttribute("aria-label", t) }
+    { const t = sel[unit].size ? `表示中の ${sel[unit].size} 件を削除` : "表示中のものを削除"; $("#btnDelSel").title = t; $("#btnDelSel").setAttribute("aria-label", t) }
   }
   $("#pickOff").onclick = () => { document.querySelectorAll("#pickShow button[data-p]").forEach(x => { prefs.pick[x.dataset.p] = false }); savePrefs(); renderPick() }; // 文型〜比較の表示を、すべて外す
   $("#pickMenu").addEventListener("click", e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !pickOn(b.dataset.p); savePrefs(); renderPick() } });
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
-  $("#flabel").addEventListener("change", e => { // 選んだラベルを、見出しに出す。外をクリックしたら閉じる
-    const items = [...$("#flabel").querySelectorAll("input[value]")];
-    if (e.target.id === "flabelAll") items.forEach(x => x.checked = e.target.checked);
-    $("#flabelAll").checked = items.every(x => x.checked);
-    const v = items.filter(x => x.checked).map(x => x.parentElement.textContent.replace("ラベル", "").trim());
-    $("#flabel summary").textContent = v.length ? "ラベル " + v.join("・") : "ラベル";
-  });
-  document.addEventListener("click", e => { const d = $("#flabel"); if (d.open && !d.contains(e.target)) d.open = false });
   ["#fq", "#fgroup", "#flabel", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
-  $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
-  $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
   // ---------- 削除 ----------
   // 英文を消すと、その英文から作った意味句・IU も消す(単語は、ほかの英文でも使うので、残す)。同期している端末からも消える
   async function deleteItems(u, ids) {
