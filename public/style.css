@@ -230,6 +230,7 @@ div.elsrow{margin-top:6px}
 .elsrow .el-i{display:inline-block;vertical-align:top;margin:0 .15em .2em 0}
 .elsrow .el-t{display:block;font-size:14px}
 .elsrow .el-r{display:block;margin:2px 0 0;font-size:11px;line-height:1.5;color:var(--sub)}
+.elsrow .el-r .tag{margin-left:4px}
 .elsrow .slsep{font-size:14px;vertical-align:top}
 #disp .jafull{margin-top:36px;font-size:12px;line-height:1.5}
 #disp .fulltext{font-size:16px}
