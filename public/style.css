@@ -100,7 +100,7 @@ textarea{width:100%;resize:vertical}
 .tnsbadge .tag{font-size:11px;font-weight:600;color:var(--tx)}
 .sentence .tnsbadge .tag{font-size:11px}
 .row-i .tag.gm,.row-i .tag.tns{font-size:11px;font-weight:600;color:var(--tx)}
-.row-i .tag.tns{font-weight:400} /* 能・現・完 などは、太字にしない */
+.row-i .elsrow .tag.tns{font-weight:400} /* 英文の下(S V M の行)の 能・現・単 は太字にしない。下のタグの行のものは太字 */
 .row-i .tag + .gja{font-size:11px;font-weight:400;color:var(--sub);margin-right:8px}
 .tag{display:inline-block;font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:0 8px;margin-right:4px;color:var(--sub)}
 .seg{display:inline-flex;flex-wrap:wrap;gap:4px}
