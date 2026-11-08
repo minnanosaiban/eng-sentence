@@ -551,7 +551,7 @@
   function tenseBadge(r) {
     const gs = prefs.gs;
     if (!(gs.tns || gs.pat || gs.kind || GKEY.some(k => gs[k]))) return ["", "", false];
-    const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), verb = (r.elements || []).find(e => e.role === "V");
+    const t = Clean.tenseTags(r.tense), g = Clean.gramTags(r), jt = ((g.find(x => x.k === "自他") || {}).t || "").slice(0, 1), verb = (r.elements || []).find(e => e.role === "V");
     const tag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>`;
     // 英文の上: 文型 / 文の種類(それぞれ別のボタンで出し入れ)
     const h1 = g.filter(x => (x.k === "文型" && gs.pat) || (x.k === "文の種類" && gs.kind)).map(tag).join("");
@@ -559,9 +559,9 @@
     const line = (tagHtml, ja) => `<div class="gl">${tagHtml}<span class="gja">${esc(ja)}</span></div>`;
     const jaInline = !!(prefs.aux.ja && gs.tns && t); // 「能・現・単」の枠があるときは、全文の和訳を、その右に置く(主節の動詞の原文は、ポインタを合わせると出る)
     // 「能・現・単」の枠の右に、和訳を灰色で(前置詞句などの行と同じ形)
-    const tnsLine = gs.tns && t ? line(`<span class="tag gm" title="態・時制・相${verb ? ": " + esc(verb.text) : ""}">${t.voice}・${t.tns}・${t.asp}</span>`, jaInline ? jaTail(r.ja) || "なし" : "") : "";
+    const tnsLine = gs.tns && t ? line(`<span class="tag gm" title="態・時制・相${verb ? ": " + esc(verb.text) : ""}">${t.voice}・${t.tns}・${t.asp}${jt ? "・" + jt : ""}</span>`, jaInline ? jaTail(r.ja) || "なし" : "") : "";
     const subLines = gs.tns && t ? t.sub.map(s => line(`${s.conj ? `<span class="gja">${esc(s.conj)}</span> ` : ""}<span class="tag gm" title="従属節の態・時制・相">${s.voice}・${s.tns}・${s.asp}</span>`, s.ja || "")).join("") : ""; // 従属節(that 節など)の 態・時制・相 を、主節の下に
-    const rest = tnsLine + subLines + g.filter(x => gs[GKEY_OF[x.k]]).map(x => line(tag(x), Clean.gjaOf(x))).join("");
+    const rest = tnsLine + subLines + g.filter(x => x.k !== "自他" && gs[GKEY_OF[x.k]]).map(x => line(tag(x), Clean.gjaOf(x))).join("");
     return [h1 ? `<div class="tnsbadge" title="文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)とそのほかの文法">${rest}</div>` : "", jaInline];
   }
 
@@ -574,8 +574,9 @@
     let slashHtml = "";
     if (prefs.gs.pat) { // 「文型」ボタン: 文の要素(S V O C M)ごとに区切って、下に記号を付ける(発音の英文と同じ見た目)
       const els = r.elements || [];
+      const tt = Clean.tenseTags(r.tense), jt0 = ((Clean.gramTags(r).find(x => x.k === "自他") || {}).t || "").slice(0, 1); // 英文の下の V の右にも、能・現・単・他 を
       html += '<div class="view elsrow" data-view="els">' + (els.length
-        ? elsInner(els)
+        ? elsInner(els, tt ? `<span class="tag gm">${tt.voice}・${tt.tns}・${tt.asp}${jt0 ? "・" + jt0 : ""}</span>` : "")
         : '<span class="sub">この英文には、文型のデータがありません。</span>') + "</div>";
     }
     if (r.slash && r.slash.length && (prefs.aux.ipa || prefs.aux.ja)) { // 区切りごとの発音記号・訳(つながりの行の下)
