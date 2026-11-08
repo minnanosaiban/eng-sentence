@@ -351,9 +351,10 @@
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
     const part = unit === "sentence" ? Clean.partOf(r) : "";
+    const gAll = unit === "sentence" ? Clean.gramTags(r) : [], jt = ((gAll.find(x => x.k === "自他") || {}).t || "").slice(0, 1); // 自動詞・他動詞 → 自・他(態・時制・相の枠の末尾に付ける)
     const ta = unit === "sentence" ? Clean.tenseTags(r.tense) : null, tt = prefs.pick.tns ? ta : null; // ta: 態・時制・相(ボタンに関係なく)。tt: 下のタグの行に出す分
-    const elsOn = unit === "sentence" && elsShow.has(r.id) && !!(r.elements && r.elements.length), vOn = !!(ta && elsOn && r.elements.some(e => e.role === "V")), tnsChip = ta ? `<span class="tag tns">${ta.voice}・${ta.tns}・${ta.asp}</span>` : ""; // 「態・時制・相」を選んでいなくても、「文」を押せば、V の右に出る // 「文型」を出すときは、態・時制・相の枠を、S V M の V の右に置く
-    const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
+    const elsOn = unit === "sentence" && elsShow.has(r.id) && !!(r.elements && r.elements.length), vOn = !!(ta && elsOn && r.elements.some(e => e.role === "V")), tnsChip = ta ? `<span class="tag tns">${ta.voice}・${ta.tns}・${ta.asp}${jt ? "・" + jt : ""}</span>` : ""; // 「態・時制・相」を選んでいなくても、「文」を押せば、V の右に出る // 「文型」を出すときは、態・時制・相の枠を、S V M の V の右に置く
+    const gt = unit === "sentence" && pickOn("g:") ? gAll.filter(x => x.k !== "自他" && pickOn("g:" + x.k)) : [];
     const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>${Clean.gjaOf(x) ? `<span class="gja">${esc(Clean.gjaOf(x))}</span>` : ""}`, // 学習タブと同じく、枠の右に、日本語の意味を灰色で
        gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → 態・時制・相 → ほかの文法 の順
     const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `${tnsChip}${r.ja ? `<span class="gja">${esc(jaTail(r.ja))}</span>` : ""}${tt.sub.map(s => `<span class="gja">${esc(s.conj || "")}</span><span class="tag tns">${s.voice}・${s.tns}・${s.asp}</span>${s.ja ? `<span class="gja">${esc(s.ja)}</span>` : ""}`).join("")}` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
