@@ -82,7 +82,7 @@ textarea{width:100%;resize:vertical}
 .row-i .chk .from:hover,.card .sub .from:hover{color:var(--pri)}
 #pickList .row-i.now .chk .from{font-size:0;color:var(--pri)}
 #pickList .row-i.now .chk .from::after{content:"■";font-size:14px}
-.row-i .side{flex:none;align-self:center;display:flex;flex-direction:column;align-items:center}
+.row-i .side{flex:none;align-self:flex-start;display:flex;flex-direction:column;align-items:center}
 .row-i .jt{border:0;background:none;color:var(--sub);font-size:13px;padding:2px 8px;cursor:pointer}
 .row-i .jt:hover{color:var(--pri)}
 .row-i .go{flex:none;border:0;background:none;font-size:20px;padding:2px 8px;cursor:pointer;color:var(--fg,inherit)}
