@@ -384,6 +384,7 @@
     $("#btnDelSel").disabled = sel[unit].size === 0;
     { const t = sel[unit].size ? `選んだ ${sel[unit].size} 件を削除` : "選んだものを削除"; $("#btnDelSel").title = t; $("#btnDelSel").setAttribute("aria-label", t) }
   }
+  $("#pickOff").onclick = () => { document.querySelectorAll("#pickShow button[data-p]").forEach(x => { prefs.pick[x.dataset.p] = false }); savePrefs(); renderPick() }; // 文型〜比較の表示を、すべて外す
   $("#pickMenu").addEventListener("click", e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !pickOn(b.dataset.p); savePrefs(); renderPick() } });
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
