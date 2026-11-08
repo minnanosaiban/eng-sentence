@@ -499,7 +499,7 @@
   function renderSentence(r) {
     $("#pos").textContent = `${study.i + 1} / ${study.ids.length}`;
     $("#btnPrev").disabled = study.i === 0; $("#btnNext").disabled = study.i >= study.ids.length - 1;
-    document.querySelectorAll("#segShow button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v ? !!prefs.view[b.dataset.v] : b.dataset.x ? !!prefs.aux[b.dataset.x] : b.dataset.s ? !!prefs.gs[b.dataset.s] : !!prefs.gramOn)));
+    document.querySelectorAll("#segShow button:not([data-o])").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v ? !!prefs.view[b.dataset.v] : b.dataset.x ? !!prefs.aux[b.dataset.x] : b.dataset.s ? !!prefs.gs[b.dataset.s] : !!prefs.gramOn)));
     $("#btnSlashMain").setAttribute("aria-pressed", String(!!prefs.slashMain));
     $("#rate").value = String(prefs.rate);
     $("#shGap").value = String(prefs.sh.gap); $("#shRep").value = String(prefs.sh.rep);
@@ -641,6 +641,7 @@
   // 表示のボタン: 区切りの見方(data-v)・補助(data-x)・品詞の色(data-p)は、どれも独立した入り切り
   $("#segShow").onclick = e => {
     const b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.o === "off") { ["pat", "kind", "tns", ...GKEY].forEach(k => { prefs.gs[k] = false }); savePrefs(); renderStudy(); return } // 文型〜比較を、すべて外す
     if (b.dataset.v) toggleView(b.dataset.v); else if (b.dataset.x) toggleAux(b.dataset.x); else if (b.dataset.s) { prefs.gs[b.dataset.s] = !prefs.gs[b.dataset.s]; savePrefs(); renderStudy() } else if (b.dataset.g) toggleGram();
   };
   $("#shGap").onchange = $("#pGap").onchange = e => { prefs.sh.gap = +e.target.value; $("#shGap").value = $("#pGap").value = String(prefs.sh.gap); savePrefs() };
