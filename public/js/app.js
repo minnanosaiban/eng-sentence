@@ -351,8 +351,8 @@
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
     const part = unit === "sentence" ? Clean.partOf(r) : "";
-    const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
-    const elsOn = unit === "sentence" && elsShow.has(r.id) && !!(r.elements && r.elements.length), vOn = !!(tt && elsOn && r.elements.some(e => e.role === "V")), tnsChip = tt ? `<span class="tag tns">${tt.voice}・${tt.tns}・${tt.asp}</span>` : ""; // 「文型」を出すときは、態・時制・相の枠を、S V M の V の右に置く
+    const ta = unit === "sentence" ? Clean.tenseTags(r.tense) : null, tt = prefs.pick.tns ? ta : null; // ta: 態・時制・相(ボタンに関係なく)。tt: 下のタグの行に出す分
+    const elsOn = unit === "sentence" && elsShow.has(r.id) && !!(r.elements && r.elements.length), vOn = !!(ta && elsOn && r.elements.some(e => e.role === "V")), tnsChip = ta ? `<span class="tag tns">${ta.voice}・${ta.tns}・${ta.asp}</span>` : ""; // 「態・時制・相」を選んでいなくても、「文」を押せば、V の右に出る // 「文型」を出すときは、態・時制・相の枠を、S V M の V の右に置く
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
     const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>${Clean.gjaOf(x) ? `<span class="gja">${esc(Clean.gjaOf(x))}</span>` : ""}`, // 学習タブと同じく、枠の右に、日本語の意味を灰色で
        gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → 態・時制・相 → ほかの文法 の順
