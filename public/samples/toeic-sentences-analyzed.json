@@ -7671,6 +7671,18 @@
     ],
     "tense": {
      "name": "未来を表す will(能動態)/条件節は現在形の受動態",
+     "voice": "能",
+     "tns": "未",
+     "asp": "単",
+     "sub": [
+      {
+       "conj": "that",
+       "voice": "受",
+       "tns": "現",
+       "asp": "単",
+       "ja": "完了された"
+      }
+     ],
      "explanation": "主節は will open で未来。条件を表す節では未来のことでも現在形(is completed)を使う。"
     },
     "grammar": [

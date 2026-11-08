@@ -353,7 +353,7 @@
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
     const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>${Clean.gjaOf(x) ? `<span class="gja">${esc(Clean.gjaOf(x))}</span>` : ""}`, // 学習タブと同じく、枠の右に、日本語の意味を灰色で
        gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → 態・時制・相 → ほかの文法 の順
-    const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `<span class="tag tns">${tt.voice}・${tt.tns}・${tt.asp}</span>${r.ja ? `<span class="gja">${esc(jaTail(r.ja))}</span>` : ""}` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
+    const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `<span class="tag tns">${tt.voice}・${tt.tns}・${tt.asp}</span>${r.ja ? `<span class="gja">${esc(jaTail(r.ja))}</span>` : ""}${tt.sub.map(s => `<span class="gja">${esc(s.conj || "")}</span><span class="tag tns">${s.voice}・${s.tns}・${s.asp}</span>${s.ja ? `<span class="gja">${esc(s.ja)}</span>` : ""}`).join("")}` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
     const ja = r.ja ? `<span class="m jx"${jaShow.has(r.id) ? "" : " hidden"}><br>${esc(r.ja)}</span>` : "";
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
@@ -577,7 +577,8 @@
     const jaInline = !!(prefs.aux.ja && gs.tns && t); // 「能・現・単」の枠があるときは、全文の和訳を、その右に置く(主節の動詞の原文は、ポインタを合わせると出る)
     // 「能・現・単」の枠の右に、和訳を灰色で(前置詞句などの行と同じ形)
     const tnsLine = gs.tns && t ? line(`<span class="tag gm" title="態・時制・相${verb ? ": " + esc(verb.text) : ""}">${t.voice}・${t.tns}・${t.asp}</span>`, jaInline ? jaTail(r.ja) || "なし" : "") : "";
-    const rest = tnsLine + g.filter(x => gs[GKEY_OF[x.k]]).map(x => line(tag(x), Clean.gjaOf(x))).join("");
+    const subLines = gs.tns && t ? t.sub.map(s => line(`${s.conj ? `<span class="gja">${esc(s.conj)}</span> ` : ""}<span class="tag gm" title="従属節の態・時制・相">${s.voice}・${s.tns}・${s.asp}</span>`, s.ja || "")).join("") : ""; // 従属節(that 節など)の 態・時制・相 を、主節の下に
+    const rest = tnsLine + subLines + g.filter(x => gs[GKEY_OF[x.k]]).map(x => line(tag(x), Clean.gjaOf(x))).join("");
     return [h1 ? `<div class="tnsbadge" title="文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)とそのほかの文法">${rest}</div>` : "", jaInline];
   }
 

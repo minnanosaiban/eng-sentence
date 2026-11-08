@@ -95,17 +95,23 @@ const Clean = (() => {
     if (VOICES.includes(t.voice)) o.voice = t.voice;
     if (TNS.includes(t.tns)) o.tns = t.tns;
     if (ASPS.includes(t.asp)) o.asp = t.asp;
+    // 従属節(that 節・条件節など)の動詞の 態・時制・相。[{conj, voice, tns, asp, ja}]
+    if (Array.isArray(t.sub)) {
+      const sub = t.sub.filter(s => s && typeof s === "object" && VOICES.includes(s.voice) && TNS.includes(s.tns) && ASPS.includes(s.asp))
+        .slice(0, 5).map(s => ({ conj: clip(s.conj, 30), voice: s.voice, tns: s.tns, asp: s.asp, ja: clip(s.ja, 60) }));
+      if (sub.length) o.sub = sub;
+    }
     return o;
   }
   // 明示された値を優先し、無ければ name(「現在進行形・能動態」など)から読み取る。時制が読めなければ null
   function tenseTags(t) {
     if (!t) return null;
-    const name = String(t.name || ""), head = name.split(/[・(（/]/)[0];
+    const name = String(t.name || ""), head = name.split(/[・(（/]/)[0], mainName = name.split("/")[0]; // 「/」の後ろは従属節の話なので、主節の態には使わない
     const tns = t.tns || (/過去/.test(head) ? "過" : /未来|will/i.test(head) ? "未" : /現在/.test(head) ? "現" : null);
     if (!tns) return null;
     const asp = t.asp || (/完了進行/.test(head) ? "完進" : /完了/.test(head) ? "完" : /進行/.test(head) ? "進" : "単");
-    const voice = t.voice || (/受動|受け身/.test(name) ? "受" : "能");
-    return { voice, tns, asp };
+    const voice = t.voice || (/受動|受け身/.test(mainName) ? "受" : "能");
+    return { voice, tns, asp, sub: t.sub || [] };
   }
 
   // 態・時制・相のほかの文法(英文法.txt の分類)。AI が付ける gtags [{k, t}] の検査。決まった分類・項目だけを残す
