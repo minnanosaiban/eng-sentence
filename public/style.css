@@ -312,3 +312,5 @@ div.elsrow{margin-top:6px}
 .vrow .vex mark{background:var(--hl);color:inherit;border-radius:3px}
 .vrow .vbtn{display:flex;gap:6px;flex-wrap:wrap}
 .vrow.done .vh b{color:var(--sub)}
+.row-i .t > .m.jx{display:block;margin:6px 0 8px;line-height:1.5}
+.row-i .t > .m.jx[hidden]{display:none}
