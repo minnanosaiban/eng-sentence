@@ -117,7 +117,7 @@ const Clean = (() => {
   // 態・時制・相のほかの文法(英文法.txt の分類)。AI が付ける gtags [{k, t}] の検査。決まった分類・項目だけを残す
   const GT = {
     "文型": ["SV", "SVC", "SVO", "SVOO", "SVOC"],
-    "助動詞": ["can", "could", "may", "might", "must", "shall", "should", "will", "would", "ought to", "have to", "be able to", "be going to", "be supposed to", "be required to", "be allowed to", "be encouraged to", "be eligible for", "be entitled to"],
+    "助動詞": ["can", "could", "may", "might", "must", "shall", "should", "will", "would", "ought to", "have to", "be able to", "be going to", "be supposed to", "be required to", "be allowed to", "be encouraged to", "be eligible for", "be entitled to", "need", "dare", "used to"],
     "自他": ["自動詞", "他動詞"],
     "準動詞": ["不定詞", "動名詞", "分詞"],
     "修飾": ["形容詞", "副詞", "前置詞句", "分詞", "関係詞"],
@@ -139,7 +139,7 @@ const Clean = (() => {
   }
   // 態・時制・相のほかの文法(英文法.txt の分類)を、解析の文型・節・文法ポイントと、英文そのものから拾う。[{ k: 分類, t: 表示 }]
   const AUX = ["can", "could", "may", "might", "must", "shall", "should", "will", "would", "ought to"];
-  const AUXLIKE = [["have to", /\b(have|has|had) to\b/i], ["be able to", /\b(am|is|are|was|were|be|been) able to\b/i], ["be going to", /\b(am|is|are|was|were) going to\b/i], ["be supposed to", /\b(am|is|are|was|were|be) supposed to\b/i], ["be required to", /\b(am|is|are|was|were|be|been) required to\b/i], ["be allowed to", /\b(am|is|are|was|were|be|been) allowed to\b/i], ["be encouraged to", /\b(am|is|are|was|were|be|been) encouraged to\b/i], ["be eligible for", /\beligible for\b/i], ["be entitled to", /\bentitled to\b/i]];
+  const AUXLIKE = [["have to", /\b(have|has|had) to\b/i], ["be able to", /\b(am|is|are|was|were|be|been) able to\b/i], ["be going to", /\b(am|is|are|was|were) going to\b/i], ["be supposed to", /\b(am|is|are|was|were|be) supposed to\b/i], ["be required to", /\b(am|is|are|was|were|be|been) required to\b/i], ["be allowed to", /\b(am|is|are|was|were|be|been) allowed to\b/i], ["be encouraged to", /\b(am|is|are|was|were|be|been) encouraged to\b/i], ["be eligible for", /\beligible for\b/i], ["be entitled to", /\bentitled to\b/i], ["need", /\bneed(n't| not| to)\b/i], ["dare", /\bdare(d|s)?( not|n't)?( to)? [a-z]+/i], ["used to", /(?<!\b(?:am|is|are|was|were|be|been|being|get|gets|got) )\bused to (?![a-z]+ing\b)/i]];
   // 語句の無いタグ(不定詞・動名詞・形容詞・前置詞句)は、単語の品詞から、英文中の該当する語句を拾って補う
   const bare = w => String(w).replace(/^[^\w']+|[^\w']+$/g, "");
   const BE = /^(am|is|are|was|were|be|been|being|do|does|did|have|has|had|will|would|can|could|may|might|must|shall|should)$/i;
@@ -170,7 +170,7 @@ const Clean = (() => {
     });
   };
   // 助動詞の意味(学習タブで、助動詞のあとに添える)
-  const AUXJA = { can: "〜できる", could: "〜できた・〜できる(かもしれない)", may: "〜してよい・〜かもしれない", might: "〜かもしれない", must: "〜しなければならない", shall: "〜するものとする", should: "〜すべき", will: "〜するだろう・〜する", would: "〜するだろう・〜したいものだ", "ought to": "〜すべき", "have to": "〜しなければならない", "be able to": "〜できる", "be going to": "〜するつもり", "be supposed to": "〜することになっている", "be required to": "〜を求められる", "be allowed to": "〜を許されている", "be encouraged to": "〜を奨励されている", "be eligible for": "〜の資格がある", "be entitled to": "〜の権利がある" };
+  const AUXJA = { can: "〜できる", could: "〜できた・〜できる(かもしれない)", may: "〜してよい・〜かもしれない", might: "〜かもしれない", must: "〜しなければならない", shall: "〜するものとする", should: "〜すべき", will: "〜するだろう・〜する", would: "〜するだろう・〜したいものだ", "ought to": "〜すべき", "have to": "〜しなければならない", "be able to": "〜できる", "be going to": "〜するつもり", "be supposed to": "〜することになっている", "be required to": "〜を求められる", "be allowed to": "〜を許されている", "be encouraged to": "〜を奨励されている", "be eligible for": "〜の資格がある", "be entitled to": "〜の権利がある", need: "〜する必要がある(否定・疑問で)", dare: "あえて〜する", "used to": "以前は〜したものだ・〜だった" };
   const gjaOf = x => x.m || (x.k === "助動詞" ? AUXJA[x.t] || "" : x.k === "準動詞" && x.t === "動名詞" ? "〜すること" : "");
   const GORDER = ["文型", "文の種類", "助動詞", "自他"]; // 表示は、文型 → 文の種類 → 助動詞 → 自・他 → ほかの順
   const gsort = l => l.map((x, i) => [GORDER.includes(x.k) ? GORDER.indexOf(x.k) : GORDER.length, i, x]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map(a => a[2]);
