@@ -563,6 +563,8 @@
   const sl = (key, i) => { const r = cur(); return selC && r && selC.id === r.id && selC.key === key && selC.i === i ? " sel" : "" };
 
   // 主節の動詞の 態・時制・相 を、1つのタグで(例: 能・現・進)。文型・文の種類は英文の上、そのほかは英文の下
+  // 和訳の末尾(最後の助詞から)だけを、頭に「～」を付けて出す(例: 〜15分おきに出発します → ～に出発します)
+  const jaTail = ja => { const t = (ja || "").replace(/[。.\s]+$/, ""), i = Math.max(...[..."にをでへとがは"].map(c => t.lastIndexOf(c))); return i > 0 ? "～" + t.slice(i) : t };
   function tenseBadge(r) {
     const gs = prefs.gs;
     if (!(gs.tns || gs.pat || gs.kind || GKEY.some(k => gs[k]))) return ["", "", false];
@@ -574,7 +576,7 @@
     const line = (tagHtml, ja) => `<div class="gl">${tagHtml}<span class="gja">${esc(ja)}</span></div>`;
     const jaInline = !!(prefs.aux.ja && gs.tns && t); // 「能・現・単」の枠があるときは、全文の和訳を、その右に置く(主節の動詞の原文は、ポインタを合わせると出る)
     // 「能・現・単」の枠の右に、和訳を灰色で(前置詞句などの行と同じ形)
-    const tnsLine = gs.tns && t ? line(`<span class="tag gm" title="態・時制・相${verb ? ": " + esc(verb.text) : ""}">${t.voice}・${t.tns}・${t.asp}</span>`, jaInline ? r.ja || "なし" : "") : "";
+    const tnsLine = gs.tns && t ? line(`<span class="tag gm" title="態・時制・相${verb ? ": " + esc(verb.text) : ""}">${t.voice}・${t.tns}・${t.asp}</span>`, jaInline ? jaTail(r.ja) || "なし" : "") : "";
     const rest = tnsLine + g.filter(x => gs[GKEY_OF[x.k]]).map(x => line(tag(x), Clean.gjaOf(x))).join("");
     return [h1 ? `<div class="tnsbadge" title="文型、文の種類">${h1}</div>` : "", rest ? `<div class="tnsbadge" title="態・時制・相(主節の動詞)とそのほかの文法">${rest}</div>` : "", jaInline];
   }
