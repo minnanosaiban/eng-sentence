@@ -228,6 +228,10 @@
       </div>
       <!-- 1列目〜3列目は同じ幅。4列目は残り -->
       <div class="pickgrid">
+        <div class="shuf">
+          <button id="btnShuffle" class="sm" aria-pressed="false" title="表示中の英文を、ランダムな順に並べ替えます(聞く順も同じ。押すたびに並べ直します)">シャッフル</button>
+          <button id="btnUnshuffle" class="sm" hidden title="シャッフルをやめて、元の順に戻します">元の順</button>
+        </div>
         <select id="fgroup" aria-label="グループ"></select>
         <select id="flabel" aria-label="ラベル"><option value="">ラベル</option><option value="1">ラベル 1</option><option value="2">ラベル 2</option><option value="3">ラベル 3</option><option value="4">ラベル 4</option><option value="5">ラベル 5</option><option value="none">ラベルなし</option></select>
 
@@ -249,8 +253,6 @@
     <!-- 固定メニュー(スクロールしても、上に残る) -->
     <div class="card pickmenu" id="pickMenu">
       <button id="btnSlashPick" class="sm" aria-pressed="false" title="英文を、意味の区切り( / )で切って出す">/</button>
-      <button id="btnShuffle" class="sm" aria-pressed="false" title="表示中の英文を、ランダムな順に並べ替えます(聞く順も同じ。押すたびに並べ直します)">シャッフル</button>
-      <button id="btnUnshuffle" class="sm" hidden title="シャッフルをやめて、元の順に戻します">元の順</button>
       <label class="inl">速さ <select id="pRate"></select></label>
       <label class="inl">間 <select id="pGap" title="読んだあとに置く、まねする時間(読み上げの長さの何倍か)。「なし」なら、続けて読む"></select></label>
       <label class="inl">繰り返し <select id="pRep" title="同じ英文を、何回続けて繰り返すか"></select></label>
@@ -261,7 +263,7 @@
         <button class="sm" data-p="groups" aria-pressed="true" title="グループ(パート・難易度・ラベル・自分で付けたグループ)を出す">グループ</button>
       </div>
       <span id="pickShow" role="group" aria-label="一覧の表示" class="pickshow">
-        <button class="sm" data-p="g:文型" data-g aria-pressed="true" title="文型(SV・SVO など)を出す">文型</button>
+        <button class="sm" data-p="g:文型" data-g aria-pressed="true" title="文型(SV・SVO など)の枠を出す(S V O C M の区切りは、各英文の「文」ボタン)">文型</button>
         <button class="sm" data-p="g:文の種類" data-g aria-pressed="true" title="文の種類(肯定・否定・疑問・命令)を出す">文の種類</button>
         <button class="sm" data-p="tns" aria-pressed="true" title="態・時制・相(能 現 進 など)を出す">態・時制・相</button>
         <button class="sm" data-p="g:助動詞" data-g aria-pressed="true" title="助動詞(can・must など)を出す">助動詞</button>

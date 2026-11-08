@@ -346,12 +346,13 @@
   }
   // 文の要素(S V O C M)ごとに / で区切り、下に記号を付けた表示(解説の「文型」と、英文タブの一覧で共通)
   const elsInner = (els, vTag = "") => { const vi = vTag ? els.findIndex(e => e.role === "V") : -1; return els.map((e, i) => (i ? '<span class="slsep">/</span>' : "") + `<span class="el-i" title="${esc(e.note || "")}"><span class="el-t">${esc(e.text)}</span><span class="el-r">${esc(e.role)}${i === vi ? vTag : ""}</span></span>`).join("") };
+  const elsShow = new Set(); // 「文」ボタンで、S V O C M の区切りを出している英文(初期は、どれも出さない。上の「文型」ボタンは、SV などの枠を出すだけ)
   const jaShow = new Set(); // 「訳」ボタンで和訳を出している英文(初期は、どれも和訳を隠す)
   function pickRow(r) {
     const chunk = unit === "meaning" || unit === "iu";
     const part = unit === "sentence" ? Clean.partOf(r) : "";
     const tt = unit === "sentence" && prefs.pick.tns ? Clean.tenseTags(r.tense) : null;
-    const vOn = !!(tt && pickOn("g:文型") && (r.elements || []).some(e => e.role === "V")), tnsChip = tt ? `<span class="tag tns">${tt.voice}・${tt.tns}・${tt.asp}</span>` : ""; // 「文型」を出すときは、態・時制・相の枠を、S V M の V の右に置く
+    const elsOn = unit === "sentence" && elsShow.has(r.id) && !!(r.elements && r.elements.length), vOn = !!(tt && elsOn && r.elements.some(e => e.role === "V")), tnsChip = tt ? `<span class="tag tns">${tt.voice}・${tt.tns}・${tt.asp}</span>` : ""; // 「文型」を出すときは、態・時制・相の枠を、S V M の V の右に置く
     const gt = unit === "sentence" && pickOn("g:") ? Clean.gramTags(r).filter(x => pickOn("g:" + x.k)) : [];
     const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>${Clean.gjaOf(x) ? `<span class="gja">${esc(Clean.gjaOf(x))}</span>` : ""}`, // 学習タブと同じく、枠の右に、日本語の意味を灰色で
        gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → 態・時制・相 → ほかの文法 の順
@@ -361,8 +362,8 @@
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
       : unit === "word"
       ? `<b>${esc(r.text)}</b> ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""} <span class="m">${esc(r.pos)}</span>${ja}`
-      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${pickOn("g:文型") && r.elements && r.elements.length ? `<div class="elsrow">${elsInner(r.elements, vOn ? tnsChip : "")}</div>` : ""}${r.ja ? `<div class="m jx"${jaShow.has(r.id) ? "" : " hidden"}>${esc(r.ja)}</div>` : ""}`; // 和訳は、S V M の区切りの下、文法の枠の上に出す // 「文型」を出すとき、英文の下に S V O C M ごとの区切りも置く
-    return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" hidden><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button></span><span class="t">${body}<span class="m"><br>${tags}</span></span><span class="side">${r.ja ? `<button type="button" class="jt" data-ja="${r.id}" title="和訳の表示・非表示" aria-label="和訳の表示・非表示">訳</button>` : ""}<button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button></span></label>`;
+      : `${prefs.slashMain && r.slash && r.slash.length ? r.slash.map(x => esc(x.en)).join(' <span class="slsep">/</span> ') : esc(r.text)}${elsOn ? `<div class="elsrow">${elsInner(r.elements, vOn ? tnsChip : "")}</div>` : ""}${r.ja ? `<div class="m jx"${jaShow.has(r.id) ? "" : " hidden"}>${esc(r.ja)}</div>` : ""}`; // 和訳は、S V M の区切りの下、文法の枠の上に出す // 「文型」を出すとき、英文の下に S V O C M ごとの区切りも置く
+    return `<label class="row-i"><span class="chk"><input type="checkbox" data-id="${r.id}" hidden><button type="button" class="sm from" data-from="${r.id}" title="ここから順に聞く(聞いている間は ■ で止める)" aria-label="ここから順に聞く。聞いている間は止める">▶</button>${r.ja ? `<button type="button" class="jt" data-ja="${r.id}" title="和訳の表示・非表示" aria-label="和訳の表示・非表示">訳</button>` : ""}</span><span class="t">${body}<span class="m"><br>${tags}</span></span><span class="side">${unit === "sentence" && r.elements && r.elements.length ? `<button type="button" class="jt els" data-els="${r.id}" aria-pressed="${elsShow.has(r.id)}" title="S V O C M の区切りを、表示・非表示" aria-label="S V O C M の区切りを、表示・非表示">文</button>` : ""}<button type="button" class="go" data-go="${r.id}" title="この英文から、学習を始める" aria-label="この英文から、学習を始める">→</button></span></label>`;
   }
   function renderPick() {
     document.querySelectorAll("#segUnit button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.u === unit)));
@@ -839,6 +840,7 @@
   });
   // 行の「訳」を押すと、その行の和訳を出す・隠す
   $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-ja]"); if (!b) return; e.preventDefault(); const id = b.dataset.ja, x = b.closest(".row-i").querySelector(".jx"); jaShow.has(id) ? jaShow.delete(id) : jaShow.add(id); if (x) x.hidden = !x.hidden });
+  $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-els]"); if (!b) return; e.preventDefault(); const id = b.dataset.els; elsShow.has(id) ? elsShow.delete(id) : elsShow.add(id); renderPick() });
   // 行の ▶ を押すと、その行から順に聞く(チェックは変わらない)
   $("#pickList").addEventListener("click", e => { const b = e.target.closest("button[data-from]"); if (b) { e.preventDefault(); if (b.closest(".row-i.now")) { stopAudio(); document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now")); return } playPick(b.dataset.from) } });
   // 選んだ区切りを、繰り返しの回数だけ、続けて聞く

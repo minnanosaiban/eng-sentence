@@ -48,7 +48,7 @@ textarea{width:100%;resize:vertical}
 .pickshow{display:contents}
 #pickList .slsep{color:var(--sub)}
 #pickList .row-i.now{outline:2px solid var(--pri);outline-offset:-2px;border-radius:8px}
-.pickgrid{--c:122px;display:grid;grid-template-columns:repeat(4,var(--c)) minmax(0,1fr);gap:8px;align-items:start;font-size:14px}
+.pickgrid{--c:122px;display:grid;grid-template-columns:repeat(5,var(--c)) minmax(0,1fr);gap:8px;align-items:start;font-size:14px}
 .pickgrid>*{min-width:0}
 .pickgrid select,.pickgrid button,.pickgrid input{font-size:14px;padding:6px 8px}
 .pickgrid select{width:100%}
@@ -61,6 +61,9 @@ textarea{width:100%;resize:vertical}
 .pickgrid .srch{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding-left:10px}
 .pickgrid .srch span{color:var(--sub);border-right:1px solid var(--line);padding-right:8px}
 .pickgrid .srch input{flex:1;min-width:0;border:0;background:none;border-radius:0}
+.pickgrid .shuf{display:flex;flex-wrap:wrap;gap:8px}
+.pickgrid .shuf button{flex:1 1 auto;white-space:nowrap}
+.pickgrid .shuf button[hidden]{display:none}
 .pickgrid .pair{display:grid;grid-template-columns:1fr;gap:8px}
 .pickgrid .pair button.ib{padding:6px 0;min-width:0} /* 3つのボタンが、枠からはみ出して検索窓に近づかないように */
 .pickmenu .lbl{display:flex;align-items:center;gap:3px;min-width:0;padding-right:0;border-right:0}
@@ -86,6 +89,7 @@ textarea{width:100%;resize:vertical}
 .row-i .side{flex:none;align-self:flex-start;display:flex;flex-direction:column;align-items:center}
 .row-i .jt{border:0;background:none;color:var(--sub);font-size:13px;padding:2px 8px;cursor:pointer}
 .row-i .jt:hover{color:var(--pri)}
+.row-i .jt[aria-pressed="true"]{color:var(--pri);font-weight:600}
 .row-i .go{flex:none;border:0;background:none;font-size:20px;padding:2px 8px;cursor:pointer;color:var(--fg,inherit)}
 .row-i .t{flex:1;min-width:0}
 .row-i .m{font-size:12.5px;color:var(--sub)}
