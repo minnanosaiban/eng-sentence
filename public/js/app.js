@@ -380,7 +380,6 @@
   }
   function pickInfo(shown) {
     $("#pickInfo").textContent = `表示 ${shown ?? filtered().length} 件 / 全 ${tbl(unit).length} 件 ・ 選択中 ${sel[unit].size} 件`;
-    $("#btnStart").disabled = sel[unit].size === 0;
     $("#btnDelSel").disabled = sel[unit].size === 0;
     { const t = sel[unit].size ? `選んだ ${sel[unit].size} 件を削除` : "選んだものを削除"; $("#btnDelSel").title = t; $("#btnDelSel").setAttribute("aria-label", t) }
   }
@@ -399,12 +398,6 @@
   ["#fq", "#fgroup", "#flabel", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
   $("#btnAll").onclick = () => { filtered().forEach(r => sel[unit].add(r.id)); renderPick() };
   $("#btnNone").onclick = () => { sel[unit].clear(); renderPick() };
-  const pickRandom = n => {
-    const pool = filtered().map(r => r.id);
-    for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]] }
-    sel[unit] = new Set(pool.slice(0, n)); renderPick(); toast(`${sel[unit].size} 件を選びました`);
-  };
-  $("#btnRand10").onclick = $("#btnRand20").onclick = e => pickRandom(+e.currentTarget.dataset.n);
   // ---------- 削除 ----------
   // 英文を消すと、その英文から作った意味句・IU も消す(単語は、ほかの英文でも使うので、残す)。同期している端末からも消える
   async function deleteItems(u, ids) {
@@ -436,12 +429,6 @@
   }
   $("#btnDelSel").onclick = () => confirmDelete(unit, tbl(unit).filter(r => sel[unit].has(r.id)).map(r => r.id));
   $("#btnDelCur").onclick = () => { const r = cur(); if (r) confirmDelete(study.unit, [r.id]) };
-
-  $("#btnStart").onclick = async () => {
-    // 表の並び順のまま、選んだものを学習セットにする
-    study = { unit, ids: tbl(unit).filter(r => sel[unit].has(r.id)).map(r => r.id), i: 0 };
-    wReveal = false; await saveStudy(); setTab("study");
-  };
 
   // ---------- 学習(共通) ----------
   const cur = () => tbl(study.unit).find(r => r.id === study.ids[study.i]);
