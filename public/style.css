@@ -61,7 +61,13 @@ textarea{width:100%;resize:vertical}
 .pickgrid .srch{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);padding-left:10px}
 .pickgrid .srch span{color:var(--sub);border-right:1px solid var(--line);padding-right:8px}
 .pickgrid .srch input{flex:1;min-width:0;border:0;background:none;border-radius:0}
-.pickgrid .shuf{display:flex;flex-wrap:wrap;gap:8px}
+/* 1行目の部品は、すべて同じ高さにそろえる */
+.pickgrid{--h:36px}
+.pickgrid select,.pickgrid button,.pickgrid .srch,.pickgrid .shuf{box-sizing:border-box;height:var(--h)}
+.pickgrid .pair{height:var(--h)}
+.pickgrid .pair button.ib,.pickgrid .shuf button{height:100%;padding-top:0;padding-bottom:0}
+.pickgrid .srch input{height:100%}
+.pickgrid .shuf{display:flex;flex-wrap:nowrap;gap:8px}
 .pickgrid .shuf button{flex:1 1 auto;white-space:nowrap}
 .pickgrid .shuf button[hidden]{display:none}
 .pickgrid .pair{display:grid;grid-template-columns:1fr;gap:8px}
