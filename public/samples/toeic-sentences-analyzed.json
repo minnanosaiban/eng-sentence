@@ -40,7 +40,7 @@
    "bm": false,
    "added": 1791460007871,
    "analysis": {
-    "translation": "新入社員は全員、生産現場で働き始める前に安全研修を修了しなければならない。",
+    "translation": "すべての新入社員は / 安全研修を修了しなければならない / 働き始める前に / 生産現場で。",
     "slash": [
      {
       "en": "All new employees",
@@ -362,7 +362,7 @@
    "bm": false,
    "added": 1791460007870,
    "analysis": {
-    "translation": "田中さんは昨年の春にマーケティングチームに加わり、シニアマネージャーに昇進した。",
+    "translation": "田中さんは / 昨年の春にマーケティングチームに加わった / 昇進した / シニアマネージャーに",
     "slash": [
      {
       "en": "Ms. Tanaka,",
@@ -674,7 +674,7 @@
    "bm": false,
    "added": 1791460007869,
    "analysis": {
-    "translation": "応募者は、履歴書とあわせて推薦状を2通提出することが求められている。",
+    "translation": "応募者は求められている / 提出することを / 推薦状を2通 / 履歴書とともに",
     "slash": [
      {
       "en": "Applicants are required",
@@ -977,7 +977,7 @@
    "bm": false,
    "added": 1791460007868,
    "analysis": {
-    "translation": "人事部は、取締役会が承認したら、新しい休暇制度を発表する予定だ。",
+    "translation": "人事部は / 発表する / 新しい休暇制度を / 取締役会がそれを承認したら",
     "slash": [
      {
       "en": "The human resources department",
@@ -1299,7 +1299,7 @@
    "bm": false,
    "added": 1791460007867,
    "analysis": {
-    "translation": "残業をする従業員は、追加の手当を受け取る資格がある。",
+    "translation": "残業をする従業員は / 資格がある / 追加の手当を受ける",
     "slash": [
      {
       "en": "Employees who work overtime",
@@ -1582,7 +1582,7 @@
    "bm": false,
    "added": 1791460007866,
    "analysis": {
-    "translation": "岡田さんは、物流における豊富な経験が買われて、プロジェクトコーディネーターとして採用された。",
+    "translation": "岡田さんは採用された / プロジェクトコーディネーターとして / 豊富な経験のために / 物流における",
     "slash": [
      {
       "en": "Mr. Okada was hired",
@@ -1885,7 +1885,7 @@
    "bm": false,
    "added": 1791460007865,
    "analysis": {
-    "translation": "面接は来週、部長3名で構成される委員会によって行われる。",
+    "translation": "面接は / 行われる / 来週 / 部長3名の委員会によって",
     "slash": [
      {
       "en": "Interviews",
@@ -2178,7 +2178,7 @@
    "bm": false,
    "added": 1791460007864,
    "analysis": {
-    "translation": "特に断りのない限り、すべての正社員は会社の健康保険に加入する資格がある。",
+    "translation": "特に断りがなければ / すべての正社員は / 資格がある / 会社の健康保険の",
     "slash": [
      {
       "en": "Unless otherwise noted,",
@@ -2504,7 +2504,7 @@
    "bm": false,
    "added": 1791460007863,
    "analysis": {
-    "translation": "応募書類をすべて検討した後、委員会は2次面接に進む候補者を5名選んだ。",
+    "translation": "応募書類をすべて検討した後 / 委員会は / 選んだ / 2次面接の候補者を5名",
     "slash": [
      {
       "en": "Having reviewed all of the applications,",
@@ -2831,7 +2831,7 @@
    "bm": false,
    "added": 1791460007862,
    "analysis": {
-    "translation": "長期休暇を取る予定の場合は、少なくとも2週間前に上司にお知らせください。",
+    "translation": "上司にお知らせください / 少なくとも2週間前に / もしあなたが予定しているなら / 長期休暇を取ることを",
     "slash": [
      {
       "en": "Please inform your supervisor",
@@ -3167,7 +3167,7 @@
    "bm": false,
    "added": 1791460007861,
    "analysis": {
-    "translation": "四半期の営業会議は、部長の出張のため木曜日に変更されました。",
+    "translation": "四半期の営業会議は / 日程変更された / 木曜日に / 部長の出張のため",
     "slash": [
      {
       "en": "The quarterly sales meeting",
@@ -3473,7 +3473,7 @@
    "bm": false,
    "added": 1791460007860,
    "analysis": {
-    "translation": "参加者は、講演者が十分な回答を準備できるよう、事前に質問を提出することが推奨されています。",
+    "translation": "参加者は奨励されている / 質問を提出するよう / 事前に / 講演者が十分な回答を準備できるように",
     "slash": [
      {
       "en": "Participants are encouraged",
@@ -3821,7 +3821,7 @@
    "bm": false,
    "added": 1791460007859,
    "analysis": {
-    "translation": "もし飛行機が遅れた場合は、すぐに出張手配窓口に連絡してください。",
+    "translation": "もし便が遅れたら / 連絡してください / 出張手配窓口に / すぐに",
     "slash": [
      {
       "en": "If the flight is delayed,",
@@ -4118,7 +4118,7 @@
    "bm": false,
    "added": 1791460007858,
    "analysis": {
-    "translation": "3階の会議室は、最大40人まで収容できます。",
+    "translation": "会議室は / 3階の / 収容できる / 最大40人まで",
     "slash": [
      {
       "en": "The conference room",
@@ -4390,7 +4390,7 @@
    "bm": false,
    "added": 1791460007857,
    "analysis": {
-    "translation": "顧客が到着するまでに、プレゼンも配布資料も準備ができていませんでした。",
+    "translation": "プレゼンも配布資料もどちらも〜ない / 準備できていなかった / 顧客が到着するまでには",
     "slash": [
      {
       "en": "Neither the presentation nor the handouts",
@@ -4683,7 +4683,7 @@
    "bm": false,
    "added": 1791460007856,
    "analysis": {
-    "translation": "佐藤氏は、システムのアップグレードを監督するため、月曜日から水曜日まで当社のシンガポール支社を訪問する予定です。",
+    "translation": "佐藤氏は / 訪問する予定だ / 当社のシンガポール支社を / 月曜から水曜まで / システム更新を監督するために",
     "slash": [
      {
       "en": "Mr. Sato",
@@ -5026,7 +5026,7 @@
    "bm": false,
    "added": 1791460007855,
    "analysis": {
-    "translation": "明日の会議の議題には、先月の予算の見直しと、近く発売される新製品についての議論が含まれています。",
+    "translation": "明日の会議の議題には / 含まれる / 先月の予算の見直し / そして今度の新製品発売についての議論",
     "slash": [
      {
       "en": "The agenda for tomorrow's meeting",
@@ -5371,7 +5371,7 @@
    "bm": false,
    "added": 1791460007854,
    "analysis": {
-    "translation": "出張費は、出張から30日以内に報告しなければなりません。",
+    "translation": "出張経費は / 報告されなければならない / 30日以内に / 出張から",
     "slash": [
      {
       "en": "Travel expenses",
@@ -5652,7 +5652,7 @@
    "bm": false,
    "added": 1791460007853,
    "analysis": {
-    "translation": "月末までに登録する参加者は、入場料が割引になります。",
+    "translation": "参加者は / 月末より前に登録する / 受け取る / 割引を / 入場料に対する",
     "slash": [
      {
       "en": "Attendees",
@@ -5995,7 +5995,7 @@
    "bm": false,
    "added": 1791460007852,
    "analysis": {
-    "translation": "セミナーの会場変更により生じたご不便について、お詫び申し上げます。",
+    "translation": "私たちはお詫びします / どんなご不便についても / 変更によって生じた / セミナー会場の",
     "slash": [
      {
       "en": "We apologize",
@@ -6300,7 +6300,7 @@
    "bm": false,
    "added": 1791460007851,
    "analysis": {
-    "translation": "当事者のどちらかが解約の書面通知を行わない限り、この契約は2年間有効なままとなる。",
+    "translation": "その契約は / 有効なままである / 2年間 / どちらかの当事者が出さない限り / 解約の書面通知を",
     "slash": [
      {
       "en": "The contract",
@@ -6659,7 +6659,7 @@
    "bm": false,
    "added": 1791460007850,
    "analysis": {
-    "translation": "海外販売による収益は、前年の同時期と比べて12パーセント増加した。",
+    "translation": "海外販売からの収益は / 増加した / 12パーセント / 同じ時期と比べて / 昨年の",
     "slash": [
      {
       "en": "Revenue from overseas sales",
@@ -6992,7 +6992,7 @@
    "bm": false,
    "added": 1791460007849,
    "analysis": {
-    "translation": "すべての請求書は、発行日から30日以内に支払われなければならない。",
+    "translation": "すべての請求書は / 支払われるべきだ / 30日以内に / 発行日から",
     "slash": [
      {
       "en": "All invoices",
@@ -7281,7 +7281,7 @@
    "bm": false,
    "added": 1791460007848,
    "analysis": {
-    "translation": "経理部は、経費報告書に添付して提出されるすべての領収書を確認する責任がある。",
+    "translation": "経理部は / 責任がある / すべての領収書を確認することに / 経費報告書とともに提出される",
     "slash": [
      {
       "en": "The accounting department",
@@ -7603,7 +7603,7 @@
    "bm": false,
    "added": 1791460007847,
    "analysis": {
-    "translation": "検査が予定どおりに完了すれば、新しい施設は9月に開業する予定だ。",
+    "translation": "もし~ならば / 検査が完了する / 予定どおりに / 新しい施設は / 9月に開業する",
     "slash": [
      {
       "en": "Provided that",
@@ -7952,7 +7952,7 @@
    "bm": false,
    "added": 1791460007846,
    "analysis": {
-    "translation": "原材料費の上昇のため、会社は価格を5パーセント引き上げることを決定した。",
+    "translation": "上昇している費用のために / 原材料の / 会社は決定した / 価格を上げることを / 5パーセント",
     "slash": [
      {
       "en": "Because of the rising cost",
@@ -8301,7 +8301,7 @@
    "bm": false,
    "added": 1791460007845,
    "analysis": {
-    "translation": "注文が発送される前にキャンセルされた場合、代金は全額返金される。",
+    "translation": "代金は返金される / 全額 / もし注文がキャンセルされれば / それが発送される前に",
     "slash": [
      {
       "en": "Payment will be refunded",
@@ -8638,7 +8638,7 @@
    "bm": false,
    "added": 1791460007844,
    "analysis": {
-    "translation": "数週間の交渉の末、その合意書は両当事者によって署名された。",
+    "translation": "その合意書は / 署名された / 両当事者によって / 数週間の交渉の後で",
     "slash": [
      {
       "en": "The agreement",
@@ -8928,7 +8928,7 @@
    "bm": false,
    "added": 1791460007843,
    "analysis": {
-    "translation": "株主は、来月の年次総会で提案された合併を承認すると見込まれている。",
+    "translation": "株主は / 承認すると見込まれている / 提案された合併を / 年次総会で / 来月の",
     "slash": [
      {
       "en": "Shareholders",
@@ -9264,7 +9264,7 @@
    "bm": false,
    "added": 1791460007842,
    "analysis": {
-    "translation": "当社の監査人は、会社が内部統制をもっと頻繁に見直すよう勧告した。",
+    "translation": "私たちの監査人は / 勧告した / 会社が見直すべきだと / 内部統制を / もっと頻繁に",
     "slash": [
      {
       "en": "Our auditors",
@@ -9577,7 +9577,7 @@
    "bm": false,
    "added": 1791460007841,
    "analysis": {
-    "translation": "2点以上の商品をご購入のお客様には、ご注文に無料の景品が付きます。",
+    "translation": "2点以上の商品を購入する顧客は / 無料の景品を受け取る / 注文に付いて",
     "slash": [
      {
       "en": "Customers who purchase two or more items",
@@ -9889,7 +9889,7 @@
    "bm": false,
    "added": 1791460007840,
    "analysis": {
-    "translation": "6週間実施される新しい広告キャンペーンは、若手社会人層を対象としている。",
+    "translation": "新しい広告キャンペーンは / 6週間実施される / 若手社会人をねらう",
     "slash": [
      {
       "en": "The new advertising campaign,",
@@ -10188,7 +10188,7 @@
    "bm": false,
    "added": 1791460007839,
    "analysis": {
-    "translation": "最近のご体験に関する短いアンケートにご回答いただければ幸いです。",
+    "translation": "私たちはありがたく思います / もしあなたが短いアンケートに記入してくださるなら / 最近のご体験についての",
     "slash": [
      {
       "en": "We would appreciate it",
@@ -10509,7 +10509,7 @@
    "bm": false,
    "added": 1791460007838,
    "analysis": {
-    "translation": "ご注文についてご質問がございましたら、遠慮なく当カスタマーサービスセンターまでご連絡ください。",
+    "translation": "ご注文についてご質問があれば / どうぞためらわないで / 当カスタマーサービスセンターに連絡することを",
     "slash": [
      {
       "en": "Should you have any questions about your order,",
@@ -10837,7 +10837,7 @@
    "bm": false,
    "added": 1791460007837,
    "analysis": {
-    "translation": "その店のグランドオープンは、主催者が予想していたよりも多くの人を集めた。",
+    "translation": "その店のグランドオープンは / より多い人出を集めた / 主催者が予想していたよりも",
     "slash": [
      {
       "en": "The store's grand opening",
@@ -11133,7 +11133,7 @@
    "bm": false,
    "added": 1791460007836,
    "analysis": {
-    "translation": "すべての商品は、返金を受けるために、元の包装のまま返品しなければならない。",
+    "translation": "すべての商品は返品されなければならない / 元の包装のままで / 返金の資格を得るために",
     "slash": [
      {
       "en": "All merchandise must be returned",
@@ -11447,7 +11447,7 @@
    "bm": false,
    "added": 1791460007835,
    "analysis": {
-    "translation": "オンラインに投稿された好意的なレビューのおかげで、新しいミキサーの売り上げは急激に伸びた。",
+    "translation": "オンラインに投稿された好意的なレビューのおかげで / 新しいミキサーの売り上げは / 急激に上昇した",
     "slash": [
      {
       "en": "Thanks to the positive reviews posted online,",
@@ -11769,7 +11769,7 @@
    "bm": false,
    "added": 1791460007834,
    "analysis": {
-    "translation": "店長はお客様に謝罪し、追加料金なしで交換品を提供した。",
+    "translation": "店長は客に謝った / そして交換品を提供した / 追加料金なしで",
     "slash": [
      {
       "en": "The manager apologized to the customer",
@@ -12094,7 +12094,7 @@
    "bm": false,
    "added": 1791460007833,
    "analysis": {
-    "translation": "新モデルは消費エネルギーが少ないだけでなく、かなり静かでもある。",
+    "translation": "新モデルは~だけでなく / エネルギーを少なく使う / しかしそれはまた / かなり静かでもある",
     "slash": [
      {
       "en": "Not only does the new model",
@@ -12395,7 +12395,7 @@
    "bm": false,
    "added": 1791460007832,
    "analysis": {
-    "translation": "配送にかかる時間は、商品の在庫状況や届け先によって異なる場合がある。",
+    "translation": "配送時間は / 異なるかもしれない / 在庫状況しだいで / 商品と届け先の",
     "slash": [
      {
       "en": "Delivery times",
@@ -12700,7 +12700,7 @@
    "bm": false,
    "added": 1791460007831,
    "analysis": {
-    "translation": "駐車場は金曜の夜から月曜の朝まで、路面の再舗装のため閉鎖されますのでご承知おきください。",
+    "translation": "ご承知おきください / 駐車場が閉鎖されること / 再舗装のために / 金曜の夜から月曜の朝まで",
     "slash": [
      {
       "en": "Please be advised",
@@ -13037,7 +13037,7 @@
    "bm": false,
    "added": 1791460007830,
    "analysis": {
-    "translation": "改装工事が行われている間、カフェテリアは一時的に2階へ移転されます。",
+    "translation": "カフェテリアは一時的に移転される / 2階へ / 改装工事が進行中の間",
     "slash": [
      {
       "en": "The cafeteria will be temporarily relocated",
@@ -13354,7 +13354,7 @@
    "bm": false,
    "added": 1791460007829,
    "analysis": {
-    "translation": "従業員の皆様は、建物内にいる間は常に身分証明書のバッジを着用するようご注意ください。",
+    "translation": "従業員は念を押される / 身分証のバッジを着用するように / 常に / 建物の中にいる間",
     "slash": [
      {
       "en": "Employees are reminded",
@@ -13686,7 +13686,7 @@
    "bm": false,
    "added": 1791460007828,
    "analysis": {
-    "translation": "会議室を予約するには、社内イントラネットで利用できるオンライン予約システムをお使いください。",
+    "translation": "会議室を予約するには / お使いください / オンライン予約システムを / 社内イントラネットで利用できる",
     "slash": [
      {
       "en": "To reserve a meeting room,",
@@ -13998,7 +13998,7 @@
    "bm": false,
    "added": 1791460007827,
    "analysis": {
-    "translation": "ワークショップに申し込んだ全員に、確認のためのメールが送信されます。",
+    "translation": "リマインドのメールが送られる / 皆さんに / 申し込んだ / ワークショップに",
     "slash": [
      {
       "en": "A reminder e-mail will be sent",
@@ -14310,7 +14310,7 @@
    "bm": false,
    "added": 1791460007826,
    "analysis": {
-    "translation": "保守管理チームは、入居者全員に廊下から私物を片付けるよう求めています。",
+    "translation": "保守管理チームは要請する / 入居者全員が取り除くように / 私物を / 廊下から",
     "slash": [
      {
       "en": "The maintenance team requests",
@@ -14610,7 +14610,7 @@
    "bm": false,
    "added": 1791460007825,
    "analysis": {
-    "translation": "本日より、来訪者は受付で手続きをし、来訪者用の入館証を受け取らなければなりません。",
+    "translation": "直ちに有効で / 来訪者は到着手続きをしなければならない / 受付で / そして来訪者用の入館証を受け取る",
     "slash": [
      {
       "en": "Effective immediately,",
@@ -14943,7 +14943,7 @@
    "bm": false,
    "added": 1791460007824,
    "analysis": {
-    "translation": "このたび、パーク氏が地域担当ディレクターの職を引き受けられたことをお知らせできることを嬉しく思います。",
+    "translation": "私たちは嬉しく思う / お知らせできることを / パークさんが引き受けたこと / 地域担当ディレクターの職を",
     "slash": [
      {
       "en": "We are pleased",
@@ -15280,7 +15280,7 @@
    "bm": false,
    "added": 1791460007823,
    "analysis": {
-    "translation": "予定されているシステム更新のため、社内ネットワークは真夜中から午前3時の間は利用できなくなります。",
+    "translation": "予定されているシステム更新のため / 社内ネットワークは / 利用できなくなる / 真夜中から午前3時の間",
     "slash": [
      {
       "en": "Due to a scheduled system update,",
@@ -15629,7 +15629,7 @@
    "bm": false,
    "added": 1791460007822,
    "analysis": {
-    "translation": "同封のパンフレットには、当社コンサルティング部門が提供するサービスの全体像が説明されています。",
+    "translation": "同封のパンフレットは / 説明している / サービスの全範囲を / 当社のコンサルティング部門が提供する",
     "slash": [
      {
       "en": "The enclosed brochure",
@@ -15941,7 +15941,7 @@
    "bm": false,
    "added": 1791460007821,
    "analysis": {
-    "translation": "その会社は来年末までに東南アジアへ事業を拡大する計画だ。",
+    "translation": "その会社は / 拡大することを計画している / 事業を / 東南アジアへ / 来年末までに",
     "slash": [
      {
       "en": "The company",
@@ -16272,7 +16272,7 @@
    "bm": false,
    "added": 1791460007820,
    "analysis": {
-    "translation": "その提案は予算要件を満たさなかったため、却下された。",
+    "translation": "その提案は / 却下された / それが失敗したので / 満たすことに / 予算要件を",
     "slash": [
      {
       "en": "The proposal",
@@ -16586,7 +16586,7 @@
    "bm": false,
    "added": 1791460007819,
    "analysis": {
-    "translation": "リー氏は信頼性と細部への注意深さから、同僚の間で高く評価されている。",
+    "translation": "リー氏は / 高く評価されている / 同僚の間で / その信頼性のために / そして細部への注意のために",
     "slash": [
      {
       "en": "Mr. Lee",
@@ -16907,7 +16907,7 @@
    "bm": false,
    "added": 1791460007818,
    "analysis": {
-    "translation": "予期せぬ故障を避けるため、設備が適切に整備されていることを確認してください。",
+    "translation": "確認してください / 設備が / 適切に整備されていると / 避けるために / 予期せぬ故障を",
     "slash": [
      {
       "en": "Please make sure",
@@ -17225,7 +17225,7 @@
    "bm": false,
    "added": 1791460007817,
    "analysis": {
-    "translation": "納入業者は、荷物は遅くとも火曜日までには到着すると私たちに保証した。",
+    "translation": "納入業者は / 私たちに保証した / 荷物が / 到着すると / 遅くとも火曜日までに",
     "slash": [
      {
       "en": "The supplier",
@@ -17538,7 +17538,7 @@
    "bm": false,
    "added": 1791460007816,
    "analysis": {
-    "translation": "かなりの数の従業員が、柔軟な勤務スケジュールに関心を示している。",
+    "translation": "かなりの数の従業員が / 表明している / 関心を / 柔軟な勤務スケジュールへの",
     "slash": [
      {
       "en": "A significant number of employees",
@@ -17838,7 +17838,7 @@
    "bm": false,
    "added": 1791460007815,
    "analysis": {
-    "translation": "ロビーの改装は、予定より早く完了する見込みだ。",
+    "translation": "ロビーの改装は / 見込まれている / 完了すると / 予定より早く",
     "slash": [
      {
       "en": "The renovation of the lobby",
@@ -18153,7 +18153,7 @@
    "bm": false,
    "added": 1791460007814,
    "analysis": {
-    "translation": "電気自動車の需要は、過去10年間にわたって着実に伸びてきた。",
+    "translation": "電気自動車の需要は / 伸びてきた / 着実に / 過去10年にわたって",
     "slash": [
      {
       "en": "Demand for electric vehicles",
@@ -18453,7 +18453,7 @@
    "bm": false,
    "added": 1791460007813,
    "analysis": {
-    "translation": "委員会は、すべての選択肢を慎重に検討したうえで、最終決定を下す。",
+    "translation": "委員会は / 最終決定を下す / 慎重に検討した後で / すべての選択肢を",
     "slash": [
      {
       "en": "The committee",
@@ -18770,7 +18770,7 @@
    "bm": false,
    "added": 1791460007812,
    "analysis": {
-    "translation": "住民は、ごみを指定された容器に捨てるよう求められている。",
+    "translation": "住民は / 求められている / ごみを処分するよう / 指定された容器に",
     "slash": [
      {
       "en": "Residents",
