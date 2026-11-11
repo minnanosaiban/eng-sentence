@@ -1,0 +1,30 @@
+{"part":3,"sets":[
+{"id":"p3-01","title":"会話(職場)","script":[
+{"sp":"W","text":"Hi, Daniel. Did you get my message about the client presentation on Thursday?"},
+{"sp":"M","text":"I did, but I have a problem. The projector in Meeting Room B isn't working, and I need it for my slides."},
+{"sp":"W","text":"Why don't you use the large conference room on the fifth floor? It has a built-in screen."},
+{"sp":"M","text":"Good idea. I'll reserve it right now. Could you send me the room's phone number in case I need help setting up?"}],
+"questions":[
+{"q":"What problem does the man mention?","choices":["A client canceled a meeting.","A projector is out of order.","A message was not delivered.","A presentation was postponed."],"answer":1,"exp":"男性が「会議室 B のプロジェクターが動かない」と言っている。not working = out of order。"},
+{"q":"What does the woman suggest?","choices":["Buying new equipment","Moving to another room","Calling the client","Changing the date"],"answer":1,"exp":"女性は、5階の大会議室を使うよう勧めている(use the large conference room on the fifth floor)。"},
+{"q":"What will the woman probably do next?","choices":["Reserve a room","Print some slides","Send a phone number","Meet a client"],"answer":2,"exp":"男性が「部屋の電話番号を送ってもらえますか」と頼んでいる。女性はこれを送ると考えられる。部屋を予約するのは男性。"}]},
+{"id":"p3-02","title":"会話(店・購入)","script":[
+{"sp":"M","text":"Welcome to Harbor Electronics. How can I help you?"},
+{"sp":"W","text":"I bought this tablet last week, but the screen keeps freezing. I'd like to exchange it for a different one."},
+{"sp":"M","text":"I'm sorry to hear that. Do you have your receipt with you?"},
+{"sp":"W","text":"Yes, here it is. Oh, and I also saw a flyer saying there's a ten percent discount on cases this month. Does that apply to me?"},
+{"sp":"M","text":"Absolutely. I'll take care of the exchange first, and then I'll show you the cases."}],
+"questions":[
+{"q":"Why is the woman visiting the store?","choices":["To buy a tablet case","To return a damaged item","To exchange a faulty product","To ask about a job"],"answer":2,"exp":"画面がフリーズするタブレットを、別のものに交換したいと言っている(exchange)。"},
+{"q":"What does the man ask the woman for?","choices":["A receipt","A phone number","A flyer","An ID card"],"answer":0,"exp":"男性が Do you have your receipt with you? と尋ねている。"},
+{"q":"What will the man do next?","choices":["Offer a refund","Process an exchange","Order a new case","Call the manager"],"answer":1,"exp":"男性は I'll take care of the exchange first と言っている。take care of the exchange = 交換の手続きをする。"}]},
+{"id":"p3-03","title":"会話(出張・手配)","script":[
+{"sp":"W","text":"Mr. Ito, I'm booking your trip to the Osaka branch next week. Would you prefer to fly or take the bullet train?"},
+{"sp":"M","text":"The train, please. I'd like to work on the sales report during the ride, and there's more room to do that."},
+{"sp":"W","text":"Understood. The 8:15 departure arrives at 10:45. Will that give you enough time before your noon meeting?"},
+{"sp":"M","text":"That's fine. But could you also reserve a hotel near the station? I'm staying overnight."}],
+"questions":[
+{"q":"Why does the man prefer the train?","choices":["It is cheaper.","He can work during the trip.","It is faster than flying.","He dislikes airports."],"answer":1,"exp":"電車の中で売上報告書に取り組みたい(work on the sales report during the ride)から。"},
+{"q":"What time will the man arrive in Osaka?","choices":["8:15","10:45","12:00","11:45"],"answer":1,"exp":"8:15 発の電車は 10:45 に着く。12:00 は会議の時刻。"},
+{"q":"What does the man ask the woman to do?","choices":["Change a meeting time","Book a hotel","Prepare a report","Cancel a ticket"],"answer":1,"exp":"駅の近くのホテルを予約するよう頼んでいる(reserve a hotel near the station)。"}]}
+]}

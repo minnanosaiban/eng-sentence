@@ -455,34 +455,78 @@
   $("#rate").onchange = e => setRate(e.target.value);
   $("#pRate").onchange = e => setRate(e.target.value);
 
-  // ---------- Part 1〜7(4択問題を、縦に続ける) ----------
-  let partRank = null; // シャッフル中は Map(id → 乱数)。この画面だけのもので、保存はしない
-  function renderPart() {
-    const part = "Part " + tab.slice(4), list = rows.filter(r => r.quiz && Clean.partOf(r) === part);
-    if (partRank) list.sort((a, b) => (partRank.get(a.id) ?? 2) - (partRank.get(b.id) ?? 2));
-    $("#btnPartShuffle").setAttribute("aria-pressed", String(!!partRank)); $("#btnPartUnshuffle").hidden = !partRank;
-    $("#partInfo").textContent = `${part}: ${list.length} 問${partRank ? "(シャッフル中)" : ""}`;
-    $("#partList").innerHTML = list.length ? list.map((r, n) => `<div class="card prob" data-id="${r.id}"><div class="sub"><button type="button" class="sm from" data-say="${r.id}" title="英文を聞く(もう一度押すと止める)" aria-label="英文を聞く">▶</button> ${n + 1}</div><div>${esc(r.quiz.question)}</div>${r.quiz.choices.map((c, i) => `<button class="choice" data-q="${i}">${"ABCD"[i]}. ${esc(c)}</button>`).join("")}<div class="sub pres"></div></div>`).join("") : '<p class="sub">この Part の問題は、まだありません。</p>';
+  // ---------- Part 1〜7(本番の形式の問題。public/toeic/partN.json を読む) ----------
+  // 1セット = 場面(Part1)/ 音声スクリプト(Part2〜4)/ 文章(Part6・7)+ 設問。選択肢を印刷しない Part1・2 は、聞いて A〜C(D)を選び、答えると文を表示する
+  let partRank = null; // シャッフル中は Map(セットid → 乱数)。この画面だけのもので、保存はしない
+  const PART_CACHE = {}; let partSets = [];
+  const resKey = "eng-sentence-toeic-result";
+  const loadRes = () => { try { return JSON.parse(localStorage.getItem(resKey)) || {} } catch { return {} } };
+  const saveRes = r => { try { localStorage.setItem(resKey, JSON.stringify(r)) } catch {} };
+  async function loadPart(n) {
+    if (PART_CACHE[n]) return PART_CACHE[n];
+    try { const r = await fetch(`toeic/part${n}.json`); if (!r.ok) throw 0; PART_CACHE[n] = (await r.json()).sets || [] } catch { return null }
+    return PART_CACHE[n];
   }
-  // シャッフル: 押すたびに並べ直す(Part 1〜7 で共通)。「元の順」で戻す。聞いている途中なら、止めてから並べ直す
-  $("#btnPartShuffle").onclick = () => { stopAudio(); partRank = new Map(rows.map(r => [r.id, Math.random()])); renderPart(); window.scrollTo({ top: 0 }) };
+  const letters = "ABCD";
+  function setHtml(s, n, res) {
+    const hide = !!s.hide;
+    let h = `<div class="card prob" data-set="${esc(s.id)}"><div class="sub">${!(s.script || s.hide) ? "" : `<button type="button" class="sm from" data-play="${esc(s.id)}" title="音声を聞く(もう一度押すと止める)" aria-label="音声を聞く">▶</button> `}${n + 1}${s.title ? " ・ " + esc(s.title) : ""}</div>`;
+    if (s.scene) h += `<div class="scene">${esc(s.scene)}</div>`;
+    if (s.passage) h += s.passage.map(p => `<div class="pass">${p.label ? `<b>${esc(p.label)}</b>\n` : ""}${esc(p.text)}</div>`).join("");
+    if (s.script) h += `<details class="scr"><summary>スクリプトを見る</summary>${s.script.map(l => `<div class="sub"><b>${esc(l.sp)}:</b> ${esc(l.text)}</div>`).join("")}</details>`;
+    h += s.questions.map((q, qi) => {
+      const done = res[`${s.id}.${qi}`];
+      const choices = q.choices.map((c, i) => {
+        const cls = done == null ? "" : i === q.answer ? " ok" : i === done.pick ? " ng" : "";
+        return `<button class="choice${cls}" data-si="${esc(s.id)}" data-qi="${qi}" data-q="${i}"${done != null ? " disabled" : ""}>${letters[i]}${hide && done == null ? "" : ". " + esc(c)}</button>`;
+      }).join("");
+      const head = hide ? (done != null && q.q ? `<div class="sub">${esc(q.q)}</div>` : "") : (q.q ? `<div class="qh">${s.questions.length > 1 ? `<span class="sub">(${qi + 1})</span> ` : ""}${esc(q.q)}</div>` : "");
+      const exp = done != null ? (done.ok ? "正解。" : "不正解。") + (q.exp || "") : "";
+      return `<div class="q" data-qi="${qi}">${head}${choices}<div class="sub pres">${esc(exp)}</div></div>`;
+    }).join("");
+    return h + "</div>";
+  }
+  async function renderPart() {
+    const pn = +tab.slice(4), part = "Part " + pn, me = tab;
+    $("#btnPartShuffle").setAttribute("aria-pressed", String(!!partRank)); $("#btnPartUnshuffle").hidden = !partRank;
+    $("#partInfo").textContent = part + ": 読み込み中…";
+    const sets = await loadPart(pn); if (tab !== me) return;
+    if (!sets) { $("#partInfo").textContent = part; $("#partList").innerHTML = '<p class="sub">問題を読み込めませんでした。通信を確かめて、もう一度開いてください。</p>'; return }
+    partSets = sets.slice();
+    if (partRank) partSets.sort((a, b) => (partRank.get(a.id) ?? 2) - (partRank.get(b.id) ?? 2));
+    const res = loadRes(), nq = sets.reduce((a, s) => a + s.questions.length, 0);
+    let done = 0, ok = 0; for (const s of sets) s.questions.forEach((_, qi) => { const r = res[`${s.id}.${qi}`]; if (r) { done++; if (r.ok) ok++ } });
+    $("#partInfo").textContent = `${part}: ${sets.length} セット・${nq} 問${partRank ? "(シャッフル中)" : ""} ／ 解答 ${done} 問・正解 ${ok} 問`;
+    $("#partList").innerHTML = partSets.length ? partSets.map((s, n) => setHtml(s, n, res)).join("") : '<p class="sub">この Part の問題は、まだありません。</p>';
+  }
+  $("#btnPartShuffle").onclick = () => { stopAudio(); partRank = new Map(Object.values(PART_CACHE).flat().map(s => [s.id, Math.random()])); renderPart(); window.scrollTo({ top: 0 }) };
   $("#btnPartUnshuffle").onclick = () => { stopAudio(); partRank = null; renderPart() };
-  // ▶ で、その問題の英文(空所をうめた全文)を聞く。英文をなぞって選んだときも、「▶ 聞く」が出る
+  $("#btnPartReset").onclick = () => {
+    const pn = +tab.slice(4); if (!confirm(`Part ${pn} の解答の記録を消して、もう一度解けるようにします。よろしいですか?`)) return;
+    const res = loadRes(), ids = new Set((PART_CACHE[pn] || []).map(s => s.id));
+    for (const k of Object.keys(res)) if (ids.has(k.slice(0, k.lastIndexOf(".")))) delete res[k];
+    saveRes(res); stopAudio(); renderPart();
+  };
+  // 音声: Part1 = 選択肢 A〜D、Part2 = 質問 → 選択肢 A〜C、Part3・4 = 会話・説明文(話者で声の高さを変える)。もう一度押すと止める
   $("#partList").addEventListener("click", async e => {
-    const sb = e.target.closest("button[data-say]"); if (!sb) return;
-    const box = sb.closest(".prob"), was = box.classList.contains("now"); stopAudio();
+    const pb = e.target.closest("button[data-play]"); if (!pb) return;
+    const box = pb.closest(".prob"), was = box.classList.contains("now"); stopAudio();
     document.querySelectorAll("#partList .prob.now").forEach(x => x.classList.remove("now"));
-    const r = rows.find(x => x.id === sb.dataset.say); if (was || !r) return;
-    const me = playing; box.classList.add("now"); await say(r.text); if (me === playing) box.classList.remove("now");
+    const s = partSets.find(x => x.id === pb.dataset.play); if (was || !s) return;
+    const me = playing; box.classList.add("now");
+    if (s.script) for (const l of s.script) { if (me !== playing) break; await say(l.text, prefs.rate, l.sp === "W" ? 1.25 : l.sp === "M" ? 0.8 : 1); await sleep(350, me) }
+    else if (s.hide) { const q = s.questions[0]; if (q.q) { await say(q.q); await sleep(500, me) } for (let i = 0; i < q.choices.length && me === playing; i++) { await say(`${letters[i]}. ${q.choices[i]}`); await sleep(500, me) } }
+    if (me === playing) box.classList.remove("now");
   });
-  $("#partList").addEventListener("click", async e => {
-    const b = e.target.closest("button[data-q]"), box = b && b.closest(".prob"); if (!box || box.dataset.done) return;
-    const r = rows.find(x => x.id === box.dataset.id); if (!r || !r.quiz) return;
-    const ok = +b.dataset.q === r.quiz.answer; box.dataset.done = "1";
-    box.querySelectorAll("button[data-q]").forEach(x => { if (+x.dataset.q === r.quiz.answer) x.classList.add("ok"); else if (x === b) x.classList.add("ng") });
-    box.querySelector(".pres").textContent = (ok ? "正解。" : "不正解。") + r.quiz.explanation;
-    await countReview(r, "sentences"); // 4択に答えると、復習1回(文法タブと同じ)
-    if (!ok) { await addMistake(r, r.quiz.type, "quiz"); toast("間違いを記録しました(分類: " + Clean.catOf(r.quiz.type) + ")") }
+  $("#partList").addEventListener("click", e => {
+    const b = e.target.closest("button[data-q]"), id = b && b.dataset.si; if (!b || b.disabled) return;
+    const s = partSets.find(x => x.id === id), qi = +b.dataset.qi, q = s && s.questions[qi]; if (!q) return;
+    const pick = +b.dataset.q, ok = pick === q.answer, res = loadRes(); res[`${id}.${qi}`] = { pick, ok }; saveRes(res);
+    const box = b.closest(".prob"), y = window.scrollY;
+    box.outerHTML = setHtml(s, partSets.indexOf(s), res); window.scrollTo({ top: y });
+    const all = PART_CACHE[+tab.slice(4)] || [], n = all.reduce((a, t) => a + t.questions.length, 0);
+    let d = 0, k = 0; for (const t of all) t.questions.forEach((_, i) => { const r = res[`${t.id}.${i}`]; if (r) { d++; if (r.ok) k++ } });
+    $("#partInfo").textContent = $("#partInfo").textContent.replace(/解答 \d+ 問・正解 \d+ 問/, `解答 ${d} 問・正解 ${k} 問`);
   });
 
   // ---------- 英文学習 ----------
@@ -682,10 +726,10 @@
   const sayTimed = async (text, rate) => { const t0 = performance.now(); await say(text, rate); return performance.now() - t0 };
   const pst = msg => { $("#disp").classList.toggle("playing", !!msg); const e = $("#pstatus"); e.hidden = !msg; e.textContent = msg || ""; if (!msg) { $("#pickPst").textContent = ""; document.querySelectorAll("#pickList .row-i.now").forEach(x => x.classList.remove("now")) } };
   function stopAudio() { playing++; pst(null); try { speechSynthesis.cancel() } catch {} const r = cur(); if (r && tab === "study" && study.unit === "sentence") renderDisp(r) }
-  function say(text, rate = prefs.rate) {
+  function say(text, rate = prefs.rate, pitch = 1) {
     return new Promise(res => {
       if (!("speechSynthesis" in window)) return res();
-      const u = new SpeechSynthesisUtterance(text); u.lang = "en-US"; u.rate = rate;
+      const u = new SpeechSynthesisUtterance(text); u.lang = "en-US"; u.rate = rate; u.pitch = pitch;
       const v = speechSynthesis.getVoices().find(x => /^en[-_]US/i.test(x.lang)) || speechSynthesis.getVoices().find(x => /^en/i.test(x.lang));
       if (v) u.voice = v;
       u.onend = u.onerror = () => res();

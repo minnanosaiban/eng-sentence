@@ -1,0 +1,20 @@
+{"part":4,"sets":[
+{"id":"p4-01","title":"説明文(店内放送)","script":[
+{"sp":"W","text":"Attention, shoppers. Thank you for visiting Greenfield Market. Our weekly fruit sale begins today at four o'clock in the produce section. All apples and oranges will be thirty percent off until closing time. Also, please remember that our parking lot will be closed for repaving this Saturday and Sunday, so we recommend using the lot behind the library. Thank you, and enjoy your shopping."}],
+"questions":[
+{"q":"Where is the announcement most likely being made?","choices":["At a library","At a farm","At a supermarket","At a parking garage"],"answer":2,"exp":"Greenfield Market で、青果売り場(produce section)のセールを案内しているので、スーパーマーケット。"},
+{"q":"What will happen at four o'clock?","choices":["A store will close.","A sale will begin.","A parking lot will open.","A new product will be introduced."],"answer":1,"exp":"The weekly fruit sale begins today at four o'clock と言っている。"},
+{"q":"What are listeners advised to do on the weekend?","choices":["Visit the library","Shop before closing time","Park in a different place","Buy fruit online"],"answer":2,"exp":"週末は駐車場が閉鎖されるため、図書館の裏の駐車場を使うよう勧めている(using the lot behind the library)。"}]},
+{"id":"p4-02","title":"説明文(留守番電話)","script":[
+{"sp":"M","text":"Hello, Ms. Brown. This is Kevin Walsh from Walsh Printing. I'm calling about the brochures you ordered last week. Unfortunately, our machine broke down yesterday, so the order will be delayed by two days. I'm very sorry for the inconvenience. We can deliver them to your office on Friday morning instead of Wednesday. If that doesn't work for you, please call me back at five five five, zero one four two before noon today. Thank you."}],
+"questions":[
+{"q":"Why is the speaker calling?","choices":["To confirm an order","To report a delay","To request a payment","To offer a discount"],"answer":1,"exp":"機械の故障で注文が 2 日遅れると伝えるための電話(the order will be delayed)。"},
+{"q":"When will the order be delivered?","choices":["Wednesday morning","Wednesday afternoon","Friday morning","Friday afternoon"],"answer":2,"exp":"水曜の代わりに金曜の午前に届けると言っている(on Friday morning instead of Wednesday)。"},
+{"q":"What does the speaker ask Ms. Brown to do if there is a problem?","choices":["Visit the printing shop","Send an e-mail","Call him back","Choose another design"],"answer":2,"exp":"都合が悪ければ、正午までに電話をかけ直すよう頼んでいる(please call me back)。"}]},
+{"id":"p4-03","title":"説明文(会議での発表)","script":[
+{"sp":"W","text":"Good morning, everyone, and thank you for coming to the quarterly staff meeting. I'd like to begin with some good news. Our online sales increased by fifteen percent compared with last quarter, mainly thanks to the new mobile app. To keep this growth going, we'll be hiring three more customer support staff next month. Applications are open now on our internal website. After my talk, Mr. Gomez will explain the schedule for the app's next update."}],
+"questions":[
+{"q":"What is the main topic of the talk?","choices":["A new product design","Recent business results","An office relocation","A training program"],"answer":1,"exp":"オンライン売上が前期比 15% 増えたという、業績の報告が中心。"},
+{"q":"What will the company do next month?","choices":["Release a new app","Close an office","Hire more employees","Raise prices"],"answer":2,"exp":"カスタマーサポートの人員を 3 人増やす(hiring three more customer support staff)と言っている。"},
+{"q":"What will Mr. Gomez talk about?","choices":["A hiring process","Sales figures","An update schedule","A website redesign"],"answer":2,"exp":"最後に、アプリの次の更新のスケジュールを説明すると言っている。"}]}
+]}

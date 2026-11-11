@@ -1,0 +1,14 @@
+{"part":6,"sets":[
+{"id":"p6-01","title":"メール","passage":[{"label":"To: All Staff / From: Human Resources / Subject: Parking Changes","text":"Dear colleagues,\n\nStarting next Monday, the east parking lot will be closed for repairs. The work [1] about three weeks. During this time, employees are asked to park in the north lot, which has [2] spaces than usual because of the construction. [3], we encourage everyone to carpool or use public transportation whenever possible. Shuttle buses will run between the train station and the main entrance every fifteen minutes. [4]\n\nThank you for your cooperation.\n\nHuman Resources"}],
+"questions":[
+{"q":"[1]","choices":["took","is taking","will take","has taken"],"answer":2,"exp":"来週月曜から始まる工事なので、未来を表す will take が入る。"},
+{"q":"[2]","choices":["fewer","least","fewest","less"],"answer":0,"exp":"後ろの spaces は数えられる名詞の複数形で、than があるので比較級の fewer。less は数えられない名詞に使う。"},
+{"q":"[3]","choices":["Instead","Therefore","However","Otherwise"],"answer":1,"exp":"駐車場が減るという前の内容を受けて、「そのため」相乗りや公共交通を勧めている。Therefore が自然。"},
+{"q":"[4]","choices":["A schedule will be posted on the staff website.","The new building will open in July.","Please submit your parking applications by Friday.","Several employees have received awards."],"answer":0,"exp":"シャトルバスの話の次に、時刻表を掲示するという案内が自然につながる。他は話題が合わない。"}]},
+{"id":"p6-02","title":"お知らせ","passage":[{"label":"Notice to Members — Riverside Fitness Center","text":"We are pleased to announce that Riverside Fitness Center will [1] a new swimming pool on the second floor this fall. The pool will be open to all members at no extra charge. [2] In addition, we will be offering free swimming lessons for beginners every Saturday morning. Space in these classes is [3], so we recommend that you sign up early. [4], you may do so at the front desk or on our website.\n\nWe look forward to seeing you at the pool!"}],
+"questions":[
+{"q":"[1]","choices":["open","opening","be opened","opened"],"answer":0,"exp":"will に続くので、動詞の原形 open が入る。open a new pool「新しいプールを開設する」。"},
+{"q":"[2]","choices":["Membership fees will remain the same.","The first floor is under repair.","Our instructors are looking for a job.","The gym will close at nine o'clock."],"answer":0,"exp":"「追加料金なし」の話につながるのは、会費は変わらないという内容。"},
+{"q":"[3]","choices":["limited","limiting","limit","limits"],"answer":0,"exp":"be 動詞の後ろの補語。「定員が限られている」の意味になる形容詞(過去分詞)の limited。"},
+{"q":"[4]","choices":["To register","Registered","Registration","Having registered"],"answer":0,"exp":"「申し込むには、受付またはウェブサイトでできる」。目的を表す不定詞 To register が入る。"}]}
+]}
