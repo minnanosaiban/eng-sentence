@@ -333,3 +333,6 @@ div.elsrow{margin-top:6px}
 .vrow.done .vh b{color:var(--sub)}
 .row-i .t > .m.jx{display:block;margin:6px 0 8px;line-height:1.5}
 .row-i .t > .m.jx[hidden]{display:none}
+
+.jaedit{margin-top:16px}
+.jaedit textarea{display:block;width:100%;margin-top:4px;font:inherit;line-height:1.6}

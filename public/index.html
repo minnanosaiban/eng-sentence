@@ -348,7 +348,7 @@
   <!-- Part 1〜7: 本番の形式の問題(public/toeic/partN.json)を、縦に続ける -->
   <section id="tab-part" class="tab" hidden>
     <p id="partInfo" class="sub"></p>
-    <div class="row">
+    <div class="row" style="margin-bottom:12px">
       <button id="btnPartShuffle" class="sm" aria-pressed="false" title="この Part の問題を、ランダムな順に並べ替えます(押すたびに並べ直します)">シャッフル</button>
       <button id="btnPartUnshuffle" class="sm" hidden title="シャッフルをやめて、元の順に戻します">元の順</button>
       <button id="btnPartReset" class="sm" title="この Part の解答の記録を消して、もう一度解けるようにします">解答をやり直す</button>
@@ -404,6 +404,7 @@
         <div id="jaBox" class="jabox"></div>
         <div id="disp"></div>
         <div id="aux"></div>
+        <div class="jaedit"><label class="sub" for="jaEdit">和訳(自分で直せます)</label><textarea id="jaEdit" rows="2" maxlength="500" placeholder="全文の和訳"></textarea></div>
         <div class="row">
           <label class="inl">状態
             <select id="stSel"><option value="new">未学習</option><option value="learning">学習中</option><option value="mastered">覚えた</option></select>
