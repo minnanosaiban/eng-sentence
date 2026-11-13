@@ -347,7 +347,8 @@
   // 文の要素(S V O C M)ごとに / で区切り、下に記号を付けた表示(解説の「文型」と、英文タブの一覧で共通)
   const elsInner = (els, vTag = "") => { const vi = vTag ? els.findIndex(e => e.role === "V") : -1; return els.map((e, i) => (i ? '<span class="slsep">/</span>' : "") + `<span class="el-i" title="${esc(e.note || "")}"><span class="el-t">${esc(e.text)}</span><span class="el-r">${esc(e.role)}${i === vi ? vTag : ""}</span></span>`).join("") };
   const elsShow = new Set(); // 「文」ボタンで、S V O C M の区切りを出している英文(初期は、どれも出さない。上の「文型」ボタンは、SV などの枠を出すだけ)
-  const jaText = r => (r.ja ? esc(r.ja) : `<span class="sub">(和訳なし)</span>`); // 英文タブの和訳。英文なら、自分で直せる(✎)
+  const slashJa = r => (r.slash && r.slash.length && r.slash.every(s => s.ja) ? r.slash.map(s => s.ja.trim()).join("/") : ""); // 区切りごとの訳を「/」でつなげた和訳(すべての区切りに訳があるとき)
+  const jaText = r => { const j = slashJa(r) || r.ja; return j ? esc(j) : `<span class="sub">(和訳なし)</span>` }; // 英文タブの和訳。英文なら、自分で直せる(✎)
   const jaEdit = r => (unit === "sentence" ? ` <button type="button" class="jt" data-jedit="${r.id}" title="和訳を直す" aria-label="和訳を直す">✎</button>` : "");
   const jaShow = new Set(); // 「訳」ボタンで和訳を出している英文(初期は、どれも和訳を隠す)
   function pickRow(r) {
