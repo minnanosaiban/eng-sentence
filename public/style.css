@@ -336,3 +336,11 @@ div.elsrow{margin-top:6px}
 
 .jaedit{margin-top:16px}
 .jaedit textarea{display:block;width:100%;margin-top:4px;font:inherit;line-height:1.6}
+
+/* ＋ で開く追加フォーム */
+.addform{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.addform[hidden]{display:none}
+.addform input[type=text],.addform textarea{width:100%}
+.addform .row{margin-top:0}
+#apChoices{display:flex;flex-direction:column;gap:6px}
+.tag.noexpl{background:transparent;border:1px dashed var(--line);color:var(--sub,inherit)}

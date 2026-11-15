@@ -26,3 +26,14 @@ node tools/inbox-send.mjs <ファイル> [--group グループ名] [--dry-run]
 `tools/inbox.json`(Git には入らない)に、アプリの「同期 → 受信箱 → 受信用の設定を発行する」で表示された3項目(`url`、`token`、`pub`)を保存してもらう。
 `token` は「預けること」しかできない(読み出し不可)。`pub` は暗号化用の公開鍵。**パスフレーズや同期キーは、Claude Code に渡さない**(要らない)。
 ファイルが無いときは、上の手順をお願いする。`tools/inbox.example.json` は書き方の見本。
+
+# 解説のない英文に、解説を足す(週1回ほど、利用者が依頼する)
+
+アプリの「英文」タブの「＋ 英文」で足した英文(や、単語帳の「＋」で足した短文)には、和訳しか無く、**解説なし**の印が付く(解説=文構造・文法の解説・TOEIC・単語・IU・4択などが足りないもの。判定は `needsAI`)。
+
+1. 利用者が、「英文」タブで「解説: 解説なし」に絞り、↓ボタンで `.txt`(1行=1文)を保存して、このリポジトリの外(または `tools/` の Git に入らない場所)に置く。
+2. その英文を読み、`public/samples/` の解析済み JSON と同じ形で `{sentences:[{text, level, part, analysis:{translation, slash, words, phrases, iu, vocab, pattern, clauses, elements, tense, gtags, grammar, toeic}, quiz}]}` を作る(形の詳細は `public/js/ai.js` のプロンプトと `public/js/clean.js` の検査)。和訳は、利用者が書いたものがあれば、そのまま使う。
+3. `node tools/inbox-send.mjs <ファイル> --dry-run` で確かめてから送る。足りない項目だけが足され、利用者の和訳・状態は上書きされない。
+4. 利用者の英文を、このリポジトリにコミットしない(公開リポジトリ)。
+
+「＋ 問題」(Part 1〜7)で足した問題は、その端末の IndexedDB にだけ保存され、同期・受信箱の対象ではない。

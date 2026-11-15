@@ -316,12 +316,13 @@
     shuf = new Map(ids.map((id, i) => [id, i]));
   };
   function filtered() {
-    const q =$("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" && $("#flabel").value ? [$("#flabel").value] : [];
+    const q =$("#fq").value.trim().toLowerCase(), g = $("#fgroup").value, ln = $("#flen").value, ps = $("#fpos").value, lb = unit === "sentence" && $("#flabel").value ? [$("#flabel").value] : [], fx = $("#fexpl").value;
     const wc = r => r.text.split(" ").length, where = r => (r.n === 1 || r.idx === 0 ? "first" : r.idx === r.n - 1 ? "last" : "mid");
     const out = tbl(unit).filter(r =>
       (!isCard(unit) || unit === "word" || ((!ln || (ln === "s" ? wc(r) <= 2 : ln === "m" ? wc(r) >= 3 && wc(r) <= 5 : wc(r) >= 6)) && (!ps || where(r) === ps))) &&
       (!q || r.text.toLowerCase().includes(q) || (r.ja || "").includes(q)) &&
       (!lb.length || lb.some(l => (l === "none" ? !r.label : String(r.label) === l))) &&
+      (unit !== "sentence" || !fx || (fx === "no") === !!needsAI(r)) &&
       inGroup(r, g));
     return shuf ? out.sort((a, b) => (shuf.get(a.id) ?? 1e9) - (shuf.get(b.id) ?? 1e9)) : out;
   }
@@ -360,7 +361,7 @@
     const gt = unit === "sentence" && pickOn("g:") ? gAll.filter(x => x.k !== "自他" && pickOn("g:" + x.k)) : [];
     const gtag = x => `<span class="tag gm" title="${x.k}">${esc(x.t + (x.w ? " " + x.w : ""))}</span>${Clean.gjaOf(x) ? `<span class="gja">${esc(Clean.gjaOf(x))}</span>` : ""}`, // 学習タブと同じく、枠の右に、日本語の意味を灰色で
        gHead = x => x.k === "文型" || x.k === "文の種類"; // 文型 → 文の種類 → 態・時制・相 → ほかの文法 の順
-    const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `${tnsChip}${r.ja ? `<span class="gja">${esc(jaTail(r.ja))}</span>` : ""}${tt.sub.map(s => `<span class="gja">${esc(s.conj || "")}</span><span class="tag tns">${s.voice}・${s.tns}・${s.asp}</span>${s.ja ? `<span class="gja">${esc(s.ja)}</span>` : ""}`).join("")}` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
+    const tags = `${gt.filter(gHead).map(gtag).join("")}${tt ? `${tnsChip}${r.ja ? `<span class="gja">${esc(jaTail(r.ja))}</span>` : ""}${tt.sub.map(s => `<span class="gja">${esc(s.conj || "")}</span><span class="tag tns">${s.voice}・${s.tns}・${s.asp}</span>${s.ja ? `<span class="gja">${esc(s.ja)}</span>` : ""}`).join("")}` : ""}${gt.filter(x => !gHead(x)).map(gtag).join("")}${prefs.pick.groups ? `${part ? `<span class="tag">${part}</span>` : ""}${r.level ? `<span class="tag">${r.level}</span>` : ""}${unit === "sentence" && r.label ? `<span class="tag">ラベル ${r.label}</span>` : ""}` : ""}${unit === "sentence" && needsAI(r) ? '<span class="tag noexpl" title="解説(文構造・文法・TOEIC・単語など)がまだ足りません。Claude Code に頼んで足せます">解説なし</span>' : ""}${chunk ? `<span class="tag">${r.idx + 1}/${r.n}番目・${r.text.split(" ").length}語</span>` : ""}${prefs.pick.groups ? (r.groups || []).map(g => `<span class="tag">${esc(g)}</span>`).join("") : ""}`;
     const ja = (r.ja || unit === "sentence") ? `<span class="m jx"${jaShow.has(r.id) ? "" : " hidden"}><br>${jaText(r)}${jaEdit(r)}</span>` : "";
     const body = chunk
       ? `${esc(r.text)} ${r.ipa ? `<span class="ipa">/${esc(r.ipa)}/</span>` : ""}${ja}`
@@ -386,6 +387,7 @@
     pickInfo(list.length);
   }
   function pickInfo(shown) {
+    $("#explInfo").textContent = `解説なし ${rows.filter(needsAI).length} 文`;
     $("#pickInfo").textContent = `表示 ${shown ?? filtered().length} 件 / 全 ${tbl(unit).length} 件`;
     $("#btnDelSel").disabled = sel[unit].size === 0;
     { const t = sel[unit].size ? `表示中の ${sel[unit].size} 件を削除` : "表示中のものを削除"; $("#btnDelSel").title = t; $("#btnDelSel").setAttribute("aria-label", t) }
@@ -394,7 +396,36 @@
   $("#pickMenu").addEventListener("click", e => { const b = e.target.closest("button[data-p]"); if (b) { prefs.pick[b.dataset.p] = !pickOn(b.dataset.p); savePrefs(); renderPick() } });
   $("#segUnit").onclick = e => { const b = e.target.closest("button[data-u]"); if (b) { unit = b.dataset.u; renderPick() } };
   $("#pickList").onchange = e => { const c = e.target.closest("input[data-id]"); if (!c) return; c.checked ? sel[unit].add(c.dataset.id) : sel[unit].delete(c.dataset.id); pickInfo() };
-  ["#fq", "#fgroup", "#flabel", "#flen", "#fpos"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
+  ["#fq", "#fgroup", "#flabel", "#flen", "#fpos", "#fexpl"].forEach(s => { $(s).addEventListener("input", renderPick); $(s).addEventListener("input", () => stopAudio()) });
+  // ---------- 追加(＋ボタン): 英文・単語帳・Part ----------
+  function toggleForm(btn, box, focus) {
+    const open = $(box).hidden; $(box).hidden = !open; $(btn).setAttribute("aria-expanded", String(open));
+    if (open && focus) $(focus).focus();
+  }
+  const oneLine = s => String(s || "").replace(/\s+/g, " ").trim();
+  // 英文 + 和訳。解説は付けない(あとで Claude Code に頼んで足す)ので、一覧に「解説なし」と出る
+  $("#btnAddSent").onclick = () => toggleForm("#btnAddSent", "#addSent", "#addSentText");
+  $("#addSentCancel").onclick = () => toggleForm("#btnAddSent", "#addSent");
+  $("#addSentOk").onclick = async () => {
+    const text = oneLine($("#addSentText").value), ja = oneLine($("#addSentJa").value), g = oneLine($("#addSentGroup").value);
+    if (!text) return toast("英文を入力してください");
+    const had = rowOf(text);
+    await addFrom({ sentences: [{ text, ja, groups: g ? [g] : [] }] }, "追加", { tag: "追加" });
+    const r = rowOf(text); if (r && !had && r.ja) { r.verified = true; await Store.put(r, "sentences") } // 自分で書いた和訳は、確認済み
+    $("#addSentText").value = ""; $("#addSentJa").value = ""; $("#addSentText").focus();
+  };
+  // 単語・熟語 + 意味 + 短文
+  $("#btnAddWord").onclick = () => toggleForm("#btnAddWord", "#addWord", "#addWordText");
+  $("#addWordCancel").onclick = () => toggleForm("#btnAddWord", "#addWord");
+  $("#addWordOk").onclick = async () => {
+    const text = oneLine($("#addWordText").value), ja = oneLine($("#addWordJa").value), ex = oneLine($("#addWordEx").value);
+    if (!text) return toast("単語・熟語を入力してください");
+    const data = { words: [{ word: text, meaning: ja, ex, groups: ["追加"] }] };
+    if (ex && $("#addWordSent").checked) data.sentences = [{ text: ex, groups: ["追加"] }];
+    await addFrom(data, "追加", { tag: "追加" });
+    $("#addWordText").value = ""; $("#addWordJa").value = ""; $("#addWordEx").value = ""; $("#addWordText").focus();
+  };
+
   // ---------- 削除 ----------
   // 英文を消すと、その英文から作った意味句・IU も消す(単語は、ほかの英文でも使うので、残す)。同期している端末からも消える
   async function deleteItems(u, ids) {
@@ -465,15 +496,18 @@
   const resKey = "eng-sentence-toeic-result";
   const loadRes = () => { try { return JSON.parse(localStorage.getItem(resKey)) || {} } catch { return {} } };
   const saveRes = r => { try { localStorage.setItem(resKey, JSON.stringify(r)) } catch {} };
+  // 自分で追加した問題(この端末の IndexedDB の meta "userParts")。同梱の問題のあとに並ぶ
+  let userParts = {}; const PART_STATIC = {};
   async function loadPart(n) {
-    if (PART_CACHE[n]) return PART_CACHE[n];
-    try { const r = await fetch(`toeic/part${n}.json`); if (!r.ok) throw 0; PART_CACHE[n] = (await r.json()).sets || [] } catch { return null }
-    return PART_CACHE[n];
+    if (!PART_STATIC[n]) {
+      try { const r = await fetch(`toeic/part${n}.json`); if (!r.ok) throw 0; PART_STATIC[n] = (await r.json()).sets || [] } catch { return null }
+    }
+    return (PART_CACHE[n] = [...PART_STATIC[n], ...(userParts[n] || [])]);
   }
   const letters = "ABCD";
   function setHtml(s, n, res) {
     const hide = !!s.hide;
-    let h = `<div class="card prob" data-set="${esc(s.id)}"><div class="sub">${!(s.script || s.hide) ? "" : `<button type="button" class="sm from" data-play="${esc(s.id)}" title="音声を聞く(もう一度押すと止める)" aria-label="音声を聞く">▶</button> `}${n + 1}${s.title ? " ・ " + esc(s.title) : ""}</div>`;
+    let h = `<div class="card prob" data-set="${esc(s.id)}"><div class="sub">${!(s.script || s.hide) ? "" : `<button type="button" class="sm from" data-play="${esc(s.id)}" title="音声を聞く(もう一度押すと止める)" aria-label="音声を聞く">▶</button> `}${n + 1}${s.title ? " ・ " + esc(s.title) : ""}${s.user ? ` <span class="tag">追加</span> <button type="button" class="sm danger" data-delset="${esc(s.id)}" title="この問題を削除">削除</button>` : ""}</div>`;
     if (s.scene) h += `<div class="scene">${esc(s.scene)}</div>`;
     if (s.passage) h += s.passage.map(p => `<div class="pass">${p.label ? `<b>${esc(p.label)}</b>\n` : ""}${esc(p.text)}</div>`).join("");
     if (s.script) h += `<details class="scr"><summary>スクリプトを見る</summary>${s.script.map(l => `<div class="sub"><b>${esc(l.sp)}:</b> ${esc(l.text)}</div>`).join("")}</details>`;
@@ -493,6 +527,7 @@
     const pn = +tab.slice(4), part = "Part " + pn, me = tab;
     $("#btnPartShuffle").setAttribute("aria-pressed", String(!!partRank)); $("#btnPartUnshuffle").hidden = !partRank;
     $("#partInfo").textContent = part + ": 読み込み中…";
+    if (apFor !== pn) buildPartForm(pn);
     const sets = await loadPart(pn); if (tab !== me) return;
     if (!sets) { $("#partInfo").textContent = part; $("#partList").innerHTML = '<p class="sub">問題を読み込めませんでした。通信を確かめて、もう一度開いてください。</p>'; return }
     partSets = sets.slice();
@@ -510,6 +545,52 @@
     for (const k of Object.keys(res)) if (ids.has(k.slice(0, k.lastIndexOf(".")))) delete res[k];
     saveRes(res); stopAudio(); renderPart();
   };
+  // ＋ 問題: 1セット=1問で追加する。Part ごとに、入力欄の意味が変わる
+  const PCFG = {
+    1: { hide: true, body: "写真の場面の説明(例: 作業服の男性が、はしごで壁を塗っている)", key: "scene", n: 4 },
+    2: { hide: true, q: "質問文(英語)", n: 3 },
+    3: { body: "会話のスクリプト(1行=1発言。行頭に M: か W: を付けると、男声・女声で読み上げ)", key: "script", q: "設問(英語)", n: 4 },
+    4: { body: "説明文のスクリプト(1行=1段落。M: か W: を付けると、声を変えられます)", key: "script", q: "設問(英語)", n: 4 },
+    5: { audio: false, q: "空所(______)のある英文", n: 4, blank: true },
+    6: { body: "文章(空所は [1] [2] のように書く)", key: "passage", q: "この問いが指す空所(例: [1])", n: 4 },
+    7: { body: "文章(メール・広告・記事など)", key: "passage", q: "設問(英語)", n: 4 }
+  };
+  let apFor = 0;
+  function buildPartForm(pn) {
+    apFor = pn; const c = PCFG[pn];
+    $("#addPart").hidden = true; $("#btnAddPart").setAttribute("aria-expanded", "false");
+    $("#apBody").hidden = !c.body; $("#apBody").placeholder = c.body || ""; $("#apBody").value = "";
+    $("#apQ").hidden = !c.q; $("#apQ").placeholder = c.q || ""; $("#apQ").value = ""; $("#apTitle").value = ""; $("#apExp").value = "";
+    $("#apChoices").innerHTML = Array.from({ length: c.n }, (_, i) => `<input type="text" class="apc" maxlength="120" placeholder="選択肢 ${letters[i]}">`).join("");
+    $("#apAns").innerHTML = Array.from({ length: c.n }, (_, i) => `<option value="${i}">${letters[i]}</option>`).join("");
+  }
+  $("#btnAddPart").onclick = () => toggleForm("#btnAddPart", "#addPart", "#apBody");
+  $("#apCancel").onclick = () => toggleForm("#btnAddPart", "#addPart");
+  $("#apOk").onclick = async () => {
+    const pn = +tab.slice(4), c = PCFG[pn]; if (!c) return;
+    const choices = [...document.querySelectorAll("#apChoices .apc")].map(i => oneLine(i.value)), body = $("#apBody").value.trim(), q = oneLine($("#apQ").value);
+    if (c.body && !body) return toast("文章・場面を入力してください");
+    if (c.q && pn !== 6 && !q) return toast("問題文を入力してください");
+    if (choices.some(x => !x) || new Set(choices.map(x => x.toLowerCase())).size !== choices.length) return toast(`選択肢を、重ならないように${c.n}つ入力してください`);
+    if (c.blank && !q.includes("______")) return toast("英文には、空所を ______(アンダーバー6つ)で入れてください");
+    const s = { id: "u-" + Clean.uid(), user: true, questions: [{ choices, answer: +$("#apAns").value, exp: $("#apExp").value.trim() }] };
+    if (oneLine($("#apTitle").value)) s.title = oneLine($("#apTitle").value);
+    if (q) s.questions[0].q = q;
+    if (c.hide) s.hide = true; if (c.audio === false) s.audio = false;
+    if (c.key === "scene") s.scene = body;
+    else if (c.key === "passage") s.passage = [{ text: body }];
+    else if (c.key === "script") s.script = body.split(/\r?\n/).map(l => l.trim()).filter(Boolean).map(l => { const m = /^([MW])\s*[:：]\s*(.*)$/i.exec(l); return { sp: m ? m[1].toUpperCase() : "M", text: m ? m[2] : l } }).filter(l => l.text);
+    (userParts[pn] = userParts[pn] || []).push(s);
+    try { await Store.setMeta("userParts", userParts) } catch (e) { userParts[pn].pop(); return toast("保存できませんでした: " + e.message) }
+    buildPartForm(pn); await renderPart(); toast(`Part ${pn} に問題を追加しました`);
+  };
+  $("#partList").addEventListener("click", async e => {
+    const b = e.target.closest("button[data-delset]"); if (!b) return;
+    const pn = +tab.slice(4), id = b.dataset.delset;
+    if (!confirm("追加した問題を削除します。元に戻せません。よろしいですか?")) return;
+    userParts[pn] = (userParts[pn] || []).filter(s => s.id !== id);
+    await Store.setMeta("userParts", userParts); renderPart();
+  });
   // 音声: Part1 = 選択肢 A〜D、Part2 = 質問 → 選択肢 A〜C、Part3・4 = 会話・説明文(話者で声の高さを変える)。もう一度押すと止める
   $("#partList").addEventListener("click", async e => {
     const pb = e.target.closest("button[data-play]"); if (!pb) return;
@@ -1103,6 +1184,7 @@
     try {
       await AI.load();
       reviewLog = await Store.getMeta("log", {}) || {};
+      { const up = await Store.getMeta("userParts", {}); if (up && typeof up === "object") userParts = up }
       rows = await Store.all("sentences"); words = await Store.all("words"); chunks = await Store.all("chunks");
       const p = await Store.getMeta("prefs", null);
       if (p && typeof p === "object") prefs = { ...prefs, ...p, aux: { ...prefs.aux, ...(p.aux || {}) }, waux: { ...prefs.waux, ...(p.waux || {}) }, sh: { ...prefs.sh, ...(p.sh || {}) }, gs: { ...prefs.gs, ...(p.gs || {}) }, pick: { ...prefs.pick, ...(p.pick || {}) }, view: { ...prefs.view, ...(p.view || {}) } };

@@ -248,6 +248,20 @@
           <option value="">位置: すべて</option><option value="first">文頭</option><option value="mid">文中</option><option value="last">文末</option>
         </select>
       </div>
+      <div class="row wrap">
+        <button id="btnAddSent" class="sm" aria-expanded="false" aria-controls="addSent" title="英文と和訳を追加します">＋ 英文</button>
+        <select id="fexpl" aria-label="解説の有無" title="解説(文構造・文法・TOEIC・単語など)が無い英文だけを出せます">
+          <option value="">解説: すべて</option><option value="no">解説なし</option><option value="yes">解説あり</option>
+        </select>
+        <span id="explInfo" class="sub"></span>
+      </div>
+      <div id="addSent" class="addform" hidden>
+        <textarea id="addSentText" rows="2" placeholder="英文(1文)" maxlength="500"></textarea>
+        <input id="addSentJa" type="text" placeholder="和訳(任意)" maxlength="500">
+        <input id="addSentGroup" type="text" placeholder="グループ名(任意)" maxlength="40">
+        <div class="row"><button id="addSentOk" class="pri">追加</button><button id="addSentCancel">閉じる</button></div>
+        <p class="sub">追加した英文は「解説なし」になります。解説は、あとで Claude Code に頼んで足せます。</p>
+      </div>
       <p id="pickInfo" class="sub"></p>
     </div>
     <!-- 固定メニュー(スクロールしても、上に残る) -->
@@ -287,7 +301,15 @@
       </div>
       <label class="inl"><input type="checkbox" id="vHide"> 意味・例文を隠して確認する</label>
       <button id="vTxt" class="sm" title="いま表示している単語を、.txt(1行=1語)でダウンロードします">.txt保存</button>
+      <button id="btnAddWord" class="sm" aria-expanded="false" aria-controls="addWord" title="単語・熟語と、それを使った短文を追加します">＋ 追加</button>
       <span id="vInfo" class="sub"></span>
+    </div>
+    <div id="addWord" class="card addform" hidden>
+      <input id="addWordText" type="text" placeholder="単語・熟語(例: in charge of)" maxlength="100">
+      <input id="addWordJa" type="text" placeholder="意味(任意)" maxlength="300">
+      <textarea id="addWordEx" rows="2" placeholder="その単語・熟語を使った短文(任意)" maxlength="500"></textarea>
+      <label class="inl"><input type="checkbox" id="addWordSent" checked> この短文を「英文」にも追加する</label>
+      <div class="row"><button id="addWordOk" class="pri">追加</button><button id="addWordCancel">閉じる</button></div>
     </div>
     <div id="vList" class="list"></div>
     <p class="sub">英文の語や熟語をなぞって選び、「＋ 単語帳」を押すと、ここに入ります。意味・メモは、自分で書き込めます。</p>
@@ -352,6 +374,17 @@
       <button id="btnPartShuffle" class="sm" aria-pressed="false" title="この Part の問題を、ランダムな順に並べ替えます(押すたびに並べ直します)">シャッフル</button>
       <button id="btnPartUnshuffle" class="sm" hidden title="シャッフルをやめて、元の順に戻します">元の順</button>
       <button id="btnPartReset" class="sm" title="この Part の解答の記録を消して、もう一度解けるようにします">解答をやり直す</button>
+      <button id="btnAddPart" class="sm" aria-expanded="false" aria-controls="addPart" title="この Part に、問題を1問追加します">＋ 問題</button>
+    </div>
+    <div id="addPart" class="card addform" hidden>
+      <input id="apTitle" type="text" placeholder="タイトル(任意)" maxlength="60">
+      <textarea id="apBody" rows="4" maxlength="3000"></textarea>
+      <input id="apQ" type="text" maxlength="300">
+      <div id="apChoices"></div>
+      <label class="inl">正解 <select id="apAns"></select></label>
+      <textarea id="apExp" rows="2" placeholder="解説(任意)" maxlength="1200"></textarea>
+      <div class="row"><button id="apOk" class="pri">追加</button><button id="apCancel">閉じる</button></div>
+      <p class="sub">追加した問題は、この端末だけに保存されます(同期はされません)。「すべて削除」の対象にもなりません。</p>
     </div>
     <div id="partList" class="list"></div>
   </section>
