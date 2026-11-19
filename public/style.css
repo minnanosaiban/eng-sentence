@@ -343,3 +343,8 @@ div.elsrow{margin-top:6px}
 .addform .row{margin-top:0}
 #apChoices{display:flex;flex-direction:column;gap:6px}
 .tag.noexpl{background:transparent;border:1px dashed var(--line);color:var(--sub,inherit)}
+
+.gpt.key{border-left:3px solid var(--pri);padding-left:8px;margin-bottom:10px}
+.gpt .wr{margin:6px 0}
+.gpt .wr .tag.ng{color:#c0392b}.gpt .wr .tag.ok{color:#1e8e3e}
+.notes{margin:4px 0 4px 18px;padding:0;font-size:13px}

@@ -666,8 +666,14 @@
       h += r.phrases && r.phrases.length ? r.phrases.map((p, i) => `<span class="ph"><span class="seg-i cl-${phClass(p.f)}${hl(i)}${sl("phrases", i)}" data-c="${i}">${P2(p.t)}</span> <span class="lab">${esc(p.f)}</span></span>`).join("") : '<div class="sub">この英文には、文法区切りのデータがありません。</div>';
     }
     {
+      const G = r.grammar || [];
+      const one = (g, i) => `<div class="gpt${i === 0 ? " key" : ""}"><b>${i === 0 ? "最重要ポイント: " : "・"}${esc(g.point)}</b><div class="sub">${esc(g.explanation)}</div>`
+        + (g.wrong && g.right ? `<div class="wr"><div><span class="tag ng">✕</span> ${esc(g.wrong)}</div><div><span class="tag ok">○</span> ${esc(g.right)}</div></div>` : "")
+        + (g.applies && g.applies.length ? `<div class="sub">当てはまる語</div><table class="v">${g.applies.map(a => `<tr><td><b>${esc(a.w)}</b></td><td class="sub">${esc(a.m || "")}</td></tr>`).join("")}</table>` : "")
+        + (g.notes && g.notes.length ? `<ul class="notes">${g.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>` : "") + "</div>";
       h += '<h4 class="gh">文法の解説</h4>';
-      h += (r.grammar || []).length ? r.grammar.map(g => `<div class="gpt"><b>・${esc(g.point)}</b><div class="sub">${esc(g.explanation)}</div></div>`).join("") : '<div class="sub">なし</div>';
+      h += G.length ? G.map(one).join("") : '<div class="sub">なし</div>';
+      if (r.link) h += `<h4 class="gh">つながり</h4><div class="sub">${esc(r.link)}</div>`;
     }
     if (prefs.gs.toeic) {
       const t = r.toeic;
@@ -766,24 +772,19 @@
     const i = +b.dataset.q, ok = i === r.quiz.answer;
     b.parentElement.dataset.done = "1";
     b.parentElement.querySelectorAll("button[data-q]").forEach(x => { if (+x.dataset.q === r.quiz.answer) x.classList.add("ok"); else if (x === b) x.classList.add("ng") });
-    $("#qres").textContent = (ok ? "正解。" : "不正解。") + r.quiz.explanation;
+    { const q = r.quiz, res = $("#qres");
+      res.textContent = (ok ? "正解。" : "不正解。") + q.explanation;
+      if (q.reasons) { const ul = document.createElement("ul"); ul.className = "notes"; q.reasons.forEach((t, k) => { if (!t) return; const li = document.createElement("li"); li.textContent = `(${"ABCD"[k]}) ${t}`; ul.appendChild(li) }); res.appendChild(ul) }
+      if (q.trap) { const d = document.createElement("div"); d.textContent = "ひっかけ: " + q.trap; res.appendChild(d) } }
     await countReview(r, "sentences"); // 4択に答えると、復習1回
     if (!ok) { await addMistake(r, r.quiz.type, "quiz"); toast("間違いを記録しました(分類: " + Clean.catOf(r.quiz.type) + ")"); if (prefs.aux.rec) renderAux(r) } // 間違えたら、分類つきで記録
     $("#stInfo").textContent = infoText(r);
   };
 
-  // 表示のボタン: 区切りの見方(data-v)・補助(data-x)・品詞の色(data-p)は、どれも独立した入り切り
-  $("#segShow").onclick = e => {
-    const b = e.target.closest("button"); if (!b) return;
-    if (b.dataset.o === "off") { ["pat", "kind", "tns", ...GKEY].forEach(k => { prefs.gs[k] = false }); savePrefs(); renderStudy(); return } // 文型〜比較を、すべて外す
-    if (b.dataset.v) toggleView(b.dataset.v); else if (b.dataset.x) toggleAux(b.dataset.x); else if (b.dataset.s) { prefs.gs[b.dataset.s] = !prefs.gs[b.dataset.s]; savePrefs(); renderStudy() } else if (b.dataset.g) toggleGram();
-  };
   $("#shGap").onchange = $("#pGap").onchange = e => { prefs.sh.gap = +e.target.value; $("#shGap").value = $("#pGap").value = String(prefs.sh.gap); savePrefs() };
   $("#shRep").onchange = $("#pRep").onchange = e => { prefs.sh.rep = +e.target.value; $("#shRep").value = $("#pRep").value = String(prefs.sh.rep); savePrefs() };
-  function toggleView(k) { prefs.view[k] = !prefs.view[k]; savePrefs(); renderStudy() }
   function toggleSlashMain() { prefs.slashMain = !prefs.slashMain; savePrefs(); renderStudy() }
   $("#btnSlashMain").onclick = toggleSlashMain;
-  function toggleGram() { prefs.gramOn = !prefs.gramOn; savePrefs(); renderStudy() }
   // 区切りをクリック → その区切りだけを、設定の回数、続けて聞く(もう一度クリックで解除)
   $("#disp").onclick = e => {
     if (e.target.closest(".vstop")) return stopAudio();
@@ -805,8 +806,6 @@
     if (selC && selC.id === r.id && selC.key === key && selC.i === i) { selC = null; stopAudio(); return }
     selC = { id: r.id, key, i }; stopAudio(); playSel(r, key, i, playing);
   };
-  function clearViews() { for (const k of Object.keys(prefs.view)) prefs.view[k] = false; prefs.gramOn = false; prefs.slashMain = false; prefs.gs.toeic = false; savePrefs(); renderStudy() }
-  function toggleAux(x) { prefs.aux[x] = !prefs.aux[x]; savePrefs(); renderStudy() }
   $("#stSel").onchange = async e => { const r = cur(); if (r) { r.status = e.target.value; await Store.put(r, "sentences") } };
 
   // ---------- 音声(端末の読み上げ) ----------
@@ -1018,10 +1017,8 @@
     if (k === "arrowleft") return go(-1);
     if (k === "arrowright") return go(1);
     if (k === "s") return stopAudio();
-    const map = {}, ax = { i: "ipa", j: "ja", v: "vocab", q: "quiz", k: "rec" };
     if (k === " ") { e.preventDefault(); play("once") } else if (k === "c") play("chunks"); else if (k === "l") play("links");
-    else if (k === "1") toggleSlashMain(); else if (k === "2" || k === "g") toggleGram(); else if (k === "0") clearViews();
-    else if (map[k]) toggleView(map[k]); else if (ax[k]) toggleAux(ax[k]);
+    else if (k === "1") toggleSlashMain(); 
   });
 
   // ---------- 記録と復習 ----------
@@ -1205,6 +1202,7 @@
       delete prefs.view.links;
       if (p && p.view && p.view.iu) prefs.slashMain = true; // 音区切りを、「意味区切り」にまとめた
       delete prefs.view.iu;
+      for (const k of Object.keys(prefs.aux)) prefs.aux[k] = true; for (const k of Object.keys(prefs.gs)) prefs.gs[k] = true; prefs.gramOn = true; // 解説は、すべて表示する(切り替えは無い)
       const s = await Store.getMeta("study", null);
       if (s && Array.isArray(s.ids)) {
         const u = UN[s.unit] ? s.unit : "sentence", ok = new Set(tbl(u).map(r => r.id));

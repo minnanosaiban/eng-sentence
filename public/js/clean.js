@@ -72,7 +72,17 @@ const Clean = (() => {
 
   function grammar(g) {
     if (!Array.isArray(g)) return [];
-    return g.slice(0, 12).filter(x => x && x.point).map(x => ({ point: clip(x.point, 100), explanation: clip(x.explanation, 800) }));
+    // 先頭の1つが「最重要ポイント」。wrong/right = ✕ と ○ の例、applies = 当てはまる語(w + m)、notes = 注意点
+    return g.slice(0, 12).filter(x => x && x.point).map(x => {
+      const o = { point: clip(x.point, 100), explanation: clip(x.explanation, 800) };
+      const wrong = clip(x.wrong, 200), right = clip(x.right, 200);
+      if (wrong && right) { o.wrong = wrong; o.right = right }
+      const ap = (Array.isArray(x.applies) ? x.applies : []).slice(0, 20).filter(a => a && a.w).map(a => ({ w: clip(a.w, 60), m: clip(a.m, 120) }));
+      if (ap.length) o.applies = ap;
+      const nt = (Array.isArray(x.notes) ? x.notes : []).slice(0, 8).map(n => clip(n, 300)).filter(Boolean);
+      if (nt.length) o.notes = nt;
+      return o;
+    });
   }
 
   // 文構造: 主節の要素(S V O C M)・節・文型・時制
@@ -240,7 +250,11 @@ const Clean = (() => {
     if (!(ans >= 0 && ans < 4)) return null;
     const question = clip(q.question, 500);
     if (question.length < 5 || !question.includes("______")) return null;
-    return { question, choices, answer: ans, type: clip(q.type, 40) || "その他", explanation: clip(q.explanation, 1200) };
+    const o = { question, choices, answer: ans, type: clip(q.type, 40) || "その他", explanation: clip(q.explanation, 1200) };
+    const reasons = Array.isArray(q.reasons) ? q.reasons.map(x => clip(x, 300)) : []; // 選択肢ごとの理由(A〜D の順)
+    if (reasons.length === 4 && reasons.some(Boolean)) o.reasons = reasons;
+    const trap = clip(q.trap, 300); if (trap) o.trap = trap; // ひっかけの指摘
+    return o;
   }
 
   // 間違いの分類。AI が4択に付ける分類に、「聞き取り」(聞き取り練習で間違えたとき)を足したもの
@@ -259,7 +273,7 @@ const Clean = (() => {
 
   // ---------- AI による確認(書き出し → AI が確認・修正 → 修正として取り込み) ----------
   // 確認の対象にする項目と、画面に出す名前
-  const REVIEW = { ja: "和訳", slash: "意味の区切り", phrases: "文法区切り", words: "品詞", iu: "IU", vocab: "単語", grammar: "文法の解説", toeic: "TOEIC解説", quiz: "4択", elements: "文構造", clauses: "節", pattern: "文型", tense: "時制", gtags: "他の文法", level: "難易度", part: "パート" };
+  const REVIEW = { ja: "和訳", slash: "意味の区切り", phrases: "文法区切り", words: "品詞", iu: "IU", vocab: "単語", grammar: "文法の解説", link: "つながり", toeic: "TOEIC解説", quiz: "4択", elements: "文構造", clauses: "節", pattern: "文型", tense: "時制", gtags: "他の文法", level: "難易度", part: "パート" };
   // 確認用の書き出し。学習の状態・復習・イラスト・発音記号は入れない(発音記号は辞書から付くので、AI に見せない)
   function slim(r) {
     const o = {
@@ -267,7 +281,7 @@ const Clean = (() => {
       analysis: {
         translation: r.ja, slash: (r.slash || []).map(x => ({ en: x.en, ja: x.ja })), words: r.words, phrases: r.phrases,
         iu: (r.iu || []).map(x => ({ t: x.t })), vocab: (r.vocab || []).map(v => { const { ipa, ...rest } = v; return rest }),
-        pattern: r.pattern, clauses: r.clauses, elements: r.elements, tense: r.tense, gtags: r.gtags, grammar: r.grammar, toeic: r.toeic
+        pattern: r.pattern, clauses: r.clauses, elements: r.elements, tense: r.tense, gtags: r.gtags, grammar: r.grammar, link: r.link, toeic: r.toeic
       },
       quiz: r.quiz
     };
@@ -313,7 +327,7 @@ const Clean = (() => {
       ja: clip(a.translation ?? a.ja, 500), level: level(o.level), groups, part: partNo(o.part ?? (a.toeic && a.toeic.part)),
       status: "new", review_count: 0, last_reviewed: null, mistakes: [], verified: !(a.translation || a.ja), added: Date.now(),
       words: words(a.words, text), phrases: phrases(a.phrases, text), slash: slash(a.slash, text), iu: iu(a.iu, text),
-      vocab: vocab(a.vocab), grammar: grammar(a.grammar), toeic: toeic(a.toeic), quiz: quiz(o.quiz), ...structure(a)
+      vocab: vocab(a.vocab), grammar: grammar(a.grammar), link: clip(a.link, 400), toeic: toeic(a.toeic), quiz: quiz(o.quiz), ...structure(a)
     };
     if (keepState) {
       if (has(STATUS, o.status)) s.status = o.status;
@@ -334,7 +348,7 @@ const Clean = (() => {
     if (ex.slash && add.slash && ex.slash.length === add.slash.length) ex.slash.forEach((x, i) => { if (!x.ipa && add.slash[i].ipa && x.en === add.slash[i].en) { x.ipa = add.slash[i].ipa; c = true } });
     if (ex.iu && add.iu && ex.iu.length === add.iu.length) ex.iu.forEach((x, i) => { if (!x.ipa && add.iu[i].ipa && x.t === add.iu[i].t) { x.ipa = add.iu[i].ipa; c = true } });
     set("elements", add.elements); set("clauses", add.clauses); set("pattern", add.pattern); set("tense", add.tense); set("gtags", add.gtags);
-    set("grammar", add.grammar); set("toeic", add.toeic); set("quiz", add.quiz); set("level", add.level); set("part", add.part);
+    set("grammar", add.grammar); set("link", add.link); set("toeic", add.toeic); set("quiz", add.quiz); set("level", add.level); set("part", add.part);
     set("vocab", add.vocab && add.vocab.length ? add.vocab : null);
     if (ex.vocab && add.vocab) { // 発音記号が無い単語にだけ足す
       const m = new Map(add.vocab.map(v => [v.word.toLowerCase(), v.ipa]));

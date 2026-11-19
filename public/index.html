@@ -396,34 +396,13 @@
     <div id="studyBox" hidden>
       <div class="menu">
         <div class="rowl show">
-                    <div class="seg aux" id="segShow" role="group" aria-label="表示">
-            <button data-x="ja" title="全文の和訳(英文の上)と、区切りごとの訳(J)">和訳</button>
-            <button data-x="vocab" title="単語・熟語(V)">単語</button>
-            <button data-x="ipa" title="区切りごとの発音記号と、くっついて聞こえる語のまとまり(音のつながり)。まとまりの先頭の ▶ で、ゆっくり → ふつうの速さで聞き比べる(I)">発音</button>
-            <button data-s="pat" title="文型(SV・SVO など)のタグと、英文を S V O C M ごとに区切った表示">文型</button>
-            <button data-s="kind" title="文の種類(肯定・否定・疑問・命令)">文の種類</button>
-            <button data-s="tns" title="態・時制・相(能 現 進 など)">態・時制・相</button>
-            <button data-s="aux" title="助動詞(can・must など)と、その意味">助動詞</button>
-            <button data-s="verbal" title="準動詞(不定詞・動名詞・分詞)">準動詞</button>
-            <button data-s="mod" title="修飾(形容詞・副詞・前置詞句・関係詞)">修飾</button>
-            <button data-s="conj" title="接続(等位・従属)">接続</button>
-            <button data-s="cond" title="条件・仮定法">条件・仮定</button>
-            <button data-s="cmp" title="比較(原級・比較級・最上級)">比較</button>
-            <button data-o="off" title="文型〜比較の表示を、すべて外す">外す</button>
-            <button data-g="gram" title="文法区切り(2 / G)">文法区切り</button>
-            <button data-s="toeic" title="TOEIC解説">TOEIC</button>
-            <button data-x="quiz" title="4択問題(Q)">4択問題</button>
-            <button data-x="rec" title="間違いの記録(K)">間違いの記録</button>
-          </div>
-          <span class="pager"><button id="btnPrev" aria-label="前へ">←</button><span id="pos" class="sub"></span><button id="btnNext" aria-label="次へ">→</button></span>
+                    <span class="pager"><button id="btnPrev" aria-label="前へ">←</button><span id="pos" class="sub"></span><button id="btnNext" aria-label="次へ">→</button></span>
         </div>
       </div>
       <article class="card sentence">
         <div class="rowl adj">
           <button id="btnSlashMain" aria-pressed="false" title="英文を、意味の区切り( / )で切り替える">/</button>
-                      <label class="inl">速さ
-            <select id="rate"><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.85">0.85</option><option value="1" selected>1.0</option><option value="1.15">1.15</option></select>
-          </label>
+                      <select id="rate" hidden><option value="0.5">0.5</option><option value="0.6">0.6</option><option value="0.7">0.7</option><option value="0.8">0.8</option><option value="0.85">0.85</option><option value="1" selected>1.0</option><option value="1.15">1.15</option></select>
           <label class="inl">間
             <select id="shGap" title="区切りを読んだあとに置く、まねする時間(読み上げの長さの何倍か)。「なし」なら、続けて読む"><option value="0" selected>なし</option><option value="0.8">0.8倍</option><option value="1">1倍</option><option value="1.5">1.5倍</option><option value="2">2倍</option></select>
           </label>
