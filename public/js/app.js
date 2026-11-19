@@ -467,8 +467,6 @@
     renderSentence(r);
   }
   function go(d) { const n = study.i + d; if (n < 0 || n >= study.ids.length) return; stopAudio(); wq = null; study.i = n; wReveal = false; saveStudy(); renderStudy() }
-  $("#btnPrev").onclick = () => go(-1);
-  $("#btnNext").onclick = () => go(1);
   // 画面を左右になぞる(スワイプ): 左へ → 次の英文、右へ → 前の英文。語の選択(長押し)・ボタン・選択肢の操作とは、区別する
   {
     let sw = null;
@@ -624,8 +622,6 @@
   // 音声で読み上げる区切り。区切りの形があればそれ、なければスラッシュリーディング、なければ文全体
 
   function renderSentence(r) {
-    $("#pos").textContent = `${study.i + 1} / ${study.ids.length}`;
-    $("#btnPrev").disabled = study.i === 0; $("#btnNext").disabled = study.i >= study.ids.length - 1;
     document.querySelectorAll("#segShow button:not([data-o])").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v ? !!prefs.view[b.dataset.v] : b.dataset.x ? !!prefs.aux[b.dataset.x] : b.dataset.s ? !!prefs.gs[b.dataset.s] : !!prefs.gramOn)));
     $("#btnSlashMain").setAttribute("aria-pressed", String(!!prefs.slashMain));
     $("#rate").value = String(prefs.rate);
@@ -744,22 +740,35 @@
     html += slashHtml;
     html += gramBlock(r, mkP, now, nowView);
     $("#disp").innerHTML = html;
+    buildNav();
+  }
+
+  // 解説が長いので、上部に見出しの一覧を置く。押すと、その見出しへ移る(いまの画面の見出しから、そのつど作る)
+  function buildNav() {
+    const items = [["英文", $("#disp")]];
+    for (const el of document.querySelectorAll("#disp .jafull, #disp h4.gh, #aux [data-nav]")) {
+      const t = el.dataset.nav || (el.classList.contains("jafull") ? "和訳" : el.textContent.trim());
+      if (t) items.push([t, el]);
+    }
+    const nav = $("#studyNav"); nav.textContent = "";
+    for (const [t, el] of items) { const b = document.createElement("button"); b.type = "button"; b.className = "sm"; b.textContent = t; b.onclick = () => el.scrollIntoView({ block: "start", behavior: "smooth" }); nav.appendChild(b) }
   }
 
   function renderAux(r) {
     const a = prefs.aux; let h = "";
     $("#jaBox").innerHTML = ""; // 全文の和訳は、renderDisp で英文の下に出す
-    if (a.vocab) h += `<div class="blk"><div class="row" style="margin:0 0 8px"></div>${(r.vocab || []).length ? `<table class="v">${r.vocab.map((x, i) => `<tr><td><b>${esc(x.word)}</b>${x.ipa ? `<div class="ipa">/${esc(x.ipa)}/</div>` : ""}</td><td class="sub">${esc(x.pos)}</td><td>${esc(x.meaning)}<div class="sub">${esc(x.note)}</div>${x.toeic ? `<div class="sub">TOEIC: ${esc(x.toeic)}</div>` : ""}</td></tr>`).join("")}</table>` : '<span class="sub">なし</span>'}</div>`;
+    if (a.vocab) h += `<div class="blk" data-nav="単語"><div class="row" style="margin:0 0 8px"></div>${(r.vocab || []).length ? `<table class="v">${r.vocab.map((x, i) => `<tr><td><b>${esc(x.word)}</b>${x.ipa ? `<div class="ipa">/${esc(x.ipa)}/</div>` : ""}</td><td class="sub">${esc(x.pos)}</td><td>${esc(x.meaning)}<div class="sub">${esc(x.note)}</div>${x.toeic ? `<div class="sub">TOEIC: ${esc(x.toeic)}</div>` : ""}</td></tr>`).join("")}</table>` : '<span class="sub">なし</span>'}</div>`;
     if (a.quiz) {
       const q = r.quiz;
-      h += `<div class="blk"><h3>4択問題</h3>${q ? `<div>${esc(q.question)}</div>${q.choices.map((c, i) => `<button class="choice" data-q="${i}">${"ABCD"[i]}. ${esc(c)}</button>`).join("")}<div id="qres" class="sub"></div>` : '<span class="sub">なし</span>'}</div>`;
+      h += `<div class="blk"><h3 data-nav="4択">4択問題</h3>${q ? `<div>${esc(q.question)}</div>${q.choices.map((c, i) => `<button class="choice" data-q="${i}">${"ABCD"[i]}. ${esc(c)}</button>`).join("")}<div id="qres" class="sub"></div>` : '<span class="sub">なし</span>'}</div>`;
     }
     if (a.rec) {
       const ms = r.mistakes || [];
-      h += '<div class="blk"><h3>間違いの記録</h3><div class="mis">' + (ms.length ? ms.map((m, i) => '<span class="tag">' + esc(m.cat) + ' ・ ' + esc(m.date || '日付なし') + ' ・ ' + esc(SRC[m.src] || '手動') + '<button data-mdel="' + i + '" title="この記録を消す" aria-label="この記録を消す">×</button></span>').join('') : '<span class="sub">間違いの記録は、ありません。</span>') + '</div>'
+      h += '<div class="blk"><h3 data-nav="記録">間違いの記録</h3><div class="mis">' + (ms.length ? ms.map((m, i) => '<span class="tag">' + esc(m.cat) + ' ・ ' + esc(m.date || '日付なし') + ' ・ ' + esc(SRC[m.src] || '手動') + '<button data-mdel="' + i + '" title="この記録を消す" aria-label="この記録を消す">×</button></span>').join('') : '<span class="sub">間違いの記録は、ありません。</span>') + '</div>'
         + '<div class="row"><select id="mCat" aria-label="分類">' + Clean.CATS.map(c => '<option>' + esc(c) + '</option>').join('') + '</select><button id="mAdd">＋ 間違いを記録</button></div></div>';
     }
     $("#aux").innerHTML = h;
+    buildNav();
   }
 
   $("#aux").onclick = async e => {

@@ -348,3 +348,6 @@ div.elsrow{margin-top:6px}
 .gpt .wr{margin:6px 0}
 .gpt .wr .tag.ng{color:#c0392b}.gpt .wr .tag.ok{color:#1e8e3e}
 .notes{margin:4px 0 4px 18px;padding:0;font-size:13px}
+
+.snav{position:sticky;top:52px;z-index:4;display:flex;flex-wrap:wrap;gap:6px;padding:6px 8px;margin:0 0 8px;background:var(--card);border:1px solid var(--line);border-radius:8px}
+#disp,#disp .gh,#disp .jafull,#aux [data-nav]{scroll-margin-top:110px}
