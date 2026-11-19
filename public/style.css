@@ -255,7 +255,7 @@ div.elsrow{margin-top:6px}
 .view{margin-top:36px}
 #disp .sljas{margin-top:36px}
 #disp .sljas + .sljas{margin-top:8px}
-#aux .blk{margin-top:36px}
+#aux .blk{margin-top:72px}
 .menu{margin:0 0 12px}
 .menu .show{margin-bottom:10px}
 .menu button,.menu select{font-size:12px}
@@ -298,7 +298,7 @@ div.elsrow{margin-top:6px}
 .wmeans{margin:2px 0 8px;font-size:13px;color:var(--sub)}
 .wmeans .wm{display:inline-block;margin-right:12px}
 /* 文法欄: 項目の間を広げ、行間をゆったりさせて、読みやすく */
-.gram .gh{margin:28px 0 10px;padding-top:14px;border-top:1px solid var(--line);font-size:13px}
+.gram .gh{margin:56px 0 10px;padding-top:14px;border-top:1px solid var(--line);font-size:13px}
 .gram .gh:first-child{margin-top:0}
 .gram .els{line-height:2.4;margin-bottom:6px}
 .gram .el{margin-right:18px}
@@ -334,7 +334,7 @@ div.elsrow{margin-top:6px}
 .row-i .t > .m.jx[hidden]{display:none}
 
 .jaedit{margin-top:16px}
-.jaedit textarea{display:block;width:100%;margin-top:4px;font:inherit;line-height:1.6}
+.jaedit textarea{display:block;width:100%;margin-top:4px;font-size:13px;line-height:1.6}
 
 /* ＋ で開く追加フォーム */
 .addform{display:flex;flex-direction:column;gap:8px;margin-top:8px}
