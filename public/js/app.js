@@ -483,11 +483,10 @@
     });
   }
   // 選択画面の音声の設定(速さ・間・繰り返し)は、学習画面と同じ設定を使う。選択肢も、学習画面のものを写す
-  for (const [a, b] of [["#rate", "#pRate"], ["#shGap", "#pGap"], ["#shRep", "#pRep"]]) $(b).innerHTML = $(a).innerHTML;
-  function syncPickAudio() { $("#pRate").value = String(prefs.rate); $("#pGap").value = String(prefs.sh.gap); $("#pRep").value = String(prefs.sh.rep) }
-  function setRate(v) { prefs.rate = +v; $("#rate").value = String(prefs.rate); syncPickAudio(); savePrefs() }
+  for (const [a, b] of [["#shGap", "#pGap"], ["#shRep", "#pRep"]]) $(b).innerHTML = $(a).innerHTML;
+  function syncPickAudio() { $("#pGap").value = String(prefs.sh.gap); $("#pRep").value = String(prefs.sh.rep) }
+  function setRate(v) { prefs.rate = +v; $("#rate").value = String(prefs.rate); savePrefs() }
   $("#rate").onchange = e => setRate(e.target.value);
-  $("#pRate").onchange = e => setRate(e.target.value);
 
   // ---------- Part 1〜7(本番の形式の問題。public/toeic/partN.json を読む) ----------
   // 1セット = 場面(Part1)/ 音声スクリプト(Part2〜4)/ 文章(Part6・7)+ 設問。選択肢を印刷しない Part1・2 は、聞いて A〜C(D)を選び、答えると文を表示する
@@ -666,7 +665,7 @@
       const P2 = mkP();
       h += r.phrases && r.phrases.length ? r.phrases.map((p, i) => `<span class="ph"><span class="seg-i cl-${phClass(p.f)}${hl(i)}${sl("phrases", i)}" data-c="${i}">${P2(p.t)}</span> <span class="lab">${esc(p.f)}</span></span>`).join("") : '<div class="sub">この英文には、文法区切りのデータがありません。</div>';
     }
-    if (prefs.gs.expl) {
+    {
       h += '<h4 class="gh">文法の解説</h4>';
       h += (r.grammar || []).length ? r.grammar.map(g => `<div class="gpt"><b>・${esc(g.point)}</b><div class="sub">${esc(g.explanation)}</div></div>`).join("") : '<div class="sub">なし</div>';
     }
@@ -737,7 +736,7 @@
     html += badgeRest;
     if (prefs.aux.ja && !jaInline) html += '<div class="jafull">' + (r.ja ? esc(r.ja) : '<span class="sub">なし</span>') + '</div>'; // 全文の和訳は、英文(つながりの行)の下・区切りごとの訳の上
     html += slashHtml;
-    if (prefs.gramOn || prefs.gs.expl || prefs.gs.toeic) html += gramBlock(r, mkP, now, nowView);
+    html += gramBlock(r, mkP, now, nowView);
     $("#disp").innerHTML = html;
   }
 
@@ -806,7 +805,7 @@
     if (selC && selC.id === r.id && selC.key === key && selC.i === i) { selC = null; stopAudio(); return }
     selC = { id: r.id, key, i }; stopAudio(); playSel(r, key, i, playing);
   };
-  function clearViews() { for (const k of Object.keys(prefs.view)) prefs.view[k] = false; prefs.gramOn = false; prefs.slashMain = false; prefs.gs.expl = prefs.gs.toeic = false; savePrefs(); renderStudy() }
+  function clearViews() { for (const k of Object.keys(prefs.view)) prefs.view[k] = false; prefs.gramOn = false; prefs.slashMain = false; prefs.gs.toeic = false; savePrefs(); renderStudy() }
   function toggleAux(x) { prefs.aux[x] = !prefs.aux[x]; savePrefs(); renderStudy() }
   $("#stSel").onchange = async e => { const r = cur(); if (r) { r.status = e.target.value; await Store.put(r, "sentences") } };
 
